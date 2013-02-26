@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
+  <Identity Name="DaksaTech.TheBestMoviesEver" Publisher="CN=42750936-DE0C-415B-9312-C587E65FD9EC" Version="1.0.0.5" />
+  <Properties>
+    <DisplayName>The Best Movies Ever Made!</DisplayName>
+    <PublisherDisplayName>DaksaTech</PublisherDisplayName>
+    <Logo>Assets\StoreLogo.png</Logo>
+  </Properties>
+  <Prerequisites>
+    <OSMinVersion>6.2.1</OSMinVersion>
+    <OSMaxVersionTested>6.2.1</OSMaxVersionTested>
+  </Prerequisites>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="TopMovies.App">
+      <VisualElements DisplayName="The Best Movies Ever Made!" Logo="Assets\Logo.png" SmallLogo="Assets\SmallLogo.png" Description="The Best Movies Ever Made!" ForegroundText="light" BackgroundColor="#FF0000">
+        <DefaultTile ShowName="logoOnly" ShortName="Best Movies" WideLogo="Assets\WideLogo.png" />
+        <SplashScreen Image="Assets\SplashScreen.png" BackgroundColor="#FF0000" />
+      </VisualElements>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="internetClient" />
+  </Capabilities>
+</Package>

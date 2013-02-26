@@ -6,6 +6,6 @@
     <AppxBuildConfigurationSelection>x86|x64|arm</AppxBuildConfigurationSelection>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
-    <UseSimulator>True</UseSimulator>
+    <UseSimulator>False</UseSimulator>
   </PropertyGroup>
 </Project>

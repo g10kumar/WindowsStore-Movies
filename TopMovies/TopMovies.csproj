@@ -1,0 +1,641 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{967C69DA-A97E-4C30-B33E-7E3F5DDBAAA7}</ProjectGuid>
+    <OutputType>AppContainerExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TopMovies</RootNamespace>
+    <AssemblyName>TopMovies</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{BC8A1FFA-BEE3-4634-8014-F334798102B3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <PackageCertificateKeyFile>TopMovies_StoreKey.pfx</PackageCertificateKeyFile>
+    <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
+    <PackageCertificateThumbprint>238B5CB2D477F5A35C533C7FDB29FD220D480FC9</PackageCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <OutputPath>bin\ARM\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <SDKReference Include="SyncfusionControls, Version=10.3.0.65">
+      <Name>Syncfusion Controls for WinRT XAML</Name>
+    </SDKReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutUsUserControl.xaml.cs" />
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Common\LayoutAwarePage.cs" />
+    <Compile Include="Common\NotificationObject.cs" />
+    <Compile Include="Common\SettingsFlyout.cs" />
+    <Compile Include="Common\SuspensionManager.cs" />
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MoreAppsUserControl.xaml.cs" />
+    <Compile Include="PrivacyPolicyUserControl.xaml.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\CoverFlowProperties.cs" />
+    <Compile Include="Views\Movies.xaml.cs">
+      <DependentUpon>Movies.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SampleLayout.xaml.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+    <None Include="TopMovies_StoreKey.pfx" />
+    <None Include="TopMovies_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\BlackLogo.png" />
+    <Content Include="Assets\Top Foreign Movies.jpg" />
+    <Content Include="Assets\TopEnglish\49.jpg" />
+    <Content Include="Assets\TopForeign\1.jpg" />
+    <Content Include="Assets\TopForeign\10.jpg" />
+    <Content Include="Assets\TopForeign\100.jpg" />
+    <Content Include="Assets\TopForeign\11.jpg" />
+    <Content Include="Assets\TopForeign\12.jpg" />
+    <Content Include="Assets\TopForeign\13.jpg" />
+    <Content Include="Assets\TopForeign\14.jpg" />
+    <Content Include="Assets\TopForeign\15.jpg" />
+    <Content Include="Assets\TopForeign\16.jpg" />
+    <Content Include="Assets\TopForeign\18.jpg" />
+    <Content Include="Assets\TopForeign\19.jpg" />
+    <Content Include="Assets\TopForeign\2.jpg" />
+    <Content Include="Assets\TopForeign\20.jpg" />
+    <Content Include="Assets\TopForeign\21.jpg" />
+    <Content Include="Assets\TopForeign\22.jpg" />
+    <Content Include="Assets\TopForeign\23.jpg" />
+    <Content Include="Assets\TopForeign\24.jpg" />
+    <Content Include="Assets\TopForeign\25.jpg" />
+    <Content Include="Assets\TopForeign\26.jpg" />
+    <Content Include="Assets\TopForeign\27.jpg" />
+    <Content Include="Assets\TopForeign\28.jpg" />
+    <Content Include="Assets\TopForeign\29.jpg" />
+    <Content Include="Assets\TopForeign\3.jpg" />
+    <Content Include="Assets\TopForeign\30.jpg" />
+    <Content Include="Assets\TopForeign\31.jpg" />
+    <Content Include="Assets\TopForeign\32.jpg" />
+    <Content Include="Assets\TopForeign\33.jpg" />
+    <Content Include="Assets\TopForeign\34.jpg" />
+    <Content Include="Assets\TopForeign\35.jpg" />
+    <Content Include="Assets\TopForeign\36.jpg" />
+    <Content Include="Assets\TopForeign\37.jpg" />
+    <Content Include="Assets\TopForeign\38.jpg" />
+    <Content Include="Assets\TopForeign\39.jpg" />
+    <Content Include="Assets\TopForeign\4.jpg" />
+    <Content Include="Assets\TopForeign\41.jpg" />
+    <Content Include="Assets\TopForeign\42.jpg" />
+    <Content Include="Assets\TopForeign\43.jpg" />
+    <Content Include="Assets\TopForeign\44.jpg" />
+    <Content Include="Assets\TopForeign\45.jpg" />
+    <Content Include="Assets\TopForeign\46.jpg" />
+    <Content Include="Assets\TopForeign\48.jpg" />
+    <Content Include="Assets\TopForeign\49.jpg" />
+    <Content Include="Assets\TopForeign\5.jpg" />
+    <Content Include="Assets\TopForeign\50.jpg" />
+    <Content Include="Assets\TopForeign\51.jpg" />
+    <Content Include="Assets\TopForeign\53.jpg" />
+    <Content Include="Assets\TopForeign\56.jpg" />
+    <Content Include="Assets\TopForeign\58.jpg" />
+    <Content Include="Assets\TopForeign\59.jpg" />
+    <Content Include="Assets\TopForeign\6.jpg" />
+    <Content Include="Assets\TopForeign\60.jpg" />
+    <Content Include="Assets\TopForeign\61.jpg" />
+    <Content Include="Assets\TopForeign\62.jpg" />
+    <Content Include="Assets\TopForeign\63.jpg" />
+    <Content Include="Assets\TopForeign\65.jpg" />
+    <Content Include="Assets\TopForeign\66.jpg" />
+    <Content Include="Assets\TopForeign\7.jpg" />
+    <Content Include="Assets\TopForeign\70.jpg" />
+    <Content Include="Assets\TopForeign\71.jpg" />
+    <Content Include="Assets\TopForeign\72.jpg" />
+    <Content Include="Assets\TopForeign\74.jpg" />
+    <Content Include="Assets\TopForeign\76.jpg" />
+    <Content Include="Assets\TopForeign\77.jpg" />
+    <Content Include="Assets\TopForeign\78.jpg" />
+    <Content Include="Assets\TopForeign\79.jpg" />
+    <Content Include="Assets\TopForeign\8.jpg" />
+    <Content Include="Assets\TopForeign\80.jpg" />
+    <Content Include="Assets\TopForeign\81.jpg" />
+    <Content Include="Assets\TopForeign\83.jpg" />
+    <Content Include="Assets\TopForeign\84.jpg" />
+    <Content Include="Assets\TopForeign\85.jpg" />
+    <Content Include="Assets\TopForeign\86.jpg" />
+    <Content Include="Assets\TopForeign\87.jpg" />
+    <Content Include="Assets\TopForeign\88.jpg" />
+    <Content Include="Assets\TopForeign\89.jpg" />
+    <Content Include="Assets\TopForeign\9.jpg" />
+    <Content Include="Assets\TopForeign\90.jpg" />
+    <Content Include="Assets\TopForeign\92.jpg" />
+    <Content Include="Assets\TopForeign\93.jpg" />
+    <Content Include="Assets\TopForeign\94.jpg" />
+    <Content Include="Assets\TopForeign\95.jpg" />
+    <Content Include="Assets\TopForeign\98.jpg" />
+    <Content Include="Assets\TopForeign\99.jpg" />
+    <None Include="Package.StoreAssociation.xml" />
+    <Content Include="Assets\WideLogo.png" />
+    <Content Include="Xml\TopForeign.xml" />
+    <Page Include="AboutUsUserControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Content Include="Assets\Logo.png" />
+    <Content Include="Assets\SmallLogo.png" />
+    <Content Include="Assets\SplashScreen.png" />
+    <Content Include="Assets\StoreLogo.png" />
+    <Page Include="Views\SampleLayout.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MoreAppsUserControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PrivacyPolicyUserControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Content Include="Assets\Top Bollywood Movies.jpg" />
+    <Content Include="Assets\Top English Movies.jpg" />
+    <Content Include="Assets\TopBollywood\1.jpg" />
+    <Content Include="Assets\TopBollywood\10.jpg" />
+    <Content Include="Assets\TopBollywood\100.jpg" />
+    <Content Include="Assets\TopBollywood\101.jpg" />
+    <Content Include="Assets\TopBollywood\102.jpg" />
+    <Content Include="Assets\TopBollywood\103.jpg" />
+    <Content Include="Assets\TopBollywood\104.jpg" />
+    <Content Include="Assets\TopBollywood\105.jpg" />
+    <Content Include="Assets\TopBollywood\106.jpg" />
+    <Content Include="Assets\TopBollywood\107.jpg" />
+    <Content Include="Assets\TopBollywood\108.jpg" />
+    <Content Include="Assets\TopBollywood\11.jpg" />
+    <Content Include="Assets\TopBollywood\12.jpg" />
+    <Content Include="Assets\TopBollywood\13.jpg" />
+    <Content Include="Assets\TopBollywood\14.jpg" />
+    <Content Include="Assets\TopBollywood\15.jpg" />
+    <Content Include="Assets\TopBollywood\16.jpg" />
+    <Content Include="Assets\TopBollywood\17.jpg" />
+    <Content Include="Assets\TopBollywood\18.jpg" />
+    <Content Include="Assets\TopBollywood\19.jpg" />
+    <Content Include="Assets\TopBollywood\2.jpg" />
+    <Content Include="Assets\TopBollywood\20.jpg" />
+    <Content Include="Assets\TopBollywood\21.jpg" />
+    <Content Include="Assets\TopBollywood\22.jpg" />
+    <Content Include="Assets\TopBollywood\23.jpg" />
+    <Content Include="Assets\TopBollywood\24.jpg" />
+    <Content Include="Assets\TopBollywood\25.jpg" />
+    <Content Include="Assets\TopBollywood\26.jpg" />
+    <Content Include="Assets\TopBollywood\27.jpg" />
+    <Content Include="Assets\TopBollywood\28.jpg" />
+    <Content Include="Assets\TopBollywood\29.jpg" />
+    <Content Include="Assets\TopBollywood\3.jpg" />
+    <Content Include="Assets\TopBollywood\30.jpg" />
+    <Content Include="Assets\TopBollywood\31.jpg" />
+    <Content Include="Assets\TopBollywood\32.jpg" />
+    <Content Include="Assets\TopBollywood\33.jpg" />
+    <Content Include="Assets\TopBollywood\34.jpg" />
+    <Content Include="Assets\TopBollywood\35.jpg" />
+    <Content Include="Assets\TopBollywood\36.jpg" />
+    <Content Include="Assets\TopBollywood\37.jpg" />
+    <Content Include="Assets\TopBollywood\38.jpg" />
+    <Content Include="Assets\TopBollywood\39.jpg" />
+    <Content Include="Assets\TopBollywood\4.jpg" />
+    <Content Include="Assets\TopBollywood\40.jpg" />
+    <Content Include="Assets\TopBollywood\41.jpg" />
+    <Content Include="Assets\TopBollywood\42.jpg" />
+    <Content Include="Assets\TopBollywood\43.jpg" />
+    <Content Include="Assets\TopBollywood\44.jpg" />
+    <Content Include="Assets\TopBollywood\45.jpg" />
+    <Content Include="Assets\TopBollywood\46.jpg" />
+    <Content Include="Assets\TopBollywood\47.jpg" />
+    <Content Include="Assets\TopBollywood\48.jpg" />
+    <Content Include="Assets\TopBollywood\49.jpg" />
+    <Content Include="Assets\TopBollywood\5.jpg" />
+    <Content Include="Assets\TopBollywood\50.jpg" />
+    <Content Include="Assets\TopBollywood\51.jpg" />
+    <Content Include="Assets\TopBollywood\52.jpg" />
+    <Content Include="Assets\TopBollywood\53.jpg" />
+    <Content Include="Assets\TopBollywood\54.jpg" />
+    <Content Include="Assets\TopBollywood\55.jpg" />
+    <Content Include="Assets\TopBollywood\56.jpg" />
+    <Content Include="Assets\TopBollywood\57.jpg" />
+    <Content Include="Assets\TopBollywood\58.jpg" />
+    <Content Include="Assets\TopBollywood\59.jpg" />
+    <Content Include="Assets\TopBollywood\6.jpg" />
+    <Content Include="Assets\TopBollywood\60.jpg" />
+    <Content Include="Assets\TopBollywood\61.jpg" />
+    <Content Include="Assets\TopBollywood\62.jpg" />
+    <Content Include="Assets\TopBollywood\63.jpg" />
+    <Content Include="Assets\TopBollywood\64.jpg" />
+    <Content Include="Assets\TopBollywood\65.jpg" />
+    <Content Include="Assets\TopBollywood\66.jpg" />
+    <Content Include="Assets\TopBollywood\67.jpg" />
+    <Content Include="Assets\TopBollywood\68.jpg" />
+    <Content Include="Assets\TopBollywood\69.jpg" />
+    <Content Include="Assets\TopBollywood\7.jpg" />
+    <Content Include="Assets\TopBollywood\70.jpg" />
+    <Content Include="Assets\TopBollywood\71.jpg" />
+    <Content Include="Assets\TopBollywood\72.jpg" />
+    <Content Include="Assets\TopBollywood\73.jpg" />
+    <Content Include="Assets\TopBollywood\74.jpg" />
+    <Content Include="Assets\TopBollywood\75.jpg" />
+    <Content Include="Assets\TopBollywood\76.jpg" />
+    <Content Include="Assets\TopBollywood\77.jpg" />
+    <Content Include="Assets\TopBollywood\78.jpg" />
+    <Content Include="Assets\TopBollywood\79.jpg" />
+    <Content Include="Assets\TopBollywood\8.jpg" />
+    <Content Include="Assets\TopBollywood\80.jpg" />
+    <Content Include="Assets\TopBollywood\81.jpg" />
+    <Content Include="Assets\TopBollywood\82.jpg" />
+    <Content Include="Assets\TopBollywood\83.jpg" />
+    <Content Include="Assets\TopBollywood\84.jpg" />
+    <Content Include="Assets\TopBollywood\85.jpg" />
+    <Content Include="Assets\TopBollywood\86.jpg" />
+    <Content Include="Assets\TopBollywood\87.jpg" />
+    <Content Include="Assets\TopBollywood\88.jpg" />
+    <Content Include="Assets\TopBollywood\89.jpg" />
+    <Content Include="Assets\TopBollywood\9.jpg" />
+    <Content Include="Assets\TopBollywood\90.jpg" />
+    <Content Include="Assets\TopBollywood\91.jpg" />
+    <Content Include="Assets\TopBollywood\92.jpg" />
+    <Content Include="Assets\TopBollywood\93.jpg" />
+    <Content Include="Assets\TopBollywood\94.jpg" />
+    <Content Include="Assets\TopBollywood\95.jpg" />
+    <Content Include="Assets\TopBollywood\96.jpg" />
+    <Content Include="Assets\TopBollywood\97.jpg" />
+    <Content Include="Assets\TopBollywood\98.jpg" />
+    <Content Include="Assets\TopBollywood\99.jpg" />
+    <Content Include="Assets\TopEnglish\1.jpg" />
+    <Content Include="Assets\TopEnglish\10.jpg" />
+    <Content Include="Assets\TopEnglish\100.jpg" />
+    <Content Include="Assets\TopEnglish\101.jpg" />
+    <Content Include="Assets\TopEnglish\102.jpg" />
+    <Content Include="Assets\TopEnglish\103.jpg" />
+    <Content Include="Assets\TopEnglish\104.jpg" />
+    <Content Include="Assets\TopEnglish\105.jpg" />
+    <Content Include="Assets\TopEnglish\106.jpg" />
+    <Content Include="Assets\TopEnglish\107.jpg" />
+    <Content Include="Assets\TopEnglish\108.jpg" />
+    <Content Include="Assets\TopEnglish\109.jpg" />
+    <Content Include="Assets\TopEnglish\11.jpg" />
+    <Content Include="Assets\TopEnglish\110.jpg" />
+    <Content Include="Assets\TopEnglish\111.jpg" />
+    <Content Include="Assets\TopEnglish\112.jpg" />
+    <Content Include="Assets\TopEnglish\113.jpg" />
+    <Content Include="Assets\TopEnglish\114.jpg" />
+    <Content Include="Assets\TopEnglish\115.jpg" />
+    <Content Include="Assets\TopEnglish\116.jpg" />
+    <Content Include="Assets\TopEnglish\117.jpg" />
+    <Content Include="Assets\TopEnglish\118.jpg" />
+    <Content Include="Assets\TopEnglish\119.jpg" />
+    <Content Include="Assets\TopEnglish\12.jpg" />
+    <Content Include="Assets\TopEnglish\120.jpg" />
+    <Content Include="Assets\TopEnglish\121.jpg" />
+    <Content Include="Assets\TopEnglish\122.jpg" />
+    <Content Include="Assets\TopEnglish\123.jpg" />
+    <Content Include="Assets\TopEnglish\124.jpg" />
+    <Content Include="Assets\TopEnglish\125.jpg" />
+    <Content Include="Assets\TopEnglish\126.jpg" />
+    <Content Include="Assets\TopEnglish\127.jpg" />
+    <Content Include="Assets\TopEnglish\128.jpg" />
+    <Content Include="Assets\TopEnglish\129.jpg" />
+    <Content Include="Assets\TopEnglish\13.jpg" />
+    <Content Include="Assets\TopEnglish\130.jpg" />
+    <Content Include="Assets\TopEnglish\131.jpg" />
+    <Content Include="Assets\TopEnglish\132.jpg" />
+    <Content Include="Assets\TopEnglish\133.jpg" />
+    <Content Include="Assets\TopEnglish\134.jpg" />
+    <Content Include="Assets\TopEnglish\135.jpg" />
+    <Content Include="Assets\TopEnglish\136.jpg" />
+    <Content Include="Assets\TopEnglish\137.jpg" />
+    <Content Include="Assets\TopEnglish\138.jpg" />
+    <Content Include="Assets\TopEnglish\139.jpg" />
+    <Content Include="Assets\TopEnglish\14.jpg" />
+    <Content Include="Assets\TopEnglish\140.jpg" />
+    <Content Include="Assets\TopEnglish\141.jpg" />
+    <Content Include="Assets\TopEnglish\142.jpg" />
+    <Content Include="Assets\TopEnglish\143.jpg" />
+    <Content Include="Assets\TopEnglish\144.jpg" />
+    <Content Include="Assets\TopEnglish\145.jpg" />
+    <Content Include="Assets\TopEnglish\146.jpg" />
+    <Content Include="Assets\TopEnglish\147.jpg" />
+    <Content Include="Assets\TopEnglish\148.jpg" />
+    <Content Include="Assets\TopEnglish\149.jpg" />
+    <Content Include="Assets\TopEnglish\15.jpg" />
+    <Content Include="Assets\TopEnglish\150.jpg" />
+    <Content Include="Assets\TopEnglish\151.jpg" />
+    <Content Include="Assets\TopEnglish\152.jpg" />
+    <Content Include="Assets\TopEnglish\153.jpg" />
+    <Content Include="Assets\TopEnglish\154.jpg" />
+    <Content Include="Assets\TopEnglish\155.jpg" />
+    <Content Include="Assets\TopEnglish\156.jpg" />
+    <Content Include="Assets\TopEnglish\157.jpg" />
+    <Content Include="Assets\TopEnglish\158.jpg" />
+    <Content Include="Assets\TopEnglish\159.jpg" />
+    <Content Include="Assets\TopEnglish\16.jpg" />
+    <Content Include="Assets\TopEnglish\160.jpg" />
+    <Content Include="Assets\TopEnglish\161.jpg" />
+    <Content Include="Assets\TopEnglish\162.jpg" />
+    <Content Include="Assets\TopEnglish\163.jpg" />
+    <Content Include="Assets\TopEnglish\164.jpg" />
+    <Content Include="Assets\TopEnglish\165.jpg" />
+    <Content Include="Assets\TopEnglish\166.jpg" />
+    <Content Include="Assets\TopEnglish\167.jpg" />
+    <Content Include="Assets\TopEnglish\168.jpg" />
+    <Content Include="Assets\TopEnglish\169.jpg" />
+    <Content Include="Assets\TopEnglish\17.jpg" />
+    <Content Include="Assets\TopEnglish\170.jpg" />
+    <Content Include="Assets\TopEnglish\171.jpg" />
+    <Content Include="Assets\TopEnglish\172.jpg" />
+    <Content Include="Assets\TopEnglish\173.jpg" />
+    <Content Include="Assets\TopEnglish\174.jpg" />
+    <Content Include="Assets\TopEnglish\175.jpg" />
+    <Content Include="Assets\TopEnglish\176.jpg" />
+    <Content Include="Assets\TopEnglish\177.jpg" />
+    <Content Include="Assets\TopEnglish\178.jpg" />
+    <Content Include="Assets\TopEnglish\179.jpg" />
+    <Content Include="Assets\TopEnglish\18.jpg" />
+    <Content Include="Assets\TopEnglish\180.jpg" />
+    <Content Include="Assets\TopEnglish\181.jpg" />
+    <Content Include="Assets\TopEnglish\182.jpg" />
+    <Content Include="Assets\TopEnglish\183.jpg" />
+    <Content Include="Assets\TopEnglish\184.jpg" />
+    <Content Include="Assets\TopEnglish\185.jpg" />
+    <Content Include="Assets\TopEnglish\186.jpg" />
+    <Content Include="Assets\TopEnglish\187.jpg" />
+    <Content Include="Assets\TopEnglish\188.jpg" />
+    <Content Include="Assets\TopEnglish\189.jpg" />
+    <Content Include="Assets\TopEnglish\19.jpg" />
+    <Content Include="Assets\TopEnglish\190.jpg" />
+    <Content Include="Assets\TopEnglish\191.jpg" />
+    <Content Include="Assets\TopEnglish\192.jpg" />
+    <Content Include="Assets\TopEnglish\193.jpg" />
+    <Content Include="Assets\TopEnglish\194.jpg" />
+    <Content Include="Assets\TopEnglish\195.jpg" />
+    <Content Include="Assets\TopEnglish\196.jpg" />
+    <Content Include="Assets\TopEnglish\197.jpg" />
+    <Content Include="Assets\TopEnglish\198.jpg" />
+    <Content Include="Assets\TopEnglish\199.jpg" />
+    <Content Include="Assets\TopEnglish\2.jpg" />
+    <Content Include="Assets\TopEnglish\20.jpg" />
+    <Content Include="Assets\TopEnglish\200.jpg" />
+    <Content Include="Assets\TopEnglish\201.jpg" />
+    <Content Include="Assets\TopEnglish\202.jpg" />
+    <Content Include="Assets\TopEnglish\203.jpg" />
+    <Content Include="Assets\TopEnglish\204.jpg" />
+    <Content Include="Assets\TopEnglish\205.jpg" />
+    <Content Include="Assets\TopEnglish\206.jpg" />
+    <Content Include="Assets\TopEnglish\207.jpg" />
+    <Content Include="Assets\TopEnglish\208.jpg" />
+    <Content Include="Assets\TopEnglish\209.jpg" />
+    <Content Include="Assets\TopEnglish\21.jpg" />
+    <Content Include="Assets\TopEnglish\210.jpg" />
+    <Content Include="Assets\TopEnglish\211.jpg" />
+    <Content Include="Assets\TopEnglish\212.jpg" />
+    <Content Include="Assets\TopEnglish\213.jpg" />
+    <Content Include="Assets\TopEnglish\214.jpg" />
+    <Content Include="Assets\TopEnglish\215.jpg" />
+    <Content Include="Assets\TopEnglish\216.jpg" />
+    <Content Include="Assets\TopEnglish\217.jpg" />
+    <Content Include="Assets\TopEnglish\218.jpg" />
+    <Content Include="Assets\TopEnglish\219.jpg" />
+    <Content Include="Assets\TopEnglish\22.jpg" />
+    <Content Include="Assets\TopEnglish\220.jpg" />
+    <Content Include="Assets\TopEnglish\221.jpg" />
+    <Content Include="Assets\TopEnglish\222.jpg" />
+    <Content Include="Assets\TopEnglish\223.jpg" />
+    <Content Include="Assets\TopEnglish\224.jpg" />
+    <Content Include="Assets\TopEnglish\225.jpg" />
+    <Content Include="Assets\TopEnglish\226.jpg" />
+    <Content Include="Assets\TopEnglish\227.jpg" />
+    <Content Include="Assets\TopEnglish\228.jpg" />
+    <Content Include="Assets\TopEnglish\229.jpg" />
+    <Content Include="Assets\TopEnglish\23.jpg" />
+    <Content Include="Assets\TopEnglish\230.jpg" />
+    <Content Include="Assets\TopEnglish\231.jpg" />
+    <Content Include="Assets\TopEnglish\232.jpg" />
+    <Content Include="Assets\TopEnglish\233.jpg" />
+    <Content Include="Assets\TopEnglish\234.jpg" />
+    <Content Include="Assets\TopEnglish\235.jpg" />
+    <Content Include="Assets\TopEnglish\236.jpg" />
+    <Content Include="Assets\TopEnglish\237.jpg" />
+    <Content Include="Assets\TopEnglish\238.jpg" />
+    <Content Include="Assets\TopEnglish\239.jpg" />
+    <Content Include="Assets\TopEnglish\24.jpg" />
+    <Content Include="Assets\TopEnglish\240.jpg" />
+    <Content Include="Assets\TopEnglish\241.jpg" />
+    <Content Include="Assets\TopEnglish\242.jpg" />
+    <Content Include="Assets\TopEnglish\243.jpg" />
+    <Content Include="Assets\TopEnglish\244.jpg" />
+    <Content Include="Assets\TopEnglish\245.jpg" />
+    <Content Include="Assets\TopEnglish\246.jpg" />
+    <Content Include="Assets\TopEnglish\247.jpg" />
+    <Content Include="Assets\TopEnglish\248.jpg" />
+    <Content Include="Assets\TopEnglish\249.jpg" />
+    <Content Include="Assets\TopEnglish\25.jpg" />
+    <Content Include="Assets\TopEnglish\250.jpg" />
+    <Content Include="Assets\TopEnglish\26.jpg" />
+    <Content Include="Assets\TopEnglish\27.jpg" />
+    <Content Include="Assets\TopEnglish\28.jpg" />
+    <Content Include="Assets\TopEnglish\29.jpg" />
+    <Content Include="Assets\TopEnglish\3.jpg" />
+    <Content Include="Assets\TopEnglish\30.jpg" />
+    <Content Include="Assets\TopEnglish\31.jpg" />
+    <Content Include="Assets\TopEnglish\32.jpg" />
+    <Content Include="Assets\TopEnglish\33.jpg" />
+    <Content Include="Assets\TopEnglish\34.jpg" />
+    <Content Include="Assets\TopEnglish\35.jpg" />
+    <Content Include="Assets\TopEnglish\36.jpg" />
+    <Content Include="Assets\TopEnglish\37.jpg" />
+    <Content Include="Assets\TopEnglish\38.jpg" />
+    <Content Include="Assets\TopEnglish\39.jpg" />
+    <Content Include="Assets\TopEnglish\4.jpg" />
+    <Content Include="Assets\TopEnglish\40.jpg" />
+    <Content Include="Assets\TopEnglish\41.jpg" />
+    <Content Include="Assets\TopEnglish\42.jpg" />
+    <Content Include="Assets\TopEnglish\43.jpg" />
+    <Content Include="Assets\TopEnglish\44.jpg" />
+    <Content Include="Assets\TopEnglish\45.jpg" />
+    <Content Include="Assets\TopEnglish\46.jpg" />
+    <Content Include="Assets\TopEnglish\47.jpg" />
+    <Content Include="Assets\TopEnglish\48.jpg" />
+    <Content Include="Assets\TopEnglish\5.jpg" />
+    <Content Include="Assets\TopEnglish\50.jpg" />
+    <Content Include="Assets\TopEnglish\51.jpg" />
+    <Content Include="Assets\TopEnglish\52.jpg" />
+    <Content Include="Assets\TopEnglish\53.jpg" />
+    <Content Include="Assets\TopEnglish\54.jpg" />
+    <Content Include="Assets\TopEnglish\55.jpg" />
+    <Content Include="Assets\TopEnglish\56.jpg" />
+    <Content Include="Assets\TopEnglish\57.jpg" />
+    <Content Include="Assets\TopEnglish\58.jpg" />
+    <Content Include="Assets\TopEnglish\59.jpg" />
+    <Content Include="Assets\TopEnglish\6.jpg" />
+    <Content Include="Assets\TopEnglish\60.jpg" />
+    <Content Include="Assets\TopEnglish\61.jpg" />
+    <Content Include="Assets\TopEnglish\62.jpg" />
+    <Content Include="Assets\TopEnglish\63.jpg" />
+    <Content Include="Assets\TopEnglish\64.jpg" />
+    <Content Include="Assets\TopEnglish\65.jpg" />
+    <Content Include="Assets\TopEnglish\66.jpg" />
+    <Content Include="Assets\TopEnglish\67.jpg" />
+    <Content Include="Assets\TopEnglish\68.jpg" />
+    <Content Include="Assets\TopEnglish\69.jpg" />
+    <Content Include="Assets\TopEnglish\7.jpg" />
+    <Content Include="Assets\TopEnglish\70.jpg" />
+    <Content Include="Assets\TopEnglish\71.jpg" />
+    <Content Include="Assets\TopEnglish\72.jpg" />
+    <Content Include="Assets\TopEnglish\73.jpg" />
+    <Content Include="Assets\TopEnglish\74.jpg" />
+    <Content Include="Assets\TopEnglish\75.jpg" />
+    <Content Include="Assets\TopEnglish\76.jpg" />
+    <Content Include="Assets\TopEnglish\77.jpg" />
+    <Content Include="Assets\TopEnglish\78.jpg" />
+    <Content Include="Assets\TopEnglish\79.jpg" />
+    <Content Include="Assets\TopEnglish\8.jpg" />
+    <Content Include="Assets\TopEnglish\80.jpg" />
+    <Content Include="Assets\TopEnglish\81.jpg" />
+    <Content Include="Assets\TopEnglish\82.jpg" />
+    <Content Include="Assets\TopEnglish\83.jpg" />
+    <Content Include="Assets\TopEnglish\84.jpg" />
+    <Content Include="Assets\TopEnglish\85.jpg" />
+    <Content Include="Assets\TopEnglish\86.jpg" />
+    <Content Include="Assets\TopEnglish\87.jpg" />
+    <Content Include="Assets\TopEnglish\88.jpg" />
+    <Content Include="Assets\TopEnglish\89.jpg" />
+    <Content Include="Assets\TopEnglish\9.jpg" />
+    <Content Include="Assets\TopEnglish\90.jpg" />
+    <Content Include="Assets\TopEnglish\91.jpg" />
+    <Content Include="Assets\TopEnglish\92.jpg" />
+    <Content Include="Assets\TopEnglish\93.jpg" />
+    <Content Include="Assets\TopEnglish\94.jpg" />
+    <Content Include="Assets\TopEnglish\95.jpg" />
+    <Content Include="Assets\TopEnglish\96.jpg" />
+    <Content Include="Assets\TopEnglish\97.jpg" />
+    <Content Include="Assets\TopEnglish\98.jpg" />
+    <Content Include="Assets\TopEnglish\99.jpg" />
+    <Content Include="Xml\TopBollywood.xml" />
+    <Content Include="Xml\TopEnglish.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Page Include="Views\Movies.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="Common\StandardStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '11.0' ">
+    <VisualStudioVersion>11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

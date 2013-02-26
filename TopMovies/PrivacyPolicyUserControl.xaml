@@ -1,0 +1,57 @@
+﻿<UserControl
+    x:Class="TopMovies.PrivacyPolicyUserControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:TopMovies"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="400">
+
+    <Border BorderBrush="Black" BorderThickness="1,0,0,0">
+        <Grid x:Name="LayoutRoot" VerticalAlignment="Stretch" Background="White">
+            <!-- Root grid definition -->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <!-- Header area for panel -->
+            <Grid Grid.Row="0">
+                <Grid Margin="30,32,17,13">
+                    <Grid.Transitions>
+                        <TransitionCollection>
+                            <EntranceThemeTransition FromHorizontalOffset="50" />
+                        </TransitionCollection>
+                    </Grid.Transitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="30" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Button Click="OnBackButtonClicked" Margin="0,3,0,0" Style="{StaticResource SettingsBackButtonStyle}" Grid.Column="0" HorizontalAlignment="Left" />
+                    <TextBlock Margin="10,0,0,0" Grid.Column="1" Foreground="Black" FontFamily="Segoe UI" FontWeight="SemiLight" FontSize="26.6667" Text="Privacy Policy" HorizontalAlignment="Left" />
+                </Grid>
+
+            </Grid>
+
+            <!-- Settings Panel Content -->
+            <Grid Grid.Row="1" Margin="28,12,23,0" VerticalAlignment="Top">
+                <Grid.Transitions>
+                    <TransitionCollection>
+                        <EntranceThemeTransition FromHorizontalOffset="120" />
+                    </TransitionCollection>
+                </Grid.Transitions>
+                <StackPanel Orientation="Vertical">
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock Text="This Privacy Policy covers your use of this application. The app does not collect, store, or share any personal information, or anything related to your device. We do not collect any statistics, trends, neither do we track user movements. The site does allow you to visit external websites - specifically Amazon.com and Wikipedia.com and their affiliated sites. These websites may collect information related to your IP address, device, etc. Please check the privacy policy of these websites for details on information collected by them."  Style="{StaticResource AboutUsTextStyle}"  />
+                        <TextBlock Text="The app allows you to share the articles using the Share charm. The application you use to share the articles are not related to this app. Please check the privacy policy of those apps for how they use your data."   Style="{StaticResource AboutUsTextStyle}"></TextBlock>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+
+        </Grid>
+    </Border>
+</UserControl>

@@ -1,0 +1,200 @@
+﻿<Page
+    x:Name="pageRoot"
+    x:Class="TopMovies.Views.Movies"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:TopMovies.Views"
+    xmlns:common="using:TopMovies.Common"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:syncfusion="using:Syncfusion.UI.Xaml.Controls.Layout" 
+    xmlns:Input="using:Syncfusion.UI.Xaml.Controls.Input"
+    mc:Ignorable="d">
+    <Grid x:Name="Layout"  Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="140"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="100"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="140" x:Name="leftColumn"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="140"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.ColumnSpan="3" Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="backButton" Click="GoBack" IsEnabled="{Binding Frame.CanGoBack, ElementName=pageRoot}" Style="{StaticResource BackButtonStyle}"/>
+            <TextBlock x:Name="pageTitle" Grid.Column="1" Text="{StaticResource AppName}" Style="{StaticResource PageHeaderTextStyle}"/>
+            <!--<Button Style="{StaticResource SettingsAppBarButtonStyle}" x:Name="options"
+                    VerticalAlignment="Center" Grid.Column="2" AutomationProperties.Name="Options" Click="Options_Click"/>-->
+        </Grid>
+        <StackPanel Orientation="Horizontal" Grid.ColumnSpan="3" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center">
+            <TextBlock x:Name="txtName" Style="{StaticResource SubheaderTextStyle}" VerticalAlignment="Center"></TextBlock>
+        </StackPanel>
+        <StackPanel x:Name="mainStack" Orientation="Vertical" Grid.ColumnSpan="3" Grid.Column="1" Grid.Row="2" Grid.RowSpan="5" VerticalAlignment="Top">
+
+            <!--<syncfusion:CoverFlow x:Name="CoverFlowControl" Height="400">
+                <syncfusion:CoverFlow.ItemTemplate>
+                    <DataTemplate>
+                        <Image Source="{Binding}" Height="400" />
+                    </DataTemplate>
+                </syncfusion:CoverFlow.ItemTemplate>
+            </syncfusion:CoverFlow>-->
+
+            <syncfusion:CoverFlow x:Name="CoverFlowControl" Height="400"
+                                  VerticalAlignment="Top" 
+                                  Margin="10"  SelectedIndex="20"
+                                  HorizontalAlignment="Left" SelectionChanged="CoverFlowControl_SelectionChanged" DoubleTapped="btnMoreInfo_Click"
+                                  >
+                <syncfusion:CoverFlow.ItemTemplate>
+                    <DataTemplate>
+                        <Image Source="{Binding Image}" Tag="{Binding Name}" Stretch="Uniform" />
+                    </DataTemplate>
+                </syncfusion:CoverFlow.ItemTemplate>
+            </syncfusion:CoverFlow>
+
+
+        </StackPanel>
+
+        <StackPanel x:Name="stackPopup" Background="Black" Width="650" Height="510" Grid.ColumnSpan="3" Grid.Column="1" Grid.Row="1" Grid.RowSpan="6"  Visibility="Collapsed" Orientation="Vertical" Margin="10,-100,10,10" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Button x:Name="btnWVClose" Background="White" Foreground="Black" Content="Close" Width="70" Height="40" Click="btnClose_Click" Visibility="Visible"></Button>
+            <WebView x:Name="movieWiki" Width="640" Height="460" Margin="0,0,0,0"></WebView>
+            
+        </StackPanel>
+        <StackPanel x:Name="snappedStack" Orientation="Vertical" VerticalAlignment="Top" Visibility="Collapsed" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="0" Grid.RowSpan="7" Margin="10,10,10,10" HorizontalAlignment="Center">
+            <Image Source="/Assets/BlackLogo.png" Width="150" />
+            <TextBlock Text="The movies cannot be browsed in snapped view." TextWrapping="Wrap" Style="{StaticResource AboutUsTextStyle}" Foreground="Black" FontSize="24" Margin="10,40,10,10" />
+        </StackPanel>
+        <!--<Grid>
+            <ContentControl x:Name="SampleContent"
+                                HorizontalContentAlignment="Stretch"
+                                VerticalContentAlignment="Stretch"/>
+        </Grid>-->
+        <!--<StackPanel Grid.Row="1" Grid.Column="2" Background="Red" Grid.RowSpan="3" Width="270" Height="550" x:Name="stackpop" Visibility="Collapsed">
+            <Grid Background="Transparent">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="Offest" Margin="10"/>
+                <Input:NumericUpDown Margin="10 5" Minimum="30" Maximum="50" FormatString="0" Grid.Row="1" Value="{Binding Offset,Mode=TwoWay}" />
+
+                <TextBlock Text="SelectedItem Offest" Margin="10" Grid.Row="2"/>
+                <Input:NumericUpDown Margin="10 5" Minimum="70" Maximum="180" FormatString="0" Grid.Row="3" Value="{Binding SelectedItemOffset,Mode=TwoWay}"/>
+
+                <TextBlock Text="ZOffest" Margin="10" Grid.Row="4"/>
+                <Input:NumericUpDown Margin="10 5" Minimum="30" Maximum="120" Grid.Row="5" Value="{Binding ZOffset,Mode=TwoWay}"/>
+
+                <TextBlock Text="Scale Offset" Margin="10" Grid.Row="6"/>
+                <Input:NumericUpDown Margin="10 5" Minimum="0" Maximum="1" Grid.Row="7" SmallChange="0.1" LargeChange="0.1"  Value="{Binding ScaleOffset,Mode=TwoWay}"/>
+
+                <TextBlock Text="Rotation Angle" Margin="10" Grid.Row="8"/>
+                <Input:NumericUpDown Margin="10 5" Minimum="0" Maximum="360" FormatString="0 Degree" Grid.Row="9" Value="{Binding RotationAngle,Mode=TwoWay}"/>
+
+                <StackPanel Orientation="Horizontal" Grid.Row="10" Margin="-1 5" Grid.RowSpan="2">
+                    <RepeatButton x:Name="previous" Content="Move Previous" Margin="10 5"  Click="previous_Click_1" />
+                    <RepeatButton x:Name="next" Content="Move Next" Margin="10 5" Click="next_Click_1"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Grid.Row="11">
+                    
+                </StackPanel>
+            </Grid>
+        </StackPanel>-->
+        <!--<VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="ApplicationViewStates">
+                <VisualState x:Name="FullScreenLandscapeOrWide"/>
+                <VisualState x:Name="FilledOrNarrow" />
+                <VisualState x:Name="FullScreenPortrait">
+                </VisualState>
+                <VisualState x:Name="Snapped">
+                    <Storyboard>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="backButton" Storyboard.TargetProperty="Style">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource SnappedBackButtonStyle}"/>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="pageTitle" Storyboard.TargetProperty="Style">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource SnappedPageHeaderTextStyle}"/>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="snappedStack" Storyboard.TargetProperty="Visibility">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="Visible"/>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="mainStack" Storyboard.TargetProperty="Visibility">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed"/>
+                        </ObjectAnimationUsingKeyFrames>
+                        
+                    </Storyboard>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>-->
+    </Grid>
+
+
+    <Page.BottomAppBar>
+        <AppBar x:Name="bottonBar" Padding="10,0,10,0" IsSticky="True">
+            <Grid>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Button IsEnabled="True" x:Name="btnBuyDVD"  Style="{StaticResource ShopAppBarButtonStyle}" Click="btnBuyDVD_Click_1"  ></Button>
+                    <Button IsEnabled="True" x:Name="btnMovieDetails"  Style="{StaticResource MoreAppBarButtonStyle}" Click="btnMovieDetails_Click_1" ></Button>
+                    <!--<Button IsEnabled="True" x:Name="btnTextSize"  Style="{StaticResource EditAppBarButtonStyle}" Click="btnTextSize_Click" ></Button>-->
+                </StackPanel>
+            </Grid>
+        </AppBar>
+    </Page.BottomAppBar>
+
+
+    <!--<common:SampleView.SettingsContent>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="Offest" Margin="10"/>
+                <Input:NumericUpDown Margin="10 5" Minimum="30" Maximum="50" FormatString="0" Grid.Row="1" Value="{Binding Offset,Mode=TwoWay}" />
+
+                <TextBlock Text="SelectedItem Offest" Margin="10" Grid.Row="2"/>
+                <Input:NumericUpDown Margin="10 5" Minimum="70" Maximum="180" FormatString="0" Grid.Row="3" Value="{Binding SelectedItemOffset,Mode=TwoWay}"/>
+
+                <TextBlock Text="ZOffest" Margin="10" Grid.Row="4"/>
+                <Input:NumericUpDown Margin="10 5" Minimum="30" Maximum="120" Grid.Row="5" Value="{Binding ZOffset,Mode=TwoWay}"/>
+
+                <TextBlock Text="Scale Offset" Margin="10" Grid.Row="6"/>
+                <Input:NumericUpDown Margin="10 5" Minimum="0" Maximum="1" Grid.Row="7" SmallChange="0.1" LargeChange="0.1"  Value="{Binding ScaleOffset,Mode=TwoWay}"/>
+
+                <TextBlock Text="Rotation Angle" Margin="10" Grid.Row="8"/>
+                <Input:NumericUpDown Margin="10 5" Minimum="0" Maximum="360" FormatString="0 Degree" Grid.Row="9" Value="{Binding RotationAngle,Mode=TwoWay}"/>
+
+                <StackPanel Orientation="Horizontal" Grid.Row="10" Margin="-1 5">
+                    <RepeatButton x:Name="previous" Content="Move Previous" Margin="10 5"   />
+                    <RepeatButton x:Name="next" Content="Move Next" Margin="10 5" />
+                </StackPanel>
+            </Grid>
+    </common:SampleView.SettingsContent>-->
+</Page>
