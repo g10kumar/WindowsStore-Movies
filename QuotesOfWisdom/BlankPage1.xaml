@@ -1,0 +1,77 @@
+﻿<Page
+    x:Class="QuotesOfWisdom.BlankPage1"
+    IsTabStop="false"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:QuotesOfWisdom"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
+        <!--<FlipView x:Name="f1" Width="1000" Height="700">
+            <FlipViewItem>
+                <StackPanel>
+                    <TextBlock Text="Ability" />
+                    <FlipView x:Name="f2" Width="600" Height="500">
+                        <FlipViewItem>
+                            <TextBlock Text="The ability to do something perfectly comes from practice." />
+                        </FlipViewItem>
+                        <FlipViewItem>
+                            <TextBlock Text="This is the second quote on Ability." />
+                        </FlipViewItem>
+                    </FlipView>
+                </StackPanel>
+            </FlipViewItem>
+            <FlipViewItem>
+                <StackPanel>
+                    <TextBlock Text="Action" />
+                    <FlipView Width="600" Height="500">
+                        <FlipViewItem>
+                            <TextBlock Text="The first qupote on Action" />
+                        </FlipViewItem>
+                        <FlipViewItem>
+                            <TextBlock Text="This is the second quote on Action." />
+                        </FlipViewItem>
+                    </FlipView>
+                </StackPanel>
+            </FlipViewItem>
+            <FlipViewItem>
+                <StackPanel>
+                    <TextBlock Text="Peace" />
+                    <FlipView Width="600" Height="500">
+                        <FlipViewItem>
+                            <TextBlock Text="The first qupote on Peace" />
+                        </FlipViewItem>
+                        <FlipViewItem>
+                            <TextBlock Text="This is the second quote on Peace." />
+                        </FlipViewItem>
+                    </FlipView>
+                </StackPanel>
+            </FlipViewItem>
+        </FlipView>-->
+      
+        <!--<Button BorderBrush="Black" Background="Transparent" Width="178" Height="100" Click="Button_Click_1">
+            <Rectangle Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Top" Height="100" Width="150" Margin="0,0,0,0">
+                <Rectangle.Fill>
+                    <SolidColorBrush Color="Olive" />
+                </Rectangle.Fill>
+            </Rectangle></Button>
+        <ScrollBar HorizontalAlignment="Left" VerticalAlignment="Top"/>-->
+        <Image Source="http://img2.etsystatic.com/000/0/5134811/il_170x135.319993622.jpg"></Image>
+        <ComboBox x:Name="colorPicker" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <ComboBoxItem Background="AliceBlue">Alice Blue</ComboBoxItem>
+            <ComboBoxItem Background="AntiqueWhite">Antique White</ComboBoxItem>
+            <ComboBoxItem Background="Aqua">Aqua</ComboBoxItem>
+            <ComboBoxItem Background="Aquamarine">Aquamarine</ComboBoxItem>
+            <ComboBoxItem Background="Azure">Azure</ComboBoxItem>
+            <ComboBoxItem Background="Beige">Beige</ComboBoxItem>
+            <ComboBoxItem Background="Bisque">Bisque</ComboBoxItem>
+            <ComboBoxItem Background="Black">Black</ComboBoxItem>
+            <ComboBoxItem Background="BlanchedAlmond">BlanchedAlmond</ComboBoxItem>
+            <ComboBoxItem Background="Blue">Blue</ComboBoxItem>
+            <ComboBoxItem Background="Olive">Olive</ComboBoxItem>
+        </ComboBox>
+        <FlipView HorizontalAlignment="Left" VerticalAlignment="Top" SelectionChanged="FlipView_SelectionChanged_1"/>
+    </Grid>
+</Page>

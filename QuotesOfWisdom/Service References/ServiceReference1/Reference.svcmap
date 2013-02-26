@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="24ce4665-4d6c-4aaf-8347-9f68a8b4e5a7" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://apps.daksatech.com/quoteService/QService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="QService.wsdl" MetadataType="Wsdl" ID="f74eb2cd-4949-432e-a6e7-6457bf454cbd" SourceId="1" SourceUrl="http://apps.daksatech.com/quoteService/QService.svc?wsdl" />
+    <MetadataFile FileName="QService.xsd" MetadataType="Schema" ID="7025a9f4-91e2-4b08-8f6b-cf9d580389c9" SourceId="1" SourceUrl="http://apps.daksatech.com/quoteService/QService.svc?xsd=xsd1" />
+    <MetadataFile FileName="QService.disco" MetadataType="Disco" ID="54ec888a-4b28-4b39-a00c-988375707b1b" SourceId="1" SourceUrl="http://apps.daksatech.com/quoteService/QService.svc?disco" />
+    <MetadataFile FileName="QService1.xsd" MetadataType="Schema" ID="36569bc0-a5fb-4850-801c-098b5893b1fa" SourceId="1" SourceUrl="http://apps.daksatech.com/quoteService/QService.svc?xsd=xsd2" />
+    <MetadataFile FileName="QService2.xsd" MetadataType="Schema" ID="23050379-5666-4d2b-bca5-3bd9d3838e82" SourceId="1" SourceUrl="http://apps.daksatech.com/quoteService/QService.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

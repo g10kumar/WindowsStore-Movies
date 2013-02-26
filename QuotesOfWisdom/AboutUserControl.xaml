@@ -1,0 +1,64 @@
+﻿<UserControl
+    x:Class="QuotesOfWisdom.AboutUserControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:QuotesOfWisdom"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" LayoutUpdated="LayoutRoot_LayoutUpdated"
+    d:DesignHeight="600"
+    d:DesignWidth="400">
+    
+<Border BorderBrush="Black" BorderThickness="1,0,0,0">
+        <Grid x:Name="LayoutRoot" VerticalAlignment="Stretch">
+            <!-- Root grid definition -->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <!-- Header area for panel -->
+            <Grid Grid.Row="0">
+                <Grid Margin="30,32,17,13">
+                    <Grid.Transitions>
+                        <TransitionCollection>
+                            <EntranceThemeTransition FromHorizontalOffset="50" />
+                        </TransitionCollection>
+                    </Grid.Transitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="30" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Button Click="OnBackButtonClicked" Margin="0,3,0,0" Style="{StaticResource SettingsBackButtonStyle}" Grid.Column="0" HorizontalAlignment="Left" />
+                    <TextBlock Margin="10,0,0,0" Grid.Column="1" FontFamily="Segoe UI" FontWeight="SemiLight" FontSize="26.6667" Text="About" HorizontalAlignment="Left" />
+                </Grid>
+
+            </Grid>
+
+            <!-- Settings Panel Content -->
+            <Grid Grid.Row="1" Margin="28,12,23,0" VerticalAlignment="Top">
+                <Grid.Transitions>
+                    <TransitionCollection>
+                        <EntranceThemeTransition FromHorizontalOffset="120" />
+                    </TransitionCollection>
+                </Grid.Transitions>
+                <StackPanel Orientation="Vertical">
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock Text="Quotes of Wisdom features more than 50,000 quotes by about 7500 famous people organized in more than 750 categories." Style="{StaticResource AboutUsTextStyle}"  />
+
+                        <TextBlock Text="The app lets you browse for quotes by some of the most famous people in the history of the world. You can also browse for quotes by popular categories."  Style="{StaticResource AboutUsTextStyle}"></TextBlock>
+                        <TextBlock Text="For categories and people that are not featured, you can use the search option from the Search Charm." Style="{StaticResource AboutUsTextStyle}"></TextBlock>
+                        <TextBlock Text="You can share a quotation using the Share charm." Style="{StaticResource AboutUsTextStyle}"></TextBlock>
+                        <TextBlock Text="Add a quote to favorites by selectig 'Add to Fav' from the AppBar." Style="{StaticResource AboutUsTextStyle}"></TextBlock>
+                        <TextBlock Text="On the favorites page, you can select multiple favorites and select 'Delete' from AppBar to remove quotes from favorites." Style="{StaticResource AboutUsTextStyle}"></TextBlock>
+                        <TextBlock Text="Lastly you can customize the background of the app from the 'Settings' charm." Style="{StaticResource AboutUsTextStyle}"></TextBlock>
+                        <TextBlock Text="If you have a support issue or would like to suggest a feature, please email us at support@daksatech.com" Style="{StaticResource AboutUsTextStyle}"></TextBlock>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+
+        </Grid>
+    </Border>
+</UserControl>

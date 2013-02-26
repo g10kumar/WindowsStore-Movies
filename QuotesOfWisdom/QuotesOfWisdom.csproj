@@ -1,0 +1,424 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E3C91E99-6560-4F54-821D-C7CBDAD7AC25}</ProjectGuid>
+    <OutputType>AppContainerExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>QuotesOfWisdom</RootNamespace>
+    <AssemblyName>QuotesOfWisdom</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{BC8A1FFA-BEE3-4634-8014-F334798102B3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <PackageCertificateKeyFile>QuotesOfWisdom_StoreKey.pfx</PackageCertificateKeyFile>
+    <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
+    <AppxSymbolPackageEnabled>True</AppxSymbolPackageEnabled>
+    <PackageCertificateThumbprint>5E892962C77B1475EFB806F564329C4A54A8FA5A</PackageCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <OutputPath>bin\ARM\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutUserControl.xaml.cs">
+      <DependentUpon>AboutUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AdRotator.xaml.cs">
+      <DependentUpon>AdRotator.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BlankPage1.xaml.cs">
+      <DependentUpon>BlankPage1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Common\AppSettings.cs" />
+    <Compile Include="Common\SettingsFlyout.cs" />
+    <Compile Include="Common\Utilities.cs" />
+    <Compile Include="DataModel\Category.cs" />
+    <Compile Include="DataModel\Quotations.cs" />
+    <Compile Include="DataModel\Quotes.cs" />
+    <Compile Include="FavoriteQuotes.xaml.cs">
+      <DependentUpon>FavoriteQuotes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GroupedItemsPage.xaml.cs">
+      <DependentUpon>GroupedItemsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GroupDetailPage.xaml.cs">
+      <DependentUpon>GroupDetailPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ItemDetailPage.xaml.cs">
+      <DependentUpon>ItemDetailPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NotificationsExtensions\BadgeContent.cs" />
+    <Compile Include="NotificationsExtensions\Common.cs" />
+    <Compile Include="NotificationsExtensions\ContentInterfaces.cs" />
+    <Compile Include="NotificationsExtensions\TileContent.cs" />
+    <Compile Include="NotificationsExtensions\ToastContent.cs" />
+    <Compile Include="PrivacyControl.xaml.cs">
+      <DependentUpon>PrivacyControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="DataModel\SampleDataSource.cs" />
+    <Compile Include="Common\BindableBase.cs" />
+    <Compile Include="Common\BooleanToVisibilityConverter.cs" />
+    <Compile Include="Common\BooleanNegationConverter.cs" />
+    <Compile Include="Common\LayoutAwarePage.cs" />
+    <Compile Include="Common\RichTextColumns.cs" />
+    <Compile Include="Common\SuspensionManager.cs" />
+    <Compile Include="RandomQuotes.xaml.cs">
+      <DependentUpon>RandomQuotes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SearchResultsPage.xaml.cs">
+      <DependentUpon>SearchResultsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceReference1\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="SettingsUserControl.xaml.cs">
+      <DependentUpon>SettingsUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SQLite.cs" />
+    <Compile Include="SQLiteAsync.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+    <Page Include="AdRotator.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <None Include="Package.StoreAssociation.xml" />
+    <Page Include="RandomQuotes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FavoriteQuotes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Content Include="Assets\Ads\ShareAllBanner.png" />
+    <Content Include="Xml\Ads.xml" />
+    <Content Include="Xml\in-app-purchase.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Page Include="AboutUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Content Include="Assets\author\Abraham Lincoln.jpg" />
+    <Content Include="Assets\author\Albert Camus.JPG" />
+    <Content Include="Assets\author\Albert Einstein.jpg" />
+    <Content Include="Assets\author\Ambrose Bierce.jpg" />
+    <Content Include="Assets\author\American Indian Proverb.jpg" />
+    <Content Include="Assets\author\anonymous.jpg" />
+    <Content Include="Assets\author\Aristotle.jpg" />
+    <Content Include="Assets\author\Benjamin Disraeli.jpg" />
+    <Content Include="Assets\author\Benjamin Franklin.jpg" />
+    <Content Include="Assets\author\Bertrand Russell.jpg" />
+    <Content Include="Assets\author\Bible.jpg" />
+    <Content Include="Assets\author\charles caleb colton.jpg" />
+    <Content Include="Assets\author\Chinese Proverb.jpg" />
+    <Content Include="Assets\author\Edmund Burke.jpg" />
+    <Content Include="Assets\author\eric hoffer.jpg" />
+    <Content Include="Assets\author\fran.jpg" />
+    <Content Include="Assets\author\Francis Bacon.jpg" />
+    <Content Include="Assets\author\Friedrich Nietzsche.jpg" />
+    <Content Include="Assets\author\G. C. %28Georg Christoph%29 Lichtenberg.jpg" />
+    <Content Include="Assets\author\G. K. Chesterton.jpg" />
+    <Content Include="Assets\author\George Bernard Shaw.jpg" />
+    <Content Include="Assets\author\George Eliot.jpg" />
+    <Content Include="Assets\author\H. L. Mencken.jpg" />
+    <Content Include="Assets\author\Henry David Thoreau.jpg" />
+    <Content Include="Assets\author\Henry Miller.jpg" />
+    <Content Include="Assets\author\Henry Ward Beecher.jpg" />
+    <Content Include="Assets\author\Horace.jpg" />
+    <Content Include="Assets\author\Johann von Goethe.jpg" />
+    <Content Include="Assets\author\John Fitzgerald Kennedy.jpg" />
+    <Content Include="Assets\author\John Ruskin.jpg" />
+    <Content Include="Assets\author\Lord %28George Gordon%29 Byron.jpg" />
+    <Content Include="Assets\author\Mahatma Gandhi.jpg" />
+    <Content Include="Assets\author\Marcus Tullius Cicero.jpg" />
+    <Content Include="Assets\author\Mark Twain.jpg" />
+    <Content Include="Assets\author\Michel de Montaigne.jpg" />
+    <Content Include="Assets\author\Oliver Wendell Holmes.jpg" />
+    <Content Include="Assets\author\Oscar Wilde.jpg" />
+    <Content Include="Assets\author\proverb.jpg" />
+    <Content Include="Assets\author\Ralph Waldo Emerson.jpg" />
+    <Content Include="Assets\author\Samuel Butler.jpg" />
+    <Content Include="Assets\author\Samuel Johnson.jpg" />
+    <Content Include="Assets\author\Seneca %28Seneca the Elder%29.jpg" />
+    <Content Include="Assets\author\Sir Winston Churchill.jpg" />
+    <Content Include="Assets\author\Thomas Carlyle.jpg" />
+    <Content Include="Assets\author\Thomas Fuller.jpg" />
+    <Content Include="Assets\author\Thomas Jefferson.jpg" />
+    <Content Include="Assets\author\Voltaire %28Francois-Marie Arouet%29.jpg" />
+    <Content Include="Assets\author\Will Rogers.jpg" />
+    <Content Include="Assets\author\William Hazlitt.jpg" />
+    <Content Include="Assets\author\William James.jpg" />
+    <Content Include="Assets\author\William Shakespeare.jpg" />
+    <Content Include="Assets\background\drop1.jpg" />
+    <Content Include="Assets\background\drop1_sm.jpg" />
+    <Content Include="Assets\background\drop2.jpg" />
+    <Content Include="Assets\background\drop2_sm.jpg" />
+    <Content Include="Assets\background\drop3.jpg" />
+    <Content Include="Assets\background\drop3_sm.jpg" />
+    <Content Include="Assets\background\drop4.jpg" />
+    <Content Include="Assets\background\drop4_sm.jpg" />
+    <Content Include="Assets\background\paper1.jpg" />
+    <Content Include="Assets\background\paper1_sm.jpg" />
+    <Content Include="Assets\category\action%28s%29.jpg" />
+    <Content Include="Assets\category\adversity.jpg" />
+    <Content Include="Assets\category\age.jpg" />
+    <Content Include="Assets\category\america.jpg" />
+    <Content Include="Assets\category\art.jpg" />
+    <Content Include="Assets\category\authors  writing.jpg" />
+    <Content Include="Assets\category\belief.jpg" />
+    <Content Include="Assets\category\bravery.jpg" />
+    <Content Include="Assets\category\business.jpg" />
+    <Content Include="Assets\category\change.jpg" />
+    <Content Include="Assets\category\character.jpg" />
+    <Content Include="Assets\category\charity.jpg" />
+    <Content Include="Assets\category\children.jpg" />
+    <Content Include="Assets\category\criticism.jpg" />
+    <Content Include="Assets\category\death.jpg" />
+    <Content Include="Assets\category\default.jpg" />
+    <Content Include="Assets\category\dreams.jpg" />
+    <Content Include="Assets\category\dreams2.jpg" />
+    <Content Include="Assets\category\education.jpg" />
+    <Content Include="Assets\category\failure.jpg" />
+    <Content Include="Assets\category\faith.jpg" />
+    <Content Include="Assets\category\fear.jpg" />
+    <Content Include="Assets\category\freedom.jpg" />
+    <Content Include="Assets\category\friends.jpg" />
+    <Content Include="Assets\category\god.jpg" />
+    <Content Include="Assets\category\happiness.JPG" />
+    <Content Include="Assets\category\humanity.jpg" />
+    <Content Include="Assets\category\ideas.jpg" />
+    <Content Include="Assets\category\identity.jpg" />
+    <Content Include="Assets\category\Knowledge.jpg" />
+    <Content Include="Assets\category\leadership.jpg" />
+    <Content Include="Assets\category\life.jpg" />
+    <Content Include="Assets\category\love.jpg" />
+    <Content Include="Assets\category\love2.jpg" />
+    <Content Include="Assets\category\love3.jpg" />
+    <Content Include="Assets\category\marriage.jpg" />
+    <Content Include="Assets\category\Men  Women.jpg" />
+    <Content Include="Assets\category\mistakes.jpg" />
+    <Content Include="Assets\category\money.jpg" />
+    <Content Include="Assets\category\music.jpg" />
+    <Content Include="Assets\category\politics.jpg" />
+    <Content Include="Assets\category\power.jpg" />
+    <Content Include="Assets\category\quotecategory.jpg" />
+    <Content Include="Assets\category\reading.jpg" />
+    <Content Include="Assets\category\religion.jpg" />
+    <Content Include="Assets\category\science.jpg" />
+    <Content Include="Assets\category\success  failure.jpg" />
+    <Content Include="Assets\category\surgery.jpg" />
+    <Content Include="Assets\category\thought.jpg" />
+    <Content Include="Assets\category\time.jpg" />
+    <Content Include="Assets\category\truth.JPG" />
+    <Content Include="Assets\category\war.jpg" />
+    <Content Include="Assets\category\wealth.jpg" />
+    <Content Include="Assets\category\wisdom.jpg" />
+    <Content Include="Assets\category\women.jpg" />
+    <None Include="Assets\background\Thumbs.db" />
+    <None Include="packages.config" />
+    <None Include="Service References\ServiceReference1\QService.wsdl" />
+    <None Include="Service References\ServiceReference1\QService.xsd" />
+    <None Include="Service References\ServiceReference1\QService1.xsd" />
+    <None Include="Service References\ServiceReference1\QService2.xsd" />
+    <Page Include="SearchResultsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <None Include="Service References\ServiceReference1\QService.disco" />
+    <None Include="Service References\ServiceReference1\configuration91.svcinfo" />
+    <None Include="Service References\ServiceReference1\configuration.svcinfo" />
+    <None Include="Service References\ServiceReference1\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Assets\category\work.jpg" />
+    <Content Include="Assets\quotes150x150.png" />
+    <Content Include="Assets\quotes24x24.png" />
+    <Content Include="Assets\quotes30x30_transparent.png" />
+    <Content Include="Assets\quotes310x150.png" />
+    <Content Include="Assets\SplashScreen.scale-100.png" />
+    <Content Include="Assets\SplashScreen.scale-140.png" />
+    <Content Include="Assets\SplashScreen.scale-180.png" />
+    <Page Include="SettingsUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BlankPage1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PrivacyControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Content Include="Xml\Author.xml" />
+    <Content Include="Xml\AuthorShort.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Xml\Category.xml" />
+    <None Include="Common\ReadMe.txt" />
+    <None Include="Properties\ServiceReferences.Designer.ClientConfig" />
+    <None Include="QuotesOfWisdom_TemporaryKey.pfx" />
+    <Content Include="thefile2.db" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\Logo.png" />
+    <Content Include="Assets\SmallLogo.png" />
+    <Content Include="Assets\SplashScreen.png" />
+    <Content Include="Assets\StoreLogo.png" />
+    <Content Include="Assets\LightGray.png" />
+    <Content Include="Assets\MediumGray.png" />
+    <Content Include="Assets\DarkGray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="Common\StandardStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GroupedItemsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GroupDetailPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ItemDetailPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ServiceReference1\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Dlls\" />
+  </ItemGroup>
+  <ItemGroup>
+    <SDKReference Include="Microsoft.VCLibs, Version=11.0">
+      <Name>Microsoft Visual C++ Runtime Package</Name>
+    </SDKReference>
+    <SDKReference Include="MSAdvertisingXaml, Version=6.1">
+      <Name>Microsoft Advertising SDK for Windows 8 %28Xaml%29</Name>
+    </SDKReference>
+    <SDKReference Include="SQLite.WinRT, Version=3.7.14.1">
+      <Name>SQLite for Windows Runtime</Name>
+    </SDKReference>
+    <SDKReference Include="SyncfusionControls, Version=10.3.0.65">
+      <Name>Syncfusion Controls for WinRT XAML</Name>
+    </SDKReference>
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '11.0' ">
+    <VisualStudioVersion>11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

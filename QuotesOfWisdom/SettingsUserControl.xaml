@@ -1,0 +1,149 @@
+﻿<UserControl
+    x:Class="QuotesOfWisdom.SettingsUserControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:QuotesOfWisdom"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:as="using:QuotesOfWisdom.Common"
+    mc:Ignorable="d" LayoutUpdated="LayoutRoot_LayoutUpdated"
+    d:DesignHeight="740"
+    d:DesignWidth="400">
+
+    <UserControl.Resources>
+        <as:AppSettings x:Key="appSettings"></as:AppSettings>
+    </UserControl.Resources>
+
+    <Border BorderBrush="Black" BorderThickness="1,0,0,0">
+        <Grid x:Name="LayoutRoot" Height="1000" VerticalAlignment="Stretch">
+            <!-- Root grid definition -->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80" />
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="120"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <!-- Header area for panel -->
+            <Grid Grid.Row="0" Grid.ColumnSpan="2">
+                <Grid Margin="30,32,17,13">
+                    <Grid.Transitions>
+                        <TransitionCollection>
+                            <EntranceThemeTransition FromHorizontalOffset="50" />
+                        </TransitionCollection>
+                    </Grid.Transitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="30" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    
+                    <Button Click="OnBackButtonClicked" Margin="0,3,0,0" Grid.Column="0" Style="{StaticResource SettingsBackButtonStyle}" HorizontalAlignment="Left" />
+                    <TextBlock Margin="10,0,0,0" Grid.Column="1" FontFamily="Segoe UI" FontWeight="SemiLight" FontSize="26.6667" Text="Settings" HorizontalAlignment="Left" />
+                    
+                </Grid>
+
+            </Grid>
+
+            <!-- Settings Panel Content -->
+            <!--<Rectangle Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Top" Height="100" Width="150" Margin="0,0,0,0">
+                <Rectangle.Fill>
+                    <SolidColorBrush Color="Blue" />
+                </Rectangle.Fill>
+            </Rectangle>
+            <Rectangle Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Top" Height="100" Width="150" Margin="0,0,0,0">
+                <Rectangle.Fill>
+                    <SolidColorBrush Color="Olive" />
+                </Rectangle.Fill>
+            </Rectangle>
+            <Image Grid.Row="3" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Top" Source="Assets/background/drop1_sm.jpg" Height="100" Width="150" Margin="0,0,0,0" />
+            <Image Grid.Row="4" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Top" Source="Assets/background/drop2_sm.jpg" Height="100" Width="150" Margin="0,0,0,0" />
+            <Image Grid.Row="5" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Top" Source="Assets/background/drop3_sm.jpg" Height="100" Width="150"  Margin="0,0,0,0" />
+            <Image Grid.Row="6" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Top" Source="Assets/background/drop4_sm.jpg" Height="100" Width="150" Margin="0,0,0,0" />
+            <Image Grid.Row="7" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Top" Source="Assets/background/paper1_sm.jpg" Height="100" Width="150" Margin="0,0,0,0" />
+
+            <RadioButton Grid.Row="1" Grid.Column="1" Content="Blue" Height="80" HorizontalAlignment="Left" Margin="0,0,0,0" x:Name="radioButton0" VerticalAlignment="Top" GroupName="BkgImageSouce" Click="radioButton0_Checked"/>
+            <RadioButton Grid.Row="2" Grid.Column="1" Content="Olive" Height="80" HorizontalAlignment="Left" Margin="0,0,0,0" x:Name="radioButton1" VerticalAlignment="Top" GroupName="BkgImageSouce" Click="radioButton1_Checked" />
+            <RadioButton Grid.Row="3" Grid.Column="1" Content="Rose Petals" Height="80" HorizontalAlignment="Left" Margin="0,0,0,0" x:Name="radioButton2" VerticalAlignment="Top" GroupName="BkgImageSouce" Click="radioButton2_Checked" />
+            <RadioButton Grid.Row="4" Grid.Column="1" Content="Beer Mug" Height="80" HorizontalAlignment="Left" Margin="0,0,0,0" x:Name="radioButton3" VerticalAlignment="Top" GroupName="BkgImageSouce" Click="radioButton3_Checked"/>
+            <RadioButton Grid.Row="5" Grid.Column="1" Content="Leaf" Height="80" HorizontalAlignment="Left" Margin="0,0,0,0" x:Name="radioButton4" VerticalAlignment="Top" GroupName="BkgImageSouce" Click="radioButton4_Checked" />
+            <RadioButton Grid.Row="6" Grid.Column="1" Content="Tulip Petal" Height="80" HorizontalAlignment="Left" Margin="0,0,0,0" x:Name="radioButton5" VerticalAlignment="Top" GroupName="BkgImageSouce" Click="radioButton5_Checked" />
+            <RadioButton Grid.Row="7" Grid.Column="1" Content="Red Paper" Height="80" HorizontalAlignment="Left" Margin="0,0,0,0" x:Name="radioButton6" VerticalAlignment="Top" GroupName="BkgImageSouce" Click="radioButton6_Checked" />-->
+            <!--<Button x:Name="btnBlue" Click="btnBlue_Click" BorderBrush="Transparent" Background="Transparent" Grid.ColumnSpan="2" Grid.Row="1" Grid.Column="0">
+                <Rectangle HorizontalAlignment="Center" VerticalAlignment="Top" Height="100" Width="150" Margin="0,0,0,0">
+                    <Rectangle.Fill>
+                        <SolidColorBrush Color="Blue" />
+                    </Rectangle.Fill>
+                </Rectangle>
+            </Button>
+            <Button x:Name="btnOlive" Click="btnOlive_Click" BorderBrush="Transparent" Background="Transparent" Grid.ColumnSpan="2" Grid.Row="2" Grid.Column="0">
+                <Rectangle HorizontalAlignment="Center" VerticalAlignment="Top" Height="100" Width="150" Margin="0,0,0,0">
+                    <Rectangle.Fill>
+                        <SolidColorBrush Color="Olive" />
+                    </Rectangle.Fill>
+                </Rectangle>
+            </Button>-->
+            <StackPanel Orientation="Vertical" Grid.Row="1">
+                <TextBlock Margin="10,0,0,0" FontFamily="Segoe UI" FontWeight="SemiLight" FontSize="18" Text="Change Background" HorizontalAlignment="Left" />
+
+                <ComboBox x:Name="colorPicker" Margin="20,0,0,0" Grid.Column="0" Width="150" HorizontalAlignment="Left" VerticalAlignment="Top" SelectionChanged="colorPicker_SelectionChanged" ItemContainerStyle="{StaticResource colorComboBox}">
+                    <ComboBoxItem Background="#f2b100"></ComboBoxItem>
+                    <ComboBoxItem Background="#76b800"></ComboBoxItem>
+                    <ComboBoxItem Background="#2471ea"></ComboBoxItem>
+                    <ComboBoxItem Background="#ac0f3b"></ComboBoxItem>
+                    <ComboBoxItem Background="#632f00"></ComboBoxItem>
+                    <ComboBoxItem Background="#ae1c00"></ComboBoxItem>
+                    <ComboBoxItem Background="#c0004e"></ComboBoxItem>
+                    <ComboBoxItem Background="#7100ab"></ComboBoxItem>
+                    <ComboBoxItem Background="#4516b3"></ComboBoxItem>
+                    <ComboBoxItem Background="#0069c0"></ComboBoxItem>
+                    <ComboBoxItem Background="#004d60"></ComboBoxItem>
+                    <ComboBoxItem Background="#179700"></ComboBoxItem>
+                    <ComboBoxItem Background="#00c13f"></ComboBoxItem>
+                    <ComboBoxItem Background="#fd961b"></ComboBoxItem>
+                    <ComboBoxItem Background="#fe2d11"></ComboBoxItem>
+                    <ComboBoxItem Background="#fe1c76"></ComboBoxItem>
+                    <ComboBoxItem Background="#a83efd"></ComboBoxItem>
+                    <ComboBoxItem Background="#1dacfd"></ComboBoxItem>
+                    <ComboBoxItem Background="#55c4fe"></ComboBoxItem>
+                    <ComboBoxItem Background="#00d7cb"></ComboBoxItem>
+                    <ComboBoxItem Background="#90d000"></ComboBoxItem>
+                    <ComboBoxItem Background="#dfb500"></ComboBoxItem>
+                    <ComboBoxItem Background="#e064b7"></ComboBoxItem>
+                    <ComboBoxItem Background="#00a4a4"></ComboBoxItem>
+                    <ComboBoxItem Background="#fd7b21"></ComboBoxItem>
+                </ComboBox>
+            </StackPanel>
+
+            <Button x:Name="btnRosePetals" Click="btnRosePetals_Click" BorderBrush="Transparent" Background="Transparent" Grid.ColumnSpan="2" Grid.Row="2" Grid.Column="0">
+                <Image  HorizontalAlignment="Center" VerticalAlignment="Top" Source="Assets/background/drop1_sm.jpg" Height="100" Width="150" Margin="0,0,0,0" />
+            </Button>
+            <Button x:Name="btnBeerMug" Click="btnBeerMug_Click" BorderBrush="Transparent" Background="Transparent" Grid.ColumnSpan="2" Grid.Row="3" Grid.Column="0">
+                <Image HorizontalAlignment="Center" VerticalAlignment="Top" Source="Assets/background/drop2_sm.jpg" Height="100" Width="150" Margin="0,0,0,0" />
+            </Button>
+            <Button x:Name="btnLeaf" Click="btnLeaf_Click" BorderBrush="Transparent" Background="Transparent" Grid.ColumnSpan="2" Grid.Row="4" Grid.Column="0">
+                <Image  HorizontalAlignment="Center" VerticalAlignment="Top" Source="Assets/background/drop3_sm.jpg" Height="100" Width="150"  Margin="0,0,0,0" />
+            </Button>
+            <Button x:Name="btnTulipPetal" Click="btnTulipPetal_Click" BorderBrush="Transparent" Background="Transparent" Grid.ColumnSpan="2" Grid.Row="5" Grid.Column="0">
+                <Image  HorizontalAlignment="Center" VerticalAlignment="Top" Source="Assets/background/drop4_sm.jpg" Height="100" Width="150" Margin="0,0,0,0" />
+            </Button>
+            <Button x:Name="btnRedPaper" Click="btnRedPaper_Click" BorderBrush="Transparent" Background="Transparent" Grid.ColumnSpan="2" Grid.Row="6" Grid.Column="0">
+                <Image HorizontalAlignment="Center" VerticalAlignment="Top" Source="Assets/background/paper1_sm.jpg" Height="100" Width="150" Margin="0,0,0,0" />
+            </Button>
+            <!--<Button Content="Select Background Image" x:Name="btnCustomImage" Click="btnCustomImage_Click" BorderBrush="White" Grid.ColumnSpan="2" Background="Transparent" Grid.Row="7" Grid.Column="0" Margin="16,21,0,21" RenderTransformOrigin="0.784,0.539" />-->
+            <!--</Grid>-->
+            <TextBlock Grid.Row="7" Grid.Column="0" Text="Auto-play Time (seconds)" TextWrapping="Wrap" Style="{StaticResource SettingsTextStyle}"></TextBlock>
+            <Slider Name="autoPlaySlider" Grid.Row="7" Grid.Column="1" Margin="20,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Left" Minimum="5" Maximum="300" Width="200" Value="{Binding Source={StaticResource appSettings}, Path=AutoPlay, Mode=TwoWay}"/>
+        </Grid>
+    </Border>
+</UserControl>

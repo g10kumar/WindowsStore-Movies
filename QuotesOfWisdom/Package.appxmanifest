@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
+  <Identity Name="DaksaTech.QuotesofWisdom" Publisher="CN=42750936-DE0C-415B-9312-C587E65FD9EC" Version="1.0.0.30" />
+  <Properties>
+    <DisplayName>Quotes of Wisdom</DisplayName>
+    <PublisherDisplayName>DaksaTech</PublisherDisplayName>
+    <Logo>Assets\StoreLogo.png</Logo>
+  </Properties>
+  <Prerequisites>
+    <OSMinVersion>6.2.1</OSMinVersion>
+    <OSMaxVersionTested>6.2.1</OSMaxVersionTested>
+  </Prerequisites>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="QuotesOfWisdom.App">
+      <VisualElements DisplayName="Quotes of Wisdom" Logo="Assets\quotes150x150.png" SmallLogo="Assets\quotes30x30_transparent.png" Description="Quotes Of Wisdom" ForegroundText="light" BackgroundColor="#034c8f">
+        <DefaultTile ShowName="allLogos" WideLogo="Assets\quotes310x150.png" ShortName="Quotations" />
+        <SplashScreen Image="Assets\SplashScreen.png" BackgroundColor="#ffffff" />
+      </VisualElements>
+      <Extensions>
+        <Extension Category="windows.search" />
+      </Extensions>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="internetClient" />
+  </Capabilities>
+</Package>
