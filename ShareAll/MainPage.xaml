@@ -1,0 +1,203 @@
+﻿<common:LayoutAwarePage
+    x:Name="pageRoot"
+    x:Class="ShareAll.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ShareAll"
+    xmlns:common="using:ShareAll.Common"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}" ScrollViewer.HorizontalScrollBarVisibility="Visible" x:Name="mainGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="140"/>
+            <!--<RowDefinition Height="120"/>
+            <RowDefinition Height="120"/>
+            <RowDefinition Height="120"/>-->
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="140"/>
+            <ColumnDefinition Width="550"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.ColumnSpan="3" Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="backButton" Click="GoBack" IsEnabled="{Binding Frame.CanGoBack, ElementName=pageRoot}" Style="{StaticResource BackButtonStyle}"/>
+            <TextBlock x:Name="pageTitle" Grid.Column="1" Text="{StaticResource AppName}" Style="{StaticResource PageHeaderTextStyle}"/>
+        </Grid>
+        <ScrollViewer HorizontalScrollBarVisibility="Visible" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="1">
+        <StackPanel x:Name="stackPanelFull" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="1" Orientation="Horizontal">
+                <StackPanel  Grid.Column="1" Grid.Row="1" Orientation="Horizontal">
+                    <StackPanel Orientation="Vertical" VerticalAlignment="Top"  Margin="10,10,10,10">
+                        <TextBlock Style="{StaticResource AboutText}" Text="'Share All' allows you to share stuff from any app to multiple social platforms with one click. To start sharing, configure your Facebook and Twitter accounts by clicking on the buttons to the right. You can also configure from the 'Share All' Share Charm." />
+                        <TextBlock Style="{StaticResource AboutText}" Margin="0,20,0,0" Text="How to Share:" FontSize="24" />
+                        <TextBlock Style="{StaticResource AboutText}" Text="From any app, activate the 'Share' charm. Select 'Share All' from the many options." />
+                        <TextBlock Style="{StaticResource AboutText}" Text="If you have not already configured your accounts, you can do so by clicking the blue Settings icon." />
+                        <TextBlock Style="{StaticResource AboutText}" Text="Inside the 'Share All' charm, ensure that the Facebook title, URLs, message and Twitter message is fine. Shorten the Twitter message if needed." />
+                        <TextBlock Style="{StaticResource AboutText}" Text="Click on 'Share' button." />
+                        <TextBlock Style="{StaticResource AboutText}" Margin="0,20,0,0" Text="How to Open Share Charm:" FontSize="24" />
+                        <TextBlock Style="{StaticResource AboutText}" Text="Swipe in from the right edge of the screen, and then tap Share. (If you're using a mouse, point to the upper-right corner of the screen, move the mouse pointer down, and then click Share.)" />
+                        <Button Content="Share Now" Background="#FF15BBF9" Click="Button_Click_1" Margin="0,50,0,0" HorizontalAlignment="Center" />
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Grid.Column="2" Grid.Row="1" Orientation="Vertical" ScrollViewer.HorizontalScrollBarVisibility="Visible">
+
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel Orientation="Vertical" VerticalAlignment="Top"  Margin="10,10,10,10">
+                            <Button x:Name="btnConfigureFacebook" Height="200" BorderThickness="0" Width="200"  HorizontalAlignment="Center" VerticalAlignment="Top" Click="btnConfigureFacebook_Click" >
+                                <Image Source="Assets/Facebook_400x400.png" />
+                            </Button>
+                            <TextBlock Text="Configure Facebook" FontSize="20" HorizontalAlignment="Center" />
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical"  VerticalAlignment="Top"  Margin="10,10,10,10">
+                            <Button x:Name="btnConfigureTwitter" Height="200" Width="200" BorderThickness="0" HorizontalAlignment="Center" VerticalAlignment="Top" Click="btnConfigureTwitter_Click" >
+                                <Image Source="Assets/Twitter_400x400.png" />
+                            </Button>
+                            <TextBlock Text="Configure Twitter" FontSize="20" HorizontalAlignment="Center" />
+                        </StackPanel>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel Orientation="Vertical" VerticalAlignment="Top"  Margin="10,10,10,0">
+                            <Button x:Name="btnConfigureEmail" Height="200" BorderThickness="0" Width="200"  HorizontalAlignment="Center" VerticalAlignment="Top" Click="btnConfigureEmail_Click" >
+                                <Image Source="Assets/eMail_200x200.png" />
+                            </Button>
+                            <TextBlock Text="Configure Email" FontSize="20" HorizontalAlignment="Center" />
+                        </StackPanel>
+                    </StackPanel>
+
+                </StackPanel>
+        </StackPanel>
+        </ScrollViewer>
+        <Popup x:Name="myPopup" Margin="10,10,10,0" Loaded="myPopup_Loaded_1" >
+            <Border CornerRadius="10" Background="White" BorderThickness="2" BorderBrush="Black" Padding="2">
+                <StackPanel Margin="10" Height="300" Orientation="Vertical">
+                    <StackPanel>
+                        <TextBlock Text="Email Settings" Style="{StaticResource SubheaderTextStyle}" FontSize="20" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                        <TextBlock x:Name="txtDomain" Text="Domain" Style="{StaticResource BasicTextStyle}" Width="70"/>
+                        <ComboBox x:Name="domainPicker" Margin="20,0,0,0" Grid.Row="2" Grid.Column="1" Width="150" HorizontalAlignment="Left" VerticalAlignment="Center">
+                            <ComboBoxItem Content="Hotmail"></ComboBoxItem>
+                            <ComboBoxItem Content="Google"></ComboBoxItem>
+                            <ComboBoxItem Content="Yahoo"></ComboBoxItem>
+                        </ComboBox>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                        <TextBlock x:Name="txtUserName" Text="Email" Style="{StaticResource BasicTextStyle}" Width="70"/>
+                        <TextBox x:Name="txtEmail" Width="150" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30" Margin="20,0,0,0"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                        <TextBlock x:Name="Password" Text="Password" Style="{StaticResource BasicTextStyle}" Width="70"/>
+                        <PasswordBox x:Name="txtPassword" Width="150" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30" Margin="20,0,0,0"></PasswordBox>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                        <TextBlock x:Name="VerifyPassword" Text="Verify Password" Style="{StaticResource BasicTextStyle}" Width="70"/>
+                        <PasswordBox x:Name="txtVerifyPassword" Width="150" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30" Margin="20,0,0,0"></PasswordBox>
+                    </StackPanel>
+                    <StackPanel Height="10">
+
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Button Background="#FF15BBF9" Grid.Row="7" x:Name="btnSave" Grid.ColumnSpan="2" Content="SAVE" Height="40" Width="119" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="12" Click="btnSave_Click" >
+                        </Button>
+                        <Button Background="#FF15BBF9" Grid.Row="7" x:Name="btnClose" Grid.ColumnSpan="2" Content="Close" Height="40" Width="119" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="12" Click="btnClose_Click" >
+                        </Button>
+                    </StackPanel>
+
+                    <StackPanel Margin="0,10,0,0">
+                        <TextBlock x:Name="EmailConfigMessage" Width="250"  Foreground="Red" TextWrapping="Wrap" Text="" Style="{StaticResource BasicTextStyle}" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+        </Popup>
+
+
+        <StackPanel Visibility="Collapsed" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="1" Width="300" Margin="-300,0,0,0" x:Name="stackPanelSnapped" Orientation="Vertical">
+            <!--<ScrollViewer x:Name="stackPanelSnapped" Visibility="Collapsed" VerticalScrollMode="Enabled" VerticalScrollBarVisibility="Auto" Grid.ColumnSpan="3"  Grid.Column="0" Grid.Row="1" VerticalAlignment="Top" Height="1200">-->
+            <StackPanel Orientation="Vertical"  VerticalAlignment="Top" Height="1600">
+                <StackPanel Orientation="Vertical" VerticalAlignment="Top">
+                    <TextBlock Style="{StaticResource AboutTextSnapped}" Text="'Share All' allows you to share stuff from any app to multiple social platforms with one click. To start sharing, configure your Facebook and Twitter accounts by clicking on the buttons to the right. You can also configure from the 'Share All' Share Charm." />
+                    <!--<TextBlock Style="{StaticResource AboutTextSnapped}" Margin="0,20,0,0" Text="How to Share:" FontSize="24" />
+                        <TextBlock Style="{StaticResource AboutTextSnapped}" Text="From any app, activate the 'Share' charm. Select 'Share All' from the many options." />
+                        <TextBlock Style="{StaticResource AboutTextSnapped}" Text="If you have not already configured your accounts, you can do so by clicking the blue Settings icon." />
+                        <TextBlock Style="{StaticResource AboutTextSnapped}" Text="Inside the 'Share All' charm, ensure that the Facebook title, URLs, message and Twitter message is fine. Shorten the Twitter message if needed." />
+                        <TextBlock Style="{StaticResource AboutTextSnapped}" Text="Click on 'Share' button." />
+                        <TextBlock Style="{StaticResource AboutTextSnapped}" Margin="0,20,0,0" Text="How to Open Share Charm:" FontSize="24" />
+                        <TextBlock Style="{StaticResource AboutTextSnapped}" Text="Swipe in from the right edge of the screen, and then tap Share. (If you're using a mouse, point to the upper-right corner of the screen, move the mouse pointer down, and then click Share.)" />-->
+                    <Button Visibility="Collapsed" Content="Share Now" Background="#FF15BBF9" Click="Button_Click_1" HorizontalAlignment="Center" />
+                </StackPanel>
+                <StackPanel Orientation="Vertical" VerticalAlignment="Top">
+                    <Button x:Name="btnConfigureFacebookSnapped" Height="100" BorderThickness="0" Width="100"  HorizontalAlignment="Center" VerticalAlignment="Top" Click="btnConfigureFacebook_Click" >
+                        <Image Source="Assets/Facebook_400x400.png" />
+                    </Button>
+                    <TextBlock Text="Configure Facebook" FontSize="18" HorizontalAlignment="Center" />
+                </StackPanel>
+                <StackPanel Orientation="Vertical" VerticalAlignment="Top">
+                    <Button x:Name="btnConfigureTwitterSnapped" Height="100" Width="100" BorderThickness="0" HorizontalAlignment="Center" VerticalAlignment="Top" Click="btnConfigureTwitter_Click" >
+                        <Image Source="Assets/Twitter_400x400.png" />
+                    </Button>
+                    <TextBlock Text="Configure Twitter" FontSize="18" HorizontalAlignment="Center" />
+                </StackPanel>
+                <StackPanel Orientation="Vertical" VerticalAlignment="Top">
+                    <Button x:Name="btnConfigureEmailSnapped" Height="100" Width="100" BorderThickness="0" HorizontalAlignment="Center" VerticalAlignment="Top" Click="btnConfigureEmail_Click" >
+                        <Image Source="Assets/eMail_200x200.png" />
+                    </Button>
+                    <TextBlock Text="Configure Email" FontSize="18" HorizontalAlignment="Center" />
+                </StackPanel>
+            </StackPanel>
+            <!--</ScrollViewer>-->
+        </StackPanel>
+        <!--<StackPanel Orientation="Vertical" Grid.Column="1" Grid.Row="3" VerticalAlignment="Top"  Margin="10,10,10,10">
+            <Button x:Name="btnConfigureEmail" Content="Configure Email" Height="100" Width="315" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="20" Click="btnConfigureEmail_Click" >
+            </Button>
+        </StackPanel>-->
+        <VisualStateManager.VisualStateGroups>
+
+            <!-- Visual states reflect the application's view state -->
+            <VisualStateGroup x:Name="ApplicationViewStates">
+                <VisualState x:Name="FullScreenLandscape"/>
+                <VisualState x:Name="Filled"/>
+
+                <!-- The entire page respects the narrower 100-pixel margin convention for portrait -->
+                <VisualState x:Name="FullScreenPortrait">
+                    <Storyboard>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="backButton" Storyboard.TargetProperty="Style">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource PortraitBackButtonStyle}"/>
+                        </ObjectAnimationUsingKeyFrames>
+                    </Storyboard>
+                </VisualState>
+
+                <!--
+                    The back button and title have different styles when snapped, and the list representation is substituted
+                    for the grid displayed in all other view states 
+                -->
+                <VisualState x:Name="Snapped">
+                    <Storyboard>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="backButton" Storyboard.TargetProperty="Style">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource SnappedBackButtonStyle}"/>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="pageTitle" Storyboard.TargetProperty="Style">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource SnappedPageHeaderTextStyle}"/>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="stackPanelSnapped" Storyboard.TargetProperty="Visibility">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="Visible"/>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="stackPanelFull" Storyboard.TargetProperty="Visibility">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed"/>
+                        </ObjectAnimationUsingKeyFrames>
+
+
+                    </Storyboard>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+    </Grid>
+</common:LayoutAwarePage>

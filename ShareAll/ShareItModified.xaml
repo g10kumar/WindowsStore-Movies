@@ -1,0 +1,145 @@
+﻿<Page
+    x:Class="ShareAll.ShareItModified"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ShareAll"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto" MinHeight="0" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" MinHeight="0" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" MinHeight="0" />
+            <RowDefinition Height="Auto" MinHeight="0" />
+            <RowDefinition Height="Auto" MinHeight="0" />
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="30"/>
+            <ColumnDefinition Width="180"/>
+            <ColumnDefinition Width="180"/>
+            <ColumnDefinition Width="35"/>
+            <ColumnDefinition Width="50"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Row="1" Margin="10,50,0,0" Background="#3b5998" Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="6">
+            <StackPanel>
+                <CheckBox x:Name="chkFacebook" IsChecked="True" Grid.Column="1" Grid.Row="1" Margin="-2,0,0,0" Padding="0" BorderThickness="0"></CheckBox>
+                <TextBlock Text="Facebook" VerticalAlignment="Center" FontSize="22" Margin="30,-30,0,0" Grid.Row="1" Grid.Column="2"/>
+                <Button Grid.Row="1" Grid.Column="3" x:Name="btnFBConfigure" Margin="360,-30,0,0" VerticalAlignment="Center" Click="btnFBConfigure_Click" Padding="2" BorderThickness="0">
+                    <Image Source="/Assets/Settings.png" Stretch="None"/>
+                </Button>
+                <Button Grid.Row="1" Grid.Column="4" x:Name="btnFacebook" Margin="395,-34,0,0" VerticalAlignment="Center" Click="btnFacebook_Click" Padding="2" BorderThickness="0" >
+                    <Image x:Name="imgFB" Source="/Assets/collapseBox.png" Stretch="None" HorizontalAlignment="Center" />
+                </Button>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" x:Name="stackFacebook">
+                <TextBox Text="Message" x:Name="FBMessage" Width="425" HorizontalAlignment="Left" VerticalAlignment="Top" Height="80" TextWrapping="Wrap" Margin="0,5,0,5"></TextBox>
+                <TextBox Text="Link Title" x:Name="FBTitle" Width="425" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30" Margin="0,5,0,5"></TextBox>
+                <TextBox Text="Link" x:Name="FBLinktoShare" GotFocus="FBLinktoShare_GotFocus_1" Width="425" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30" Margin="0,5,0,5"></TextBox>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Grid.Row="3" Margin="10,10,0,0" Background="#00c0f7" Grid.RowSpan="2"  Grid.Column="1" Grid.ColumnSpan="6">
+            <StackPanel>
+                <CheckBox x:Name="chkTweet" IsChecked="True" Grid.Column="1" Grid.Row="3" Margin="-2,0,0,0" Padding="0" BorderThickness="0"></CheckBox>
+                <TextBlock Text="Twitter" VerticalAlignment="Center" FontSize="22" Margin="30,-30,0,0" Grid.Row="3" Grid.Column="2"/>
+                <Button Grid.Row="3" Grid.Column="3" x:Name="btnTweetConfigure" Margin="360,-30,0,0" VerticalAlignment="Center" Click="btnTweetConfigure_Click" Padding="2" BorderThickness="0">
+                    <Image Source="/Assets/Settings.png"  Stretch="None"/>
+                </Button>
+                <Button Grid.Row="3" Grid.Column="4" x:Name="btnTweet" Margin="395,-34,0,0"  VerticalAlignment="Center" Click="btnTweet_Click" Padding="2" BorderThickness="0">
+                    <Image x:Name="imgTwitter" Source="/Assets/collapseBox.png" Stretch="None" HorizontalAlignment="Center"  />
+                </Button>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" x:Name="stackTweet">
+                <TextBox Text="Twitter Message" x:Name="TweetMessage" Width="425" HorizontalAlignment="Left" VerticalAlignment="Top" KeyUp="TweetMessage_KeyUp" Height="80" TextWrapping="Wrap" Margin="0,5,0,5"></TextBox>
+                <StackPanel x:Name="stackCount" Orientation="Horizontal" Margin="290,-5,0,0">
+                    <TextBlock Width="110" Text="Character Count: "  Style="{StaticResource BasicTextStyle}"></TextBlock>
+                    <TextBlock x:Name="txtCount" Text="140" Style="{StaticResource BasicTextStyle}" Width="30"/>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Grid.Row="5" Margin="10,10,0,0" Background="#00a0b0" Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="6">
+            <StackPanel>
+                <CheckBox x:Name="chkEmail" IsChecked="True" Grid.Column="1" Grid.Row="5" Margin="-2,0,0,0" Padding="0"></CheckBox>
+                <TextBlock Text="Email" VerticalAlignment="Center" FontSize="22" Margin="30,-30,0,0" Grid.Column="2" Grid.Row="5"></TextBlock>
+                <Button Grid.Column="3" Grid.Row="5" x:Name="btnEmailConfigure" Margin="360,-30,0,0"  Click="btnEmailConfigure_Click" VerticalAlignment="Center" Padding="2" BorderThickness="0">
+                    <Image Source="/Assets/Settings.png" Stretch="None" />
+                </Button>
+                <Button Grid.Column="4" Grid.Row="5" x:Name="btnEmail" Margin="395,-34,0,0"  VerticalAlignment="Center" Click="btnEmail_Click_1" Padding="2" BorderThickness="0">
+                    <Image x:Name="imgEmail" Source="/Assets/collapseBox.png" Stretch="None" HorizontalAlignment="Center"  />
+                </Button>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" x:Name="stackEmail">
+                <TextBox x:Name="EmailTo" Text="To Emails (separate with comma, space or semi colon)" Width="425" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30" Margin="0,5,0,5" IsSpellCheckEnabled="False" InputScope="EmailSmtpAddress" GotFocus="EmailTo_GotFocus_1" LostFocus="EmailTo_LostFocus_1"></TextBox>
+                <TextBox x:Name="EmailSubject" Width="425" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30" Margin="0,5,0,5"></TextBox>
+                <TextBox x:Name="EmailMessage" Width="425" HorizontalAlignment="Left" VerticalAlignment="Top" Height="80" TextWrapping="Wrap" Margin="0,5,0,5"></TextBox>
+            </StackPanel>
+        </StackPanel>
+        <Popup x:Name="myPopup" Grid.Column="2" Grid.Row="2" Grid.ColumnSpan="4" Grid.RowSpan="3">
+            <Border CornerRadius="10" Background="White" BorderThickness="2" BorderBrush="Black" Padding="2">
+                <StackPanel Margin="10" Height="300" Orientation="Vertical">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock x:Name="txtDomain" Text="Domain" Style="{StaticResource BasicTextStyle}" Width="70"/>
+                        <ComboBox x:Name="domainPicker" Margin="20,0,0,0" Grid.Row="2" Grid.Column="1" Width="150" HorizontalAlignment="Left" VerticalAlignment="Center">
+                            <ComboBoxItem Content="Hotmail"></ComboBoxItem>
+                            <ComboBoxItem Content="Google"></ComboBoxItem>
+                            <ComboBoxItem Content="Yahoo"></ComboBoxItem>
+                        </ComboBox>
+                    </StackPanel>
+                    <StackPanel Height="10">
+
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock x:Name="txtUserName" Text="Email" Style="{StaticResource BasicTextStyle}" Width="70"/>
+                        <TextBox x:Name="txtEmail" Width="150" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30" Margin="20,0,0,0"/>
+                    </StackPanel>
+                    <StackPanel Height="10">
+
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock x:Name="Password" Text="Password" Style="{StaticResource BasicTextStyle}" Width="70"/>
+                        <PasswordBox x:Name="txtPassword" Width="150" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30" Margin="20,0,0,0"></PasswordBox>
+                    </StackPanel>
+                    <StackPanel Height="10">
+
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock x:Name="VerifyPassword" Text="Verify Password" Style="{StaticResource BasicTextStyle}" Width="70"/>
+                        <PasswordBox x:Name="txtVerifyPassword" Width="150" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30" Margin="20,0,0,0"></PasswordBox>
+                    </StackPanel>
+                    <StackPanel Height="10">
+
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Button Background="#FF15BBF9" Grid.Row="7" x:Name="btnSave" Grid.ColumnSpan="2" Content="SAVE" Height="40" Width="119" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="12" Click="btnSave_Click" >
+                        </Button>
+                        <Button Background="#FF15BBF9" Grid.Row="7" x:Name="btnClose" Grid.ColumnSpan="2" Content="Close" Height="40" Width="119" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="12" Click="btnClose_Click" >
+                        </Button>
+                    </StackPanel>
+                    <StackPanel Height="10">
+
+                    </StackPanel>
+                    <StackPanel>
+                        <TextBlock x:Name="EmailConfigMessage" Width="250"  Foreground="Red" TextWrapping="Wrap" Text="" Style="{StaticResource BasicTextStyle}" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+        </Popup>
+        <Button Grid.Column="1" Margin="10,10,0,0" Background="#FF15BBF9" Grid.Row="7" x:Name="btnShare" Grid.ColumnSpan="2" Content="SHARE" Height="40" Width="119" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="12" Click="btnShare_Click" >
+        </Button>
+        <StackPanel Margin="10,10,0,0" Orientation="Vertical" Grid.Column="1" Grid.ColumnSpan="4" Grid.Row="8" >
+            <TextBlock x:Name="fbPostMessage" Foreground="Red" Width="400" Text="" TextWrapping="Wrap" Style="{StaticResource BasicTextStyle}" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <TextBlock x:Name="TwitterPostMessage" Foreground="Red" Width="400" TextWrapping="Wrap" Text="" Grid.Column="1" Grid.ColumnSpan="4" Grid.Row="8"  Style="{StaticResource BasicTextStyle}" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <TextBlock x:Name="EmailPostMessage" Foreground="Red" Width="400" TextWrapping="Wrap" Text="" Grid.Column="1" Grid.ColumnSpan="4" Grid.Row="8"  Style="{StaticResource BasicTextStyle}" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </StackPanel>
+    </Grid>
+</Page>

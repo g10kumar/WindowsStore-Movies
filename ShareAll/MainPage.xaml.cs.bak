@@ -1,0 +1,217 @@
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using Windows.Foundation;
+using Windows.Foundation.Collections;
+using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Controls.Primitives;
+using Windows.UI.Xaml.Data;
+using Windows.UI.Xaml.Input;
+using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Navigation;
+using Windows.Security.Authentication.Web;
+using Facebook;
+using Windows.Storage;
+using Windows.UI.ApplicationSettings;
+
+using System.Dynamic;
+using System.Threading.Tasks;
+using TwitterRtLibrary;
+
+using Windows.ApplicationModel;
+using Windows.ApplicationModel.Activation;
+
+using Windows.UI.Core;
+using Windows.UI.ViewManagement;
+
+using System.Xml;
+using System.Xml.Serialization;
+using System.Text;
+using System.Xml.Linq;
+using Windows.Data.Xml;
+
+using System.Collections.ObjectModel;
+using Windows.Graphics.Display;
+using Windows.Storage.AccessCache;
+using Windows.Storage.FileProperties;
+using Windows.Storage.Streams;
+using Windows.System;
+
+using System.Net.Http;
+using Windows.Storage.Pickers;
+using Windows.UI.Notifications;
+using Windows.ApplicationModel.Store;
+
+// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
+
+namespace ShareAll
+{
+    /// <summary>
+    /// An empty page that can be used on its own or navigated to within a Frame.
+    /// </summary>
+    public sealed partial class MainPage : ShareAll.Common.LayoutAwarePage
+    {
+        
+        //string _facebookAppId = "160672697306624"; // You must set your own AppId here
+        string _facebookAppId = "521064607905686"; // You must set your own AppId here
+        
+        string _permissions = "user_about_me,read_stream,publish_stream"; // Set your permissions here
+        FacebookClient _fb = new FacebookClient();
+        public MainPage()
+        {
+            this.InitializeComponent();
+            //TwitterRt = new TwitterRt("EhY3grAWGzIxF0YXPr70Yw", "uwXl6wNaLowV9No68bNHtQNbMhSpSSgXCXEk4P0g", "http://www.daksatech.com");
+            TwitterRt = new TwitterRt("OGAYZv3HDfykHsQw5dtng", "80cs06pnqehabIhv6PY1Vy1RuZX26G5twxJn6Oti0yU", "http://www.daksatech.com");
+            Window.Current.SizeChanged += Current_SizeChanged;
+        }
+
+        void Current_SizeChanged(object sender, WindowSizeChangedEventArgs e)
+        {
+            string visualState = DetermineVisualState(ApplicationView.Value);
+
+            if (visualState == "Snapped")
+            {
+                stackPanelFull.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+                stackPanelSnapped.Visibility = Windows.UI.Xaml.Visibility.Visible;
+            }
+            else
+            {
+                stackPanelFull.Visibility = Windows.UI.Xaml.Visibility.Visible;
+                stackPanelSnapped.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+            }
+        }
+
+        protected string DetermineVisualState(ApplicationViewState viewState)
+        {
+            if (viewState == ApplicationViewState.Filled || viewState == ApplicationViewState.FullScreenLandscape)
+            {
+                // Allow pages to request that the Filled state be used only for landscape layouts narrower
+                // than 1366 virtual pixels
+                var windowWidth = Window.Current.Bounds.Width;
+                viewState = windowWidth >= 1366 ? ApplicationViewState.FullScreenLandscape : ApplicationViewState.Filled;
+            }
+            return viewState.ToString();
+        }
+
+        public TwitterRt TwitterRt { get; private set; }
+
+        /// <summary>
+        /// Invoked when this page is about to be displayed in a Frame.
+        /// </summary>
+        /// <param name="e">Event data that describes how this page was reached.  The Parameter
+        /// property is typically used to configure the page.</param>
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            
+        }
+
+        private async void btnConfigureFacebook_Click(object sender, RoutedEventArgs e)
+        {
+            var redirectUrl = "https://www.facebook.com/connect/login_success.html";
+            try
+            {
+                //fb.AppId = facebookAppId;
+                var loginUrl = _fb.GetLoginUrl(new
+                {
+                    client_id = _facebookAppId,
+                    redirect_uri = redirectUrl,
+                    scope = _permissions,
+                    display = "popup",
+                    response_type = "token"
+                });
+
+                var endUri = new Uri(redirectUrl);
+
+                WebAuthenticationResult WebAuthenticationResult = await WebAuthenticationBroker.AuthenticateAsync(
+                                                        WebAuthenticationOptions.None,
+                                                        loginUrl,
+                                                        endUri);
+                if (WebAuthenticationResult.ResponseStatus == WebAuthenticationStatus.Success)
+                {
+                    var callbackUri = new Uri(WebAuthenticationResult.ResponseData.ToString());
+                    var facebookOAuthResult = _fb.ParseOAuthCallbackUrl(callbackUri);
+                    var accessToken = facebookOAuthResult.AccessToken;
+                    if (String.IsNullOrEmpty(accessToken))
+                    {
+                        // User is not logged in, they may have canceled the login
+                    }
+                    else
+                    {
+                        // User is logged in and token was returned                        
+                        LoginSucceded(accessToken);
+                    }
+
+                }
+                else if (WebAuthenticationResult.ResponseStatus == WebAuthenticationStatus.ErrorHttp)
+                {
+                    throw new InvalidOperationException("HTTP Error returned by AuthenticateAsync() : " + WebAuthenticationResult.ResponseErrorDetail.ToString());
+                }
+                else
+                {
+                    // The user canceled the authentication
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        private async void LoginSucceded(string accessToken)
+        {
+            dynamic parameters = new ExpandoObject();
+            parameters.access_token = accessToken;
+            parameters.fields = "id";
+            ApplicationData.Current.RoamingSettings.Values["FBAccessToken"] = accessToken;
+            dynamic result = await _fb.GetTaskAsync("me", parameters);
+            parameters = new ExpandoObject();
+            parameters.id = result.id;
+            parameters.access_token = accessToken;
+            ApplicationData.Current.RoamingSettings.Values["isFBConfigure"] = 1;
+            //sessionData.isFBConfigure = true;
+            var frame = new Frame();
+            frame.Navigate(typeof(MainPage));
+
+            Window.Current.Content = frame;
+            Window.Current.Activate();
+
+        }
+
+        private async void btnConfigureTwitter_Click(object sender, RoutedEventArgs e)
+        {
+            //Frame.Navigate(typeof(ShareIt));
+            await TwitterRt.GainAccessToTwitter();
+            if (TwitterRt.Status == "Access granted")
+            {
+                //sessionData.isTweetConfigure = true;
+                ApplicationData.Current.RoamingSettings.Values["isTweetConfigure"] = "1";
+                ApplicationData.Current.RoamingSettings.Values["TweetOauthToken"] = TwitterRt.OauthToken;
+                ApplicationData.Current.RoamingSettings.Values["TweetOauthTokenSecret"] = TwitterRt.OauthTokenSecret;
+                ApplicationData.Current.RoamingSettings.Values["TweetUserID"] = TwitterRt.UserID;
+                var frame = new Frame();
+                frame.Navigate(typeof(MainPage));
+
+                Window.Current.Content = frame;
+                Window.Current.Activate();
+            }
+        }
+
+        //private void btnConfigureEmail_Click(object sender, RoutedEventArgs e)
+        //{
+        //   Frame.Navigate(typeof(ShareIt));
+
+        //    //OnShareTargetActivated(ShareTargetActivatedEventArgs);
+        //}
+
+        //protected override void OnShareTargetActivated(ShareTargetActivatedEventArgs args)
+        //{
+        //    var rootFrame = new Frame();
+        //    rootFrame.Navigate(typeof(MainPage), args.ShareOperation);
+        //    Window.Current.Content = rootFrame;
+        //    Window.Current.Activate();
+        //}
+        
+    }
+}
