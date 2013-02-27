@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Sloka</title>
+
+    <!-- WinJS references -->
+    <link href="//Microsoft.WinJS.1.0/css/ui-light.css" rel="stylesheet" />
+    <script src="//Microsoft.WinJS.1.0/js/base.js"></script>
+    <script src="//Microsoft.WinJS.1.0/js/ui.js"></script>
+    <link href="/css/default.css" rel="stylesheet" />
+    <link href="/pages/sloka/sloka.css" rel="stylesheet" />
+    <script src="/js/data.js"></script>
+    <script src="/pages/sloka/sloka.js"></script>
+
+</head>
+<body>
+    <!-- The content that will be loaded and displayed. -->
+
+    <div id="simple_ItemTemplate" data-win-control="WinJS.Binding.Template">
+        <div class="articlesection" aria-atomic="true" aria-label="Item detail column" aria-live="assertive">
+            <article>
+                <header class="header">
+                    <div class="text">
+                        <h2 class="article-title win-type-ellipsis" data-win-bind="textContent: title"></h2>
+                    </div>
+                </header>
+                <div class="article-content" style="-ms-text-justify: auto; -ms-flex-wrap: wrap; width: 600px;" data-win-bind="innerHTML: content"></div>
+            </article>
+        </div>
+    </div>
+
+    <div class="slokapage fragment">
+        <header aria-label="Header content" role="banner">
+            <button class="win-backbutton" aria-label="Back" disabled type="button"></button>
+            <h1 class="titlearea win-type-ellipsis">
+                <span class="pagetitle"></span>
+            </h1>
+        </header>
+        <div id="basicFlipView" -ms-flex-wrap: wrap;" class="flipView" data-win-control="WinJS.UI.FlipView">
+        </div>
+        <div style="margin-left:20px;margin-top:130px; visibility:collapse;" id="divMessage">
+            
+            <h3>Slokas visible only in full mode.</h3>
+        </div>
+    </div>
+    <div id="scenario1HtmlOutput">
+        </div>
+    <div id="appbar" data-win-control="WinJS.UI.AppBar">
+        <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'btnCopy', label:'Copy', icon:'copy'}"></button>
+    </div>
+</body>
+</html>

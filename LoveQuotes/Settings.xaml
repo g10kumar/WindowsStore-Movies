@@ -1,0 +1,78 @@
+﻿<Page
+    x:Class="LoveQuotes.Settings"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:LoveQuotes"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Loaded="PhoneApplicationPage_Loaded"
+    mc:Ignorable="d">
+
+    <Grid Background="{StaticResource ApplicationPageBackgroundBrush}" x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="24,24,0,12">
+            <TextBlock x:Name="ApplicationTitle" Text="Love Quotes" />
+            <TextBlock x:Name="PageTitle" Text="settings" Margin="-3,-8,0,0" />
+        </StackPanel>
+        <ScrollViewer Background="Transparent" VerticalScrollBarVisibility="Auto" Grid.Row="1">
+            <!--ContentPanel - place additional content here-->
+            <Grid x:Name="ContentGrid" Grid.Row="1" Background="Transparent">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="200" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock HorizontalAlignment="Left" Margin="21,0,0,10" x:Name="textBlock1" Text="Select a background" Width="322" Grid.ColumnSpan="2" d:LayoutOverrides="GridBox" />
+
+                <Rectangle Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Top" Height="100" Width="150" Margin="0,0,0,0">
+                    <Rectangle.Fill>
+                        <SolidColorBrush Color="Olive" />
+                    </Rectangle.Fill>
+
+                </Rectangle>
+
+                <Rectangle Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Top" Height="100" Width="150" Margin="0,0,0,0">
+                    <Rectangle.Fill>
+                        <SolidColorBrush Color="#000000" />
+                    </Rectangle.Fill>
+
+                </Rectangle>
+
+                <Image Grid.Row="3" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Top" Source="/Images/drop1_sm.jpg" Height="100" Width="150" Margin="0,0,0,0" />
+                <Image Grid.Row="4" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Top" Source="/Images/drop2_sm.jpg" Height="100" Width="150" Margin="0,0,0,0" />
+                <Image Grid.Row="5" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Top" Source="/Images/drop3_sm.jpg" Height="100" Width="150"  Margin="0,0,0,0" />
+                <Image Grid.Row="6" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Top" Source="/Images/drop4_sm.jpg" Height="100" Width="150" Margin="0,0,0,0" />
+                <Image Grid.Row="7" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Top" Source="/Images/drop5_sm.png" Height="100" Width="150" Margin="0,0,0,0" />
+
+                <RadioButton Grid.Row="1" Grid.Column="1" Content="Olive" Height="80" HorizontalAlignment="Left" Margin="0,0,0,0" x:Name="radioButton0" VerticalAlignment="Top" GroupName="BkgImageSouce" Click="radioButton0_Checked" />
+                <RadioButton Grid.Row="2" Grid.Column="1" Content="Phone Accent Color" Height="80" HorizontalAlignment="Left" Margin="0,0,0,0" x:Name="radioButton1" VerticalAlignment="Top" GroupName="BkgImageSouce" Click="radioButton1_Checked"  />
+                <RadioButton Grid.Row="3" Grid.Column="1" Content="Rose Petals" Height="80" HorizontalAlignment="Left" Margin="0,0,0,0" x:Name="radioButton2" VerticalAlignment="Top" GroupName="BkgImageSouce" Click="radioButton2_Checked" />
+                <RadioButton Grid.Row="4" Grid.Column="1" Content="Beer Mug" Height="80" HorizontalAlignment="Left" Margin="0,0,0,0" x:Name="radioButton3" VerticalAlignment="Top" GroupName="BkgImageSouce" Click="radioButton3_Checked" />
+                <RadioButton Grid.Row="5" Grid.Column="1" Content="Leaf" Height="80" HorizontalAlignment="Left" Margin="0,0,0,0" x:Name="radioButton4" VerticalAlignment="Top" GroupName="BkgImageSouce" Click="radioButton4_Checked"/>
+                <RadioButton Grid.Row="6" Grid.Column="1" Content="Tulip Petal" Height="80" HorizontalAlignment="Left" Margin="0,0,0,0" x:Name="radioButton5" VerticalAlignment="Top" GroupName="BkgImageSouce" Click="radioButton5_Checked" />
+                <RadioButton Grid.Row="7" Grid.Column="1" Content="Love Background" Height="80" HorizontalAlignment="Left" Margin="0,0,0,0" x:Name="radioButton6" VerticalAlignment="Top" GroupName="BkgImageSouce" Click="radioButton6_Checked" />
+                <!--<TextBlock Height="30" HorizontalAlignment="Left" Margin="21,24,0,0" Name="textBlock1" Text="Random Quote Source" VerticalAlignment="Top" Width="322" />
+            <RadioButton Content="All" Height="80" HorizontalAlignment="Left" Margin="36,0,0,490" Name="radioButton1" VerticalAlignment="Bottom" GroupName="RandomQuoteSource" IsChecked="{Binding Source={StaticResource appSettings}, Path=RadioRandomQuoteSourceAll, Mode=TwoWay}" />
+            <RadioButton Content="Favorite Authors" Height="80" HorizontalAlignment="Left" Margin="36,97,0,0" Name="radioButton2" VerticalAlignment="Top" GroupName="RandomQuoteSource" IsChecked="{Binding Source={StaticResource appSettings}, Path=RadioRandomQuoteSourceFavAuth, Mode=TwoWay}"/>
+            <RadioButton Content="Favorite Categories" Height="80" HorizontalAlignment="Left" Margin="36,147,0,0" Name="radioButton3" VerticalAlignment="Top" GroupName="RandomQuoteSource" IsChecked="{Binding Source={StaticResource appSettings}, Path=RadioRandomQuoteSourceFavCat, Mode=TwoWay}"/>
+            <RadioButton Content="Favorite Authors &amp; Categories" Height="80" HorizontalAlignment="Left" Margin="36,196,0,0" Name="radioButton4" VerticalAlignment="Top" GroupName="RandomQuoteSource" IsChecked="{Binding Source={StaticResource appSettings}, Path=RadioRandomQuoteSourceFavAuthCat, Mode=TwoWay}"/>-->
+
+            </Grid>
+        </ScrollViewer>
+    </Grid>
+</Page>

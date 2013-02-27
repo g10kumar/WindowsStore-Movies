@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
+  <Identity Name="DaksaTech.1000LoveQuotes" Publisher="CN=42750936-DE0C-415B-9312-C587E65FD9EC" Version="1.0.0.24" />
+  <Properties>
+    <DisplayName>1000 Love Quotes</DisplayName>
+    <PublisherDisplayName>DaksaTech</PublisherDisplayName>
+    <Logo>Assets\StoreLogo.png</Logo>
+    <Description>1000 Love Quotes</Description>
+  </Properties>
+  <Prerequisites>
+    <OSMinVersion>6.2.1</OSMinVersion>
+    <OSMaxVersionTested>6.2.1</OSMaxVersionTested>
+  </Prerequisites>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="LoveQuotes.App">
+      <VisualElements DisplayName="Love Quotes" Logo="Assets\Logo.png" SmallLogo="Assets\SmallLogo.png" Description="Love Quotes" ForegroundText="light" BackgroundColor="#8E0303">
+        <DefaultTile ShowName="allLogos" ShortName="Love Quotes" WideLogo="Assets\WideLogo.png" />
+        <SplashScreen Image="Assets\SplashScreen.png" BackgroundColor="#8E0303" />
+      </VisualElements>
+      <Extensions>
+        <Extension Category="windows.fileTypeAssociation">
+          <FileTypeAssociation Name="test">
+            <SupportedFileTypes>
+              <FileType>.xml</FileType>
+            </SupportedFileTypes>
+          </FileTypeAssociation>
+        </Extension>
+      </Extensions>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="internetClient" />
+  </Capabilities>
+</Package>

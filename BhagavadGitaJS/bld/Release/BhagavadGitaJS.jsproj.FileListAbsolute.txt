@@ -1,0 +1,13 @@
+C:\Users\dk\Documents\Visual Studio 2012\Projects\BhagavadGitaJS\bin\Release\resources.pri
+C:\Users\dk\Documents\Visual Studio 2012\Projects\BhagavadGitaJS\bin\Release\AppxManifest.xml
+C:\Users\dk\Documents\Visual Studio 2012\Projects\BhagavadGitaJS\bin\Release\BhagavadGitaJS.build.appxrecipe
+C:\Users\dk\Documents\Visual Studio 2012\Projects\BhagavadGitaJS\bld\Release\priconfig.xml.intermediate
+C:\Users\dk\Documents\Visual Studio 2012\Projects\BhagavadGitaJS\bld\Release\layout.resfiles.intermediate
+C:\Users\dk\Documents\Visual Studio 2012\Projects\BhagavadGitaJS\bld\Release\resources.resfiles.intermediate
+C:\Users\dk\Documents\Visual Studio 2012\Projects\BhagavadGitaJS\bld\Release\pri.resfiles.intermediate
+C:\Users\dk\Documents\Visual Studio 2012\Projects\BhagavadGitaJS\bld\Release\priconfig.xml
+C:\Users\dk\Documents\Visual Studio 2012\Projects\BhagavadGitaJS\bld\Release\layout.resfiles
+C:\Users\dk\Documents\Visual Studio 2012\Projects\BhagavadGitaJS\bld\Release\resources.resfiles
+C:\Users\dk\Documents\Visual Studio 2012\Projects\BhagavadGitaJS\bld\Release\pri.resfiles
+C:\Users\dk\Documents\Visual Studio 2012\Projects\BhagavadGitaJS\bld\Release\LanguageQualifiers.txt
+C:\Users\dk\Documents\Visual Studio 2012\Projects\BhagavadGitaJS\bld\Release\ProjectArchitectures.txt
