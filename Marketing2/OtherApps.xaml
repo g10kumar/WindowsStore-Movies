@@ -1,0 +1,58 @@
+﻿<UserControl
+    x:Class="Marketing2.OtherApps"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Marketing2"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="400">
+
+    <Border BorderBrush="Black" BorderThickness="1,0,0,0">
+        <Grid x:Name="LayoutRoot" VerticalAlignment="Stretch" Background="White">
+            <!-- Root grid definition -->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <!-- Header area for panel -->
+            <Grid Grid.Row="0">
+                <Grid Margin="30,32,17,13">
+                    <Grid.Transitions>
+                        <TransitionCollection>
+                            <EntranceThemeTransition FromHorizontalOffset="50" />
+                        </TransitionCollection>
+                    </Grid.Transitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="30" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Button Click="OnBackButtonClicked" Margin="0,3,0,0" Style="{StaticResource SettingsBackButtonStyle}" Grid.Column="0" HorizontalAlignment="Left" />
+                    <TextBlock Margin="10,0,0,0" Grid.Column="1" Foreground="Black" FontFamily="Segoe UI" FontWeight="SemiLight" FontSize="26.6667" Text="Other Apps By DaksaTech" HorizontalAlignment="Left" />
+                </Grid>
+
+            </Grid>
+
+            <!-- Settings Panel Content -->
+            <Grid Grid.Row="1" Margin="28,12,23,0" VerticalAlignment="Top">
+                <Grid.Transitions>
+                    <TransitionCollection>
+                        <EntranceThemeTransition FromHorizontalOffset="120" />
+                    </TransitionCollection>
+                </Grid.Transitions>
+                <StackPanel Orientation="Vertical">
+                    <HyperlinkButton Name="QuotesButton"  Content="Quotes of Wisdom" Click="QuotesButton_Click" />
+                    <HyperlinkButton Name="NewspaperButton"  Content="Newspapers" Click="NewspaperButton_Click" />
+                    <HyperlinkButton Name="AmSpeechesButton"  Content="Top American Speeches" Click="AmSpeechesButton_Click" />
+                    <HyperlinkButton Name="LoveQuotesButton"  Content="1000 Love Quotes" Click="LoveQuotesButton_Click" />
+                    <HyperlinkButton Name="ShareAllButton"  Content="Share All" Click="ShareAllButton_Click" />
+                    <HyperlinkButton Name="BestMoviesButton"  Content="The Best Movies Ever Made!" Click="BestMoviesButton_Click" />
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Border>
+</UserControl>
