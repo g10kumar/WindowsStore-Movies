@@ -1,0 +1,14 @@
+L:\Users\dk_000\Documents\Visual Studio 2012\Projects\TopSpeechesUsingJS\bin\Debug\resources.pri
+L:\Users\dk_000\Documents\Visual Studio 2012\Projects\TopSpeechesUsingJS\bin\Debug\AppxManifest.xml
+L:\Users\dk_000\Documents\Visual Studio 2012\Projects\TopSpeechesUsingJS\bin\Debug\TopSpeechesUsingJS.build.appxrecipe
+L:\Users\dk_000\Documents\Visual Studio 2012\Projects\TopSpeechesUsingJS\bin\Debug\MicrosoftAdvertising.winmd
+L:\Users\dk_000\Documents\Visual Studio 2012\Projects\TopSpeechesUsingJS\bld\Debug\priconfig.xml.intermediate
+L:\Users\dk_000\Documents\Visual Studio 2012\Projects\TopSpeechesUsingJS\bld\Debug\layout.resfiles.intermediate
+L:\Users\dk_000\Documents\Visual Studio 2012\Projects\TopSpeechesUsingJS\bld\Debug\resources.resfiles.intermediate
+L:\Users\dk_000\Documents\Visual Studio 2012\Projects\TopSpeechesUsingJS\bld\Debug\pri.resfiles.intermediate
+L:\Users\dk_000\Documents\Visual Studio 2012\Projects\TopSpeechesUsingJS\bld\Debug\priconfig.xml
+L:\Users\dk_000\Documents\Visual Studio 2012\Projects\TopSpeechesUsingJS\bld\Debug\layout.resfiles
+L:\Users\dk_000\Documents\Visual Studio 2012\Projects\TopSpeechesUsingJS\bld\Debug\resources.resfiles
+L:\Users\dk_000\Documents\Visual Studio 2012\Projects\TopSpeechesUsingJS\bld\Debug\pri.resfiles
+L:\Users\dk_000\Documents\Visual Studio 2012\Projects\TopSpeechesUsingJS\bld\Debug\LanguageQualifiers.txt
+L:\Users\dk_000\Documents\Visual Studio 2012\Projects\TopSpeechesUsingJS\bld\Debug\ProjectArchitectures.txt

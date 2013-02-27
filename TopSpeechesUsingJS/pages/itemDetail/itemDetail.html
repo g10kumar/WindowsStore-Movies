@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>itemDetailPage</title>
+    
+    <!-- WinJS references -->
+    <link href="//Microsoft.WinJS.1.0/css/ui-light.css" rel="stylesheet" />
+    <script src="//Microsoft.WinJS.1.0/js/base.js"></script>
+    <script src="//Microsoft.WinJS.1.0/js/ui.js"></script>
+
+    <link href="/css/default.css" rel="stylesheet" />
+    <link href="/pages/itemDetail/itemDetail.css" rel="stylesheet" />
+    <script src="/js/data.js"></script>
+    <script src="/pages/itemDetail/itemDetail.js"></script>
+    
+    <!-- Microsoft Advertising required references -->
+    <script src="/MSAdvertisingJS/ads/ad.js" ></script>
+
+
+</head>
+<body>
+    <!-- The content that will be loaded and displayed. -->
+    <div class="itemdetailpage fragment">
+        <header aria-label="Header content" role="banner">
+            <button class="win-backbutton" aria-label="Back" disabled></button>
+            <!--<h1 class="titlearea win-type-ellipsis">
+                <span class="pagetitle"></span>
+            </h1>-->
+        </header>
+       
+        <div class="content" aria-label="Main content" role="main">
+            <article>
+                <div>
+                    <header>
+                        <h2 class="item-title"></h2>
+                        <span class="item-subtitle"></span>
+						<!--<span class="item-subtitle"> (<a href="http://www.wikipedia.org/wiki/John_F_Kennedy">Wiki</a>)</span>
+                        <span class="item-subtitle"> (<a href="http://www.amazon.com/mn/search/?field-keywords=john%20f%20kennedy&tag=artmaya-20">Books</a>)</span>-->
+                        <span class="item-subtitle"> (<a id="hrefWiki" target="_blank" href="#">Wiki</a>)</span>
+                        <span class="item-subtitle"> (<a id="hrefBooks" target="_blank" href="#">Books</a>)</span>
+                        <span class="item-subtitle"> (<a id="hrefVideo" target="_blank" href="http://www.youtube.com/watch?feature=player_detailpage&v=smEqnnklfYs">Video</a>)</span>
+                    </header>
+                    <img class="item-image" src="#" />
+
+                    <div class="item-content">
+                    </div>
+                    
+                </div>
+            </article>
+             
+        </div>
+        <div id="outputDiv" class="content" style="margin-left:120px;display:none;"></div>
+       <div style="width:728px; height:90px;float:right !important;margin-left:auto; margin-top:30px;" id="myAd" 
+         data-win-control="MicrosoftNSJS.Advertising.AdControl" 
+         data-win-options="{applicationId: 'a94a94b6-01bd-4f67-8ffb-8d783de40a47', adUnitId: '10047262', onErrorOccurred: errorLogger}"></div>
+    </div>
+</body>
+</html>

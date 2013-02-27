@@ -1,0 +1,703 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <TopSpeeches>
+    <Rank>1</Rank>
+    <Speaker>Martin Luther King, Jr.</Speaker>
+    <Title>&amp;quot;I Have A Dream&amp;quot;</Title>
+    <AudioFile>http://www.archive.org/download/MLKDream/MLKDream_64kb.mp3</AudioFile>
+    <Hyperlink>speeches/mlkihaveadream.htm</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>2</Rank>
+    <Speaker>John Fitzgerald Kennedy</Speaker>
+    <Title>Inaugural Address</Title>
+    <AudioFile>http://174.132.193.190/~eiden/mp3clips/politicalspeeches/jfkinaugural1122.mp3</AudioFile>
+    <Hyperlink>speeches/jfkinaugural.htm</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>3</Rank>
+    <Speaker>Franklin Delano Roosevelt</Speaker>
+    <Title>First Inaugural Address</Title>
+    <AudioFile>http://174.132.193.190/~eiden/mp3clips/politicalspeeches/fdrfirstinaugural11223.mp3</AudioFile>
+    <Hyperlink>speeches/fdrfirstinaugural.html</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>4</Rank>
+    <Speaker>Franklin Delano Roosevelt</Speaker>
+    <Title>Pearl Harbor Address to the Nation</Title>
+    <AudioFile>http://174.132.193.190/~eiden/mp3clips/politicalspeeches/fdrwarmessage344.mp3</AudioFile>
+    <Hyperlink>speeches/fdrpearlharbor.htm</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>5</Rank>
+    <Speaker>Barbara Charline Jordan</Speaker>
+    <Title>1976 DNC Keynote Address</Title>
+    <AudioFile>http://americanrhetoric.com/mp3clips/politicalspeeches/barbarajordan1976dnc.mp3</AudioFile>
+    <Hyperlink>speeches/barbarajordan1976dnc.html</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>6</Rank>
+    <Speaker>Richard Milhous Nixon</Speaker>
+    <Title>&amp;quot;Checkers&amp;quot;</Title>
+    <AudioFile>http://web2.millercenter.org/speeches/audio/spe_1952_0923_nixon.mp3</AudioFile>
+    <Hyperlink>speeches/richardnixoncheckers.html</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>7</Rank>
+    <Speaker>Malcolm X</Speaker>
+    <Title>&amp;quot;The Ballot or the Bullet&amp;quot;</Title>
+    <AudioFile>http://radio.indymedia.org/uploads/echoesmalcolmx.mp3</AudioFile>
+    <Hyperlink>../www.edchange.org/multicultural/speeches/malcolm_x_ballot.html</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>8</Rank>
+    <Speaker>Ronald Wilson Reagan</Speaker>
+    <Title>Shuttle ''Challenger'' Disaster Address</Title>
+    <AudioFile>http://174.132.193.190/~eiden/mp3clips/politicalspeeches/ronaldreaganchallengeraddress.mp3</AudioFile>
+    <Hyperlink>speeches/ronaldreaganchallenger.htm</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>9</Rank>
+    <Speaker>John Fitzgerald Kennedy</Speaker>
+    <Title>Houston Ministerial Association Speech</Title>
+    <AudioFile>http://americanrhetoric.com/mp3clips/politicalspeeches/jfkhoustonministers99999999999999999.mp3</AudioFile>
+    <Hyperlink>speeches/jfkhoustonministers.html</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>10</Rank>
+    <Speaker>Lyndon Baines Johnson</Speaker>
+    <Title>&amp;quot;We Shall Overcome&amp;quot;</Title>
+    <AudioFile>http://174.132.193.190/~eiden/mp3clips/politicalspeeches/lbjweshallovercome2233.mp3</AudioFile>
+    <Hyperlink>speeches/lbjweshallovercome.htm</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>11</Rank>
+    <Speaker>Mario Matthew Cuomo</Speaker>
+    <Title>1984 DNC Keynote Address</Title>
+    <AudioFile>http://americanrhetoric.com/mp3clips/politicalspeeches/mariocumo1984dnc.mp3</AudioFile>
+    <Hyperlink>speeches/mariocuomo1984dnc.htm</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>12</Rank>
+    <Speaker>Jesse Louis Jackson</Speaker>
+    <Title>1984 DNC Address</Title>
+    <AudioFile>http://americanrhetoric.com/mp3clips/politicalspeeches/jessejackson1984dnc.mp3</AudioFile>
+    <Hyperlink>speeches/jessejackson1984dnc.htm</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>13</Rank>
+    <Speaker>Barbara Charline Jordan</Speaker>
+    <Title>Statement on the Articles of Impeachment</Title>
+    <AudioFile>http://americanrhetoric.com/mp3clipsXE/politicalspeeches/barbarajordannixonimpeachmentARXE.mp3</AudioFile>
+    <Hyperlink>speeches/barbarajordanjudiciarystatement.htm</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>14</Rank>
+    <Speaker>General Douglas MacArthur</Speaker>
+    <Title>Farewell Address to Congress</Title>
+    <AudioFile>http://americanrhetoric.com/mp3clips/politicalspeeches/douglasmacarthurfarewell34323.mp3</AudioFile>
+    <Hyperlink>speeches/douglasmacarthurfarewelladdress.htm</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>15</Rank>
+    <Speaker>Martin Luther King, Jr.</Speaker>
+    <Title>&amp;quot;I've Been to the Mountaintop&amp;quot;</Title>
+    <AudioFile>http://www.publicradio.org/tools/media/player/americanradioworks/features/sayitplain/mlking.smil</AudioFile>
+    <Hyperlink>speeches/mlkivebeentothemountaintop.htm</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>16</Rank>
+    <Speaker>Theodore Roosevelt</Speaker>
+    <Title>&amp;quot;The Man with the Muck-rake&amp;quot;</Title>
+    <AudioFile></AudioFile>
+    <Hyperlink>speeches/teddyrooseveltmuckrake.htm</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>17</Rank>
+    <Speaker>Robert Francis Kennedy</Speaker>
+    <Title>Remarks on the Assassination of MLK</Title>
+    <AudioFile>http://americanrhetoric.com/mp3clips/politicalspeeches/rfkonmlkdeath45454.mp3</AudioFile>
+    <Hyperlink>speeches/rfkonmlkdeath.html</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>18</Rank>
+    <Speaker>Dwight David Eisenhower</Speaker>
+    <Title>Farewell Address</Title>
+    <AudioFile>http://americanrhetoric.com/mp3clips/politicalspeeches/dwighteisenhowerfarewell44444444444444443333333333.mp3</AudioFile>
+    <Hyperlink>speeches/dwightdeisenhowerfarewell.html</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>19</Rank>
+    <Speaker>Thomas Woodrow Wilson</Speaker>
+    <Title>War Message</Title>
+    <AudioFile></AudioFile>
+    <Hyperlink>speeches/wilsonwarmessage.htm</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>20</Rank>
+    <Speaker>General Douglas MacArthur</Speaker>
+    <Title>&amp;quot;Duty, Honor, Country&amp;quot;</Title>
+    <AudioFile>http://174.132.193.190/~eiden/mp3clips/politicalspeeches/douglasmacarthurthayeraward.mp3</AudioFile>
+    <Hyperlink>speeches/douglasmacarthurthayeraward.html</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>21</Rank>
+    <Speaker>Richard Milhous Nixon</Speaker>
+    <Title>&amp;quot;The Great Silent Majority&amp;quot;</Title>
+    <AudioFile>http://174.132.193.190/~eiden/mp3clips/politicalspeeches/richardnixonsilentmajority1122.mp3</AudioFile>
+    <Hyperlink>speeches/richardnixongreatsilentmajority.html</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>22</Rank>
+    <Speaker>John Fitzgerald Kennedy</Speaker>
+    <Title>&amp;quot;Ich bin ein Berliner&amp;quot;</Title>
+    <AudioFile>http://americanrhetoric.com/mp3clips/politicalspeeches/jfkberlinaddress14444444iiiiii4444444444444.mp3</AudioFile>
+    <Hyperlink>speeches/jfkberliner.html</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>23</Rank>
+    <Speaker>Clarence Seward Darrow</Speaker>
+    <Title>&amp;quot;Mercy for Leopold and Loeb&amp;quot;</Title>
+    <AudioFile></AudioFile>
+    <Hyperlink>speeches/cdarrowpleaformercy.htm</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>24</Rank>
+    <Speaker>Russell H. Conwell</Speaker>
+    <Title>&amp;quot;Acres of Diamonds&amp;quot;</Title>
+    <AudioFile>http://americanrhetoric.com/mp3clips/speeches/russellconwelldiamonds438484444444444444444444444444444444592.mp3</AudioFile>
+    <Hyperlink>speeches/rconwellacresofdiamonds.htm</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>25</Rank>
+    <Speaker>Ronald Wilson Reagan</Speaker>
+    <Title>&amp;quot;A Time for Choosing&amp;quot;</Title>
+    <AudioFile>http://174.132.193.190/~eiden/mp3clips/politicalspeeches/ronaldreaganatimeforchoosing254.mp3</AudioFile>
+    <Hyperlink>speeches/ronaldreaganatimeforchoosing.htm</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>26</Rank>
+    <Speaker>Huey Pierce Long</Speaker>
+    <Title>&amp;quot;Every Man a King&amp;quot;</Title>
+    <AudioFile></AudioFile>
+    <Hyperlink>speeches/hueyplongking.htm</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>27</Rank>
+    <Speaker>Anna Howard Shaw</Speaker>
+    <Title>&amp;quot;The Fundamental Principle of a Republic&amp;quot;</Title>
+    <AudioFile></AudioFile>
+    <Hyperlink>speeches/annahowardshawprinciplerepublic.htm</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>28</Rank>
+    <Speaker>Franklin Delano Roosevelt</Speaker>
+    <Title>&amp;quot;The Arsenal of Democracy&amp;quot;</Title>
+    <AudioFile>http://americanrhetoric.com/mp3clips/politicalspeeches/fdrarsenalofdemocracy7.mp3</AudioFile>
+    <Hyperlink>speeches/fdrarsenalofdemocracy.html</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>29</Rank>
+    <Speaker>Ronald Wilson Reagan</Speaker>
+    <Title>&amp;quot;The Evil Empire&amp;quot;</Title>
+    <AudioFile>http://174.132.193.190/~eiden/mp3clips/politicalspeeches/ronaldreaganevilempire439.mp3</AudioFile>
+    <Hyperlink>speeches/ronaldreaganevilempire.htm</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>30</Rank>
+    <Speaker>Ronald Wilson Reagan</Speaker>
+    <Title>First Inaugural Address</Title>
+    <AudioFile>http://174.132.193.190/~eiden/mp3clips/politicalspeeches/ronaldreaganfirstinaugural1122.mp3</AudioFile>
+    <Hyperlink>speeches/ronaldreagandfirstinaugural.html</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>31</Rank>
+    <Speaker>Franklin Delano Roosevelt</Speaker>
+    <Title>First Fireside Chat</Title>
+    <AudioFile>http://americanrhetoric.com/mp3clips/politicalspeeches/fdrfirstfiresidechat63496436943.mp3</AudioFile>
+    <Hyperlink>speeches/fdrfirstfiresidechat.html</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>32</Rank>
+    <Speaker>Harry S. Truman</Speaker>
+    <Title>&amp;quot;The Truman Doctrine&amp;quot;</Title>
+    <AudioFile>http://americanrhetoric.com/mp3clips/politicalspeeches/harrytrumandoctrine4563444444444444444444222222222222222223.mp3</AudioFile>
+    <Hyperlink>speeches/harrystrumantrumandoctrine.html</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>33</Rank>
+    <Speaker>William Cuthbert Faulkner</Speaker>
+    <Title>Nobel Prize Acceptance Speech</Title>
+    <AudioFile>http://americanrhetoric.com/mp3clips/speeches/williamfaulknernobelprizeoriginal43438rew8.mp3</AudioFile>
+    <Hyperlink>speeches/williamfaulknernobelprizeaddress.htm</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>34</Rank>
+    <Speaker>Eugene Victor Debs</Speaker>
+    <Title>1918 Statement to the Court</Title>
+    <AudioFile></AudioFile>
+    <Hyperlink>speeches/eugenedebspleatocourt1918.htm</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>35</Rank>
+    <Speaker>Hillary Diane Rodham Clinton</Speaker>
+    <Title>&amp;quot;Women's Rights are Human Rights&amp;quot;</Title>
+    <AudioFile>http://174.132.193.190/~eiden/mp3clips/politicalspeeches/hillaryclintonunfourthworldconference1122.mp3</AudioFile>
+    <Hyperlink>speeches/hillaryclintonbeijingspeech.htm</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>36</Rank>
+    <Speaker>Dwight David Eisenhower</Speaker>
+    <Title>&amp;quot;Atoms for Peace&amp;quot;</Title>
+    <AudioFile>http://174.132.193.190/~eiden/mp3clips/politicalspeeches/dwighteisenhoweratomsforpeace2233.mp3</AudioFile>
+    <Hyperlink>speeches/dwightdeisenhoweratomsforpeace.html</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>37</Rank>
+    <Speaker>John Fitzgerald Kennedy</Speaker>
+    <Title>American University Commencement Address</Title>
+    <AudioFile>http://174.132.193.190/~eiden/mp3clips/politicalspeeches/jfkamericanuniversity4654.mp3</AudioFile>
+    <Hyperlink>speeches/jfkamericanuniversityaddress.html</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>38</Rank>
+    <Speaker>Dorothy Ann Willis Richards</Speaker>
+    <Title>1988 DNC Keynote Address</Title>
+    <AudioFile>http://174.132.193.190/~eiden/mp3clips/politicalspeeches/annrichards1988dnc.mp3</AudioFile>
+    <Hyperlink>speeches/annrichards1988dnc.htm</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>39</Rank>
+    <Speaker>Richard Milhous Nixon</Speaker>
+    <Title>Resignation Speech</Title>
+    <AudioFile>http://americanrhetoric.com/mp3clips/politicalspeeches/rnixonresignationspeechtwt9gf9.mp3</AudioFile>
+    <Hyperlink>speeches/richardnixonresignationspeech.html</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>40</Rank>
+    <Speaker>Thomas Woodrow Wilson</Speaker>
+    <Title>&amp;quot;The Fourteen Points&amp;quot;</Title>
+    <AudioFile></AudioFile>
+    <Hyperlink>speeches/wilsonfourteenpoints.htm</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>41</Rank>
+    <Speaker>Margaret Chase Smith</Speaker>
+    <Title>&amp;quot;Declaration of Conscience&amp;quot;</Title>
+    <AudioFile></AudioFile>
+    <Hyperlink>speeches/margaretchasesmithconscience.html</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>42</Rank>
+    <Speaker>Franklin Delano Roosevelt</Speaker>
+    <Title>&amp;quot;The Four Freedoms&amp;quot;</Title>
+    <AudioFile>http://174.132.193.190/~eiden/mp3clips/politicalspeeches/fdrfourfreedoms.mp3</AudioFile>
+    <Hyperlink>speeches/fdrthefourfreedoms.htm</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>43</Rank>
+    <Speaker>Martin Luther King, Jr.</Speaker>
+    <Title>&amp;quot;A Time to Break Silence&amp;quot;</Title>
+    <AudioFile>http://mlk-kpp01.stanford.edu/media/audio/1967_04_04_beyond_vietnam.mp3</AudioFile>
+    <Hyperlink>speeches/mlkatimetobreaksilence.htm</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>44</Rank>
+    <Speaker>Mary Church Terrell</Speaker>
+    <Title>&amp;quot;What it Means to be Colored in the...U.S.&amp;quot;</Title>
+    <AudioFile></AudioFile>
+    <Hyperlink>speeches/marychurchterellcolored.htm</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>45</Rank>
+    <Speaker>William Jennings Bryan</Speaker>
+    <Title>&amp;quot;Against Imperialism&amp;quot;</Title>
+    <AudioFile>http://americanrhetoric.com/mp3clips/politicalspeeches/wjbryanimperialismgo.mp3</AudioFile>
+    <Hyperlink>speeches/wjbryanimperialism.htm</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>46</Rank>
+    <Speaker>Margaret Higgins Sanger</Speaker>
+    <Title>&amp;quot;The Morality of Birth Control&amp;quot;</Title>
+    <AudioFile></AudioFile>
+    <Hyperlink>speeches/margaretsangermoralityofbirthcontrol.htm</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>47</Rank>
+    <Speaker>Barbara Pierce Bush</Speaker>
+    <Title>1990 Wellesley College Commencement Address</Title>
+    <AudioFile>http://americanrhetoric.com/mp3clipsXE/politicalspeeches/barbarabushwellesleyARXE.mp3</AudioFile>
+    <Hyperlink>speeches/barbarabushwellesleycommencement.htm</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>48</Rank>
+    <Speaker>John Fitzgerald Kennedy</Speaker>
+    <Title>Civil Rights Address</Title>
+    <AudioFile>http://174.132.193.190/~eiden/mp3clips/politicalspeeches/jfkcivilrights.mp3</AudioFile>
+    <Hyperlink>speeches/jfkcivilrights.htm</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>49</Rank>
+    <Speaker>John Fitzgerald Kennedy</Speaker>
+    <Title>Cuban Missile Crisis Address</Title>
+    <AudioFile>http://americanrhetoric.com/mp3clips/politicalspeeches/jfkcubanmissilecrisis999999999944444444444444444444444999999999.mp3</AudioFile>
+    <Hyperlink>speeches/jfkcubanmissilecrisis.html</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>50</Rank>
+    <Speaker>Spiro Theodore Agnew</Speaker>
+    <Title>&amp;quot;Television News Coverage&amp;quot;</Title>
+    <AudioFile>http://americanrhetoric.com/mp3clips/politicalspeeches/spiroagnewtvnewscoverage.mp3</AudioFile>
+    <Hyperlink>speeches/spiroagnewtvnewscoverage.htm</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>51</Rank>
+    <Speaker>Jesse Louis Jackson</Speaker>
+    <Title>1988 DNC Address</Title>
+    <AudioFile>http://americanrhetoric.com/mp3clips/politicalspeeches/jessejackson1988dnc.mp3</AudioFile>
+    <Hyperlink>speeches/jessejackson1988dnc.htm</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>52</Rank>
+    <Speaker>Mary Fisher</Speaker>
+    <Title>&amp;quot;A Whisper of AIDS&amp;quot;</Title>
+    <AudioFile>http://174.132.193.190/~eiden/mp3clips/politicalspeeches/maryfisher1992rnc.mp3</AudioFile>
+    <Hyperlink>speeches/maryfisher1992rnc.html</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>53</Rank>
+    <Speaker>Lyndon Baines Johnson</Speaker>
+    <Title>&amp;quot;The Great Society&amp;quot;</Title>
+    <AudioFile>http://americanrhetoric.com/mp3clips/politicalspeeches/lbjthegreatsociety454529.mp3</AudioFile>
+    <Hyperlink>speeches/lbjthegreatsociety.htm</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>54</Rank>
+    <Speaker>George Catlett Marshall</Speaker>
+    <Title>&amp;quot;The Marshall Plan&amp;quot;</Title>
+    <AudioFile>http://174.132.193.190/~eiden/mp3clips/politicalspeeches/georgemarshallplan1111.mp3</AudioFile>
+    <Hyperlink>speeches/georgecmarshall.html</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>55</Rank>
+    <Speaker>Edward Moore Kennedy</Speaker>
+    <Title>&amp;quot;Truth and Tolerance in America&amp;quot;</Title>
+    <AudioFile>http://174.132.193.190/~eiden/mp3clips/politicalspeeches/tedkennedytruthandtolerance112.mp3</AudioFile>
+    <Hyperlink>speeches/tedkennedytruth%26tolerance.htm</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>56</Rank>
+    <Speaker>Adlai Ewing Stevenson</Speaker>
+    <Title>Presidential Nomination Acceptance Address</Title>
+    <AudioFile>http://americanrhetoric.com/mp3clips/politicalspeeches/adlaistevenson1952dnc.mp3</AudioFile>
+    <Hyperlink>speeches/adlaistevenson1952dnc.html</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>57</Rank>
+    <Speaker>Anna Eleanor Roosevelt</Speaker>
+    <Title>&amp;quot;The Struggle for Human Rights&amp;quot;</Title>
+    <AudioFile></AudioFile>
+    <Hyperlink>speeches/eleanorroosevelt.htm</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>58</Rank>
+    <Speaker>Geraldine Anne Ferraro</Speaker>
+    <Title>Vice-Presidential Nomination Acceptance Speech</Title>
+    <AudioFile>http://americanrhetoric.com/mp3clips/politicalspeeches/gferrarovicepresidentialacceptanceaddress.mp3</AudioFile>
+    <Hyperlink>speeches/gferraroacceptanceaddress.html</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>59</Rank>
+    <Speaker>Robert Marion La Follette</Speaker>
+    <Title>&amp;quot;Free Speech in Wartime&amp;quot;</Title>
+    <AudioFile></AudioFile>
+    <Hyperlink>speeches/robertlafollettefreespeecninwartime.htm</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>60</Rank>
+    <Speaker>Ronald Wilson Reagan</Speaker>
+    <Title>40th Anniversary of D-Day Address</Title>
+    <AudioFile>http://americanrhetoric.com/mp3clips/politicalspeeches/ronaldrreagandday4534592.mp3</AudioFile>
+    <Hyperlink>speeches/ronaldreaganddayaddress.html</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>61</Rank>
+    <Speaker>Mario Matthew Cuomo</Speaker>
+    <Title>&amp;quot;Religious Belief and Public Morality&amp;quot;</Title>
+    <AudioFile>http://americanrhetoric.com/mp3clips/politicalspeeches/mariocuomoreligiousbeliefexcerpt.mp3</AudioFile>
+    <Hyperlink>../archives.nd.edu/research/texts/cuomoe8dc.htm?DocID=14</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>62</Rank>
+    <Speaker>Edward Moore Kennedy</Speaker>
+    <Title>&amp;quot;Chappaquiddick&amp;quot;</Title>
+    <AudioFile>http://americanrhetoric.com/mp3clips/politicalspeeches/tedkennedychappaquiddickspeech.mp3</AudioFile>
+    <Hyperlink>speeches/tedkennedychappaquiddick.htm</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>63</Rank>
+    <Speaker>John Llewellyn Lewis</Speaker>
+    <Title>&amp;quot;The Rights of Labor&amp;quot;</Title>
+    <AudioFile></AudioFile>
+    <Hyperlink>speeches/johnlewisrightsoflabor.htm</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>64</Rank>
+    <Speaker>Barry Morris Goldwater</Speaker>
+    <Title>Presidential Nomination Acceptance Address</Title>
+    <AudioFile>http://americanrhetoric.com/mp3clips/politicalspeeches/barrygoldwater1964rnc.mp3</AudioFile>
+    <Hyperlink>speeches/barrygoldwater1964rnc.htm</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>65</Rank>
+    <Speaker>Stokely Carmichael</Speaker>
+    <Title>&amp;quot;Black Power&amp;quot;</Title>
+    <AudioFile>http://download.publicradio.org/podcast/sound_learning/2009/02/13/stokelycarmichael_20090213_64.mp3</AudioFile>
+    <Hyperlink>speeches/stokelycarmichaelblackpower.html</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>66</Rank>
+    <Speaker>Hubert Horatio Humphrey</Speaker>
+    <Title>1948 DNC Address</Title>
+    <AudioFile>../www.mnhs.org/library/tips/history_topics/42humphreyspeech/transcript.htm</AudioFile>
+    <Hyperlink>speeches/huberthumphey1948dnc.html</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>67</Rank>
+    <Speaker>Emma Goldman</Speaker>
+    <Title>Address to the Jury</Title>
+    <AudioFile></AudioFile>
+    <Hyperlink>speeches/emmagoldmanjuryaddress.htm</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>68</Rank>
+    <Speaker>Carrie Chapman Catt</Speaker>
+    <Title>&amp;quot;The Crisis&amp;quot;</Title>
+    <AudioFile></AudioFile>
+    <Hyperlink>speeches/carriechapmancattthecrisis.htm</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>69</Rank>
+    <Speaker>Newton Norman Minow</Speaker>
+    <Title>&amp;quot;Television and the Public Interest&amp;quot;</Title>
+    <AudioFile>http://174.132.193.190/~eiden/mp3clips/speeches/newtonminowtvandpublicinterest112.mp3</AudioFile>
+    <Hyperlink>../www.americanrhetoric.com/speeches/newtonminow.htm</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>70</Rank>
+    <Speaker>Edward Moore Kennedy</Speaker>
+    <Title>Eulogy for Robert Francis Kennedy</Title>
+    <AudioFile>http://americanrhetoric.com/mp3clips/speeches/tedkennedyonrfk45565656564.mp3</AudioFile>
+    <Hyperlink>speeches/ekennedytributetorfk.html</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>71</Rank>
+    <Speaker>Anita Faye Hill</Speaker>
+    <Title>Statement to the Senate Judiciary Committee</Title>
+    <AudioFile>http://americanrhetoric.com/mp3clips/speeches/anitahillopeningstmtclarencethomashearings.mp3</AudioFile>
+    <Hyperlink>speeches/anitahillsenatejudiciarystatement.htm</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>72</Rank>
+    <Speaker>Thomas Woodrow Wilson</Speaker>
+    <Title>League of Nations Final Address</Title>
+    <AudioFile></AudioFile>
+    <Hyperlink>speeches/wilsonleagueofnations.htm</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>73</Rank>
+    <Speaker>Henry Louis Gehrig</Speaker>
+    <Title>Farewell to Baseball Address</Title>
+    <AudioFile></AudioFile>
+    <Hyperlink>speeches/lougehrigfarewelltobaseball.htm</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>74</Rank>
+    <Speaker>Richard Milhous Nixon</Speaker>
+    <Title>Cambodian Incursion Address</Title>
+    <AudioFile>http://americanrhetoric.com/mp3clips/politicalspeeches/rnixoncambodianincursion.mp3</AudioFile>
+    <Hyperlink>../www.americanrhetoric.com/speeches/richardnixoncambodia.html</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>75</Rank>
+    <Speaker>Carrie Chapman Catt</Speaker>
+    <Title>Address to the U.S. Congress</Title>
+    <AudioFile></AudioFile>
+    <Hyperlink>speeches/carriechapmancattsuffragespeech.htm</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>76</Rank>
+    <Speaker>Edward Moore Kennedy</Speaker>
+    <Title>1980 DNC Address</Title>
+    <AudioFile>http://174.132.193.190/~eiden/mp3clips/politicalspeeches/tedkennedy1980dnc1122.mp3</AudioFile>
+    <Hyperlink>speeches/tedkennedy1980dnc.htm</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>77</Rank>
+    <Speaker>Lyndon Baines Johnson</Speaker>
+    <Title>On Vietnam and Not Seeking Re-Election</Title>
+    <AudioFile>http://americanrhetoric.com/mp3clips/politicalspeeches/lbjvietnamandreelection1122.mp3</AudioFile>
+    <Hyperlink>speeches/lbjvietman.htm</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>78</Rank>
+    <Speaker>Franklin Delano Roosevelt</Speaker>
+    <Title>Commonwealth Club Address</Title>
+    <AudioFile></AudioFile>
+    <Hyperlink>speeches/fdrcommonwealth.htm</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>79</Rank>
+    <Speaker>Thomas Woodrow Wilson</Speaker>
+    <Title>First Inaugural Address</Title>
+    <AudioFile></AudioFile>
+    <Hyperlink>speeches/wilsonfirstinaugural.htm</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>80</Rank>
+    <Speaker>Mario Savio</Speaker>
+    <Title>&amp;quot;Sproul Hall Sit-in Speech/An End to History&amp;quot;</Title>
+    <AudioFile>http://174.132.193.190/~eiden/mp3clips/politicalspeeches/mariosaviosproulhallsitin1122.mp3</AudioFile>
+    <Hyperlink>speeches/mariosaviosproulhallsitin.htm</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>81</Rank>
+    <Speaker>Elizabeth Glaser</Speaker>
+    <Title>1992 DNC Address</Title>
+    <AudioFile>http://americanrhetoric.com/mp3clips/politicalspeeches/elizabethglaser1992dnc5343.mp3</AudioFile>
+    <Hyperlink>speeches/elizabethglaser1992dnc.htm</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>82</Rank>
+    <Speaker>Eugene Victor Debs</Speaker>
+    <Title>&amp;quot;The Issue&amp;quot;</Title>
+    <AudioFile></AudioFile>
+    <Hyperlink>../www.marxists.org/archive/debs/works/1908/issue.htm</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>83</Rank>
+    <Speaker>Margaret Higgins Sanger</Speaker>
+    <Title>&amp;quot;Children's Era&amp;quot;</Title>
+    <AudioFile></AudioFile>
+    <Hyperlink>speeches/margaretsangerchildrensera.html</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>84</Rank>
+    <Speaker>Ursula Kroeber Le Guin</Speaker>
+    <Title>&amp;quot;A Left-Handed Commencement Address&amp;quot;</Title>
+    <AudioFile></AudioFile>
+    <Hyperlink>speeches/ursulakleguinlefthandedcommencementspeech.htm</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>85</Rank>
+    <Speaker>Crystal Eastman</Speaker>
+    <Title>&amp;quot;Now We Can Begin&amp;quot;</Title>
+    <AudioFile></AudioFile>
+    <Hyperlink>../womenshistory.about.com/library/etext/bl_eastman_crystal_1920.htm</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>86</Rank>
+    <Speaker>Huey Pierce Long</Speaker>
+    <Title>&amp;quot;Share Our Wealth&amp;quot;</Title>
+    <AudioFile></AudioFile>
+    <Hyperlink>speeches/hueyplongshare.htm</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>87</Rank>
+    <Speaker>Gerald Rudolph Ford</Speaker>
+    <Title>Address on Taking the Oath of Office</Title>
+    <AudioFile>http://americanrhetoric.com/mp3clips/politicalspeeches/geraldfordoathofoffice.mp3</AudioFile>
+    <Hyperlink>speeches/geraldfordpresidentialoath.html</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>88</Rank>
+    <Speaker>Cesar Estrada Chavez</Speaker>
+    <Title>Speech on Ending His 25 Day Fast</Title>
+    <AudioFile></AudioFile>
+    <Hyperlink>speeches/cesarchavezspeechmexicanamerican%26church.htm</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>89</Rank>
+    <Speaker>Elizabeth Gurley Flynn</Speaker>
+    <Title>Statement at the Smith Act Trial</Title>
+    <AudioFile></AudioFile>
+    <Hyperlink>speeches/elizabethgurleyflynn.htm</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>90</Rank>
+    <Speaker>Jimmy Earl Carter</Speaker>
+    <Title>&amp;quot;A Crisis of Confidence&amp;quot;</Title>
+    <AudioFile>http://174.132.193.190/~eiden/mp3clips/politicalspeeches/jimmycartercrisisofconfidence123.mp3</AudioFile>
+    <Hyperlink>speeches/jimmycartercrisisofconfidence.htm</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>91</Rank>
+    <Speaker>Malcolm X</Speaker>
+    <Title>&amp;quot;Message to the Grassroots&amp;quot;</Title>
+    <AudioFile></AudioFile>
+    <Hyperlink>../teachingamericanhistory.org/library/index87b1.html?document=1145</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>92</Rank>
+    <Speaker>William Jefferson Clinton</Speaker>
+    <Title>Oklahoma Bombing Memorial Address</Title>
+    <AudioFile>http://americanrhetoric.com/mp3clips/speeches/billclintonoklahomaprayerservice34.mp3</AudioFile>
+    <Hyperlink>speeches/wjcoklahomabombingspeech.htm</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>93</Rank>
+    <Speaker>Shirley Anita St. Hill Chisholm</Speaker>
+    <Title>&amp;quot;For the Equal Rights Amendment&amp;quot;</Title>
+    <AudioFile></AudioFile>
+    <Hyperlink>speeches/shirleychisholmequalrights.htm</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>94</Rank>
+    <Speaker>Ronald Wilson Reagan</Speaker>
+    <Title>Brandenburg Gate Address</Title>
+    <AudioFile>http://174.132.193.190/~eiden/mp3clips/politicalspeeches/reaganbrandenburg4346.mp3</AudioFile>
+    <Hyperlink>speeches/ronaldreaganbrandenburggate.htm</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>95</Rank>
+    <Speaker>Eliezer Wiesel</Speaker>
+    <Title>&amp;quot;The Perils of Indifference&amp;quot;</Title>
+    <AudioFile>http://174.132.193.190/~eiden/mp3clips/politicalspeeches/eliewieselindifference221.mp3</AudioFile>
+    <Hyperlink>speeches/ewieselperilsofindifference.html</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>96</Rank>
+    <Speaker>Gerald Rudolph Ford</Speaker>
+    <Title>National Address Pardoning Richard M. Nixon</Title>
+    <AudioFile>http://americanrhetoric.com/mp3clips/politicalspeeches/geraldfordnixonpardon.mp3</AudioFile>
+    <Hyperlink>speeches/geraldfordpardonofnixon.htm</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>97</Rank>
+    <Speaker>Thomas Woodrow Wilson</Speaker>
+    <Title>&amp;quot;For the League of Nations&amp;quot;</Title>
+    <AudioFile></AudioFile>
+    <Hyperlink>speeches/wilsontheleagueofnations.htm</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>98</Rank>
+    <Speaker>Lyndon Baines Johnson</Speaker>
+    <Title>&amp;quot;Let Us Continue&amp;quot;</Title>
+    <AudioFile>http://174.132.193.190/~eiden/mp3clips/politicalspeeches/lbjletuscontinue1111.mp3</AudioFile>
+    <Hyperlink>speeches/lbjletuscontinue.html</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>99</Rank>
+    <Speaker>Joseph N. Welch</Speaker>
+    <Title>&amp;quot;Have You No Sense of Decency&amp;quot;</Title>
+    <AudioFile>http://americanrhetoric.com/mp3clips/politicalspeeches/josephmccarthywelchexchange.mp3</AudioFile>
+    <Hyperlink>speeches/welch-mccarthy.html</Hyperlink>
+  </TopSpeeches>
+  <TopSpeeches>
+    <Rank>100</Rank>
+    <Speaker>Anna Eleanor Roosevelt</Speaker>
+    <Title>Adopting the Declaration of Human Rights</Title>
+    <AudioFile>http://americanrhetoric.com/mp3clips/politicalspeeches/eroosevelthumanrights.mp3</AudioFile>
+    <Hyperlink>speeches/eleanorrooseveltdeclarationhumanrights.htm</Hyperlink>
+  </TopSpeeches>
+</root>

@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
+  <Identity Name="DaksaTech.TopAmericanSpeeches" Version="1.0.0.16" Publisher="CN=42750936-DE0C-415B-9312-C587E65FD9EC" />
+  <Properties>
+    <DisplayName>Top American Speeches</DisplayName>
+    <PublisherDisplayName>DaksaTech</PublisherDisplayName>
+    <Logo>images\storelogo.png</Logo>
+  </Properties>
+  <Prerequisites>
+    <OSMinVersion>6.2.1</OSMinVersion>
+    <OSMaxVersionTested>6.2.1</OSMaxVersionTested>
+  </Prerequisites>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="App" StartPage="default.html">
+      <VisualElements DisplayName="Top American Speeches" Logo="images\logo.png" SmallLogo="images\smalllogo.png" Description="The top 100 speeches in American history" ForegroundText="dark" BackgroundColor="#ffffff">
+        <DefaultTile ShowName="allLogos" ShortName="American Speeches" WideLogo="images\logo_wide.png" />
+        <SplashScreen Image="images\splashscreen.png" BackgroundColor="#ffffff" />
+        <InitialRotationPreference>
+          <Rotation Preference="portrait" />
+          <Rotation Preference="landscape" />
+          <Rotation Preference="portraitFlipped" />
+          <Rotation Preference="landscapeFlipped" />
+        </InitialRotationPreference>
+      </VisualElements>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="internetClient" />
+  </Capabilities>
+</Package>

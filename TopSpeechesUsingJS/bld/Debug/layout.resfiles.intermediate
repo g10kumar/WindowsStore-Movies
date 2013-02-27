@@ -1,0 +1,183 @@
+css\default.css
+default.html
+images\logo.png
+images\logo_wide.png
+images\smalllogo.png
+images\speaker\Adlai Ewing Stevenson.jpg
+images\speaker\Anita Faye Hill.jpg
+images\speaker\Anna Eleanor Roosevelt.jpg
+images\speaker\Anna Howard Shaw.jpg
+images\speaker\Barbara Charline Jordan.jpg
+images\speaker\Barbara Pierce Bush.jpg
+images\speaker\Barry Morris Goldwater.jpg
+images\speaker\Carrie Chapman Catt.jpg
+images\speaker\Cesar Estrada Chavez.jpg
+images\speaker\Clarence Seward Darrow.jpg
+images\speaker\Crystal Eastman.jpg
+images\speaker\Dorothy Ann Willis Richards.jpg
+images\speaker\Dwight David Eisenhower.jpg
+images\speaker\Edward Moore Kennedy.jpg
+images\speaker\Eliezer Wiesel.jpg
+images\speaker\Elizabeth Glaser.jpg
+images\speaker\Elizabeth Gurley Flynn.jpg
+images\speaker\Emma Goldman.jpg
+images\speaker\Eugene Victor Debs.jpg
+images\speaker\Franklin Delano Roosevelt.jpg
+images\speaker\General Douglas MacArthur.jpg
+images\speaker\George Catlett Marshall.jpg
+images\speaker\Gerald Rudolph Ford.jpg
+images\speaker\Geraldine Anne Ferraro.jpg
+images\speaker\Harry S. Truman.jpg
+images\speaker\Henry Louis Gehrig.jpg
+images\speaker\Hillary Diane Rodham Clinton.jpg
+images\speaker\Hubert Horatio Humphrey.jpg
+images\speaker\Huey Pierce Long.jpg
+images\speaker\Jesse Louis Jackson.jpg
+images\speaker\Jimmy Earl Carter.jpg
+images\speaker\John Fitzgerald Kennedy.jpg
+images\speaker\John Llewellyn Lewis.jpg
+images\speaker\Joseph N. Welch.jpg
+images\speaker\Lyndon Baines Johnson.jpg
+images\speaker\Malcolm X.jpg
+images\speaker\Margaret Chase Smith.jpg
+images\speaker\Margaret Higgins Sanger.jpg
+images\speaker\Mario Matthew Cuomo.jpg
+images\speaker\Mario Savio.jpg
+images\speaker\Martin Luther King, Jr..jpg
+images\speaker\Mary Church Terrell.jpg
+images\speaker\Mary Fisher.jpg
+images\speaker\Newton Norman Minow.jpg
+images\speaker\Richard Milhous Nixon.jpg
+images\speaker\Robert Francis Kennedy.jpg
+images\speaker\Robert Marion La Follette.jpg
+images\speaker\Ronald Wilson Reagan.jpg
+images\speaker\Russell H. Conwell.jpg
+images\speaker\Shirley Anita St. Hill Chisholm.jpg
+images\speaker\Spiro Theodore Agnew.jpg
+images\speaker\Stokely Carmichael.jpg
+images\speaker\Theodore Roosevelt.jpg
+images\speaker\Thomas Woodrow Wilson.jpg
+images\speaker\Ursula Kroeber Le Guin.jpg
+images\speaker\William Cuthbert Faulkner.jpg
+images\speaker\William Jefferson Clinton.jpg
+images\speaker\William Jennings Bryan.jpg
+images\splashscreen.png
+images\storelogo.png
+js\data.js
+js\default.js
+js\navigator.js
+pages\about\about.html
+pages\groupDetail\groupDetail.css
+pages\groupDetail\groupDetail.html
+pages\groupDetail\groupDetail.js
+pages\groupedItems\groupedItems.css
+pages\groupedItems\groupedItems.html
+pages\groupedItems\groupedItems.js
+pages\itemDetail\itemDetail.css
+pages\itemDetail\itemDetail.html
+pages\itemDetail\itemDetail.js
+pages\preferences\preferences.css
+pages\preferences\preferences.html
+pages\preferences\preferences.js
+pages\privacypolicy\privacypolicy.html
+xml\1.xml
+xml\10.xml
+xml\100.xml
+xml\11.xml
+xml\12.xml
+xml\13.xml
+xml\14.xml
+xml\15.xml
+xml\16.xml
+xml\17.xml
+xml\18.xml
+xml\19.xml
+xml\2.xml
+xml\20.xml
+xml\21.xml
+xml\22.xml
+xml\23.xml
+xml\24.xml
+xml\25.xml
+xml\26.xml
+xml\27.xml
+xml\28.xml
+xml\29.xml
+xml\3.xml
+xml\30.xml
+xml\31.xml
+xml\32.xml
+xml\33.xml
+xml\34.xml
+xml\35.xml
+xml\36.xml
+xml\37.xml
+xml\38.xml
+xml\39.xml
+xml\4.xml
+xml\40.xml
+xml\41.xml
+xml\42.xml
+xml\43.xml
+xml\44.xml
+xml\45.xml
+xml\46.xml
+xml\47.xml
+xml\48.xml
+xml\49.xml
+xml\5.xml
+xml\50.xml
+xml\51.xml
+xml\52.xml
+xml\53.xml
+xml\54.xml
+xml\55.xml
+xml\56.xml
+xml\57.xml
+xml\58.xml
+xml\59.xml
+xml\6.xml
+xml\60.xml
+xml\61.xml
+xml\62.xml
+xml\63.xml
+xml\64.xml
+xml\65.xml
+xml\66.xml
+xml\67.xml
+xml\68.xml
+xml\69.xml
+xml\7.xml
+xml\70.xml
+xml\71.xml
+xml\72.xml
+xml\73.xml
+xml\74.xml
+xml\75.xml
+xml\76.xml
+xml\77.xml
+xml\78.xml
+xml\79.xml
+xml\8.xml
+xml\80.xml
+xml\81.xml
+xml\82.xml
+xml\83.xml
+xml\84.xml
+xml\85.xml
+xml\86.xml
+xml\87.xml
+xml\88.xml
+xml\89.xml
+xml\9.xml
+xml\90.xml
+xml\91.xml
+xml\92.xml
+xml\93.xml
+xml\94.xml
+xml\95.xml
+xml\96.xml
+xml\97.xml
+xml\98.xml
+xml\99.xml
+xml\TopSpeeches.xml
