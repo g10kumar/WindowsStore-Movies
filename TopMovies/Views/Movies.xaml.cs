@@ -40,6 +40,7 @@ namespace TopMovies.Views
         Windows.Storage.ApplicationDataContainer roamingSettings = Windows.Storage.ApplicationData.Current.RoamingSettings;
         StorageFile movieFile = null;
         string fileContent = "";
+
         //private string[] _ids =
         //{
         //    "1067", "2328", "2660", "1632", "2486", "2602", "2329", "2634",
@@ -53,6 +54,9 @@ namespace TopMovies.Views
         //    "1523", "1524", "2168", "1811", "1697", "1698", "1699", "1729",
         //    "1759", "1760", "2198", "2232"
         //};
+
+
+
 
         private ObservableCollection<Person> images;
 
@@ -154,12 +158,39 @@ namespace TopMovies.Views
 
             if (movieName != null && this.Frame != null)
             {
+
+                if (sessionData.selectCategory == "TopForeign" & movieName.IndexOf("/") > 5)
+                {
+                    movieName = movieName.Substring(0, movieName.IndexOf("/"));
+                }
+                var geographicRegion = new Windows.Globalization.GeographicRegion();
+                var countryCode = geographicRegion.CodeTwoLetter;
+
+
+                string url = "http://www.amazon.com/s/?_encoding=UTF8&field-keywords=" + movieName + "&linkCode=ur2&tag=artmaya-20&url=search-alias%3Dmovies-tv";
+                switch (countryCode)
+                {
+                    case "US":
+                        url = "http://www.amazon.com/s/?_encoding=UTF8&field-keywords=" + movieName + "&linkCode=ur2&tag=artmaya-20&url=search-alias%3Dmovies-tv";
+                        break;
+                    case "IN":
+                        url = "http://www.flipkart.com/search/a/movies-music?fk-search=movies-music&query=" + movieName + "&vertical=movies-music&affid=dkdaksatec";
+                        break;
+                    case "GB":
+                        url = "http://www.amazon.co.uk/s/?_encoding=UTF8&camp=1634&field-keywords=" + movieName + "&linkCode=ur2&tag=daksatech-21&url=search-alias=dvd";
+                        break;
+
+                    default:
+                        url = "http://www.amazon.com/s/?_encoding=UTF8&field-keywords=" + movieName + "&linkCode=ur2&tag=artmaya-20&url=search-alias%3Dmovies-tv";
+                        break;
+                }
+                
                 e.Request.Data.Properties.Title = movieName;
 
                 //e.Request.Data.Properties.Description = selectedItem.Title + "-" + selectedItem.Author + Environment.NewLine + selectedItem.Link.AbsoluteUri.ToString();
 
-                e.Request.Data.SetText(movieName + ": " + categoryDesc + Environment.NewLine + "Buy from: http://www.amazon.com/s/?_encoding=UTF8&field-keywords=" + movieName + "&linkCode=ur2&tag=artmaya-20&url=search-alias%3Dmovies-tv");
-                e.Request.Data.SetUri(new Uri("http://www.amazon.com/s/?_encoding=UTF8&field-keywords=" + movieName + "&linkCode=ur2&tag=artmaya-20&url=search-alias%3Dmovies-tv"));
+                e.Request.Data.SetText(movieName + ": " + categoryDesc + Environment.NewLine + "Buy from: " + url);
+                e.Request.Data.SetUri(new Uri(url));
                 e.Request.Data.SetHtmlFormat("Love  this movie: <strong>" + movieName + "</strong><br /><br />" + "Synopsis at: <a href=\"http://www.wikipedia.org\">Wikipedia<br />Check it out at: <a href=\"http://www.amazon.com\">Amazon</a>" );
 
                 //RandomAccessStreamReference imageStreamRef = RandomAccessStreamReference.CreateFromUri(new Uri(movieImage));
@@ -430,7 +461,41 @@ namespace TopMovies.Views
 
         private async void btnBuyDVD_Click_1(object sender, RoutedEventArgs e)
         {
-            await Windows.System.Launcher.LaunchUriAsync(new Uri("http://www.amazon.com/s/?_encoding=UTF8&field-keywords=" + txtName.Text + "&linkCode=ur2&tag=artmaya-20&url=search-alias%3Dmovies-tv"));
+            var geographicRegion = new Windows.Globalization.GeographicRegion();
+            
+            var countryCode = geographicRegion.CodeTwoLetter;
+            
+            var movieName = "";
+            if (sessionData.selectCategory == "TopForeign" & txtName.Text.IndexOf("/") > 5)
+            {
+                movieName = txtName.Text.Substring(0, txtName.Text.IndexOf("/"));
+            }
+            else
+            {
+                movieName = txtName.Text;
+            }
+
+            string url = "http://www.amazon.com/s/?_encoding=UTF8&field-keywords=" + movieName + "&linkCode=ur2&tag=artmaya-20&url=search-alias%3Dmovies-tv";
+            switch(countryCode)
+            {
+                case "US":
+                    url = "http://www.amazon.com/s/?_encoding=UTF8&field-keywords=" + movieName + "&linkCode=ur2&tag=artmaya-20&url=search-alias%3Dmovies-tv";
+                    break;
+                case "IN":
+                    url = "http://www.flipkart.com/search/a/movies-music?fk-search=movies-music&query=" + movieName + "&vertical=movies-music&affid=dkdaksatec";
+                    break;
+                case "GB":
+                    url = "http://www.amazon.co.uk/s/?_encoding=UTF8&camp=1634&field-keywords=" + movieName + "&linkCode=ur2&tag=daksatech-21&url=search-alias=dvd";
+                    break;
+                    
+                default:
+                    url = "http://www.amazon.com/s/?_encoding=UTF8&field-keywords=" + movieName + "&linkCode=ur2&tag=artmaya-20&url=search-alias%3Dmovies-tv";
+                    break;
+            }
+
+
+            //await Windows.System.Launcher.LaunchUriAsync(new Uri("http://www.amazon.com/s/?_encoding=UTF8&field-keywords=" + txtName.Text + "&linkCode=ur2&tag=artmaya-20&url=search-alias%3Dmovies-tv"));
+            await Windows.System.Launcher.LaunchUriAsync(new Uri(url));
         }
 
         private void btnMovieDetails_Click_1(object sender, RoutedEventArgs e)
