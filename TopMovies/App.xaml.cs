@@ -15,6 +15,9 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Windows.UI.ApplicationSettings;
 using TopMovies.Common;
+using Windows.Globalization;
+using Windows.UI.Xaml.Media.Animation;
+
 // The Blank Application template is documented at http://go.microsoft.com/fwlink/?LinkId=234227
 
 namespace TopMovies
@@ -46,6 +49,21 @@ namespace TopMovies
         {
             Frame rootFrame = Window.Current.Content as Frame;
 
+            //Variable to get the Location of the user . Have to get this varaible every time , so that if the user changes the Region setting.
+
+            var geoGraphicRegion = new Windows.Globalization.GeographicRegion();
+
+            var _countryCode = geoGraphicRegion.CodeTwoLetter;
+
+            var displayName = geoGraphicRegion.DisplayName;     // this is the name that is going to be used in the ListBox first item , i.e the default country .
+
+            //Maintain a Global varaible countryCode that is used in the Movie.xaml.cs & here to compare if the Region setting has been changed since the last run. 
+
+            //if (countryCode == null || countryCode != _countryCode). Only when this condition is met we will display the pop up asking for the user to input the country .
+            //so that if on starting the application , if the countryCode that was saved on the last run is not loaded then the user will be promted. 
+
+            // The variable countryCode needs to be stored in the OnsessionSuspension or OnsessionTremination so that the user will not be prompted again & again.
+
             // Do not repeat app initialization when the Window already has content,
             // just ensure that the window is active
             if (rootFrame == null)
@@ -59,7 +77,7 @@ namespace TopMovies
                     //TODO: Load state from previously suspended application
                     //await TopMovies.Common.SuspensionManager.RestoreAsync();
 
-                    
+
                 }
 
                 Windows.Storage.ApplicationDataContainer roamingSettings = Windows.Storage.ApplicationData.Current.RoamingSettings;
@@ -102,7 +120,7 @@ namespace TopMovies
 
         void OnCommandsRequested(SettingsPane sender, SettingsPaneCommandsRequestedEventArgs args)
         {
-            
+
             // Add a About command
             var about = new SettingsCommand("about", "About Us", (handler) =>
             {
@@ -132,8 +150,41 @@ namespace TopMovies
 
             args.Request.ApplicationCommands.Add(moreapps);
 
+            //Add a preference apps command
+            SettingsCommand preference = new SettingsCommand("region_setting", "Country setting", (handler) =>
+                {
+                    Popup popup = BuildSettingsItem(new Regionsetting(), 1000);
+                    popup.IsOpen = true;
+                });
+
+            args.Request.ApplicationCommands.Add(preference);
+        }
+
+
+
+        private Popup BuildSettingsItem(UserControl u, int w )
+        {
+
+            Popup p = new Popup();
+            p.IsLightDismissEnabled = true;
+            p.ChildTransitions = new TransitionCollection();
+            p.ChildTransitions.Add(new PaneThemeTransition()
+
+            {
+                Edge = (SettingsPane.Edge == SettingsEdgeLocation.Right) ?
+                        EdgeTransitionLocation.Right :
+                        EdgeTransitionLocation.Left
+
+            });
+            u.Width = w;
+            u.Height = Window.Current.Bounds.Height;
+            p.Child = u;
+            p.SetValue(Canvas.LeftProperty, SettingsPane.Edge == SettingsEdgeLocation.Right ? (Window.Current.Bounds.Width - w) : 0);
+            p.SetValue(Canvas.TopProperty, 0);
+            return p;
 
         }
+
 
         /// <summary>
         /// Invoked when application execution is being suspended.  Application state is saved
@@ -151,7 +202,7 @@ namespace TopMovies
             deferral.Complete();
         }
 
-       
+
 
     }
 
