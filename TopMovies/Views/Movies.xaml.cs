@@ -464,7 +464,9 @@ namespace TopMovies.Views
             var geographicRegion = new Windows.Globalization.GeographicRegion();
             
             var countryCode = geographicRegion.CodeTwoLetter;
+            //string homeregion = Windows.System.UserProfile.GlobalizationPreferences.HomeGeographicRegion;
             
+
             var movieName = "";
             if (sessionData.selectCategory == "TopForeign" & txtName.Text.IndexOf("/") > 5)
             {
