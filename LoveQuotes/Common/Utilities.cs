@@ -9,6 +9,7 @@ namespace LoveQuotes
 {
     class Utilities
     {
+        
         async void ShowMessage(string msg)
         {
             Windows.UI.Popups.MessageDialog dialog = new Windows.UI.Popups.MessageDialog(msg);

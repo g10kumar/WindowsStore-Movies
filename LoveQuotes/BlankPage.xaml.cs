@@ -94,7 +94,7 @@ namespace LoveQuotes
             ApplicationData.Current.RoamingSettings.Values["date_firstLaunch"] = null;
 
             ShareSourceLoad();
-
+            
             Window.Current.SizeChanged += Current_SizeChanged;
 
             if (ApplicationData.Current.RoamingSettings.Values["launch_count"] != null)
@@ -510,7 +510,7 @@ namespace LoveQuotes
             {
                 int randomQuotesToLoad = 1393;
                 List<Quotation> list = new List<Quotation>();
-
+                
                 Windows.Storage.StorageFolder storageFolder = await Windows.ApplicationModel.Package.Current.InstalledLocation.GetFolderAsync("Xml");
 
                 sampleFile = await storageFolder.GetFileAsync("QuotesLove.xml");

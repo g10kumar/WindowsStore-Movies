@@ -187,6 +187,8 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Content Include="blank.html" />
+    <Content Include="Dlls\DT.GoogleAnalytics.Metro.dll" />
     <Content Include="Xml\in-app-purchase.xml" />
     <Content Include="Xml\QuotesLove.xml">
       <SubType>Designer</SubType>
@@ -206,17 +208,17 @@
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Reference Include="Microsoft.Advertising.WinRT.UI, Version=6.1.813.1, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\QuotesOfWisdom\bin\x64\Debug\AppX\Microsoft.Advertising.WinRT.UI.winmd</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\..\Veeru-Win8 Trial Version\desktop\d\Windows8\LoveQuotes\bin\Debug\Newtonsoft.Json.dll</HintPath>
-    </Reference>
+    <SDKReference Include="MSAdvertisingXaml, Version=6.1">
+      <Name>Microsoft Advertising SDK for Windows 8 %28Xaml%29</Name>
+    </SDKReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Dlls\" />
+    <Reference Include="DT.GoogleAnalytics.Metro, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Users\Veeru\Desktop\05.02.2013\DT.GoogleAnalytics.Metro.2.0\DT.GoogleAnalytics.Metro.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' ">
     <VisualStudioVersion>11.0</VisualStudioVersion>

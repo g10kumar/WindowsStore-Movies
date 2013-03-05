@@ -21,6 +21,7 @@ using Windows.Data.Xml;
 using Windows.UI.ApplicationSettings;
 // The Blank Application template is documented at http://go.microsoft.com/fwlink/?LinkId=234227
 using LoveQuotes.Common;
+using DT.GoogleAnalytics.Metro;
 
 namespace LoveQuotes
 {
@@ -29,7 +30,8 @@ namespace LoveQuotes
     /// </summary>
     sealed partial class App : Application
     {
-        public const string AppName = "1,000 Love Quotes";
+        public const string AppName = "1,000 Love Quotes";        
+
         //public const DispatcherTimer dtautoPlay = new DispatcherTimer();
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
@@ -55,17 +57,42 @@ namespace LoveQuotes
             }
 
             // Create a Frame to act navigation context and navigate to the first page
-            var rootFrame = new Frame();
+            //var rootFrame = new Frame();
+            var rootFrame = CreateApplicationFrame();
             rootFrame.Navigate(typeof(BlankPage));
             //rootFrame.Navigate(typeof(SettingsSample));
 
             // Place the frame in the current Window and ensure that it is active
             Window.Current.Content = rootFrame;
+            AnalyticsHelper.Setup();
             Window.Current.Activate();
 
             // Register handler for CommandsRequested events from the settings pane
             SettingsPane.GetForCurrentView().CommandsRequested += OnCommandsRequested;
             
+        }
+
+        private static Frame CreateApplicationFrame()
+        {
+            var rootFrame = new Frame();
+            rootFrame.Navigated += rootFrame_Navigated;
+            return rootFrame;
+        }
+
+        static void rootFrame_Navigated(object sender, NavigationEventArgs e)
+        {
+            if (e.Uri == null)
+            {
+                if (e.SourcePageType != null)
+                {
+                    string uri = "/" + e.SourcePageType.FullName;
+                    AnalyticsHelper.TrackPageView(uri);
+                }
+            }
+            else
+            {
+                AnalyticsHelper.TrackPageView(e.Uri.ToString());
+            }
         }
 
         void OnCommandsRequested(SettingsPane sender, SettingsPaneCommandsRequestedEventArgs args)
@@ -112,6 +139,7 @@ namespace LoveQuotes
         /// <param name="e">Details about the suspend request.</param>
         void OnSuspending(object sender, SuspendingEventArgs e)
         {
+            AnalyticsHelper.TrackPageView("app closed");
             //TODO: Save application state and stop any background activity
         }
     }
