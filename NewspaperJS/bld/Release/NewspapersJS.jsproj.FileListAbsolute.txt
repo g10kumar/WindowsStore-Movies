@@ -1,0 +1,14 @@
+L:\Users\dk_000\Documents\Visual Studio 2012\Projects\NewspapersJS\bin\Release\resources.pri
+L:\Users\dk_000\Documents\Visual Studio 2012\Projects\NewspapersJS\bin\Release\AppxManifest.xml
+L:\Users\dk_000\Documents\Visual Studio 2012\Projects\NewspapersJS\bin\Release\NewspapersJS.build.appxrecipe
+L:\Users\dk_000\Documents\Visual Studio 2012\Projects\NewspapersJS\bin\Release\MicrosoftAdvertising.winmd
+L:\Users\dk_000\Documents\Visual Studio 2012\Projects\NewspapersJS\bld\Release\priconfig.xml.intermediate
+L:\Users\dk_000\Documents\Visual Studio 2012\Projects\NewspapersJS\bld\Release\layout.resfiles.intermediate
+L:\Users\dk_000\Documents\Visual Studio 2012\Projects\NewspapersJS\bld\Release\resources.resfiles.intermediate
+L:\Users\dk_000\Documents\Visual Studio 2012\Projects\NewspapersJS\bld\Release\pri.resfiles.intermediate
+L:\Users\dk_000\Documents\Visual Studio 2012\Projects\NewspapersJS\bld\Release\priconfig.xml
+L:\Users\dk_000\Documents\Visual Studio 2012\Projects\NewspapersJS\bld\Release\layout.resfiles
+L:\Users\dk_000\Documents\Visual Studio 2012\Projects\NewspapersJS\bld\Release\resources.resfiles
+L:\Users\dk_000\Documents\Visual Studio 2012\Projects\NewspapersJS\bld\Release\pri.resfiles
+L:\Users\dk_000\Documents\Visual Studio 2012\Projects\NewspapersJS\bld\Release\LanguageQualifiers.txt
+L:\Users\dk_000\Documents\Visual Studio 2012\Projects\NewspapersJS\bld\Release\ProjectArchitectures.txt

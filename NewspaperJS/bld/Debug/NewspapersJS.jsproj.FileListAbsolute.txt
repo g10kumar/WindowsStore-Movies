@@ -1,0 +1,42 @@
+L:\Users\dk_000\Documents\Visual Studio 2012\Projects\NewspapersJS\bin\Debug\resources.pri
+L:\Users\dk_000\Documents\Visual Studio 2012\Projects\NewspapersJS\bin\Debug\AppxManifest.xml
+L:\Users\dk_000\Documents\Visual Studio 2012\Projects\NewspapersJS\bin\Debug\NewspapersJS.build.appxrecipe
+L:\Users\dk_000\Documents\Visual Studio 2012\Projects\NewspapersJS\bin\Debug\MicrosoftAdvertising.winmd
+L:\Users\dk_000\Documents\Visual Studio 2012\Projects\NewspapersJS\bld\Debug\priconfig.xml
+L:\Users\dk_000\Documents\Visual Studio 2012\Projects\NewspapersJS\bld\Debug\layout.resfiles
+L:\Users\dk_000\Documents\Visual Studio 2012\Projects\NewspapersJS\bld\Debug\resources.resfiles
+L:\Users\dk_000\Documents\Visual Studio 2012\Projects\NewspapersJS\bld\Debug\pri.resfiles
+L:\Users\dk_000\Documents\Visual Studio 2012\Projects\NewspapersJS\bld\Debug\LanguageQualifiers.txt
+L:\Users\dk_000\Documents\Visual Studio 2012\Projects\NewspapersJS\bld\Debug\ProjectArchitectures.txt
+L:\Users\dk_000\Documents\Visual Studio 2012\Projects\NewspapersJS\bld\Debug\priconfig.xml.intermediate
+L:\Users\dk_000\Documents\Visual Studio 2012\Projects\NewspapersJS\bld\Debug\layout.resfiles.intermediate
+L:\Users\dk_000\Documents\Visual Studio 2012\Projects\NewspapersJS\bld\Debug\resources.resfiles.intermediate
+L:\Users\dk_000\Documents\Visual Studio 2012\Projects\NewspapersJS\bld\Debug\pri.resfiles.intermediate
+C:\Users\dk\Documents\Visual Studio 2012\Projects\NewspapersJS\bin\Debug\resources.pri
+C:\Users\dk\Documents\Visual Studio 2012\Projects\NewspapersJS\bin\Debug\AppxManifest.xml
+C:\Users\dk\Documents\Visual Studio 2012\Projects\NewspapersJS\bin\Debug\NewspapersJS.build.appxrecipe
+C:\Users\dk\Documents\Visual Studio 2012\Projects\NewspapersJS\bin\Debug\MicrosoftAdvertising.winmd
+C:\Users\dk\Documents\Visual Studio 2012\Projects\NewspapersJS\bld\Debug\priconfig.xml.intermediate
+C:\Users\dk\Documents\Visual Studio 2012\Projects\NewspapersJS\bld\Debug\layout.resfiles.intermediate
+C:\Users\dk\Documents\Visual Studio 2012\Projects\NewspapersJS\bld\Debug\resources.resfiles.intermediate
+C:\Users\dk\Documents\Visual Studio 2012\Projects\NewspapersJS\bld\Debug\pri.resfiles.intermediate
+C:\Users\dk\Documents\Visual Studio 2012\Projects\NewspapersJS\bld\Debug\priconfig.xml
+C:\Users\dk\Documents\Visual Studio 2012\Projects\NewspapersJS\bld\Debug\layout.resfiles
+C:\Users\dk\Documents\Visual Studio 2012\Projects\NewspapersJS\bld\Debug\resources.resfiles
+C:\Users\dk\Documents\Visual Studio 2012\Projects\NewspapersJS\bld\Debug\pri.resfiles
+C:\Users\dk\Documents\Visual Studio 2012\Projects\NewspapersJS\bld\Debug\LanguageQualifiers.txt
+C:\Users\dk\Documents\Visual Studio 2012\Projects\NewspapersJS\bld\Debug\ProjectArchitectures.txt
+C:\DaksaTech\Win8 Apps\NewspaperJS\bin\Debug\resources.pri
+C:\DaksaTech\Win8 Apps\NewspaperJS\bin\Debug\AppxManifest.xml
+C:\DaksaTech\Win8 Apps\NewspaperJS\bin\Debug\NewspapersJS.build.appxrecipe
+C:\DaksaTech\Win8 Apps\NewspaperJS\bin\Debug\MicrosoftAdvertising.winmd
+C:\DaksaTech\Win8 Apps\NewspaperJS\bld\Debug\priconfig.xml.intermediate
+C:\DaksaTech\Win8 Apps\NewspaperJS\bld\Debug\layout.resfiles.intermediate
+C:\DaksaTech\Win8 Apps\NewspaperJS\bld\Debug\resources.resfiles.intermediate
+C:\DaksaTech\Win8 Apps\NewspaperJS\bld\Debug\pri.resfiles.intermediate
+C:\DaksaTech\Win8 Apps\NewspaperJS\bld\Debug\priconfig.xml
+C:\DaksaTech\Win8 Apps\NewspaperJS\bld\Debug\layout.resfiles
+C:\DaksaTech\Win8 Apps\NewspaperJS\bld\Debug\resources.resfiles
+C:\DaksaTech\Win8 Apps\NewspaperJS\bld\Debug\pri.resfiles
+C:\DaksaTech\Win8 Apps\NewspaperJS\bld\Debug\LanguageQualifiers.txt
+C:\DaksaTech\Win8 Apps\NewspaperJS\bld\Debug\ProjectArchitectures.txt

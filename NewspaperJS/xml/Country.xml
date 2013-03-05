@@ -1,0 +1,824 @@
+﻿<?xml version="1.0" encoding="utf-8"?><root>  
+  <region name="United States" value="usa">
+    <c name="National">
+      <abbr>USA</abbr>
+      <flag>us-lgflag.jpg</flag>
+    </c>
+    <c name="Alabama">
+      <abbr>AL</abbr>
+      <flag>Alabama.jpg</flag>
+    </c>
+    <c name="Alaska">
+      <abbr>AK</abbr>
+      <flag>Alaska.jpg</flag>
+    </c>
+    <c name="Arizona">
+      <abbr>AZ</abbr>
+      <flag>Arizona.jpg</flag>
+    </c>
+    <c name="Arkansas">
+      <abbr>AR</abbr>
+      <flag>Arkansas.jpg</flag>
+    </c>
+    <c name="California">
+      <abbr>AL</abbr>
+      <flag>California.jpg</flag>
+    </c>
+    <c name="Colorado">
+      <abbr>CA</abbr>
+      <flag>Colorado.jpg</flag>
+    </c>
+    <c name="Connecticut">
+      <abbr>CT</abbr>
+      <flag>Connecticut.jpg</flag>
+    </c>
+    <c name="Delaware">
+      <abbr>DE</abbr>
+      <flag>Delaware.jpg</flag>
+    </c>
+    <c name="Dist. of Columbia">
+      <abbr>DC</abbr>
+      <flag>DistofColumbia.jpg</flag>
+    </c>
+    <c name="Florida">
+      <abbr>FL</abbr>
+      <flag>Florida.jpg</flag>
+    </c>
+    <c name="Georgia">
+      <abbr>GA</abbr>
+      <flag>Georgia.jpg</flag>
+    </c>
+    <c name="Hawaii">
+      <abbr>HI</abbr>
+      <flag>Hawaii.jpg</flag>
+    </c>
+    <c name="Idaho">
+      <abbr>ID</abbr>
+      <flag>Idaho.jpg</flag>
+    </c>
+    <c name="Illinois">
+      <abbr>IL</abbr>
+      <flag>Illinois.jpg</flag>
+    </c>
+    <c name="Indiana">
+      <abbr>IN</abbr>
+      <flag>Indiana.jpg</flag>
+    </c>
+    <c name="Iowa">
+      <abbr>IA</abbr>
+      <flag>Iowa.jpg</flag>
+    </c>
+    <c name="Kansas">
+      <abbr>KS</abbr>
+      <flag>Kansas.jpg</flag>
+    </c>
+    <c name="Kentucky">
+      <abbr>KY</abbr>
+      <flag>Kentucky.jpg</flag>
+    </c>
+    <c name="Louisiana">
+      <abbr>LA</abbr>
+      <flag>Louisiana.jpg</flag>
+    </c>
+    <c name="Maine">
+      <abbr>ME</abbr>
+      <flag>Maine.jpg</flag>
+    </c>
+    <c name="Maryland">
+      <abbr>MD</abbr>
+      <flag>Maryland.jpg</flag>
+    </c>
+    <c name="Massachusetts">
+      <abbr>MA</abbr>
+      <flag>Massachusetts.jpg</flag>
+    </c>
+    <c name="Michigan">
+      <abbr>MI</abbr>
+      <flag>Michigan.jpg</flag>
+    </c>
+    <c name="Minnesota">
+      <abbr>MN</abbr>
+      <flag>Minnesota.jpg</flag>
+    </c>
+    <c name="Mississippi">
+      <abbr>MS</abbr>
+      <flag>Mississippi.jpg</flag>
+    </c>
+    <c name="Missouri">
+      <abbr>MO</abbr>
+      <flag>Missouri.jpg</flag>
+    </c>
+    <c name="Montana">
+      <abbr>MT</abbr>
+      <flag>Montana.jpg</flag>
+    </c>
+    <c name="Nebraska">
+      <abbr>NE</abbr>
+      <flag>Nebraska.jpg</flag>
+    </c>
+    <c name="Nevada">
+      <abbr>NV</abbr>
+      <flag>Nevada.jpg</flag>
+    </c>
+    <c name="New Hampshire">
+      <abbr>NH</abbr>
+      <flag>New_Hampshire.jpg</flag>
+    </c>
+    <c name="New Jersey">
+      <abbr>NJ</abbr>
+      <flag>New_Jersey.jpg</flag>
+    </c>
+    <c name="New Mexico">
+      <abbr>NM</abbr>
+      <flag>New_Mexico.jpg</flag>
+    </c>
+    <c name="New York">
+      <abbr>NY</abbr>
+      <flag>New_York.jpg</flag>
+    </c>
+    <c name="North Carolina">
+      <abbr>NC</abbr>
+      <flag>North_Carolina.jpg</flag>
+    </c>
+    <c name="North Dakota">
+      <abbr>ND</abbr>
+      <flag>North_Dakota.jpg</flag>
+    </c>
+    <c name="Ohio">
+      <abbr>OH</abbr>
+      <flag>Ohio.jpg</flag>
+    </c>
+    <c name="Oklahoma">
+      <abbr>OK</abbr>
+      <flag>Oklahoma.jpg</flag>
+    </c>
+    <c name="Oregon">
+      <abbr>OR</abbr>
+      <flag>Oregon.jpg</flag>
+    </c>
+    <c name="Pennsylvania">
+      <abbr>PA</abbr>
+      <flag>Pennsylvania.jpg</flag>
+    </c>
+    <c name="Rhode Island">
+      <abbr>RI</abbr>
+      <flag>Rhode_Island.jpg</flag>
+    </c>
+    <c name="South Carolina">
+      <abbr>SC</abbr>
+      <flag>South_Carolina.jpg</flag>
+    </c>
+    <c name="South Dakota">
+      <abbr>SD</abbr>
+      <flag>South_Dakota.jpg</flag>
+    </c>
+    <c name="Tennessee">
+      <abbr>TN</abbr>
+      <flag>Tennessee.jpg</flag>
+    </c>
+    <c name="Texas">
+      <abbr>TX</abbr>
+      <flag>Texas.jpg</flag>
+    </c>
+    <c name="Utah">
+      <abbr>UT</abbr>
+      <flag>Utah.jpg</flag>
+    </c>
+    <c name="Vermont">
+      <abbr>VT</abbr>
+      <flag>Vermont.jpg</flag>
+    </c>
+    <c name="Virginia">
+      <abbr>VA</abbr>
+      <flag>Virginia.jpg</flag>
+    </c>
+    <c name="Washington">
+      <abbr>WA</abbr>
+      <flag>Washington.jpg</flag>
+    </c>
+    <c name="West Virginia">
+      <abbr>WV</abbr>
+      <flag>West_Virginia.jpg</flag>
+    </c>
+    <c name="Wisconsin">
+      <abbr>WI</abbr>
+      <flag>Wisconsin.jpg</flag>
+    </c>
+    <c name="Wyoming">
+      <abbr>WY</abbr>
+      <flag>Wyoming.jpg</flag>
+    </c>
+  </region>
+  <region name="Africa" value="africa">
+    <c name="Algeria">
+      <abbr>AG</abbr>
+      <flag>ag-lgflag.jpg</flag>
+    </c>
+    <c name="Benin">
+      <abbr>BN</abbr>
+      <flag>bn-lgflag.jpg</flag>
+    </c>
+    <c name="Egypt">
+      <abbr>EG</abbr>
+      <flag>eg-lgflag.jpg</flag>
+    </c>
+    <c name="Ethiopia">
+      <abbr>ET</abbr>
+      <flag>et-lgflag.jpg</flag>
+    </c>
+    <c name="Ghana">
+      <abbr>GH</abbr>
+      <flag>gh-lgflag.jpg</flag>
+    </c>
+    <c name="Guinea">
+      <abbr>GV</abbr>
+      <flag>gv-lgflag.jpg</flag>
+    </c>
+    <c name="Ivory Coast">
+      <abbr>IV</abbr>
+      <flag>iv-lgflag.jpg</flag>
+    </c>
+    <c name="Kenya">
+      <abbr>KE</abbr>
+      <flag>ke-lgflag.jpg</flag>
+    </c>
+    <c name="Liberia">
+      <abbr>LI</abbr>
+      <flag>li-lgflag.jpg</flag>
+    </c>
+    <c name="Madagascar">
+      <abbr>MA</abbr>
+      <flag>ma-lgflag.jpg</flag>
+    </c>
+    <c name="Mauritius">
+      <abbr>MP</abbr>
+      <flag>mp-lgflag.jpg</flag>
+    </c>
+    <c name="Morocco">
+      <abbr>MO</abbr>
+      <flag>mo-lgflag.jpg</flag>
+    </c>
+    <c name="Namibia">
+      <abbr>WA</abbr>
+      <flag>wa-lgflag.jpg</flag>
+    </c>
+    <c name="Nigeria">
+      <abbr>NI</abbr>
+      <flag>ni-lgflag.jpg</flag>
+    </c>
+    <c name="Reunion Island">
+      <abbr>FR</abbr>
+      <flag>fr-lgflag.jpg</flag>
+    </c>
+    <c name="Senegal">
+      <abbr>SG</abbr>
+      <flag>sg-lgflag.jpg</flag>
+    </c>
+    <c name="Seychelles">
+      <abbr>SE</abbr>
+      <flag>se-lgflag.jpg</flag>
+    </c>
+    <c name="Sierra Leone">
+      <abbr>SL</abbr>
+      <flag>sl-lgflag.jpg</flag>
+    </c>
+    <c name="South Africa">
+      <abbr>SF</abbr>
+      <flag>sf-lgflag.jpg</flag>
+    </c>
+    <c name="Swaziland">
+      <abbr>WZ</abbr>
+      <flag>wz-lgflag.jpg</flag>
+    </c>
+    <c name="Tanzania">
+      <abbr>TZ</abbr>
+      <flag>tz-lgflag.jpg</flag>
+    </c>
+    <c name="Tunisia">
+      <abbr>TS</abbr>
+      <flag>ts-lgflag.jpg</flag>
+    </c>
+    <c name="Uganda">
+      <abbr>UG</abbr>
+      <flag>ug-lgflag.jpg</flag>
+    </c>
+    <c name="Zambia">
+      <abbr>ZA</abbr>
+      <flag>za-lgflag.jpg</flag>
+    </c>
+    <c name="Zimbabwe">
+      <abbr>ZI</abbr>
+      <flag>zi-lgflag.jpg</flag>
+    </c>
+  </region>
+  <region name="Asia" value="asia">
+    <c name="Afghanistan">
+      <abbr>AF</abbr>
+      <flag>af-lgflag.jpg</flag>
+    </c>
+    <c name="Bangladesh">
+      <abbr>BG</abbr>
+      <flag>bg-lgflag.jpg</flag>
+    </c>
+    <c name="Bhutan">
+      <abbr>BT</abbr>
+      <flag>bt-lgflag.jpg</flag>
+    </c>
+    <c name="Brunei">
+      <abbr>BX</abbr>
+      <flag>bx-lgflag.jpg</flag>
+    </c>
+    <c name="China">
+      <abbr>CH</abbr>
+      <flag>ch-lgflag.jpg</flag>
+    </c>
+    <c name="India">
+      <abbr>IN</abbr>
+      <flag>in-lgflag.jpg</flag>
+    </c>
+    <c name="Indonesia">
+      <abbr>ID</abbr>
+      <flag>id-lgflag.jpg</flag>
+    </c>
+    <c name="Japan">
+      <abbr>JA</abbr>
+      <flag>ja-lgflag.jpg</flag>
+    </c>
+    <c name="Laos">
+      <abbr>LA</abbr>
+      <flag>la-lgflag.jpg</flag>
+    </c>
+    <c name="Macau">
+      <abbr>MC</abbr>
+      <flag>mc-lgflag.jpg</flag>
+    </c>
+    <c name="Malaysia">
+      <abbr>MY</abbr>
+      <flag>my-lgflag.jpg</flag>
+    </c>
+    <c name="Maldives">
+      <abbr>MV</abbr>
+      <flag>mv-lgflag.jpg</flag>
+    </c>
+    <c name="Mongolia">
+      <abbr>MG</abbr>
+      <flag>mg-lgflag.jpg</flag>
+    </c>
+    <c name="Nepal">
+      <abbr>NP</abbr>
+      <flag>np-lgflag.jpg</flag>
+    </c>
+    <c name="North Korea">
+      <abbr>KN</abbr>
+      <flag>kn-lgflag.jpg</flag>
+    </c>
+    <c name="Pakistan">
+      <abbr>PK</abbr>
+      <flag>pk-lgflag.jpg</flag>
+    </c>
+    <c name="Philippines">
+      <abbr>RP</abbr>
+      <flag>rp-lgflag.jpg</flag>
+    </c>
+    <c name="Saudi Arabia">
+      <abbr>SA</abbr>
+      <flag>sa-lgflag.jpg</flag>
+    </c>
+    <c name="Singapore">
+      <abbr>SN</abbr>
+      <flag>sn-lgflag.jpg</flag>
+    </c>
+    <c name="South Korea">
+      <abbr>KS</abbr>
+      <flag>ks-lgflag.jpg</flag>
+    </c>
+    <c name="Sri Lanka">
+      <abbr>CE</abbr>
+      <flag>ce-lgflag.jpg</flag>
+    </c>
+    <c name="Taiwan">
+      <abbr>TW</abbr>
+      <flag>tw-lgflag.jpg</flag>
+    </c>
+    <c name="Thailand">
+      <abbr>TH</abbr>
+      <flag>th-lgflag.jpg</flag>
+    </c>
+    <c name="Vietnam">
+      <abbr>VM</abbr>
+      <flag>vm-lgflag.jpg</flag>
+    </c>
+  </region>
+  <region name="Caribbean" value="carib">
+    <c name="Antigua and Barbuda">
+      <abbr>AC</abbr>
+      <flag>ac-lgflag.jpg</flag>
+    </c>
+    <c name="Aruba">
+      <abbr>AA</abbr>
+      <flag>aa-lgflag.jpg</flag>
+    </c>
+    <c name="Bahamas">
+      <abbr>AA</abbr>
+      <flag>bf-lgflag.jpg</flag>
+    </c>
+    <c name="Barbados">
+      <abbr>BB</abbr>
+      <flag>bb-lgflag.jpg</flag>
+    </c>
+    <c name="Bermuda">
+      <abbr>BD</abbr>
+      <flag>bd-lgflag.jpg</flag>
+    </c>
+    <c name="British Virgin Islands">
+      <abbr>VI</abbr>
+      <flag>vi-lgflag.jpg</flag>
+    </c>
+    <c name="Cuba">
+      <abbr>CU</abbr>
+      <flag>cu-lgflag.jpg</flag>
+    </c>
+    <c name="Dominican Republic">
+      <abbr>DR</abbr>
+      <flag>dr-lgflag.jpg</flag>
+    </c>
+    <c name="Haiti">
+      <abbr>HA</abbr>
+      <flag>ha-lgflag.jpg</flag>
+    </c>
+    <c name="Jamaica">
+      <abbr>JM</abbr>
+      <flag>jm-lgflag.jpg</flag>
+    </c>
+    <c name="Netherlands Antilles">
+      <abbr>NT</abbr>
+      <flag>nt-lgflag.jpg</flag>
+    </c>
+    <c name="Puerto Rico">
+      <abbr>RQ</abbr>
+      <flag>rq-lgflag.jpg</flag>
+    </c>
+    <c name="Trinidad and Tobago">
+      <abbr>TD</abbr>
+      <flag>td-lgflag.jpg</flag>
+    </c>
+    <!--
+    <c name="Turks and Caicos Islands">
+      <abbr>TK</abbr>
+      <flag>tk-lgflag.jpg</flag>
+    </c>
+    -->
+    <c name="US Virgin Islands">
+      <abbr>VQ</abbr>
+      <flag>vq-lgflag.jpg</flag>
+    </c>
+  </region>
+  <region name="Europe" value="europe">
+    <c name="Albania">
+      <abbr>AL</abbr>
+      <flag>al-lgflag.jpg</flag>
+    </c>
+    <c name="Andorra">
+      <abbr>AN</abbr>
+      <flag>an-lgflag.jpg</flag>
+    </c>
+    <c name="Austria">
+      <abbr>AU</abbr>
+      <flag>au-lgflag.jpg</flag>
+    </c>
+    <c name="Belarus">
+      <abbr>BO</abbr>
+      <flag>bo-lgflag.jpg</flag>
+    </c>
+    <c name="Belgium">
+      <abbr>BE</abbr>
+      <flag>be-lgflag.jpg</flag>
+    </c>
+    <c name="Bosnia-Herzegovina">
+      <abbr>BK</abbr>
+      <flag>bk-lgflag.jpg</flag>
+    </c>
+    <c name="Bulgaria">
+      <abbr>BU</abbr>
+      <flag>bu-lgflag.jpg</flag>
+    </c>
+    <c name="Croatia">
+      <abbr>HR</abbr>
+      <flag>hr-lgflag.jpg</flag>
+    </c>
+    <c name="Cyprus">
+      <abbr>CY</abbr>
+      <flag>cy-lgflag.jpg</flag>
+    </c>
+    <c name="Czech Republic">
+      <abbr>EZ</abbr>
+      <flag>ez-lgflag.jpg</flag>
+    </c>
+    <c name="Denmark">
+      <abbr>DA</abbr>
+      <flag>da-lgflag.jpg</flag>
+    </c>
+    <c name="Estonia">
+      <abbr>EN</abbr>
+      <flag>en-lgflag.jpg</flag>
+    </c>
+    <c name="Finland">
+      <abbr>FI</abbr>
+      <flag>fi-lgflag.jpg</flag>
+    </c>
+    <c name="France">
+      <abbr>FR</abbr>
+      <flag>fr-lgflag.jpg</flag>
+    </c>
+    <c name="Georgia">
+      <abbr>GG</abbr>
+      <flag>gg-lgflag.jpg</flag>
+    </c>
+    <c name="Germany">
+      <abbr>GM</abbr>
+      <flag>gm-lgflag.jpg</flag>
+    </c>
+    <c name="Gibraltar">
+      <abbr>GI</abbr>
+      <flag>gi-lgflag.jpg</flag>
+    </c>
+    <c name="Greece">
+      <abbr>GR</abbr>
+      <flag>gr-lgflag.jpg</flag>
+    </c>
+    <c name="Hungary">
+      <abbr>HU</abbr>
+      <flag>hu-lgflag.jpg</flag>
+    </c>
+    <c name="Iceland">
+      <abbr>IC</abbr>
+      <flag>ic-lgflag.jpg</flag>
+    </c>
+    <c name="Ireland">
+      <abbr>EI</abbr>
+      <flag>ei-lgflag.jpg</flag>
+    </c>
+    <c name="Italy">
+      <abbr>IT</abbr>
+      <flag>it-lgflag.jpg</flag>
+    </c>
+    <c name="Latvia">
+      <abbr>LG</abbr>
+      <flag>lg-lgflag.jpg</flag>
+    </c>
+    <c name="Liechtenstein">
+      <abbr>LS</abbr>
+      <flag>ls-lgflag.jpg</flag>
+    </c>
+    <c name="Lithuania">
+      <abbr>LH</abbr>
+      <flag>lh-lgflag.jpg</flag>
+    </c>
+    <c name="Luxembourg">
+      <abbr>LU</abbr>
+      <flag>lu-lgflag.jpg</flag>
+    </c>
+    <c name="Macedonia">
+      <abbr>MK</abbr>
+      <flag>mk-lgflag.jpg</flag>
+    </c>
+    <c name="Malta">
+      <abbr>MT</abbr>
+      <flag>mt-lgflag.jpg</flag>
+    </c>
+    <c name="Netherlands">
+      <abbr>NL</abbr>
+      <flag>nl-lgflag.jpg</flag>
+    </c>
+    <c name="Norway">
+      <abbr>NO</abbr>
+      <flag>no-lgflag.jpg</flag>
+    </c>
+    <c name="Poland">
+      <abbr>PL</abbr>
+      <flag>pl-lgflag.jpg</flag>
+    </c>
+    <c name="Portugal">
+      <abbr>PO</abbr>
+      <flag>po-lgflag.jpg</flag>
+    </c>
+    <c name="Romania">
+      <abbr>RO</abbr>
+      <flag>ro-lgflag.jpg</flag>
+    </c>
+    <c name="Russia">
+      <abbr>RS</abbr>
+      <flag>rs-lgflag.jpg</flag>
+    </c>
+    <c name="Scotland">
+      <abbr>SC</abbr>
+      <flag>scot-lgflag.jpg</flag>
+    </c>
+    <c name="Slovakia">
+      <abbr>LO</abbr>
+      <flag>lo-lgflag.jpg</flag>
+    </c>
+    <c name="Slovenia">
+      <abbr>SI</abbr>
+      <flag>si-lgflag.jpg</flag>
+    </c>
+    <c name="Spain">
+      <abbr>SP</abbr>
+      <flag>sp-lgflag.jpg</flag>
+    </c>
+    <c name="Sweden">
+      <abbr>SW</abbr>
+      <flag>sw-lgflag.jpg</flag>
+    </c>
+    <c name="Switzerland">
+      <abbr>SZ</abbr>
+      <flag>sz-lgflag.jpg</flag>
+    </c>
+    <c name="Turkey">
+      <abbr>TU</abbr>
+      <flag>tu-lgflag.jpg</flag>
+    </c>
+    <c name="Ukraine">
+      <abbr>UP</abbr>
+      <flag>up-lgflag.jpg</flag>
+    </c>
+    <c name="United Kingdom">
+      <abbr>UK</abbr>
+      <flag>uk-lgflag.jpg</flag>
+    </c>
+  </region>
+  <region name="Middle East" value="middle_east">
+    <c name="Bahrain">
+      <abbr>BA</abbr>
+      <flag>ba-lgflag.jpg</flag>
+    </c>
+    <c name="Cyprus">
+      <abbr>CY</abbr>
+      <flag>cy-lgflag.jpg</flag>
+    </c>
+    <c name="Egypt">
+      <abbr>EG</abbr>
+      <flag>eg-lgflag.jpg</flag>
+    </c>
+    <c name="Iran">
+      <abbr>IR</abbr>
+      <flag>ir-lgflag.jpg</flag>
+    </c>
+    <c name="Iraq">
+      <abbr>IZ</abbr>
+      <flag>iz-lgflag.jpg</flag>
+    </c>
+    <c name="Israel">
+      <abbr>IS</abbr>
+      <flag>is-lgflag.jpg</flag>
+    </c>
+    <c name="Jordan">
+      <abbr>JO</abbr>
+      <flag>jo-lgflag.jpg</flag>
+    </c>
+    <c name="Kuwait">
+      <abbr>KU</abbr>
+      <flag>ku-lgflag.jpg</flag>
+    </c>
+    <c name="Lebanon">
+      <abbr>LE</abbr>
+      <flag>le-lgflag.jpg</flag>
+    </c>
+    <c name="Oman">
+      <abbr>MU</abbr>
+      <flag>mu-lgflag.jpg</flag>
+    </c>
+    <c name="Qatar">
+      <abbr>QA</abbr>
+      <flag>qa-lgflag.jpg</flag>
+    </c>
+    <c name="Saudi Arabia">
+      <abbr>SA</abbr>
+      <flag>sa-lgflag.jpg</flag>
+    </c>
+    <c name="Turkey">
+      <abbr>TU</abbr>
+      <flag>tu-lgflag.jpg</flag>
+    </c>
+    <c name="United Arab Emirates">
+      <abbr>AE</abbr>
+      <flag>ae-lgflag.jpg</flag>
+    </c>
+    <c name="Yemen">
+      <abbr>YM</abbr>
+      <flag>ym-lgflag.jpg</flag>
+    </c>
+  </region>
+  <region name="The Americas" value="the_americas">
+    <c name="Argentina">
+      <abbr>AR</abbr>
+      <flag>ar-lgflag.jpg</flag>
+    </c>
+    <c name="Belize">
+      <abbr>BH</abbr>
+      <flag>bh-lgflag.jpg</flag>
+    </c>
+    <c name="Bolivia">
+      <abbr>BL</abbr>
+      <flag>bl-lgflag.jpg</flag>
+    </c>
+    <c name="Brazil">
+      <abbr>BR</abbr>
+      <flag>br-lgflag.jpg</flag>
+    </c>
+    <c name="Canada">
+      <abbr>CA</abbr>
+      <flag>ca-lgflag.jpg</flag>
+    </c>
+    <c name="Chile">
+      <abbr>CI</abbr>
+      <flag>ci-lgflag.jpg</flag>
+    </c>
+    <c name="Colombia">
+      <abbr>CO</abbr>
+      <flag>co-lgflag.jpg</flag>
+    </c>
+    <c name="Costa Rica">
+      <abbr>CS</abbr>
+      <flag>cs-lgflag.jpg</flag>
+    </c>
+    <c name="Ecuador">
+      <abbr>EC</abbr>
+      <flag>ec-lgflag.jpg</flag>
+    </c>
+    <c name="El Salvador">
+      <abbr>ES</abbr>
+      <flag>es-lgflag.jpg</flag>
+    </c>
+    <c name="Guatemala">
+      <abbr>GT</abbr>
+      <flag>gt-lgflag.jpg</flag>
+    </c>
+    <c name="Guyana">
+      <abbr>GY</abbr>
+      <flag>gy-lgflag.jpg</flag>
+    </c>
+    <c name="Honduras">
+      <abbr>HO</abbr>
+      <flag>ho-lgflag.jpg</flag>
+    </c>
+    <c name="Mexico">
+      <abbr>MX</abbr>
+      <flag>mx-lgflag.jpg</flag>
+    </c>
+    <c name="Nicaragua">
+      <abbr>NU</abbr>
+      <flag>nu-lgflag.jpg</flag>
+    </c>
+    <c name="Panama">
+      <abbr>PM</abbr>
+      <flag>pm-lgflag.jpg</flag>
+    </c>
+    <c name="Paraguay">
+      <abbr>PA</abbr>
+      <flag>pa-lgflag.jpg</flag>
+    </c>
+    <c name="Peru">
+      <abbr>PE</abbr>
+      <flag>pe-lgflag.jpg</flag>
+    </c>
+    <c name="Uruguay">
+      <abbr>UY</abbr>
+      <flag>uy-lgflag.jpg</flag>
+    </c>
+    <c name="Venezuela">
+      <abbr>VE</abbr>
+      <flag>ve-lgflag.jpg</flag>
+    </c>
+  </region>
+  <region name="Oceania" value="sopac">
+    <c name="Australia">
+      <abbr>AS</abbr>
+      <flag>as-lgflag.jpg</flag>
+    </c>
+    <c name="Guam">
+      <abbr>GQ</abbr>
+      <flag>gq-lgflag.jpg</flag>
+    </c>
+    <c name="New Zealand">
+      <abbr>NZ</abbr>
+      <flag>nz-lgflag.jpg</flag>
+    </c>
+    <c name="Northern Mariana Islands">
+      <abbr>CQ</abbr>
+      <flag>cq-lgflag.jpg</flag>
+    </c>
+    <c name="Papua New Guinea">
+      <abbr>PP</abbr>
+      <flag>pp-lgflag.jpg</flag>
+    </c>
+    <c name="Samoa">
+      <abbr>WS</abbr>
+      <flag>ws-lgflag.jpg</flag>
+    </c>
+    <c name="Tonga">
+      <abbr>TN</abbr>
+      <flag>tn-lgflag.jpg</flag>
+    </c>
+  </region>
+</root>
