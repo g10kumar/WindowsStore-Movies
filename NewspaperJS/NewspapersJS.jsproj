@@ -52,6 +52,7 @@
     <AppxManifest Include="package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
+    <Content Include="ad.html" />
     <Content Include="css\default.css" />
     <Content Include="Flag\aa-lgflag.jpg" />
     <Content Include="Flag\ac-lgflag.jpg" />
@@ -678,6 +679,7 @@
     <Content Include="images\Country\California_Variety.jpg" />
     <Content Include="images\Country\California_Ventura County Star.jpg" />
     <Content Include="images\Country\California_Vida en el Valle.jpg" />
+    <Content Include="images\Country\California_Voice of San Diego.jpg" />
     <Content Include="images\Country\California_Whittier Daily News.jpg" />
     <Content Include="images\Country\California_Willows Journal.jpg" />
     <Content Include="images\Country\Canada_Brandon Sun, The.jpg" />
@@ -2574,6 +2576,7 @@
     <Content Include="images\Country\Norway_Hamar Dagblad.jpg" />
     <Content Include="images\Country\Norway_Haugesunds Avis.jpg" />
     <Content Include="images\Country\Norway_Laagendalsposten .jpg" />
+    <Content Include="images\Country\Norway_Lofotposten.jpg" />
     <Content Include="images\Country\Norway_Nettavisen.jpg" />
     <Content Include="images\Country\Norway_Nordlys.jpg" />
     <Content Include="images\Country\Norway_Norway Post, The.jpg" />
@@ -3635,6 +3638,7 @@
     <Content Include="js\data.js" />
     <Content Include="js\default.js" />
     <Content Include="js\navigator.js" />
+    <None Include="Package.StoreAssociation.xml" />
     <Content Include="pages\about\about.html" />
     <Content Include="pages\favorites\favorites.css" />
     <Content Include="pages\favorites\favorites.html" />

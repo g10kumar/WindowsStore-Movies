@@ -2576,6 +2576,11 @@
       <WebSite>http://www.laagendalsposten.no/</WebSite>
     </paper>
     <paper>
+      <Name>Lofotposten</Name>
+      <City>Lofoten Islands</City>
+      <WebSite>http://www.lofotposten.no</WebSite>
+    </paper>
+    <paper>
       <Name>Nettavisen</Name>
       <City>Oslo</City>
       <WebSite>http://www.nettavisen.no/</WebSite>
@@ -6100,7 +6105,11 @@
       <City>Ventura</City>
       <WebSite>http://www.vcstar.com/</WebSite>
     </paper>
-    
+    <paper>
+      <Name>Voice of San Diego</Name>
+      <City>San Diego</City>
+      <WebSite>http://www.vosd.org</WebSite>
+    </paper>
     <paper>
       <Name>Whittier Daily News</Name>
       <City>Whittier</City>

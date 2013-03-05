@@ -2,7 +2,7 @@
 // http://go.microsoft.com/fwlink/?LinkID=232446
 (function () {
     "use strict";
-
+    WinJS.Binding.optimizeBindingReferences = true;
     var app = WinJS.Application;
     var activation = Windows.ApplicationModel.Activation;
     var nav = WinJS.Navigation;

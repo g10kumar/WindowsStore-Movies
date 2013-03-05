@@ -18,20 +18,21 @@
     <script src="/MSAdvertisingJS/ads/ad.js" ></script>
     <style type="text/css">
         .Horad {
-            margin-top:20px;
+            margin-top:10px;
             margin-left:auto;
-            margin-right:20px;
+            margin-right:10px;
             float:right !important;
-            width:600px;
-            height:90px;
+            width:468px;
+            height:60px;
+            
         }        
 
         .Verad {
             margin-top:120px;
             margin-left:auto;
-            margin-right:20px;
+            margin-right:10px;
             float:right !important;
-            width:160px;
+            width:120px;
             height:600px;       
         }
     </style>    
@@ -67,10 +68,13 @@
         </section>
         <!--<div id="outputDiv" class="content" style="margin-left:120px;display:none;"></div>-->
         <div class="Horad">
-			<div id="myAd" data-win-control="MicrosoftNSJS.Advertising.AdControl" data-win-options="{applicationId: '78a54751-5d76-47b5-bede-a7001077c32f', adUnitId: '10044580'}"></div>
+            <iframe  id="myAd" height="60" width="468" src="/ad.html" seamless="seamless" style="overflow-y: hidden;"></iframe>
+			<!--<div id="myAd" data-win-control="MicrosoftNSJS.Advertising.AdControl" data-win-options="{applicationId: '78a54751-5d76-47b5-bede-a7001077c32f', adUnitId: '10044580'}"></div>-->
         </div>
-        <div id="myAd1" style="position: absolute; top: 120px; left: auto; right:20px; float:right !important; width: 160px; height: 600px;
-                z-index: -1;" data-win-control="MicrosoftNSJS.Advertising.AdControl" data-win-options="{applicationId: '78a54751-5d76-47b5-bede-a7001077c32f', adUnitId: '10044598', onErrorOccurred: errorLogger}"></div>            
+        <iframe id="myAd1" src="http://rcm.amazon.com/e/cm?t=artmaya-20&o=1&p=11&l=ez&f=ifr&f=ifr" height="600" width="120" seamless="seamless" style="position: absolute; top: 120px; left: auto; right:20px; float:right !important; width: 120px; height: 600px;
+                z-index: -1; border:none;overflow-y: hidden;" ></iframe>
+        <!--<div id="myAd1" style="position: absolute; top: 120px; left: auto; right:20px; float:right !important; width: 160px; height: 600px;
+                z-index: -1;" data-win-control="MicrosoftNSJS.Advertising.AdControl" data-win-options="{applicationId: '78a54751-5d76-47b5-bede-a7001077c32f', adUnitId: '10044598', onErrorOccurred: errorLogger}"></div> -->           
 		<div id="myAd2" style="position:absolute; left:10px; bottom:0px; width: 292px; height: 62px; z-index:10; visibility:collapse; background-color:white;" data-win-control="MicrosoftNSJS.Advertising.AdControl" data-win-options="{applicationId: '78a54751-5d76-47b5-bede-a7001077c32f', adUnitId: '10045030'}"></div>		      
 
         <div id="appbar" data-win-control="WinJS.UI.AppBar">
