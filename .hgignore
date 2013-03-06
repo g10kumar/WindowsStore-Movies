@@ -1,0 +1,17 @@
+syntax:glob
+bin/*
+obj/*
+AppPackages/*
+bld/
+[Bb]in
+[Dd]ebug*/
+obj/
+[Rr]elease*/
+*.log
+*.bak
+*.cache
+*.suo
+.user
+*.obj
+*.exe
+*.pdb
