@@ -8,16 +8,15 @@
     x:Class="TopMovies.Regionsetting"
     mc:Ignorable="d"
     d:DesignHeight="300"
-    d:DesignWidth="400">
+    d:DesignWidth="400" HorizontalAlignment="Center" >
 
-    <Grid Margin="-178,-31,-379,-79">
-        <ListBox x:Name="SelectCountry_Popup" HorizontalAlignment="Left" Height="216" Margin="538,162,0,0" VerticalAlignment="Top" Width="264" Tapped="country_selection" >
-            
-            <x:String>India</x:String>
-            <x:String>United States Of America</x:String>
-            <x:String>United KingDome</x:String>
-            
-        </ListBox>
+    <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Height="300" >
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="0*"/>
+        </Grid.RowDefinitions>
+
+        <ListBox x:Name="SelectCountry_Popup" Tapped="country_selection" RenderTransformOrigin="0.513,0.507" Margin="-100,10,100,10" HorizontalAlignment="Center" VerticalAlignment="Center" Height="280" Background="{StaticResource ButtonPressedForegroundThemeBrush}" FontStyle="Italic" />
 
     </Grid>
 </UserControl>

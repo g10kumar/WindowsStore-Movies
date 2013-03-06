@@ -685,7 +685,7 @@
       <Name>MSAdvertisingXaml</Name>
     </SDKReference>
     <SDKReference Include="Syncfusion controls for WinRT XAML, Version=10.4.0.72">
-      <Name>Syncfusion Controls for WinRT XAML %28Syncfusion controls for WinRT XAML, Version=10.4.0.72%29</Name>
+      <Name>Syncfusion Controls for WinRT XAML</Name>
     </SDKReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '11.0' ">

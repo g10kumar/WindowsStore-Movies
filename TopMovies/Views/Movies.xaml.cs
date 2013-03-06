@@ -17,6 +17,7 @@ using TopMovies.Views;
 using System.Collections.ObjectModel;
 using TopMovies.Common;
 using Windows.Storage.Streams;
+using System.Collections.Generic;
 
 //using Common;
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
@@ -110,6 +111,7 @@ namespace TopMovies.Views
 
         void Current_SizeChanged(object sender, WindowSizeChangedEventArgs e)
         {
+            
             manageViewState();
         }
 
@@ -166,8 +168,7 @@ namespace TopMovies.Views
                 var geographicRegion = new Windows.Globalization.GeographicRegion();
                 var countryCode = geographicRegion.CodeTwoLetter;
 
-
-                string url = "http://www.amazon.com/s/?_encoding=UTF8&field-keywords=" + movieName + "&linkCode=ur2&tag=artmaya-20&url=search-alias%3Dmovies-tv";
+               string url = "http://www.amazon.com/s/?_encoding=UTF8&field-keywords=" + movieName + "&linkCode=ur2&tag=artmaya-20&url=search-alias%3Dmovies-tv";
                 switch (countryCode)
                 {
                     case "US":
@@ -461,43 +462,75 @@ namespace TopMovies.Views
 
         private async void btnBuyDVD_Click_1(object sender, RoutedEventArgs e)
         {
-            var geographicRegion = new Windows.Globalization.GeographicRegion();
+            //var geographicRegion = new Windows.Globalization.GeographicRegion();
             
-            var countryCode = geographicRegion.CodeTwoLetter;
-            //string homeregion = Windows.System.UserProfile.GlobalizationPreferences.HomeGeographicRegion;
+            //var countryCode = geographicRegion.CodeTwoLetter;
+            ////string homeregion = Windows.System.UserProfile.GlobalizationPreferences.HomeGeographicRegion;
             
 
             var movieName = "";
             if (sessionData.selectCategory == "TopForeign" & txtName.Text.IndexOf("/") > 5)
             {
-                movieName = txtName.Text.Substring(0, txtName.Text.IndexOf("/"));
+               movieName = txtName.Text.Substring(0, txtName.Text.IndexOf("/"));
             }
             else
             {
                 movieName = txtName.Text;
             }
 
-            string url = "http://www.amazon.com/s/?_encoding=UTF8&field-keywords=" + movieName + "&linkCode=ur2&tag=artmaya-20&url=search-alias%3Dmovies-tv";
-            switch(countryCode)
+            Dictionary<string, string> countryList = new Dictionary<string, string>();
+
+            countryList.Add("India", "IN");
+            countryList.Add("United Kingdom", "GB");
+            countryList.Add("United States", "US");
+
+            string x = ((App)(App.Current)).countryCode;
+
+            string countrycode =""; 
+
+            if( countryList.ContainsKey(x) )        // If the country selected is not present in the dictionary then the value of the countrycode will be null . 
             {
-                case "US":
-                    url = "http://www.amazon.com/s/?_encoding=UTF8&field-keywords=" + movieName + "&linkCode=ur2&tag=artmaya-20&url=search-alias%3Dmovies-tv";
-                    break;
-                case "IN":
-                    url = "http://www.flipkart.com/search/a/movies-music?fk-search=movies-music&query=" + movieName + "&vertical=movies-music&affid=dkdaksatec";
-                    break;
-                case "GB":
-                    url = "http://www.amazon.co.uk/s/?_encoding=UTF8&camp=1634&field-keywords=" + movieName + "&linkCode=ur2&tag=daksatech-21&url=search-alias=dvd";
-                    break;
-                    
-                default:
-                    url = "http://www.amazon.com/s/?_encoding=UTF8&field-keywords=" + movieName + "&linkCode=ur2&tag=artmaya-20&url=search-alias%3Dmovies-tv";
-                    break;
+                countrycode = countryList[x];
+
             }
 
+            var connectionProfile = Windows.Networking.Connectivity.NetworkInformation.GetInternetConnectionProfile();
 
-            //await Windows.System.Launcher.LaunchUriAsync(new Uri("http://www.amazon.com/s/?_encoding=UTF8&field-keywords=" + txtName.Text + "&linkCode=ur2&tag=artmaya-20&url=search-alias%3Dmovies-tv"));
-            await Windows.System.Launcher.LaunchUriAsync(new Uri(url));
+            if (connectionProfile == null)          // Functionality to check user internet connection & prompt is connection unavaliable . 
+            {
+                var messageDialog = new Windows.UI.Popups.MessageDialog("It seems your computer is not currently connected to Internet . Please check the connection & try again. ");
+                var result = messageDialog.ShowAsync();
+            }
+            else
+            {
+
+
+
+                string url = "http://www.amazon.com/s/?_encoding=UTF8&field-keywords=" + movieName + "&linkCode=ur2&tag=artmaya-20&url=search-alias%3Dmovies-tv";
+
+
+                switch (countrycode)
+                {
+                    case "US":
+                        url = "http://www.amazon.com/s/?_encoding=UTF8&field-keywords=" + movieName + "&linkCode=ur2&tag=artmaya-20&url=search-alias%3Dmovies-tv";
+                        break;
+                    case "IN":
+                        url = "http://www.flipkart.com/search/a/movies-music?fk-search=movies-music&query=" + movieName + "&vertical=movies-music&affid=dkdaksatec";
+                        break;
+                    case "GB":
+                        url = "http://www.amazon.co.uk/s/?_encoding=UTF8&camp=1634&field-keywords=" + movieName + "&linkCode=ur2&tag=daksatech-21&url=search-alias=dvd";
+                        break;
+
+                    default:
+                        url = "http://www.amazon.com/s/?_encoding=UTF8&field-keywords=" + movieName + "&linkCode=ur2&tag=artmaya-20&url=search-alias%3Dmovies-tv";
+                        break;
+                }
+
+
+                //await Windows.System.Launcher.LaunchUriAsync(new Uri("http://www.amazon.com/s/?_encoding=UTF8&field-keywords=" + txtName.Text + "&linkCode=ur2&tag=artmaya-20&url=search-alias%3Dmovies-tv"));
+                await Windows.System.Launcher.LaunchUriAsync(new Uri(url));
+
+            }
         }
 
         private void btnMovieDetails_Click_1(object sender, RoutedEventArgs e)

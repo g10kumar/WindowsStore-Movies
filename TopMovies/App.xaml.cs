@@ -31,6 +31,8 @@ namespace TopMovies
         /// Initializes the singleton application object.  This is the first line of authored code
         /// executed, and as such is the logical equivalent of main() or WinMain().
         /// </summary>
+        public string countryCode = ""; // Global variable that is going to store the user selection for country .The same variable is going to be stored in the session.
+
         public App()
         {
             this.InitializeComponent();
@@ -48,22 +50,15 @@ namespace TopMovies
         protected async override void OnLaunched(LaunchActivatedEventArgs args)
         {
             Frame rootFrame = Window.Current.Content as Frame;
-
-            //Variable to get the Location of the user . Have to get this varaible every time , so that if the user changes the Region setting.
+           
+            //Variable to get the Location of the user . This is to check if this is the first run or not . 
 
             var geoGraphicRegion = new Windows.Globalization.GeographicRegion();
 
             var _countryCode = geoGraphicRegion.CodeTwoLetter;
 
-            var displayName = geoGraphicRegion.DisplayName;     // this is the name that is going to be used in the ListBox first item , i.e the default country .
-
-            //Maintain a Global varaible countryCode that is used in the Movie.xaml.cs & here to compare if the Region setting has been changed since the last run. 
-
-            //if (countryCode == null || countryCode != _countryCode). Only when this condition is met we will display the pop up asking for the user to input the country .
-            //so that if on starting the application , if the countryCode that was saved on the last run is not loaded then the user will be promted. 
-
-            // The variable countryCode needs to be stored in the OnsessionSuspension or OnsessionTremination so that the user will not be prompted again & again.
-
+            //if (countryCode == null). On the very first run the value of country code is going to be null , & in case the value of countryCode is unable to load from the lase session . 
+                  
             // Do not repeat app initialization when the Window already has content,
             // just ensure that the window is active
             if (rootFrame == null)
@@ -153,7 +148,8 @@ namespace TopMovies
             //Add a preference apps command
             SettingsCommand preference = new SettingsCommand("region_setting", "Country setting", (handler) =>
                 {
-                    Popup popup = BuildSettingsItem(new Regionsetting(), 1000);
+
+                    Popup popup = BuildSettingsItem(new Regionsetting(), 300);
                     popup.IsOpen = true;
                 });
 
@@ -176,6 +172,7 @@ namespace TopMovies
                         EdgeTransitionLocation.Left
 
             });
+            
             u.Width = w;
             u.Height = Window.Current.Bounds.Height;
             p.Child = u;
@@ -209,7 +206,7 @@ namespace TopMovies
     /// <summary>
     /// Declaring and initializing the sessionData Variables
     /// </summary>
-    public static class sessionData
+    public static class sessionData 
     {
         public static string selectCategory { get; set; }
         //public static string lastMovieIndex { get; set; }
@@ -218,7 +215,12 @@ namespace TopMovies
         public static string lastBollywoodMovieIndex { get; set; }
         public static string lastAsianMovieIndex { get; set; }
 
-        public static void resetValues()
+        
+
+ 
+        
+        
+public static void resetValues()
         {
             sessionData.selectCategory = "";
             //sessionData.lastMovieIndex = "";
