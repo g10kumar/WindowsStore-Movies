@@ -17,7 +17,7 @@
                 <ResourceDictionary Source="Common/StandardStyles.xaml"/>
             </ResourceDictionary.MergedDictionaries>
 
-            <a:GoogleAnalyticsSettings x:Key="GoogleAnalytics" WebPropertyId="UA-38070832-2" />
+            <a:GoogleAnalyticsSettings x:Key="GoogleAnalytics" WebPropertyId="UA-38070832-3" />
                 
             <x:String x:Key="AppName">1000 Love Quotes</x:String>
         </ResourceDictionary>
