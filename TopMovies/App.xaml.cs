@@ -47,7 +47,7 @@ namespace TopMovies
         /// search results, and so forth.
         /// </summary>
         /// <param name="args">Details about the launch request and process.</param>
-        protected async override void OnLaunched(LaunchActivatedEventArgs args)
+        protected override void OnLaunched(LaunchActivatedEventArgs args)
         {
             Frame rootFrame = Window.Current.Content as Frame;
            
@@ -55,10 +55,8 @@ namespace TopMovies
 
             var geoGraphicRegion = new Windows.Globalization.GeographicRegion();
 
-            var _countryCode = geoGraphicRegion.CodeTwoLetter;
-
-            //if (countryCode == null). On the very first run the value of country code is going to be null , & in case the value of countryCode is unable to load from the lase session . 
-                  
+            var _countryCode = geoGraphicRegion.CodeTwoLetter;                      
+               
             // Do not repeat app initialization when the Window already has content,
             // just ensure that the window is active
             if (rootFrame == null)
@@ -91,6 +89,20 @@ namespace TopMovies
                 if (roamingSettings.Values.ContainsKey("lastAsianMovieIndex"))
                 {
                     sessionData.lastAsianMovieIndex = roamingSettings.Values["lastAsianMovieIndex"].ToString();
+                }
+                if (roamingSettings.Values["userCountrySetting"] != null)
+                {
+                    sessionData.userCountrySetting = roamingSettings.Values["userCountrySetting"].ToString();       // Uploading the user country setting from last session.
+                }
+
+                if (sessionData.userCountrySetting != null)             // Condition to check if the user has made some setting or not . 
+                {
+
+                countryCode = sessionData.userCountrySetting.ToString();
+
+                }else
+                {
+                   countryCode = geoGraphicRegion.DisplayName; 
                 }
                 // Place the frame in the current Window
                 Window.Current.Content = rootFrame;
@@ -148,40 +160,12 @@ namespace TopMovies
             //Add a preference apps command
             SettingsCommand preference = new SettingsCommand("region_setting", "Country setting", (handler) =>
                 {
-
-                    Popup popup = BuildSettingsItem(new Regionsetting(), 300);
-                    popup.IsOpen = true;
+                    var settings = new SettingsFlyout();
+                    settings.ShowFlyout(new Regionsetting());
                 });
 
             args.Request.ApplicationCommands.Add(preference);
         }
-
-
-
-        private Popup BuildSettingsItem(UserControl u, int w )
-        {
-
-            Popup p = new Popup();
-            p.IsLightDismissEnabled = true;
-            p.ChildTransitions = new TransitionCollection();
-            p.ChildTransitions.Add(new PaneThemeTransition()
-
-            {
-                Edge = (SettingsPane.Edge == SettingsEdgeLocation.Right) ?
-                        EdgeTransitionLocation.Right :
-                        EdgeTransitionLocation.Left
-
-            });
-            
-            u.Width = w;
-            u.Height = Window.Current.Bounds.Height;
-            p.Child = u;
-            p.SetValue(Canvas.LeftProperty, SettingsPane.Edge == SettingsEdgeLocation.Right ? (Window.Current.Bounds.Width - w) : 0);
-            p.SetValue(Canvas.TopProperty, 0);
-            return p;
-
-        }
-
 
         /// <summary>
         /// Invoked when application execution is being suspended.  Application state is saved
@@ -214,6 +198,8 @@ namespace TopMovies
         public static string lastForeignMovieIndex { get; set; }
         public static string lastBollywoodMovieIndex { get; set; }
         public static string lastAsianMovieIndex { get; set; }
+        public static string userCountrySetting { get; set; }
+       
 
         
 
@@ -228,7 +214,7 @@ public static void resetValues()
             sessionData.lastForeignMovieIndex = "";
             sessionData.lastBollywoodMovieIndex = "";
             sessionData.lastAsianMovieIndex = "";
-
+            sessionData.userCountrySetting = "";
         }
     }
 }
