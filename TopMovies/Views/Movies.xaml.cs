@@ -42,6 +42,16 @@ namespace TopMovies.Views
         StorageFile movieFile = null;
         string fileContent = "";
 
+        Dictionary<string, string> countryList = new Dictionary<string, string>();       // Initialize a dictionaty to store the country list . Values added in the 
+                                                                                          // constructor.
+
+
+
+
+      
+
+         
+
         //private string[] _ids =
         //{
         //    "1067", "2328", "2660", "1632", "2486", "2602", "2329", "2634",
@@ -75,6 +85,11 @@ namespace TopMovies.Views
             ShareSourceLoad();
             manageViewState();
             Window.Current.SizeChanged += Current_SizeChanged;
+
+            countryList.Add("India", "IN");                             // Adding key & value to the countryList dictionary . 
+            countryList.Add("United Kingdom", "GB");
+            countryList.Add("United States", "US");
+       
 
         }
 
@@ -165,11 +180,23 @@ namespace TopMovies.Views
                 {
                     movieName = movieName.Substring(0, movieName.IndexOf("/"));
                 }
-                var geographicRegion = new Windows.Globalization.GeographicRegion();
-                var countryCode = geographicRegion.CodeTwoLetter;
+             //  var geographicRegion = new Windows.Globalization.GeographicRegion();
+             //  var country = geographicRegion.CodeTwoLetter;
 
+                string z = ((App)(App.Current)).countryCode;                                     // Variable x to store the value of country selcted by the user . 
+
+                string shareCountryCode = ""; 
+
+                if (countryList.ContainsKey(z))        // If the country selected is not present in the dictionary then the value of the countrycode will be null . 
+                {
+                    shareCountryCode = countryList[z];
+
+                }
+
+
+      
                string url = "http://www.amazon.com/s/?_encoding=UTF8&field-keywords=" + movieName + "&linkCode=ur2&tag=artmaya-20&url=search-alias%3Dmovies-tv";
-                switch (countryCode)
+                switch (shareCountryCode)
                 {
                     case "US":
                         url = "http://www.amazon.com/s/?_encoding=UTF8&field-keywords=" + movieName + "&linkCode=ur2&tag=artmaya-20&url=search-alias%3Dmovies-tv";
@@ -478,15 +505,9 @@ namespace TopMovies.Views
                 movieName = txtName.Text;
             }
 
-            Dictionary<string, string> countryList = new Dictionary<string, string>();
+            string x = ((App)(App.Current)).countryCode;                                     // Variable x to store the value of country selcted by the user . 
 
-            countryList.Add("India", "IN");
-            countryList.Add("United Kingdom", "GB");
-            countryList.Add("United States", "US");
-
-            string x = ((App)(App.Current)).countryCode;
-
-            string countrycode =""; 
+            string countrycode = ""; 
 
             if( countryList.ContainsKey(x) )        // If the country selected is not present in the dictionary then the value of the countrycode will be null . 
             {

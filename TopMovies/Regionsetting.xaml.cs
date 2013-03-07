@@ -12,6 +12,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Windows.Globalization;
+using Windows.UI.ApplicationSettings;
 
 // The User Control item template is documented at http://go.microsoft.com/fwlink/?LinkId=234236
 
@@ -20,7 +21,7 @@ namespace TopMovies
     public sealed partial class Regionsetting : UserControl
     {
         List<string> list = new List<string>();
-
+        Windows.Storage.ApplicationDataContainer roamingSettings = Windows.Storage.ApplicationData.Current.RoamingSettings;
         Windows.Globalization.GeographicRegion region = new Windows.Globalization.GeographicRegion();
 
         public string cc;
@@ -30,23 +31,33 @@ namespace TopMovies
 
             cc = region.DisplayName;
 
-            string Item2 = "United States";
-            string Item3 = "United Kingdom";
+            list.Add(cc);
 
             this.InitializeComponent();
 
             if (cc == "United States")
             {
-                Item2 = "India";
+                list.Add("India");
+                list.Add("United Kingdom");
             }
             else if (cc == "United Kingdom")
+            {   
+                list.Add("India");
+                list.Add("United States");
+                
+            }
+            else if (cc == "India")
             {
-                Item3 = "India";
+                list.Add("Unites Kingdom");
+                list.Add("United States");
+            }
+            else
+            {
+                list.Add("Unites Kingdom");
+                list.Add("Uited States");
+                list.Add("India");
             }
 
-            list.Add(cc);
-            list.Add(Item2);
-            list.Add(Item3);
             list.Add("Afghanistan");
             list.Add("Akrotiri");
             list.Add("Albania");
@@ -302,12 +313,14 @@ namespace TopMovies
             list.Add("Zambia");
             list.Add("Zimbabwe");
 
-            SelectCountry_Popup.ItemsSource = list;
+            SelectCountry_Popup.ItemsSource = list;                                         // Populate the ListBox with countrylist . 
 
             SelectCountry_Popup.SelectedValue = ((App)(App.Current)).countryCode;           // This is to highlight the user previous selection . 
 
-
+            
         }
+
+
 
 
         private async void country_selection(object sender, TappedRoutedEventArgs e)
@@ -317,7 +330,9 @@ namespace TopMovies
             {
                 if (SelectCountry_Popup.SelectedIndex != -1)
                 {
-                    ((App)(App.Current)).countryCode = SelectCountry_Popup.SelectedValue.ToString();
+                    ((App)(App.Current)).countryCode = SelectCountry_Popup.SelectedValue.ToString();                    // Assigning the user selection to the global countryCode
+
+                    roamingSettings.Values["userCountrySetting"] = SelectCountry_Popup.SelectedValue.ToString();        // Storing the user selection in the roamingSetting .
                 }
             }
             catch(Exception ex)
@@ -326,6 +341,15 @@ namespace TopMovies
                 //throw new Exception("This exception is created in the selcetion procedure");
             }
 
+        }
+
+        private void OnBackButtonClicked(object sender, RoutedEventArgs e)
+        {
+            if (this.Parent.GetType() == typeof(Popup))
+            {
+                ((Popup)this.Parent).IsOpen = false;
+            }
+            SettingsPane.Show();
         }
 }
 }
