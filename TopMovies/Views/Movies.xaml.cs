@@ -93,9 +93,9 @@ namespace TopMovies.Views
             countryList.Add("Canada","CA");
             countryList.Add("China","CN");
             countryList.Add("Germany","DE");
-            countryList.Add("Spain","ES");
-            countryList.Add("France","FR");
             countryList.Add("Italy","IT");
+            countryList.Add("Spain","ES");
+            countryList.Add("France","FR");            
             countryList.Add("Japan","JP");
             
        
@@ -203,49 +203,8 @@ namespace TopMovies.Views
                 }
 
 
-      
-               string url = "http://www.amazon.com/s/?_encoding=UTF8&field-keywords=" + movieName + "&linkCode=ur2&tag=artmaya-20&url=search-alias%3Dmovies-tv";
-                switch (shareCountryCode)
-                {
-                    case "US":
-                        url = "http://www.amazon.com/s/?_encoding=UTF8&field-keywords=" + movieName + "&linkCode=ur2&tag=artmaya-20&url=search-alias%3Dmovies-tv";
-                        break;
-                    case "IN":
-                        url = "http://www.flipkart.com/search/a/movies-music?fk-search=movies-music&query=" + movieName + "&vertical=movies-music&affid=dkdaksatec";
-                        break;
-                    case "GB":
-                        //url = "http://www.amazon.co.uk/s/?_encoding=UTF8&camp=1634&field-keywords=" + movieName + "&linkCode=ur2&tag=daksatech-21&url=search-alias=dvd";
-                        url = "http://www.amazon.co.uk/s/?_encoding=UTF8&camp=1634&field-keywords=" + movieName + "&tag=daksatech-21&url=search-alias%3Ddvd";
-                        break;
-                    case "CA":
-                        url = "http://www.amazon.ca/s/?_encoding=UTF8&camp=15121&field-keywords=" + movieName + "&tag=daksatech-20&url=search-alias%3Ddvd";
-                        break;
-                    case "AU":
-                        url = "http://www.amazon.com";
-                        break;
-                    case "CN":
-                        url = "http://www.amazon.com";
-                        break;
-                    case "DE":
-                        url = "http://www.amazon.com";
-                        break;
-                    case "ES":
-                        url = "http://www.amazon.com";
-                        break;
-                    case "FR":
-                        url = "http://www.amazon.com";
-                        break;
-                    case "IT":
-                        url = "http://www.amazon.com";
-                        break;
-                    case "JP":
-                        url = "http://www.amazon.com";
-                        break;
 
-                    default:
-                        url = "http://www.amazon.com/s/?_encoding=UTF8&field-keywords=" + movieName + "&linkCode=ur2&tag=artmaya-20&url=search-alias%3Dmovies-tv";
-                        break;
-                }
+                string url = countryWiseUrl(shareCountryCode,movieName);
                 
                 e.Request.Data.Properties.Title = movieName;
 
@@ -558,54 +517,8 @@ namespace TopMovies.Views
             }
             else
             {
-
-
-
-                string url = "http://www.amazon.com/s/?_encoding=UTF8&field-keywords=" + movieName + "&linkCode=ur2&tag=artmaya-20&url=search-alias%3Dmovies-tv";
-
-
-                switch (buyMovieCountrycode)
-                {
-                    case "US":
-                        url = "http://www.amazon.com/s/?_encoding=UTF8&field-keywords=" + movieName + "&linkCode=ur2&tag=artmaya-20&url=search-alias%3Dmovies-tv";
-                        break;
-                    case "IN":
-                        url = "http://www.flipkart.com/search/a/movies-music?fk-search=movies-music&query=" + movieName + "&vertical=movies-music&affid=dkdaksatec";
-                        break;
-                    case "GB":
-                        //url = "http://www.amazon.co.uk/s/?_encoding=UTF8&camp=1634&field-keywords=" + movieName + "&linkCode=ur2&tag=daksatech-21&url=search-alias=dvd";
-                        url = "http://www.amazon.co.uk/s/?_encoding=UTF8&camp=1634&field-keywords=" + movieName + "&tag=daksatech-21&url=search-alias%3Ddvd";
-                        break;
-                    case "CA":
-                        url = "http://www.amazon.ca/s/?_encoding=UTF8&camp=15121&field-keywords=" + movieName + "&tag=daksatech-20&url=search-alias%3Ddvd";
-                        break;
-                    case "AU":
-                        url = "http://www.amazon.com";
-                        break;
-                    case "CN":
-                        url = "http://www.amazon.com";
-                        break;
-                    case "DE":
-                        url = "http://www.amazon.com";
-                        break;
-                    case "ES":
-                        url = "http://www.amazon.com";
-                        break;
-                    case "FR":
-                        url = "http://www.amazon.com";
-                        break;
-                    case "IT":
-                        url = "http://www.amazon.com";
-                        break;
-                    case "JP":
-                        url = "http://www.amazon.com";
-                        break;
-
-
-                    default:
-                        url = "http://www.amazon.com/s/?_encoding=UTF8&field-keywords=" + movieName + "&linkCode=ur2&tag=artmaya-20&url=search-alias%3Dmovies-tv";
-                        break;
-                }
+                string url = countryWiseUrl(buyMovieCountrycode,movieName);
+                              
 
 
                 //await Windows.System.Launcher.LaunchUriAsync(new Uri("http://www.amazon.com/s/?_encoding=UTF8&field-keywords=" + txtName.Text + "&linkCode=ur2&tag=artmaya-20&url=search-alias%3Dmovies-tv"));
@@ -623,5 +536,58 @@ namespace TopMovies.Views
         //{
 
         //}
+
+
+        private string countryWiseUrl(string country, string movieName)
+        
+        {
+            string url;
+
+            switch (country)
+            {
+                case "US":
+                    url = "http://www.amazon.com/s/?_encoding=UTF8&field-keywords=" + movieName + "&linkCode=ur2&tag=artmaya-20&url=search-alias%3Dmovies-tv";
+                    break;
+                case "IN":
+                    url = "http://www.flipkart.com/search/a/movies-music?fk-search=movies-music&query=" + movieName + "&vertical=movies-music&affid=dkdaksatec";
+                    break;
+                case "GB":
+                    //url = "http://www.amazon.co.uk/s/?_encoding=UTF8&camp=1634&field-keywords=" + movieName + "&linkCode=ur2&tag=daksatech-21&url=search-alias=dvd";
+                    url = "http://www.amazon.co.uk/s/?_encoding=UTF8&camp=1634&field-keywords=" + movieName + "&tag=daksatech-21&url=search-alias%3Ddvd";
+                    break;
+                case "CA":
+                    url = "http://www.amazon.ca/s/?_encoding=UTF8&camp=15121&field-keywords=" + movieName + "&tag=daksatech-20&url=search-alias%3Ddvd";
+                    break;
+                case "AU":
+                    url = "http://www.amazon.com";
+                    break;
+                case "CN":
+                    url = "http://www.amazon.com";
+                    break;
+                case "DE":
+                    url = "http://www.amazon.de/s/?url=search-alias%3Ddvd&field-keywords=" + movieName + "breathless&tag=daksatech02-21";
+                    break;
+                case "IT":
+                    url = "http://www.amazon.it/s/?field-keywords=" + movieName + "&tag=daksatech086-21&url=search-alias%3Ddvd";
+                    break;
+                case "ES":
+                    url = "http://www.amazon.es/s/?field-keywords=" + movieName + "&tag=daksatech0d-21&url=search-alias%3Ddvd";
+                    break;
+                case "FR":
+                    url = "http://www.amazon.fr/s/?_encoding=UTF8&camp=1642&field-keywords=" + movieName + "&tag=daksatech09-21&url=search-alias%3Ddvd";
+                    break;
+                case "JP":
+                    url = "http://www.amazon.com";
+                    break;
+
+
+                default:
+                    url = "http://www.amazon.com/s/?_encoding=UTF8&field-keywords=" + movieName + "&linkCode=ur2&tag=artmaya-20&url=search-alias%3Dmovies-tv";
+                    break;
+            }
+
+            return url;
+        }
+
     }
 }
