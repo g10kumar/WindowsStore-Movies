@@ -129,6 +129,7 @@
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
+    <None Include="packages.config" />
     <None Include="TopMovies_StoreKey.pfx" />
     <None Include="TopMovies_TemporaryKey.pfx" />
   </ItemGroup>
@@ -182,14 +183,43 @@
     <Content Include="Assets\TopAsian\49.jpg" />
     <Content Include="Assets\TopAsian\5.jpg" />
     <Content Include="Assets\TopAsian\50.jpg" />
+    <Content Include="Assets\TopAsian\51.jpg" />
     <Content Include="Assets\TopAsian\6.jpg" />
     <Content Include="Assets\TopAsian\7.jpg" />
     <Content Include="Assets\TopAsian\8.jpg" />
     <Content Include="Assets\TopAsian\9.jpg" />
+    <Content Include="Assets\TopBollywood\109.jpg" />
+    <Content Include="Assets\TopBollywood\110.jpg" />
+    <Content Include="Assets\TopBollywood\111.jpg" />
+    <Content Include="Assets\TopEnglish\251.jpg" />
+    <Content Include="Assets\TopEnglish\252.jpg" />
+    <Content Include="Assets\TopEnglish\253.jpg" />
+    <Content Include="Assets\TopEnglish\254.jpg" />
+    <Content Include="Assets\TopEnglish\255.jpg" />
+    <Content Include="Assets\TopEnglish\256.jpg" />
+    <Content Include="Assets\TopEnglish\257.jpg" />
+    <Content Include="Assets\TopEnglish\258.jpg" />
+    <Content Include="Assets\TopEnglish\259.jpg" />
+    <Content Include="Assets\TopEnglish\260.jpg" />
+    <Content Include="Assets\TopEnglish\261.jpg" />
+    <Content Include="Assets\TopEnglish\262.jpg" />
+    <Content Include="Assets\TopEnglish\263.jpg" />
+    <Content Include="Assets\TopEnglish\264.jpg" />
+    <Content Include="Assets\TopEnglish\265.jpg" />
+    <Content Include="Assets\TopEnglish\266.jpg" />
+    <Content Include="Assets\TopEnglish\267.jpg" />
+    <Content Include="Assets\TopEnglish\268.jpg" />
+    <Content Include="Assets\TopEnglish\269.jpg" />
+    <Content Include="Assets\TopEnglish\270.jpg" />
     <Content Include="Assets\TopEnglish\49.jpg" />
     <Content Include="Assets\TopForeign\1.jpg" />
     <Content Include="Assets\TopForeign\10.jpg" />
     <Content Include="Assets\TopForeign\100.jpg" />
+    <Content Include="Assets\TopForeign\101.jpg" />
+    <Content Include="Assets\TopForeign\102.jpg" />
+    <Content Include="Assets\TopForeign\103.jpg" />
+    <Content Include="Assets\TopForeign\104.jpg" />
+    <Content Include="Assets\TopForeign\105.jpg" />
     <Content Include="Assets\TopForeign\11.jpg" />
     <Content Include="Assets\TopForeign\12.jpg" />
     <Content Include="Assets\TopForeign\13.jpg" />
@@ -687,6 +717,15 @@
     <SDKReference Include="Syncfusion controls for WinRT XAML, Version=10.4.0.72">
       <Name>Syncfusion Controls for WinRT XAML</Name>
     </SDKReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="CSharpAnalytics.WindowsStore, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dlls\CSharpAnalytics.WindowsStore.dll</HintPath>
+    </Reference>
+    <Reference Include="MarkedUp">
+      <HintPath>packages\MarkedUp.0.6.7\lib\winrt45\MarkedUp.winmd</HintPath>
+    </Reference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '11.0' ">
     <VisualStudioVersion>11.0</VisualStudioVersion>

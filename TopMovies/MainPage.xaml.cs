@@ -14,6 +14,12 @@ using Windows.UI.Xaml.Navigation;
 using TopMovies.Views;
 using Windows.UI.Core;
 using Windows.UI.ViewManagement;
+using CSharpAnalytics;
+using CSharpAnalytics.Protocols;
+using CSharpAnalytics.Protocols.Urchin;
+using CSharpAnalytics.Sessions;
+using CSharpAnalytics.WindowsStore;
+using CSharpAnalytics.Activities;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -115,6 +121,13 @@ namespace TopMovies
 
         private void btnTopEnglishMovies_Click(object sender, RoutedEventArgs e)
         {
+
+            AutoAnalytics.Client.TrackEvent("Movie_Cat_selection", "English_Movie");
+
+            MarkedUp.AnalyticClient.SessionEvent("Movie_Cat_selection");
+
+          
+
             sessionData.selectCategory = "TopEnglish";
             // Navigates to Movies page
             this.Frame.Navigate(typeof(Movies));
@@ -122,6 +135,8 @@ namespace TopMovies
 
         private void btnTopForeignMovies_Click(object sender, RoutedEventArgs e)
         {
+            AutoAnalytics.Client.TrackEvent("Movie_Cat_selection", "Forigen_Movie");
+
             sessionData.selectCategory = "TopForeign";
             // Navigates to Movies page
             this.Frame.Navigate(typeof(Movies));
@@ -129,6 +144,8 @@ namespace TopMovies
 
         private void btnTopBollywoodmovies_Click(object sender, RoutedEventArgs e)
         {
+            AutoAnalytics.Client.TrackEvent("Movie_Cat_selection", "Bolly_Movie");
+
             sessionData.selectCategory = "TopBollywood";
             // Navigates to Movies page
             this.Frame.Navigate(typeof(Movies));
@@ -137,6 +154,8 @@ namespace TopMovies
 
         private void btnTopAsianmovies_Click(object sender, RoutedEventArgs e)
         {
+            AutoAnalytics.Client.TrackEvent("Movie_Cat_selection", "Asian_Movie");
+
             sessionData.selectCategory = "TopAsian";
             // Navigates to Movies page
             this.Frame.Navigate(typeof(Movies));
