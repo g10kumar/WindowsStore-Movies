@@ -21,6 +21,8 @@ namespace TopMovies
     public sealed partial class Regionsetting : UserControl
     {
         List<string> list = new List<string>();
+       
+
         Windows.Storage.ApplicationDataContainer roamingSettings = Windows.Storage.ApplicationData.Current.RoamingSettings;
         Windows.Globalization.GeographicRegion region = new Windows.Globalization.GeographicRegion();
 
@@ -32,6 +34,8 @@ namespace TopMovies
           // cc = region.DisplayName;
 
             //list.Add(cc);
+
+            
 
             this.InitializeComponent();
 
@@ -49,9 +53,10 @@ namespace TopMovies
             list.Add("Others(Rest of the World)");
 
             
+            
 
             SelectCountry_Popup.ItemsSource = list;                                         // Populate the ListBox with countrylist . 
-
+            
 
             if (list.Contains(((App)(App.Current)).countryCode))                                                          // This is to highlight the user previous selection .
             {
@@ -96,4 +101,6 @@ namespace TopMovies
             SettingsPane.Show();
         }
 }
+
+   
 }

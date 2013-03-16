@@ -17,7 +17,14 @@ using TopMovies.Views;
 using System.Collections.ObjectModel;
 using TopMovies.Common;
 using Windows.Storage.Streams;
-using System.Collections.Generic;
+
+
+using CSharpAnalytics;
+using CSharpAnalytics.Protocols;
+using CSharpAnalytics.Protocols.Urchin;
+using CSharpAnalytics.Sessions;
+using CSharpAnalytics.WindowsStore;
+using CSharpAnalytics.Activities;
 
 //using Common;
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
@@ -41,17 +48,11 @@ namespace TopMovies.Views
         Windows.Storage.ApplicationDataContainer roamingSettings = Windows.Storage.ApplicationData.Current.RoamingSettings;
         StorageFile movieFile = null;
         string fileContent = "";
-
         Dictionary<string, string> countryList = new Dictionary<string, string>();       // Initialize a dictionaty to store the country list . Values added in the 
-                                                                                          // constructor.
-
-
-
-
-      
-
-         
-
+        
+        // constructor
+        
+              
         //private string[] _ids =
         //{
         //    "1067", "2328", "2660", "1632", "2486", "2602", "2329", "2634",
@@ -163,6 +164,8 @@ namespace TopMovies.Views
             string movieImage = ((Person)(CoverFlowControl.Items[CoverFlowControl.SelectedIndex])).Image.ToString();
             string categoryDesc = "One of the Best Movies Ever";
 
+            MarkedUp.AnalyticClient.ShareStarted(movieName);
+
             if (sessionData.selectCategory == "TopBollywood")
             {
                 categoryDesc = "One of the best Bollywood/ Indian movie ever";
@@ -202,7 +205,7 @@ namespace TopMovies.Views
 
                 }
 
-
+               // AutoAnalytics.Client.TrackSocial("Share",
 
                 string url = countryWiseUrl(shareCountryCode,movieName);
                 
@@ -210,7 +213,7 @@ namespace TopMovies.Views
 
                 //e.Request.Data.Properties.Description = selectedItem.Title + "-" + selectedItem.Author + Environment.NewLine + selectedItem.Link.AbsoluteUri.ToString();
 
-                e.Request.Data.SetText(movieName + ": " + categoryDesc + Environment.NewLine + "Buy from: " + url);
+                e.Request.Data.SetText(movieName + ": " + categoryDesc + System.Environment.NewLine + "Buy from: " + url);
                 e.Request.Data.SetUri(new Uri(url));
                 e.Request.Data.SetHtmlFormat("Love  this movie: <strong>" + movieName + "</strong><br /><br />" + "Synopsis at: <a href=\"http://www.wikipedia.org\">Wikipedia<br />Check it out at: <a href=\"http://www.amazon.com\">Amazon</a>" );
 
@@ -279,13 +282,14 @@ namespace TopMovies.Views
                              //Image = "ms-appx:///Assets/" + movies.Element("rank").Value + " - " + movies.Element("name").Value + ".jpg"
                              Image = "ms-appx:///Assets/" + fileName + "/" + movies.Element("rank").Value + ".jpg"
                          });
-
+          
             Images = new ObservableCollection<Person>();
 
             foreach (Person p in query)
             {
-                //list.Add(p);
-                images.Add(new Person() { Image = p.Image, Name=p.Name + "#" + p.Desp});
+             
+                //list.Add(p);                 
+                images.Add(new Person() { Image = p.Image, Name = p.Name + "#" + p.Desp });     
                 //images.Add(new Person() {p});
             }
 
@@ -470,6 +474,8 @@ namespace TopMovies.Views
 
         private void btnMoreInfo_Click(object sender, RoutedEventArgs e)
         {
+            AutoAnalytics.Client.TrackEvent("Button_click", "Movie_Info", txtName.Text);
+
             stackPopup.Visibility = Windows.UI.Xaml.Visibility.Visible;
             //btnWVClose.Visibility = Windows.UI.Xaml.Visibility.Visible;
         }
@@ -486,8 +492,7 @@ namespace TopMovies.Views
             
             //var countryCode = geographicRegion.CodeTwoLetter;
             ////string homeregion = Windows.System.UserProfile.GlobalizationPreferences.HomeGeographicRegion;
-            
-
+  
             var movieName = "";
             if (sessionData.selectCategory == "TopForeign" & txtName.Text.IndexOf("/") > 5)
             {
@@ -497,6 +502,9 @@ namespace TopMovies.Views
             {
                 movieName = txtName.Text;
             }
+
+            AutoAnalytics.Client.TrackEvent("Button_click", "Buy_Button",movieName);                // Buy button click , for each movie . 
+            MarkedUp.AnalyticClient.InAppPurchaseOfferSelected(movieName);                          //Track event using MarkedUP
 
             string x = ((App)(App.Current)).countryCode;                                     // Variable x to store the value of country selcted by the user . 
 
@@ -529,6 +537,8 @@ namespace TopMovies.Views
 
         private void btnMovieDetails_Click_1(object sender, RoutedEventArgs e)
         {
+            AutoAnalytics.Client.TrackEvent("Button_click", "Movie_Info", txtName.Text);
+
             stackPopup.Visibility = Windows.UI.Xaml.Visibility.Visible;
         }
 
@@ -588,6 +598,8 @@ namespace TopMovies.Views
 
             return url;
         }
+
+      
 
     }
 }

@@ -323,5 +323,17 @@
 	</movie><movie><rank>108</rank>
     <name>Kabhi kabhie</name>
     <desc></desc>
-	</movie>
+	</movie><movie>
+    <rank>109</rank>
+    <name>Barfi!</name>
+    <desc></desc>
+  </movie><movie>
+    <rank>110</rank>
+    <name>OMG – Oh My God</name>
+    <desc></desc>
+  </movie><movie>
+    <rank>111</rank>
+    <name>Vicky Donor</name>
+    <desc></desc>
+  </movie>
 </root>

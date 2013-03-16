@@ -18,6 +18,15 @@ using TopMovies.Common;
 using Windows.Globalization;
 using Windows.UI.Xaml.Media.Animation;
 
+// Below are the reference library namespace to be used in the Application . 
+
+using CSharpAnalytics;
+using CSharpAnalytics.Activities;
+using CSharpAnalytics.Protocols.Measurement;
+using CSharpAnalytics.Protocols.Urchin;
+using CSharpAnalytics.WindowsStore;
+using CSharpAnalytics.Sessions;
+
 // The Blank Application template is documented at http://go.microsoft.com/fwlink/?LinkId=234227
 
 namespace TopMovies
@@ -33,11 +42,15 @@ namespace TopMovies
         /// </summary>
         public string countryCode = ""; // Global variable that is going to store the user selection for country .The same variable is going to be stored in the session.
 
+        AutoTimedEventActivity timeSpent = new AutoTimedEventActivity("ApplicationLifecycle", "User_Time_Spent");       // This is to mark the application usage time.
+
         public App()
         {
             this.InitializeComponent();
             App.Current.RequestedTheme = ApplicationTheme.Light;
             this.Suspending += OnSuspending;
+
+            this.UnhandledException += (s, e) => MarkedUp.AnalyticClient.LogLastChanceException(e);                     // Method to log crashes in the MarkedUp. 
 
         }
 
@@ -47,10 +60,15 @@ namespace TopMovies
         /// search results, and so forth.
         /// </summary>
         /// <param name="args">Details about the launch request and process.</param>
-        protected override void OnLaunched(LaunchActivatedEventArgs args)
+        protected async override void OnLaunched(LaunchActivatedEventArgs args)
         {
+
+            MarkedUp.AnalyticClient.Initialize("de800fbb-154d-4e05-9385-ef4146447edb");
+
+            var timeLaunch = new AutoTimedEventActivity("ApplicationLifecycle", "Launching");
+                                  
             Frame rootFrame = Window.Current.Content as Frame;
-           
+
             //Variable to get the Location of the user . This is to check if this is the first run or not . 
 
             var geoGraphicRegion = new Windows.Globalization.GeographicRegion();
@@ -95,7 +113,7 @@ namespace TopMovies
                     sessionData.userCountrySetting = roamingSettings.Values["userCountrySetting"].ToString();       // Uploading the user country setting from last session.
                 }
 
-                if (sessionData.userCountrySetting != null)             // Condition to check if the user has made some setting or not . 
+                if (sessionData.userCountrySetting != null)                                                         // Condition to check if the user has made some setting or not . 
                 {
 
                 countryCode = sessionData.userCountrySetting.ToString();
@@ -117,12 +135,17 @@ namespace TopMovies
                 {
                     throw new Exception("Failed to create initial page");
                 }
+
+                MarkedUp.AnalyticClient.RegisterNavigationFrame(rootFrame);                                         // Tracking Navigation Event . 
             }
             // Ensure the current window is active
+            await AutoAnalytics.StartAsync(new UrchinConfiguration("UA-38070832-3", "http://www.daksatech.com"));   // Tracking for this application as Web page.    
             Window.Current.Activate();
 
             // Register handler for CommandsRequested events from the settings pane
             SettingsPane.GetForCurrentView().CommandsRequested += OnCommandsRequested;
+
+            AutoAnalytics.Client.Track(timeLaunch);                                                                 // This is to measure the application upload time. 
         }
 
         void OnCommandsRequested(SettingsPane sender, SettingsPaneCommandsRequestedEventArgs args)
@@ -174,12 +197,15 @@ namespace TopMovies
         /// </summary>
         /// <param name="sender">The source of the suspend request.</param>
         /// <param name="e">Details about the suspend request.</param>
-        private void OnSuspending(object sender, SuspendingEventArgs e)
+        private async void OnSuspending(object sender, SuspendingEventArgs e)
         {
             var deferral = e.SuspendingOperation.GetDeferral();
             //TODO: Save application state and stop any background activity
+            
+            AutoAnalytics.Client.Track(timeSpent);                                                                   // this is to measure the user time spent in the application.
 
-
+            await AutoAnalytics.StopAsync();                                                                        // Stopping GA tracking . 
+            
             deferral.Complete();
         }
 
