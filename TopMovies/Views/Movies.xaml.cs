@@ -164,7 +164,6 @@ namespace TopMovies.Views
             string movieImage = ((Person)(CoverFlowControl.Items[CoverFlowControl.SelectedIndex])).Image.ToString();
             string categoryDesc = "One of the Best Movies Ever";
 
-            MarkedUp.AnalyticClient.ShareStarted(movieName);
 
             if (sessionData.selectCategory == "TopBollywood")
             {
@@ -504,7 +503,6 @@ namespace TopMovies.Views
             }
 
             AutoAnalytics.Client.TrackEvent("Button_click", "Buy_Button",movieName);                // Buy button click , for each movie . 
-            MarkedUp.AnalyticClient.InAppPurchaseOfferSelected(movieName);                          //Track event using MarkedUP
 
             string x = ((App)(App.Current)).countryCode;                                     // Variable x to store the value of country selcted by the user . 
 
