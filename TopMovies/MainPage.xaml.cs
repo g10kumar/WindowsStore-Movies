@@ -124,7 +124,6 @@ namespace TopMovies
 
             AutoAnalytics.Client.TrackEvent("Movie_Cat_selection", "English_Movie");
 
-            MarkedUp.AnalyticClient.SessionEvent("Movie_Cat_selection");
 
           
 

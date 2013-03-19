@@ -50,7 +50,6 @@ namespace TopMovies
             App.Current.RequestedTheme = ApplicationTheme.Light;
             this.Suspending += OnSuspending;
 
-            this.UnhandledException += (s, e) => MarkedUp.AnalyticClient.LogLastChanceException(e);                     // Method to log crashes in the MarkedUp. 
 
         }
 
@@ -63,7 +62,6 @@ namespace TopMovies
         protected async override void OnLaunched(LaunchActivatedEventArgs args)
         {
 
-            MarkedUp.AnalyticClient.Initialize("de800fbb-154d-4e05-9385-ef4146447edb");
 
             var timeLaunch = new AutoTimedEventActivity("ApplicationLifecycle", "Launching");
                                   
@@ -136,10 +134,9 @@ namespace TopMovies
                     throw new Exception("Failed to create initial page");
                 }
 
-                MarkedUp.AnalyticClient.RegisterNavigationFrame(rootFrame);                                         // Tracking Navigation Event . 
             }
             // Ensure the current window is active
-            await AutoAnalytics.StartAsync(new UrchinConfiguration("UA-38070832-3", "http://www.daksatech.com"));   // Tracking for this application as Web page.    
+            await AutoAnalytics.StartAsync(new UrchinConfiguration("UA-38070832-4", "http://www.daksatech.com"));   // Tracking for this application as Web page.    
             Window.Current.Activate();
 
             // Register handler for CommandsRequested events from the settings pane
