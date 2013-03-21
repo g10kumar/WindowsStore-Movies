@@ -14,12 +14,11 @@ using Windows.UI.Xaml.Navigation;
 using TopMovies.Views;
 using Windows.UI.Core;
 using Windows.UI.ViewManagement;
-using CSharpAnalytics;
-using CSharpAnalytics.Protocols;
+
+
 using CSharpAnalytics.Protocols.Urchin;
-using CSharpAnalytics.Sessions;
 using CSharpAnalytics.WindowsStore;
-using CSharpAnalytics.Activities;
+
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -79,8 +78,9 @@ namespace TopMovies
         /// </summary>
         /// <param name="e">Event data that describes how this page was reached.  The Parameter
         /// property is typically used to configure the page.</param>
-        protected override void OnNavigatedTo(NavigationEventArgs e)
+        protected async override void OnNavigatedTo(NavigationEventArgs e)
         {
+            await AutoAnalytics.StartAsync(new UrchinConfiguration("UA-38070832-4", "http://www.daksatech.com"));  // Tracking the application using Google Analytics
             //this.LoadState(e.Parameter, null);
         }
 
@@ -120,12 +120,7 @@ namespace TopMovies
         }
 
         private void btnTopEnglishMovies_Click(object sender, RoutedEventArgs e)
-        {
-
-            AutoAnalytics.Client.TrackEvent("Movie_Cat_selection", "English_Movie");
-
-
-          
+        {                   
 
             sessionData.selectCategory = "TopEnglish";
             // Navigates to Movies page
@@ -133,8 +128,7 @@ namespace TopMovies
         }
 
         private void btnTopForeignMovies_Click(object sender, RoutedEventArgs e)
-        {
-            AutoAnalytics.Client.TrackEvent("Movie_Cat_selection", "Forigen_Movie");
+        {           
 
             sessionData.selectCategory = "TopForeign";
             // Navigates to Movies page
@@ -142,8 +136,7 @@ namespace TopMovies
         }
 
         private void btnTopBollywoodmovies_Click(object sender, RoutedEventArgs e)
-        {
-            AutoAnalytics.Client.TrackEvent("Movie_Cat_selection", "Bolly_Movie");
+        {            
 
             sessionData.selectCategory = "TopBollywood";
             // Navigates to Movies page
@@ -152,8 +145,7 @@ namespace TopMovies
 
 
         private void btnTopAsianmovies_Click(object sender, RoutedEventArgs e)
-        {
-            AutoAnalytics.Client.TrackEvent("Movie_Cat_selection", "Asian_Movie");
+        {           
 
             sessionData.selectCategory = "TopAsian";
             // Navigates to Movies page
