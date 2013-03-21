@@ -41,7 +41,7 @@
         <StackPanel Orientation="Horizontal" Grid.ColumnSpan="3" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center">
             <TextBlock x:Name="txtName" Style="{StaticResource SubheaderTextStyle}" VerticalAlignment="Center"></TextBlock>
         </StackPanel>
-        <StackPanel x:Name="mainStack" Orientation="Vertical" Grid.ColumnSpan="3" Grid.Column="1" Grid.Row="2" Grid.RowSpan="5" VerticalAlignment="Top">
+        <StackPanel x:Name="mainStack" Orientation="Vertical" Grid.ColumnSpan="3" Grid.Row="2" Grid.RowSpan="5" VerticalAlignment="Top" Margin="70,10,70,0">
 
             <!--<syncfusion:CoverFlow x:Name="CoverFlowControl" Height="400">
                 <syncfusion:CoverFlow.ItemTemplate>
