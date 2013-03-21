@@ -123,7 +123,6 @@
     <Compile Include="Views\Movies.xaml.cs">
       <DependentUpon>Movies.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\SampleLayout.xaml.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -308,10 +307,6 @@
     <Content Include="Assets\SmallLogo.png" />
     <Content Include="Assets\SplashScreen.png" />
     <Content Include="Assets\StoreLogo.png" />
-    <Page Include="Views\SampleLayout.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="MoreAppsUserControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -697,20 +692,15 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <SDKReference Include="MSAdvertisingXaml, Version=6.1">
-      <Name>MSAdvertisingXaml</Name>
-    </SDKReference>
-    <SDKReference Include="Syncfusion controls for WinRT XAML, Version=10.4.0.72">
-      <Name>Syncfusion Controls for WinRT XAML</Name>
-    </SDKReference>
-  </ItemGroup>
-  <ItemGroup>
     <Reference Include="CSharpAnalytics.WindowsStore, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>Dlls\CSharpAnalytics.WindowsStore.dll</HintPath>
+      <HintPath>..\CSharpAnalytics-master\CSharpAnalytics-master\Source\CSharpAnalytics\bin\Release\WindowsStore\CSharpAnalytics.WindowsStore.dll</HintPath>
     </Reference>
-    <Reference Include="MarkedUp">
-      <HintPath>packages\MarkedUp.0.6.7\lib\winrt45\MarkedUp.winmd</HintPath>
+    <Reference Include="Syncfusion.SfCarousel.WinRT">
+      <HintPath>..\..\..\Program Files (x86)\Syncfusion\Essential Studio\11.1.0.21\Assemblies for WinRT\Syncfusion.SfCarousel.WinRT.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfShared.WinRT">
+      <HintPath>..\..\..\Program Files (x86)\Syncfusion\Essential Studio\11.1.0.21\Assemblies for WinRT\Syncfusion.SfShared.WinRT.dll</HintPath>
     </Reference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '11.0' ">

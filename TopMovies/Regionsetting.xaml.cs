@@ -30,18 +30,13 @@ namespace TopMovies
 
         public Regionsetting()
         {
-
           // cc = region.DisplayName;
-
             //list.Add(cc);
-
-            
-
             this.InitializeComponent();
 
-            list.Add("Australia");
+            //list.Add("Australia");
             list.Add("Canada");
-            list.Add("China");
+            //list.Add("China");
             list.Add("Germany");
             list.Add("Spain");
             list.Add("France");
@@ -52,8 +47,6 @@ namespace TopMovies
             list.Add("United States");
             list.Add("Others(Rest of the World)");
 
-            
-            
 
             SelectCountry_Popup.ItemsSource = list;                                         // Populate the ListBox with countrylist . 
             
