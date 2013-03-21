@@ -19,13 +19,9 @@ using Windows.Globalization;
 using Windows.UI.Xaml.Media.Animation;
 
 // Below are the reference library namespace to be used in the Application . 
-
-using CSharpAnalytics;
 using CSharpAnalytics.Activities;
-using CSharpAnalytics.Protocols.Measurement;
-using CSharpAnalytics.Protocols.Urchin;
 using CSharpAnalytics.WindowsStore;
-using CSharpAnalytics.Sessions;
+
 
 // The Blank Application template is documented at http://go.microsoft.com/fwlink/?LinkId=234227
 
@@ -50,6 +46,11 @@ namespace TopMovies
             App.Current.RequestedTheme = ApplicationTheme.Light;
             this.Suspending += OnSuspending;
 
+            //DebugSettings.EnableFrameRateCounter = true;
+
+            //DebugSettings.IsOverdrawHeatMapEnabled = true;
+
+           DebugSettings.IsBindingTracingEnabled = true;
 
         }
 
@@ -60,10 +61,7 @@ namespace TopMovies
         /// </summary>
         /// <param name="args">Details about the launch request and process.</param>
         protected async override void OnLaunched(LaunchActivatedEventArgs args)
-        {
-
-
-            var timeLaunch = new AutoTimedEventActivity("ApplicationLifecycle", "Launching");
+        {         
                                   
             Frame rootFrame = Window.Current.Content as Frame;
 
@@ -136,13 +134,12 @@ namespace TopMovies
 
             }
             // Ensure the current window is active
-            await AutoAnalytics.StartAsync(new UrchinConfiguration("UA-38070832-4", "http://www.daksatech.com"));   // Tracking for this application as Web page.    
+               
             Window.Current.Activate();
 
             // Register handler for CommandsRequested events from the settings pane
             SettingsPane.GetForCurrentView().CommandsRequested += OnCommandsRequested;
 
-            AutoAnalytics.Client.Track(timeLaunch);                                                                 // This is to measure the application upload time. 
         }
 
         void OnCommandsRequested(SettingsPane sender, SettingsPaneCommandsRequestedEventArgs args)

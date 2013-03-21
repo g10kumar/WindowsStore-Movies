@@ -36,6 +36,7 @@ using System.Xml.Serialization;
 using System.Text;
 using System.Xml.Linq;
 using Windows.ApplicationModel.DataTransfer;
+using Windows.Networking.Connectivity;
 
 namespace TopMovies.Views
 {
@@ -49,8 +50,9 @@ namespace TopMovies.Views
         StorageFile movieFile = null;
         string fileContent = "";
         Dictionary<string, string> countryList = new Dictionary<string, string>();       // Initialize a dictionaty to store the country list . Values added in the 
-        
-        // constructor
+                                                                                         // constructor
+
+         ConnectionProfile InternetconnectionProfile;
         
               
         //private string[] _ids =
@@ -90,9 +92,9 @@ namespace TopMovies.Views
             countryList.Add("India", "IN");                             // Adding key & value to the countryList dictionary . 
             countryList.Add("United Kingdom", "GB");
             countryList.Add("United States", "US");
-            //countryList.Add("Australia","AU");
+            countryList.Add("Australia","AU");
             countryList.Add("Canada","CA");
-            //countryList.Add("China","CN");
+            countryList.Add("China","CN");
             countryList.Add("Germany","DE");
             countryList.Add("Italy","IT");
             countryList.Add("Spain","ES");
@@ -191,8 +193,7 @@ namespace TopMovies.Views
                 {
                     movieName = movieName.Substring(0, movieName.IndexOf("/"));
                 }
-             //  var geographicRegion = new Windows.Globalization.GeographicRegion();
-             //  var country = geographicRegion.CodeTwoLetter;
+
 
                 string z = ((App)(App.Current)).countryCode;                                     // Variable x to store the value of country selcted by the user . 
 
@@ -204,7 +205,6 @@ namespace TopMovies.Views
 
                 }
 
-               // AutoAnalytics.Client.TrackSocial("Share",
 
                 string url = countryWiseUrl(shareCountryCode,movieName);
                 
@@ -253,12 +253,14 @@ namespace TopMovies.Views
             }
             else
                 pageTitle.Text = "Movies";
-            
-            
 
             LoadMovieData();
 
             bottonBar.IsOpen = true;
+
+            AutoAnalytics.Client.TrackEvent("Movie_Cat_selection", sessionData.selectCategory);
+
+            InternetconnectionProfile = Windows.Networking.Connectivity.NetworkInformation.GetInternetConnectionProfile();
             
         }
 
@@ -401,7 +403,10 @@ namespace TopMovies.Views
             {}
             //txtDesp.Text = ((Person)(CoverFlowControl.Items[CoverFlowControl.SelectedIndex])).Name.Split('#')[1].ToString();
 
-            movieWiki.Navigate(new Uri("http://en.m.wikipedia.org/wiki/" + movieName));
+            if (InternetconnectionProfile != null)          // Checking if Active internet connection is avaliable or not . 
+            {
+                movieWiki.Navigate(new Uri("http://en.m.wikipedia.org/wiki/" + movieName));
+            }
         }
 
         private void GoBack(object sender, RoutedEventArgs e)
@@ -467,15 +472,24 @@ namespace TopMovies.Views
         }
 
         private void CoverFlowControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            DisplayInfo();
+        {           
+                DisplayInfo();
+            
         }
 
         private void btnMoreInfo_Click(object sender, RoutedEventArgs e)
         {
             AutoAnalytics.Client.TrackEvent("Button_click", "Movie_Info", txtName.Text);
 
-            stackPopup.Visibility = Windows.UI.Xaml.Visibility.Visible;
+            if (InternetconnectionProfile == null)          // Functionality to check user internet connection & prompt is connection unavaliable . 
+            {
+                var messageDialog = new Windows.UI.Popups.MessageDialog("No Active Internet Connection Avaliable . Please check the connection & try again. ");
+                var result = messageDialog.ShowAsync();
+            }
+            else
+            {
+                stackPopup.Visibility = Windows.UI.Xaml.Visibility.Visible;
+            }
             //btnWVClose.Visibility = Windows.UI.Xaml.Visibility.Visible;
         }
 
@@ -486,12 +500,7 @@ namespace TopMovies.Views
 
 
         private async void btnBuyDVD_Click_1(object sender, RoutedEventArgs e)
-        {
-            //var geographicRegion = new Windows.Globalization.GeographicRegion();
-            
-            //var countryCode = geographicRegion.CodeTwoLetter;
-            ////string homeregion = Windows.System.UserProfile.GlobalizationPreferences.HomeGeographicRegion;
-  
+        {  
             var movieName = "";
             if (sessionData.selectCategory == "TopForeign" & txtName.Text.IndexOf("/") > 5)
             {
@@ -514,19 +523,15 @@ namespace TopMovies.Views
 
             }
 
-            var connectionProfile = Windows.Networking.Connectivity.NetworkInformation.GetInternetConnectionProfile();
-
-            if (connectionProfile == null)          // Functionality to check user internet connection & prompt is connection unavaliable . 
+            if (InternetconnectionProfile == null)          // Functionality to check user internet connection & prompt is connection unavaliable . 
             {
-                var messageDialog = new Windows.UI.Popups.MessageDialog("No Internet connection. Please check the connection & try again. ");
+                var messageDialog = new Windows.UI.Popups.MessageDialog(" No Active Internet Connection Avaliable . Please check the connection & try again. ");
                 var result = messageDialog.ShowAsync();
             }
             else
             {
                 string url = countryWiseUrl(buyMovieCountrycode,movieName);
-                              
-
-
+                            
                 //await Windows.System.Launcher.LaunchUriAsync(new Uri("http://www.amazon.com/s/?_encoding=UTF8&field-keywords=" + txtName.Text + "&linkCode=ur2&tag=artmaya-20&url=search-alias%3Dmovies-tv"));
                 await Windows.System.Launcher.LaunchUriAsync(new Uri(url));
 
@@ -535,9 +540,16 @@ namespace TopMovies.Views
 
         private void btnMovieDetails_Click_1(object sender, RoutedEventArgs e)
         {
+            if (InternetconnectionProfile == null)          // Functionality to check user internet connection & prompt is connection unavaliable . 
+            {
+                var messageDialog = new Windows.UI.Popups.MessageDialog("No Active Internet Connection Avaliable . Please check the connection & try again. ");
+                var result = messageDialog.ShowAsync();
+            }
+            else
+            {
+                stackPopup.Visibility = Windows.UI.Xaml.Visibility.Visible;
+            }
             AutoAnalytics.Client.TrackEvent("Button_click", "Movie_Info", txtName.Text);
-
-            stackPopup.Visibility = Windows.UI.Xaml.Visibility.Visible;
         }
 
         //private void btnMoreInfo_Click(object sender, DoubleTappedRoutedEventArgs e)
@@ -566,12 +578,12 @@ namespace TopMovies.Views
                 case "CA":
                     url = "http://www.amazon.ca/s/?_encoding=UTF8&camp=15121&field-keywords=" + movieName + "&tag=daksatech-20&url=search-alias%3Ddvd";
                     break;
-                //case "AU":
-                //    url = "http://www.amazon.com";
-                //    break;
-                //case "CN":
-                //    url = "http://www.amazon.com";
-                //    break;
+                case "AU":
+                    url = "http://www.amazon.com";
+                    break;
+                case "CN":
+                    url = "http://www.amazon.com";
+                    break;
                 case "DE":
                     url = "http://www.amazon.de/s/?url=search-alias%3Ddvd&field-keywords=" + movieName + "breathless&tag=daksatech02-21";
                     break;
@@ -585,7 +597,7 @@ namespace TopMovies.Views
                     url = "http://www.amazon.fr/s/?_encoding=UTF8&camp=1642&field-keywords=" + movieName + "&tag=daksatech09-21&url=search-alias%3Ddvd";
                     break;
                 case "JP":
-                    url = "http://www.amazon.co.jp/s/?_encoding=UTF8&field-keywords=" + movieName + "&tag=artmaya-22&url=search-alias%3Ddvd";
+                    url = "http://www.amazon.com";
                     break;
 
 
