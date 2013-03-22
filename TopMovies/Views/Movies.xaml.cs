@@ -92,9 +92,9 @@ namespace TopMovies.Views
             countryList.Add("India", "IN");                             // Adding key & value to the countryList dictionary . 
             countryList.Add("United Kingdom", "GB");
             countryList.Add("United States", "US");
-            countryList.Add("Australia","AU");
+            //countryList.Add("Australia","AU");
             countryList.Add("Canada","CA");
-            countryList.Add("China","CN");
+            //countryList.Add("China","CN");
             countryList.Add("Germany","DE");
             countryList.Add("Italy","IT");
             countryList.Add("Spain","ES");
@@ -578,12 +578,12 @@ namespace TopMovies.Views
                 case "CA":
                     url = "http://www.amazon.ca/s/?_encoding=UTF8&camp=15121&field-keywords=" + movieName + "&tag=daksatech-20&url=search-alias%3Ddvd";
                     break;
-                case "AU":
-                    url = "http://www.amazon.com";
-                    break;
-                case "CN":
-                    url = "http://www.amazon.com";
-                    break;
+                //case "AU":
+                //    url = "http://www.amazon.com";
+                //    break;
+                //case "CN":
+                //    url = "http://www.amazon.com";
+                //    break;
                 case "DE":
                     url = "http://www.amazon.de/s/?url=search-alias%3Ddvd&field-keywords=" + movieName + "breathless&tag=daksatech02-21";
                     break;
@@ -597,7 +597,7 @@ namespace TopMovies.Views
                     url = "http://www.amazon.fr/s/?_encoding=UTF8&camp=1642&field-keywords=" + movieName + "&tag=daksatech09-21&url=search-alias%3Ddvd";
                     break;
                 case "JP":
-                    url = "http://www.amazon.com";
+                    url = "http://www.amazon.co.jp/s/?_encoding=UTF8&field-keywords=" + movieName + "&tag=artmaya-22&url=search-alias%3Ddvd";
                     break;
 
 

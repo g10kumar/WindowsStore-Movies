@@ -128,7 +128,9 @@
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="TopMovies_StoreKey.pfx" />
     <None Include="TopMovies_TemporaryKey.pfx" />
   </ItemGroup>
