@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<script type='text/javascript'>
+
+    function loadads() {
+
+        //['http://www.jdoqocy.com/click-6744578-10773787', 'http://www.ftjcfx.com/image-6744578-10773787'],
+        //['http://www.tkqlhce.com/click-6744578-10647441', 'http://www.lduhtrp.net/image-6744578-10647441'],
+        var ads = [
+        /* house ads */
+        ['ms-windows-store:PDP?PFN=DaksaTech.ShareAll_c7fyd19frge5m', 'http://ads.daksatech.com/quotesads/ShareAllBanner.png'],
+        ['ms-windows-store:PDP?PFN=DaksaTech.TheBestMoviesEver_c7fyd19frge5m', 'http://ads.daksatech.com/quotesads/BestMoviesEverMadeBanner.png'],
+        ['ms-windows-store:PDP?PFN=DaksaTech.QuotesofWisdom_c7fyd19frge5m', 'http://ads.daksatech.com/quotesads/Quotes_BannerAd.jpg'],
+        ['ms-windows-store:Search?query=Daksatech', 'http://ads.daksatech.com/quotesads/OtherAppsBanner.png'],
+           ['http://www.amazon.com/b?node=229545&tag=artmaya-20', 'http://ecx.images-amazon.com/images/G/01/img09/software/associates/full-banner/tax-09-turbotax_468x60.gif'],
+           ['http://www.amazon.com/b?node=283155&tag=artmaya-20', 'http://ecx.images-amazon.com/images/G/01/img10/associates/leaderboard/save45-bestsellers_468x60.gif']
+//           ['http://www.amazon.com/b/ref=as_acph_jw_jewgift_115_214?ie=UTF8&node=5725046011&tag=artmaya-20', 'http://ecx.images-amazon.com/images/G/01/img13/JEWELRY/ADS/ASSOCIATE/01/0101_vday_Assoc_468x60.jpg'],
+//           ['http://www.amazon.com/s?node=%202613577011&tag=artmaya-20', 'http://ecx.images-amazon.com/images/G/01/AMAZON_FASHION/2013/CLOTHING/MISC/MASS_MAIL/01_2013/01/MASS_MAIL_4._V394668748_.jpg']
+        ];
+
+        var randomnumber = Math.floor(Math.random() * ads.length)
+        var adImageField = document.getElementById('adImage');
+        var adHrefField = document.getElementById('adUrl');
+        adImageField.src = ads[randomnumber][1];
+        //alert("javascript:NavToAd('" + ads[randomnumber][0] + "')")
+        adHrefField.href = ads[randomnumber][0];
+
+    }
+
+    window.setInterval(function () { loadads() }, 8000);
+
+</script>
+
+    <title></title>
+</head>
+<body onload="loadads()" style="margin: 0px;padding: 0px;margin-top: 0px;">
+<a id="adUrl" href=""  target="_top">
+        <img id="adImage"  width="468" height="60" alt="Boost online exposure - Search Engine Visibility!" style="border: 1px solid black;"/></a>
+
+
+</body>
+</html>

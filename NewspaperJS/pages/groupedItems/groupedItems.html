@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>groupedItemsPage</title>
+
+    <!-- WinJS references -->
+    <link href="//Microsoft.WinJS.1.0/css/ui-light.css" rel="stylesheet" />
+    <script src="//Microsoft.WinJS.1.0/js/base.js"></script>
+    <script src="//Microsoft.WinJS.1.0/js/ui.js"></script>
+
+    <link href="/css/default.css" rel="stylesheet" />
+    <link href="/js/default.js" rel="stylesheet" />
+    <link href="/pages/groupedItems/groupedItems.css" rel="stylesheet" />
+    <script src="/js/data.js"></script>
+    <script src="/pages/groupedItems/groupedItems.js"></script>
+    <script src="/MSAdvertisingJS/ads/ad.js"></script>
+    <style type="text/css">
+        .Horad {
+            margin-top:10px;
+            margin-left:auto;
+            margin-right:10px;
+            float:right !important;
+            width:468px;
+            height:60px;
+        }
+    </style>
+</head>
+<body>
+    <!-- These templates are used to display each item in the ListView declared below. -->
+    <div class="headerTemplate" data-win-control="WinJS.Binding.Template">
+        <p class="group-title win-type-x-large" data-win-bind="textContent: title; groupKey: key"
+            role="link">
+        </p>
+    </div>
+    <div class="itemtemplate" data-win-control="WinJS.Binding.Template">
+        <img id="img" class="item-image" src="#" data-win-bind="src: backgroundImage; alt: title" />
+        <div class="item-overlay" style="margin: 27px 0px 0px; -ms-grid-row-span: 1;">
+            <h4 class="item-title" data-win-bind="textContent: title" style="margin-left: -7px; margin-right: 7px; -ms-grid-row-span: 2;"></h4>
+            <!--<h6 class="item-subtitle win-type-ellipsis" data-win-bind="textContent: subtitle"></h6>-->
+        </div>
+    </div>
+
+    <!-- The content that will be loaded and displayed. -->
+    <div class="fragment groupeditemspage">
+        <header aria-label="Header content" role="banner">
+            <button class="win-backbutton" aria-label="Back" disabled></button>
+            <h1 class="titlearea win-type-ellipsis">
+                <span class="pagetitle">News Papers</span>
+            </h1>
+        </header>        
+        <section aria-label="Main content" role="main" style="margin-bottom:60px;">
+            <div class="groupeditemslist" aria-label="List of groups" data-win-control="WinJS.UI.ListView" data-win-options="{ selectionMode: 'none' }"></div>
+        	
+        </section>
+        <div class="Horad">
+            <iframe  id="myAd" height="60" width="468" src="http://rcm.amazon.com/e/cm?t=artmaya-20&o=1&p=13&l=ez&f=ifr&f=ifr" seamless="seamless" style="overflow-y: hidden;">
+        </iframe>
+            <!--<div id="myAd" data-win-control="MicrosoftNSJS.Advertising.AdControl" data-win-options="{applicationId: '78a54751-5d76-47b5-bede-a7001077c32f', adUnitId: '10044580'}"></div>--></div>
+		<div id="myAd1" style="position:absolute; width:292px;height:60px; bottom:0px; left: 15px; background-color:white;" data-win-control="MicrosoftNSJS.Advertising.AdControl" data-win-options="{adUnitId:'10045030', applicationId:'78a54751-5d76-47b5-bede-a7001077c32f', onErrorOccurred:errorLogger}"></div>
+        <div id="appbar" data-win-control="WinJS.UI.AppBar">
+        <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'btnFavorites', label:'Favorites', icon:'favorite'}"></button></div>
+    </div>                                                                                                                                                                            
+    <!--<div id="myAd">
+        veeru
+    </div>-->
+    <!--<div style="position: absolute; top: 20px; width: 600px; height: 90px; float: right;background-color:red;">
+        veeru
+    </div>-->
+    <!--<div id="myAd" data-win-control="MicrosoftNSJS.Advertising.AdControl" data-win-options="{applicationId: '78a54751-5d76-47b5-bede-a7001077c32f', adUnitId: '10044580'}">
+     </div>-->
+</body>
+</html>
