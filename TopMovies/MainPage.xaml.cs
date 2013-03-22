@@ -14,7 +14,7 @@ using Windows.UI.Xaml.Navigation;
 using TopMovies.Views;
 using Windows.UI.Core;
 using Windows.UI.ViewManagement;
-
+using TopMovies.Common;
 
 using CSharpAnalytics.Protocols.Urchin;
 using CSharpAnalytics.WindowsStore;
@@ -81,6 +81,17 @@ namespace TopMovies
         protected async override void OnNavigatedTo(NavigationEventArgs e)
         {
             await AutoAnalytics.StartAsync(new UrchinConfiguration("UA-38070832-4", "http://www.daksatech.com"));  // Tracking the application using Google Analytics
+
+            if (((App)(App.Current)).countryCode == "")
+            {
+                //Variable to get the Location of the user . This is to check if this is the first run or not . 
+                var geoGraphicRegion = new Windows.Globalization.GeographicRegion();
+                var _countryCode = geoGraphicRegion.CodeTwoLetter;
+                ((App)(App.Current)).countryCode = geoGraphicRegion.DisplayName; 
+            }
+
+
+
             //this.LoadState(e.Parameter, null);
         }
 

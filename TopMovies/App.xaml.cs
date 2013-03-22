@@ -67,9 +67,9 @@ namespace TopMovies
 
             //Variable to get the Location of the user . This is to check if this is the first run or not . 
 
-            var geoGraphicRegion = new Windows.Globalization.GeographicRegion();
+            //var geoGraphicRegion = new Windows.Globalization.GeographicRegion();
 
-            var _countryCode = geoGraphicRegion.CodeTwoLetter;                      
+            //var _countryCode = geoGraphicRegion.CodeTwoLetter;                      
                
             // Do not repeat app initialization when the Window already has content,
             // just ensure that the window is active
@@ -83,8 +83,6 @@ namespace TopMovies
                 {
                     //TODO: Load state from previously suspended application
                     //await TopMovies.Common.SuspensionManager.RestoreAsync();
-
-
                 }
 
                 Windows.Storage.ApplicationDataContainer roamingSettings = Windows.Storage.ApplicationData.Current.RoamingSettings;
@@ -111,13 +109,12 @@ namespace TopMovies
 
                 if (sessionData.userCountrySetting != null)                                                         // Condition to check if the user has made some setting or not . 
                 {
-
-                countryCode = sessionData.userCountrySetting.ToString();
-
-                }else
-                {
-                   countryCode = geoGraphicRegion.DisplayName; 
+                    countryCode = sessionData.userCountrySetting.ToString();
                 }
+                //else
+                //{
+                //   countryCode = geoGraphicRegion.DisplayName; 
+                //}
                 // Place the frame in the current Window
                 Window.Current.Content = rootFrame;
             }
@@ -144,6 +141,15 @@ namespace TopMovies
 
         void OnCommandsRequested(SettingsPane sender, SettingsPaneCommandsRequestedEventArgs args)
         {
+            //Add a preference apps command
+            SettingsCommand preference = new SettingsCommand("region_setting", "Country Settings", (handler) =>
+            {
+                var settings = new SettingsFlyout();
+                settings.ShowFlyout(new Regionsetting());
+            });
+
+            args.Request.ApplicationCommands.Add(preference);
+
 
             // Add a About command
             var about = new SettingsCommand("about", "About Us", (handler) =>
@@ -162,26 +168,18 @@ namespace TopMovies
                 var settings = new SettingsFlyout();
                 settings.ShowFlyout(new PrivacyPolicyUserControl());
             });
-
             args.Request.ApplicationCommands.Add(privacypolicy);
 
             // Add a More Apps command
-            var moreapps = new SettingsCommand("moreapps", "More Apps", (handler) =>
-            {
-                var settings = new SettingsFlyout();
-                settings.ShowFlyout(new MoreAppsUserControl());
-            });
+            //var moreapps = new SettingsCommand("moreapps", "More Apps", (handler) =>
+            //{
+            //    var settings = new SettingsFlyout();
+            //    settings.ShowFlyout(new MoreAppsUserControl());
+            //});
 
-            args.Request.ApplicationCommands.Add(moreapps);
+            //args.Request.ApplicationCommands.Add(moreapps);
 
-            //Add a preference apps command
-            SettingsCommand preference = new SettingsCommand("region_setting", "Country setting", (handler) =>
-                {
-                    var settings = new SettingsFlyout();
-                    settings.ShowFlyout(new Regionsetting());
-                });
-
-            args.Request.ApplicationCommands.Add(preference);
+            
         }
 
         /// <summary>

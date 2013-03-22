@@ -45,7 +45,7 @@ namespace TopMovies
             list.Add("Japan");
             list.Add("United Kingdom");
             list.Add("United States");
-            list.Add("Others(Rest of the World)");
+            list.Add("Others (Rest of the World)");
 
 
             SelectCountry_Popup.ItemsSource = list;                                         // Populate the ListBox with countrylist . 
@@ -57,7 +57,7 @@ namespace TopMovies
             }
             else
             { 
-                SelectCountry_Popup.SelectedIndex = list.IndexOf("Others(Rest of the World)"); 
+                SelectCountry_Popup.SelectedIndex = list.IndexOf("Others (Rest of the World)"); 
             }
             
         }

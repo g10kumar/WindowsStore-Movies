@@ -51,17 +51,17 @@
                 </syncfusion:CoverFlow.ItemTemplate>
             </syncfusion:CoverFlow>-->
 
-            <syncfusion:CoverFlow x:Name="CoverFlowControl" Height="400"
+            <syncfusion:SfCarousel x:Name="CoverFlowControl" Height="400"
                                   VerticalAlignment="Top" 
                                   Margin="10"  SelectedIndex="20"
                                   HorizontalAlignment="Left" SelectionChanged="CoverFlowControl_SelectionChanged" DoubleTapped="btnMoreInfo_Click"
                                   >
-                <syncfusion:CoverFlow.ItemTemplate>
+                <syncfusion:SfCarousel.ItemTemplate>
                     <DataTemplate>
                         <Image Source="{Binding Image}" Tag="{Binding Name}" Stretch="Uniform" />
                     </DataTemplate>
-                </syncfusion:CoverFlow.ItemTemplate>
-            </syncfusion:CoverFlow>
+                </syncfusion:SfCarousel.ItemTemplate>
+            </syncfusion:SfCarousel>
 
 
         </StackPanel>
