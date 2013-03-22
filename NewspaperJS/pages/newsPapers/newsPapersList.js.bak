@@ -1,0 +1,230 @@
+﻿(function () {
+    //"use strict";
+    var appView = Windows.UI.ViewManagement.ApplicationView;
+    var appViewState = Windows.UI.ViewManagement.ApplicationViewState;
+    var binding = WinJS.Binding;
+    var nav = WinJS.Navigation;
+    var ui = WinJS.UI;
+    var utils = WinJS.Utilities;
+    var currentApp;
+    var page = WinJS.UI.Pages.define("/pages/newsPapers/newsPapersList.html", {
+
+        ready: function (element, options) {
+
+            element.querySelector(".titlearea .pagetitle").textContent = options.split("#")[1];
+
+            // Initialize the license info for use in the app that is uploaded to the Store.
+            // uncomment for release
+            // currentApp = Windows.ApplicationModel.Store.CurrentApp;
+
+            // Initialize the license info for testing.
+            // comment the next line for release
+            currentApp = Windows.ApplicationModel.Store.CurrentAppSimulator;
+
+            // get the license info
+            //licenseInformation = currentApp.licenseInformation;
+
+            //if (licenseInformation.isActive) {
+            if (1==1) {
+                //if (licenseInformation.isTrial) {
+                if (1==0) {
+                    // Show the features that are available during trial only.
+                    var tmpDate = new Date();
+
+                    tmpDate.setDate(tmpDate.getDate() + 10);
+
+                    var expiryDate = new Date(tmpDate);
+                    var currentDate = new Date();
+
+                    expiryDate = expiryDate.getTime();
+                    currentDate = currentDate.getTime();
+                    var diff_ms = Math.abs(expiryDate - currentDate);
+
+                    var daysRemaining = Math.round(diff_ms / 86400000);
+                    //var daysRemaining = (licenseInformation.expirationDate - new Date()) / 86400000;
+
+                    if (parseInt(Math.round(daysRemaining)) > 0) {
+
+                        // Create the message dialog and set its content
+                        var msg = new Windows.UI.Popups.MessageDialog("Your trail ends in " + daysRemaining + ".  Do you want to buy the app now");
+
+
+                        // Add commands and set their command handlers
+                        msg.commands.append(new Windows.UI.Popups.UICommand("Yes", commandYesInvokedHandler));
+                        msg.commands.append(new Windows.UI.Popups.UICommand("No", commandNoInvokedHandler));
+
+                        // Set the command that will be invoked by default
+                        msg.defaultCommandIndex = 0;
+
+                        // Set the command to be invoked when escape is pressed
+                        msg.cancelCommandIndex = 1;
+
+                        // Show the message dialog
+                        msg.showAsync();
+
+                        getNewsPapersList(element, options);
+                        
+                    }
+                    else {
+                        // Create the message dialog and set its content
+                        var msg = new Windows.UI.Popups.MessageDialog("Your trail has ended.  Do you want to buy the app?");
+
+                        // Add commands and set their command handlers
+                        msg.commands.append(new Windows.UI.Popups.UICommand("Yes", commandYesInvokedHandler));
+                        msg.commands.append(new Windows.UI.Popups.UICommand("No", commandNoInvokedHandler));
+
+                        // Set the command that will be invoked by default
+                        msg.defaultCommandIndex = 0;
+
+                        // Set the command to be invoked when escape is pressed
+                        msg.cancelCommandIndex = 1;
+
+                        // Show the message dialog
+                        msg.showAsync();
+
+                        getNewsPapersList(element, options);
+                    }
+                }
+                else {
+                    // Show the features that are available only with a full license.
+                    getNewsPapersList(element, options);
+                    
+                }
+            }
+            else {
+                // A license is inactive only when there's an error.
+            }           
+        },
+        // This function updates the page layout in response to viewState changes.
+        updateLayout: function (element, viewState, lastViewState) {
+            /// <param name="element" domElement="true" />
+            /// <param name="viewState" value="Windows.UI.ViewManagement.ApplicationViewState" />
+            /// <param name="lastViewState" value="Windows.UI.ViewManagement.ApplicationViewState" />
+
+            var listView = element.querySelector(".newsPaperslist").winControl;
+            if (lastViewState !== viewState) {
+                if (lastViewState === appViewState.snapped || viewState === appViewState.snapped) {
+                    var handler = function (e) {
+                        listView.removeEventListener("contentanimating", handler, false);
+                        e.preventDefault();
+                    }
+                    listView.addEventListener("contentanimating", handler, false);
+                    initializeLayout(listView, viewState);
+                }
+            }
+        }
+    });
+
+    function commandYesInvokedHandler(command) {
+
+        currentApp.requestAppPurchaseAsync(true).done(function (result) {
+            var msg = new Windows.UI.Popups.MessageDialog("The full version of the app was enabled");
+            msg.showAsync();
+
+        },
+        function () {
+            var msg = new Windows.UI.Popups.MessageDialog("The upgrade transaction failed. You still have a trial license for this app.");
+            msg.showAsync();
+        }
+        );
+    }
+
+    function commandNoInvokedHandler(command) {
+        // nothing
+    }
+
+    
+    function getNewsPapersList(element, objValue) {
+        var mySplitResult = objValue.split("#");
+        var URL = "";
+        URL = "xml/NewsPapers.xml";
+        WinJS.xhr({ url: URL }).then(function (result) {
+            var newsPapersResponse = result.responseXML;
+            
+            // Get the info for each news papers 
+            var newsPaper = newsPapersResponse.querySelectorAll("c");
+
+            var newsPapersNodes = [];
+
+            for (var newsIndex = 0; newsIndex < newsPaper.length; newsIndex++) {
+
+                if (mySplitResult[1] == newsPaper[newsIndex].attributes.getNamedItem("name").textContent && mySplitResult[0] == newsPaper[newsIndex].attributes.getNamedItem("value").textContent) {
+
+                    var newsPaperList = newsPaper[newsIndex].querySelectorAll("paper");
+
+                    for (var newsPaperIndex = 0; newsPaperIndex < newsPaperList.length; newsPaperIndex++) {
+
+                        var newsPapers = {
+                            title: newsPaper[newsIndex].attributes.getNamedItem("name").textContent,
+                            newsTitle: newsPaperList[newsPaperIndex].querySelector("Name").textContent,
+                            webSite: newsPaperList[newsPaperIndex].querySelector("WebSite").textContent,
+                            backgroundImage: "../../../images/Country/" + newsPaper[newsIndex].attributes.getNamedItem("name").textContent + "_" + newsPaperList[newsPaperIndex].querySelector("Name").textContent + ".jpg"
+                        };
+                        newsPapersNodes.push(newsPapers);
+                    }
+                }
+            }
+            
+            var dataList = new WinJS.Binding.List(newsPapersNodes);
+            var listView = element.querySelector(".newsPaperslist").winControl;
+            listView.itemDataSource = dataList.dataSource;
+            listView.groupHeaderTemplate = element.querySelector(".headerTemplate");
+            listView.addEventListener("iteminvoked", itemInvokedHandler, false);
+            listView.itemTemplate = element.querySelector(".itemtemplate");
+            initializeLayout(listView, appView.value);
+            listView.element.focus();            
+        },
+        function (error) {
+            document.getElementById("outputDiv").style.display = 'block';
+            document.getElementById("outputDiv").innerHTML = "Unable to display the newspapers.";
+        });
+    }
+
+    function itemInvokedHandler(eventObject) {
+        eventObject.detail.itemPromise.done(function (invokedItem) {
+
+            window.open(invokedItem.data.webSite);
+        });
+    }
+
+    // This function updates the ListView with new layouts
+    function initializeLayout(listView, viewState) {
+        if (viewState === appViewState.snapped) {
+            listView.layout = new ui.ListLayout();
+            //document.getElementById("myAd2").style.display = 'block';
+            document.getElementById("myAd").style.display = 'none';
+            document.getElementById("myAd1").style.display = 'none';
+            document.getElementById("myAd2").style.display = 'block';
+            
+        } else {
+            listView.layout = new ui.GridLayout({ groupHeaderPosition: "top" });
+            listView.layout = new ui.GridLayout();
+            document.getElementById("myAd2").style.display = 'none';
+            document.getElementById("myAd").style.display = 'none';
+            document.getElementById("myAd1").style.display = 'none';
+        }
+    }
+
+    // This function updates the page layout in response to viewState changes.
+    //function updateLayout(element,viewState,lastViewState) {
+    //    /// <param name="element" domElement="true" />
+    //    /// <param name="viewState" value="Windows.UI.ViewManagement.ApplicationViewState" />
+    //    /// <param name="lastViewState" value="Windows.UI.ViewManagement.ApplicationViewState" />
+
+    //    var listView = element.querySelector(".newsPaperslist").winControl;
+    //    if (lastViewState !== viewState) {
+    //        if (lastViewState === appViewState.snapped || viewState === appViewState.snapped) {
+    //            var handler = function (e) {
+    //                listView.removeEventListener("contentanimating", handler, false);
+    //                e.preventDefault();
+    //            }
+    //            listView.addEventListener("contentanimating", handler, false);
+    //            initializeLayout(listView, viewState);
+    //        }
+    //    }
+    //}
+})();
+WinJS.Utilities.markSupportedForProcessing(
+window.errorLogger = function (sender, evt) {
+
+});
