@@ -2,7 +2,6 @@
     x:Class="LoveQuotes.App"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:a="using:DT.GoogleAnalytics.Metro"
     xmlns:local="using:LoveQuotes">
 
     <Application.Resources>       
@@ -17,7 +16,6 @@
                 <ResourceDictionary Source="Common/StandardStyles.xaml"/>
             </ResourceDictionary.MergedDictionaries>
 
-            <a:GoogleAnalyticsSettings x:Key="GoogleAnalytics" WebPropertyId="UA-38070832-3" />
                 
             <x:String x:Key="AppName">1000 Love Quotes</x:String>
         </ResourceDictionary>
