@@ -48,10 +48,10 @@ namespace LoveQuotes
         public DispatcherTimer dtautoPlay = new DispatcherTimer();
         string uriToLaunch = @"ms-windows-store:PDP?PFN=DaksaTech.QuotesofWisdom_c7fyd19frge5m";
         string imageToDisplay = "ms-appx:Assets/Ads/Quotes_BannerAd.jpg";
-        StorageFile sampleFile = null;
+    //    StorageFile sampleFile = null;
         List<Ads> list = new List<Ads>();
 
-        string fileContent = "";
+    //    string fileContent = "";
 
         public AdRotator()
         {

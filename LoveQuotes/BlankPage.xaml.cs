@@ -88,18 +88,17 @@ namespace LoveQuotes
         public BlankPage()
         {
             this.InitializeComponent();
-
+            
             //this.Initialize();            
             roamingFolder = ApplicationData.Current.RoamingFolder;
-            ApplicationData.Current.RoamingSettings.Values["date_firstLaunch"] = null;
-
+            ApplicationData.Current.RoamingSettings.Values["date_firstLaunch"] = null;          // this should'nt be assigned to null in the constructor. 
             ShareSourceLoad();
-            
             Window.Current.SizeChanged += Current_SizeChanged;
+            ApplicationData.Current.RoamingSettings.Values["popupVisible"];
 
-            if (ApplicationData.Current.RoamingSettings.Values["launch_count"] != null)
+            if (ApplicationData.Current.RoamingSettings.Values["launch_count"] != null)             //this is true & having the value of 1.
             {
-                launch_count = Convert.ToDouble(ApplicationData.Current.RoamingSettings.Values["launch_count"].ToString()) + 1;
+                launch_count = Convert.ToDouble(ApplicationData.Current.RoamingSettings.Values["launch_count"].ToString()) + 1; // launch_count ==2
             }
             else
             {
@@ -109,7 +108,7 @@ namespace LoveQuotes
 
             if (ApplicationData.Current.RoamingSettings.Values["date_firstLaunch"] == null)
             {
-                ApplicationData.Current.RoamingSettings.Values["date_firstLaunch"] = CurrentTimeMillis().ToString();
+                ApplicationData.Current.RoamingSettings.Values["date_firstLaunch"] = CurrentTimeMillis().ToString();        // this is always going to have a new value. 
             }
 
 
@@ -125,22 +124,10 @@ namespace LoveQuotes
             return (long)(DateTime.UtcNow - Jan1st1970).TotalMilliseconds;
         }
 
-        private void myPopup_Loaded(object sender, RoutedEventArgs e)
-        {
-            PopupLoaded();
-        }
-
-        private void PopupLoaded()
-        {
-            //position popup in center of the window
-            myPopup.HorizontalOffset = (Window.Current.Bounds.Width - popupStack.Width) / 2;
-            myPopup.VerticalOffset = (Window.Current.Bounds.Height - popupStack.Height) / 2;
-        }
-
         private async void btnRate_Click(object sender, RoutedEventArgs e)
         {
             // since user is rating, we dont want to bug him again.
-            ApplicationData.Current.RoamingSettings.Values["dontshowagain"] = "dontshowagain";
+            ApplicationData.Current.RoamingSettings.Values["popupVisible"] = false;
             await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-windows-store:PDP?PFN=DaksaTech.1000LoveQuotes_c7fyd19frge5m"));
             myPopup.IsOpen = false;
         }
@@ -148,11 +135,12 @@ namespace LoveQuotes
         private void btnremind_Click(object sender, RoutedEventArgs e)
         {
             myPopup.IsOpen = false;
+            ApplicationData.Current.RoamingSettings.Values["popupVisible"] = true;
         }
 
         private void btnnothanks_Click(object sender, RoutedEventArgs e)
         {
-            ApplicationData.Current.RoamingSettings.Values["dontshowagain"] = "dontshowagain";
+            ApplicationData.Current.RoamingSettings.Values["popupVisible"] = false;
             myPopup.IsOpen = false;
         }
         void Current_SizeChanged(object sender, WindowSizeChangedEventArgs e)
@@ -368,20 +356,20 @@ namespace LoveQuotes
         {
             //if (launch_count >= LAUNCHES_UNTIL_PROMPT && Convert.ToInt32(ApplicationData.Current.RoamingSettings.Values["date_firstLaunch"].ToString()) + DAYS_UNTIL_PROMPT > System.DateTime.Now.Millisecond)
             //{
-            if ((ApplicationData.Current.RoamingSettings.Values["dontshowagain"] == null) || (ApplicationData.Current.RoamingSettings.Values["dontshowagain"] != null & ApplicationData.Current.RoamingSettings.Values["dontshowagain"] != "dontshowagain"))
+            if (ApplicationData.Current.RoamingSettings.Values["popupVisible"].Equals(true))
                 {
-                    //if ((string)ApplicationData.Current.RoamingSettings.Values["dontshowagain"].ToString() != "dontshowagain")
-                    //{
-                    if (launch_count >= LAUNCHES_UNTIL_PROMPT && long.Parse(ApplicationData.Current.RoamingSettings.Values["date_firstLaunch"].ToString()) + DAYS_UNTIL_PROMPT * 24 * 60 * 60 * 1000 < long.Parse(CurrentTimeMillis().ToString()))
-                        {
-                            myPopup.IsOpen = true;
-                        }
-                    //}
+                  // if (launch_count >= LAUNCHES_UNTIL_PROMPT && long.Parse(ApplicationData.Current.RoamingSettings.Values["date_firstLaunch"].ToString()) + DAYS_UNTIL_PROMPT * 24 * 60 * 60 * 1000 < long.Parse(CurrentTimeMillis().ToString()))
+            //            {
+                    myPopup.HorizontalOffset = (Window.Current.Bounds.Width - popupStack.Width) / 2;
+                    myPopup.VerticalOffset = (Window.Current.Bounds.Height - popupStack.Height) / 2;
+                    myPopup.Visibility = Windows.UI.Xaml.Visibility.Visible;
+            //            }
+            //        //}
                 }
-                //else
-                //{
-                //    myPopup.IsOpen = true;
-                //}
+            else if (ApplicationData.Current.RoamingSettings.Values["popupVisible"].Equals(false))
+                {
+                   myPopup.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+                }
             //}
 
             await LoadInAppPurchaseProxyFileAsync();
@@ -390,7 +378,7 @@ namespace LoveQuotes
             LicenseInformation licenseInformation = CurrentApp.LicenseInformation;
 
             var productLicense = licenseInformation.ProductLicenses["AdFreeVersion"];
-            if (productLicense.IsActive)
+            if (productLicense.IsActive)                                // this is already chcecked in the LoadInAppPurchaseProxyFileAsync so can be removed . 
             {
                 //rootPage.NotifyUser("You can use Product 1.", NotifyType.StatusMessage);
                 adFull.Visibility = Windows.UI.Xaml.Visibility.Collapsed;

@@ -21,7 +21,7 @@ using Windows.Data.Xml;
 using Windows.UI.ApplicationSettings;
 // The Blank Application template is documented at http://go.microsoft.com/fwlink/?LinkId=234227
 using LoveQuotes.Common;
-using DT.GoogleAnalytics.Metro;
+
 
 namespace LoveQuotes
 {
@@ -64,7 +64,6 @@ namespace LoveQuotes
 
             // Place the frame in the current Window and ensure that it is active
             Window.Current.Content = rootFrame;
-            AnalyticsHelper.Setup();
             Window.Current.Activate();
 
             // Register handler for CommandsRequested events from the settings pane
@@ -86,12 +85,12 @@ namespace LoveQuotes
                 if (e.SourcePageType != null)
                 {
                     string uri = "/" + e.SourcePageType.FullName;
-                    AnalyticsHelper.TrackPageView(uri);
+                    //AnalyticsHelper.TrackPageView(uri);
                 }
             }
             else
             {
-                AnalyticsHelper.TrackPageView(e.Uri.ToString());
+               // AnalyticsHelper.TrackPageView(e.Uri.ToString());
             }
         }
 
@@ -139,7 +138,8 @@ namespace LoveQuotes
         /// <param name="e">Details about the suspend request.</param>
         void OnSuspending(object sender, SuspendingEventArgs e)
         {
-            AnalyticsHelper.TrackPageView("app closed");
+          
+
             //TODO: Save application state and stop any background activity
         }
     }

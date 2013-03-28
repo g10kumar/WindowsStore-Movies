@@ -58,7 +58,7 @@
                 </FlipView.ItemTemplate>
             </FlipView>            
         </StackPanel>
-        <Popup x:Name="myPopup" Loaded="myPopup_Loaded" IsOpen="True" >
+        <Popup x:Name="myPopup" IsOpen="True" >
             <Popup.ChildTransitions>
                 <TransitionCollection>
                     <PopupThemeTransition />
