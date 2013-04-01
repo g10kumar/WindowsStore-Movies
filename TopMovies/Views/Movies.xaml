@@ -103,8 +103,13 @@
                 <ImageBrush/>
             </ProgressRing.Background>
         </ProgressRing>
-        <UI:AdControl x:Name="AddLeft" ApplicationId="d25517cb-12d4-4699-8bdc-52040c712cab" AdUnitId="10043104" HorizontalAlignment="Left" Height="420" Margin="30,10,0,0" Grid.Row="2" Grid.RowSpan="5" VerticalAlignment="Top" Width="393" Grid.ColumnSpan="2"/>
-        <UI:AdControl x:Name="AddRight" ApplicationId="d25517cb-12d4-4699-8bdc-52040c712cab"  AdUnitId="10043104" Height="420" Margin="802,10,29,0" Grid.Row="2" Grid.RowSpan="5" VerticalAlignment="Top" Grid.ColumnSpan="2" Grid.Column="1" Width="393"/>
+        <!--<UI:AdControl x:Name="AddLeft" ApplicationId="6310ffab-747b-4d73-84f5-40c5fa6a8272" AdUnitId="10067099" HorizontalAlignment="Left" Height="250" Margin="30,100,0,0" Grid.Row="2" Grid.RowSpan="5" VerticalAlignment="Top" Width="250" Grid.ColumnSpan="2"/>
+        <UI:AdControl x:Name="AddRight" ApplicationId="6310ffab-747b-4d73-84f5-40c5fa6a8272"  AdUnitId="10067099" HorizontalAlignment="Right" Height="250" Margin="0,100,30,0" Grid.Row="2" Grid.RowSpan="5" VerticalAlignment="Top" Grid.ColumnSpan="2" Grid.Column="1" Width="250"/>-->
+
+
+        <UI:AdControl x:Name="AddLeft" ApplicationId="d25517cb-12d4-4699-8bdc-52040c712cab" AdUnitId="10043104" HorizontalAlignment="Left" Height="250" Margin="30,100,0,0" Grid.Row="2" Grid.RowSpan="5" VerticalAlignment="Top" Width="250" Grid.ColumnSpan="2"/>
+        <UI:AdControl x:Name="AddRight" ApplicationId="d25517cb-12d4-4699-8bdc-52040c712cab"  AdUnitId="10043104" HorizontalAlignment="Right" Height="250" Margin="0,100,30,0" Grid.Row="2" Grid.RowSpan="5" VerticalAlignment="Top" Grid.ColumnSpan="2" Grid.Column="1" Width="250"/>
+
         <!--<Grid>
             <ContentControl x:Name="SampleContent"
                                 HorizontalContentAlignment="Stretch"

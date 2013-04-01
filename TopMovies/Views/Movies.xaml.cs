@@ -528,7 +528,7 @@ namespace TopMovies.Views
 
             if (InternetconnectionProfile == null)          // Functionality to check user internet connection & prompt is connection unavaliable . 
             {
-                var messageDialog = new Windows.UI.Popups.MessageDialog("No Active Internet Connection Avaliable . Please check the connection & try again. ");
+                var messageDialog = new Windows.UI.Popups.MessageDialog("No active Internet connection avaliable . Please check the connection & try again. ");
                 var result = messageDialog.ShowAsync();
             }
             else
@@ -570,7 +570,7 @@ namespace TopMovies.Views
 
             if (InternetconnectionProfile == null)          // Functionality to check user internet connection & prompt is connection unavaliable . 
             {
-                var messageDialog = new Windows.UI.Popups.MessageDialog(" No Active Internet Connection Avaliable . Please check the connection & try again. ");
+                var messageDialog = new Windows.UI.Popups.MessageDialog(" No active Internet connection avaliable . Please check the connection & try again. ");
                 var result = messageDialog.ShowAsync();
             }
             else
@@ -587,7 +587,7 @@ namespace TopMovies.Views
         {
             if (InternetconnectionProfile == null)          // Functionality to check user internet connection & prompt is connection unavaliable . 
             {
-                var messageDialog = new Windows.UI.Popups.MessageDialog("No Active Internet Connection Avaliable . Please check the connection & try again. ");
+                var messageDialog = new Windows.UI.Popups.MessageDialog("No active Internet connection avaliable . Please check the connection & try again. ");
                 var result = messageDialog.ShowAsync();
             }
             else
