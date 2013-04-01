@@ -40,17 +40,19 @@ namespace TopMovies
 
         AutoTimedEventActivity timeSpent = new AutoTimedEventActivity("ApplicationLifecycle", "User_Time_Spent");       // This is to mark the application usage time.
 
+        public bool FirstRun = true;
+
         public App()
         {
             this.InitializeComponent();
             App.Current.RequestedTheme = ApplicationTheme.Light;
             this.Suspending += OnSuspending;
 
-            //DebugSettings.EnableFrameRateCounter = true;
+            DebugSettings.EnableFrameRateCounter = true;
 
             //DebugSettings.IsOverdrawHeatMapEnabled = true;
 
-           DebugSettings.IsBindingTracingEnabled = true;
+          // DebugSettings.IsBindingTracingEnabled = true;
 
         }
 
