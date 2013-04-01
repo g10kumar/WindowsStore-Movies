@@ -80,8 +80,12 @@ namespace TopMovies
         /// property is typically used to configure the page.</param>
         protected async override void OnNavigatedTo(NavigationEventArgs e)
         {
-            await AutoAnalytics.StartAsync(new UrchinConfiguration("UA-38070832-4", "http://www.daksatech.com"));  // Tracking the application using Google Analytics
 
+            if(((App)(App.Current)).FirstRun)
+            {
+            await AutoAnalytics.StartAsync(new UrchinConfiguration("UA-38070832-4", "http://www.daksatech.com"));  // Tracking the application using Google Analytics
+            ((App)(App.Current)).FirstRun = false;
+            }
             if (((App)(App.Current)).countryCode == "")
             {
                 //Variable to get the Location of the user . This is to check if this is the first run or not . 
