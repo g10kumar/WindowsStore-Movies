@@ -17,6 +17,7 @@ using TopMovies.Views;
 using System.Collections.ObjectModel;
 using TopMovies.Common;
 using Windows.Storage.Streams;
+using System.Threading.Tasks;
 
 
 using CSharpAnalytics;
@@ -51,8 +52,11 @@ namespace TopMovies.Views
         string fileContent = "";
         Dictionary<string, string> countryList = new Dictionary<string, string>();       // Initialize a dictionaty to store the country list . Values added in the 
                                                                                          // constructor
+        int countofMovies;
 
          ConnectionProfile InternetconnectionProfile;
+
+         bool imagedLoaded = false;
         
               
         //private string[] _ids =
@@ -234,6 +238,10 @@ namespace TopMovies.Views
         /// property is typically used to configure the page.</param>
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+            AddLeft.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+            AddRight.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+
+            ProgressRing.IsActive = true;
             
             if(sessionData.selectCategory == "TopBollywood")
             {
@@ -275,26 +283,15 @@ namespace TopMovies.Views
 
             XElement xe = XElement.Parse(fileContent);
 
-            var query = (from movies in xe.Elements("movie")
-                         select new Person
-                         {
-                             Name = movies.Element("name").Value,
-                             Desp = movies.Element("desc").Value,
-                             //Image = "ms-appx:///Assets/" + movies.Element("rank").Value + " - " + movies.Element("name").Value + ".jpg"
-                             Image = "ms-appx:///Assets/" + fileName + "/" + movies.Element("rank").Value + ".jpg"
-                         });
-          
-            Images = new ObservableCollection<Person>();
+            countofMovies = xe.Descendants("rank").Count();
 
-            foreach (Person p in query)
+            await LoadMovie(fileName, xe);
+
+            if (imagedLoaded)
             {
-             
-                //list.Add(p);                 
-                images.Add(new Person() { Image = p.Image, Name = p.Name + "#" + p.Desp });     
-                //images.Add(new Person() {p});
-            }
 
-            CoverFlowControl.ItemsSource = images;
+                ProgressRing.IsActive = false;
+            }
 
             #region Retrieving last viewing movie
             switch (sessionData.selectCategory)
@@ -362,6 +359,36 @@ namespace TopMovies.Views
             CoverFlowControl.ZOffset = 30.0;
             CoverFlowControl.ScaleOffset = 0.70;
             DisplayInfo();
+        }
+
+        private async Task LoadMovie(string fileName, XElement xe)
+        {
+            var query = (from movies in xe.Elements("movie")
+                         select new Person
+                         {
+                             Name = movies.Element("name").Value,
+                             Desp = movies.Element("desc").Value,
+                             //Image = "ms-appx:///Assets/" + movies.Element("rank").Value + " - " + movies.Element("name").Value + ".jpg"
+                             Image = "ms-appx:///Assets/" + fileName + "/" + movies.Element("rank").Value + ".jpg"
+                         });
+
+            Images = new ObservableCollection<Person>();
+
+
+            foreach (Person p in query)
+            {
+
+                //list.Add(p);                 
+                await Task.Run(() => images.Add(new Person() { Image = p.Image, Name = p.Name + "#" + p.Desp }));
+                //images.Add(new Person() {p});
+            }
+
+            
+
+
+            CoverFlowControl.ItemsSource = images;
+
+            imagedLoaded = true;
         }
 
         private void DisplayInfo()
@@ -472,8 +499,26 @@ namespace TopMovies.Views
         }
 
         private void CoverFlowControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {           
-                DisplayInfo();
+        {
+            
+
+            DisplayInfo();
+
+            var delay = Task.Delay(10000);
+            if (CoverFlowControl.SelectedItem == images.ElementAt(0) || CoverFlowControl.SelectedItem == images.ElementAt(1))
+            {              
+                AddLeft.Visibility = Windows.UI.Xaml.Visibility.Visible;
+            }
+            else if (CoverFlowControl.SelectedItem == images.ElementAt(countofMovies -2)||CoverFlowControl.SelectedItem == images.ElementAt(countofMovies -1))
+            {
+                AddRight.Visibility = Windows.UI.Xaml.Visibility.Visible;
+            }
+            else
+            {
+                AddLeft.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+                AddRight.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+            }
+                
             
         }
 
@@ -483,7 +528,7 @@ namespace TopMovies.Views
 
             if (InternetconnectionProfile == null)          // Functionality to check user internet connection & prompt is connection unavaliable . 
             {
-                var messageDialog = new Windows.UI.Popups.MessageDialog("No Active Internet Connection Avaliable . Please check the connection & try again. ");
+                var messageDialog = new Windows.UI.Popups.MessageDialog("No active Internet connection avaliable . Please check the connection & try again. ");
                 var result = messageDialog.ShowAsync();
             }
             else
@@ -525,7 +570,7 @@ namespace TopMovies.Views
 
             if (InternetconnectionProfile == null)          // Functionality to check user internet connection & prompt is connection unavaliable . 
             {
-                var messageDialog = new Windows.UI.Popups.MessageDialog(" No Active Internet Connection Avaliable . Please check the connection & try again. ");
+                var messageDialog = new Windows.UI.Popups.MessageDialog(" No active Internet connection avaliable . Please check the connection & try again. ");
                 var result = messageDialog.ShowAsync();
             }
             else
@@ -542,7 +587,7 @@ namespace TopMovies.Views
         {
             if (InternetconnectionProfile == null)          // Functionality to check user internet connection & prompt is connection unavaliable . 
             {
-                var messageDialog = new Windows.UI.Popups.MessageDialog("No Active Internet Connection Avaliable . Please check the connection & try again. ");
+                var messageDialog = new Windows.UI.Popups.MessageDialog("No active Internet connection avaliable . Please check the connection & try again. ");
                 var result = messageDialog.ShowAsync();
             }
             else
