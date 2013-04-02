@@ -148,6 +148,7 @@
     </AppxManifest>
     <None Include="Common\ReadMe.txt" />
     <None Include="LoveQuotes_TemporaryKey.pfx" />
+    <None Include="MultilingualResources\LoveQuotes_qps-ploc.xlf" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="AboutUsUserControl.xaml">
@@ -155,6 +156,7 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Content Include="Assets\ads\Quotes_BannerAd.jpg" />
+    <Content Include="Assets\background\FreeVector-Vector-Art-Free.jpg" />
     <Content Include="Assets\bhagavadgita.png" />
     <Content Include="Assets\Logo.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -188,7 +190,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Content Include="blank.html" />
-    <Content Include="Dlls\DT.GoogleAnalytics.Metro.dll" />
     <Content Include="Xml\in-app-purchase.xml" />
     <Content Include="Xml\QuotesLove.xml">
       <SubType>Designer</SubType>
@@ -208,16 +209,17 @@
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Dlls\" />
+  </ItemGroup>
   <ItemGroup>
     <SDKReference Include="MSAdvertisingXaml, Version=6.1">
       <Name>Microsoft Advertising SDK for Windows 8 %28Xaml%29</Name>
     </SDKReference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="DT.GoogleAnalytics.Metro, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Users\Veeru\Desktop\05.02.2013\DT.GoogleAnalytics.Metro.2.0\DT.GoogleAnalytics.Metro.dll</HintPath>
+    <Reference Include="CSharpAnalytics.WindowsStore">
+      <HintPath>Dlls\CSharpAnalytics.WindowsStore.dll</HintPath>
     </Reference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' ">
@@ -231,4 +233,5 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <Target Name="AfterBuild" />
 </Project>

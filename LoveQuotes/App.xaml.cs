@@ -17,6 +17,9 @@ using System.Xml;
 using System.Text;
 using System.Xml.Linq;
 using Windows.Data.Xml;
+using Windows.Storage;
+using System.Threading.Tasks;
+
 
 using Windows.UI.ApplicationSettings;
 // The Blank Application template is documented at http://go.microsoft.com/fwlink/?LinkId=234227
@@ -30,7 +33,10 @@ namespace LoveQuotes
     /// </summary>
     sealed partial class App : Application
     {
-        public const string AppName = "1,000 Love Quotes";        
+        public const string AppName = "1,000 Love Quotes";
+        public DateTime firstLaunchDateTime;
+        public StorageFolder roamingFolder;                     // This storage file is being used in all the files. 
+
 
         //public const DispatcherTimer dtautoPlay = new DispatcherTimer();
         /// <summary>
@@ -41,7 +47,10 @@ namespace LoveQuotes
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
-        }
+
+            roamingFolder = ApplicationData.Current.RoamingFolder;                      // roamingFolder is initialized only once. 
+           //ApplicationData.Current.RoamingSettings.Values["firstLaunch"] = null;        // Uncomment this to initialize roaming data again & breakpoint next line . 
+         }
 
         /// <summary>
         /// Invoked when the application is launched normally by the end user.  Other entry points
@@ -51,6 +60,18 @@ namespace LoveQuotes
         /// <param name="args">Details about the launch request and process.</param>
         protected override void OnLaunched(LaunchActivatedEventArgs args)
         {
+            Windows.Storage.ApplicationDataContainer roamingSettings = Windows.Storage.ApplicationData.Current.RoamingSettings;
+
+            if (ApplicationData.Current.RoamingSettings.Values["firstLaunch"] == null)                 // This block will be executed only once .
+            {
+               ApplicationData.Current.RoamingSettings.Values["popupVisible"] = false;
+               ApplicationData.Current.RoamingSettings.Values["launches"]= 0; 
+               firstLaunchDateTime = DateTime.Now.ToUniversalTime();
+               ApplicationData.Current.RoamingSettings.Values["firstLaunch"] = false;
+               ApplicationData.Current.RoamingSettings.Values["hasPopUpLaunched"] = false;
+               ApplicationData.Current.RoamingSettings.Values["DaysUntilPrompt"] = firstLaunchDateTime.AddDays(1).ToUniversalTime().ToString();
+                // Above line will store the DaysUntilPrompt for next one day before the pop up will appear. 
+             }
             if (args.PreviousExecutionState == ApplicationExecutionState.Terminated)
             {
                 //TODO: Load state from previously suspended application               
@@ -126,7 +147,13 @@ namespace LoveQuotes
 
             args.Request.ApplicationCommands.Add(privacypolicy);
 
+            var rateApplication = new SettingsCommand("rateapp", "Rate This Applicaton!", async (handler) =>
+                {
+                    var settings = new SettingsFlyout();
+                    await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-windows-store:PDP?PFN=DaksaTech.1000LoveQuotes_c7fyd19frge5m"));
+                });
 
+            args.Request.ApplicationCommands.Add(rateApplication);
         }
 
         /// <summary>

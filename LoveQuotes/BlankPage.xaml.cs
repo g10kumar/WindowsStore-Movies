@@ -1,9 +1,39 @@
-﻿using System;
+﻿using LoveQuotes.Common;
+using LoveQuotes.NotificationsExtensions.TileContent;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
+//using Microsoft.Phone.Tasks;
+using System.Net.Http;
+using System.Text;
+// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
+using System.Threading.Tasks;
+using System.Xml;
+using System.Xml.Linq;
+using System.Xml.Serialization;
+using Windows.ApplicationModel;
+using Windows.ApplicationModel.DataTransfer;
+using Windows.ApplicationModel.Store;
+using Windows.Data.Xml;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Graphics.Display;
+using Windows.Storage;
+using Windows.Storage.AccessCache;
+using Windows.Storage.FileProperties;
+using Windows.Storage.Pickers;
+using Windows.Storage.Streams;
+using Windows.System;
+using Windows.UI.Core;
+//using Hammock.Web;
+//using Hammock.Authentication.OAuth;
+//using Hammock;
+//using XAMLMetroAppIsolatedStorageHelper;
+using Windows.UI.Notifications;
+using Windows.UI.Popups;
+using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -11,40 +41,6 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-
-
-using System.Xml;
-using System.Xml.Serialization;
-using System.Text;
-using System.Xml.Linq;
-using Windows.Data.Xml;
-
-using System.Collections.ObjectModel;
-using Windows.Graphics.Display;
-using Windows.Storage;
-using Windows.Storage.AccessCache;
-using Windows.Storage.FileProperties;
-using Windows.Storage.Streams;
-using Windows.System;
-using Windows.UI.Core;
-
-// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
-using System.Threading.Tasks;
-//using Microsoft.Phone.Tasks;
-using System.Net.Http;
-using Windows.Storage.Pickers;
-//using Hammock.Web;
-//using Hammock.Authentication.OAuth;
-//using Hammock;
-//using XAMLMetroAppIsolatedStorageHelper;
-using Windows.UI.Notifications;
-using LoveQuotes.NotificationsExtensions.TileContent;
-using Windows.ApplicationModel.DataTransfer;
-using LoveQuotes.Common;
-using Windows.UI.ViewManagement;
-using Windows.ApplicationModel;
-using Windows.ApplicationModel.Store;
-using Windows.UI.Popups;
 namespace LoveQuotes
 {
     /// <summary>
@@ -68,7 +64,7 @@ namespace LoveQuotes
 
         string fileContent = "";
         // Windows.Data.Xml.Dom.XmlDocument doc;
-        StorageFolder roamingFolder = null;
+      //  public StorageFolder roamingFolder = null;
         //List<Quotation> listFavQuotation;// = new List<Quotation>();
         //XAMLMetroAppIsolatedStorageHelper.StorageHelper<Quotation> objectStorageHelper;
         // private XmlSerializer serializer;
@@ -80,9 +76,9 @@ namespace LoveQuotes
         //LicenseInformation licenseInformation = CurrentApp.LicenseInformation;
         LicenseChangedEventHandler licenseChangeHandler = null;
 
-        public const int DAYS_UNTIL_PROMPT = 0;
-        public const int LAUNCHES_UNTIL_PROMPT = 2;
-        double launch_count;
+
+
+
         #endregion
 
         public BlankPage()
@@ -90,26 +86,27 @@ namespace LoveQuotes
             this.InitializeComponent();
             
             //this.Initialize();            
-            roamingFolder = ApplicationData.Current.RoamingFolder;
-            ApplicationData.Current.RoamingSettings.Values["date_firstLaunch"] = null;          // this should'nt be assigned to null in the constructor. 
+     //       roamingFolder = ApplicationData.Current.RoamingFolder;
+       //     ApplicationData.Current.RoamingSettings.Values["date_firstLaunch"] = ((App)(App.Current)).firstLaunchDateTime;          // Assigning the 
             ShareSourceLoad();
             Window.Current.SizeChanged += Current_SizeChanged;
-            ApplicationData.Current.RoamingSettings.Values["popupVisible"];
+            bool hasPopUpLaucnhed;
 
-            if (ApplicationData.Current.RoamingSettings.Values["launch_count"] != null)             //this is true & having the value of 1.
-            {
-                launch_count = Convert.ToDouble(ApplicationData.Current.RoamingSettings.Values["launch_count"].ToString()) + 1; // launch_count ==2
-            }
-            else
-            {
-                launch_count = 1;
-                ApplicationData.Current.RoamingSettings.Values["launch_count"] = launch_count;
-            }
 
-            if (ApplicationData.Current.RoamingSettings.Values["date_firstLaunch"] == null)
-            {
-                ApplicationData.Current.RoamingSettings.Values["date_firstLaunch"] = CurrentTimeMillis().ToString();        // this is always going to have a new value. 
-            }
+            //if (ApplicationData.Current.RoamingSettings.Values["launch_count"] != null)             //this is true & having the value of 1.
+            //{
+            //    launch_count = Convert.ToDouble(ApplicationData.Current.RoamingSettings.Values["launch_count"].ToString()) + 1; // launch_count ==2
+            //}
+            //else
+            //{
+            //    launch_count = 1;
+            //    ApplicationData.Current.RoamingSettings.Values["launch_count"] = launch_count;
+            //}
+
+            //if (ApplicationData.Current.RoamingSettings.Values["date_firstLaunch"] == null)
+            //{
+            //    ApplicationData.Current.RoamingSettings.Values["date_firstLaunch"] = CurrentTimeMillis().ToString();        // this is always going to have a new value. 
+            //}
 
 
 
@@ -354,24 +351,43 @@ namespace LoveQuotes
         /// property is typically used to configure the page.</param>
         protected override async void OnNavigatedTo(NavigationEventArgs e)
         {
-            //if (launch_count >= LAUNCHES_UNTIL_PROMPT && Convert.ToInt32(ApplicationData.Current.RoamingSettings.Values["date_firstLaunch"].ToString()) + DAYS_UNTIL_PROMPT > System.DateTime.Now.Millisecond)
-            //{
-            if (ApplicationData.Current.RoamingSettings.Values["popupVisible"].Equals(true))
+
+            if (ApplicationData.Current.RoamingSettings.Values["hasPopUpLaunched"].Equals(false))           // This block will only be executed until the pop up has not been displayed. 
+            {
+
+               
+
+                string Lc = ApplicationData.Current.RoamingSettings.Values["launches"].ToString();
+                int launchCount = int.TryParse(Lc, out launchCount) ? launchCount : 0;
+
+                string dateTime = ApplicationData.Current.RoamingSettings.Values["DaysUntilPrompt"].ToString();
+                DateTime DaysUntilPrompt = DateTime.Parse(dateTime);
+                DateTime currentTime = DateTime.Now.ToUniversalTime();
+                int compare = System.DateTime.Compare(currentTime, DaysUntilPrompt);
+                if (compare >= 0 || launchCount >= 3)                                                          // After one days the pop up is going to be displayed.
                 {
-                  // if (launch_count >= LAUNCHES_UNTIL_PROMPT && long.Parse(ApplicationData.Current.RoamingSettings.Values["date_firstLaunch"].ToString()) + DAYS_UNTIL_PROMPT * 24 * 60 * 60 * 1000 < long.Parse(CurrentTimeMillis().ToString()))
-            //            {
+                    ApplicationData.Current.RoamingSettings.Values["popupVisible"] = true;
+                }
+
+                launchCount += 1;
+                ApplicationData.Current.RoamingSettings.Values["launches"] = launchCount;
+            }
+
+
+             if (ApplicationData.Current.RoamingSettings.Values["popupVisible"].Equals(true))
+             {
+                   
                     myPopup.HorizontalOffset = (Window.Current.Bounds.Width - popupStack.Width) / 2;
                     myPopup.VerticalOffset = (Window.Current.Bounds.Height - popupStack.Height) / 2;
                     myPopup.Visibility = Windows.UI.Xaml.Visibility.Visible;
-            //            }
-            //        //}
-                }
-            else if (ApplicationData.Current.RoamingSettings.Values["popupVisible"].Equals(false))
-                {
-                   myPopup.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-                }
-            //}
-
+                    ApplicationData.Current.RoamingSettings.Values["hasPopUpLaunched"] = true;
+              }
+                else if (ApplicationData.Current.RoamingSettings.Values["popupVisible"].Equals(false))
+              {
+                    myPopup.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+              }
+                
+            
             await LoadInAppPurchaseProxyFileAsync();
 
             //LicenseInformation licenseInformation = CurrentAppSimulator.LicenseInformation;
@@ -713,17 +729,17 @@ namespace LoveQuotes
 
                 //string returnValue = "Added";
                 const string filename = "favQuotes.xml";
-                roamingFolder = ApplicationData.Current.RoamingFolder;
+               // roamingFolder = ApplicationData.Current.RoamingFolder;
                 StorageFile file;
                 //Stream outStream1 = null;
                 // IRandomAccessStream readStream1 = null;
 
-                file = await GetFileIfExistsAsync(roamingFolder, filename);
+                file = await GetFileIfExistsAsync(((App)(App.Current)).roamingFolder, filename);
 
                 if (file == null)
                 {
                     isExists = false;
-                    file = await roamingFolder.CreateFileAsync(filename, CreationCollisionOption.OpenIfExists);
+                    file = await ((App)(App.Current)).roamingFolder.CreateFileAsync(filename, CreationCollisionOption.OpenIfExists);
                     //readStream1 = await file.OpenAsync(FileAccessMode.ReadWrite);
                     //outStream1 = Task.Run(() => readStream1.AsStreamForWrite()).Result;    
                     //using (IRandomAccessStream readStream = await file.OpenAsync(FileAccessMode.ReadWrite))
