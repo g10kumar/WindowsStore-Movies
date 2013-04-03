@@ -128,9 +128,18 @@
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
+    <None Include="MultilingualResources\TopMovies_es-MX.xlf">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MultilingualResources\TopMovies_es-US.xlf">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MultilingualResources\TopMovies_fr-FR.xlf" />
+    <None Include="MultilingualResources\TopMovies_qps-ploc.xlf" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
+    <PRIResource Include="Strings\en-US\Resources.resw" />
     <None Include="TopMovies_StoreKey.pfx" />
     <None Include="TopMovies_TemporaryKey.pfx" />
   </ItemGroup>
@@ -695,9 +704,8 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="CSharpAnalytics.WindowsStore, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\CSharpAnalytics-master\CSharpAnalytics-master\Source\CSharpAnalytics\bin\Release\WindowsStore\CSharpAnalytics.WindowsStore.dll</HintPath>
+    <Reference Include="CSharpAnalytics.WindowsStore">
+      <HintPath>Dlls\CSharpAnalytics.WindowsStore.dll</HintPath>
     </Reference>
     <Reference Include="Syncfusion.SfCarousel.WinRT, Version=11.104.0.21, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -713,10 +721,16 @@
       <Name>Microsoft Advertising SDK for Windows 8 %28Xaml%29</Name>
     </SDKReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '11.0' ">
     <VisualStudioVersion>11.0</VisualStudioVersion>
   </PropertyGroup>
+  <PropertyGroup Label="MultilingualAppToolkit">
+    <MakePriLog>$(Temp)\$(MSBuildProjectName)_Multilingual.prilog.xml</MakePriLog>
+    <AppxGenerateProjectPriFileAdditionalMakepriExeParameters>/IndexLog "$(MakePriLog)"</AppxGenerateProjectPriFileAdditionalMakepriExeParameters>
+  </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <Import Label="MultilingualAppToolkit" Project="$(MSBuildExtensionsPath32)\Microsoft\Multilingual App Toolkit\v1.0\MultilingualBuildTasks.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\Multilingual App Toolkit\v1.0\MultilingualBuildTasks.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
@@ -724,4 +738,7 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <Target Name="AfterBuild">
+    <MultilingualBuild Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\Multilingual App Toolkit\v1.0\MultilingualBuildTasks.targets')" ContinueOnError="false" BldOutputPath="$(IntermediateOutputPath)" BinOutputPath="bin\$(Configuration)" AppName="$(ProjectName)" ProjectPath="$(ProjectPath)" ProjectPriFullPath="$(ProjectPriFullPath)" MakePriLog="$(MakePriLog)" SourceLanguage="$(DefaultLanguage)" />
+  </Target>
 </Project>

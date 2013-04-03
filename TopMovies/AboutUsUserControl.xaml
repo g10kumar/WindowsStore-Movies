@@ -47,17 +47,17 @@
                     </Grid.Transitions>
                     <StackPanel Orientation="Vertical">
                         <StackPanel Orientation="Vertical">
-                            <TextBlock Text="This app presents the best movies ever made in the world in a visual format. Browse through the top movies made in Hollywood or internationally. Movies are categorized by Hollywood, Bollywood or International. Bollywood is the term used for the Hindi-language film industry based in Mumbai, India. The 'International' films category includes movies made all over the world except Hollywood and Bollywood."  Style="{StaticResource AboutUsTextStyle}" />
+                            <TextBlock x:Uid="AboutUs1" Text=""  Style="{StaticResource AboutUsTextStyle}" />
                             <!--<TextBlock Text="The app was developed by Daksa Technologies. We develop apps for Windows Phone &amp; Windows 8, web applications, websites and custom Windows software."  Style="{StaticResource AboutUsTextStyle}" />
                             <TextBlock Text="Contact us for your next web or mobile project at info@daksatech.com"   Style="{StaticResource AboutUsTextStyle}" />-->
-                            <TextBlock Text="The movie posters are copyright of Amazon.com or its content suppliers. We make no copyright claim to the movie poster images."   Style="{StaticResource AboutUsTextStyle}" />
-                            <TextBlock Text="If you have a support issue or would like to suggest a feature, please email us at support@daksatech.com" Style="{StaticResource AboutUsTextStyle}"></TextBlock>
+                            <TextBlock x:Uid="AboutUs2" Text=""   Style="{StaticResource AboutUsTextStyle}" />
+                            <TextBlock x:Uid="AboutUs3" Text="" Style="{StaticResource AboutUsTextStyle}"></TextBlock>
                         </StackPanel>
                         <StackPanel Orientation="Vertical" Margin="0,20,0,0">
-                            <TextBlock Text="How To:"  Style="{StaticResource AboutUsTextStyle}" FontSize="16" FontWeight="Bold" />
-                            <TextBlock Text="Share a movie: From the movies page, bring up the 'Share' charm. Select the application to use for sharing."  Style="{StaticResource AboutUsTextStyle}" />
-                            <TextBlock Text="See details of movie: Click on the 'Movie Details' button in app bar OR double tap/click on the movie poster."  Style="{StaticResource AboutUsTextStyle}" />
-                            <TextBlock Text="Buy movie: Click on the 'Buy Movie' button in app bar."  Style="{StaticResource AboutUsTextStyle}" />
+                            <TextBlock x:Uid="How_To" Text=""  Style="{StaticResource AboutUsTextStyle}" FontSize="16" FontWeight="Bold" />
+                            <TextBlock x:Uid="AboutUs4" Text=""  Style="{StaticResource AboutUsTextStyle}" />
+                            <TextBlock x:Uid="AboutUs5" Text=""  Style="{StaticResource AboutUsTextStyle}" />
+                            <TextBlock x:Uid="AboutUs6" Text=""  Style="{StaticResource AboutUsTextStyle}" />
                         </StackPanel>
                     </StackPanel>
                 </Grid>

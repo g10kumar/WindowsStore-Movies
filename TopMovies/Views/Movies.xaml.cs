@@ -30,14 +30,13 @@ using CSharpAnalytics.Activities;
 //using Common;
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 using Windows.Storage;
-
-
 using System.Xml;
 using System.Xml.Serialization;
 using System.Text;
 using System.Xml.Linq;
 using Windows.ApplicationModel.DataTransfer;
 using Windows.Networking.Connectivity;
+using Windows.ApplicationModel.Resources;
 
 namespace TopMovies.Views
 {
@@ -242,22 +241,32 @@ namespace TopMovies.Views
             AddRight.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
 
             ProgressRing.IsActive = true;
+
+            var loader = new Windows.ApplicationModel.Resources.ResourceLoader();
             
             if(sessionData.selectCategory == "TopBollywood")
             {
-                pageTitle.Text = "Top Bollywood Movies";
+                var BollywoodTitle = loader.GetString("BollywoodTitle");
+
+                pageTitle.Text = BollywoodTitle;
             }
             else if(sessionData.selectCategory == "TopEnglish")
             {
-                pageTitle.Text = "Top Hollywood Movies";
+                var HollywoodTitle = loader.GetString("HollywoodTitle");
+
+                pageTitle.Text = HollywoodTitle;
             }
             else if (sessionData.selectCategory == "TopForeign")
             {
-                pageTitle.Text = "Top International Movies";
+                var InternationalTitle = loader.GetString("InternationalTitle");
+
+                pageTitle.Text = InternationalTitle;
             }
             else if (sessionData.selectCategory == "TopAsian")
             {
-                pageTitle.Text = "Top Asian Movies";
+                var AsianTitle = loader.GetString("AsianTitle");
+
+                pageTitle.Text = AsianTitle;
             }
             else
                 pageTitle.Text = "Movies";
