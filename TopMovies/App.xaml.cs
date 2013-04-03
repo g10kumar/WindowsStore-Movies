@@ -17,6 +17,7 @@ using Windows.UI.ApplicationSettings;
 using TopMovies.Common;
 using Windows.Globalization;
 using Windows.UI.Xaml.Media.Animation;
+using Windows.ApplicationModel.Resources;
 
 // Below are the reference library namespace to be used in the Application . 
 using CSharpAnalytics.Activities;
@@ -144,7 +145,11 @@ namespace TopMovies
         void OnCommandsRequested(SettingsPane sender, SettingsPaneCommandsRequestedEventArgs args)
         {
             //Add a preference apps command
-            SettingsCommand preference = new SettingsCommand("region_setting", "Country Settings", (handler) =>
+
+            var loader = new Windows.ApplicationModel.Resources.ResourceLoader();
+            var Country_Settings = loader.GetString("region");
+
+            SettingsCommand preference = new SettingsCommand("region_setting", Country_Settings, (handler) =>
             {
                 var settings = new SettingsFlyout();
                 settings.ShowFlyout(new Regionsetting());
@@ -152,9 +157,10 @@ namespace TopMovies
 
             args.Request.ApplicationCommands.Add(preference);
 
+            var About_Us = loader.GetString("aboutus");
 
             // Add a About command
-            var about = new SettingsCommand("about", "About Us", (handler) =>
+            var about = new SettingsCommand("about", About_Us, (handler) =>
             {
                 var settings = new SettingsFlyout();
                 settings.ShowFlyout(new AboutUsUserControl());
@@ -162,10 +168,10 @@ namespace TopMovies
 
             args.Request.ApplicationCommands.Add(about);
 
-
+            var Privacy_Policy = loader.GetString("privacypolicy");
 
             // Add a Privacy Policy command
-            var privacypolicy = new SettingsCommand("privacypolicy", "Privacy Policy", (handler) =>
+            var privacypolicy = new SettingsCommand("privacypolicy", Privacy_Policy, (handler) =>
             {
                 var settings = new SettingsFlyout();
                 settings.ShowFlyout(new PrivacyPolicyUserControl());
