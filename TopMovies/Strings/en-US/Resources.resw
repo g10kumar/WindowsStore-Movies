@@ -192,4 +192,13 @@
   <data name="regiontext.Text" xml:space="preserve">
     <value>Your country information is only used to direct you to the appropriate site when you click the "Buy Movie" button.</value>
   </data>
+  <data name="AppName" xml:space="preserve">
+    <value>The Best Movies Ever Made!</value>
+  </data>
+  <data name="NoInternet" xml:space="preserve">
+    <value>No active Internet connection avaliable . Please check the connection &amp; try again.</value>
+  </data>
+  <data name="TraslateDetails.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
+    <value>Convert Movie Title</value>
+  </data>
 </root>

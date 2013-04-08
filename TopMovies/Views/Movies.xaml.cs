@@ -50,14 +50,17 @@ namespace TopMovies.Views
         StorageFile movieFile = null;
         string fileContent = "";
         Dictionary<string, string> countryList = new Dictionary<string, string>();       // Initialize a dictionaty to store the country list . Values added in the 
-                                                                                         // constructor
+        // constructor
         int countofMovies;
 
-         ConnectionProfile InternetconnectionProfile;
+        string language;                                       // This is to get the language on the user system.
 
-         bool imagedLoaded = false;
-        
-              
+        ConnectionProfile InternetconnectionProfile;
+
+        bool imagedLoaded = false;
+        ResourceLoader loader = new Windows.ApplicationModel.Resources.ResourceLoader();                // This is to get the resources defined in the resource.resw file . 
+
+
         //private string[] _ids =
         //{
         //    "1067", "2328", "2660", "1632", "2486", "2602", "2329", "2634",
@@ -96,15 +99,15 @@ namespace TopMovies.Views
             countryList.Add("United Kingdom", "GB");
             countryList.Add("United States", "US");
             //countryList.Add("Australia","AU");
-            countryList.Add("Canada","CA");
+            countryList.Add("Canada", "CA");
             //countryList.Add("China","CN");
-            countryList.Add("Germany","DE");
-            countryList.Add("Italy","IT");
-            countryList.Add("Spain","ES");
-            countryList.Add("France","FR");            
-            countryList.Add("Japan","JP");
-            
-       
+            countryList.Add("Germany", "DE");
+            countryList.Add("Italy", "IT");
+            countryList.Add("Spain", "ES");
+            countryList.Add("France", "FR");
+            countryList.Add("Japan", "JP");
+
+
 
         }
 
@@ -133,7 +136,7 @@ namespace TopMovies.Views
                 backButton.Visibility = Windows.UI.Xaml.Visibility.Visible;
                 pageTitle.Visibility = Windows.UI.Xaml.Visibility.Visible;
                 bottonBar.Visibility = Windows.UI.Xaml.Visibility.Visible;
-                
+
                 //backButton.Style = App.Current.Resources["BackButtonStyle"] as Style;
                 //pageTitle.Style = App.Current.Resources["PageHeaderTextStyle"] as Style;
             }
@@ -141,7 +144,7 @@ namespace TopMovies.Views
 
         void Current_SizeChanged(object sender, WindowSizeChangedEventArgs e)
         {
-            
+
             manageViewState();
         }
 
@@ -200,7 +203,7 @@ namespace TopMovies.Views
 
                 string z = ((App)(App.Current)).countryCode;                                     // Variable x to store the value of country selcted by the user . 
 
-                string shareCountryCode = ""; 
+                string shareCountryCode = "";
 
                 if (countryList.ContainsKey(z))        // If the country selected is not present in the dictionary then the value of the countrycode will be null . 
                 {
@@ -209,22 +212,22 @@ namespace TopMovies.Views
                 }
 
 
-                string url = countryWiseUrl(shareCountryCode,movieName);
-                
+                string url = countryWiseUrl(shareCountryCode, movieName);
+
                 e.Request.Data.Properties.Title = movieName;
 
                 //e.Request.Data.Properties.Description = selectedItem.Title + "-" + selectedItem.Author + Environment.NewLine + selectedItem.Link.AbsoluteUri.ToString();
 
                 e.Request.Data.SetText(movieName + ": " + categoryDesc + System.Environment.NewLine + "Buy from: " + url);
                 e.Request.Data.SetUri(new Uri(url));
-                e.Request.Data.SetHtmlFormat("Love  this movie: <strong>" + movieName + "</strong><br /><br />" + "Synopsis at: <a href=\"http://www.wikipedia.org\">Wikipedia<br />Check it out at: <a href=\"http://www.amazon.com\">Amazon</a>" );
+                e.Request.Data.SetHtmlFormat("Love  this movie: <strong>" + movieName + "</strong><br /><br />" + "Synopsis at: <a href=\"http://www.wikipedia.org\">Wikipedia<br />Check it out at: <a href=\"http://www.amazon.com\">Amazon</a>");
 
                 //RandomAccessStreamReference imageStreamRef = RandomAccessStreamReference.CreateFromUri(new Uri(movieImage));
                 //e.Request.Data.Properties.Thumbnail = imageStreamRef;
                 //e.Request.Data.SetBitmap(imageStreamRef);
 
-                
-                
+
+
             }
 
 
@@ -237,20 +240,27 @@ namespace TopMovies.Views
         /// property is typically used to configure the page.</param>
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+
+            language = new Windows.ApplicationModel.Resources.Core.ResourceContext().Languages.FirstOrDefault();
+
             AddLeft.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
             AddRight.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
 
             ProgressRing.IsActive = true;
 
-            var loader = new Windows.ApplicationModel.Resources.ResourceLoader();
-            
-            if(sessionData.selectCategory == "TopBollywood")
+            if(language.Contains("en"))
+            {
+                TraslateDetails.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+            }
+
+
+            if (sessionData.selectCategory == "TopBollywood")
             {
                 var BollywoodTitle = loader.GetString("BollywoodTitle");
 
                 pageTitle.Text = BollywoodTitle;
             }
-            else if(sessionData.selectCategory == "TopEnglish")
+            else if (sessionData.selectCategory == "TopEnglish")
             {
                 var HollywoodTitle = loader.GetString("HollywoodTitle");
 
@@ -278,7 +288,7 @@ namespace TopMovies.Views
             AutoAnalytics.Client.TrackEvent("Movie_Cat_selection", sessionData.selectCategory);
 
             InternetconnectionProfile = Windows.Networking.Connectivity.NetworkInformation.GetInternetConnectionProfile();
-            
+
         }
 
         private async void LoadMovieData()
@@ -286,7 +296,7 @@ namespace TopMovies.Views
             List<Person> list = new List<Person>();
             Windows.Storage.StorageFolder storageFolder = await Windows.ApplicationModel.Package.Current.InstalledLocation.GetFolderAsync("Xml");
             string fileName = sessionData.selectCategory.ToString();
-            movieFile = await storageFolder.GetFileAsync(fileName+".xml");
+            movieFile = await storageFolder.GetFileAsync(fileName + ".xml");
 
             fileContent = await FileIO.ReadTextAsync(movieFile);
 
@@ -296,17 +306,11 @@ namespace TopMovies.Views
 
             await LoadMovie(fileName, xe);
 
-            if (imagedLoaded)
-            {
-
-                ProgressRing.IsActive = false;
-            }
-
             #region Retrieving last viewing movie
             switch (sessionData.selectCategory)
             {
                 case "TopEnglish":
-                    if(sessionData.lastEnglishMovieIndex != null)
+                    if (sessionData.lastEnglishMovieIndex != null)
                         CoverFlowControl.SelectedIndex = Convert.ToInt32(sessionData.lastEnglishMovieIndex);
                     break;
                 case "TopBollywood":
@@ -353,7 +357,7 @@ namespace TopMovies.Views
             //        CoverFlowControl.SelectedIndex = 20;
             //    }
 
-                
+
             //}
             //else
             //{
@@ -367,11 +371,20 @@ namespace TopMovies.Views
             CoverFlowControl.RotationAngle = 45.0;
             CoverFlowControl.ZOffset = 30.0;
             CoverFlowControl.ScaleOffset = 0.70;
+
+            if (imagedLoaded)
+            {
+
+                ProgressRing.IsActive = false;
+            }
+
             DisplayInfo();
         }
 
         private async Task LoadMovie(string fileName, XElement xe)
         {
+
+            //language = new Windows.ApplicationModel.Resources.Core.ResourceContext().Languages.FirstOrDefault();
             var query = (from movies in xe.Elements("movie")
                          select new Person
                          {
@@ -380,6 +393,7 @@ namespace TopMovies.Views
                              //Image = "ms-appx:///Assets/" + movies.Element("rank").Value + " - " + movies.Element("name").Value + ".jpg"
                              Image = "ms-appx:///Assets/" + fileName + "/" + movies.Element("rank").Value + ".jpg"
                          });
+
 
             Images = new ObservableCollection<Person>();
 
@@ -391,8 +405,6 @@ namespace TopMovies.Views
                 await Task.Run(() => images.Add(new Person() { Image = p.Image, Name = p.Name + "#" + p.Desp }));
                 //images.Add(new Person() {p});
             }
-
-            
 
 
             CoverFlowControl.ItemsSource = images;
@@ -426,17 +438,17 @@ namespace TopMovies.Views
                     break;
             }
 
-            
+
 
             try
             {
                 if (sessionData.selectCategory == "TopForeign")
                     movieName = movieName.Substring(0, movieName.IndexOf("/"));
-                if(sessionData.selectCategory == "TopAsian")
+                if (sessionData.selectCategory == "TopAsian")
                     movieName = movieName.Substring(0, movieName.IndexOf("("));
             }
             catch
-            {}
+            { }
             //txtDesp.Text = ((Person)(CoverFlowControl.Items[CoverFlowControl.SelectedIndex])).Name.Split('#')[1].ToString();
 
             if (InternetconnectionProfile != null)          // Checking if Active internet connection is avaliable or not . 
@@ -449,7 +461,7 @@ namespace TopMovies.Views
         {
             //sessionData.lastMovieIndex = sessionData.selectCategory.ToString() + "#" + CoverFlowControl.SelectedIndex.ToString();
             switch (sessionData.selectCategory)
-            { 
+            {
                 case "TopEnglish":
                     sessionData.lastEnglishMovieIndex = CoverFlowControl.SelectedIndex.ToString();
                     break;
@@ -499,7 +511,7 @@ namespace TopMovies.Views
         {
             CoverFlowControl.MoveNext();
             //DisplayInfo();
-        }  
+        }
 
         private void btnClose_Click(object sender, RoutedEventArgs e)
         {
@@ -509,16 +521,21 @@ namespace TopMovies.Views
 
         private void CoverFlowControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            
+           // if(convertedName.Visibility.Equals(Windows.UI.Xaml.Visibility.Visible))
+          //  {
+            convertedName.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+            txtName.Visibility = Windows.UI.Xaml.Visibility.Visible;
+           // }
 
             DisplayInfo();
+            
 
             var delay = Task.Delay(10000);
             if (CoverFlowControl.SelectedItem == images.ElementAt(0) || CoverFlowControl.SelectedItem == images.ElementAt(1))
-            {              
+            {
                 AddLeft.Visibility = Windows.UI.Xaml.Visibility.Visible;
             }
-            else if (CoverFlowControl.SelectedItem == images.ElementAt(countofMovies -2)||CoverFlowControl.SelectedItem == images.ElementAt(countofMovies -1))
+            else if (CoverFlowControl.SelectedItem == images.ElementAt(countofMovies - 2) || CoverFlowControl.SelectedItem == images.ElementAt(countofMovies - 1))
             {
                 AddRight.Visibility = Windows.UI.Xaml.Visibility.Visible;
             }
@@ -527,8 +544,8 @@ namespace TopMovies.Views
                 AddLeft.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
                 AddRight.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
             }
-                
-            
+
+
         }
 
         private void btnMoreInfo_Click(object sender, RoutedEventArgs e)
@@ -537,7 +554,7 @@ namespace TopMovies.Views
 
             if (InternetconnectionProfile == null)          // Functionality to check user internet connection & prompt is connection unavaliable . 
             {
-                var messageDialog = new Windows.UI.Popups.MessageDialog("No active Internet connection avaliable . Please check the connection & try again. ");
+                var messageDialog = new Windows.UI.Popups.MessageDialog(loader.GetString("NoInternet"));
                 var result = messageDialog.ShowAsync();
             }
             else
@@ -554,24 +571,24 @@ namespace TopMovies.Views
 
 
         private async void btnBuyDVD_Click_1(object sender, RoutedEventArgs e)
-        {  
+        {
             var movieName = "";
             if (sessionData.selectCategory == "TopForeign" & txtName.Text.IndexOf("/") > 5)
             {
-               movieName = txtName.Text.Substring(0, txtName.Text.IndexOf("/"));
+                movieName = txtName.Text.Substring(0, txtName.Text.IndexOf("/"));
             }
             else
             {
                 movieName = txtName.Text;
             }
 
-            AutoAnalytics.Client.TrackEvent("Button_click", "Buy_Button",movieName);                // Buy button click , for each movie . 
+            AutoAnalytics.Client.TrackEvent("Button_click", "Buy_Button", movieName);                // Buy button click , for each movie . 
 
             string x = ((App)(App.Current)).countryCode;                                     // Variable x to store the value of country selcted by the user . 
 
-            string buyMovieCountrycode = ""; 
+            string buyMovieCountrycode = "";
 
-            if( countryList.ContainsKey(x) )        // If the country selected is not present in the dictionary then the value of the countrycode will be null . 
+            if (countryList.ContainsKey(x))        // If the country selected is not present in the dictionary then the value of the countrycode will be null . 
             {
                 buyMovieCountrycode = countryList[x];
 
@@ -579,13 +596,13 @@ namespace TopMovies.Views
 
             if (InternetconnectionProfile == null)          // Functionality to check user internet connection & prompt is connection unavaliable . 
             {
-                var messageDialog = new Windows.UI.Popups.MessageDialog(" No active Internet connection avaliable . Please check the connection & try again. ");
+                var messageDialog = new Windows.UI.Popups.MessageDialog(loader.GetString("NoInternet"));
                 var result = messageDialog.ShowAsync();
             }
             else
             {
-                string url = countryWiseUrl(buyMovieCountrycode,movieName);
-                            
+                string url = countryWiseUrl(buyMovieCountrycode, movieName);
+
                 //await Windows.System.Launcher.LaunchUriAsync(new Uri("http://www.amazon.com/s/?_encoding=UTF8&field-keywords=" + txtName.Text + "&linkCode=ur2&tag=artmaya-20&url=search-alias%3Dmovies-tv"));
                 await Windows.System.Launcher.LaunchUriAsync(new Uri(url));
 
@@ -596,7 +613,7 @@ namespace TopMovies.Views
         {
             if (InternetconnectionProfile == null)          // Functionality to check user internet connection & prompt is connection unavaliable . 
             {
-                var messageDialog = new Windows.UI.Popups.MessageDialog("No active Internet connection avaliable . Please check the connection & try again. ");
+                var messageDialog = new Windows.UI.Popups.MessageDialog(loader.GetString("NoInternet"));
                 var result = messageDialog.ShowAsync();
             }
             else
@@ -613,7 +630,6 @@ namespace TopMovies.Views
 
 
         private string countryWiseUrl(string country, string movieName)
-        
         {
             string url;
 
@@ -663,7 +679,30 @@ namespace TopMovies.Views
             return url;
         }
 
-      
+        private async void Translate(object sender, RoutedEventArgs e)
+        {
+            if (InternetconnectionProfile == null)          // Functionality to check user internet connection & prompt is connection unavaliable . 
+            {
+                var messageDialog = new Windows.UI.Popups.MessageDialog(loader.GetString("NoInternet"));
+                var result = messageDialog.ShowAsync();
+            }
+            else
+            {
+
+                GoogleTranslator result = new GoogleTranslator();
+
+                string res = await result.Translator(txtName.Text, language);
+
+                // string convertedText = res.ToString();
+
+                convertedName.Text = res;
+
+                txtName.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+                convertedName.Visibility = Windows.UI.Xaml.Visibility.Visible;
+            }
+
+        }
 
     }
+
 }

@@ -106,6 +106,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="GoogleTranslator.cs" />
     <Compile Include="Common\LayoutAwarePage.cs" />
     <Compile Include="Common\NotificationObject.cs" />
     <Compile Include="Common\SettingsFlyout.cs" />
@@ -128,14 +129,14 @@
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
-    <None Include="MultilingualResources\TopMovies_es-MX.xlf">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="MultilingualResources\TopMovies_es-US.xlf">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="MultilingualResources\TopMovies_fr-FR.xlf" />
+    <None Include="MultilingualResources\TopMovies_de.xlf" />
+    <None Include="MultilingualResources\TopMovies_es.xlf" />
+    <None Include="MultilingualResources\TopMovies_fr.xlf" />
+    <None Include="MultilingualResources\TopMovies_it.xlf" />
+    <None Include="MultilingualResources\TopMovies_ja-JP.xlf" />
     <None Include="MultilingualResources\TopMovies_qps-ploc.xlf" />
+    <None Include="MultilingualResources\TopMovies_ru-RU.xlf" />
+    <None Include="MultilingualResources\TopMovies_zh-Hans.xlf" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
@@ -309,7 +310,9 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Content Include="Xml\TopAsian.xml" />
+    <Content Include="Xml\TopAsian.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Xml\TopForeign.xml" />
     <Page Include="AboutUsUserControl.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -704,7 +707,8 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="CSharpAnalytics.WindowsStore">
+    <Reference Include="CSharpAnalytics.WindowsStore, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>Dlls\CSharpAnalytics.WindowsStore.dll</HintPath>
     </Reference>
     <Reference Include="Syncfusion.SfCarousel.WinRT, Version=11.104.0.21, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">

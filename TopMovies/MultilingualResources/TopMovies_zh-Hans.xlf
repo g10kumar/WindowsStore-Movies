@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
-  <file datatype="xml" source-language="en-US" target-language="qps-ploc" original="TopMovies_Multilingual.prilog.xml" tool-id="MultilingualAppToolkit" product-name="TopMovies" product-version="1.0.0.0" build-num="0001">
+  <file datatype="xml" source-language="en-US" target-language="zh-Hans" original="TopMovies_Multilingual.prilog.xml" tool-id="MultilingualAppToolkit" product-name="TopMovies" product-version="1.0.0.0" build-num="0001">
     <header>
       <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="1.2.2017.0" tool-company="Microsoft" />
     </header>
@@ -8,115 +8,115 @@
       <group id="Resources">
         <trans-unit id="Resources\aboutus" translate="yes" xml:space="preserve">
           <source>About Us</source>
-          <target state="new">About Us</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">关于我们</target>
         </trans-unit>
         <trans-unit id="Resources\AboutUs1\Text" translate="yes" xml:space="preserve">
           <source>This app presents the best movies ever made in the world in a visual format. Browse through the top movies made in Hollywood or internationally. Movies are categorized by Hollywood, Bollywood or International. Bollywood is the term used for the Hindi-language film industry based in Mumbai, India. The 'International' films category includes movies made all over the world except Hollywood and Bollywood.</source>
-          <target state="new">This app presents the best movies ever made in the world in a visual format. Browse through the top movies made in Hollywood or internationally. Movies are categorized by Hollywood, Bollywood or International. Bollywood is the term used for the Hindi-language film industry based in Mumbai, India. The 'International' films category includes movies made all over the world except Hollywood and Bollywood.</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">这个应用程序提供了在世界上的可视化格式做过最好的电影。浏览了好莱坞或国际上的顶级电影。电影是由好莱坞、 宝莱坞或国际分类的。宝莱坞是设在孟买，印度印地语语言电影业使用的术语。'国际' 影片类别包括了世界上除了好莱坞和宝莱坞电影。</target>
         </trans-unit>
         <trans-unit id="Resources\AboutUs2\Text" translate="yes" xml:space="preserve">
           <source>The movie posters are copyright of Amazon.com or its content suppliers. We make no copyright claim to the movie poster images.</source>
-          <target state="new">The movie posters are copyright of Amazon.com or its content suppliers. We make no copyright claim to the movie poster images.</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">电影海报是亚马逊网站或其内容提供商的版权。我们请到电影海报图像没有版权索赔。</target>
         </trans-unit>
         <trans-unit id="Resources\AboutUs3\Text" translate="yes" xml:space="preserve">
           <source>If you have a support issue or would like to suggest a feature, please email us at support@daksatech.com</source>
-          <target state="new">If you have a support issue or would like to suggest a feature, please email us at support@daksatech.com</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">如果你有一个支持问题，或者想要推荐功能，请发电子邮件我们在 support@daksatech.com</target>
         </trans-unit>
         <trans-unit id="Resources\AboutUs4\Text" translate="yes" xml:space="preserve">
           <source>Share a movie: From the movies page, bring up the 'Share' charm. Select the application to use for sharing.</source>
-          <target state="new">Share a movie: From the movies page, bring up the 'Share' charm. Select the application to use for sharing.</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">分享一部电影： 从电影页中，把 '分享' 魅力。选择的应用程序要对共享使用。</target>
         </trans-unit>
         <trans-unit id="Resources\AboutUs5\Text" translate="yes" xml:space="preserve">
           <source>See details of movie: Click on the 'Movie Details' button in app bar OR double tap/click on the movie poster.</source>
-          <target state="new">See details of movie: Click on the 'Movie Details' button in app bar OR double tap/click on the movie poster.</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">看电影的详细信息： 单击栏或双水龙头/点击电影海报上的应用程序中的电影详细信息按钮。</target>
         </trans-unit>
         <trans-unit id="Resources\AboutUs6\Text" translate="yes" xml:space="preserve">
           <source>Buy movie: Click on the 'Buy Movie' button in app bar.</source>
-          <target state="new">Buy movie: Click on the 'Buy Movie' button in app bar.</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">买电影： 单击应用程序栏中的 '买电影' 按钮。</target>
         </trans-unit>
         <trans-unit id="Resources\btnBuyDVD\[using:Windows.UI.Xaml.Automation]AutomationProperties\Name" translate="yes" xml:space="preserve">
           <source>Buy Movie</source>
-          <target state="new">Buy Movie</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">买电影</target>
         </trans-unit>
         <trans-unit id="Resources\btnMovieDetails\[using:Windows.UI.Xaml.Automation]AutomationProperties\Name" translate="yes" xml:space="preserve">
           <source>Movie Details</source>
-          <target state="new">Movie Details</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">电影详细信息</target>
         </trans-unit>
         <trans-unit id="Resources\How_To\Text" translate="yes" xml:space="preserve">
           <source>How To:</source>
-          <target state="new">How To:</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">如何：</target>
         </trans-unit>
         <trans-unit id="Resources\pageTitle\Text" translate="yes" xml:space="preserve">
           <source>The Best Movies Ever Made!</source>
-          <target state="new">The Best Movies Ever Made!</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">做过最好的电影 ！</target>
         </trans-unit>
         <trans-unit id="Resources\privacypolicy" translate="yes" xml:space="preserve">
           <source>Privacy Policy</source>
-          <target state="new">Privacy Policy</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">私隐政策</target>
         </trans-unit>
         <trans-unit id="Resources\PrivacyPolicy1\Text" translate="yes" xml:space="preserve">
           <source>This Privacy Policy covers your use of this application. The app does not collect, store, or share any personal information, or anything related to your device. We do not collect any statistics, trends, neither do we track user movements. The site does allow you to visit external websites - specifically Amazon.com and Wikipedia.com and their affiliated sites. These websites may collect information related to your IP address, device, etc. Please check the privacy policy of these websites for details on information collected by them.</source>
-          <target state="new">This Privacy Policy covers your use of this application. The app does not collect, store, or share any personal information, or anything related to your device. We do not collect any statistics, trends, neither do we track user movements. The site does allow you to visit external websites - specifically Amazon.com and Wikipedia.com and their affiliated sites. These websites may collect information related to your IP address, device, etc. Please check the privacy policy of these websites for details on information collected by them.</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">本私隐政策涵盖您使用此应用程序。这款应用程序不会收集、 存储、 或共享任何个人信息，或任何有关您的设备。我们不会收集任何统计趋势，我们既不跟踪用户的运动。该网站不会允许您访问外部网站-专门 Amazon.com 和 Wikipedia.com 和其附属的网站。这些网站可能会收集您的 IP 地址、 设备等相关信息。请检查这些它们所收集的信息的详细信息的网站的隐私策略。</target>
         </trans-unit>
         <trans-unit id="Resources\PrivacyPolicy2\Text" translate="yes" xml:space="preserve">
           <source>The app allows you to share the articles using the Share charm. The application you use to share the articles are not related to this app. Please check the privacy policy of those apps for how they use your data. The app also collects usage data. This information is stored on Google Analytics servers. No personally identifiable information is sent or stored.</source>
-          <target state="new">The app allows you to share the articles using the Share charm. The application you use to share the articles are not related to this app. Please check the privacy policy of those apps for how they use your data. The app also collects usage data. This information is stored on Google Analytics servers. No personally identifiable information is sent or stored.</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">这款应用程序允许您共享使用的共享魅力的文章。您使用共享文章的应用不到此应用程序相关。请检查对他们如何使用您的数据应用程式的私隐政策。应用程序还会收集使用数据。此信息存储在 Google Analytics 的服务器。任何个人识别信息发送或存储。</target>
         </trans-unit>
         <trans-unit id="Resources\PrivacyPolicy3\Text" translate="yes" xml:space="preserve">
           <source>The country setting is only used to direct you to a site in your country when you click the 'Buy Movie' button.</source>
-          <target state="new">The country setting is only used to direct you to a site in your country when you click the 'Buy Movie' button.</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">国家/地区设置仅用于直接你到你的国家一个站点当您单击 '买电影' 按钮。</target>
         </trans-unit>
         <trans-unit id="Resources\region" translate="yes" xml:space="preserve">
           <source>Country Setting</source>
-          <target state="new">Country Setting</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">国家/地区设置</target>
         </trans-unit>
         <trans-unit id="Resources\Asian_Movies\Text" translate="yes" xml:space="preserve">
           <source>Top Asian Movies</source>
-          <target state="new">Top Asian Movies</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">顶尖亚洲电影</target>
         </trans-unit>
         <trans-unit id="Resources\Bollywood_Movies\Text" translate="yes" xml:space="preserve">
           <source>Top Bollywood Movies</source>
-          <target state="new">Top Bollywood Movies</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">顶尖的宝莱坞电影</target>
         </trans-unit>
         <trans-unit id="Resources\Hollywood_Movies\Text" translate="yes" xml:space="preserve">
           <source>Top Hollywood Movies</source>
-          <target state="new">Top Hollywood Movies</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">顶级好莱坞电影</target>
         </trans-unit>
         <trans-unit id="Resources\International_Movies\Text" translate="yes" xml:space="preserve">
           <source>Top International Movies</source>
-          <target state="new">Top International Movies</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">顶级国际电影</target>
         </trans-unit>
         <trans-unit id="Resources\AsianTitle" translate="yes" xml:space="preserve">
           <source>Top Asian Movies</source>
-          <target state="new">Top Asian Movies</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">顶尖亚洲电影</target>
         </trans-unit>
         <trans-unit id="Resources\BollywoodTitle" translate="yes" xml:space="preserve">
           <source>Top Bollywood Movies</source>
-          <target state="new">Top Bollywood Movies</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">顶尖的宝莱坞电影</target>
         </trans-unit>
         <trans-unit id="Resources\HollywoodTitle" translate="yes" xml:space="preserve">
           <source>Top Hollywood Movies</source>
-          <target state="new">Top Hollywood Movies</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">顶级好莱坞电影</target>
         </trans-unit>
         <trans-unit id="Resources\InternationalTitle" translate="yes" xml:space="preserve">
           <source>Top International Movies</source>
-          <target state="new">Top International Movies</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">顶级国际电影</target>
         </trans-unit>
         <trans-unit id="Resources\regiontext\Text" translate="yes" xml:space="preserve">
           <source>Your country information is only used to direct you to the appropriate site when you click the "Buy Movie" button.</source>
-          <target state="new">Your country information is only used to direct you to the appropriate site when you click the "Buy Movie" button.</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">国家/地区信息仅用于您直接到相应的站点时您单击了"买电影"按钮。</target>
         </trans-unit>
         <trans-unit id="Resources\AppName" translate="yes" xml:space="preserve">
           <source>The Best Movies Ever Made!</source>
-          <target state="new">The Best Movies Ever Made!</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">做过最好的电影 ！</target>
         </trans-unit>
         <trans-unit id="Resources\NoInternet" translate="yes" xml:space="preserve">
           <source>No active Internet connection avaliable . Please check the connection %%amp; try again.</source>
-          <target state="new">No active Internet connection avaliable . Please check the connection %%amp; try again.</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">没有活跃的互联网连接可用）。请的检查连接%%amp;再试一次。</target>
         </trans-unit>
         <trans-unit id="Resources\TraslateDetails\[using:Windows.UI.Xaml.Automation]AutomationProperties\Name" translate="yes" xml:space="preserve">
           <source>Convert Movie Title</source>
-          <target state="new">Convert Movie Title</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">转换电影标题</target>
         </trans-unit>
       </group>
     </body>

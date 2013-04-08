@@ -49,7 +49,7 @@ namespace TopMovies
             App.Current.RequestedTheme = ApplicationTheme.Light;
             this.Suspending += OnSuspending;
 
-            DebugSettings.EnableFrameRateCounter = true;
+         //   DebugSettings.EnableFrameRateCounter = true;
 
             //DebugSettings.IsOverdrawHeatMapEnabled = true;
 
@@ -70,9 +70,9 @@ namespace TopMovies
 
             //Variable to get the Location of the user . This is to check if this is the first run or not . 
 
-            //var geoGraphicRegion = new Windows.Globalization.GeographicRegion();
 
-            //var _countryCode = geoGraphicRegion.CodeTwoLetter;                      
+
+                    
                
             // Do not repeat app initialization when the Window already has content,
             // just ensure that the window is active
@@ -114,10 +114,7 @@ namespace TopMovies
                 {
                     countryCode = sessionData.userCountrySetting.ToString();
                 }
-                //else
-                //{
-                //   countryCode = geoGraphicRegion.DisplayName; 
-                //}
+
                 // Place the frame in the current Window
                 Window.Current.Content = rootFrame;
             }
