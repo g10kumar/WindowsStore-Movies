@@ -89,13 +89,9 @@ namespace TopMovies
             if (((App)(App.Current)).countryCode == "")
             {
                 //Variable to get the Location of the user . This is to check if this is the first run or not . 
-                var geoGraphicRegion = new Windows.Globalization.GeographicRegion();
-                var _countryCode = geoGraphicRegion.CodeTwoLetter;
-                ((App)(App.Current)).countryCode = geoGraphicRegion.DisplayName; 
+                ((App)(App.Current)).countryCode = new Windows.Globalization.GeographicRegion().DisplayName;             
+                
             }
-
-
-
             //this.LoadState(e.Parameter, null);
         }
 

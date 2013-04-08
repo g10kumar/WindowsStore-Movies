@@ -13,6 +13,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Windows.Globalization;
 using Windows.UI.ApplicationSettings;
+using Windows.ApplicationModel.Resources;
 
 // The User Control item template is documented at http://go.microsoft.com/fwlink/?LinkId=234236
 
@@ -34,17 +35,18 @@ namespace TopMovies
             //list.Add(cc);
             this.InitializeComponent();
 
+
             //list.Add("Australia");
             list.Add("Canada");
             //list.Add("China");
-            list.Add("Germany");
-            list.Add("Spain");
             list.Add("France");
+            list.Add("Germany");
             list.Add("India");
             list.Add("Italy");
             list.Add("Japan");
+            list.Add("Spain");
             list.Add("United Kingdom");
-            list.Add("United States");
+            list.Add("Uniited States");
             list.Add("Others (Rest of the World)");
 
 

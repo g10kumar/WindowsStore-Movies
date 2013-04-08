@@ -9,7 +9,7 @@
     d:DesignHeight="300"
     d:DesignWidth="400">
 
-    <Grid>
+    <Grid ScrollViewer.VerticalScrollBarVisibility="Auto">
         <Border BorderBrush="Black" BorderThickness="1,0,0,0">
             <Grid x:Name="LayoutRoot" VerticalAlignment="Stretch" Background="White">
                 <!-- Root grid definition -->
