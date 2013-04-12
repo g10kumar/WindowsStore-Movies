@@ -313,7 +313,6 @@
     <Content Include="Assets\category\wisdom.jpg" />
     <Content Include="Assets\category\women.jpg" />
     <None Include="Assets\background\Thumbs.db" />
-    <None Include="packages.config" />
     <None Include="Service References\ServiceReference1\QService.wsdl" />
     <None Include="Service References\ServiceReference1\QService.xsd" />
     <None Include="Service References\ServiceReference1\QService1.xsd" />
@@ -403,10 +402,10 @@
     <SDKReference Include="MSAdvertisingXaml, Version=6.1">
       <Name>Microsoft Advertising SDK for Windows 8 %28Xaml%29</Name>
     </SDKReference>
-    <SDKReference Include="SQLite.WinRT, Version=3.7.14.1">
-      <Name>SQLite for Windows Runtime</Name>
+    <SDKReference Include="SQLite.WinRT, Version=3.7.16.1">
+      <Name>SQLite for Windows Runtime %28SQLite.WinRT, Version=3.7.16.1%29</Name>
     </SDKReference>
-    <SDKReference Include="SyncfusionControls, Version=10.3.0.65">
+    <SDKReference Include="Syncfusion controls for WinRT XAML, Version=10.4.0.72">
       <Name>Syncfusion Controls for WinRT XAML</Name>
     </SDKReference>
   </ItemGroup>
