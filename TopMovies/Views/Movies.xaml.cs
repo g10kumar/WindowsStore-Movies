@@ -1,50 +1,34 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
-using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
-using Windows.UI.Core;
-using Windows.UI.ViewManagement;
-using TopMovies.Views;
-using System.Collections.ObjectModel;
-using TopMovies.Common;
-using Windows.Storage.Streams;
-using System.Threading.Tasks;
-
-
-using CSharpAnalytics;
-using CSharpAnalytics.Protocols;
-using CSharpAnalytics.Protocols.Urchin;
-using CSharpAnalytics.Sessions;
+﻿using CSharpAnalytics;
 using CSharpAnalytics.WindowsStore;
-using CSharpAnalytics.Activities;
-
+using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
+using System.Threading.Tasks;
+using System.Xml.Linq;
+using Windows.ApplicationModel.DataTransfer;
+using Windows.ApplicationModel.Resources;
+using Windows.Foundation;
+using Windows.Networking.Connectivity;
+using TopMovies.Common;
 //using Common;
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 using Windows.Storage;
-using System.Xml;
-using System.Xml.Serialization;
-using System.Text;
-using System.Xml.Linq;
-using Windows.ApplicationModel.DataTransfer;
-using Windows.Networking.Connectivity;
-using Windows.ApplicationModel.Resources;
+using Windows.UI.Core;
+using Windows.UI.ViewManagement;
+using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Input;
+using Windows.UI.Xaml.Navigation;
+using System.Threading;
 
 namespace TopMovies.Views
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class Movies
-    {
+    public sealed partial class Movies 
+    {        
         public DataTransferManager datatransferManager;
         Windows.Storage.ApplicationDataContainer roamingSettings = Windows.Storage.ApplicationData.Current.RoamingSettings;
         StorageFile movieFile = null;
@@ -54,7 +38,8 @@ namespace TopMovies.Views
         int countofMovies;
 
         string language;                                       // This is to get the language on the user system.
-
+        CancellationTokenSource ts = new CancellationTokenSource();
+        bool autoPlayOn = false;
         ConnectionProfile InternetconnectionProfile;
 
         bool imagedLoaded = false;
@@ -86,9 +71,11 @@ namespace TopMovies.Views
             set { images = value; }
         }
 
-        public Movies()
+        public Movies() 
         {
+            //AutoAnalytics.Client.TrackPageView(sessionData.selectCategory, "/Movies");
             this.InitializeComponent();
+            Loaded += Movies_Loaded;
             DataContext = new CoverFlowProperties();
 
             ShareSourceLoad();
@@ -108,6 +95,13 @@ namespace TopMovies.Views
             countryList.Add("Japan", "JP");
 
 
+
+        }
+
+        void Movies_Loaded(object sender, RoutedEventArgs e)
+        {
+            //AdRotatorWin8.AdRotatorControl.DefaultHouseAdBody = 
+            AdRotatorControl.Invalidate();
 
         }
 
@@ -159,6 +153,8 @@ namespace TopMovies.Views
             }
             return viewState.ToString();
         }
+
+
 
         public void ShareSourceLoad()
         {
@@ -243,14 +239,9 @@ namespace TopMovies.Views
 
             language = new Windows.ApplicationModel.Resources.Core.ResourceContext().Languages.FirstOrDefault();
 
-            AddLeft.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-            AddRight.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-
-            ProgressRing.IsActive = true;
-
-            if(language.Contains("en"))
+            if(!language.Contains("en"))
             {
-                TraslateDetails.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+                TraslateDetails.Visibility = Windows.UI.Xaml.Visibility.Visible;
             }
 
 
@@ -285,7 +276,9 @@ namespace TopMovies.Views
 
             bottonBar.IsOpen = true;
 
-            AutoAnalytics.Client.TrackEvent("Movie_Cat_selection", sessionData.selectCategory);
+            //AutoAnalytics.Client.TrackEvent("Movie_Cat_selection", sessionData.selectCategory);
+
+            
 
             InternetconnectionProfile = Windows.Networking.Connectivity.NetworkInformation.GetInternetConnectionProfile();
 
@@ -459,6 +452,10 @@ namespace TopMovies.Views
 
         private void GoBack(object sender, RoutedEventArgs e)
         {
+            if(autoPlayOn)
+            {
+            AutoStop();
+            }
             //sessionData.lastMovieIndex = sessionData.selectCategory.ToString() + "#" + CoverFlowControl.SelectedIndex.ToString();
             switch (sessionData.selectCategory)
             {
@@ -519,7 +516,7 @@ namespace TopMovies.Views
             //btnClose.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
         }
 
-        private void CoverFlowControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private  void CoverFlowControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
            // if(convertedName.Visibility.Equals(Windows.UI.Xaml.Visibility.Visible))
           //  {
@@ -528,29 +525,37 @@ namespace TopMovies.Views
            // }
 
             DisplayInfo();
-            
 
-            var delay = Task.Delay(10000);
-            if (CoverFlowControl.SelectedItem == images.ElementAt(0) || CoverFlowControl.SelectedItem == images.ElementAt(1))
-            {
-                AddLeft.Visibility = Windows.UI.Xaml.Visibility.Visible;
-            }
-            else if (CoverFlowControl.SelectedItem == images.ElementAt(countofMovies - 2) || CoverFlowControl.SelectedItem == images.ElementAt(countofMovies - 1))
-            {
-                AddRight.Visibility = Windows.UI.Xaml.Visibility.Visible;
-            }
-            else
-            {
-                AddLeft.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-                AddRight.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-            }
+                    //Task.Delay(10000);
+                    if (CoverFlowControl.SelectedItem == images.ElementAt(0) || CoverFlowControl.SelectedItem == images.ElementAt(1))
+                    {
+                        AddLeft.Visibility = Windows.UI.Xaml.Visibility.Visible; 
+                    }
+                    else if (CoverFlowControl.SelectedItem == images.ElementAt(countofMovies - 2) || CoverFlowControl.SelectedItem == images.ElementAt(countofMovies - 1))
+                    {
+                        AddRight.Visibility = Windows.UI.Xaml.Visibility.Visible; 
+                    }
+                    else
+                    {
+
+                            AddLeft.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+                            AddRight.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+
+                    }
+
+            
 
 
         }
 
         private void btnMoreInfo_Click(object sender, RoutedEventArgs e)
         {
-            AutoAnalytics.Client.TrackEvent("Button_click", "Movie_Info", txtName.Text);
+            if (autoPlayOn)
+            {
+                AutoStop();
+            }
+
+            //AutoAnalytics.Client.TrackEvent("Button_click", "Movie_Info", txtName.Text);
 
             if (InternetconnectionProfile == null)          // Functionality to check user internet connection & prompt is connection unavaliable . 
             {
@@ -572,6 +577,11 @@ namespace TopMovies.Views
 
         private async void btnBuyDVD_Click_1(object sender, RoutedEventArgs e)
         {
+            if (autoPlayOn)
+            {
+                AutoStop();
+            }
+
             var movieName = "";
             if (sessionData.selectCategory == "TopForeign" & txtName.Text.IndexOf("/") > 5)
             {
@@ -582,7 +592,7 @@ namespace TopMovies.Views
                 movieName = txtName.Text;
             }
 
-            AutoAnalytics.Client.TrackEvent("Button_click", "Buy_Button", movieName);                // Buy button click , for each movie . 
+            //AutoAnalytics.Client.TrackEvent("Button_click", "Buy_Button", movieName);                // Buy button click , for each movie . 
 
             string x = ((App)(App.Current)).countryCode;                                     // Variable x to store the value of country selcted by the user . 
 
@@ -611,6 +621,11 @@ namespace TopMovies.Views
 
         private void btnMovieDetails_Click_1(object sender, RoutedEventArgs e)
         {
+            if (autoPlayOn)
+            {
+                AutoStop();
+            }
+
             if (InternetconnectionProfile == null)          // Functionality to check user internet connection & prompt is connection unavaliable . 
             {
                 var messageDialog = new Windows.UI.Popups.MessageDialog(loader.GetString("NoInternet"));
@@ -620,7 +635,7 @@ namespace TopMovies.Views
             {
                 stackPopup.Visibility = Windows.UI.Xaml.Visibility.Visible;
             }
-            AutoAnalytics.Client.TrackEvent("Button_click", "Movie_Info", txtName.Text);
+            //AutoAnalytics.Client.TrackEvent("Button_click", "Movie_Info", txtName.Text);
         }
 
         //private void btnMoreInfo_Click(object sender, DoubleTappedRoutedEventArgs e)
@@ -681,6 +696,12 @@ namespace TopMovies.Views
 
         private async void Translate(object sender, RoutedEventArgs e)
         {
+            Pause_Button.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+            Play_Button.Visibility = Windows.UI.Xaml.Visibility.Visible;
+            Forward_Button.Visibility = Windows.UI.Xaml.Visibility.Visible;
+            Backward_Button.Visibility = Windows.UI.Xaml.Visibility.Visible;
+            ts.Cancel();
+
             if (InternetconnectionProfile == null)          // Functionality to check user internet connection & prompt is connection unavaliable . 
             {
                 var messageDialog = new Windows.UI.Popups.MessageDialog(loader.GetString("NoInternet"));
@@ -701,6 +722,102 @@ namespace TopMovies.Views
                 convertedName.Visibility = Windows.UI.Xaml.Visibility.Visible;
             }
 
+        }
+
+        private void Button_visible(object sender, PointerRoutedEventArgs e)
+        {
+            Button_stackpanel.Visibility = Windows.UI.Xaml.Visibility.Visible;
+        }
+
+        private void Button_collapsed(object sender, PointerRoutedEventArgs e)
+        {
+            Button_stackpanel.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+        }
+
+        private void BackWard_move(object sender, RoutedEventArgs e)
+        {
+            if (!((CoverFlowControl.SelectedIndex - 10) <= 0))
+            {
+                CoverFlowControl.SelectedIndex = CoverFlowControl.SelectedIndex - 10;
+            }
+        }
+
+        private void ForWard_move(object sender, RoutedEventArgs e)
+        {
+            if (!((CoverFlowControl.SelectedIndex + 10) >= countofMovies))
+            {
+                CoverFlowControl.SelectedIndex = CoverFlowControl.SelectedIndex + 10;
+            }
+        }
+
+        private async void Auto_Play(object sender, RoutedEventArgs e)
+        {
+            autoPlayOn = true;
+            CancellationTokenSource reset = new CancellationTokenSource();
+            ts = reset;
+
+            
+            CancellationToken ct = ts.Token;
+            if (!((CoverFlowControl.SelectedIndex + 1) >= countofMovies))
+            {
+                Play_Button.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+                Pause_Button.Visibility = Windows.UI.Xaml.Visibility.Visible;
+                Forward_Button.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+                Backward_Button.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+                var pos = CoverFlowControl.SelectedIndex;
+
+                 await Task.Factory.StartNew( async () =>
+                    {
+
+                        while (true)
+                        {
+                            
+                            await Task.Delay(1000);
+                            if (pos + 1 == countofMovies)
+                            {
+                                await Dispatcher.RunAsync(CoreDispatcherPriority.High, delegate { Play_Button.Visibility = Windows.UI.Xaml.Visibility.Visible; Pause_Button.Visibility = Windows.UI.Xaml.Visibility.Collapsed; Backward_Button.Visibility = Windows.UI.Xaml.Visibility.Visible; Forward_Button.Visibility = Windows.UI.Xaml.Visibility.Visible; });
+                                break;
+                            }
+
+                            if (ct.IsCancellationRequested)
+                            {
+                                
+                                break;
+                            }
+                            else
+                            {
+                                await CoverFlowControl.Dispatcher.RunAsync(CoreDispatcherPriority.High, delegate { CoverFlowControl.SelectedIndex = CoverFlowControl.SelectedIndex + 1; pos = CoverFlowControl.SelectedIndex; });
+                            }
+
+
+                        } 
+                    },ct);
+
+                 
+            }
+
+        }
+
+      
+        private void AutoStop(object sender, RoutedEventArgs e)
+        {
+            Pause_Button.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+            Play_Button.Visibility = Windows.UI.Xaml.Visibility.Visible;
+            Forward_Button.Visibility = Windows.UI.Xaml.Visibility.Visible;
+            Backward_Button.Visibility = Windows.UI.Xaml.Visibility.Visible;
+            ts.Cancel();
+            autoPlayOn = false;       
+            
+        }
+
+        private void AutoStop()
+        {
+            Pause_Button.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+            Play_Button.Visibility = Windows.UI.Xaml.Visibility.Visible;
+            Forward_Button.Visibility = Windows.UI.Xaml.Visibility.Visible;
+            Backward_Button.Visibility = Windows.UI.Xaml.Visibility.Visible;
+            ts.Cancel();
+            autoPlayOn = false;
         }
 
     }

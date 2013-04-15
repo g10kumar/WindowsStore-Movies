@@ -118,6 +118,30 @@
           <source>Convert Movie Title</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">映画のタイトルを変換します。</target>
         </trans-unit>
+        <trans-unit id="Resources\Backward_Button\[using:Windows.UI.Xaml.Controls]ToolTipService\ToolTip" translate="yes" xml:space="preserve">
+          <source>Quick Backward</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">迅速な下位</target>
+        </trans-unit>
+        <trans-unit id="Resources\Forward_Button\[using:Windows.UI.Xaml.Controls]ToolTipService\ToolTip" translate="yes" xml:space="preserve">
+          <source>Quick Forward</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">迅速な転送</target>
+        </trans-unit>
+        <trans-unit id="Resources\Play_Button\[using:Windows.UI.Xaml.Controls]ToolTipService\ToolTip" translate="yes" xml:space="preserve">
+          <source>Auto Play Titles</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">自動再生タイトル</target>
+        </trans-unit>
+        <trans-unit id="Resources\btnBuyDVD\[using:Windows.UI.Xaml.Controls]ToolTipService\ToolTip" translate="yes" xml:space="preserve">
+          <source>Buy Movie Online</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">映画を買う</target>
+        </trans-unit>
+        <trans-unit id="Resources\btnMovieDetails\[using:Windows.UI.Xaml.Controls]ToolTipService\ToolTip" translate="yes" xml:space="preserve">
+          <source>Get Movie Details</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">映画の詳細を取得します。</target>
+        </trans-unit>
+        <trans-unit id="Resources\TraslateDetails\[using:Windows.UI.Xaml.Controls]ToolTipService\ToolTip" translate="yes" xml:space="preserve">
+          <source>Translate Movie Title To Native Language</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">映画のタイトルの母国語に翻訳します。</target>
+        </trans-unit>
       </group>
     </body>
   </file>

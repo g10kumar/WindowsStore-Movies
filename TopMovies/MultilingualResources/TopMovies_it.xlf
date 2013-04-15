@@ -118,6 +118,30 @@
           <source>Convert Movie Title</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Convertire film titolo</target>
         </trans-unit>
+        <trans-unit id="Resources\Backward_Button\[using:Windows.UI.Xaml.Controls]ToolTipService\ToolTip" translate="yes" xml:space="preserve">
+          <source>Quick Backward</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Indietro veloce</target>
+        </trans-unit>
+        <trans-unit id="Resources\Forward_Button\[using:Windows.UI.Xaml.Controls]ToolTipService\ToolTip" translate="yes" xml:space="preserve">
+          <source>Quick Forward</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Avanti veloce</target>
+        </trans-unit>
+        <trans-unit id="Resources\Play_Button\[using:Windows.UI.Xaml.Controls]ToolTipService\ToolTip" translate="yes" xml:space="preserve">
+          <source>Auto Play Titles</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Auto Play titoli</target>
+        </trans-unit>
+        <trans-unit id="Resources\btnBuyDVD\[using:Windows.UI.Xaml.Controls]ToolTipService\ToolTip" translate="yes" xml:space="preserve">
+          <source>Buy Movie Online</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Acquista Online Film</target>
+        </trans-unit>
+        <trans-unit id="Resources\btnMovieDetails\[using:Windows.UI.Xaml.Controls]ToolTipService\ToolTip" translate="yes" xml:space="preserve">
+          <source>Get Movie Details</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Ottenere film particolari</target>
+        </trans-unit>
+        <trans-unit id="Resources\TraslateDetails\[using:Windows.UI.Xaml.Controls]ToolTipService\ToolTip" translate="yes" xml:space="preserve">
+          <source>Translate Movie Title To Native Language</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Tradurre il titolo di film in lingua madre</target>
+        </trans-unit>
       </group>
     </body>
   </file>

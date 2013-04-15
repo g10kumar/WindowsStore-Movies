@@ -45,34 +45,34 @@ namespace TopMovies
         }
         private async void QuotesButton_Click(object sender, RoutedEventArgs e)
         {
-            AutoAnalytics.Client.TrackEvent("Button_click", "More_Apps", "Quotes_Application");
+           // AutoAnalytics.Client.TrackEvent("Button_click", "More_Apps", "Quotes_Application");
             await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-windows-store:PDP?PFN=DaksaTech.QuotesofWisdom_c7fyd19frge5m"));
         }
         private async void NewspaperButton_Click(object sender, RoutedEventArgs e)
         {
-            AutoAnalytics.Client.TrackEvent("Button_click", "More_Apps", "NewsPaper_Application");
+          //  AutoAnalytics.Client.TrackEvent("Button_click", "More_Apps", "NewsPaper_Application");
             await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-windows-store:PDP?PFN=DaksaTech.Newspapers_c7fyd19frge5m"));
         }
         private async void AmSpeechesButton_Click(object sender, RoutedEventArgs e)
         {
-            AutoAnalytics.Client.TrackEvent("Button_click", "More_Apps", "Speech_Application");
+           // AutoAnalytics.Client.TrackEvent("Button_click", "More_Apps", "Speech_Application");
             await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-windows-store:PDP?PFN=DaksaTech.TopAmericanSpeeches_c7fyd19frge5m"));
         }
         private async void LoveQuotesButton_Click(object sender, RoutedEventArgs e)
         {
-            AutoAnalytics.Client.TrackEvent("Button_click", "More_Apps", "LoveQuotes_Application");
+          //  AutoAnalytics.Client.TrackEvent("Button_click", "More_Apps", "LoveQuotes_Application");
             await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-windows-store:PDP?PFN=DaksaTech.1000LoveQuotes_c7fyd19frge5m"));
         }
 
         private async void MarketingButton_Click(object sender, RoutedEventArgs e)
         {
-            AutoAnalytics.Client.TrackEvent("Button_click", "More_Apps", "Marketing_Application");
+           // AutoAnalytics.Client.TrackEvent("Button_click", "More_Apps", "Marketing_Application");
             await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-windows-store:PDP?PFN=DaksaTech.Marketing_c7fyd19frge5m"));
         }
 
         private async void GitaButton_Click(object sender, RoutedEventArgs e)
         {
-            AutoAnalytics.Client.TrackEvent("Button_click", "More_Apps", "Gita_Application");
+            //AutoAnalytics.Client.TrackEvent("Button_click", "More_Apps", "Gita_Application");
             await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-windows-store:PDP?PFN=DaksaTech.BhagavadGita_c7fyd19frge5m"));
         }
     }

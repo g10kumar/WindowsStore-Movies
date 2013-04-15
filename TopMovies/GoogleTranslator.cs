@@ -69,7 +69,6 @@ namespace TopMovies
 
             if (string.IsNullOrEmpty(result))
             {
-               var  ErrorMessage = "Invalid search result. Couldn't find marker.";
                 return null;
             }
 

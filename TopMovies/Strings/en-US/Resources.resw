@@ -201,4 +201,22 @@
   <data name="TraslateDetails.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
     <value>Convert Movie Title</value>
   </data>
+  <data name="Backward_Button.[using:Windows.UI.Xaml.Controls]ToolTipService.ToolTip" xml:space="preserve">
+    <value>Quick Backward</value>
+  </data>
+  <data name="Forward_Button.[using:Windows.UI.Xaml.Controls]ToolTipService.ToolTip" xml:space="preserve">
+    <value>Quick Forward</value>
+  </data>
+  <data name="Play_Button.[using:Windows.UI.Xaml.Controls]ToolTipService.ToolTip" xml:space="preserve">
+    <value>Auto Play Titles</value>
+  </data>
+  <data name="btnBuyDVD.[using:Windows.UI.Xaml.Controls]ToolTipService.ToolTip" xml:space="preserve">
+    <value>Buy Movie Online</value>
+  </data>
+  <data name="btnMovieDetails.[using:Windows.UI.Xaml.Controls]ToolTipService.ToolTip" xml:space="preserve">
+    <value>Get Movie Details</value>
+  </data>
+  <data name="TraslateDetails.[using:Windows.UI.Xaml.Controls]ToolTipService.ToolTip" xml:space="preserve">
+    <value>Translate Movie Title To Native Language</value>
+  </data>
 </root>
