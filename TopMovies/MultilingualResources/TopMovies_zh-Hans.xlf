@@ -118,6 +118,30 @@
           <source>Convert Movie Title</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">转换电影标题</target>
         </trans-unit>
+        <trans-unit id="Resources\Backward_Button\[using:Windows.UI.Xaml.Controls]ToolTipService\ToolTip" translate="yes" xml:space="preserve">
+          <source>Quick Backward</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">快速向后</target>
+        </trans-unit>
+        <trans-unit id="Resources\Forward_Button\[using:Windows.UI.Xaml.Controls]ToolTipService\ToolTip" translate="yes" xml:space="preserve">
+          <source>Quick Forward</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">快速向前</target>
+        </trans-unit>
+        <trans-unit id="Resources\Play_Button\[using:Windows.UI.Xaml.Controls]ToolTipService\ToolTip" translate="yes" xml:space="preserve">
+          <source>Auto Play Titles</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">自动播放标题</target>
+        </trans-unit>
+        <trans-unit id="Resources\btnBuyDVD\[using:Windows.UI.Xaml.Controls]ToolTipService\ToolTip" translate="yes" xml:space="preserve">
+          <source>Buy Movie Online</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">在线购买的电影</target>
+        </trans-unit>
+        <trans-unit id="Resources\btnMovieDetails\[using:Windows.UI.Xaml.Controls]ToolTipService\ToolTip" translate="yes" xml:space="preserve">
+          <source>Get Movie Details</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">获取电影的详细信息</target>
+        </trans-unit>
+        <trans-unit id="Resources\TraslateDetails\[using:Windows.UI.Xaml.Controls]ToolTipService\ToolTip" translate="yes" xml:space="preserve">
+          <source>Translate Movie Title To Native Language</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">翻译为本机语言电影标题</target>
+        </trans-unit>
       </group>
     </body>
   </file>

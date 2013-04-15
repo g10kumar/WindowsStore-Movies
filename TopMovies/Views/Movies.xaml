@@ -9,6 +9,7 @@
     xmlns:Input="using:Syncfusion.UI.Xaml.Controls.Input"
     xmlns:UI="using:Microsoft.Advertising.WinRT.UI"
     x:Name="pageRoot"
+    xmlns:AdRotatorWin8="using:AdRotatorWin8"
     x:Class="TopMovies.Views.Movies"
     mc:Ignorable="d">
 
@@ -19,7 +20,7 @@
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <Button IsEnabled="True" x:Uid="btnBuyDVD" Name="btnBuyDVD"  Style="{StaticResource ShopAppBarButtonStyle}" Click="btnBuyDVD_Click_1"  />
                     <Button IsEnabled="True" x:Uid="btnMovieDetails" Name="btnMovieDetails"  Style="{StaticResource MoreAppBarButtonStyle}" Click="btnMovieDetails_Click_1" />
-                    <Button IsEnabled="True" x:Uid="TraslateDetails" x:Name="TraslateDetails" Click="Translate" Style="{StaticResource SettingsAppBarButtonStyle}"/>
+                    <Button IsEnabled="True" x:Uid="TraslateDetails" x:Name="TraslateDetails" Click="Translate" Style="{StaticResource SettingsAppBarButtonStyle}" Visibility="Collapsed"/>
                     <!--<Button IsEnabled="True" x:Name="btnTextSize"  Style="{StaticResource EditAppBarButtonStyle}" Click="btnTextSize_Click" ></Button>-->
                 </StackPanel>
             </Grid>
@@ -58,7 +59,7 @@
                     </LinearGradientBrush>
                 </Button.Background>
             </Button>
-            <TextBlock x:Name="pageTitle" Grid.Column="1" Text="{StaticResource AppName}" Style="{StaticResource PageHeaderTextStyle}" Foreground="#FF1D1D1D"/>
+            <TextBlock x:Name="pageTitle" Grid.Column="1" Text="{StaticResource AppName}" Style="{StaticResource PageHeaderTextStyle}"   />
             <!--<Button Style="{StaticResource SettingsAppBarButtonStyle}" x:Name="options"
                     VerticalAlignment="Center" Grid.Column="2" AutomationProperties.Name="Options" Click="Options_Click"/>-->
         </Grid>
@@ -66,7 +67,7 @@
             <TextBlock x:Name="txtName" Style="{StaticResource SubheaderTextStyle}" VerticalAlignment="Center"/>
             <TextBlock x:Name="convertedName" Style="{StaticResource SubheaderTextStyle}" VerticalAlignment="Center"/>
         </StackPanel>
-        <StackPanel x:Name="mainStack" Orientation="Vertical" Grid.ColumnSpan="3" Grid.Row="2" Grid.RowSpan="5" VerticalAlignment="Top" Margin="70,10,70,0" Height="404">
+        <StackPanel x:Name="mainStack" Orientation="Vertical" Grid.ColumnSpan="3" Grid.Row="2" Grid.RowSpan="5" VerticalAlignment="Top" Margin="70,10,70,0" Height="404" PointerEntered="Button_visible" PointerExited="Button_collapsed">
 
             <!--<syncfusion:CoverFlow x:Name="CoverFlowControl" Height="400">
                 <syncfusion:CoverFlow.ItemTemplate>
@@ -87,6 +88,37 @@
                     </DataTemplate>
                 </syncfusion:SfCarousel.ItemTemplate>
             </syncfusion:SfCarousel>
+            <StackPanel x:Name="Button_stackpanel" Height="58" Margin="500,-127,500,0" RenderTransformOrigin="0.488,0.52" VerticalAlignment="Center" Visibility="Collapsed">
+                <Button ToolTipService.ToolTip="" x:Uid="Play_Button" x:Name="Play_Button" Margin="84,9,82,0" HorizontalAlignment="Center" Height="40"  Click="Auto_Play">
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Image Source="ms-appx:///Assets/Play.png"/>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Button  x:Uid="Backward_Button" x:Name="Backward_Button" Margin="-125,-42,14,0" HorizontalAlignment="Center" Height="40" Click="BackWard_move"   >
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Image Source="ms-appx:///Assets/Fast_Backward.png"/>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Button  x:Uid="Forward_Button" x:Name="Forward_Button" Margin="159,-42,14,0" HorizontalAlignment="Center" Height="40" Click="ForWard_move"   >
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Image Source="ms-appx:///Assets/Fast_Forward.png"/>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <Button  x:Uid="Pause_Button" x:Name="Pause_Button" Margin="84,9,82,0" HorizontalAlignment="Center" Height="40"  Visibility="Collapsed" Click="AutoStop"  >
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Image Source="ms-appx:///Assets/Pause.png"/>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </StackPanel>
 
 
         </StackPanel>
@@ -100,7 +132,7 @@
             <Image Source="/Assets/BlackLogo.png" Width="150" />
             <TextBlock Text="The movies cannot be browsed in snapped view." TextWrapping="Wrap" Style="{StaticResource AboutUsTextStyle}" Foreground="Black" FontSize="24" Margin="10,40,10,10" />
         </StackPanel>
-        <ProgressRing x:Name="ProgressRing" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="3" Grid.RowSpan="2" Margin="18,70" Width="1050" Grid.Column="1">
+        <ProgressRing x:Name="ProgressRing" HorizontalAlignment="Center" VerticalAlignment="Stretch" Grid.Row="3" Grid.RowSpan="2" Margin="18,70" Grid.Column="1" IsActive="True" Width="60">
             <ProgressRing.Background>
                 <ImageBrush/>
             </ProgressRing.Background>
@@ -109,9 +141,19 @@
         <UI:AdControl x:Name="AddRight" ApplicationId="6310ffab-747b-4d73-84f5-40c5fa6a8272"  AdUnitId="10067099" HorizontalAlignment="Right" Height="250" Margin="0,100,30,0" Grid.Row="2" Grid.RowSpan="5" VerticalAlignment="Top" Grid.ColumnSpan="2" Grid.Column="1" Width="250"/>-->
 
 
-        <UI:AdControl x:Name="AddLeft" ApplicationId="d25517cb-12d4-4699-8bdc-52040c712cab" AdUnitId="10043104" HorizontalAlignment="Left" Height="250" Margin="30,100,0,0" Grid.Row="2" Grid.RowSpan="5" VerticalAlignment="Top" Width="250" Grid.ColumnSpan="2"/>
-        <UI:AdControl x:Name="AddRight" ApplicationId="d25517cb-12d4-4699-8bdc-52040c712cab"  AdUnitId="10043104" HorizontalAlignment="Right" Height="250" Margin="0,100,30,0" Grid.Row="2" Grid.RowSpan="5" VerticalAlignment="Top" Grid.ColumnSpan="2" Grid.Column="1" Width="250"/>
+        <UI:AdControl x:Name="AddLeft" ApplicationId="d25517cb-12d4-4699-8bdc-52040c712cab" AdUnitId="10043104" HorizontalAlignment="Left" Height="250" Margin="30,100,0,0" Grid.Row="2" Grid.RowSpan="5" VerticalAlignment="Top" Width="250" Grid.ColumnSpan="2" Visibility="Collapsed"/>
+        <UI:AdControl x:Name="AddRight" ApplicationId="d25517cb-12d4-4699-8bdc-52040c712cab"  AdUnitId="10043104" HorizontalAlignment="Right" Height="250" Margin="0,100,30,0" Grid.Row="2" Grid.RowSpan="5" VerticalAlignment="Top" Grid.ColumnSpan="2" Grid.Column="1" Width="250" Visibility="Collapsed"/>
 
+
+        <AdRotatorWin8:AdRotatorControl
+        x:Name="AdRotatorControl"
+        AdHeight="125"
+        AdWidth="250"
+        VerticalAlignment="Center" 
+        HorizontalAlignment="Center"
+        DefaultSettingsFileUri="defaultAdSettings.xml"
+        SettingsUrl="http://adrotator.apphb.com/defaultAdSettingsWindows8.xml" Grid.Column="1" Margin="836,65,0,0" Width="250" Height="125" Grid.RowSpan="2" IsTest="True"/>
+        
         <!--<Grid>
             <ContentControl x:Name="SampleContent"
                                 HorizontalContentAlignment="Stretch"

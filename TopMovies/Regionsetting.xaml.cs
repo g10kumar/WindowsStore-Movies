@@ -67,7 +67,7 @@ namespace TopMovies
 
 
 
-        private async void country_selection(object sender, TappedRoutedEventArgs e)
+        private void country_selection(object sender, TappedRoutedEventArgs e)
         {
 
             try

@@ -18,6 +18,7 @@ using TopMovies.Common;
 
 using CSharpAnalytics.Protocols.Urchin;
 using CSharpAnalytics.WindowsStore;
+using CSharpAnalytics.Sessions;
 
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
@@ -81,11 +82,12 @@ namespace TopMovies
         protected async override void OnNavigatedTo(NavigationEventArgs e)
         {
 
-            if(((App)(App.Current)).FirstRun)
-            {
-            await AutoAnalytics.StartAsync(new UrchinConfiguration("UA-38070832-4", "http://www.daksatech.com"));  // Tracking the application using Google Analytics
-            ((App)(App.Current)).FirstRun = false;
-            }
+            //if (((App)(App.Current)).FirstRun)
+            //{
+            //    await AutoAnalytics.StartAsync(new UrchinConfiguration("UA-38070832-4", "http://www.daksatech.com"));  // Tracking the application using Google Analytics
+ 
+            //    ((App)(App.Current)).FirstRun = false;
+            //}
             if (((App)(App.Current)).countryCode == "")
             {
                 //Variable to get the Location of the user . This is to check if this is the first run or not . 

@@ -51,7 +51,7 @@
                                 <TextBlock x:Uid="regiontext" Foreground="White" FontSize="16" FontStyle="Normal" TextWrapping="Wrap" Text="Your country information is only used to direct you to the appropriate site when you click the &quot;Buy Movie&quot; button." Margin="10,10,10,10"></TextBlock>
                             </Grid>
                             <Grid Grid.Row="1">
-                                <ListBox x:Name="SelectCountry_Popup" Tapped="country_selection" RenderTransformOrigin="0.513,0.507" Margin="0,20,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Height="488" Background="{StaticResource ButtonPressedForegroundThemeBrush}" FontStyle="Normal" >
+                                <ListBox x:Name="SelectCountry_Popup" Tapped="country_selection" RenderTransformOrigin="0.513,0.507" Margin="0,20,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Height="488" Background="{StaticResource ListBoxBackgroundThemeBrush}" FontStyle="Normal" Foreground="Black" BorderBrush="Black" >
                                 </ListBox>
                                  </Grid> 
                         </StackPanel>
