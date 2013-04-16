@@ -245,8 +245,8 @@
         <AppBar Padding="10,0,10,0" IsSticky="true">
             <Grid>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <Button IsEnabled="True" x:Name="btnAllCats" Style="{StaticResource AllCatsAppBarButtonStyle}"></Button>
-                    <Button IsEnabled="True" x:Name="btnAllAuthors" Style="{StaticResource AllAuthorsAppBarButtonStyle}"></Button>
+                    <Button IsEnabled="True" x:Name="btnAllCats" Style="{StaticResource AllCatsAppBarButtonStyle}" Click="btnAllCats_Click"></Button>
+                    <Button IsEnabled="True" x:Name="btnAllAuthors" Style="{StaticResource AllAuthorsAppBarButtonStyle}" Click="btnAllAuthors_Click"></Button>
                 </StackPanel>
             </Grid>
         </AppBar>

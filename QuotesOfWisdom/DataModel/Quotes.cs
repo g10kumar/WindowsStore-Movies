@@ -189,11 +189,38 @@ namespace QuotesOfWisdom.Data
             get { return this._allGroups; }
         }
 
+        private ObservableCollection<QuotesGroup> _catGroups = new ObservableCollection<QuotesGroup>();
+        public ObservableCollection<QuotesGroup> CatGroups
+        {
+            get { return this._catGroups; }
+        }
+
+        private ObservableCollection<QuotesGroup> _autGroups = new ObservableCollection<QuotesGroup>();
+
+        public ObservableCollection<QuotesGroup> AuthorGroups
+        {
+            get { return this._autGroups; }
+        }
+
         public static IEnumerable<QuotesGroup> GetGroups(string title)
         {
             if (!title.Equals("AllGroups")) throw new ArgumentException("Only 'AllGroups' is supported as a collection of groups");
 
             return _Quotes.AllGroups;
+        }
+
+        public static IEnumerable<QuotesGroup> GetCatGroups(string title)
+        {
+            if (!title.Equals("CatGroups")) throw new ArgumentException("Only 'CatGroups' is supported as a collection of groups");
+
+            return _Quotes.CatGroups;
+        }
+
+        public static IEnumerable<QuotesGroup> GetAutGroups(string title)
+        {
+            if (!title.Equals("AuthorGroups")) throw new ArgumentException("Only 'AuthorGroups' is supported as a collection of groups");
+
+            return _Quotes.AuthorGroups;
         }
 
         public static QuotesGroup GetGroup(string title)
@@ -208,6 +235,22 @@ namespace QuotesOfWisdom.Data
         {
             // Simple linear search is acceptable for small data sets
             var matches = _Quotes.AllGroups.SelectMany(group => group.Items).Where((item) => item.UniqueId.Equals(uniqueId));
+            if (matches.Count() == 1) return matches.First();
+            return null;
+        }
+
+        public static QuotesItem GetCatItem(string uniqueId)
+        {
+            // Simple linear search is acceptable for small data sets
+            var matches = _Quotes.CatGroups.SelectMany(group => group.Items).Where((item) => item.UniqueId.Equals(uniqueId));
+            if (matches.Count() == 1) return matches.First();
+            return null;
+        }
+
+        public static QuotesItem GetAuthItem(string uniqueId)
+        {
+            // Simple linear search is acceptable for small data sets
+            var matches = _Quotes.AuthorGroups.SelectMany(group => group.Items).Where((item) => item.UniqueId.Equals(uniqueId));
             if (matches.Count() == 1) return matches.First();
             return null;
         }
@@ -232,6 +275,8 @@ namespace QuotesOfWisdom.Data
 
         public async void GetCategories()
         {
+            List<Categories> listCategory = new List<Categories>();
+
             Windows.Storage.StorageFolder storageFolder = await Windows.ApplicationModel.Package.Current.InstalledLocation.GetFolderAsync("Xml");
             var sf = await storageFolder.GetFileAsync(@"Category.xml");
             var file = await sf.OpenAsync(FileAccessMode.Read);
@@ -252,6 +297,29 @@ namespace QuotesOfWisdom.Data
 
             var group1 = new QuotesGroup("Categories");
 
+            #region Category Groups
+            var groupCat = new QuotesGroup("Categories");
+
+            var catGroups = (from category in xe.Elements("cat")
+                             orderby category.Value
+                             select new Categories
+                             {
+                                 category = category.Value,
+                                 ct = (int)category.Attribute("count")
+                             });
+
+            var cGroups = catGroups.ToList();
+
+            //loop the author details and binds to authorlist
+            foreach (Categories c in catGroups)
+            {
+                listCategory.Add(c);
+            }
+
+            sessionData.currentCategoryQuotes = listCategory;
+            #endregion
+
+            int cnt = 0;
             foreach (var cat in cats)
             {
                 //List<Quotations> list = new List<Quotations>();
@@ -260,8 +328,19 @@ namespace QuotesOfWisdom.Data
                 //list = LoadQuotes(cat.title, "Category");
 
                 group1.Items.Add(new QuotesItem(cat.title, cat.ct, cat.title, "Category", "ms-appx:///Assets/category/" + cat.title.Replace("&", "") + ".jpg", "", "", group1, null));
+
+                #region Category Groups
+                groupCat.Items.Add(new QuotesItem(cGroups[cnt].category, cGroups[cnt].ct, cGroups[cnt].category, "Category", "", "", "", groupCat, null));
+                cnt++;
+                #endregion
             }
             this.AllGroups.Add(group1);
+
+            #region Category Groups
+
+            this.CatGroups.Add(groupCat);
+
+            #endregion
 
             if (QuotesLoaded != null)
                 QuotesLoaded(this, null);
@@ -270,6 +349,8 @@ namespace QuotesOfWisdom.Data
 
         public async void GetAuthors()
         {
+            List<Authors> listAuthor = new List<Authors>();
+
             Windows.Storage.StorageFolder storageFolder = await Windows.ApplicationModel.Package.Current.InstalledLocation.GetFolderAsync("Xml");
             var sf = await storageFolder.GetFileAsync(@"Author.xml");
             var file = await sf.OpenAsync(FileAccessMode.Read);
@@ -291,6 +372,32 @@ namespace QuotesOfWisdom.Data
 
             var group1 = new QuotesGroup("Authors");
 
+            #region Author Groups
+
+            var groupAut = new QuotesGroup("Authors");
+
+            var autGroups = (from author in xe.Elements("auth")
+                             where (int)author.Attribute("count") < 5
+                             orderby author.Value
+                             select new Authors
+                             {
+                                 Author = author.Value,
+                                 ct = (int)author.Attribute("count")
+                             });
+
+            var aGroups = autGroups.ToList();
+
+            //loop the author details and binds to authorlist
+            foreach (Authors a in autGroups)
+            {
+                listAuthor.Add(a);
+            }
+
+            sessionData.currentAuthorQuotes = listAuthor;
+
+            #endregion
+
+            int acnt = 0;
             foreach (var cat in cats)
             {
                 //List<Quotations> list = new List<Quotations>();
@@ -299,8 +406,22 @@ namespace QuotesOfWisdom.Data
                 //list = LoadQuotes(cat.title, "Author");
 
                 group1.Items.Add(new QuotesItem(cat.title, cat.ct, cat.title, "Author", "ms-appx:///Assets/author/" + cat.title + ".jpg", "", "", group1, null));
+
+                #region Author Groups
+                if (acnt != aGroups.Count())
+                {
+                    groupAut.Items.Add(new QuotesItem(aGroups[acnt].Author, aGroups[acnt].ct, aGroups[acnt].Author, "Author", "", "", "", groupAut, null));
+                    acnt++;
+                }
+                #endregion
             }
             this.AllGroups.Add(group1);
+
+            #region Authors Groups
+
+            this.AuthorGroups.Add(groupAut);
+
+            #endregion
 
             if (QuotesLoaded != null)
                 QuotesLoaded(this, null);

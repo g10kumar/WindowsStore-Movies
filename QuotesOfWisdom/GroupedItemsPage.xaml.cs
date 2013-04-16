@@ -480,5 +480,25 @@ namespace QuotesOfWisdom
         {
             this.Frame.Navigate(typeof(FavoriteQuotes));
         }
+
+        /// <summary>
+        /// Click event of all Cats app bar button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void btnAllCats_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(AllCategories));
+        }
+
+        /// <summary>
+        /// Click event of all Auts app bar button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void btnAllAuthors_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(AllAuthors));
+        }
     }
 }

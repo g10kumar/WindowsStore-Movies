@@ -263,6 +263,8 @@ namespace QuotesOfWisdom
         public static string subTitle { get; set; }
         public static bool firstTime = false;
         public static string currentTitle { get; set; }
+        public static bool isAllCat = false;
+        public static bool isAllAut = false;
 
         public static void resetValues()
         {
@@ -294,6 +296,8 @@ namespace QuotesOfWisdom
             sessionData.subTitle = "";
             sessionData.currentTitle = "";
             sessionData.firstTime = false;
+            sessionData.isAllCat = false;
+            sessionData.isAllAut = false;
         }
     }
     /// <summary>
