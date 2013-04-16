@@ -113,6 +113,12 @@
     <Compile Include="AdRotator.xaml.cs">
       <DependentUpon>AdRotator.xaml</DependentUpon>
     </Compile>
+    <Compile Include="AllAuthors.xaml.cs">
+      <DependentUpon>AllAuthors.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AllCategories.xaml.cs">
+      <DependentUpon>AllCategories.xaml</DependentUpon>
+    </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
@@ -186,6 +192,14 @@
     <Page Include="FavoriteQuotes.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AllAuthors.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AllCategories.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Content Include="Assets\Ads\ShareAllBanner.png" />
     <Content Include="Xml\Ads.xml" />

@@ -416,7 +416,23 @@ namespace QuotesOfWisdom
                 navigationParameter = sessionData.searchWord;
             }
 
-            var item = Quotes.GetItem((String)navigationParameter);
+            //var item = Quotes.GetItem((String)navigationParameter);
+
+            var item = new QuotesItem("", 0, "", "", "", "", "", null, null);
+
+            if (sessionData.isAllCat)
+            {
+                item = Quotes.GetCatItem((String)navigationParameter);
+
+            }
+            else if (sessionData.isAllAut)
+            {
+                item = Quotes.GetAuthItem((String)navigationParameter);
+            }
+            else
+            {
+                item = Quotes.GetItem((String)navigationParameter);
+            }
 
             sessionData.title = item.Title;
             //currentTitle = item.Title;
@@ -567,6 +583,8 @@ namespace QuotesOfWisdom
         /// <param name="e"></param>
         private void Back_Click(object sender, RoutedEventArgs e)
         {
+            sessionData.isAllCat = false;
+            sessionData.isAllAut = false;
             flipView.SelectedIndex = 0;
             //sessionData.currentTitle = "";
             //this.flipView.SelectedItem = null;
