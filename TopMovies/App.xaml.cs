@@ -21,11 +21,8 @@ using Windows.ApplicationModel.Resources;
 using System.Threading.Tasks;
 
 // Below are the reference library namespace to be used in the Application . 
-using CSharpAnalytics.Activities;
-using CSharpAnalytics.WindowsStore;
-using CSharpAnalytics.Protocols.Urchin;
-using CSharpAnalytics.Protocols.Measurement;
-using Nascent.GoogleAnalytics;
+using DT.GoogleAnalytics.Metro;
+
 
 
 // The Blank Application template is documented at http://go.microsoft.com/fwlink/?LinkId=234227
@@ -36,7 +33,8 @@ namespace TopMovies
     /// Provides application-specific behavior to supplement the default Application class.
     /// </summary>
     sealed partial class App : Application
-    {
+    {     
+        
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
         /// executed, and as such is the logical equivalent of main() or WinMain().
@@ -66,7 +64,7 @@ namespace TopMovies
         /// search results, and so forth.
         /// </summary>
         /// <param name="args">Details about the launch request and process.</param>
-        protected override async void OnLaunched(LaunchActivatedEventArgs args)
+        protected override void OnLaunched(LaunchActivatedEventArgs args)
         {
             //var timeSpent = new AutoTimedEventActivity("ApplicationLifecycle", "User_Time_Spent");       // This is to mark the application usage time.
                                   
@@ -131,10 +129,13 @@ namespace TopMovies
             }
             // Ensure the current window is active
 
-           // await AutoAnalytics.StartAsync(new UrchinConfiguration("UA-38070832-3", "http://www.daksatech.com"));  // Tracking the application using Google Analytics
+
             //Nascent.GoogleAnalytics.AnalyticsTracker.GetInstance("UA-38070832-3");
             //AnalyticsTracker tracker;
             //tracker.
+            AnalyticsHelper.Setup();
+           
+
             Window.Current.Activate();
 
 
@@ -203,10 +204,10 @@ namespace TopMovies
             var deferral = e.SuspendingOperation.GetDeferral();
             //TODO: Save application state and stop any background activity
             
-          //  AutoAnalytics.Client.Track(timeSpent);                                                                   // this is to measure the user time spent in the application.
+          //  AutoAnalytics.Client.Track(timeSpent);                                                                   // this is to measure the user time spent in the application.          
 
-          //  await AutoAnalytics.StopAsync();                                                            // Stopping GA tracking . 
             
+
             deferral.Complete();
         }
 

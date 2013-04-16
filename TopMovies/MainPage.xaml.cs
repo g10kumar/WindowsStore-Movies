@@ -15,11 +15,7 @@ using TopMovies.Views;
 using Windows.UI.Core;
 using Windows.UI.ViewManagement;
 using TopMovies.Common;
-
-using CSharpAnalytics.Protocols.Urchin;
-using CSharpAnalytics.WindowsStore;
-using CSharpAnalytics.Sessions;
-
+using DT.GoogleAnalytics.Metro;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -33,8 +29,14 @@ namespace TopMovies
         public MainPage()
         {
             this.InitializeComponent();
+            Loaded += MainPage_Loaded;
 
             Window.Current.SizeChanged += Current_SizeChanged;
+        }
+
+        private void MainPage_Loaded(object sender, RoutedEventArgs e)
+        {
+            AdRotatorControl.Invalidate();
         }
         private void manageViewState()
         {
@@ -62,7 +64,7 @@ namespace TopMovies
             manageViewState();
         }
 
-        protected string DetermineVisualState(ApplicationViewState viewState)
+        protected override string DetermineVisualState(ApplicationViewState viewState)
         {
             if (viewState == ApplicationViewState.Filled || viewState == ApplicationViewState.FullScreenLandscape)
             {
@@ -74,20 +76,15 @@ namespace TopMovies
             return viewState.ToString();
         }
 
+
         /// <summary>
         /// Invoked when this page is about to be displayed in a Frame.
         /// </summary>
         /// <param name="e">Event data that describes how this page was reached.  The Parameter
         /// property is typically used to configure the page.</param>
-        protected async override void OnNavigatedTo(NavigationEventArgs e)
+        protected  override void OnNavigatedTo(NavigationEventArgs e)
         {
-
-            //if (((App)(App.Current)).FirstRun)
-            //{
-            //    await AutoAnalytics.StartAsync(new UrchinConfiguration("UA-38070832-4", "http://www.daksatech.com"));  // Tracking the application using Google Analytics
- 
-            //    ((App)(App.Current)).FirstRun = false;
-            //}
+            AnalyticsHelper.TrackPageView("/MainPage");
             if (((App)(App.Current)).countryCode == "")
             {
                 //Variable to get the Location of the user . This is to check if this is the first run or not . 

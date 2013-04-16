@@ -1,6 +1,4 @@
-﻿using CSharpAnalytics;
-using CSharpAnalytics.WindowsStore;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -21,6 +19,7 @@ using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Navigation;
 using System.Threading;
+using DT.GoogleAnalytics.Metro;
 
 namespace TopMovies.Views
 {
@@ -33,16 +32,14 @@ namespace TopMovies.Views
         Windows.Storage.ApplicationDataContainer roamingSettings = Windows.Storage.ApplicationData.Current.RoamingSettings;
         StorageFile movieFile = null;
         string fileContent = "";
-        Dictionary<string, string> countryList = new Dictionary<string, string>();       // Initialize a dictionaty to store the country list . Values added in the 
+        Dictionary<string, string> countryList = new Dictionary<string, string>();                      // Initialize a dictionaty to store the country list . Values added in the 
         // constructor
         int countofMovies;
-
-        string language;                                       // This is to get the language on the user system.
+        string language;                                                                                // This is to get the language on the user system.
         CancellationTokenSource ts = new CancellationTokenSource();
         bool autoPlayOn = false;
         ConnectionProfile InternetconnectionProfile;
-
-        bool imagedLoaded = false;
+        bool imageLoaded = false;
         ResourceLoader loader = new Windows.ApplicationModel.Resources.ResourceLoader();                // This is to get the resources defined in the resource.resw file . 
 
 
@@ -73,11 +70,9 @@ namespace TopMovies.Views
 
         public Movies() 
         {
-            //AutoAnalytics.Client.TrackPageView(sessionData.selectCategory, "/Movies");
             this.InitializeComponent();
             Loaded += Movies_Loaded;
             DataContext = new CoverFlowProperties();
-
             ShareSourceLoad();
             manageViewState();
             Window.Current.SizeChanged += Current_SizeChanged;
@@ -100,9 +95,10 @@ namespace TopMovies.Views
 
         void Movies_Loaded(object sender, RoutedEventArgs e)
         {
+            GetIntertCondition();
             //AdRotatorWin8.AdRotatorControl.DefaultHouseAdBody = 
+             if (InternetconnectionProfile != null)          
             AdRotatorControl.Invalidate();
-
         }
 
         private void manageViewState()
@@ -236,6 +232,7 @@ namespace TopMovies.Views
         /// property is typically used to configure the page.</param>
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+            AnalyticsHelper.TrackPageView("/Movies");
 
             language = new Windows.ApplicationModel.Resources.Core.ResourceContext().Languages.FirstOrDefault();
 
@@ -276,12 +273,13 @@ namespace TopMovies.Views
 
             bottonBar.IsOpen = true;
 
-            //AutoAnalytics.Client.TrackEvent("Movie_Cat_selection", sessionData.selectCategory);
 
-            
+            AnalyticsHelper.Track(sessionData.selectCategory, "Movie_Cat_selection");
+        }
 
+        private void GetIntertCondition()
+        {
             InternetconnectionProfile = Windows.Networking.Connectivity.NetworkInformation.GetInternetConnectionProfile();
-
         }
 
         private async void LoadMovieData()
@@ -300,6 +298,7 @@ namespace TopMovies.Views
             await LoadMovie(fileName, xe);
 
             #region Retrieving last viewing movie
+
             switch (sessionData.selectCategory)
             {
                 case "TopEnglish":
@@ -365,7 +364,7 @@ namespace TopMovies.Views
             CoverFlowControl.ZOffset = 30.0;
             CoverFlowControl.ScaleOffset = 0.70;
 
-            if (imagedLoaded)
+            if (imageLoaded)
             {
 
                 ProgressRing.IsActive = false;
@@ -402,7 +401,7 @@ namespace TopMovies.Views
 
             CoverFlowControl.ItemsSource = images;
 
-            imagedLoaded = true;
+            imageLoaded = true;
         }
 
         private void DisplayInfo()
@@ -443,7 +442,7 @@ namespace TopMovies.Views
             catch
             { }
             //txtDesp.Text = ((Person)(CoverFlowControl.Items[CoverFlowControl.SelectedIndex])).Name.Split('#')[1].ToString();
-
+            
             if (InternetconnectionProfile != null)          // Checking if Active internet connection is avaliable or not . 
             {
                 movieWiki.Navigate(new Uri("http://en.m.wikipedia.org/wiki/" + movieName));
@@ -517,45 +516,23 @@ namespace TopMovies.Views
         }
 
         private  void CoverFlowControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-           // if(convertedName.Visibility.Equals(Windows.UI.Xaml.Visibility.Visible))
-          //  {
+        {         
             convertedName.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
             txtName.Visibility = Windows.UI.Xaml.Visibility.Visible;
-           // }
 
-            DisplayInfo();
-
-                    //Task.Delay(10000);
-                    if (CoverFlowControl.SelectedItem == images.ElementAt(0) || CoverFlowControl.SelectedItem == images.ElementAt(1))
-                    {
-                        AddLeft.Visibility = Windows.UI.Xaml.Visibility.Visible; 
-                    }
-                    else if (CoverFlowControl.SelectedItem == images.ElementAt(countofMovies - 2) || CoverFlowControl.SelectedItem == images.ElementAt(countofMovies - 1))
-                    {
-                        AddRight.Visibility = Windows.UI.Xaml.Visibility.Visible; 
-                    }
-                    else
-                    {
-
-                            AddLeft.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-                            AddRight.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-
-                    }
-
+            DisplayInfo();                           
             
-
-
         }
 
         private void btnMoreInfo_Click(object sender, RoutedEventArgs e)
         {
+            GetIntertCondition();
             if (autoPlayOn)
             {
                 AutoStop();
             }
 
-            //AutoAnalytics.Client.TrackEvent("Button_click", "Movie_Info", txtName.Text);
+            AnalyticsHelper.Track("Movie_Info", "Button_click", txtName.Text);
 
             if (InternetconnectionProfile == null)          // Functionality to check user internet connection & prompt is connection unavaliable . 
             {
@@ -577,6 +554,7 @@ namespace TopMovies.Views
 
         private async void btnBuyDVD_Click_1(object sender, RoutedEventArgs e)
         {
+            GetIntertCondition();
             if (autoPlayOn)
             {
                 AutoStop();
@@ -592,7 +570,7 @@ namespace TopMovies.Views
                 movieName = txtName.Text;
             }
 
-            //AutoAnalytics.Client.TrackEvent("Button_click", "Buy_Button", movieName);                // Buy button click , for each movie . 
+            AnalyticsHelper.Track("Buy_Button","Button_click", movieName);
 
             string x = ((App)(App.Current)).countryCode;                                     // Variable x to store the value of country selcted by the user . 
 
@@ -621,6 +599,7 @@ namespace TopMovies.Views
 
         private void btnMovieDetails_Click_1(object sender, RoutedEventArgs e)
         {
+            GetIntertCondition();
             if (autoPlayOn)
             {
                 AutoStop();
@@ -635,7 +614,7 @@ namespace TopMovies.Views
             {
                 stackPopup.Visibility = Windows.UI.Xaml.Visibility.Visible;
             }
-            //AutoAnalytics.Client.TrackEvent("Button_click", "Movie_Info", txtName.Text);
+            AnalyticsHelper.Track("Movie_Info","Button_click",txtName.Text);
         }
 
         //private void btnMoreInfo_Click(object sender, DoubleTappedRoutedEventArgs e)
@@ -696,6 +675,7 @@ namespace TopMovies.Views
 
         private async void Translate(object sender, RoutedEventArgs e)
         {
+            GetIntertCondition();
             Pause_Button.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
             Play_Button.Visibility = Windows.UI.Xaml.Visibility.Visible;
             Forward_Button.Visibility = Windows.UI.Xaml.Visibility.Visible;

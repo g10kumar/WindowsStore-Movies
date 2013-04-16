@@ -141,19 +141,18 @@
         <UI:AdControl x:Name="AddRight" ApplicationId="6310ffab-747b-4d73-84f5-40c5fa6a8272"  AdUnitId="10067099" HorizontalAlignment="Right" Height="250" Margin="0,100,30,0" Grid.Row="2" Grid.RowSpan="5" VerticalAlignment="Top" Grid.ColumnSpan="2" Grid.Column="1" Width="250"/>-->
 
 
-        <UI:AdControl x:Name="AddLeft" ApplicationId="d25517cb-12d4-4699-8bdc-52040c712cab" AdUnitId="10043104" HorizontalAlignment="Left" Height="250" Margin="30,100,0,0" Grid.Row="2" Grid.RowSpan="5" VerticalAlignment="Top" Width="250" Grid.ColumnSpan="2" Visibility="Collapsed"/>
-        <UI:AdControl x:Name="AddRight" ApplicationId="d25517cb-12d4-4699-8bdc-52040c712cab"  AdUnitId="10043104" HorizontalAlignment="Right" Height="250" Margin="0,100,30,0" Grid.Row="2" Grid.RowSpan="5" VerticalAlignment="Top" Grid.ColumnSpan="2" Grid.Column="1" Width="250" Visibility="Collapsed"/>
+        <!--<UI:AdControl x:Name="AddLeft" ApplicationId="d25517cb-12d4-4699-8bdc-52040c712cab" AdUnitId="10043104" HorizontalAlignment="Left" Height="250" Margin="30,100,0,0" Grid.Row="2" Grid.RowSpan="5" VerticalAlignment="Top" Width="250" Grid.ColumnSpan="2" Visibility="Collapsed"/>
+        <UI:AdControl x:Name="AddRight" ApplicationId="d25517cb-12d4-4699-8bdc-52040c712cab"  AdUnitId="10043104" HorizontalAlignment="Right" Height="250" Margin="0,100,30,0" Grid.Row="2" Grid.RowSpan="5" VerticalAlignment="Top" Grid.ColumnSpan="2" Grid.Column="1" Width="250" Visibility="Collapsed"/>-->
 
 
         <AdRotatorWin8:AdRotatorControl
         x:Name="AdRotatorControl"
-        AdHeight="125"
-        AdWidth="250"
-        VerticalAlignment="Center" 
-        HorizontalAlignment="Center"
+        AdHeight="60"
+        AdWidth="292"
+        VerticalAlignment="Center"
         DefaultSettingsFileUri="defaultAdSettings.xml"
-        SettingsUrl="http://adrotator.apphb.com/defaultAdSettingsWindows8.xml" Grid.Column="1" Margin="836,65,0,0" Width="250" Height="125" Grid.RowSpan="2" IsTest="True"/>
-        
+        SettingsUrl="http://adrotator.apphb.com/defaultAdSettingsWindows8.xml" Grid.Column="1" Margin="397,41,397,99" Height="60" IsTest="True" Grid.Row="6" Grid.RowSpan="2"/>
+
         <!--<Grid>
             <ContentControl x:Name="SampleContent"
                                 HorizontalContentAlignment="Stretch"
