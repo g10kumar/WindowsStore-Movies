@@ -311,6 +311,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Content Include="blank.html" />
     <Content Include="defaultAdSettings.xml" />
     <Content Include="ReadMe-AdRotator-XAML.txt" />
     <Content Include="Xml\TopAsian.xml">
@@ -716,12 +717,8 @@
     <Reference Include="AdRotatorWin8">
       <HintPath>packages\AdRotatorWin8.1.0.10\lib\netcore45\AdRotatorWin8.dll</HintPath>
     </Reference>
-    <Reference Include="CSharpAnalytics.WindowsStore, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>Dlls\CSharpAnalytics.WindowsStore.dll</HintPath>
-    </Reference>
-    <Reference Include="Nascent.GoogleAnalytics">
-      <HintPath>Dlls\Nascent.GoogleAnalytics.dll</HintPath>
+    <Reference Include="DT.GoogleAnalytics.Metro">
+      <HintPath>packages\w8ga.2.4\lib\winrt45\DT.GoogleAnalytics.Metro.dll</HintPath>
     </Reference>
     <Reference Include="Syncfusion.SfCarousel.WinRT, Version=11.104.0.21, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
