@@ -54,7 +54,7 @@ namespace QuotesOfWisdom
         {
             List<Authors> listAuthor = new List<Authors>();
 
-            if (sessionData.currentAuthorQuotes == null)
+            if (sessionData.currentAuthors == null)
             {
                 Windows.Storage.StorageFolder storageFolder = await Windows.ApplicationModel.Package.Current.InstalledLocation.GetFolderAsync("Xml");
                 var sf = await storageFolder.GetFileAsync(@"Author.xml");
@@ -77,12 +77,14 @@ namespace QuotesOfWisdom
                     listAuthor.Add(a);
                 }
 
-                sessionData.currentAuthorQuotes = listAuthor;
+                //sessionData.currentAuthorQuotes = listAuthor;
+                sessionData.currentAuthors = listAuthor;
 
             }
             else
             {
-                listAuthor = sessionData.currentAuthorQuotes.ToList();
+                //listAuthor = sessionData.currentAuthorQuotes.ToList();
+                listAuthor = sessionData.currentAuthors.ToList();
             }
             itemGridView.ItemsSource = listAuthor;
             itemListView.ItemsSource = listAuthor;
