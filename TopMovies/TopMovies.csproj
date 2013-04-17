@@ -106,6 +106,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="GoogleTranslator.cs" />
     <Compile Include="Common\LayoutAwarePage.cs" />
     <Compile Include="Common\NotificationObject.cs" />
     <Compile Include="Common\SettingsFlyout.cs" />
@@ -128,14 +129,25 @@
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
-    <None Include="packages.config">
-      <SubType>Designer</SubType>
-    </None>
+    <None Include="MultilingualResources\TopMovies_de.xlf" />
+    <None Include="MultilingualResources\TopMovies_es.xlf" />
+    <None Include="MultilingualResources\TopMovies_fr.xlf" />
+    <None Include="MultilingualResources\TopMovies_it.xlf" />
+    <None Include="MultilingualResources\TopMovies_ja-JP.xlf" />
+    <None Include="MultilingualResources\TopMovies_qps-ploc.xlf" />
+    <None Include="MultilingualResources\TopMovies_ru-RU.xlf" />
+    <None Include="MultilingualResources\TopMovies_zh-Hans.xlf" />
+    <PRIResource Include="Strings\en-US\Resources.resw" />
+    <None Include="packages.config" />
     <None Include="TopMovies_StoreKey.pfx" />
     <None Include="TopMovies_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\BlackLogo.png" />
+    <Content Include="Assets\Fast_Backward.png" />
+    <Content Include="Assets\Fast_Forward.png" />
+    <Content Include="Assets\Pause.png" />
+    <Content Include="Assets\Play.png" />
     <Content Include="Assets\Top Asian Movies.jpg" />
     <Content Include="Assets\Top Foreign Movies.jpg" />
     <Content Include="Assets\TopAsian\1.jpg" />
@@ -299,7 +311,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Content Include="Xml\TopAsian.xml" />
+    <Content Include="blank.html" />
+    <Content Include="defaultAdSettings.xml" />
+    <Content Include="Xml\TopAsian.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Xml\TopForeign.xml" />
     <Page Include="AboutUsUserControl.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -694,21 +710,28 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="CSharpAnalytics.WindowsStore, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="DT.GoogleAnalytics.Metro">
+      <HintPath>packages\w8ga.2.4\lib\winrt45\DT.GoogleAnalytics.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfCarousel.WinRT, Version=11.104.0.21, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\CSharpAnalytics-master\CSharpAnalytics-master\Source\CSharpAnalytics\bin\Release\WindowsStore\CSharpAnalytics.WindowsStore.dll</HintPath>
+      <HintPath>C:\Program Files\Syncfusion\Essential Studio\11.1.0.21\Assemblies for WinRT\Syncfusion.SfCarousel.WinRT.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.SfCarousel.WinRT">
-      <HintPath>..\..\..\Program Files (x86)\Syncfusion\Essential Studio\11.1.0.21\Assemblies for WinRT\Syncfusion.SfCarousel.WinRT.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.SfShared.WinRT">
-      <HintPath>..\..\..\Program Files (x86)\Syncfusion\Essential Studio\11.1.0.21\Assemblies for WinRT\Syncfusion.SfShared.WinRT.dll</HintPath>
+    <Reference Include="Syncfusion.SfShared.WinRT, Version=11.104.0.21, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Syncfusion\Essential Studio\11.1.0.21\Assemblies for WinRT\Syncfusion.SfShared.WinRT.dll</HintPath>
     </Reference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '11.0' ">
     <VisualStudioVersion>11.0</VisualStudioVersion>
   </PropertyGroup>
+  <PropertyGroup Label="MultilingualAppToolkit">
+    <MakePriLog>$(Temp)\$(MSBuildProjectName)_Multilingual.prilog.xml</MakePriLog>
+    <AppxGenerateProjectPriFileAdditionalMakepriExeParameters>/IndexLog "$(MakePriLog)"</AppxGenerateProjectPriFileAdditionalMakepriExeParameters>
+  </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <Import Label="MultilingualAppToolkit" Project="$(MSBuildExtensionsPath32)\Microsoft\Multilingual App Toolkit\v1.0\MultilingualBuildTasks.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\Multilingual App Toolkit\v1.0\MultilingualBuildTasks.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
@@ -716,4 +739,7 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <Target Name="AfterBuild">
+    <MultilingualBuild Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\Multilingual App Toolkit\v1.0\MultilingualBuildTasks.targets')" ContinueOnError="false" BldOutputPath="$(IntermediateOutputPath)" BinOutputPath="bin\$(Configuration)" AppName="$(ProjectName)" ProjectPath="$(ProjectPath)" ProjectPriFullPath="$(ProjectPriFullPath)" MakePriLog="$(MakePriLog)" SourceLanguage="$(DefaultLanguage)" />
+  </Target>
 </Project>

@@ -12,5 +12,8 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
     <UseSimulator>False</UseSimulator>
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DebugEngines>
+    </DebugEngines>
+    <CreateCleanLayout>False</CreateCleanLayout>
   </PropertyGroup>
 </Project>
