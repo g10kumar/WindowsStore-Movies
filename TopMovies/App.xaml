@@ -15,7 +15,7 @@
                  -->
                 <ResourceDictionary Source="Common/StandardStyles.xaml"/>
             </ResourceDictionary.MergedDictionaries>
-            <a:GoogleAnalyticsSettings x:Key="GoogleAnalytics" WebPropertyId="UA-38070832-3" />
+            <a:GoogleAnalyticsSettings x:Key="GoogleAnalytics" WebPropertyId="UA-38070832-4" />
 
             <x:String x:Key="AppName">The Best Movies Ever Made!</x:String>
         </ResourceDictionary>

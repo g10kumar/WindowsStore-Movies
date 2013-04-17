@@ -71,7 +71,6 @@ namespace TopMovies.Views
         public Movies() 
         {
             this.InitializeComponent();
-            Loaded += Movies_Loaded;
             DataContext = new CoverFlowProperties();
             ShareSourceLoad();
             manageViewState();
@@ -93,13 +92,7 @@ namespace TopMovies.Views
 
         }
 
-        void Movies_Loaded(object sender, RoutedEventArgs e)
-        {
-            GetIntertCondition();
-            //AdRotatorWin8.AdRotatorControl.DefaultHouseAdBody = 
-             if (InternetconnectionProfile != null)          
-            AdRotatorControl.Invalidate();
-        }
+ 
 
         private void manageViewState()
         {
@@ -702,6 +695,8 @@ namespace TopMovies.Views
                 convertedName.Visibility = Windows.UI.Xaml.Visibility.Visible;
             }
 
+            AnalyticsHelper.Track("Translate", "Button_click", language);
+
         }
 
         private void Button_visible(object sender, PointerRoutedEventArgs e)
@@ -752,7 +747,7 @@ namespace TopMovies.Views
                         while (true)
                         {
                             
-                            await Task.Delay(1000);
+                            await Task.Delay(1300);
                             if (pos + 1 == countofMovies)
                             {
                                 await Dispatcher.RunAsync(CoreDispatcherPriority.High, delegate { Play_Button.Visibility = Windows.UI.Xaml.Visibility.Visible; Pause_Button.Visibility = Windows.UI.Xaml.Visibility.Collapsed; Backward_Button.Visibility = Windows.UI.Xaml.Visibility.Visible; Forward_Button.Visibility = Windows.UI.Xaml.Visibility.Visible; });

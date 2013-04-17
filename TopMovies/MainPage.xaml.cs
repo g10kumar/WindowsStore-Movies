@@ -29,15 +29,10 @@ namespace TopMovies
         public MainPage()
         {
             this.InitializeComponent();
-            Loaded += MainPage_Loaded;
-
             Window.Current.SizeChanged += Current_SizeChanged;
         }
 
-        private void MainPage_Loaded(object sender, RoutedEventArgs e)
-        {
-            AdRotatorControl.Invalidate();
-        }
+
         private void manageViewState()
         {
             string visualState = DetermineVisualState(ApplicationView.Value);

@@ -7,7 +7,6 @@
     xmlns:common="using:TopMovies.Common"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:AdRotatorWin8="using:AdRotatorWin8"
     mc:Ignorable="d">
 
     <Grid x:Name="Layout" Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
@@ -64,14 +63,7 @@
                 </StackPanel>
             </StackPanel>
         </ScrollViewer>
-        <AdRotatorWin8:AdRotatorControl
-        x:Name="AdRotatorControl"
-        AdHeight="60"
-        AdWidth="292"
-        VerticalAlignment="Center"
-        DefaultSettingsFileUri="defaultAdSettings.xml"
-        SettingsUrl="http://adrotator.apphb.com/defaultAdSettingsWindows8.xml" Grid.Column="1" Margin="435,540,539,0" Height="60" IsTest="True" Grid.Row="1" RenderTransformOrigin="0.494,-0.85" Width="292"/>
-
+       
         <StackPanel Orientation="Vertical" VerticalAlignment="Top" x:Name="snappedStack" Visibility="Collapsed" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0" Grid.RowSpan="2" Margin="10,10,10,10" HorizontalAlignment="Center">
             <Image Source="Assets/BlackLogo.png" Width="150" />
             <TextBlock Text="The movies cannot be browsed in snapped view." TextWrapping="Wrap" Style="{StaticResource AboutUsTextStyle}" Foreground="Black" FontSize="24"  Margin="10,40,10,10" />
