@@ -17,10 +17,12 @@ using Windows.UI.ApplicationSettings;
 using TopMovies.Common;
 using Windows.Globalization;
 using Windows.UI.Xaml.Media.Animation;
+using Windows.ApplicationModel.Resources;
+using System.Threading.Tasks;
 
 // Below are the reference library namespace to be used in the Application . 
-using CSharpAnalytics.Activities;
-using CSharpAnalytics.WindowsStore;
+using DT.GoogleAnalytics.Metro;
+
 
 
 // The Blank Application template is documented at http://go.microsoft.com/fwlink/?LinkId=234227
@@ -31,27 +33,44 @@ namespace TopMovies
     /// Provides application-specific behavior to supplement the default Application class.
     /// </summary>
     sealed partial class App : Application
-    {
+    {     
+        
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
         /// executed, and as such is the logical equivalent of main() or WinMain().
         /// </summary>
         public string countryCode = ""; // Global variable that is going to store the user selection for country .The same variable is going to be stored in the session.
+ 
 
-        AutoTimedEventActivity timeSpent = new AutoTimedEventActivity("ApplicationLifecycle", "User_Time_Spent");       // This is to mark the application usage time.
+        //public bool FirstRun = true;
 
         public App()
         {
             this.InitializeComponent();
-            App.Current.RequestedTheme = ApplicationTheme.Light;
+            App.Current.RequestedTheme = ApplicationTheme.Dark;
             this.Suspending += OnSuspending;
 
-            //DebugSettings.EnableFrameRateCounter = true;
+            UnhandledException += App_UnhandledException;
+            TaskScheduler.UnobservedTaskException += TaskScheduler_UnobservedTaskException;
+
+         //   DebugSettings.EnableFrameRateCounter = true;
 
             //DebugSettings.IsOverdrawHeatMapEnabled = true;
 
-           DebugSettings.IsBindingTracingEnabled = true;
+          // DebugSettings.IsBindingTracingEnabled = true;
 
+        }
+
+        void TaskScheduler_UnobservedTaskException(object sender, UnobservedTaskExceptionEventArgs e)
+        {
+            e.SetObserved();
+            AnalyticsHelper.Track("TrackException", "TaskException");
+        }
+
+        void App_UnhandledException(object sender, UnhandledExceptionEventArgs e)
+        {
+            e.Handled = true;
+            AnalyticsHelper.Track("TrackException", "UnhandledException", e.Message);
         }
 
         /// <summary>
@@ -60,16 +79,12 @@ namespace TopMovies
         /// search results, and so forth.
         /// </summary>
         /// <param name="args">Details about the launch request and process.</param>
-        protected async override void OnLaunched(LaunchActivatedEventArgs args)
-        {         
+        protected override void OnLaunched(LaunchActivatedEventArgs args)
+        {
+            //var timeSpent = new AutoTimedEventActivity("ApplicationLifecycle", "User_Time_Spent");       // This is to mark the application usage time.
                                   
             Frame rootFrame = Window.Current.Content as Frame;
-
-            //Variable to get the Location of the user . This is to check if this is the first run or not . 
-
-            //var geoGraphicRegion = new Windows.Globalization.GeographicRegion();
-
-            //var _countryCode = geoGraphicRegion.CodeTwoLetter;                      
+                    
                
             // Do not repeat app initialization when the Window already has content,
             // just ensure that the window is active
@@ -111,10 +126,7 @@ namespace TopMovies
                 {
                     countryCode = sessionData.userCountrySetting.ToString();
                 }
-                //else
-                //{
-                //   countryCode = geoGraphicRegion.DisplayName; 
-                //}
+
                 // Place the frame in the current Window
                 Window.Current.Content = rootFrame;
             }
@@ -131,8 +143,16 @@ namespace TopMovies
 
             }
             // Ensure the current window is active
-               
+
+
+            //Nascent.GoogleAnalytics.AnalyticsTracker.GetInstance("UA-38070832-3");
+            //AnalyticsTracker tracker;
+            //tracker.
+            AnalyticsHelper.Setup();
+            AnalyticsHelper.Track("ApplicationLifecycle", "Start");
+
             Window.Current.Activate();
+
 
             // Register handler for CommandsRequested events from the settings pane
             SettingsPane.GetForCurrentView().CommandsRequested += OnCommandsRequested;
@@ -142,7 +162,11 @@ namespace TopMovies
         void OnCommandsRequested(SettingsPane sender, SettingsPaneCommandsRequestedEventArgs args)
         {
             //Add a preference apps command
-            SettingsCommand preference = new SettingsCommand("region_setting", "Country Settings", (handler) =>
+
+            var loader = new Windows.ApplicationModel.Resources.ResourceLoader();
+            var Country_Settings = loader.GetString("region");
+
+            SettingsCommand preference = new SettingsCommand("region_setting", Country_Settings, (handler) =>
             {
                 var settings = new SettingsFlyout();
                 settings.ShowFlyout(new Regionsetting());
@@ -150,9 +174,10 @@ namespace TopMovies
 
             args.Request.ApplicationCommands.Add(preference);
 
+            var About_Us = loader.GetString("aboutus");
 
             // Add a About command
-            var about = new SettingsCommand("about", "About Us", (handler) =>
+            var about = new SettingsCommand("about", About_Us, (handler) =>
             {
                 var settings = new SettingsFlyout();
                 settings.ShowFlyout(new AboutUsUserControl());
@@ -160,10 +185,10 @@ namespace TopMovies
 
             args.Request.ApplicationCommands.Add(about);
 
-
+            var Privacy_Policy = loader.GetString("privacypolicy");
 
             // Add a Privacy Policy command
-            var privacypolicy = new SettingsCommand("privacypolicy", "Privacy Policy", (handler) =>
+            var privacypolicy = new SettingsCommand("privacypolicy", Privacy_Policy, (handler) =>
             {
                 var settings = new SettingsFlyout();
                 settings.ShowFlyout(new PrivacyPolicyUserControl());
@@ -189,15 +214,13 @@ namespace TopMovies
         /// </summary>
         /// <param name="sender">The source of the suspend request.</param>
         /// <param name="e">Details about the suspend request.</param>
-        private async void OnSuspending(object sender, SuspendingEventArgs e)
+        private void OnSuspending(object sender, SuspendingEventArgs e)
         {
             var deferral = e.SuspendingOperation.GetDeferral();
             //TODO: Save application state and stop any background activity
             
-            AutoAnalytics.Client.Track(timeSpent);                                                                   // this is to measure the user time spent in the application.
+            AnalyticsHelper.Track("ApplicationLifecycle", "Stop");          
 
-            await AutoAnalytics.StopAsync();                                                                        // Stopping GA tracking . 
-            
             deferral.Complete();
         }
 
@@ -216,13 +239,9 @@ namespace TopMovies
         public static string lastForeignMovieIndex { get; set; }
         public static string lastBollywoodMovieIndex { get; set; }
         public static string lastAsianMovieIndex { get; set; }
-        public static string userCountrySetting { get; set; }
-       
+        public static string userCountrySetting { get; set; }  
 
-        
-
- 
-        
+               
         
 public static void resetValues()
         {
