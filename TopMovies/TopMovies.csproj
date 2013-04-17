@@ -313,7 +313,6 @@
     </Page>
     <Content Include="blank.html" />
     <Content Include="defaultAdSettings.xml" />
-    <Content Include="ReadMe-AdRotator-XAML.txt" />
     <Content Include="Xml\TopAsian.xml">
       <SubType>Designer</SubType>
     </Content>
@@ -711,12 +710,6 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="AdDuplex.Windows">
-      <HintPath>packages\AdDuplexWindows.8.0.3.0\lib\winrt45\AdDuplex.Windows.dll</HintPath>
-    </Reference>
-    <Reference Include="AdRotatorWin8">
-      <HintPath>packages\AdRotatorWin8.1.0.10\lib\netcore45\AdRotatorWin8.dll</HintPath>
-    </Reference>
     <Reference Include="DT.GoogleAnalytics.Metro">
       <HintPath>packages\w8ga.2.4\lib\winrt45\DT.GoogleAnalytics.Metro.dll</HintPath>
     </Reference>
@@ -728,11 +721,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Program Files\Syncfusion\Essential Studio\11.1.0.21\Assemblies for WinRT\Syncfusion.SfShared.WinRT.dll</HintPath>
     </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <SDKReference Include="MSAdvertisingXaml, Version=6.1">
-      <Name>Microsoft Advertising SDK for Windows 8 %28Xaml%29</Name>
-    </SDKReference>
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '11.0' ">

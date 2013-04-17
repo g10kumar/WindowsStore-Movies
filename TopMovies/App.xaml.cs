@@ -50,12 +50,27 @@ namespace TopMovies
             App.Current.RequestedTheme = ApplicationTheme.Dark;
             this.Suspending += OnSuspending;
 
+            UnhandledException += App_UnhandledException;
+            TaskScheduler.UnobservedTaskException += TaskScheduler_UnobservedTaskException;
+
          //   DebugSettings.EnableFrameRateCounter = true;
 
             //DebugSettings.IsOverdrawHeatMapEnabled = true;
 
           // DebugSettings.IsBindingTracingEnabled = true;
 
+        }
+
+        void TaskScheduler_UnobservedTaskException(object sender, UnobservedTaskExceptionEventArgs e)
+        {
+            e.SetObserved();
+            AnalyticsHelper.Track("TrackException", "TaskException");
+        }
+
+        void App_UnhandledException(object sender, UnhandledExceptionEventArgs e)
+        {
+            e.Handled = true;
+            AnalyticsHelper.Track("TrackException", "UnhandledException", e.Message);
         }
 
         /// <summary>
@@ -134,7 +149,7 @@ namespace TopMovies
             //AnalyticsTracker tracker;
             //tracker.
             AnalyticsHelper.Setup();
-           
+            AnalyticsHelper.Track("ApplicationLifecycle", "Start");
 
             Window.Current.Activate();
 
@@ -199,14 +214,12 @@ namespace TopMovies
         /// </summary>
         /// <param name="sender">The source of the suspend request.</param>
         /// <param name="e">Details about the suspend request.</param>
-        private async void OnSuspending(object sender, SuspendingEventArgs e)
+        private void OnSuspending(object sender, SuspendingEventArgs e)
         {
             var deferral = e.SuspendingOperation.GetDeferral();
             //TODO: Save application state and stop any background activity
             
-          //  AutoAnalytics.Client.Track(timeSpent);                                                                   // this is to measure the user time spent in the application.          
-
-            
+            AnalyticsHelper.Track("ApplicationLifecycle", "Stop");          
 
             deferral.Complete();
         }

@@ -9,7 +9,6 @@
     xmlns:Input="using:Syncfusion.UI.Xaml.Controls.Input"
     xmlns:UI="using:Microsoft.Advertising.WinRT.UI"
     x:Name="pageRoot"
-    xmlns:AdRotatorWin8="using:AdRotatorWin8"
     x:Class="TopMovies.Views.Movies"
     mc:Ignorable="d">
 
@@ -145,15 +144,7 @@
         <UI:AdControl x:Name="AddRight" ApplicationId="d25517cb-12d4-4699-8bdc-52040c712cab"  AdUnitId="10043104" HorizontalAlignment="Right" Height="250" Margin="0,100,30,0" Grid.Row="2" Grid.RowSpan="5" VerticalAlignment="Top" Grid.ColumnSpan="2" Grid.Column="1" Width="250" Visibility="Collapsed"/>-->
 
 
-        <AdRotatorWin8:AdRotatorControl
-        x:Name="AdRotatorControl"
-        AdHeight="60"
-        AdWidth="292"
-        VerticalAlignment="Center"
-        DefaultSettingsFileUri="defaultAdSettings.xml"
-        SettingsUrl="http://adrotator.apphb.com/defaultAdSettingsWindows8.xml" Grid.Column="1" Margin="397,41,397,99" Height="60" IsTest="True" Grid.Row="6" Grid.RowSpan="2"/>
-
-        <!--<Grid>
+          <!--<Grid>
             <ContentControl x:Name="SampleContent"
                                 HorizontalContentAlignment="Stretch"
                                 VerticalContentAlignment="Stretch"/>
