@@ -184,8 +184,11 @@ namespace QuotesOfWisdom
         /// <param name="args">Details about the activation request.</param>
         protected override void OnSearchActivated(Windows.ApplicationModel.Activation.SearchActivatedEventArgs args)
         {
+            sessionData.searchKeyWord = args.QueryText;
+
             if (_quotes == null)
             {
+
                 // Load the data before activating the search-results page
                 _quotes = new Quotes();
 
@@ -201,7 +204,7 @@ namespace QuotesOfWisdom
                         frame = new Frame();
                         Window.Current.Content = frame;
                     }
-
+                    
                     QuotesOfWisdom.SearchResultsPage.Activate(args.QueryText, args.PreviousExecutionState);
                     //Window.Current.Activate();
                 };
@@ -248,7 +251,9 @@ namespace QuotesOfWisdom
         public static List<Quotations> currentRandomQuotes { get; set; }
         public static List<Quotations> currentFavoriteQuotes { get; set; }
         public static List<Categories> currentCategoryQuotes { get; set; }
+        public static List<Categories> currentCategories { get; set; }
         public static List<Authors> currentAuthorQuotes { get; set; }
+        public static List<Authors> currentAuthors { get; set; }
         public static List<Authors> currentAuthorQuoteslong { get; set; }
         public static int categoryQuotesCount { get; set; }
         public static int authorQuotesCount { get; set; }
@@ -265,6 +270,9 @@ namespace QuotesOfWisdom
         public static string currentTitle { get; set; }
         public static bool isAllCat = false;
         public static bool isAllAut = false;
+        public static bool isSearchCat = false;
+        public static bool isSearchAut = false;
+        public static string searchKeyWord { get; set; }
 
         public static void resetValues()
         {
@@ -277,6 +285,8 @@ namespace QuotesOfWisdom
             sessionData.currentFavoriteQuotes = null;
             sessionData.currentServiceQuotes = null;
             sessionData.currentCategoryQuotes = null;
+            sessionData.currentAuthors = null;
+            sessionData.currentCategories = null;
             sessionData.currentAuthorQuotes = null;
             sessionData.currentAuthorQuoteslong = null;
             sessionData.currentQuoteIndex = 0;
@@ -298,6 +308,9 @@ namespace QuotesOfWisdom
             sessionData.firstTime = false;
             sessionData.isAllCat = false;
             sessionData.isAllAut = false;
+            sessionData.isSearchCat = false;
+            sessionData.isSearchAut = false;
+            sessionData.searchKeyWord = "";
         }
     }
     /// <summary>

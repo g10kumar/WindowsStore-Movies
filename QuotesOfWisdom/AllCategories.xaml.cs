@@ -60,7 +60,7 @@ namespace QuotesOfWisdom
         {
             List<Categories> listCategory = new List<Categories>();
 
-            if (sessionData.currentCategoryQuotes == null)
+            if (sessionData.currentCategories == null)
             {
                 Windows.Storage.StorageFolder storageFolder = await Windows.ApplicationModel.Package.Current.InstalledLocation.GetFolderAsync("Xml");
                 var sf = await storageFolder.GetFileAsync(@"Category.xml");
@@ -83,12 +83,13 @@ namespace QuotesOfWisdom
                     listCategory.Add(c);
                 }
 
-                sessionData.currentCategoryQuotes = listCategory;
-
+                //sessionData.currentCategoryQuotes = listCategory;
+                sessionData.currentCategories = listCategory;
             }
             else
             {
-                listCategory = sessionData.currentCategoryQuotes.ToList();
+                //listCategory = sessionData.currentCategoryQuotes.ToList();
+                listCategory = sessionData.currentCategories.ToList();
             }
             itemGridView.ItemsSource = listCategory;
             itemListView.ItemsSource = listCategory;

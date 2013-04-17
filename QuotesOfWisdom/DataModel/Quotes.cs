@@ -202,6 +202,18 @@ namespace QuotesOfWisdom.Data
             get { return this._autGroups; }
         }
 
+        private ObservableCollection<QuotesGroup> _searchCatGroups = new ObservableCollection<QuotesGroup>();
+        public ObservableCollection<QuotesGroup> SearchCatGroups
+        {
+            get { return this._searchCatGroups; }
+        }
+
+        private ObservableCollection<QuotesGroup> _searchAutGroups = new ObservableCollection<QuotesGroup>();
+        public ObservableCollection<QuotesGroup> SearchAutGroups
+        {
+            get { return this._searchAutGroups; }
+        }
+
         public static IEnumerable<QuotesGroup> GetGroups(string title)
         {
             if (!title.Equals("AllGroups")) throw new ArgumentException("Only 'AllGroups' is supported as a collection of groups");
@@ -221,6 +233,20 @@ namespace QuotesOfWisdom.Data
             if (!title.Equals("AuthorGroups")) throw new ArgumentException("Only 'AuthorGroups' is supported as a collection of groups");
 
             return _Quotes.AuthorGroups;
+        }
+
+        public static IEnumerable<QuotesGroup> GetSearchAutGroups(string title)
+        {
+            if (!title.Equals("SearchAutGroups")) throw new ArgumentException("Only 'SearchAutGroups' is supported as a collection of groups");
+
+            return _Quotes.SearchAutGroups;
+        }
+
+        public static IEnumerable<QuotesGroup> GetSearchCatGroups(string title)
+        {
+            if (!title.Equals("SearchCatGroups")) throw new ArgumentException("Only 'SearchCatGroups' is supported as a collection of groups");
+
+            return _Quotes.SearchCatGroups;
         }
 
         public static QuotesGroup GetGroup(string title)
@@ -255,6 +281,22 @@ namespace QuotesOfWisdom.Data
             return null;
         }
 
+        public static QuotesItem GetSearchCatItem(string uniqueId)
+        {
+            // Simple linear search is acceptable for small data sets
+            var matches = _Quotes.SearchCatGroups.SelectMany(group => group.Items).Where((item) => item.UniqueId.Equals(uniqueId));
+            if (matches.Count() == 1) return matches.First();
+            return null;
+        }
+
+        public static QuotesItem GetSearchAuthItem(string uniqueId)
+        {
+            // Simple linear search is acceptable for small data sets
+            var matches = _Quotes.SearchAutGroups.SelectMany(group => group.Items).Where((item) => item.UniqueId.Equals(uniqueId));
+            if (matches.Count() == 1) return matches.First();
+            return null;
+        }
+
         public Quotes()
         {
             //var group1 = new QuotesGroup("Category");
@@ -270,8 +312,13 @@ namespace QuotesOfWisdom.Data
 
             GetAuthors();
 
-        }
+            //if (sessionData.searchWord != null)
+            //{
+            getSearchCategtories(sessionData.searchKeyWord);
+            getSearchAuthors(sessionData.searchKeyWord);
+            //}
 
+        }
 
         public async void GetCategories()
         {
@@ -316,7 +363,8 @@ namespace QuotesOfWisdom.Data
                 listCategory.Add(c);
             }
 
-            sessionData.currentCategoryQuotes = listCategory;
+            //sessionData.currentCategoryQuotes = listCategory;
+            sessionData.currentCategories = listCategory;
             #endregion
 
             int cnt = 0;
@@ -393,7 +441,8 @@ namespace QuotesOfWisdom.Data
                 listAuthor.Add(a);
             }
 
-            sessionData.currentAuthorQuotes = listAuthor;
+            //sessionData.currentAuthorQuotes = listAuthor;
+            sessionData.currentAuthors = listAuthor;
 
             #endregion
 
@@ -469,6 +518,65 @@ namespace QuotesOfWisdom.Data
             }
 
             return list;
+        }
+
+        public void getSearchCategtories(string queryText)
+        {
+            using (SQLiteConnection db = new SQLiteConnection("thefile2.db", SQLiteOpenFlags.ReadOnly))
+            {
+                var query = (from q in db.Table<Categories>()
+                             where q.category.Contains(queryText) == true
+                             select new Categories
+                             {
+                                 category = q.category.Replace("&amp;", "&"),
+                                 ct = (int)q.ct
+                             });
+
+                var groupSearchCat = new QuotesGroup("Categories");
+
+                var scGroups = query.ToList();
+                int sccnt = 0;
+                foreach (Categories q in query)
+                {
+                    groupSearchCat.Items.Add(new QuotesItem(scGroups[sccnt].category, scGroups[sccnt].ct, scGroups[sccnt].category, "Category", "", "", "", groupSearchCat, null));
+                    sccnt++;
+                }
+
+                this.SearchCatGroups.Add(groupSearchCat);
+
+                if (QuotesLoaded != null)
+                    QuotesLoaded(this, null);
+            }
+        }
+
+        public void getSearchAuthors(string queryText)
+        {
+            using (SQLiteConnection db = new SQLiteConnection("thefile2.db", SQLiteOpenFlags.ReadOnly))
+            {
+                var query = (from q in db.Table<Authors>()
+                             where q.Author.Contains(queryText) == true
+                             select new Authors
+                             {
+                                 Author = q.Author.Replace("&amp;", "&"),
+                                 ct = (int)q.ct
+                             });
+
+                var saGroups = query.ToList();
+                int sacnt = 0;
+
+                var groupAut = new QuotesGroup("Authors");
+                //loop the author details and binds to authorlist
+                foreach (Authors a in query)
+                {
+                    groupAut.Items.Add(new QuotesItem(saGroups[sacnt].Author, saGroups[sacnt].ct, saGroups[sacnt].Author, "Author", "", "", "", groupAut, null));
+                    sacnt++;
+                }
+
+                this.SearchAutGroups.Add(groupAut);
+
+                if (QuotesLoaded != null)
+                    QuotesLoaded(this, null);
+            }
         }
 
         //public static void Shuffle<Quotations>(this IList<Quotations> list)

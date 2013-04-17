@@ -10,7 +10,7 @@ using Windows.Storage;
 using QuotesOfWisdom.Data;
 using SQLite;
 using Windows.ApplicationModel.DataTransfer;
-
+using System.Collections.ObjectModel;
 //using System.IO;
 //using Windows.Foundation.Collections;
 //using Windows.UI.Xaml.Controls.Primitives;
@@ -40,6 +40,7 @@ namespace QuotesOfWisdom
         string selectedAuthor = "";
         string selectedCat = "";
         public DataTransferManager datatransferManager;
+        Quotes quote = new Quotes();
         #endregion
 
         public SearchResultsPage()
@@ -62,7 +63,7 @@ namespace QuotesOfWisdom
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        async void DataRequested(DataTransferManager sender, DataRequestedEventArgs e)
+        void DataRequested(DataTransferManager sender, DataRequestedEventArgs e)
         {
             e.Request.Data.Properties.Title = "Quotes of Wisdom on Windows 8";
             e.Request.Data.Properties.Description = "Quotes of Wisdom ";
@@ -217,7 +218,7 @@ namespace QuotesOfWisdom
         /// <summary>
         /// Method for loading Authors
         /// </summary>
-        private async void LoadAuthors(string queryText)
+        private void LoadAuthors(string queryText)
         {
             using (SQLiteConnection db = new SQLiteConnection("thefile2.db", SQLiteOpenFlags.ReadOnly))
             {
@@ -234,6 +235,8 @@ namespace QuotesOfWisdom
                 {
                     listAuthor.Add(a);
                 }
+
+                //quote.getSearchAuthors(queryText);
             }
             //order by Quote Count
             listAuthor = listAuthor.OrderByDescending(s => s.ct).ToList();
@@ -259,13 +262,15 @@ namespace QuotesOfWisdom
 
                 foreach (Categories q in query)
                 {
-                    listCategory.Add(q);
+                    listCategory.Add(q);                    
                 }
+                
+                //quote.getSearchCategtories(queryText);
             }
 
             // binds the categorylist to sessionData
             sessionData.currentCategoryQuotes = listCategory;
-        }
+        }        
 
         /// <summary>
         /// Method for loading Quotes based on Keyword search
@@ -436,6 +441,8 @@ namespace QuotesOfWisdom
         {
             sessionData.isSearch = true;
 
+            sessionData.isSearchAut = true;
+
             // gets the selected author from the authors list box
             selectedAuthor = ((Authors)(e.ClickedItem)).Author;
 
@@ -496,6 +503,8 @@ namespace QuotesOfWisdom
                 selectedCat = ((Categories)(e.ClickedItem)).category;
 
                 sessionData.searchWord = selectedCat;
+
+                sessionData.isSearchCat = true;
 
                 //datatransferManager.DataRequested -= new TypedEventHandler<DataTransferManager, DataRequestedEventArgs>(this.DataRequested);
 

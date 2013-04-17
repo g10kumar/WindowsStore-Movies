@@ -19,7 +19,7 @@ using Windows.ApplicationModel.Store;
 using Windows.Storage.Streams;
 using System.Xml.Linq;
 using System.Xml;
-
+using System.Collections.ObjectModel;
 //using Windows.Foundation.Collections;
 //using Windows.UI.Xaml.Controls.Primitives;
 //using Windows.UI.Xaml.Data;
@@ -414,6 +414,15 @@ namespace QuotesOfWisdom
             if (sessionData.isSearch)
             {
                 navigationParameter = sessionData.searchWord;
+
+                //if (sessionData.isSearchCat)
+                //{
+                    
+                //}
+                //else if (sessionData.isSearchAut)
+                //{
+                //    //getSearchAuthors((String)navigationParameter);
+                //}
             }
 
             //var item = Quotes.GetItem((String)navigationParameter);
@@ -423,14 +432,25 @@ namespace QuotesOfWisdom
             if (sessionData.isAllCat)
             {
                 item = Quotes.GetCatItem((String)navigationParameter);
-
             }
             else if (sessionData.isAllAut)
             {
                 item = Quotes.GetAuthItem((String)navigationParameter);
             }
+            //else if (sessionData.isSearchCat)
+            //{
+                
+            //////    //var groupCat = new QuotesGroup("Categories");
+            //    item = Quotes.GetSearchCatItem((String)navigationParameter);
+            //////    //item = new QuotesItem(sessionData.currentCategoryQuotes[0].category, sessionData.currentCategoryQuotes[0].ct, sessionData.currentCategoryQuotes[0].category, "Category", "", "", "", groupCat, null);
+            //}
+            //else if (sessionData.isSearchAut)
+            //{
+            //    item = Quotes.GetSearchAuthItem((String)navigationParameter);
+            //}
             else
             {
+                //flipView.ItemsSource = sessionData.currentCategoryQuotes.ToList();
                 item = Quotes.GetItem((String)navigationParameter);
             }
 
@@ -461,6 +481,7 @@ namespace QuotesOfWisdom
             #endregion
         }
 
+        
         /// <summary>
         /// SelectionChange event of the FlipView control
         /// </summary>
@@ -471,15 +492,24 @@ namespace QuotesOfWisdom
             if (flipView.SelectedIndex == 0)
                 return;
 
-            
             var item = (QuotesItem)this.flipView.SelectedItem;
-            
+            //var item = new QuotesItem(sessionData.currentCategoryQuotes[flipView.SelectedIndex].category, 0, sessionData.currentCategoryQuotes[flipView.SelectedIndex].category, "Category", "", "", "", groupCat, null);
+
+            //if (item == null)
+            //{
+            //    if (sessionData.isSearchCat)
+            //    {
+            //        var groupCat = new QuotesGroup("Categories");
+            //        //item = Quotes.GetSearchCatItem((String)navigationParameter);
+            //        item = new QuotesItem(sessionData.currentCategoryQuotes[flipView.SelectedIndex].category, 0, sessionData.currentCategoryQuotes[flipView.SelectedIndex].category, "Category", "", "", "", groupCat, null);
+            //    }
+            //}
             if (sessionData.title != item.Title)
             {
-                    sessionData.title = item.Title;
-                    list.Clear();
-                    // reads the quotes data based on Author
-                    list = LoadQuotes(item.Title, item.Subtitle);
+                sessionData.title = item.Title;
+                list.Clear();
+                // reads the quotes data based on Author
+                list = LoadQuotes(item.Title, item.Subtitle);
             }
             
             item.Quotations = list;
@@ -585,6 +615,10 @@ namespace QuotesOfWisdom
         {
             sessionData.isAllCat = false;
             sessionData.isAllAut = false;
+
+            sessionData.isSearchCat = false;
+            sessionData.isSearchAut = false;
+
             flipView.SelectedIndex = 0;
             //sessionData.currentTitle = "";
             //this.flipView.SelectedItem = null;
