@@ -47,7 +47,7 @@ namespace TopMovies
         public App()
         {
             this.InitializeComponent();
-            App.Current.RequestedTheme = ApplicationTheme.Dark;
+            App.Current.RequestedTheme = ApplicationTheme.Light;
             this.Suspending += OnSuspending;
 
             UnhandledException += App_UnhandledException;

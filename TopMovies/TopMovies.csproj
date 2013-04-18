@@ -713,13 +713,11 @@
     <Reference Include="DT.GoogleAnalytics.Metro">
       <HintPath>packages\w8ga.2.4\lib\winrt45\DT.GoogleAnalytics.Metro.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.SfCarousel.WinRT, Version=11.104.0.21, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files\Syncfusion\Essential Studio\11.1.0.21\Assemblies for WinRT\Syncfusion.SfCarousel.WinRT.dll</HintPath>
+    <Reference Include="Syncfusion.SfCarousel.WinRT">
+      <HintPath>..\..\..\Program Files (x86)\Syncfusion\Essential Studio\11.1.0.21\Assemblies for WinRT\Syncfusion.SfCarousel.WinRT.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.SfShared.WinRT, Version=11.104.0.21, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files\Syncfusion\Essential Studio\11.1.0.21\Assemblies for WinRT\Syncfusion.SfShared.WinRT.dll</HintPath>
+    <Reference Include="Syncfusion.SfShared.WinRT">
+      <HintPath>..\..\..\Program Files (x86)\Syncfusion\Essential Studio\11.1.0.21\Assemblies for WinRT\Syncfusion.SfShared.WinRT.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup />

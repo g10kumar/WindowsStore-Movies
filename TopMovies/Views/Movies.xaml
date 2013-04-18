@@ -66,7 +66,7 @@
             <TextBlock x:Name="txtName" Style="{StaticResource SubheaderTextStyle}" VerticalAlignment="Center"/>
             <TextBlock x:Name="convertedName" Style="{StaticResource SubheaderTextStyle}" VerticalAlignment="Center"/>
         </StackPanel>
-        <StackPanel x:Name="mainStack" Orientation="Vertical" Grid.ColumnSpan="3" Grid.Row="2" Grid.RowSpan="5" VerticalAlignment="Top" Margin="70,10,70,0" Height="404" PointerEntered="Button_visible" PointerExited="Button_collapsed">
+        <StackPanel x:Name="mainStack" Orientation="Vertical" Grid.ColumnSpan="3" Background="White" Grid.Row="2" Grid.RowSpan="5" VerticalAlignment="Top" Margin="70,10,70,0" Height="475" PointerEntered="Button_visible" PointerExited="Button_collapsed">
 
             <!--<syncfusion:CoverFlow x:Name="CoverFlowControl" Height="400">
                 <syncfusion:CoverFlow.ItemTemplate>
@@ -87,7 +87,7 @@
                     </DataTemplate>
                 </syncfusion:SfCarousel.ItemTemplate>
             </syncfusion:SfCarousel>
-            <StackPanel x:Name="Button_stackpanel" Height="58" Margin="500,-127,500,0" RenderTransformOrigin="0.488,0.52" VerticalAlignment="Center" Visibility="Collapsed">
+            <StackPanel x:Name="Button_stackpanel" Height="58" HorizontalAlignment="Center" Margin="0,-10,0,0" RenderTransformOrigin="0.488,0.52" VerticalAlignment="Center" Visibility="Collapsed">
                 <Button ToolTipService.ToolTip="" x:Uid="Play_Button" x:Name="Play_Button" Margin="84,9,82,0" HorizontalAlignment="Center" Height="40"  Click="Auto_Play">
                     <Button.Template>
                         <ControlTemplate>
