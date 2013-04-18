@@ -42,6 +42,8 @@ namespace Marketing2
                 // Create a Frame to act as the navigation context and navigate to the first page
                 rootFrame = new Frame();
                 Marketing2.Common.SuspensionManager.RegisterFrame(rootFrame, "AppFrame");
+                FeedDataSource feedDataSource = (FeedDataSource)App.Current.Resources["feedDataSource"];
+                //DateTime lastRefreshedTime = (DateTime)App.Current.Resources["lastRefreshedTime"];
 
                 //var connectionProfile = Windows.Networking.Connectivity.NetworkInformation.GetInternetConnectionProfile();
                 //if (connectionProfile != null)
@@ -96,23 +98,23 @@ namespace Marketing2
 
         void OnCommandsRequested(SettingsPane sender, SettingsPaneCommandsRequestedEventArgs args)
         {
-            //// Add a About command
-            //var about = new SettingsCommand("about", "About Us", (handler) =>
-            //{
-            //    var settings = new SettingsFlyout();
-            //    settings.ShowFlyout(new AboutUs());
-            //});
+            // Add a About command
+            var about = new SettingsCommand("about", "About Us", (handler) =>
+            {
+                var settings = new SettingsFlyout();
+                settings.ShowFlyout(new AboutUs());
+            });
 
-            //args.Request.ApplicationCommands.Add(about);
+            args.Request.ApplicationCommands.Add(about);
 
-            //// Add a Privacy Policy command
-            //var privacypolicy = new SettingsCommand("privacypolicy", "Privacy Policy", (handler) =>
-            //{
-            //    var settings = new SettingsFlyout();
-            //    settings.ShowFlyout(new PrivacyControl());
-            //});
+            // Add a Privacy Policy command
+            var privacypolicy = new SettingsCommand("privacypolicy", "Privacy Policy", (handler) =>
+            {
+                var settings = new SettingsFlyout();
+                settings.ShowFlyout(new PrivacyControl());
+            });
 
-            //args.Request.ApplicationCommands.Add(privacypolicy);
+            args.Request.ApplicationCommands.Add(privacypolicy);
 
             // Add a Other Apps command
             //var otherapps = new SettingsCommand("otherapps", "Other Apps by DaksaTech", (handler) =>
