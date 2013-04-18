@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<IconProject Version="2.0" Name="Media-Pause">
+  <Icon Name="Media-Pause" HasCharacterMap="false" IsDirty="false" GroupName="Application" ExportCommand="MetroGraphicsPackage.IconCommand" Data="M27.270001,0L44.310001,0 44.310001,48.643002 27.270001,48.643002z M0,0L17.040001,0 17.040001,48.643002 0,48.643002z">
+    <Settings MainWidth="48" MainHeight="48" FlipX="1" FlipY="1" CustomSize="48" IconShape="HollowCircle" BackgroundBrush="#FFFF0000" ContentWidth="26" ContentHeight="26" Angle="0" SizeIndex="4" Padding="11" MaximumPadding="15" IconBrush="#FFFF0000" FontFamily="Webdings" Character="&gt;" FlipCommand="MetroGraphicsPackage.IconCommand" IsBackgroundVisible="true" />
+  </Icon>
+</IconProject>

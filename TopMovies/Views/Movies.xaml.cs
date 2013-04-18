@@ -262,6 +262,7 @@ namespace TopMovies.Views
             else
                 pageTitle.Text = "Movies";
 
+            GetIntertCondition();
             LoadMovieData();
 
             bottonBar.IsOpen = true;
@@ -747,7 +748,7 @@ namespace TopMovies.Views
                         while (true)
                         {
                             
-                            await Task.Delay(1300);
+                            await Task.Delay(3200);
                             if (pos + 1 == countofMovies)
                             {
                                 await Dispatcher.RunAsync(CoreDispatcherPriority.High, delegate { Play_Button.Visibility = Windows.UI.Xaml.Visibility.Visible; Pause_Button.Visibility = Windows.UI.Xaml.Visibility.Collapsed; Backward_Button.Visibility = Windows.UI.Xaml.Visibility.Visible; Forward_Button.Visibility = Windows.UI.Xaml.Visibility.Visible; });

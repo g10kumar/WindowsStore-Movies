@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<IconProject Version="2.0" Name="Play">
+  <Icon Name="Play" HasCharacterMap="false" IsDirty="false" GroupName="Mobile Application" ExportCommand="MetroGraphicsPackage.IconCommand" Data="F1M1188.2,1715.23L1169.93,1728.57 1151.66,1741.9 1151.66,1715.23 1151.66,1688.57 1169.93,1701.9 1188.2,1715.23z">
+    <Settings MainWidth="48" MainHeight="48" FlipX="1" FlipY="1" CustomSize="48" IconShape="HollowCircle" BackgroundBrush="#FFFF0000" ContentWidth="28" ContentHeight="28" Angle="0" SizeIndex="4" Padding="10" MaximumPadding="15" IconBrush="#FFFF0000" FontFamily="Webdings" Character="&gt;" FlipCommand="MetroGraphicsPackage.IconCommand" IsBackgroundVisible="true" />
+  </Icon>
+</IconProject>
