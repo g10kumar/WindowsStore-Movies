@@ -119,8 +119,11 @@ namespace Marketing2
                 GetFeedAsync("http://feeds.feedburner.com/ducttapemarketing/VWSb");
             Task<FeedData> feed22 =
                 GetFeedAsync("http://feeds.feedburner.com/ReveNewsOnlineRevenueBlogs");
+            //Task<FeedData> feed23 =
+            //    GetFeedAsync("http://feeds.feedburner.com/seomoz");
             Task<FeedData> feed23 =
-                GetFeedAsync("http://feeds.feedburner.com/seomoz");
+                GetFeedAsync("http://feeds.adweek.com/adweek/adfreak");
+        
             Task<FeedData> feed24 =
                 GetFeedAsync("http://feeds2.feedburner.com/ConversationAgent");
 
@@ -304,10 +307,10 @@ namespace Marketing2
         public static FeedItem GetItem(string uniqueId)
         {
             // Simple linear search is acceptable for small data sets
-            var _feedDataSource = App.Current.Resources["feedDataSource"] as FeedDataSource;
-            var _feeds = _feedDataSource.Feeds;
+            var _feedDataSource = sessionData.currentFeeds;// App.Current.Resources["feedDataSource"] as FeedDataSource;
+            //var _feeds = _feedDataSource.Feeds;
 
-            var matches = _feedDataSource.Feeds.SelectMany(group => group.Items).Where((item) => item.Title.Equals(uniqueId));
+            var matches = _feedDataSource.SelectMany(group => group.Items).Where((item) => item.Title.Equals(uniqueId));
             if (matches.Count() == 1) return matches.First();
             return null;
         }
