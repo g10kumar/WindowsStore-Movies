@@ -13,6 +13,8 @@
             listView.itemTemplate = element.querySelector(".itemtemplate");
             listView.oniteminvoked = this._itemInvoked.bind(this);
 
+            document.getElementById("btnRecent").addEventListener("click", recentSloka, false);
+
             this._initializeLayout(listView, Windows.UI.ViewManagement.ApplicationView.value);
             listView.element.focus();
         },
@@ -57,4 +59,8 @@
             WinJS.Navigation.navigate("/pages/sloka/sloka.html", { groupKey: groupKey });
         }
     });
+
+    function recentSloka() {
+        WinJS.Navigation.navigate("/pages/recent/recent.html");
+    }
 })();

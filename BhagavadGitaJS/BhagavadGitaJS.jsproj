@@ -85,11 +85,15 @@
     <Content Include="js\default.js" />
     <Content Include="js\navigator.js" />
     <None Include="Package.StoreAssociation.xml" />
+    <Content Include="js\SQLite3.js" />
     <Content Include="pages\about\about.html" />
     <Content Include="pages\items\items.css" />
     <Content Include="pages\items\items.html" />
     <Content Include="pages\items\items.js" />
     <Content Include="pages\privacypolicy\privacypolicy.html" />
+    <Content Include="pages\recent\recent.css" />
+    <Content Include="pages\recent\recent.html" />
+    <Content Include="pages\recent\recent.js" />
     <Content Include="pages\sloka\sloka.css" />
     <Content Include="pages\sloka\sloka.html" />
     <Content Include="pages\sloka\sloka.js" />
