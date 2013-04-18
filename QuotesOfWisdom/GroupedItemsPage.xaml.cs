@@ -300,7 +300,7 @@ namespace QuotesOfWisdom
         /// <param name="e"></param>
         private void hubtile_Loaded(object sender, RoutedEventArgs e)
         {
-            hubtile.Interval = TimeSpan.FromSeconds(Double.Parse("3"));
+            hubtile.Interval = TimeSpan.FromSeconds(Double.Parse("8"));
             collection.Add(slidetransition);
             collection.Add(rotatetransition);
             collection.Add(fadetransition);
@@ -314,7 +314,7 @@ namespace QuotesOfWisdom
         /// <param name="e"></param>
         private void favhubtile_Loaded(object sender, RoutedEventArgs e)
         {
-            favhubtile.Interval = TimeSpan.FromSeconds(Double.Parse("3"));
+            favhubtile.Interval = TimeSpan.FromSeconds(Double.Parse("6"));
             collection.Add(slidetransition);
             collection.Add(rotatetransition);
             collection.Add(fadetransition);
@@ -479,6 +479,26 @@ namespace QuotesOfWisdom
         void btnFavoriteQuotes_Click(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(FavoriteQuotes));
+        }
+
+        /// <summary>
+        /// Click event of all Cats app bar button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void btnAllCats_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(AllCategories));
+        }
+
+        /// <summary>
+        /// Click event of all Auts app bar button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void btnAllAuthors_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(AllAuthors));
         }
     }
 }
