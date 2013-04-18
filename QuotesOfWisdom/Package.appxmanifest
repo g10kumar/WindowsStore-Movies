@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
-  <Identity Name="DaksaTech.QuotesofWisdom" Publisher="CN=42750936-DE0C-415B-9312-C587E65FD9EC" Version="1.0.0.30" />
+  <Identity Name="DaksaTech.QuotesofWisdom" Publisher="CN=42750936-DE0C-415B-9312-C587E65FD9EC" Version="1.0.0.32" />
   <Properties>
     <DisplayName>Quotes of Wisdom</DisplayName>
     <PublisherDisplayName>DaksaTech</PublisherDisplayName>

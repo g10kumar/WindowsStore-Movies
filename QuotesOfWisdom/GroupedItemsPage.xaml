@@ -12,7 +12,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:syncfusion="using:Syncfusion.UI.Xaml.Controls.Notification" 
-    xmlns:Input="using:Syncfusion.UI.Xaml.Controls.Input"
+    xmlns:Input="using:Syncfusion.UI.Xaml.Controls.Notification"
     mc:Ignorable="d" LayoutUpdated="LayoutRoot_LayoutUpdated">
 
     <Page.Resources>
@@ -66,7 +66,7 @@
             </Grid.ColumnDefinitions>
 
             <TextBlock Grid.Row="0" x:Name="txtOthers" Grid.Column="0" Style="{StaticResource SubheaderTextStyle}" Margin="100,-10,0,0">Others</TextBlock>
-            <syncfusion:HubTile Width="250" Grid.Column="0" Height="250" Margin="100,-5,0,0" Interval="8"
+            <syncfusion:SfHubTile Width="250" Grid.Column="0" Height="250" Margin="100,-5,0,0" Interval="8"
                                 Header="Random Quotes" 
                                 Foreground="White" 
                                 BorderBrush="DarkGray"
@@ -76,19 +76,19 @@
                                 VerticalAlignment="Top" Loaded="hubtile_Loaded"
                                 x:Name="hubtile" Tapped="hubtile_Tapped"                                
                                 IsFrozen="False">
-                <syncfusion:HubTile.Title>
+                <syncfusion:SfHubTile.Title>
                     <TextBlock Text="{Binding ElementName=title, Path=Text}" FontSize="18" TextWrapping="Wrap" x:Name="title"/>
-                </syncfusion:HubTile.Title>
-                <syncfusion:HubTile.SecondaryContent>
+                </syncfusion:SfHubTile.Title>
+                <syncfusion:SfHubTile.SecondaryContent>
                     <TextBlock Text="{Binding ElementName=secondarytitle, Path=Text}" FontSize="18" TextWrapping="Wrap" x:Name="secondarytitle" Margin="5,5,5,5" />
                     <!--<Image Source="/Assets/Logo.png" />-->
-                </syncfusion:HubTile.SecondaryContent>
-            </syncfusion:HubTile>
+                </syncfusion:SfHubTile.SecondaryContent>
+            </syncfusion:SfHubTile>
             <!--<Input:TextBoxExt Text="" x:Name="title" Visibility="Collapsed"/>
             <Input:TextBoxExt Text="" x:Name="secondarytitle" Visibility="Collapsed"/>-->
 
 
-            <syncfusion:HubTile Width="250" Grid.Column="0" Height="250" Margin="100,255,0,0"
+            <syncfusion:SfHubTile Width="250" Grid.Column="0" Height="250" Margin="100,255,0,0"
                                 Header="Favorite Quotes" Interval="8"
                                 Foreground="White" 
                                 BorderBrush="DarkGray"
@@ -98,13 +98,13 @@
                                 VerticalAlignment="Top" Loaded="favhubtile_Loaded"
                                 x:Name="favhubtile" Tapped="favhubtile_Tapped"
                                 IsFrozen="False">
-                <syncfusion:HubTile.Title>
+                <syncfusion:SfHubTile.Title>
                     <TextBlock Text="{Binding ElementName=favoritetitle, Path=Text}" FontSize="18" TextWrapping="Wrap" x:Name="favoritetitle"/>
-                </syncfusion:HubTile.Title>
-                <syncfusion:HubTile.SecondaryContent>
+                </syncfusion:SfHubTile.Title>
+                <syncfusion:SfHubTile.SecondaryContent>
                     <TextBlock Text="{Binding ElementName=favoriteseconarytitle, Path=Text}" FontSize="18" TextWrapping="Wrap" x:Name="favoriteseconarytitle" Margin="5,5,5,5" />
-                </syncfusion:HubTile.SecondaryContent>
-            </syncfusion:HubTile>
+                </syncfusion:SfHubTile.SecondaryContent>
+            </syncfusion:SfHubTile>
             <!--<Input:TextBoxExt Text="" x:Name="favoritetitle" Visibility="Collapsed"/>
             <Input:TextBoxExt Text="" x:Name="favoriteseconarytitle" Visibility="Collapsed"/>-->
             <!--<Button x:Name="btnRandomQuotes" Click="btnRandomQuotes_Click" Content="Random Quotes" Width="250" Visibility="Collapsed" Margin="10,-20"></Button>
@@ -242,9 +242,9 @@
         </Grid>
     </Grid>    
     <Page.BottomAppBar>
-        <AppBar Padding="10,0,10,0" IsSticky="true">
+        <AppBar Padding="10,0,10,0" IsSticky="true" IsOpen="True" Opacity="0.5">
             <Grid>
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                     <Button IsEnabled="True" x:Name="btnAllCats" Style="{StaticResource AllCatsAppBarButtonStyle}" Click="btnAllCats_Click"></Button>
                     <Button IsEnabled="True" x:Name="btnAllAuthors" Style="{StaticResource AllAuthorsAppBarButtonStyle}" Click="btnAllAuthors_Click"></Button>
                 </StackPanel>

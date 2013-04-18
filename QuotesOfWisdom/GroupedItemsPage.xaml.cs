@@ -300,7 +300,7 @@ namespace QuotesOfWisdom
         /// <param name="e"></param>
         private void hubtile_Loaded(object sender, RoutedEventArgs e)
         {
-            hubtile.Interval = TimeSpan.FromSeconds(Double.Parse("3"));
+            hubtile.Interval = TimeSpan.FromSeconds(Double.Parse("8"));
             collection.Add(slidetransition);
             collection.Add(rotatetransition);
             collection.Add(fadetransition);
@@ -314,7 +314,7 @@ namespace QuotesOfWisdom
         /// <param name="e"></param>
         private void favhubtile_Loaded(object sender, RoutedEventArgs e)
         {
-            favhubtile.Interval = TimeSpan.FromSeconds(Double.Parse("3"));
+            favhubtile.Interval = TimeSpan.FromSeconds(Double.Parse("6"));
             collection.Add(slidetransition);
             collection.Add(rotatetransition);
             collection.Add(fadetransition);

@@ -1520,7 +1520,7 @@
     <Style x:Key="AllAuthorsAppBarButtonStyle" TargetType="Button" BasedOn="{StaticResource AppBarButtonStyle}">
         <Setter Property="AutomationProperties.AutomationId" Value="FavoriteAppBarButton"/>
         <Setter Property="AutomationProperties.Name" Value="More Authors"/>
-        <Setter Property="Content" Value="&#xE13D;"/>
+        <Setter Property="Content" Value="&#xE125;"/>
     </Style>
     
 </ResourceDictionary>
