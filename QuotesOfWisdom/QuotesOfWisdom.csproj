@@ -416,12 +416,17 @@
     <SDKReference Include="MSAdvertisingXaml, Version=6.1">
       <Name>Microsoft Advertising SDK for Windows 8 %28Xaml%29</Name>
     </SDKReference>
-    <SDKReference Include="SQLite.WinRT, Version=3.7.16.1">
-      <Name>SQLite for Windows Runtime %28SQLite.WinRT, Version=3.7.16.1%29</Name>
+    <SDKReference Include="SQLite.WinRT, Version=3.7.14.1">
+      <Name>SQLite for Windows Runtime</Name>
     </SDKReference>
-    <SDKReference Include="Syncfusion controls for WinRT XAML, Version=10.4.0.72">
-      <Name>Syncfusion Controls for WinRT XAML</Name>
-    </SDKReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Syncfusion.SfHubTile.WinRT">
+      <HintPath>..\..\..\Program Files (x86)\Syncfusion\Essential Studio\11.1.0.21\Assemblies for WinRT\Syncfusion.SfHubTile.WinRT.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfShared.WinRT">
+      <HintPath>..\..\..\Program Files (x86)\Syncfusion\Essential Studio\11.1.0.21\Assemblies for WinRT\Syncfusion.SfShared.WinRT.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '11.0' ">
     <VisualStudioVersion>11.0</VisualStudioVersion>

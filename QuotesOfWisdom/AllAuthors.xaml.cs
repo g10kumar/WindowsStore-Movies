@@ -64,6 +64,7 @@ namespace QuotesOfWisdom
                 XElement xe = XElement.Load(inStream);
 
                 var query = (from q in xe.Elements("auth")
+                             where (int)q.Attribute("count") > 5
                              orderby q.Value
                              select new Authors
                              {
@@ -84,7 +85,18 @@ namespace QuotesOfWisdom
             else
             {
                 //listAuthor = sessionData.currentAuthorQuotes.ToList();
-                listAuthor = sessionData.currentAuthors.ToList();
+                //foreach (var v in from a in sessionData.currentAuthors.ToList()
+                //                  where a.ct > 2
+                //                  select new Authors
+                //                  {
+                //                      Author = a.Author,
+                //                      ct = a.ct
+                //                  })
+                //{
+                //    listAuthor.Add(v);
+                //}
+
+                listAuthor = sessionData.currentAuthors.ToList();//.Where(l => l.ct > 10).ToList();
             }
             itemGridView.ItemsSource = listAuthor;
             itemListView.ItemsSource = listAuthor;

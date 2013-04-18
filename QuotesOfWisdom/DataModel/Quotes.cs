@@ -425,7 +425,7 @@ namespace QuotesOfWisdom.Data
             var groupAut = new QuotesGroup("Authors");
 
             var autGroups = (from author in xe.Elements("auth")
-                             where (int)author.Attribute("count") < 5
+                             where (int)author.Attribute("count") > 5
                              orderby author.Value
                              select new Authors
                              {

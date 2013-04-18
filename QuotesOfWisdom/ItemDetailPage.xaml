@@ -193,7 +193,7 @@
         </VisualStateManager.VisualStateGroups>
     </Grid>
     <Page.BottomAppBar>
-        <AppBar Padding="10,0,10,0">
+        <AppBar Padding="10,0,10,0" Opacity="0.7">
             <Grid>
                 <!--<StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
                     <Button IsEnabled="True" x:Name="btnLike"  Style="{StaticResource LikeAppBarButtonStyle}"   Click="btnLike_Click" ></Button>
