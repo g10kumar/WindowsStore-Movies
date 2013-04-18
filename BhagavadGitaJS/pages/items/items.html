@@ -12,7 +12,7 @@
     <link href="/css/default.css" rel="stylesheet" />
     <link href="/pages/items/items.css" rel="stylesheet" />
     <script src="/js/data.js"></script>
-    <script src="/pages/items/items.js"></script>    
+    <script src="/pages/items/items.js"></script>
 </head>
 <body>
     <!-- This template is used to display each item in the ListView declared below. -->
@@ -37,12 +37,12 @@
         <section aria-label="Main content" role="main">
             <div class="itemslist win-selectionstylefilled" aria-label="List of groups" data-win-control="WinJS.UI.ListView" data-win-options="{ selectionMode: 'none'}"></div>
         </section>
-         <div id="footer" align="center" style="width:100%;position:absolute;bottom:10px;text-align:center;">
-        <iframe height="60" width="468" src="/ad.html" seamless="seamless" style="overflow-y: hidden;">
-        </iframe>
-             
-
+        <div id="footer" align="center" style="width: 100%; position: absolute; bottom: 10px; text-align: center;">
+            <iframe height="60" width="468" src="/ad.html" seamless="seamless" style="overflow-y: hidden;"></iframe>
+        </div>
     </div>
-    </div>   
+    <div id="appbar" data-win-control="WinJS.UI.AppBar">
+        <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'btnRecent', label:'Recent', icon:'recent'}"></button>
+    </div>
 </body>
 </html>

@@ -1,0 +1,63 @@
+﻿.recentpage .content {
+    -ms-grid-row: 2;
+    display: block;
+    height: 100%;
+    overflow-x: auto;
+    position: relative;
+    width: 100%;
+    z-index: 0;
+    font-size: 22px;
+}
+
+    .recentpage .content article {
+        /* Define a multi-column, horizontally scrolling article by default. */
+        column-fill: auto;
+        column-gap: 80px;
+        column-width: 480px;
+        height: calc(100% - 50px);
+        margin-left: 120px;
+        margin-top: 5px;
+        width: 480px;
+    }
+
+        .recentpage .content article .item-content p {
+            margin-bottom: 20px;
+            margin-right: 20px;
+            vertical-align: baseline;            
+        }
+
+@media screen and (-ms-view-state: snapped) {
+    .recentpage .content {
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+        .recentpage .content article {
+            /* Define a single column, vertically scrolling article in snapped mode. */
+            -ms-grid-columns: 300px 1fr;
+            -ms-grid-row: 2;
+            -ms-grid-rows: auto 60px;
+            display: -ms-grid;
+            height: 100%;
+            margin-left: 20px;
+            width: 300px;
+        }
+
+            
+
+            .recentpage .content article .item-content {
+                padding-bottom: 60px;
+            }
+}
+
+@media screen and (-ms-view-state: fullscreen-portrait) {
+    .recentpage .content article {
+        margin-left: 100px;
+    }
+}
+
+.win-ad {
+    margin-right: 20px;
+    margin-top:20px;
+    -ms-grid-row-align:end;
+}

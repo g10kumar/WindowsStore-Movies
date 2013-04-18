@@ -10,7 +10,7 @@
     var dtm = Windows.ApplicationModel.DataTransfer.DataTransferManager;
     var item;
     var chapterTitle;
-
+    var appdata = Windows.Storage.ApplicationData;
     ui.Pages.define("/pages/sloka/sloka.html", {
 
         _items: null,
@@ -36,7 +36,8 @@
             flipView.addEventListener("pageselected", handlePageSelected);
             dtm.getForCurrentView().addEventListener("datarequested", this.onDataRequested);
 
-            document.getElementById("appbar").addEventListener("click", textCopy, false);
+            document.getElementById("btnCopy").addEventListener("click", textCopy, false);
+            document.getElementById("btnCommentary").addEventListener("click", slokaMeaning, false);
 
             if (appView.value === appViewState.snapped) {
                 document.getElementById("divMessage").style.visibility = 'visible';
@@ -76,7 +77,7 @@
             }
         }
 
-    });
+    });    
 
     function textCopy() {
 
@@ -132,6 +133,19 @@
         }
     }
    
+    function slokaMeaning()
+    {
+        //var dbPath = Windows.Storage.ApplicationData.current.localFolder.path + '\\gita.sqlite';
+        //SQLite3JS.openAsync(dbPath)
+        //  .then(function (db) {
+        //       return db.eachAsync('SELECT * FROM Item', function (row) {
+        //           console.log('Get a ' + row.name + ' for $' + row.price);
+        //       });
+        //   })
+        //  .then(function (db) {
+        //      db.close();
+        //  });
+    }
 
     function displayError(errorString) {
         var msg = new Windows.UI.Popups.MessageDialog(errorString);
@@ -142,6 +156,7 @@
     function handlePageSelected(ev) {
         //item = ev.target.innerText.trim().replace(new RegExp("\r\n", "g"), "<p>").replace(new RegExp("Sloka", "g"), "");
         item = "Chapter: " + chapterTitle + "; " + ev.target.innerText.trim().replace(new RegExp("\r\n", "g"), "<p>");
+        appdata.current.roamingSettings.values["recentSloka"] = item;
     }
 })();
 
