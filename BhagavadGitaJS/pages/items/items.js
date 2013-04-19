@@ -14,6 +14,7 @@
             listView.oniteminvoked = this._itemInvoked.bind(this);
 
             document.getElementById("btnRecent").addEventListener("click", recentSloka, false);
+            document.getElementById("btnBookmark").addEventListener("click", showBookmark, false);
 
             this._initializeLayout(listView, Windows.UI.ViewManagement.ApplicationView.value);
             listView.element.focus();
@@ -56,11 +57,17 @@
         _itemInvoked: function (args) {
             var groupKey = Data.groups.getAt(args.detail.itemIndex).key;
             //WinJS.Navigation.navigate("/pages/split/split.html", { groupKey: groupKey });
+            //WinJS.Navigation.navigate("/pages/sloka/sloka.html", { groupKey: groupKey, selectedIndex: 9 });
             WinJS.Navigation.navigate("/pages/sloka/sloka.html", { groupKey: groupKey });
         }
     });
 
     function recentSloka() {
         WinJS.Navigation.navigate("/pages/recent/recent.html");
+    }
+
+    function showBookmark() {
+
+        WinJS.Navigation.navigate("/pages/bookmarks/bookmarks.html");
     }
 })();
