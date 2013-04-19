@@ -87,6 +87,9 @@
     <None Include="Package.StoreAssociation.xml" />
     <Content Include="js\SQLite3.js" />
     <Content Include="pages\about\about.html" />
+    <Content Include="pages\bookmarks\bookmarks.css" />
+    <Content Include="pages\bookmarks\bookmarks.html" />
+    <Content Include="pages\bookmarks\bookmarks.js" />
     <Content Include="pages\items\items.css" />
     <Content Include="pages\items\items.html" />
     <Content Include="pages\items\items.js" />

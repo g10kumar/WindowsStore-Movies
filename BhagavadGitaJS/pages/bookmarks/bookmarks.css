@@ -1,0 +1,134 @@
+﻿.bookmarkspage section[role=main] {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+}
+
+/* This selector is used to prevent ui-dark/light.css from overwriting changes
+   to .win-surface. */
+.bookmarkspage .bookmarkslist .win-horizontal.win-viewport .win-surface {
+    margin-bottom: 60px;
+    margin-left: 115px;
+    margin-right: 115px;
+    margin-top: 155px;
+}
+
+.bookmarkspage .bookmarkslist {
+    height: 100%;
+    position: relative;
+    width: 100%;
+    z-index: 0;
+}
+
+    .bookmarkspage .bookmarkslist .item {
+        -ms-grid-columns: 1fr;
+        -ms-grid-rows: 1fr 70px;
+        display: -ms-grid;
+        height: 70px;
+        width: 250px;
+    }
+
+        /*.bookmarkspage .bookmarkslist .item .item-image {
+            -ms-grid-row-span: 2;
+        }*/
+
+        .bookmarkspage .bookmarkslist .item .item-overlay {
+            -ms-grid-row: 2;
+            -ms-grid-rows: 1fr 21px;
+            display: -ms-grid;
+            padding: 6px 15px 2px 15px;
+        }
+
+            .bookmarkspage .bookmarkslist .item .item-overlay .item-title {
+                -ms-grid-row: 1;
+                overflow: hidden;
+                width: 220px;
+            }
+
+            .bookmarkspage .bookmarkslist .item .item-overlay .item-subtitle {
+                -ms-grid-row: 2;
+                width: 220px;
+            }
+
+@media screen and (-ms-view-state: fullscreen-landscape), screen and (-ms-view-state: fullscreen-portrait), screen and (-ms-view-state: filled) {
+    .bookmarkspage .bookmarkslist .item .item-overlay {
+        background: rgba(0,0,0,0.55);
+    }
+
+        .bookmarkspage .bookmarkslist .item .item-overlay .item-title {
+            color: rgba(255,255,255,0.87);
+        }
+
+        .bookmarkspage .bookmarkslist .item .item-overlay .item-subtitle {
+            color: rgba(255,255,255,0.6);
+        }
+}
+
+@media screen and (-ms-view-state: fullscreen-landscape) and (-ms-high-contrast), screen and (-ms-view-state: fullscreen-portrait) and (-ms-high-contrast), screen and (-ms-view-state: filled) and (-ms-high-contrast) {
+    .bookmarkspage .bookmarkslist .item .item-overlay {
+        color: WindowText;
+    }
+}
+
+@media screen and (-ms-view-state: snapped) {
+    .bookmarkspage section[role=main] {
+        -ms-grid-row: 2;
+        -ms-grid-row-span: 1;
+    }
+
+    .bookmarkspage .bookmarkslist {
+        margin-top: 0;
+    }
+
+        .bookmarkspage .bookmarkslist .win-vertical.win-viewport .win-surface {
+            margin-bottom: 30px;
+        }
+
+        .bookmarkspage .bookmarkslist .win-container {
+            margin-bottom: 15px;
+            margin-left: 13px;
+            margin-right: 35px;
+            padding: 7px;
+        }
+
+        .bookmarkspage .bookmarkslist .item {
+            -ms-grid-columns: 60px 1fr;
+            -ms-grid-rows: 1fr;
+            display: -ms-grid;
+            height: 60px;
+            width: 272px;
+        }
+
+            /*.bookmarkspage .bookmarkslist .item .item-image, .bookmarkspage .bookmarkslist .item:hover .item-image {
+                -ms-grid-column: 1;
+                -ms-grid-row-span: 1;
+                height: 60px;
+                width: 60px;
+            }*/
+
+            .bookmarkspage .bookmarkslist .item .item-overlay {
+                -ms-grid-column: 2;
+                -ms-grid-row: 1;
+                -ms-grid-row-align: stretch;
+                background: transparent;
+                display: inline-block;
+                margin-left: 10px;
+                padding: 0;
+            }
+
+                .bookmarkspage .bookmarkslist .item .item-overlay .item-title {
+                    margin-top: 4px;
+                    max-height: 40px;
+                    width: 202px;
+                }
+
+                .bookmarkspage .bookmarkslist .item .item-overlay .item-subtitle {
+                    opacity: 0.6;
+                    width: 202px;
+                }
+}
+
+@media screen and (-ms-view-state: fullscreen-portrait) {
+    .bookmarkspage .bookmarkslist .win-horizontal.win-viewport .win-surface {
+        margin-left: 100px;
+    }
+}

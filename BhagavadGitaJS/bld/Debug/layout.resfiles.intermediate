@@ -30,6 +30,9 @@ js\default.js
 js\navigator.js
 js\SQLite3.js
 pages\about\about.html
+pages\bookmarks\bookmarks.css
+pages\bookmarks\bookmarks.html
+pages\bookmarks\bookmarks.js
 pages\items\items.css
 pages\items\items.html
 pages\items\items.js
