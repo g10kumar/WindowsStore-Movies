@@ -489,8 +489,8 @@ namespace QuotesOfWisdom
         /// <param name="e"></param>
         private void flipView_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
         {
-            if (flipView.SelectedIndex == 0)
-                return;
+            //if (flipView.SelectedIndex == 0)
+            //    return;
 
             var item = (QuotesItem)this.flipView.SelectedItem;
             //var item = new QuotesItem(sessionData.currentCategoryQuotes[flipView.SelectedIndex].category, 0, sessionData.currentCategoryQuotes[flipView.SelectedIndex].category, "Category", "", "", "", groupCat, null);
