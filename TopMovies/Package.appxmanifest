@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
-  <Identity Name="DaksaTech.TheBestMoviesEver" Publisher="CN=42750936-DE0C-415B-9312-C587E65FD9EC" Version="1.0.0.15" />
+  <Identity Name="DaksaTech.TheBestMoviesEver" Publisher="CN=42750936-DE0C-415B-9312-C587E65FD9EC" Version="1.0.0.19" />
   <Properties>
     <DisplayName>ms-resource:AppName</DisplayName>
     <PublisherDisplayName>DaksaTech</PublisherDisplayName>
@@ -16,7 +16,7 @@
   <Applications>
     <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="TopMovies.App">
       <VisualElements DisplayName="ms-resource:AppName" Logo="Assets\Logo.png" SmallLogo="Assets\SmallLogo.png" Description="ms-resource:AppName" ForegroundText="light" BackgroundColor="#FF0000">
-        <DefaultTile ShowName="logoOnly" ShortName="Best Movies" WideLogo="Assets\WideLogo.png" />
+        <DefaultTile ShowName="allLogos" ShortName="ms-resource:AppName" WideLogo="Assets\WideLogo.png" />
         <SplashScreen Image="Assets\SplashScreen.png" BackgroundColor="#FF0000" />
       </VisualElements>
     </Application>
