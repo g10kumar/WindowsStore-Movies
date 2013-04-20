@@ -19,7 +19,7 @@
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <Button IsEnabled="True" x:Uid="btnBuyDVD" Name="btnBuyDVD"  Style="{StaticResource ShopAppBarButtonStyle}" Click="btnBuyDVD_Click_1"  />
                     <Button IsEnabled="True" x:Uid="btnMovieDetails" Name="btnMovieDetails"  Style="{StaticResource MoreAppBarButtonStyle}" Click="btnMovieDetails_Click_1" />
-                    <Button IsEnabled="True" x:Uid="TraslateDetails" x:Name="TraslateDetails" Click="Translate" Style="{StaticResource SettingsAppBarButtonStyle}" Visibility="Collapsed"/>
+                    <Button IsEnabled="True" x:Uid="TraslateDetails" x:Name="TraslateDetails" Click="Translate" Style="{StaticResource TranslateAppBarButtonStyle}" Visibility="Collapsed"/>
                     <!--<Button IsEnabled="True" x:Name="btnTextSize"  Style="{StaticResource EditAppBarButtonStyle}" Click="btnTextSize_Click" ></Button>-->
                 </StackPanel>
             </Grid>

@@ -10,7 +10,7 @@
     <AppxBuildConfigurationSelection>neutral</AppxBuildConfigurationSelection>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
-    <UseSimulator>True</UseSimulator>
+    <UseSimulator>False</UseSimulator>
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
     <DebugEngines>
     </DebugEngines>
