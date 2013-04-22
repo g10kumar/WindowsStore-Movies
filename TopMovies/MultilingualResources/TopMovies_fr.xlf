@@ -112,7 +112,7 @@
         </trans-unit>
         <trans-unit id="Resources\AppName" translate="yes" xml:space="preserve">
           <source>The Best Movies Ever Made!</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Les meilleurs films jamais faits !</target>
+          <target state="translated">Les Meilleurs Films Jamais Faits!</target>
         </trans-unit>
         <trans-unit id="Resources\NoInternet" translate="yes" xml:space="preserve">
           <source>No active Internet connection avaliable . Please check the connection %%amp; try again.</source>
