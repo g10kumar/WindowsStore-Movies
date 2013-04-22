@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<IconProject Version="2.0" Name="Media-Fast-Forward">
+  <Icon Name="Media-Fast-Forward" HasCharacterMap="false" IsDirty="false" GroupName="Application" ExportCommand="MetroGraphicsPackage.IconCommand" Data="M51.123999,0L63.451998,0 63.451998,53.695001 51.123999,53.695001 51.123999,31.916129 41.651199,37.180778 23.059999,47.514001 23.059999,34.696918 18.590899,37.180778 0,47.514001 0,26.847556 0,6.1810005 18.590899,16.514234 23.059999,18.998118 23.059999,6.1810005 41.651199,16.514234 51.123999,21.778933z">
+    <Settings MainWidth="48" MainHeight="48" FlipX="1" FlipY="1" CustomSize="48" IconShape="HollowCircle" BackgroundBrush="#FFFF0000" ContentWidth="26" ContentHeight="26" Angle="0" SizeIndex="4" Padding="11" MaximumPadding="15" IconBrush="#FFFF0000" FontFamily="Webdings" Character="&gt;" FlipCommand="MetroGraphicsPackage.IconCommand" IsBackgroundVisible="true" />
+  </Icon>
+</IconProject>

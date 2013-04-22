@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="aboutus" xml:space="preserve">
+    <value>About Us</value>
+  </data>
+  <data name="AboutUs1.Text" xml:space="preserve">
+    <value>This app presents the best movies ever made in the world in a visual format. Browse through the top movies made in Hollywood or internationally. Movies are categorized by Hollywood, Bollywood or International. Bollywood is the term used for the Hindi-language film industry based in Mumbai, India. The 'International' films category includes movies made all over the world except Hollywood and Bollywood.</value>
+  </data>
+  <data name="AboutUs2.Text" xml:space="preserve">
+    <value>The movie posters are copyright of Amazon.com or its content suppliers. We make no copyright claim to the movie poster images.</value>
+  </data>
+  <data name="AboutUs3.Text" xml:space="preserve">
+    <value>If you have a support issue or would like to suggest a feature, please email us at support@daksatech.com</value>
+  </data>
+  <data name="AboutUs4.Text" xml:space="preserve">
+    <value>Share a movie: From the movies page, bring up the 'Share' charm. Select the application to use for sharing.</value>
+  </data>
+  <data name="AboutUs5.Text" xml:space="preserve">
+    <value>See details of movie: Click on the 'Movie Details' button in app bar OR double tap/click on the movie poster.</value>
+  </data>
+  <data name="AboutUs6.Text" xml:space="preserve">
+    <value>Buy movie: Click on the 'Buy Movie' button in app bar.</value>
+  </data>
+  <data name="btnBuyDVD.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
+    <value>Buy Movie</value>
+  </data>
+  <data name="btnMovieDetails.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
+    <value>Movie Details</value>
+  </data>
+  <data name="How_To.Text" xml:space="preserve">
+    <value>How To:</value>
+  </data>
+  <data name="pageTitle.Text" xml:space="preserve">
+    <value>The Best Movies Ever Made!</value>
+  </data>
+  <data name="privacypolicy" xml:space="preserve">
+    <value>Privacy Policy</value>
+  </data>
+  <data name="PrivacyPolicy1.Text" xml:space="preserve">
+    <value>This Privacy Policy covers your use of this application. The app does not collect, store, or share any personal information, or anything related to your device. We do not collect any statistics, trends, neither do we track user movements. The site does allow you to visit external websites - specifically Amazon.com and Wikipedia.com and their affiliated sites. These websites may collect information related to your IP address, device, etc. Please check the privacy policy of these websites for details on information collected by them.</value>
+  </data>
+  <data name="PrivacyPolicy2.Text" xml:space="preserve">
+    <value>The app allows you to share the articles using the Share charm. The application you use to share the articles are not related to this app. Please check the privacy policy of those apps for how they use your data. The app also collects usage data. This information is stored on Google Analytics servers. No personally identifiable information is sent or stored.</value>
+  </data>
+  <data name="PrivacyPolicy3.Text" xml:space="preserve">
+    <value>The country setting is only used to direct you to a site in your country when you click the 'Buy Movie' button.</value>
+  </data>
+  <data name="region" xml:space="preserve">
+    <value>Country Setting</value>
+  </data>
+  <data name="Asian_Movies.Text" xml:space="preserve">
+    <value>Top Asian Movies</value>
+  </data>
+  <data name="Bollywood_Movies.Text" xml:space="preserve">
+    <value>Top Bollywood Movies</value>
+  </data>
+  <data name="Hollywood_Movies.Text" xml:space="preserve">
+    <value>Top Hollywood Movies</value>
+  </data>
+  <data name="International_Movies.Text" xml:space="preserve">
+    <value>Top International Movies</value>
+  </data>
+  <data name="AsianTitle" xml:space="preserve">
+    <value>Top Asian Movies</value>
+  </data>
+  <data name="BollywoodTitle" xml:space="preserve">
+    <value>Top Bollywood Movies</value>
+  </data>
+  <data name="HollywoodTitle" xml:space="preserve">
+    <value>Top Hollywood Movies</value>
+  </data>
+  <data name="InternationalTitle" xml:space="preserve">
+    <value>Top International Movies</value>
+  </data>
+  <data name="regiontext.Text" xml:space="preserve">
+    <value>Your country information is only used to direct you to the appropriate site when you click the "Buy Movie" button.</value>
+  </data>
+  <data name="AppName" xml:space="preserve">
+    <value>The Best Movies Ever Made!</value>
+  </data>
+  <data name="NoInternet" xml:space="preserve">
+    <value>No active Internet connection avaliable . Please check the connection &amp; try again.</value>
+  </data>
+  <data name="TraslateDetails.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
+    <value>Convert Movie Title</value>
+  </data>
+  <data name="Backward_Button.[using:Windows.UI.Xaml.Controls]ToolTipService.ToolTip" xml:space="preserve">
+    <value>Quick Backward</value>
+  </data>
+  <data name="Forward_Button.[using:Windows.UI.Xaml.Controls]ToolTipService.ToolTip" xml:space="preserve">
+    <value>Quick Forward</value>
+  </data>
+  <data name="Play_Button.[using:Windows.UI.Xaml.Controls]ToolTipService.ToolTip" xml:space="preserve">
+    <value>Auto Play Titles</value>
+  </data>
+  <data name="btnBuyDVD.[using:Windows.UI.Xaml.Controls]ToolTipService.ToolTip" xml:space="preserve">
+    <value>Buy Movie Online</value>
+  </data>
+  <data name="btnMovieDetails.[using:Windows.UI.Xaml.Controls]ToolTipService.ToolTip" xml:space="preserve">
+    <value>Get Movie Details</value>
+  </data>
+  <data name="TraslateDetails.[using:Windows.UI.Xaml.Controls]ToolTipService.ToolTip" xml:space="preserve">
+    <value>Translate Movie Title To Native Language</value>
+  </data>
+</root>
