@@ -45,7 +45,13 @@
             <h3>Slokas visible only in full mode.</h3>
         </div>
     </div>
-    <div id="scenario1HtmlOutput">
+    <div id="scenario1HtmlOutput" data-win-control="WinJS.UI.Flyout" style="width:500px;height:500px;margin-left:70px;margin-top:600px;margin-bottom:200px;margin-right:200px;" aria-label="{Sloka flyout}">
+            <form onsubmit="return false;">
+                <div id="outPut"></div>                    
+                <p>
+                </p>
+                <button id="submitCloseButton">Close</button>
+            </form>
         </div>
     <div id="appbar" data-win-control="WinJS.UI.AppBar">
         <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'btnCopy', label:'Copy', icon:'copy'}"></button>

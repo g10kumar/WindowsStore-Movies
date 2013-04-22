@@ -56,6 +56,7 @@
             document.getElementById("btnCopy").addEventListener("click", textCopy, false);
             document.getElementById("btnCommentary").addEventListener("click", slokaMeaning, false);
             document.getElementById("btnBookmark").addEventListener("click", addBookmark, false);
+            document.getElementById("submitCloseButton").addEventListener("click", onDismiss, false);
 
             //window.indexedDB.deleteDatabase("BookmarksDB", 1);
             createDB();
@@ -308,16 +309,39 @@
     }
 
     function slokaMeaning() {
+        //var dbPath = Windows.Storage.ApplicationData.current.localFolder.path + '\\gita.sqlite';
+        //SQLite3JS.openAsync(dbPath)
+        //  .then(function (db) {
+        //       return db.eachAsync('SELECT * FROM Item', function (row) {
+        //           console.log('Get a ' + row.name + ' for $' + row.price);
+        //       });
+        //   })
+        //  .then(function (db) {
+        //      db.close();
+        //  });
+
+        var purport;
         var dbPath = Windows.Storage.ApplicationData.current.localFolder.path + '\\gita.sqlite';
-        SQLite3JS.openAsync(dbPath)
+        slokaMeaning = false;
+        //var sValue = sqlRow();
+        var loginButton = document.getElementById("btnCommentary");
+        //document.getElementById("outPut").innerHTML = SQLite3JS.openAsync(dbPath)
+        //  .then(function (db) {
+        //      return db.eachAsync('SELECT purport FROM gitaPurport WHERE chapter = ' + chapterKey.split("#")[1].trim() + ' AND sloka = ' + bookmarkitem.split(";")[1].split(" ")[1].trim(), { purport: purport });
+        //  }).done(function () {
+        //      return purport;
+        //  });
+        document.getElementById("outPut").innerHTML = SQLite3JS.openAsync(dbPath)
           .then(function (db) {
-               return db.eachAsync('SELECT * FROM Item', function (row) {
-                   console.log('Get a ' + row.name + ' for $' + row.price);
-               });
-           })
-          .then(function (db) {
-              db.close();
+              return db.eachAsync('SELECT purport FROM gitaPurport WHERE chapter = ' + chapterKey.split("#")[1].trim() + ' AND sloka = ' + bookmarkitem.split(";")[1].split(" ")[1].trim(), { purport: purport });
+          }).done(function () {
+              return purport;
           });
+        document.getElementById("scenario1HtmlOutput").winControl.show(loginButton);
+    }
+
+    function onDismiss() {
+        document.getElementById("scenario1HtmlOutput").winControl.hide();
     }
 
     function displayError(errorString) {
