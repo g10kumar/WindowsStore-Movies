@@ -57,6 +57,7 @@
     </AppxManifest>
     <Content Include="ad.html" />
     <Content Include="css\default.css" />
+    <Content Include="gita.sqlite" />
     <Content Include="images\bg1.jpg" />
     <Content Include="images\ch1.jpg" />
     <Content Include="images\ch10.jpg" />
@@ -109,6 +110,9 @@
   </ItemGroup>
   <ItemGroup>
     <SDKReference Include="Microsoft.WinJS.1.0, Version=1.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:\Users\Veeru\Downloads\SQLite3-WinRT-master\SQLite3-WinRT-master\SQLite3Component\SQLite3Component.vcxproj" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\$(WMSJSProjectDirectory)\Microsoft.VisualStudio.$(WMSJSProject).targets" />
   <!-- To modify your build process, add your task inside one of the targets below then uncomment
