@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
+  <file datatype="xml" source-language="en-US" target-language="ru-RU" original="TopMovies_Multilingual.prilog.xml" tool-id="MultilingualAppToolkit" product-name="TopMovies" product-version="1.0.0.0" build-num="0001">
+    <header>
+      <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="1.2.2017.0" tool-company="Microsoft" />
+    </header>
+    <body>
+      <group id="Resources">
+        <trans-unit id="Resources\aboutus" translate="yes" xml:space="preserve">
+          <source>About Us</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">О нас</target>
+        </trans-unit>
+        <trans-unit id="Resources\AboutUs1\Text" translate="yes" xml:space="preserve">
+          <source>This app presents the best movies ever made in the world in a visual format. Browse through the top movies made in Hollywood or internationally. Movies are categorized by Hollywood, Bollywood or International. Bollywood is the term used for the Hindi-language film industry based in Mumbai, India. The 'International' films category includes movies made all over the world except Hollywood and Bollywood.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Это приложение представляет лучших фильмов когда-либо сделал в мире в визуальном формате. Просмотрите Топ фильмы, сделанные в Голливуде или международном уровне. Фильмы разбиты на категории по Голливуд, Болливуд или международные. Болливуд это термин, используемый в языке хинди киноиндустрии, базирующаяся в Мумбаи, Индия. Категория фильмов «International» включает в себя фильмы, сделанные по всему миру за исключением Голливуд и Болливуд.</target>
+        </trans-unit>
+        <trans-unit id="Resources\AboutUs2\Text" translate="yes" xml:space="preserve">
+          <source>The movie posters are copyright of Amazon.com or its content suppliers. We make no copyright claim to the movie poster images.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Постеры фильма являются собственностью Amazon.com или поставщиков контента. Мы не авторского права требовать изображений плакат фильма.</target>
+        </trans-unit>
+        <trans-unit id="Resources\AboutUs3\Text" translate="yes" xml:space="preserve">
+          <source>If you have a support issue or would like to suggest a feature, please email us at support@daksatech.com</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Если у вас есть проблема поддержки или хотели бы предложить функцию, пожалуйста, напишите нам на support@daksatech.com</target>
+        </trans-unit>
+        <trans-unit id="Resources\AboutUs4\Text" translate="yes" xml:space="preserve">
+          <source>Share a movie: From the movies page, bring up the 'Share' charm. Select the application to use for sharing.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Доля фильма: фильмы на странице воспитывать «Доля» очарование. Выберите приложение, чтобы использовать для совместного использования.</target>
+        </trans-unit>
+        <trans-unit id="Resources\AboutUs5\Text" translate="yes" xml:space="preserve">
+          <source>See details of movie: Click on the 'Movie Details' button in app bar OR double tap/click on the movie poster.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Подробности фильма: нажмите на кнопку «Информации о фильме» в app бар или двойной кран/Нажмите на постер фильма.</target>
+        </trans-unit>
+        <trans-unit id="Resources\AboutUs6\Text" translate="yes" xml:space="preserve">
+          <source>Buy movie: Click on the 'Buy Movie' button in app bar.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Купить фильм: нажмите на кнопку «Купить фильм» в баре app.</target>
+        </trans-unit>
+        <trans-unit id="Resources\btnBuyDVD\[using:Windows.UI.Xaml.Automation]AutomationProperties\Name" translate="yes" xml:space="preserve">
+          <source>Buy Movie</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Купить фильм</target>
+        </trans-unit>
+        <trans-unit id="Resources\btnMovieDetails\[using:Windows.UI.Xaml.Automation]AutomationProperties\Name" translate="yes" xml:space="preserve">
+          <source>Movie Details</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Детали фильма</target>
+        </trans-unit>
+        <trans-unit id="Resources\How_To\Text" translate="yes" xml:space="preserve">
+          <source>How To:</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Инструкции:</target>
+        </trans-unit>
+        <trans-unit id="Resources\pageTitle\Text" translate="yes" xml:space="preserve">
+          <source>The Best Movies Ever Made!</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Лучших фильмов когда-либо сделал!</target>
+        </trans-unit>
+        <trans-unit id="Resources\privacypolicy" translate="yes" xml:space="preserve">
+          <source>Privacy Policy</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Политика конфиденциальности</target>
+        </trans-unit>
+        <trans-unit id="Resources\PrivacyPolicy1\Text" translate="yes" xml:space="preserve">
+          <source>This Privacy Policy covers your use of this application. The app does not collect, store, or share any personal information, or anything related to your device. We do not collect any statistics, trends, neither do we track user movements. The site does allow you to visit external websites - specifically Amazon.com and Wikipedia.com and their affiliated sites. These websites may collect information related to your IP address, device, etc. Please check the privacy policy of these websites for details on information collected by them.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Эта политика конфиденциальности охватывает использование этого приложения. App не собирать, хранить или поделиться личной информацией, или, что связано с устройством. Мы не собираем никаких статистических данных, тенденции, ни мы отслеживать движения пользователя. Сайт позволяет вам посетить внешние веб-сайты - специально Amazon.com и Wikipedia.com и их аффилированных сайтов. Эти веб-сайты могут собирать информацию, относящиеся к ваш IP-адрес устройства, и т.д. Пожалуйста, проверьте политики конфиденциальности этих веб-сайтов для подробной информации о собранной ими информации.</target>
+        </trans-unit>
+        <trans-unit id="Resources\PrivacyPolicy2\Text" translate="yes" xml:space="preserve">
+          <source>The app allows you to share the articles using the Share charm. The application you use to share the articles are not related to this app. Please check the privacy policy of those apps for how they use your data. The app also collects usage data. This information is stored on Google Analytics servers. No personally identifiable information is sent or stored.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">App позволяет вам поделиться статьи, используя долю очарование. Приложение, которое вы используете для обмена статьями не связаны с этим app. Пожалуйста, проверьте политики конфиденциальности тех apps для как они используют ваши данные. App также собирает данные об использовании. Эта информация хранится на серверах Google Analytics. Не личная информация отправляется или храниться.</target>
+        </trans-unit>
+        <trans-unit id="Resources\PrivacyPolicy3\Text" translate="yes" xml:space="preserve">
+          <source>The country setting is only used to direct you to a site in your country when you click the 'Buy Movie' button.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Настройки для страны используется только направляют вас на сайт в вашей стране, при нажатии на кнопку «Купить фильм».</target>
+        </trans-unit>
+        <trans-unit id="Resources\region" translate="yes" xml:space="preserve">
+          <source>Country Setting</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Настройки для страны</target>
+        </trans-unit>
+        <trans-unit id="Resources\Asian_Movies\Text" translate="yes" xml:space="preserve">
+          <source>Top Asian Movies</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Лучшие азиатские 
+          фильмы</target>
+        </trans-unit>
+        <trans-unit id="Resources\Bollywood_Movies\Text" translate="yes" xml:space="preserve">
+          <source>Top Bollywood Movies</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Топ Болливуд
+          фильмы</target>
+        </trans-unit>
+        <trans-unit id="Resources\Hollywood_Movies\Text" translate="yes" xml:space="preserve">
+          <source>Top Hollywood Movies</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Лучшие голливудские
+          фильмы</target>
+        </trans-unit>
+        <trans-unit id="Resources\International_Movies\Text" translate="yes" xml:space="preserve">
+          <source>Top International Movies</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Лучшие международные
+          фильмы</target>
+        </trans-unit>
+        <trans-unit id="Resources\AsianTitle" translate="yes" xml:space="preserve">
+          <source>Top Asian Movies</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Лучшие азиатские фильмы</target>
+        </trans-unit>
+        <trans-unit id="Resources\BollywoodTitle" translate="yes" xml:space="preserve">
+          <source>Top Bollywood Movies</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Топ Болливуд фильмы</target>
+        </trans-unit>
+        <trans-unit id="Resources\HollywoodTitle" translate="yes" xml:space="preserve">
+          <source>Top Hollywood Movies</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Лучшие голливудские фильмы</target>
+        </trans-unit>
+        <trans-unit id="Resources\InternationalTitle" translate="yes" xml:space="preserve">
+          <source>Top International Movies</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Лучшие международные фильмы</target>
+        </trans-unit>
+        <trans-unit id="Resources\regiontext\Text" translate="yes" xml:space="preserve">
+          <source>Your country information is only used to direct you to the appropriate site when you click the "Buy Movie" button.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Ваша страна информация используется только направляют вас на соответствующий сайт, когда вы нажимаете кнопку «Купить фильм».</target>
+        </trans-unit>
+        <trans-unit id="Resources\AppName" translate="yes" xml:space="preserve">
+          <source>The Best Movies Ever Made!</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Лучших фильмов когда-либо сделал!</target>
+        </trans-unit>
+        <trans-unit id="Resources\NoInternet" translate="yes" xml:space="preserve">
+          <source>No active Internet connection avaliable . Please check the connection %%amp; try again.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Нет активных Интернет подключение доступно. Проверьте подключение %%amp;попробуйте еще раз.</target>
+        </trans-unit>
+        <trans-unit id="Resources\TraslateDetails\[using:Windows.UI.Xaml.Automation]AutomationProperties\Name" translate="yes" xml:space="preserve">
+          <source>Convert Movie Title</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Преобразовать название фильма</target>
+        </trans-unit>
+        <trans-unit id="Resources\Backward_Button\[using:Windows.UI.Xaml.Controls]ToolTipService\ToolTip" translate="yes" xml:space="preserve">
+          <source>Quick Backward</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Быстрый обратной</target>
+        </trans-unit>
+        <trans-unit id="Resources\Forward_Button\[using:Windows.UI.Xaml.Controls]ToolTipService\ToolTip" translate="yes" xml:space="preserve">
+          <source>Quick Forward</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Быстро вперед</target>
+        </trans-unit>
+        <trans-unit id="Resources\Play_Button\[using:Windows.UI.Xaml.Controls]ToolTipService\ToolTip" translate="yes" xml:space="preserve">
+          <source>Auto Play Titles</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Auto Play титулы</target>
+        </trans-unit>
+        <trans-unit id="Resources\btnBuyDVD\[using:Windows.UI.Xaml.Controls]ToolTipService\ToolTip" translate="yes" xml:space="preserve">
+          <source>Buy Movie Online</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Купить фильм онлайн</target>
+        </trans-unit>
+        <trans-unit id="Resources\btnMovieDetails\[using:Windows.UI.Xaml.Controls]ToolTipService\ToolTip" translate="yes" xml:space="preserve">
+          <source>Get Movie Details</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Получить информации о фильме</target>
+        </trans-unit>
+        <trans-unit id="Resources\TraslateDetails\[using:Windows.UI.Xaml.Controls]ToolTipService\ToolTip" translate="yes" xml:space="preserve">
+          <source>Translate Movie Title To Native Language</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Перевести название фильма на родной язык</target>
+        </trans-unit>
+      </group>
+    </body>
+  </file>
+</xliff>

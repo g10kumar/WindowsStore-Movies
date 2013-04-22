@@ -17,11 +17,12 @@ namespace Marketing2
         List<FeedData> lstFeedData = new List<FeedData>();
         //List<FeedData> lstfeedDataSource = new List<FeedData>();
         bool feedRefreshed = false;
+        DateTime dateLastRefreshed;
         bool performReload = false;
         public ItemsPage()
         {
             this.InitializeComponent();
-            ApplicationData.Current.RoamingSettings.Values["dateLastRefreshed"] = null;
+            //ApplicationData.Current.RoamingSettings.Values["dateLastRefreshed"] = null;
         }
 
         /// <summary>
@@ -36,35 +37,46 @@ namespace Marketing2
         protected async override void LoadState(Object navigationParameter, Dictionary<String, Object> pageState)
         {
             //FeedData feedData = new FeedData();
-            
+            if (ApplicationData.Current.LocalSettings.Values["dateLastRefreshed"] != null)
+            {
+                dateLastRefreshed = DateTime.Parse(ApplicationData.Current.LocalSettings.Values["dateLastRefreshed"].ToString());
+            }
 
             stackProgressRing.Visibility = Windows.UI.Xaml.Visibility.Visible;
             Layout.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+            //FeedDataSource feedDataSource = (FeedDataSource)App.Current.Resources["feedDataSource"];
 
-            DateTime lastRefreshedTime = DateTime.Parse(ApplicationData.Current.RoamingSettings.Values["dateLastRefreshed"].ToString());
 
-            if (sessionData.currentFeeds == null || lastRefreshedTime == null || 
-                    (lastRefreshedTime != null && DateTime.Compare(DateTime.Now, lastRefreshedTime) > 5))
+            if (sessionData.currentFeeds == null || dateLastRefreshed == null)
             {
                 try
                 {
                     lstFeedData = await LocalStorage.RestoreAsync<FeedData>();
                 }
                 catch { }
-            
+
                 if (lstFeedData == null)
                 {
                     var connectionProfile = Windows.Networking.Connectivity.NetworkInformation.GetInternetConnectionProfile();
                     if (connectionProfile != null)
                     {
+
                         FeedDataSource feedDataSource = new FeedDataSource();
-                        await feedDataSource.GetFeedsAsync();
+                        if (feedDataSource != null)
+                        {
+                            if (feedDataSource.Feeds.Count == 0)
+                            {
+                                await feedDataSource.GetFeedsAsync();
+                            }
+                        }
+                        //await feedDataSource.GetFeedsAsync();
                         lstFeedData = feedDataSource.Feeds.ToList();
-                        feedRefreshed = true;
+                        //feedRefreshed = true;
+
                         if (lstFeedData != null)
                         {
                             await LocalStorage.SaveAsync<FeedData>(lstFeedData);
-                            ApplicationData.Current.RoamingSettings.Values["dateLastRefreshed"] = DateTime.Now;
+                            ApplicationData.Current.LocalSettings.Values["dateLastRefreshed"] = DateTime.Now.ToString();
                         }
                     }
                     else
@@ -80,14 +92,31 @@ namespace Marketing2
                 if (lstFeedData != null)
                 {
                     sessionData.currentFeeds = lstFeedData.ToList();
+
                     this.DefaultViewModel["Items"] = lstFeedData;
                     stackProgressRing.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
                     Layout.Visibility = Windows.UI.Xaml.Visibility.Visible;
                 }
 
-                if (!feedRefreshed)
+                if (dateLastRefreshed != null && DateTime.Compare(DateTime.Now, dateLastRefreshed.AddMinutes(60)) > 0)
                 {
                     await Task.Run(() => refreshFeeds());
+                    dateLastRefreshed = DateTime.Now;
+                    ApplicationData.Current.LocalSettings.Values["dateLastRefreshed"] = dateLastRefreshed.ToString();
+
+                }
+            }
+            else
+            {
+                if (sessionData.currentFeeds != null)
+                {
+                    if (sessionData.currentFeeds.Count != 0)
+                    {
+                        lstFeedData = sessionData.currentFeeds.ToList();
+                        this.DefaultViewModel["Items"] = lstFeedData;
+                        stackProgressRing.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+                        Layout.Visibility = Windows.UI.Xaml.Visibility.Visible;
+                    }
                 }
             }
 

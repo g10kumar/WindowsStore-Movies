@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<IconProject Version="2.0" Name="Media Fast Backward">
+  <Icon Name="Media Fast Backward" HasCharacterMap="false" IsDirty="false" GroupName="Mobile Application" ExportCommand="MetroGraphicsPackage.IconCommand" Data="F1M1914.87,1166.52L1914.87,1185.06 1923.04,1180.35 1937.85,1171.8 1937.85,1182.85 1942.18,1180.35 1956.99,1171.8 1956.99,1205.99 1942.18,1197.44 1937.85,1194.94 1937.85,1205.99 1923.04,1197.44 1914.87,1192.73 1914.87,1211.27 1903.62,1211.27 1903.62,1166.52 1914.87,1166.52z">
+    <Settings MainWidth="48" MainHeight="48" FlipX="1" FlipY="1" CustomSize="48" IconShape="HollowCircle" BackgroundBrush="#FFFF0000" ContentWidth="28" ContentHeight="28" Angle="0" SizeIndex="4" Padding="10" MaximumPadding="15" IconBrush="#FFFF0000" FontFamily="Webdings" Character="&gt;" FlipCommand="MetroGraphicsPackage.IconCommand" IsBackgroundVisible="true" />
+  </Icon>
+</IconProject>

@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
+  <file datatype="xml" source-language="en-US" target-language="es-MX" original="TopMovies_Multilingual.prilog.xml" tool-id="MultilingualAppToolkit" product-name="TopMovies" product-version="1.0.0.0" build-num="0001">
+    <header>
+      <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="1.2.2017.0" tool-company="Microsoft" />
+    </header>
+    <body>
+      <group id="Resources">
+        <trans-unit id="Resources\aboutus" translate="yes" xml:space="preserve">
+          <source>About Us</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Sobre nosotros</target>
+        </trans-unit>
+        <trans-unit id="Resources\AboutUs1\Text" translate="yes" xml:space="preserve">
+          <source>This app presents the best movies ever made in the world in a visual format. Browse through the top movies made in Hollywood or internationally. Movies are categorized by Hollywood, Bollywood or International. Bollywood is the term used for the Hindi-language film industry based in Mumbai, India. The 'International' films category includes movies made all over the world except Hollywood and Bollywood.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Esta aplicación presenta las mejores películas que jamás se ha hecho en el mundo en un formato visual. Navegar a través de las películas realizadas en Hollywood o internacionalmente. Películas han son clasificados por Hollywood, Bollywood o internacional. Bollywood es el término usado para la industria del cine de lengua Hindi con sede en Mumbai, India. La categoría de películas de 'Internacional' incluye películas hechas en todo el mundo excepto Hollywood y Bollywood.</target>
+        </trans-unit>
+        <trans-unit id="Resources\AboutUs2\Text" translate="yes" xml:space="preserve">
+          <source>The movie posters are copyright of Amazon.com or its content suppliers. We make no copyright claim to the movie poster images.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Los carteles de la película son propiedad de Amazon.com o sus proveedores de contenido. No hacemos ningún reclamo de derechos de autor para las imágenes de cartel de la película.</target>
+        </trans-unit>
+        <trans-unit id="Resources\AboutUs3\Text" translate="yes" xml:space="preserve">
+          <source>If you have a support issue or would like to suggest a feature, please email us at support@daksatech.com</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Si usted tiene un problema de apoyo o gustaría sugerir una característica, por favor escríbanos a support@daksatech.com</target>
+        </trans-unit>
+        <trans-unit id="Resources\AboutUs4\Text" translate="yes" xml:space="preserve">
+          <source>Share a movie: From the movies page, bring up the 'Share' charm. Select the application to use for sharing.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Compartir una película: desde la página de películas, aparezca el encanto de 'Compartir'. Seleccione la aplicación que utilice para compartir.</target>
+        </trans-unit>
+        <trans-unit id="Resources\AboutUs5\Text" translate="yes" xml:space="preserve">
+          <source>See details of movie: Click on the 'Movie Details' button in app bar OR double tap/click on the movie poster.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Ver detalles de la película: haga clic en el botón 'Detalles de la película' en aplicación bar OR doble tap/click en el afiche de la película.</target>
+        </trans-unit>
+        <trans-unit id="Resources\AboutUs6\Text" translate="yes" xml:space="preserve">
+          <source>Buy movie: Click on the 'Buy Movie' button in app bar.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Comprar película: haga clic en el botón "Comprar película" en la barra de la aplicación.</target>
+        </trans-unit>
+        <trans-unit id="Resources\btnBuyDVD\[using:Windows.UI.Xaml.Automation]AutomationProperties\Name" translate="yes" xml:space="preserve">
+          <source>Buy Movie</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Comprar película</target>
+        </trans-unit>
+        <trans-unit id="Resources\btnMovieDetails\[using:Windows.UI.Xaml.Automation]AutomationProperties\Name" translate="yes" xml:space="preserve">
+          <source>Movie Details</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Detalles de la película</target>
+        </trans-unit>
+        <trans-unit id="Resources\How_To\Text" translate="yes" xml:space="preserve">
+          <source>How To:</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Cómo:</target>
+        </trans-unit>
+        <trans-unit id="Resources\pageTitle\Text" translate="yes" xml:space="preserve">
+          <source>The Best Movies Ever Made!</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Las mejores películas que jamás se ha hecho!</target>
+        </trans-unit>
+        <trans-unit id="Resources\privacypolicy" translate="yes" xml:space="preserve">
+          <source>Privacy Policy</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Política de privacidad</target>
+        </trans-unit>
+        <trans-unit id="Resources\PrivacyPolicy1\Text" translate="yes" xml:space="preserve">
+          <source>This Privacy Policy covers your use of this application. The app does not collect, store, or share any personal information, or anything related to your device. We do not collect any statistics, trends, neither do we track user movements. The site does allow you to visit external websites - specifically Amazon.com and Wikipedia.com and their affiliated sites. These websites may collect information related to your IP address, device, etc. Please check the privacy policy of these websites for details on information collected by them.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Esta política de privacidad cubre el uso de esta aplicación. La aplicación no recoger, almacenar o compartir cualquier información personal, o cualquier cosa relacionada con el dispositivo. No recogemos cualquier estadística, las tendencias, ni rastreamos movimientos del usuario. El sitio permitirá visitar otras webs - específicamente de Amazon.com y Wikipedia.com y sus sitios afiliados. Estos sitios web pueden recopilar información relacionada con su dirección IP, dispositivo, etc.. Consulte la política de privacidad de estos sitios web para más detalles sobre la información recopilada por ellos.</target>
+        </trans-unit>
+        <trans-unit id="Resources\PrivacyPolicy2\Text" translate="yes" xml:space="preserve">
+          <source>The app allows you to share the articles using the Share charm. The application you use to share the articles are not related to this app. Please check the privacy policy of those apps for how they use your data. The app also collects usage data. This information is stored on Google Analytics servers. No personally identifiable information is sent or stored.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">La aplicación permite compartir los artículos con el encanto de la cuota. La aplicación que se utiliza para compartir los artículos no están relacionados con esta aplicación. Consulte la política de privacidad de las aplicaciones para el uso que sus datos. La aplicación también recoge datos de uso. Esta información se almacena en servidores de Google Analytics. Ninguna información personal identificable es enviada o almacenada.</target>
+        </trans-unit>
+        <trans-unit id="Resources\PrivacyPolicy3\Text" translate="yes" xml:space="preserve">
+          <source>The country setting is only used to direct you to a site in your country when you click the 'Buy Movie' button.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">La configuración del país sólo se utiliza para dirigirlo a un sitio en su país, al hacer clic en el botón "Comprar película".</target>
+        </trans-unit>
+        <trans-unit id="Resources\region" translate="yes" xml:space="preserve">
+          <source>Country Setting</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Campestre</target>
+        </trans-unit>
+        <trans-unit id="Resources\Asian_Movies\Text" translate="yes" xml:space="preserve">
+          <source>Top Asian Movies</source>
+          <target state="final">Películas de asiáticas
+ superior</target>
+        </trans-unit>
+        <trans-unit id="Resources\Bollywood_Movies\Text" translate="yes" xml:space="preserve">
+          <source>Top Bollywood Movies</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Películas de Bollywood 
+ superior</target>
+        </trans-unit>
+        <trans-unit id="Resources\Hollywood_Movies\Text" translate="yes" xml:space="preserve">
+          <source>Top Hollywood Movies</source>
+          <target state="final">Películas de Hollywood
+superior</target>
+        </trans-unit>
+        <trans-unit id="Resources\International_Movies\Text" translate="yes" xml:space="preserve">
+          <source>Top International Movies</source>
+          <target state="final">Películas de internacionales
+ superior</target>
+        </trans-unit>
+        <trans-unit id="Resources\AsianTitle" translate="yes" xml:space="preserve">
+          <source>Top Asian Movies</source>
+          <target state="translated">Películas de asiáticas superior</target>
+        </trans-unit>
+        <trans-unit id="Resources\BollywoodTitle" translate="yes" xml:space="preserve">
+          <source>Top Bollywood Movies</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Películas de Bollywood superior</target>
+        </trans-unit>
+        <trans-unit id="Resources\HollywoodTitle" translate="yes" xml:space="preserve">
+          <source>Top Hollywood Movies</source>
+          <target state="translated">Películas de Hollywood superior</target>
+        </trans-unit>
+        <trans-unit id="Resources\InternationalTitle" translate="yes" xml:space="preserve">
+          <source>Top International Movies</source>
+          <target state="translated">Películas de internacionales superior</target>
+        </trans-unit>
+        <trans-unit id="Resources\regiontext\Text" translate="yes" xml:space="preserve">
+          <source>Your country information is only used to direct you to the appropriate site when you click the "Buy Movie" button.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Sólo se utilizará su información de país para dirigirlo en el correspondiente sitio al hacer clic en el botón "Comprar película".</target>
+        </trans-unit>
+      </group>
+    </body>
+  </file>
+</xliff>
