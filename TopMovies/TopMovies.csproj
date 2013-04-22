@@ -134,7 +134,6 @@
     <None Include="MultilingualResources\TopMovies_fr.xlf" />
     <None Include="MultilingualResources\TopMovies_it.xlf" />
     <None Include="MultilingualResources\TopMovies_ja-JP.xlf" />
-    <None Include="MultilingualResources\TopMovies_qps-ploc.xlf" />
     <None Include="MultilingualResources\TopMovies_ru-RU.xlf" />
     <None Include="MultilingualResources\TopMovies_zh-Hans.xlf" />
     <PRIResource Include="Strings\en-US\Resources.resw" />
@@ -144,6 +143,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\BlackLogo.png" />
+    <Content Include="Assets\Eng.png" />
     <Content Include="Assets\Fast_Backward.png" />
     <Content Include="Assets\Fast_Forward.png" />
     <Content Include="Assets\Pause.png" />
