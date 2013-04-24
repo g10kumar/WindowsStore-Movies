@@ -331,12 +331,52 @@
         //  }).done(function () {
         //      return purport;
         //  });
-        document.getElementById("outPut").innerHTML = SQLite3JS.openAsync(dbPath)
-          .then(function (db) {
-              return db.eachAsync('SELECT purport FROM gitaPurport WHERE chapter = ' + chapterKey.split("#")[1].trim() + ' AND sloka = ' + bookmarkitem.split(";")[1].split(" ")[1].trim(), { purport: purport });
-          }).done(function () {
-              return purport;
-          });
+        //document.getElementById("outPut").innerHTML = SQLite3JS.openAsync(dbPath)
+        //  .then(function (db) {
+        //      return db.eachAsync('SELECT purport FROM gitaPurport WHERE chapter = ' + chapterKey.split("#")[1].trim() + ' AND sloka = ' + bookmarkitem.split(";")[1].split(" ")[1].trim(), { purport: purport });
+        //  }).done(function () {
+        //      return purport;
+        //  });
+        var URL = "";
+        URL = "xml/SlokaMeaning.xml";
+        WinJS.xhr({ url: URL }).then(function (result) {
+            var slokasResponse = result.responseXML;
+
+            // Get the info for each news papers 
+            var sloka = slokasResponse.querySelectorAll("slokas");
+            var content = "";
+        
+            for (var slokaIndex = 0; slokaIndex < sloka.length; slokaIndex++) {
+
+                if (chapterKey.split("#")[1].trim() == sloka[slokaIndex].attributes.getNamedItem("chapter").textContent && bookmarkitem.split(";")[1].split(" ")[1].trim() == sloka[slokaIndex].attributes.getNamedItem("sloka").textContent) {
+
+                    content = sloka[slokaIndex].textContent.replace(new RegExp("\\n", "g"), "<p>");
+                    content = content.replace(new RegExp("\\n", "g"), "</p>");
+                    content = content.replace(new RegExp("<it->", "g"), "");
+                    content = content.replace(new RegExp("</it->", "g"), "");
+                    content = content.replace(new RegExp("<it+>", "g"), "");
+                    content = content.replace(new RegExp("</it+>", "g"), "");
+                    content = content.replace(new RegExp("<bd->", "g"), "");
+                    content = content.replace(new RegExp("</bd->", "g"), "");
+                    content = content.replace(new RegExp("<it>", "g"), "");
+                    content = content.replace(new RegExp("</it>", "g"), "");
+                    content = content.replace(new RegExp("<bd>", "g"), "");
+                    content = content.replace(new RegExp("</bd>", "g"), "");
+                    content = content.replace(new RegExp("<br/>", "g"), "\r\n");
+                }
+            }
+
+            if (content != "") {
+                document.getElementById("outPut").innerHTML = content;
+            }
+            else {
+                document.getElementById("outPut").innerHTML = "Unable to display the meaning of sloka.";
+            }
+
+        },
+        function (error) {
+            document.getElementById("outPut").innerHTML = "Unable to display the meaning of sloka.";
+        });
         document.getElementById("scenario1HtmlOutput").winControl.show(loginButton);
     }
 

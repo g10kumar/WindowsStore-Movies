@@ -85,6 +85,7 @@
     <Content Include="js\data.js" />
     <Content Include="js\default.js" />
     <Content Include="js\navigator.js" />
+    <Content Include="xml\SlokaMeaning.xml" />
     <None Include="Package.StoreAssociation.xml" />
     <Content Include="js\SQLite3.js" />
     <Content Include="pages\about\about.html" />
