@@ -3,7 +3,7 @@
 
     var appViewState = Windows.UI.ViewManagement.ApplicationViewState;
     var ui = WinJS.UI;
-
+    var appdata = Windows.Storage.ApplicationData;
     ui.Pages.define("/pages/items/items.html", {
         // This function is called whenever a user navigates to this page. It
         // populates the page elements with the app's data.
@@ -63,7 +63,11 @@
     });
 
     function recentSloka() {
-        WinJS.Navigation.navigate("/pages/recent/recent.html");
+        //WinJS.Navigation.navigate("/pages/recent/recent.html");
+        var recent = appdata.current.roamingSettings.values["recentSloka"];
+
+        //var slokaItem = invokedItem.data.sloka.split(" ");
+        WinJS.Navigation.navigate("/pages/sloka/sloka.html", { groupKey: recent.split("~")[0], selectedIndex: recent.split("~")[1] });
     }
 
     function showBookmark() {
