@@ -416,7 +416,8 @@
         //item = ev.target.innerText.trim().replace(new RegExp("\r\n", "g"), "<p>").replace(new RegExp("Sloka", "g"), "");
         item = "Chapter: " + chapterTitle + "; " + ev.target.innerText.trim().replace(new RegExp("\r\n", "g"), "<p>");
         bookmarkitem = chapterTitle + ";" + ev.target.innerText.trim().replace(new RegExp("\r\n", "g"), "<p>").split("<p><p><p>")[0] + ";" + chapterKey;
-        appdata.current.roamingSettings.values["recentSloka"] = item;
+        //appdata.current.roamingSettings.values["recentSloka"] = item;
+        appdata.current.roamingSettings.values["recentSloka"] = chapterKey + "~" + bookmarkitem.split(";")[1].split(" ")[1].trim();
     }
 })();
 
