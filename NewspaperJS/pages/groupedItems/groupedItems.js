@@ -47,7 +47,7 @@
                 // If the page is not snapped, the user invoked an item.
                 var item = Data.items.getAt(args.detail.itemIndex);
                 //nav.navigate("/pages/itemDetail/itemDetail.html", { item: Data.getItemReference(item) });
-                var region = item.group.title.toLowerCase();
+                var region = item.group.subtitle.toLowerCase();
                 region = region.replace(" ", "_");
                 //var tmpregion = region.tolower();
                 var country = item.title;

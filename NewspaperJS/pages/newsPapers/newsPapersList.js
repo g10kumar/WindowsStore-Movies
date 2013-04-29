@@ -322,7 +322,7 @@
 
             for (var newsIndex = 0; newsIndex < newsPaper.length; newsIndex++) {
 
-                if (mySplitResult[1] == newsPaper[newsIndex].attributes.getNamedItem("name").textContent && mySplitResult[0] == newsPaper[newsIndex].attributes.getNamedItem("value").textContent) {
+                if (mySplitResult[1] == WinJS.Resources.getString(newsPaper[newsIndex].attributes.getNamedItem("name").textContent).value && mySplitResult[0] == newsPaper[newsIndex].attributes.getNamedItem("value").textContent) {
 
                     var newsPaperList = newsPaper[newsIndex].querySelectorAll("paper");
 

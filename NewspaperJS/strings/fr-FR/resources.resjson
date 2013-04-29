@@ -1,0 +1,431 @@
+﻿// For details on localizing a Windows app, see: http://go.microsoft.com/fwlink/?LinkId=212836
+
+{
+    "News Papers" : "Journaux",
+
+    // Regions
+
+    "United States"  :   "États-Unis",
+
+    "Africa"    :  "Afrique",
+    
+    "Asia"  : "Asie",
+
+    "Caribbean"  : "Caraïbes",
+
+    "Europe"  : "l'Europe",
+
+    "Middle East"  : "Moyen Orient",
+
+    "The Americas"  : "Les Amériques",
+
+    "Oceania" : "Océanie",
+
+    // United States Countries
+
+    "National"  : "national",
+
+    "Alabama" : "Alabama",
+
+    "Alaska" : "Alaska",
+
+    "Arizona" : "Arizona",
+
+    "Arkansas" : "Arkansas",
+
+    "California" : "Californie",
+
+    "Colorado" : "Colorado",
+
+    "Connecticut" : "Connecticut",
+
+    "Delaware" : "Delaware",
+
+    "Dist. of Columbia" : "Dist. de Columbia",
+
+    "Florida" : "Floride",
+
+    "Georgia" : "Géorgie",
+
+    "Hawaii" : "Hawaii",
+
+    "Idaho" : "Idaho",
+
+    "Illinois" : "Illinois",
+
+    "Indiana" : "Indiana",
+
+    "Iowa" : "Iowa",
+
+    "Kansas" : "Kansas",
+
+    "Kentucky" : "Kentucky",
+
+    "Louisiana" : "Louisiane",
+
+    "Maine" : "Maine",
+
+    "Maryland" : "Maryland",
+
+    "Massachusetts" : "Massachusetts",
+
+    "Michigan" : "Michigan",
+
+    "Minnesota" : "Minnesota",
+
+    "Mississippi" : "Mississippi",
+
+    "Missouri" : "Missouri",
+
+    "Montana" : "Montana",
+
+    "Nebraska" : "Nebraska",
+
+    "Nevada" : "Nevada",
+
+    "New Hampshire" : "New Hampshire",
+
+    "New Jersey" : "New Jersey",
+
+    "New Mexico" : "nouveau-Mexique",
+
+    "New York" : "New York",
+
+    "North Carolina" : "Caroline du Nord",
+
+    "North Dakota" : "Dakota du Nord",
+
+    "Ohio" : "Ohio",
+
+    "Oklahoma" : "Oklahoma",
+
+    "Oregon" : "Oregon",
+
+    "Pennsylvania" : "Pennsylvanie",
+
+    "Rhode Island" : "Rhode Island",
+
+    "South Carolina" : "Caroline du Sud",
+
+    "South Dakota" : "Dakota du Sud",
+
+    "Tennessee" : "Tennessee",
+
+    "Texas" : "Texas",
+
+    "Utah" : "Utah",
+
+    "Vermont" : "Vermont",
+
+    "Virginia" : "Virginie",
+
+    "Washington" : "Washington",
+
+    "West Virginia" : "West Virginia",
+
+    "Wisconsin" : "Wisconsin",
+
+    "Wyoming" : "Wyoming",
+
+    // Africa Countries
+
+    "Algeria" : "Algérie",
+    
+    "Benin" : "Bénin",
+    
+    "Egypt" : "Égypte",
+
+    "Ethiopia" : "Ethiopie",
+
+    "Ghana" : "Ghana",
+
+    "Guinea" : "Guinée",
+
+    "Ivory Coast" : "Côte-d'Ivoire",
+
+    "Kenya" : "Kenya",
+
+    "Liberia" : "Liberia",
+
+    "Madagascar" : "Madagascar",
+
+    "Mauritius" : "Maurice",
+
+    "Morocco" : "Maroc",
+
+    "Namibia" : "Namibie",
+
+    "Nigeria" : "Nigeria",
+
+    "Reunion Island" : "Île de la Réunion",
+
+    "Senegal" : "Sénégal",
+
+    "Seychelles" : "Seychelles",
+
+    "Sierra Leone" : "Sierra Leone",
+
+    "South Africa" : "Afrique du Sud",
+
+    "Swaziland" : "Swaziland",
+    
+    "Tanzania" : "Tanzanie",
+
+    "Tunisia" : "Tunisie",
+
+    "Uganda" : "Ouganda",
+
+    "Zambia" : "Zambie",
+
+    "Zimbabwe"	: "Zimbabwe",
+
+    // Asia Countries
+
+    "Afghanistan"	:	"Afghanistan",
+
+    "Bangladesh"	:	"Bangladesh",
+
+    "Bhutan"	:	"Bhoutan",
+
+    "Brunei"	:	"Brunei",
+
+    "China"	:	"Chine",
+
+    "India"	:	"Inde",
+
+    "Indonesia"	:	"Indonésie",
+
+    "Japan"	:	"Japon",
+
+    "Laos"	:	"Laos",
+
+    "Macau"	:	"Macao",
+
+    "Malaysia"	:	"Malaisie",
+
+    "Maldives"	:	"Maldives",
+
+    "Mongolia"	:	"Mongolie",
+
+    "Nepal"	:	"Népal",
+
+    "North Korea"	:	"Corée du Nord",
+
+    "Pakistan"	:	"Pakistan",
+
+    "Philippines"	:	"Philippines",
+
+    "Saudi Arabia"	:	"Arabie Saoudite",
+
+    "Singapore"	:	"Singapour",
+
+    "South Korea"	:	"Corée du Sud",
+
+    "Sri Lanka"	:	"Sri Lanka",
+
+    "Taiwan"	:	"Taiwan",
+
+    "Thailand"	:	"Thaïlande",
+    
+    "Vietnam"	:	"Vietnam",
+
+    // Caribbean Countries
+
+    "Antigua and Barbuda"	:	"Antigua-et-Barbuda",
+
+    "Aruba"	:	"Aruba",
+
+    "Bahamas"	:	"Bahamas",
+
+    "Barbados"	:	"Barbade",
+
+    "Bermuda"	:	"Bermudes",
+
+    "British Virgin Islands"	:	"Îles Vierges britanniques",
+
+    "Cuba"	:	"Cuba",
+
+    "Dominican Republic"	:	"République dominicaine",
+
+    "Haiti"	:	"Haïti",
+
+    "Jamaica"	:	"Jamaïque",
+
+    "Netherlands Antilles"	:	"Antilles néerlandaises",
+
+    "Puerto Rico"	:	"Puerto Rico",
+
+    "Trinidad and Tobago"	:	"Trinité-et-Tobago",
+
+    "US Virgin Islands"	:	"Îles Vierges américaines",
+
+    // Europe countries
+
+    "Albania"	:	"Albanie",
+
+    "Andorra"	:	"Andorre",
+
+    "Austria"	:	"Autriche",
+
+    "Belarus"	:	"Biélorussie",
+
+    "Belgium"	:	"Belgique",
+
+    "Bosnia-Herzegovina"	:	"Bosnie-Herzégovine",
+
+    "Bulgaria"	:	"Bulgarie",
+
+    "Croatia"	:	"Croatie",
+
+    "Cyprus"	:	"Chypre",
+
+    "Czech Republic"	:	"République tchèque",
+
+    "Denmark"	:	"Danemark",
+
+    "Estonia"	:	"Estonie",
+
+    "Finland"	:	"Finlande",
+
+    "France"	:	"France",
+
+    "Germany"	:	"Allemagne",
+
+    "Gibraltar"	:	"Gibraltar",
+
+    "Greece"	:	"Grèce",
+
+    "Hungary"	:	"Hongrie",
+
+    "Iceland"	:	"Islande",
+
+    "Ireland"	:	"Irlande",
+
+    "Italy"	:	"Italie",
+    
+    "Latvia"	:	"Lettonie",
+
+    "Liechtenstein"	:	"Liechtenstein",
+
+    "Lithuania"	:	"Lituanie",
+
+    "Luxembourg"	:	"Luxembourg",
+
+    "Macedonia"	:	"Macédoine",
+
+    "Malta"	:	"Malte",
+
+    "Netherlands"	:	"Pays-Bas",
+
+    "Norway"	:	"Norvège",
+
+    "Poland"	:	"Pologne",
+
+    "Portugal"	:	"Portugal",
+
+    "Romania"	:	"Roumanie",
+
+    "Russia"	:	"Russie",
+
+    "Scotland"	:	"Écosse",
+
+    "Slovakia"	:	"Slovaquie",
+
+    "Slovenia"	:	"Slovénie",
+
+    "Spain"	:	"Espagne",
+
+    "Sweden"	:	"Suède",
+
+    "Switzerland"	:	"Suisse",
+
+    "Turkey"	:	"Turquie",
+
+    "Ukraine"	:	"Ukraine",
+
+    "United Kingdom"	:	"Royaume-Uni",
+
+    // Middle East Countries
+
+    "Bahrain"	:	"Bahreïn", 
+
+    "Iran"	:	"Iran",
+
+    "Iraq"	:	"Irak",
+
+    "Israel"	:	"Israël",
+
+    "Jordan"	:	"Jordan",
+
+    "Kuwait"	:	"Koweït",
+
+    "Lebanon"	:	"Liban",
+
+    "Oman"	:	"Oman",
+
+    "Qatar"	:	"Qatar",
+
+    "United Arab Emirates"	:	"Émirats arabes unis",
+
+    "Yemen"	:	"Yémen",
+
+    // The Americas Countries
+
+    "Argentina"	:	"Argentine",
+
+    "Belize"	:	"Belize",
+
+    "Bolivia"	:	"Bolivie",
+
+    "Brazil"	:	"Brésil",
+
+    "Canada"	:	"Canada",
+
+    "Chile"	:	"Chili",
+
+    "Colombia"	:	"Colombie",
+
+    "Costa Rica"	:	"Costa Rica",
+
+    "Ecuador"	:	"Equateur",
+
+    "El Salvador"	:	"El Salvador",
+
+    "Guatemala"	:	"Guatemala",
+
+    "Guyana"	:	"Guyane",
+
+    "Honduras"	:	"Honduras",
+
+    "Mexico"	:	"Mexique",
+
+    "Nicaragua"	:	"Nicaragua",
+
+    "Panama"	:	"Panama",
+
+    "Paraguay"	:	"Paraguay",
+
+    "Peru"	:	"Pérou",
+
+    "Uruguay"	:	"Uruguay",
+
+    "Venezuela"	:	"Venezuela",
+
+    // Oceania Countries
+
+    "Australia"	:	"Australie",
+
+    "Guam"	:	"Guam",
+
+    "New Zealand"	:	"nouvelle-Zélande",
+
+    "Northern Mariana Islands"	:	"Îles Mariannes du Nord",
+
+    "Papua New Guinea"	:	"Papouasie-Nouvelle-Guinée",
+
+    "Samoa"	:	"Samoa",
+
+    "Tonga"	:	"Tonga"
+
+
+}
