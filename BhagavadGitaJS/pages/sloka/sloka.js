@@ -54,10 +54,11 @@
             dtm.getForCurrentView().addEventListener("datarequested", this.onDataRequested);
 
             document.getElementById("btnCopy").addEventListener("click", textCopy, false);
-            document.getElementById("btnCommentary").addEventListener("click", slokaMeaningXML, false);
+            //document.getElementById("btnCommentary").addEventListener("click", slokaMeaningXML, false);
             document.getElementById("btnCommentaryJSON").addEventListener("click", slokaMeaningJSON, false);
             document.getElementById("btnBookmark").addEventListener("click", addBookmark, false);
             document.getElementById("submitCloseButton").addEventListener("click", onDismiss, false);
+            document.getElementById("topCloseButton").addEventListener("click", onDismiss, false);
 
             //window.indexedDB.deleteDatabase("BookmarksDB", 1);
             createDB();
@@ -208,7 +209,7 @@
                         //bookmarksStore.add(addingBookmarkNodes[0]);
                         var addResult = bookmarksStore.add({ chaptersloka: addingBookmarkNodes[0].chaptersloka, chapter: addingBookmarkNodes[0].chapter, sloka: addingBookmarkNodes[0].sloka, chapterKey: addingBookmarkNodes[0].chapterKey });
                         addResult.onerror = function (evt) {
-                            msg += "Error while adding bookmarks";
+                            msg += "Error while adding Favorites";
                         };
                     }
                     else
@@ -223,12 +224,12 @@
                     var len = exitsBookmarks.trim().length;
                     exitsBookmarks = exitsBookmarks.slice(0, len - 1);
 
-                    msg += "The following Sloka already exist in your bookmarks list. " + "\n";
+                    msg += "The following Sloka already exist in your Favorites list. " + "\n";
                     msg += exitsBookmarks + ".";
 
                 }
                 else {
-                    msg += "Selected Sloka added to your bookmarks.";
+                    msg += "Selected Sloka added to your Favorites.";
                 }
 
                 var msgdialog = new Windows.UI.Popups.MessageDialog(msg);
@@ -243,7 +244,7 @@
 
             };
         } catch (e) {
-            var msg = new Windows.UI.Popups.MessageDialog("Unable to add Sloka to bookmarks!.");
+            var msg = new Windows.UI.Popups.MessageDialog("Unable to add Sloka to Favorites!.");
             msg.showAsync().done(function (command) {
                 if (command.id == 1) {
 
