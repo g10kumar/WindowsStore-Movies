@@ -3669,6 +3669,11 @@
     <SDKReference Include="Microsoft.WinJS.1.0, Version=1.0" />
     <SDKReference Include="MSAdvertisingJS, Version=6.1" />
   </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="strings\de-DE\resources.resjson" />
+    <PRIResource Include="strings\en-US\resources.resjson" />
+    <PRIResource Include="strings\fr-FR\resources.resjson" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\$(WMSJSProjectDirectory)\Microsoft.VisualStudio.$(WMSJSProject).targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
