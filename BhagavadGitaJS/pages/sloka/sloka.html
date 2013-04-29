@@ -38,8 +38,7 @@
                 <span class="pagetitle"></span>
             </h1>
         </header>
-        <div id="basicFlipView" -ms-flex-wrap: wrap;" class="flipView" data-win-control="WinJS.UI.FlipView">
-        </div>
+        <div id="basicFlipView" -ms-flex-wrap: wrap;" class="flipView" data-win-control="WinJS.UI.FlipView"></div>
         <div style="margin-left:20px;margin-top:130px; visibility:collapse;" id="divMessage">
             
             <h3>Slokas visible only in full mode.</h3>
@@ -47,18 +46,20 @@
     </div>
     <div id="scenario1HtmlOutput" data-win-control="WinJS.UI.Flyout" style="width:500px;height:500px;margin-left:70px;margin-top:600px;margin-bottom:200px;margin-right:200px;" aria-label="{Sloka flyout}">
             <form onsubmit="return false;">
+                <div align="right"><button style="background-color: #FF9933;border:none;" id="topCloseButton">Close</button></div>
+                <p>
+                </p>
                 <div id="outPut"></div>                    
                 <p>
                 </p>
-                <button id="submitCloseButton">Close</button>
+                <div align="right"><button style="background-color: #FF9933;border:none;" id="submitCloseButton">Close</button></div>
             </form>
         </div>
     <div id="appbar" data-win-control="WinJS.UI.AppBar">
         <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'btnCopy', label:'Copy', icon:'copy'}"></button>
-        <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'btnCommentary', label:'Commentary', icon:'page2'}"></button>
-        <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'btnCommentaryJSON', label:'CommentaryJS', icon:'page2'}"></button>
-        <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'btnBookmark', label:'Add Bookmark', icon:'like'}"></button>
-
+        <!--<button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'btnCommentary', label:'Commentary', icon:'page2'}"></button>-->
+        <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'btnCommentaryJSON', label:'Commentary', icon:'page2'}"></button>
+        <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'btnBookmark', label:'Add Favorites', icon:'like'}"></button>
     </div>
 </body>
 </html>

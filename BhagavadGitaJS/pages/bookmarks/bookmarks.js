@@ -17,7 +17,7 @@
 
         ready: function (element, options) {
 
-            element.querySelector(".titlearea .pagetitle").textContent = "Bookmarks";
+            element.querySelector(".titlearea .pagetitle").textContent = "Favorites";
 
             createDB();
 
@@ -69,7 +69,7 @@
             window.indexedDB.deleteDatabase("BookmarksDB", 1);
 
             if (bookMarksNodes.length == 0) {
-                var msg = new Windows.UI.Popups.MessageDialog("No slokas in your bookmarks!");
+                var msg = new Windows.UI.Popups.MessageDialog("No slokas in your Favorites!");
                 msg.showAsync().done(function (command) {
                     if (command.id == 1) {
 
@@ -108,7 +108,7 @@
                 if (cursor) {
                     var bookMarks = {
                         chapter: cursor.value.chapter.trim(),
-                        sloka: cursor.value.sloka.trim(),
+                        sloka: "Chapter " + cursor.value.chapterKey.trim().split("#")[1].trim() +"/"+cursor.value.sloka.trim(),
                         chaptersloka: cursor.value.chaptersloka.trim(),
                         chapterKey: cursor.value.chapterKey.trim()
                     };
@@ -138,7 +138,7 @@
             if (listView != null) {
                 listView.itemDataSource = null;
             }
-            var msg = new Windows.UI.Popups.MessageDialog("No Slokas in your bookmarks!");
+            var msg = new Windows.UI.Popups.MessageDialog("No Slokas in your Favorites!");
             msg.showAsync().done(function (command) {
                 if (command.id == 1) {
 
@@ -164,7 +164,7 @@
             currentSelectionItems._value.forEach(function (selectedItem) {
                 var bookMarks = {
                     chapter: selectedItem.data.chapter.trim(),
-                    sloka: selectedItem.data.sloka.trim(),
+                    sloka: selectedItem.data.sloka.trim().split("/")[1].trim(),
                     chaptersloka: selectedItem.data.chaptersloka.trim(),
                     chapterKey: selectedItem.data.chapterKey.trim()
                 };
@@ -201,11 +201,11 @@
                     var len = notdeletingbookmarks.trim().length;
                     notdeletingbookmarks = notdeletingbookmarks.slice(0, len - 1);
 
-                    msg += "The following Sloka(s) were not deleted from bookmarks list." + "\n";
+                    msg += "The following Sloka(s) were not deleted from Favorites list." + "\n";
                     msg += notdeletingpapers + "\n\n";
                 }
                 else {
-                    msg += "Selected Sloka(s) deleted from bookmarks.";
+                    msg += "Selected Sloka(s) deleted from Favorites.";
                 }
 
                 var msgdialog = new Windows.UI.Popups.MessageDialog(msg);
@@ -222,7 +222,7 @@
 
             };
         } catch (e) {
-            var msg = new Windows.UI.Popups.MessageDialog("Unable to delete Slokas from Bookmarks.");
+            var msg = new Windows.UI.Popups.MessageDialog("Unable to delete Slokas from Favorites.");
             msg.showAsync().done(function (command) {
                 if (command.id == 1) {
 
