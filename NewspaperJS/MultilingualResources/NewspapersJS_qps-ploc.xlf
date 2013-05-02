@@ -114,9 +114,9 @@
           <source>Advertiser-Tribune, The</source>
           <target state="new">Advertiser-Tribune, The</target>
         </trans-unit>
-        <trans-unit id="resources\Advocate &amp;amp; Democrat" translate="yes" xml:space="preserve">
-          <source>Advocate %%amp;amp; Democrat</source>
-          <target state="new">Advocate %%amp;amp; Democrat</target>
+        <trans-unit id="resources\Advocate and Democrat" translate="yes" xml:space="preserve">
+          <source>Advocate and Democrat</source>
+          <target state="new">Advocate and Democrat</target>
         </trans-unit>
         <trans-unit id="resources\Advocate, The" translate="yes" xml:space="preserve">
           <source>Advocate, The</source>
@@ -946,10 +946,6 @@
           <source>Atlanta Journal-Constitution</source>
           <target state="new">Atlanta Journal-Constitution</target>
         </trans-unit>
-        <trans-unit id="resources\Atlanta Journal-Constitution " translate="yes" xml:space="preserve">
-          <source>Atlanta Journal-Constitution </source>
-          <target state="new">Atlanta Journal-Constitution </target>
-        </trans-unit>
         <trans-unit id="resources\Atlantic City" translate="yes" xml:space="preserve">
           <source>Atlantic City</source>
           <target state="new">Atlantic City</target>
@@ -1138,9 +1134,9 @@
           <source>Baltimore City Paper</source>
           <target state="new">Baltimore City Paper</target>
         </trans-unit>
-        <trans-unit id="resources\Baltimore Sun " translate="yes" xml:space="preserve">
-          <source>Baltimore Sun </source>
-          <target state="new">Baltimore Sun </target>
+        <trans-unit id="resources\Baltimore Sun" translate="yes" xml:space="preserve">
+          <source>Baltimore Sun</source>
+          <target state="new">Baltimore Sun</target>
         </trans-unit>
         <trans-unit id="resources\Baltimore Sun, The" translate="yes" xml:space="preserve">
           <source>Baltimore Sun, The</source>
@@ -2398,6 +2394,10 @@
           <source>Bushnell</source>
           <target state="new">Bushnell</target>
         </trans-unit>
+        <trans-unit id="resources\Business Day" translate="yes" xml:space="preserve">
+          <source>Business Day</source>
+          <target state="new">Business Day</target>
+        </trans-unit>
         <trans-unit id="resources\Business Farmer" translate="yes" xml:space="preserve">
           <source>Business Farmer</source>
           <target state="new">Business Farmer</target>
@@ -3166,10 +3166,6 @@
           <source>Chicago Sun-Times</source>
           <target state="new">Chicago Sun-Times</target>
         </trans-unit>
-        <trans-unit id="resources\Chicago Sun-Times " translate="yes" xml:space="preserve">
-          <source>Chicago Sun-Times </source>
-          <target state="new">Chicago Sun-Times </target>
-        </trans-unit>
         <trans-unit id="resources\Chicago Tribune" translate="yes" xml:space="preserve">
           <source>Chicago Tribune</source>
           <target state="new">Chicago Tribune</target>
@@ -3310,9 +3306,9 @@
           <source>Cincinnati CityBeat</source>
           <target state="new">Cincinnati CityBeat</target>
         </trans-unit>
-        <trans-unit id="resources\Cincinnati Enquirer " translate="yes" xml:space="preserve">
-          <source>Cincinnati Enquirer </source>
-          <target state="new">Cincinnati Enquirer </target>
+        <trans-unit id="resources\Cincinnati Enquirer" translate="yes" xml:space="preserve">
+          <source>Cincinnati Enquirer</source>
+          <target state="new">Cincinnati Enquirer</target>
         </trans-unit>
         <trans-unit id="resources\Cincinnati Enquirer, The" translate="yes" xml:space="preserve">
           <source>Cincinnati Enquirer, The</source>
@@ -3834,9 +3830,9 @@
           <source>Coronado</source>
           <target state="new">Coronado</target>
         </trans-unit>
-        <trans-unit id="resources\Coronado Eagle &amp;amp; Journal" translate="yes" xml:space="preserve">
-          <source>Coronado Eagle %%amp;amp; Journal</source>
-          <target state="new">Coronado Eagle %%amp;amp; Journal</target>
+        <trans-unit id="resources\Coronado Eagle and Journal" translate="yes" xml:space="preserve">
+          <source>Coronado Eagle and Journal</source>
+          <target state="new">Coronado Eagle and Journal</target>
         </trans-unit>
         <trans-unit id="resources\Corpus Christi" translate="yes" xml:space="preserve">
           <source>Corpus Christi</source>
@@ -4402,9 +4398,9 @@
           <source>Daily Me, The</source>
           <target state="new">Daily Me, The</target>
         </trans-unit>
-        <trans-unit id="resources\Daily Miner &amp;amp; News" translate="yes" xml:space="preserve">
-          <source>Daily Miner %%amp;amp; News</source>
-          <target state="new">Daily Miner %%amp;amp; News</target>
+        <trans-unit id="resources\Daily Miner and News" translate="yes" xml:space="preserve">
+          <source>Daily Miner and News</source>
+          <target state="new">Daily Miner and News</target>
         </trans-unit>
         <trans-unit id="resources\Daily Mining Gazette, The" translate="yes" xml:space="preserve">
           <source>Daily Mining Gazette, The</source>
@@ -5706,9 +5702,9 @@
           <source>Elberton</source>
           <target state="new">Elberton</target>
         </trans-unit>
-        <trans-unit id="resources\Elberton Star &amp;amp; Examiner, The" translate="yes" xml:space="preserve">
-          <source>Elberton Star %%amp;amp; Examiner, The</source>
-          <target state="new">Elberton Star %%amp;amp; Examiner, The</target>
+        <trans-unit id="resources\Elberton Star and Examiner, The" translate="yes" xml:space="preserve">
+          <source>Elberton Star and Examiner, The</source>
+          <target state="new">Elberton Star and Examiner, The</target>
         </trans-unit>
         <trans-unit id="resources\Elburn" translate="yes" xml:space="preserve">
           <source>Elburn</source>
@@ -6042,10 +6038,6 @@
           <source>Exponent, The</source>
           <target state="new">Exponent, The</target>
         </trans-unit>
-        <trans-unit id="resources\Express &amp;amp; Star" translate="yes" xml:space="preserve">
-          <source>Express %%amp;amp; Star</source>
-          <target state="new">Express %%amp;amp; Star</target>
-        </trans-unit>
         <trans-unit id="resources\Express India" translate="yes" xml:space="preserve">
           <source>Express India</source>
           <target state="new">Express India</target>
@@ -6053,6 +6045,10 @@
         <trans-unit id="resources\Express Newspaper, The" translate="yes" xml:space="preserve">
           <source>Express Newspaper, The</source>
           <target state="new">Express Newspaper, The</target>
+        </trans-unit>
+        <trans-unit id="resources\Express and Star" translate="yes" xml:space="preserve">
+          <source>Express and Star</source>
+          <target state="new">Express and Star</target>
         </trans-unit>
         <trans-unit id="resources\Express, The" translate="yes" xml:space="preserve">
           <source>Express, The</source>
@@ -6146,9 +6142,9 @@
           <source>Faribault Daily News</source>
           <target state="new">Faribault Daily News</target>
         </trans-unit>
-        <trans-unit id="resources\Farm &amp;amp; Ranch Guide" translate="yes" xml:space="preserve">
-          <source>Farm %%amp;amp; Ranch Guide</source>
-          <target state="new">Farm %%amp;amp; Ranch Guide</target>
+        <trans-unit id="resources\Farm and Ranch Guide" translate="yes" xml:space="preserve">
+          <source>Farm and Ranch Guide</source>
+          <target state="new">Farm and Ranch Guide</target>
         </trans-unit>
         <trans-unit id="resources\Farmers Press" translate="yes" xml:space="preserve">
           <source>Farmers Press</source>
@@ -6506,9 +6502,9 @@
           <source>Four Corners Business Journal</source>
           <target state="new">Four Corners Business Journal</target>
         </trans-unit>
-        <trans-unit id="resources\Fox News " translate="yes" xml:space="preserve">
-          <source>Fox News </source>
-          <target state="new">Fox News </target>
+        <trans-unit id="resources\Fox News" translate="yes" xml:space="preserve">
+          <source>Fox News</source>
+          <target state="new">Fox News</target>
         </trans-unit>
         <trans-unit id="resources\Foxboro" translate="yes" xml:space="preserve">
           <source>Foxboro</source>
@@ -6666,9 +6662,9 @@
           <source>Ft. Wayne</source>
           <target state="new">Ft. Wayne</target>
         </trans-unit>
-        <trans-unit id="resources\Ft. Worth Star-Telegram " translate="yes" xml:space="preserve">
-          <source>Ft. Worth Star-Telegram </source>
-          <target state="new">Ft. Worth Star-Telegram </target>
+        <trans-unit id="resources\Ft. Worth Star-Telegram" translate="yes" xml:space="preserve">
+          <source>Ft. Worth Star-Telegram</source>
+          <target state="new">Ft. Worth Star-Telegram</target>
         </trans-unit>
         <trans-unit id="resources\Fulton" translate="yes" xml:space="preserve">
           <source>Fulton</source>
@@ -7294,9 +7290,9 @@
           <source>Green Valley</source>
           <target state="new">Green Valley</target>
         </trans-unit>
-        <trans-unit id="resources\Green Valley News &amp;amp; Sun" translate="yes" xml:space="preserve">
-          <source>Green Valley News %%amp;amp; Sun</source>
-          <target state="new">Green Valley News %%amp;amp; Sun</target>
+        <trans-unit id="resources\Green Valley News and Sun" translate="yes" xml:space="preserve">
+          <source>Green Valley News and Sun</source>
+          <target state="new">Green Valley News and Sun</target>
         </trans-unit>
         <trans-unit id="resources\Greencastle" translate="yes" xml:space="preserve">
           <source>Greencastle</source>
@@ -7550,9 +7546,9 @@
           <source>Hallandspostenr</source>
           <target state="new">Hallandspostenr</target>
         </trans-unit>
-        <trans-unit id="resources\Haller Tagblatt &amp;amp; KreisKurier" translate="yes" xml:space="preserve">
-          <source>Haller Tagblatt %%amp;amp; KreisKurier</source>
-          <target state="new">Haller Tagblatt %%amp;amp; KreisKurier</target>
+        <trans-unit id="resources\Haller Tagblatt and KreisKurier" translate="yes" xml:space="preserve">
+          <source>Haller Tagblatt and KreisKurier</source>
+          <target state="new">Haller Tagblatt and KreisKurier</target>
         </trans-unit>
         <trans-unit id="resources\Hallock" translate="yes" xml:space="preserve">
           <source>Hallock</source>
@@ -7914,10 +7910,6 @@
           <source>Henry Herald, The</source>
           <target state="new">Henry Herald, The</target>
         </trans-unit>
-        <trans-unit id="resources\Herald &amp;amp; Review" translate="yes" xml:space="preserve">
-          <source>Herald %%amp;amp; Review</source>
-          <target state="new">Herald %%amp;amp; Review</target>
-        </trans-unit>
         <trans-unit id="resources\Herald Bulletin, The" translate="yes" xml:space="preserve">
           <source>Herald Bulletin, The</source>
           <target state="new">Herald Bulletin, The</target>
@@ -7965,6 +7957,10 @@
         <trans-unit id="resources\Herald Sun" translate="yes" xml:space="preserve">
           <source>Herald Sun</source>
           <target state="new">Herald Sun</target>
+        </trans-unit>
+        <trans-unit id="resources\Herald and Review" translate="yes" xml:space="preserve">
+          <source>Herald and Review</source>
+          <target state="new">Herald and Review</target>
         </trans-unit>
         <trans-unit id="resources\Herald and Ruralite" translate="yes" xml:space="preserve">
           <source>Herald and Ruralite</source>
@@ -8662,9 +8658,9 @@
           <source>Inside China Today</source>
           <target state="new">Inside China Today</target>
         </trans-unit>
-        <trans-unit id="resources\Intelligencer &amp;amp; Wheeling News Register, The" translate="yes" xml:space="preserve">
-          <source>Intelligencer %%amp;amp; Wheeling News Register, The</source>
-          <target state="new">Intelligencer %%amp;amp; Wheeling News Register, The</target>
+        <trans-unit id="resources\Intelligencer and Wheeling News Register, The" translate="yes" xml:space="preserve">
+          <source>Intelligencer and Wheeling News Register, The</source>
+          <target state="new">Intelligencer and Wheeling News Register, The</target>
         </trans-unit>
         <trans-unit id="resources\Inter-Mountain, The" translate="yes" xml:space="preserve">
           <source>Inter-Mountain, The</source>
@@ -9250,10 +9246,6 @@
           <source>Kansas City Star</source>
           <target state="new">Kansas City Star</target>
         </trans-unit>
-        <trans-unit id="resources\Kansas City Star " translate="yes" xml:space="preserve">
-          <source>Kansas City Star </source>
-          <target state="new">Kansas City Star </target>
-        </trans-unit>
         <trans-unit id="resources\Kapital" translate="yes" xml:space="preserve">
           <source>Kapital</source>
           <target state="new">Kapital</target>
@@ -9514,9 +9506,9 @@
           <source>Kirksville</source>
           <target state="new">Kirksville</target>
         </trans-unit>
-        <trans-unit id="resources\Kirksville Daily Express &amp;amp; News" translate="yes" xml:space="preserve">
-          <source>Kirksville Daily Express %%amp;amp; News</source>
-          <target state="new">Kirksville Daily Express %%amp;amp; News</target>
+        <trans-unit id="resources\Kirksville Daily Express and News" translate="yes" xml:space="preserve">
+          <source>Kirksville Daily Express and News</source>
+          <target state="new">Kirksville Daily Express and News</target>
         </trans-unit>
         <trans-unit id="resources\Kitchener-Waterloo Record, The" translate="yes" xml:space="preserve">
           <source>Kitchener-Waterloo Record, The</source>
@@ -10990,13 +10982,13 @@
           <source>Magyar Hirlap</source>
           <target state="new">Magyar Hirlap</target>
         </trans-unit>
-        <trans-unit id="resources\Mail &amp;amp; Guardian, The" translate="yes" xml:space="preserve">
-          <source>Mail %%amp;amp; Guardian, The</source>
-          <target state="new">Mail %%amp;amp; Guardian, The</target>
-        </trans-unit>
         <trans-unit id="resources\Mail Tribune, The" translate="yes" xml:space="preserve">
           <source>Mail Tribune, The</source>
           <target state="new">Mail Tribune, The</target>
+        </trans-unit>
+        <trans-unit id="resources\Mail and Guardian, The" translate="yes" xml:space="preserve">
+          <source>Mail and Guardian, The</source>
+          <target state="new">Mail and Guardian, The</target>
         </trans-unit>
         <trans-unit id="resources\Main-Echo" translate="yes" xml:space="preserve">
           <source>Main-Echo</source>
@@ -11037,6 +11029,10 @@
         <trans-unit id="resources\Malden Town Online" translate="yes" xml:space="preserve">
           <source>Malden Town Online</source>
           <target state="new">Malden Town Online</target>
+        </trans-unit>
+        <trans-unit id="resources\Maldives" translate="yes" xml:space="preserve">
+          <source>Maldives</source>
+          <target state="new">Maldives</target>
         </trans-unit>
         <trans-unit id="resources\Malibu" translate="yes" xml:space="preserve">
           <source>Malibu</source>
@@ -11366,9 +11362,9 @@
           <source>McAlester</source>
           <target state="new">McAlester</target>
         </trans-unit>
-        <trans-unit id="resources\McAlester News-Capital &amp;amp; Democrat" translate="yes" xml:space="preserve">
-          <source>McAlester News-Capital %%amp;amp; Democrat</source>
-          <target state="new">McAlester News-Capital %%amp;amp; Democrat</target>
+        <trans-unit id="resources\McAlester News-Capital and Democrat" translate="yes" xml:space="preserve">
+          <source>McAlester News-Capital and Democrat</source>
+          <target state="new">McAlester News-Capital and Democrat</target>
         </trans-unit>
         <trans-unit id="resources\McAllen" translate="yes" xml:space="preserve">
           <source>McAllen</source>
@@ -12298,9 +12294,9 @@
           <source>Murray County News</source>
           <target state="new">Murray County News</target>
         </trans-unit>
-        <trans-unit id="resources\Murray Ledger &amp;amp; Times, The" translate="yes" xml:space="preserve">
-          <source>Murray Ledger %%amp;amp; Times, The</source>
-          <target state="new">Murray Ledger %%amp;amp; Times, The</target>
+        <trans-unit id="resources\Murray Ledger and Times, The" translate="yes" xml:space="preserve">
+          <source>Murray Ledger and Times, The</source>
+          <target state="new">Murray Ledger and Times, The</target>
         </trans-unit>
         <trans-unit id="resources\Murrysville" translate="yes" xml:space="preserve">
           <source>Murrysville</source>
@@ -12441,6 +12437,10 @@
         <trans-unit id="resources\Natchez Democrat, The" translate="yes" xml:space="preserve">
           <source>Natchez Democrat, The</source>
           <target state="new">Natchez Democrat, The</target>
+        </trans-unit>
+        <trans-unit id="resources\Nation, The" translate="yes" xml:space="preserve">
+          <source>Nation, The</source>
+          <target state="new">Nation, The</target>
         </trans-unit>
         <trans-unit id="resources\National" translate="yes" xml:space="preserve">
           <source>National</source>
@@ -12854,26 +12854,6 @@
           <source>Newport Plain Talk, The</source>
           <target state="new">Newport Plain Talk, The</target>
         </trans-unit>
-        <trans-unit id="resources\News &amp;amp; Advance, The" translate="yes" xml:space="preserve">
-          <source>News %%amp;amp; Advance, The</source>
-          <target state="new">News %%amp;amp; Advance, The</target>
-        </trans-unit>
-        <trans-unit id="resources\News &amp;amp; Citizen" translate="yes" xml:space="preserve">
-          <source>News %%amp;amp; Citizen</source>
-          <target state="new">News %%amp;amp; Citizen</target>
-        </trans-unit>
-        <trans-unit id="resources\News &amp;amp; Observer" translate="yes" xml:space="preserve">
-          <source>News %%amp;amp; Observer</source>
-          <target state="new">News %%amp;amp; Observer</target>
-        </trans-unit>
-        <trans-unit id="resources\News &amp;amp; Record" translate="yes" xml:space="preserve">
-          <source>News %%amp;amp; Record</source>
-          <target state="new">News %%amp;amp; Record</target>
-        </trans-unit>
-        <trans-unit id="resources\News &amp;amp; Review" translate="yes" xml:space="preserve">
-          <source>News %%amp;amp; Review</source>
-          <target state="new">News %%amp;amp; Review</target>
-        </trans-unit>
         <trans-unit id="resources\News Banner, The" translate="yes" xml:space="preserve">
           <source>News Banner, The</source>
           <target state="new">News Banner, The</target>
@@ -12882,9 +12862,9 @@
           <source>News Daily</source>
           <target state="new">News Daily</target>
         </trans-unit>
-        <trans-unit id="resources\News Democrat &amp;amp; Leader" translate="yes" xml:space="preserve">
-          <source>News Democrat %%amp;amp; Leader</source>
-          <target state="new">News Democrat %%amp;amp; Leader</target>
+        <trans-unit id="resources\News Democrat and Leader" translate="yes" xml:space="preserve">
+          <source>News Democrat and Leader</source>
+          <target state="new">News Democrat and Leader</target>
         </trans-unit>
         <trans-unit id="resources\News Dispatch, The" translate="yes" xml:space="preserve">
           <source>News Dispatch, The</source>
@@ -12938,6 +12918,26 @@
           <source>News Virginian, The</source>
           <target state="new">News Virginian, The</target>
         </trans-unit>
+        <trans-unit id="resources\News and Advance, The" translate="yes" xml:space="preserve">
+          <source>News and Advance, The</source>
+          <target state="new">News and Advance, The</target>
+        </trans-unit>
+        <trans-unit id="resources\News and Citizen" translate="yes" xml:space="preserve">
+          <source>News and Citizen</source>
+          <target state="new">News and Citizen</target>
+        </trans-unit>
+        <trans-unit id="resources\News and Observer" translate="yes" xml:space="preserve">
+          <source>News and Observer</source>
+          <target state="new">News and Observer</target>
+        </trans-unit>
+        <trans-unit id="resources\News and Record" translate="yes" xml:space="preserve">
+          <source>News and Record</source>
+          <target state="new">News and Record</target>
+        </trans-unit>
+        <trans-unit id="resources\News and Review" translate="yes" xml:space="preserve">
+          <source>News and Review</source>
+          <target state="new">News and Review</target>
+        </trans-unit>
         <trans-unit id="resources\News and Sentinel" translate="yes" xml:space="preserve">
           <source>News and Sentinel</source>
           <target state="new">News and Sentinel</target>
@@ -12958,9 +12958,9 @@
           <source>News-Bulletin</source>
           <target state="new">News-Bulletin</target>
         </trans-unit>
-        <trans-unit id="resources\News-Capital &amp;amp; Democrat" translate="yes" xml:space="preserve">
-          <source>News-Capital %%amp;amp; Democrat</source>
-          <target state="new">News-Capital %%amp;amp; Democrat</target>
+        <trans-unit id="resources\News-Capital and Democrat" translate="yes" xml:space="preserve">
+          <source>News-Capital and Democrat</source>
+          <target state="new">News-Capital and Democrat</target>
         </trans-unit>
         <trans-unit id="resources\News-Gazette Online" translate="yes" xml:space="preserve">
           <source>News-Gazette Online</source>
@@ -13018,9 +13018,9 @@
           <source>News-Sun</source>
           <target state="new">News-Sun</target>
         </trans-unit>
-        <trans-unit id="resources\News-Sun &amp;amp; Evening Star" translate="yes" xml:space="preserve">
-          <source>News-Sun %%amp;amp; Evening Star</source>
-          <target state="new">News-Sun %%amp;amp; Evening Star</target>
+        <trans-unit id="resources\News-Sun and Evening Star" translate="yes" xml:space="preserve">
+          <source>News-Sun and Evening Star</source>
+          <target state="new">News-Sun and Evening Star</target>
         </trans-unit>
         <trans-unit id="resources\News-Sun, The" translate="yes" xml:space="preserve">
           <source>News-Sun, The</source>
@@ -13090,9 +13090,9 @@
           <source>Niagara Falls Reporter</source>
           <target state="new">Niagara Falls Reporter</target>
         </trans-unit>
-        <trans-unit id="resources\Niagara Falls Review " translate="yes" xml:space="preserve">
-          <source>Niagara Falls Review </source>
-          <target state="new">Niagara Falls Review </target>
+        <trans-unit id="resources\Niagara Falls Review" translate="yes" xml:space="preserve">
+          <source>Niagara Falls Review</source>
+          <target state="new">Niagara Falls Review</target>
         </trans-unit>
         <trans-unit id="resources\Niagara Gazette" translate="yes" xml:space="preserve">
           <source>Niagara Gazette</source>
@@ -13326,9 +13326,9 @@
           <source>Northampton</source>
           <target state="new">Northampton</target>
         </trans-unit>
-        <trans-unit id="resources\Northampton Chronicle &amp;amp; Echo" translate="yes" xml:space="preserve">
-          <source>Northampton Chronicle %%amp;amp; Echo</source>
-          <target state="new">Northampton Chronicle %%amp;amp; Echo</target>
+        <trans-unit id="resources\Northampton Chronicle and Echo" translate="yes" xml:space="preserve">
+          <source>Northampton Chronicle and Echo</source>
+          <target state="new">Northampton Chronicle and Echo</target>
         </trans-unit>
         <trans-unit id="resources\Northeast Mississippi Journal" translate="yes" xml:space="preserve">
           <source>Northeast Mississippi Journal</source>
@@ -13482,9 +13482,9 @@
           <source>Observa.com,uy</source>
           <target state="new">Observa.com,uy</target>
         </trans-unit>
-        <trans-unit id="resources\Observer &amp;amp; Eccentric Newspapers" translate="yes" xml:space="preserve">
-          <source>Observer %%amp;amp; Eccentric Newspapers</source>
-          <target state="new">Observer %%amp;amp; Eccentric Newspapers</target>
+        <trans-unit id="resources\Observer and Eccentric Newspapers" translate="yes" xml:space="preserve">
+          <source>Observer and Eccentric Newspapers</source>
+          <target state="new">Observer and Eccentric Newspapers</target>
         </trans-unit>
         <trans-unit id="resources\Observer, The" translate="yes" xml:space="preserve">
           <source>Observer, The</source>
@@ -14246,9 +14246,9 @@
           <source>Peabody</source>
           <target state="new">Peabody</target>
         </trans-unit>
-        <trans-unit id="resources\Peabody &amp;amp; Lynnfield Weekly News" translate="yes" xml:space="preserve">
-          <source>Peabody %%amp;amp; Lynnfield Weekly News</source>
-          <target state="new">Peabody %%amp;amp; Lynnfield Weekly News</target>
+        <trans-unit id="resources\Peabody and Lynnfield Weekly News" translate="yes" xml:space="preserve">
+          <source>Peabody and Lynnfield Weekly News</source>
+          <target state="new">Peabody and Lynnfield Weekly News</target>
         </trans-unit>
         <trans-unit id="resources\Peaks News Net" translate="yes" xml:space="preserve">
           <source>Peaks News Net</source>
@@ -14790,10 +14790,6 @@
           <source>Portugal</source>
           <target state="new">Portugal</target>
         </trans-unit>
-        <trans-unit id="resources\Post &amp;amp; Mail, The" translate="yes" xml:space="preserve">
-          <source>Post %%amp;amp; Mail, The</source>
-          <target state="new">Post %%amp;amp; Mail, The</target>
-        </trans-unit>
         <trans-unit id="resources\Post Register, The" translate="yes" xml:space="preserve">
           <source>Post Register, The</source>
           <target state="new">Post Register, The</target>
@@ -14805,6 +14801,10 @@
         <trans-unit id="resources\Post and Courier, The" translate="yes" xml:space="preserve">
           <source>Post and Courier, The</source>
           <target state="new">Post and Courier, The</target>
+        </trans-unit>
+        <trans-unit id="resources\Post and Mail, The" translate="yes" xml:space="preserve">
+          <source>Post and Mail, The</source>
+          <target state="new">Post and Mail, The</target>
         </trans-unit>
         <trans-unit id="resources\Post, The" translate="yes" xml:space="preserve">
           <source>Post, The</source>
@@ -15366,9 +15366,9 @@
           <source>Reno Gazette-Journal</source>
           <target state="new">Reno Gazette-Journal</target>
         </trans-unit>
-        <trans-unit id="resources\Reno News &amp;amp; Review" translate="yes" xml:space="preserve">
-          <source>Reno News %%amp;amp; Review</source>
-          <target state="new">Reno News %%amp;amp; Review</target>
+        <trans-unit id="resources\Reno News and Review" translate="yes" xml:space="preserve">
+          <source>Reno News and Review</source>
+          <target state="new">Reno News and Review</target>
         </trans-unit>
         <trans-unit id="resources\Renville County Farmer" translate="yes" xml:space="preserve">
           <source>Renville County Farmer</source>
@@ -15605,10 +15605,6 @@
         <trans-unit id="resources\Rochester Business Journal" translate="yes" xml:space="preserve">
           <source>Rochester Business Journal</source>
           <target state="new">Rochester Business Journal</target>
-        </trans-unit>
-        <trans-unit id="resources\Rochester Democrat &amp;amp; Chronicle" translate="yes" xml:space="preserve">
-          <source>Rochester Democrat %%amp;amp; Chronicle</source>
-          <target state="new">Rochester Democrat %%amp;amp; Chronicle</target>
         </trans-unit>
         <trans-unit id="resources\Rochester Democrat and Chronicle" translate="yes" xml:space="preserve">
           <source>Rochester Democrat and Chronicle</source>
@@ -16502,13 +16498,13 @@
           <source>Sentinel</source>
           <target state="new">Sentinel</target>
         </trans-unit>
-        <trans-unit id="resources\Sentinel &amp;amp; Enterprise" translate="yes" xml:space="preserve">
-          <source>Sentinel %%amp;amp; Enterprise</source>
-          <target state="new">Sentinel %%amp;amp; Enterprise</target>
-        </trans-unit>
         <trans-unit id="resources\Sentinel Online, The" translate="yes" xml:space="preserve">
           <source>Sentinel Online, The</source>
           <target state="new">Sentinel Online, The</target>
+        </trans-unit>
+        <trans-unit id="resources\Sentinel and Enterprise" translate="yes" xml:space="preserve">
+          <source>Sentinel and Enterprise</source>
+          <target state="new">Sentinel and Enterprise</target>
         </trans-unit>
         <trans-unit id="resources\Sentinel, The" translate="yes" xml:space="preserve">
           <source>Sentinel, The</source>
@@ -16694,13 +16690,17 @@
           <source>Silver City</source>
           <target state="new">Silver City</target>
         </trans-unit>
-        <trans-unit id="resources\Silver City Daily Press &amp;amp; Independent" translate="yes" xml:space="preserve">
-          <source>Silver City Daily Press %%amp;amp; Independent</source>
-          <target state="new">Silver City Daily Press %%amp;amp; Independent</target>
+        <trans-unit id="resources\Silver City Daily Press and Independent" translate="yes" xml:space="preserve">
+          <source>Silver City Daily Press and Independent</source>
+          <target state="new">Silver City Daily Press and Independent</target>
         </trans-unit>
         <trans-unit id="resources\Simerini" translate="yes" xml:space="preserve">
           <source>Simerini</source>
           <target state="new">Simerini</target>
+        </trans-unit>
+        <trans-unit id="resources\Singapore" translate="yes" xml:space="preserve">
+          <source>Singapore</source>
+          <target state="new">Singapore</target>
         </trans-unit>
         <trans-unit id="resources\Singapore Business Times" translate="yes" xml:space="preserve">
           <source>Singapore Business Times</source>
@@ -16894,9 +16894,9 @@
           <source>South Florida Business Journal</source>
           <target state="new">South Florida Business Journal</target>
         </trans-unit>
-        <trans-unit id="resources\South Florida Sun-Sentinel " translate="yes" xml:space="preserve">
-          <source>South Florida Sun-Sentinel </source>
-          <target state="new">South Florida Sun-Sentinel </target>
+        <trans-unit id="resources\South Florida Sun-Sentinel" translate="yes" xml:space="preserve">
+          <source>South Florida Sun-Sentinel</source>
+          <target state="new">South Florida Sun-Sentinel</target>
         </trans-unit>
         <trans-unit id="resources\South Korea" translate="yes" xml:space="preserve">
           <source>South Korea</source>
@@ -17294,9 +17294,9 @@
           <source>Statesville</source>
           <target state="new">Statesville</target>
         </trans-unit>
-        <trans-unit id="resources\Statesville Record &amp;amp; Landmark" translate="yes" xml:space="preserve">
-          <source>Statesville Record %%amp;amp; Landmark</source>
-          <target state="new">Statesville Record %%amp;amp; Landmark</target>
+        <trans-unit id="resources\Statesville Record and Landmark" translate="yes" xml:space="preserve">
+          <source>Statesville Record and Landmark</source>
+          <target state="new">Statesville Record and Landmark</target>
         </trans-unit>
         <trans-unit id="resources\Staunton" translate="yes" xml:space="preserve">
           <source>Staunton</source>
@@ -17910,9 +17910,9 @@
           <source>Tel Aviv</source>
           <target state="new">Tel Aviv</target>
         </trans-unit>
-        <trans-unit id="resources\Telegram &amp;amp; Gazette" translate="yes" xml:space="preserve">
-          <source>Telegram %%amp;amp; Gazette</source>
-          <target state="new">Telegram %%amp;amp; Gazette</target>
+        <trans-unit id="resources\Telegram and Gazette" translate="yes" xml:space="preserve">
+          <source>Telegram and Gazette</source>
+          <target state="new">Telegram and Gazette</target>
         </trans-unit>
         <trans-unit id="resources\Telegram, The" translate="yes" xml:space="preserve">
           <source>Telegram, The</source>
@@ -18062,9 +18062,9 @@
           <source>The Journal</source>
           <target state="new">The Journal</target>
         </trans-unit>
-        <trans-unit id="resources\The Kingfisher Times &amp;amp; Free Press" translate="yes" xml:space="preserve">
-          <source>The Kingfisher Times %%amp;amp; Free Press</source>
-          <target state="new">The Kingfisher Times %%amp;amp; Free Press</target>
+        <trans-unit id="resources\The Kingfisher Times and Free Press" translate="yes" xml:space="preserve">
+          <source>The Kingfisher Times and Free Press</source>
+          <target state="new">The Kingfisher Times and Free Press</target>
         </trans-unit>
         <trans-unit id="resources\The Malta Independent" translate="yes" xml:space="preserve">
           <source>The Malta Independent</source>
@@ -18117,10 +18117,6 @@
         <trans-unit id="resources\The Sunday Times" translate="yes" xml:space="preserve">
           <source>The Sunday Times</source>
           <target state="new">The Sunday Times</target>
-        </trans-unit>
-        <trans-unit id="resources\The Times &amp;amp; Sunday Times" translate="yes" xml:space="preserve">
-          <source>The Times %%amp;amp; Sunday Times</source>
-          <target state="new">The Times %%amp;amp; Sunday Times</target>
         </trans-unit>
         <trans-unit id="resources\The Times and Sunday Times" translate="yes" xml:space="preserve">
           <source>The Times and Sunday Times</source>
@@ -18374,9 +18370,9 @@
           <source>Titusville Herald, The</source>
           <target state="new">Titusville Herald, The</target>
         </trans-unit>
-        <trans-unit id="resources\Today in Batesville &amp;amp; Oldenburg" translate="yes" xml:space="preserve">
-          <source>Today in Batesville %%amp;amp; Oldenburg</source>
-          <target state="new">Today in Batesville %%amp;amp; Oldenburg</target>
+        <trans-unit id="resources\Today in Batesville and Oldenburg" translate="yes" xml:space="preserve">
+          <source>Today in Batesville and Oldenburg</source>
+          <target state="new">Today in Batesville and Oldenburg</target>
         </trans-unit>
         <trans-unit id="resources\Today's News-Herald" translate="yes" xml:space="preserve">
           <source>Today's News-Herald</source>
@@ -19534,9 +19530,9 @@
           <source>Watertown Public Opinion</source>
           <target state="new">Watertown Public Opinion</target>
         </trans-unit>
-        <trans-unit id="resources\Watertown Tab &amp;amp; Press" translate="yes" xml:space="preserve">
-          <source>Watertown Tab %%amp;amp; Press</source>
-          <target state="new">Watertown Tab %%amp;amp; Press</target>
+        <trans-unit id="resources\Watertown Tab and Press" translate="yes" xml:space="preserve">
+          <source>Watertown Tab and Press</source>
+          <target state="new">Watertown Tab and Press</target>
         </trans-unit>
         <trans-unit id="resources\Waterville" translate="yes" xml:space="preserve">
           <source>Waterville</source>
@@ -20302,9 +20298,9 @@
           <source>Worcester Business Journal</source>
           <target state="new">Worcester Business Journal</target>
         </trans-unit>
-        <trans-unit id="resources\Worcester Telegram &amp;amp; Gazette" translate="yes" xml:space="preserve">
-          <source>Worcester Telegram %%amp;amp; Gazette</source>
-          <target state="new">Worcester Telegram %%amp;amp; Gazette</target>
+        <trans-unit id="resources\Worcester Telegram and Gazette" translate="yes" xml:space="preserve">
+          <source>Worcester Telegram and Gazette</source>
+          <target state="new">Worcester Telegram and Gazette</target>
         </trans-unit>
         <trans-unit id="resources\World, The" translate="yes" xml:space="preserve">
           <source>World, The</source>
@@ -20374,9 +20370,9 @@
           <source>Yankton</source>
           <target state="new">Yankton</target>
         </trans-unit>
-        <trans-unit id="resources\Yankton Daily Press &amp;amp; Dakotan" translate="yes" xml:space="preserve">
-          <source>Yankton Daily Press %%amp;amp; Dakotan</source>
-          <target state="new">Yankton Daily Press %%amp;amp; Dakotan</target>
+        <trans-unit id="resources\Yankton Daily Press and Dakotan" translate="yes" xml:space="preserve">
+          <source>Yankton Daily Press and Dakotan</source>
+          <target state="new">Yankton Daily Press and Dakotan</target>
         </trans-unit>
         <trans-unit id="resources\Yellow Springs" translate="yes" xml:space="preserve">
           <source>Yellow Springs</source>

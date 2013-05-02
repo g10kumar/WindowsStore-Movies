@@ -329,8 +329,8 @@
                     for (var newsPaperIndex = 0; newsPaperIndex < newsPaperList.length; newsPaperIndex++) {
 
                         var newsPapers = {
-                            title: newsPaper[newsIndex].attributes.getNamedItem("name").textContent,
-                            newsTitle: newsPaperList[newsPaperIndex].querySelector("Name").textContent,
+                            title: WinJS.Resources.getString(newsPaper[newsIndex].attributes.getNamedItem("name").textContent).value,
+                            newsTitle: WinJS.Resources.getString(newsPaperList[newsPaperIndex].querySelector("Name").textContent.replace("&", "and")).value,
                             webSite: newsPaperList[newsPaperIndex].querySelector("WebSite").textContent,
                             backgroundImage: "../../../images/Country/" + newsPaper[newsIndex].attributes.getNamedItem("name").textContent + "_" + newsPaperList[newsPaperIndex].querySelector("Name").textContent + ".jpg"
                         };
