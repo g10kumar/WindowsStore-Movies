@@ -63,6 +63,8 @@
         // This function is called whenever a user navigates to this page. It
         // populates the page elements with the app's data.
         ready: function (element, options) {
+
+            element.querySelector(".titlearea .pagetitle").textContent = WinJS.Resources.getString('News Papers').value;
             var listView = element.querySelector(".groupeditemslist").winControl;
             listView.groupHeaderTemplate = element.querySelector(".headerTemplate");
             listView.itemTemplate = element.querySelector(".itemtemplate");

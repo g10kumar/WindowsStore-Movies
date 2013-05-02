@@ -114,9 +114,9 @@
           <source>Advertiser-Tribune, The</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Рекламодатель Трибуна,</target>
         </trans-unit>
-        <trans-unit id="resources\Advocate &amp;amp; Democrat" translate="yes" xml:space="preserve">
-          <source>Advocate %%amp;amp; Democrat</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Адвокат %%amp;amp; Демократ</target>
+        <trans-unit id="resources\Advocate and Democrat" translate="yes" xml:space="preserve">
+          <source>Advocate and Democrat</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Адвокат и демократ</target>
         </trans-unit>
         <trans-unit id="resources\Advocate, The" translate="yes" xml:space="preserve">
           <source>Advocate, The</source>
@@ -946,10 +946,6 @@
           <source>Atlanta Journal-Constitution</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Атланта журнал Конституция</target>
         </trans-unit>
-        <trans-unit id="resources\Atlanta Journal-Constitution " translate="yes" xml:space="preserve">
-          <source>Atlanta Journal-Constitution </source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Атланта журнал Конституция </target>
-        </trans-unit>
         <trans-unit id="resources\Atlantic City" translate="yes" xml:space="preserve">
           <source>Atlantic City</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Атлантик-Сити</target>
@@ -1138,9 +1134,9 @@
           <source>Baltimore City Paper</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Бумага города Балтимор</target>
         </trans-unit>
-        <trans-unit id="resources\Baltimore Sun " translate="yes" xml:space="preserve">
-          <source>Baltimore Sun </source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Baltimore Sun </target>
+        <trans-unit id="resources\Baltimore Sun" translate="yes" xml:space="preserve">
+          <source>Baltimore Sun</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Baltimore Sun</target>
         </trans-unit>
         <trans-unit id="resources\Baltimore Sun, The" translate="yes" xml:space="preserve">
           <source>Baltimore Sun, The</source>
@@ -1584,7 +1580,7 @@
         </trans-unit>
         <trans-unit id="resources\Berita" translate="yes" xml:space="preserve">
           <source>Berita</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Berita</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">новости</target>
         </trans-unit>
         <trans-unit id="resources\Berita Harian" translate="yes" xml:space="preserve">
           <source>Berita Harian</source>
@@ -1900,7 +1896,7 @@
         </trans-unit>
         <trans-unit id="resources\Bondia" translate="yes" xml:space="preserve">
           <source>Bondia</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Bondia</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Бондиа</target>
         </trans-unit>
         <trans-unit id="resources\Bonita Daily News" translate="yes" xml:space="preserve">
           <source>Bonita Daily News</source>
@@ -2398,6 +2394,10 @@
           <source>Bushnell</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Бушнелл</target>
         </trans-unit>
+        <trans-unit id="resources\Business Day" translate="yes" xml:space="preserve">
+          <source>Business Day</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Рабочий день</target>
+        </trans-unit>
         <trans-unit id="resources\Business Farmer" translate="yes" xml:space="preserve">
           <source>Business Farmer</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Бизнес фермер</target>
@@ -2744,7 +2744,7 @@
         </trans-unit>
         <trans-unit id="resources\Caretas" translate="yes" xml:space="preserve">
           <source>Caretas</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Caretas</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Маски</target>
         </trans-unit>
         <trans-unit id="resources\Caribbean" translate="yes" xml:space="preserve">
           <source>Caribbean</source>
@@ -3166,10 +3166,6 @@
           <source>Chicago Sun-Times</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Чикаго Сан Таймс</target>
         </trans-unit>
-        <trans-unit id="resources\Chicago Sun-Times " translate="yes" xml:space="preserve">
-          <source>Chicago Sun-Times </source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Чикаго Сан Таймс </target>
-        </trans-unit>
         <trans-unit id="resources\Chicago Tribune" translate="yes" xml:space="preserve">
           <source>Chicago Tribune</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Чикаго Трибьюн</target>
@@ -3310,9 +3306,9 @@
           <source>Cincinnati CityBeat</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Цинциннати CityBeat</target>
         </trans-unit>
-        <trans-unit id="resources\Cincinnati Enquirer " translate="yes" xml:space="preserve">
-          <source>Cincinnati Enquirer </source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Цинциннати исследователь </target>
+        <trans-unit id="resources\Cincinnati Enquirer" translate="yes" xml:space="preserve">
+          <source>Cincinnati Enquirer</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Цинциннати исследователь</target>
         </trans-unit>
         <trans-unit id="resources\Cincinnati Enquirer, The" translate="yes" xml:space="preserve">
           <source>Cincinnati Enquirer, The</source>
@@ -3834,9 +3830,9 @@
           <source>Coronado</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Коронадо</target>
         </trans-unit>
-        <trans-unit id="resources\Coronado Eagle &amp;amp; Journal" translate="yes" xml:space="preserve">
-          <source>Coronado Eagle %%amp;amp; Journal</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Коронадо Eagle %%amp;amp; Журнал</target>
+        <trans-unit id="resources\Coronado Eagle and Journal" translate="yes" xml:space="preserve">
+          <source>Coronado Eagle and Journal</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Коронадо орла и журнал</target>
         </trans-unit>
         <trans-unit id="resources\Corpus Christi" translate="yes" xml:space="preserve">
           <source>Corpus Christi</source>
@@ -4402,9 +4398,9 @@
           <source>Daily Me, The</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Ежедневно меня,</target>
         </trans-unit>
-        <trans-unit id="resources\Daily Miner &amp;amp; News" translate="yes" xml:space="preserve">
-          <source>Daily Miner %%amp;amp; News</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Ежедневные рудничные %%amp;amp; Новости</target>
+        <trans-unit id="resources\Daily Miner and News" translate="yes" xml:space="preserve">
+          <source>Daily Miner and News</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Новости и ежедневные Майнер</target>
         </trans-unit>
         <trans-unit id="resources\Daily Mining Gazette, The" translate="yes" xml:space="preserve">
           <source>Daily Mining Gazette, The</source>
@@ -4724,7 +4720,7 @@
         </trans-unit>
         <trans-unit id="resources\De Standaard" translate="yes" xml:space="preserve">
           <source>De Standaard</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">De Standaard</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Стандартный</target>
         </trans-unit>
         <trans-unit id="resources\De Tijd" translate="yes" xml:space="preserve">
           <source>De Tijd</source>
@@ -5024,7 +5020,7 @@
         </trans-unit>
         <trans-unit id="resources\Diari d'Andorra" translate="yes" xml:space="preserve">
           <source>Diari d'Andorra</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Diari d'Andorra</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Diari Андорра</target>
         </trans-unit>
         <trans-unit id="resources\Diario" translate="yes" xml:space="preserve">
           <source>Diario</source>
@@ -5706,9 +5702,9 @@
           <source>Elberton</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Элбертон</target>
         </trans-unit>
-        <trans-unit id="resources\Elberton Star &amp;amp; Examiner, The" translate="yes" xml:space="preserve">
-          <source>Elberton Star %%amp;amp; Examiner, The</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Элбертон звезда %%amp;amp; Ревизор,</target>
+        <trans-unit id="resources\Elberton Star and Examiner, The" translate="yes" xml:space="preserve">
+          <source>Elberton Star and Examiner, The</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Элбертон звезда и ревизор,</target>
         </trans-unit>
         <trans-unit id="resources\Elburn" translate="yes" xml:space="preserve">
           <source>Elburn</source>
@@ -6042,10 +6038,6 @@
           <source>Exponent, The</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Экспоненты,</target>
         </trans-unit>
-        <trans-unit id="resources\Express &amp;amp; Star" translate="yes" xml:space="preserve">
-          <source>Express %%amp;amp; Star</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Экспресс %%amp;amp; Звезда</target>
-        </trans-unit>
         <trans-unit id="resources\Express India" translate="yes" xml:space="preserve">
           <source>Express India</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Экспресс Индии</target>
@@ -6053,6 +6045,10 @@
         <trans-unit id="resources\Express Newspaper, The" translate="yes" xml:space="preserve">
           <source>Express Newspaper, The</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Экспресс газета,</target>
+        </trans-unit>
+        <trans-unit id="resources\Express and Star" translate="yes" xml:space="preserve">
+          <source>Express and Star</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Экспресс и звезды</target>
         </trans-unit>
         <trans-unit id="resources\Express, The" translate="yes" xml:space="preserve">
           <source>Express, The</source>
@@ -6068,7 +6064,7 @@
         </trans-unit>
         <trans-unit id="resources\Expresso" translate="yes" xml:space="preserve">
           <source>Expresso</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Expresso</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">экспресс</target>
         </trans-unit>
         <trans-unit id="resources\Extra" translate="yes" xml:space="preserve">
           <source>Extra</source>
@@ -6146,9 +6142,9 @@
           <source>Faribault Daily News</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Фариболт ежедневные новости</target>
         </trans-unit>
-        <trans-unit id="resources\Farm &amp;amp; Ranch Guide" translate="yes" xml:space="preserve">
-          <source>Farm %%amp;amp; Ranch Guide</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Ферма %%amp;amp; Ранчо гид</target>
+        <trans-unit id="resources\Farm and Ranch Guide" translate="yes" xml:space="preserve">
+          <source>Farm and Ranch Guide</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Фермы и ранчо гид</target>
         </trans-unit>
         <trans-unit id="resources\Farmers Press" translate="yes" xml:space="preserve">
           <source>Farmers Press</source>
@@ -6506,9 +6502,9 @@
           <source>Four Corners Business Journal</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Четыре уголка в бизнес журнал</target>
         </trans-unit>
-        <trans-unit id="resources\Fox News " translate="yes" xml:space="preserve">
-          <source>Fox News </source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Fox News </target>
+        <trans-unit id="resources\Fox News" translate="yes" xml:space="preserve">
+          <source>Fox News</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Fox News</target>
         </trans-unit>
         <trans-unit id="resources\Foxboro" translate="yes" xml:space="preserve">
           <source>Foxboro</source>
@@ -6666,9 +6662,9 @@
           <source>Ft. Wayne</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Форт Уэйн</target>
         </trans-unit>
-        <trans-unit id="resources\Ft. Worth Star-Telegram " translate="yes" xml:space="preserve">
-          <source>Ft. Worth Star-Telegram </source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Форт Уорт Стар Телеграмма </target>
+        <trans-unit id="resources\Ft. Worth Star-Telegram" translate="yes" xml:space="preserve">
+          <source>Ft. Worth Star-Telegram</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Форт Уорт Стар Телеграмма</target>
         </trans-unit>
         <trans-unit id="resources\Fulton" translate="yes" xml:space="preserve">
           <source>Fulton</source>
@@ -7294,9 +7290,9 @@
           <source>Green Valley</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Зеленая долина</target>
         </trans-unit>
-        <trans-unit id="resources\Green Valley News &amp;amp; Sun" translate="yes" xml:space="preserve">
-          <source>Green Valley News %%amp;amp; Sun</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Зеленая долина Новости %%amp;amp; Солнце</target>
+        <trans-unit id="resources\Green Valley News and Sun" translate="yes" xml:space="preserve">
+          <source>Green Valley News and Sun</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Зеленая долина Новости и солнце</target>
         </trans-unit>
         <trans-unit id="resources\Greencastle" translate="yes" xml:space="preserve">
           <source>Greencastle</source>
@@ -7550,9 +7546,9 @@
           <source>Hallandspostenr</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Hallandspostenr</target>
         </trans-unit>
-        <trans-unit id="resources\Haller Tagblatt &amp;amp; KreisKurier" translate="yes" xml:space="preserve">
-          <source>Haller Tagblatt %%amp;amp; KreisKurier</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Галлер, Альбрехт фон Tagblatt %%amp;amp; KreisKurier</target>
+        <trans-unit id="resources\Haller Tagblatt and KreisKurier" translate="yes" xml:space="preserve">
+          <source>Haller Tagblatt and KreisKurier</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Галлер, Альбрехт фон Tagblatt и KreisKurier</target>
         </trans-unit>
         <trans-unit id="resources\Hallock" translate="yes" xml:space="preserve">
           <source>Hallock</source>
@@ -7914,10 +7910,6 @@
           <source>Henry Herald, The</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Генри Herald,</target>
         </trans-unit>
-        <trans-unit id="resources\Herald &amp;amp; Review" translate="yes" xml:space="preserve">
-          <source>Herald %%amp;amp; Review</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Вестник %%amp;amp; Обзор</target>
-        </trans-unit>
         <trans-unit id="resources\Herald Bulletin, The" translate="yes" xml:space="preserve">
           <source>Herald Bulletin, The</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Вестник бюллетень,</target>
@@ -7965,6 +7957,10 @@
         <trans-unit id="resources\Herald Sun" translate="yes" xml:space="preserve">
           <source>Herald Sun</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Herald Sun</target>
+        </trans-unit>
+        <trans-unit id="resources\Herald and Review" translate="yes" xml:space="preserve">
+          <source>Herald and Review</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Геральд и обзор</target>
         </trans-unit>
         <trans-unit id="resources\Herald and Ruralite" translate="yes" xml:space="preserve">
           <source>Herald and Ruralite</source>
@@ -8662,9 +8658,9 @@
           <source>Inside China Today</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Внутри Китая сегодня</target>
         </trans-unit>
-        <trans-unit id="resources\Intelligencer &amp;amp; Wheeling News Register, The" translate="yes" xml:space="preserve">
-          <source>Intelligencer %%amp;amp; Wheeling News Register, The</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Информатор %%amp;amp; Wheeling Новости регистр,</target>
+        <trans-unit id="resources\Intelligencer and Wheeling News Register, The" translate="yes" xml:space="preserve">
+          <source>Intelligencer and Wheeling News Register, The</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Информатор и Уилинг Новости зарегистрироваться,</target>
         </trans-unit>
         <trans-unit id="resources\Inter-Mountain, The" translate="yes" xml:space="preserve">
           <source>Inter-Mountain, The</source>
@@ -9250,10 +9246,6 @@
           <source>Kansas City Star</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Канзас Сити Стар</target>
         </trans-unit>
-        <trans-unit id="resources\Kansas City Star " translate="yes" xml:space="preserve">
-          <source>Kansas City Star </source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Канзас Сити Стар </target>
-        </trans-unit>
         <trans-unit id="resources\Kapital" translate="yes" xml:space="preserve">
           <source>Kapital</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Капитал</target>
@@ -9272,7 +9264,7 @@
         </trans-unit>
         <trans-unit id="resources\Kaumudi" translate="yes" xml:space="preserve">
           <source>Kaumudi</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Kaumudi</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">каумуди</target>
         </trans-unit>
         <trans-unit id="resources\Kauppalehti.fi" translate="yes" xml:space="preserve">
           <source>Kauppalehti.fi</source>
@@ -9514,9 +9506,9 @@
           <source>Kirksville</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Кирксвилл</target>
         </trans-unit>
-        <trans-unit id="resources\Kirksville Daily Express &amp;amp; News" translate="yes" xml:space="preserve">
-          <source>Kirksville Daily Express %%amp;amp; News</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Кирксвилл Дейли Экспресс %%amp;amp; Новости</target>
+        <trans-unit id="resources\Kirksville Daily Express and News" translate="yes" xml:space="preserve">
+          <source>Kirksville Daily Express and News</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Ежедневный экспресс Кирксвилл и новости</target>
         </trans-unit>
         <trans-unit id="resources\Kitchener-Waterloo Record, The" translate="yes" xml:space="preserve">
           <source>Kitchener-Waterloo Record, The</source>
@@ -9812,7 +9804,7 @@
         </trans-unit>
         <trans-unit id="resources\La Tribune" translate="yes" xml:space="preserve">
           <source>La Tribune</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">La Tribune</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Tribune</target>
         </trans-unit>
         <trans-unit id="resources\La Tribune, Sherbrooke" translate="yes" xml:space="preserve">
           <source>La Tribune, Sherbrooke</source>
@@ -10168,11 +10160,11 @@
         </trans-unit>
         <trans-unit id="resources\Le Monde" translate="yes" xml:space="preserve">
           <source>Le Monde</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Le Monde</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Мир</target>
         </trans-unit>
         <trans-unit id="resources\Le Monde Diplomatique" translate="yes" xml:space="preserve">
           <source>Le Monde Diplomatique</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Le Monde Diplomatique</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Монд дипломатик</target>
         </trans-unit>
         <trans-unit id="resources\Le Nouvel Observateur" translate="yes" xml:space="preserve">
           <source>Le Nouvel Observateur</source>
@@ -10990,13 +10982,13 @@
           <source>Magyar Hirlap</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Magyar Hirlap</target>
         </trans-unit>
-        <trans-unit id="resources\Mail &amp;amp; Guardian, The" translate="yes" xml:space="preserve">
-          <source>Mail %%amp;amp; Guardian, The</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Почта %%amp;amp; Guardian,</target>
-        </trans-unit>
         <trans-unit id="resources\Mail Tribune, The" translate="yes" xml:space="preserve">
           <source>Mail Tribune, The</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Почта Tribune,</target>
+        </trans-unit>
+        <trans-unit id="resources\Mail and Guardian, The" translate="yes" xml:space="preserve">
+          <source>Mail and Guardian, The</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Почта и Guardian,</target>
         </trans-unit>
         <trans-unit id="resources\Main-Echo" translate="yes" xml:space="preserve">
           <source>Main-Echo</source>
@@ -11037,6 +11029,10 @@
         <trans-unit id="resources\Malden Town Online" translate="yes" xml:space="preserve">
           <source>Malden Town Online</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Малден город онлайн</target>
+        </trans-unit>
+        <trans-unit id="resources\Maldives" translate="yes" xml:space="preserve">
+          <source>Maldives</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Мальдивские острова</target>
         </trans-unit>
         <trans-unit id="resources\Malibu" translate="yes" xml:space="preserve">
           <source>Malibu</source>
@@ -11366,9 +11362,9 @@
           <source>McAlester</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Мак-Алестер</target>
         </trans-unit>
-        <trans-unit id="resources\McAlester News-Capital &amp;amp; Democrat" translate="yes" xml:space="preserve">
-          <source>McAlester News-Capital %%amp;amp; Democrat</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Мак-Алестер Новости-столица %%amp;amp; Демократ</target>
+        <trans-unit id="resources\McAlester News-Capital and Democrat" translate="yes" xml:space="preserve">
+          <source>McAlester News-Capital and Democrat</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Мак-Алестер Новости столица и демократ</target>
         </trans-unit>
         <trans-unit id="resources\McAllen" translate="yes" xml:space="preserve">
           <source>McAllen</source>
@@ -12298,9 +12294,9 @@
           <source>Murray County News</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Мюррей Каунти Новости</target>
         </trans-unit>
-        <trans-unit id="resources\Murray Ledger &amp;amp; Times, The" translate="yes" xml:space="preserve">
-          <source>Murray Ledger %%amp;amp; Times, The</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Мюррей ГК %%amp;amp; Времена,</target>
+        <trans-unit id="resources\Murray Ledger and Times, The" translate="yes" xml:space="preserve">
+          <source>Murray Ledger and Times, The</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Мюррей ГК и времени,</target>
         </trans-unit>
         <trans-unit id="resources\Murrysville" translate="yes" xml:space="preserve">
           <source>Murrysville</source>
@@ -12441,6 +12437,10 @@
         <trans-unit id="resources\Natchez Democrat, The" translate="yes" xml:space="preserve">
           <source>Natchez Democrat, The</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Натчез демократ,</target>
+        </trans-unit>
+        <trans-unit id="resources\Nation, The" translate="yes" xml:space="preserve">
+          <source>Nation, The</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Нация,</target>
         </trans-unit>
         <trans-unit id="resources\National" translate="yes" xml:space="preserve">
           <source>National</source>
@@ -12854,26 +12854,6 @@
           <source>Newport Plain Talk, The</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Ньюпорт равнина говорить,</target>
         </trans-unit>
-        <trans-unit id="resources\News &amp;amp; Advance, The" translate="yes" xml:space="preserve">
-          <source>News %%amp;amp; Advance, The</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Новости %%amp;amp; Заранее,</target>
-        </trans-unit>
-        <trans-unit id="resources\News &amp;amp; Citizen" translate="yes" xml:space="preserve">
-          <source>News %%amp;amp; Citizen</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Новости %%amp;amp; Гражданин</target>
-        </trans-unit>
-        <trans-unit id="resources\News &amp;amp; Observer" translate="yes" xml:space="preserve">
-          <source>News %%amp;amp; Observer</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Новости %%amp;amp; Наблюдатель</target>
-        </trans-unit>
-        <trans-unit id="resources\News &amp;amp; Record" translate="yes" xml:space="preserve">
-          <source>News %%amp;amp; Record</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Новости %%amp;amp; Запись</target>
-        </trans-unit>
-        <trans-unit id="resources\News &amp;amp; Review" translate="yes" xml:space="preserve">
-          <source>News %%amp;amp; Review</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Новости %%amp;amp; Обзор</target>
-        </trans-unit>
         <trans-unit id="resources\News Banner, The" translate="yes" xml:space="preserve">
           <source>News Banner, The</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Новости баннер,</target>
@@ -12882,9 +12862,9 @@
           <source>News Daily</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Ежедневные Новости</target>
         </trans-unit>
-        <trans-unit id="resources\News Democrat &amp;amp; Leader" translate="yes" xml:space="preserve">
-          <source>News Democrat %%amp;amp; Leader</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Новости демократ %%amp;amp; Лидер</target>
+        <trans-unit id="resources\News Democrat and Leader" translate="yes" xml:space="preserve">
+          <source>News Democrat and Leader</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Новости демократ и лидер</target>
         </trans-unit>
         <trans-unit id="resources\News Dispatch, The" translate="yes" xml:space="preserve">
           <source>News Dispatch, The</source>
@@ -12938,6 +12918,26 @@
           <source>News Virginian, The</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Новости виргинский,</target>
         </trans-unit>
+        <trans-unit id="resources\News and Advance, The" translate="yes" xml:space="preserve">
+          <source>News and Advance, The</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Новости и заранее,</target>
+        </trans-unit>
+        <trans-unit id="resources\News and Citizen" translate="yes" xml:space="preserve">
+          <source>News and Citizen</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Новости и гражданина</target>
+        </trans-unit>
+        <trans-unit id="resources\News and Observer" translate="yes" xml:space="preserve">
+          <source>News and Observer</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Новости и наблюдателей</target>
+        </trans-unit>
+        <trans-unit id="resources\News and Record" translate="yes" xml:space="preserve">
+          <source>News and Record</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Новости и запись</target>
+        </trans-unit>
+        <trans-unit id="resources\News and Review" translate="yes" xml:space="preserve">
+          <source>News and Review</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Новости и обзор</target>
+        </trans-unit>
         <trans-unit id="resources\News and Sentinel" translate="yes" xml:space="preserve">
           <source>News and Sentinel</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Новости и Страж</target>
@@ -12958,9 +12958,9 @@
           <source>News-Bulletin</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Бюллетень новостей</target>
         </trans-unit>
-        <trans-unit id="resources\News-Capital &amp;amp; Democrat" translate="yes" xml:space="preserve">
-          <source>News-Capital %%amp;amp; Democrat</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Новости-столица %%amp;amp; Демократ</target>
+        <trans-unit id="resources\News-Capital and Democrat" translate="yes" xml:space="preserve">
+          <source>News-Capital and Democrat</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Новости столица и демократ</target>
         </trans-unit>
         <trans-unit id="resources\News-Gazette Online" translate="yes" xml:space="preserve">
           <source>News-Gazette Online</source>
@@ -13018,9 +13018,9 @@
           <source>News-Sun</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Новости солнце</target>
         </trans-unit>
-        <trans-unit id="resources\News-Sun &amp;amp; Evening Star" translate="yes" xml:space="preserve">
-          <source>News-Sun %%amp;amp; Evening Star</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Новости-ВС %%amp;amp; Вечерняя звезда</target>
+        <trans-unit id="resources\News-Sun and Evening Star" translate="yes" xml:space="preserve">
+          <source>News-Sun and Evening Star</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Новости солнце и вечерняя звезда</target>
         </trans-unit>
         <trans-unit id="resources\News-Sun, The" translate="yes" xml:space="preserve">
           <source>News-Sun, The</source>
@@ -13090,9 +13090,9 @@
           <source>Niagara Falls Reporter</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Ниагара-Фолс репортер</target>
         </trans-unit>
-        <trans-unit id="resources\Niagara Falls Review " translate="yes" xml:space="preserve">
-          <source>Niagara Falls Review </source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Ниагара-Фолс обзор </target>
+        <trans-unit id="resources\Niagara Falls Review" translate="yes" xml:space="preserve">
+          <source>Niagara Falls Review</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Ниагара-Фолс обзор</target>
         </trans-unit>
         <trans-unit id="resources\Niagara Gazette" translate="yes" xml:space="preserve">
           <source>Niagara Gazette</source>
@@ -13326,9 +13326,9 @@
           <source>Northampton</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Нортгемптон</target>
         </trans-unit>
-        <trans-unit id="resources\Northampton Chronicle &amp;amp; Echo" translate="yes" xml:space="preserve">
-          <source>Northampton Chronicle %%amp;amp; Echo</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Нортгемптон Хроника %%amp;amp; Эхо</target>
+        <trans-unit id="resources\Northampton Chronicle and Echo" translate="yes" xml:space="preserve">
+          <source>Northampton Chronicle and Echo</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Нортгемптон Хроника и эхо</target>
         </trans-unit>
         <trans-unit id="resources\Northeast Mississippi Journal" translate="yes" xml:space="preserve">
           <source>Northeast Mississippi Journal</source>
@@ -13482,9 +13482,9 @@
           <source>Observa.com,uy</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Observa.com,UY</target>
         </trans-unit>
-        <trans-unit id="resources\Observer &amp;amp; Eccentric Newspapers" translate="yes" xml:space="preserve">
-          <source>Observer %%amp;amp; Eccentric Newspapers</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Наблюдатель от %%amp;amp; Эксцентричный газеты</target>
+        <trans-unit id="resources\Observer and Eccentric Newspapers" translate="yes" xml:space="preserve">
+          <source>Observer and Eccentric Newspapers</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Наблюдатель и эксцентричный газет</target>
         </trans-unit>
         <trans-unit id="resources\Observer, The" translate="yes" xml:space="preserve">
           <source>Observer, The</source>
@@ -14246,9 +14246,9 @@
           <source>Peabody</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Пибоди</target>
         </trans-unit>
-        <trans-unit id="resources\Peabody &amp;amp; Lynnfield Weekly News" translate="yes" xml:space="preserve">
-          <source>Peabody %%amp;amp; Lynnfield Weekly News</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Пибоди %%amp;amp; Lynnfield еженедельные новости</target>
+        <trans-unit id="resources\Peabody and Lynnfield Weekly News" translate="yes" xml:space="preserve">
+          <source>Peabody and Lynnfield Weekly News</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Пибоди и Lynnfield еженедельные новости</target>
         </trans-unit>
         <trans-unit id="resources\Peaks News Net" translate="yes" xml:space="preserve">
           <source>Peaks News Net</source>
@@ -14790,10 +14790,6 @@
           <source>Portugal</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Португалия</target>
         </trans-unit>
-        <trans-unit id="resources\Post &amp;amp; Mail, The" translate="yes" xml:space="preserve">
-          <source>Post %%amp;amp; Mail, The</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Пост %%amp;amp; Почта,</target>
-        </trans-unit>
         <trans-unit id="resources\Post Register, The" translate="yes" xml:space="preserve">
           <source>Post Register, The</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Должность регистр,</target>
@@ -14805,6 +14801,10 @@
         <trans-unit id="resources\Post and Courier, The" translate="yes" xml:space="preserve">
           <source>Post and Courier, The</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Почтовые и курьерские,</target>
+        </trans-unit>
+        <trans-unit id="resources\Post and Mail, The" translate="yes" xml:space="preserve">
+          <source>Post and Mail, The</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Почта и почта,</target>
         </trans-unit>
         <trans-unit id="resources\Post, The" translate="yes" xml:space="preserve">
           <source>Post, The</source>
@@ -15366,9 +15366,9 @@
           <source>Reno Gazette-Journal</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Рино вестник журнал</target>
         </trans-unit>
-        <trans-unit id="resources\Reno News &amp;amp; Review" translate="yes" xml:space="preserve">
-          <source>Reno News %%amp;amp; Review</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Новости Рено %%amp;amp; Обзор</target>
+        <trans-unit id="resources\Reno News and Review" translate="yes" xml:space="preserve">
+          <source>Reno News and Review</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Новости Рено и обзор</target>
         </trans-unit>
         <trans-unit id="resources\Renville County Farmer" translate="yes" xml:space="preserve">
           <source>Renville County Farmer</source>
@@ -15606,10 +15606,6 @@
           <source>Rochester Business Journal</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Рочестер бизнес журнал</target>
         </trans-unit>
-        <trans-unit id="resources\Rochester Democrat &amp;amp; Chronicle" translate="yes" xml:space="preserve">
-          <source>Rochester Democrat %%amp;amp; Chronicle</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Рочестер демократ %%amp;amp; Хроника</target>
-        </trans-unit>
         <trans-unit id="resources\Rochester Democrat and Chronicle" translate="yes" xml:space="preserve">
           <source>Rochester Democrat and Chronicle</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Рочестер демократ и Хроника</target>
@@ -15708,7 +15704,7 @@
         </trans-unit>
         <trans-unit id="resources\Roll Call" translate="yes" xml:space="preserve">
           <source>Roll Call</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Roll Call</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Перекличка</target>
         </trans-unit>
         <trans-unit id="resources\Rolla" translate="yes" xml:space="preserve">
           <source>Rolla</source>
@@ -16502,13 +16498,13 @@
           <source>Sentinel</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Страж</target>
         </trans-unit>
-        <trans-unit id="resources\Sentinel &amp;amp; Enterprise" translate="yes" xml:space="preserve">
-          <source>Sentinel %%amp;amp; Enterprise</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Страж %%amp;amp; Предприятие</target>
-        </trans-unit>
         <trans-unit id="resources\Sentinel Online, The" translate="yes" xml:space="preserve">
           <source>Sentinel Online, The</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Sentinel онлайн,</target>
+        </trans-unit>
+        <trans-unit id="resources\Sentinel and Enterprise" translate="yes" xml:space="preserve">
+          <source>Sentinel and Enterprise</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Дозорный и предпринимательства</target>
         </trans-unit>
         <trans-unit id="resources\Sentinel, The" translate="yes" xml:space="preserve">
           <source>Sentinel, The</source>
@@ -16694,13 +16690,17 @@
           <source>Silver City</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Серебряный город</target>
         </trans-unit>
-        <trans-unit id="resources\Silver City Daily Press &amp;amp; Independent" translate="yes" xml:space="preserve">
-          <source>Silver City Daily Press %%amp;amp; Independent</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Серебряный город ежедневные пресс %%amp;amp; Независимые</target>
+        <trans-unit id="resources\Silver City Daily Press and Independent" translate="yes" xml:space="preserve">
+          <source>Silver City Daily Press and Independent</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Серебряный город ежедневных газет и независимых</target>
         </trans-unit>
         <trans-unit id="resources\Simerini" translate="yes" xml:space="preserve">
           <source>Simerini</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Симерени</target>
+        </trans-unit>
+        <trans-unit id="resources\Singapore" translate="yes" xml:space="preserve">
+          <source>Singapore</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Сингапур</target>
         </trans-unit>
         <trans-unit id="resources\Singapore Business Times" translate="yes" xml:space="preserve">
           <source>Singapore Business Times</source>
@@ -16894,9 +16894,9 @@
           <source>South Florida Business Journal</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Южной Флориде бизнес журнал</target>
         </trans-unit>
-        <trans-unit id="resources\South Florida Sun-Sentinel " translate="yes" xml:space="preserve">
-          <source>South Florida Sun-Sentinel </source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Южная Флорида Sun-Sentinel </target>
+        <trans-unit id="resources\South Florida Sun-Sentinel" translate="yes" xml:space="preserve">
+          <source>South Florida Sun-Sentinel</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Южная Флорида Sun-Sentinel</target>
         </trans-unit>
         <trans-unit id="resources\South Korea" translate="yes" xml:space="preserve">
           <source>South Korea</source>
@@ -17294,9 +17294,9 @@
           <source>Statesville</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Стейтсвилле</target>
         </trans-unit>
-        <trans-unit id="resources\Statesville Record &amp;amp; Landmark" translate="yes" xml:space="preserve">
-          <source>Statesville Record %%amp;amp; Landmark</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Стейтсвилле рекорд %%amp;amp; Ориентир</target>
+        <trans-unit id="resources\Statesville Record and Landmark" translate="yes" xml:space="preserve">
+          <source>Statesville Record and Landmark</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Стейтсвилле запись и ориентир</target>
         </trans-unit>
         <trans-unit id="resources\Staunton" translate="yes" xml:space="preserve">
           <source>Staunton</source>
@@ -17910,9 +17910,9 @@
           <source>Tel Aviv</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Тель-Авив</target>
         </trans-unit>
-        <trans-unit id="resources\Telegram &amp;amp; Gazette" translate="yes" xml:space="preserve">
-          <source>Telegram %%amp;amp; Gazette</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Телеграмма %%amp;amp; Вестник</target>
+        <trans-unit id="resources\Telegram and Gazette" translate="yes" xml:space="preserve">
+          <source>Telegram and Gazette</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Телеграмма и Вестник</target>
         </trans-unit>
         <trans-unit id="resources\Telegram, The" translate="yes" xml:space="preserve">
           <source>Telegram, The</source>
@@ -18062,9 +18062,9 @@
           <source>The Journal</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Журнал</target>
         </trans-unit>
-        <trans-unit id="resources\The Kingfisher Times &amp;amp; Free Press" translate="yes" xml:space="preserve">
-          <source>The Kingfisher Times %%amp;amp; Free Press</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Kingfisher раз %%amp;amp; Свободная пресса</target>
+        <trans-unit id="resources\The Kingfisher Times and Free Press" translate="yes" xml:space="preserve">
+          <source>The Kingfisher Times and Free Press</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Kingfisher раз и свободная пресса</target>
         </trans-unit>
         <trans-unit id="resources\The Malta Independent" translate="yes" xml:space="preserve">
           <source>The Malta Independent</source>
@@ -18117,10 +18117,6 @@
         <trans-unit id="resources\The Sunday Times" translate="yes" xml:space="preserve">
           <source>The Sunday Times</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Sunday Times</target>
-        </trans-unit>
-        <trans-unit id="resources\The Times &amp;amp; Sunday Times" translate="yes" xml:space="preserve">
-          <source>The Times %%amp;amp; Sunday Times</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Времена %%amp;amp; Санди таймс</target>
         </trans-unit>
         <trans-unit id="resources\The Times and Sunday Times" translate="yes" xml:space="preserve">
           <source>The Times and Sunday Times</source>
@@ -18374,9 +18370,9 @@
           <source>Titusville Herald, The</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Титусвилл Herald,</target>
         </trans-unit>
-        <trans-unit id="resources\Today in Batesville &amp;amp; Oldenburg" translate="yes" xml:space="preserve">
-          <source>Today in Batesville %%amp;amp; Oldenburg</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Сегодня в Манди %%amp;amp; Ольденбург</target>
+        <trans-unit id="resources\Today in Batesville and Oldenburg" translate="yes" xml:space="preserve">
+          <source>Today in Batesville and Oldenburg</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Сегодня в Манди и Ольденбург</target>
         </trans-unit>
         <trans-unit id="resources\Today's News-Herald" translate="yes" xml:space="preserve">
           <source>Today's News-Herald</source>
@@ -19534,9 +19530,9 @@
           <source>Watertown Public Opinion</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Уотертаун общественное мнение</target>
         </trans-unit>
-        <trans-unit id="resources\Watertown Tab &amp;amp; Press" translate="yes" xml:space="preserve">
-          <source>Watertown Tab %%amp;amp; Press</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Уотертаун Закладка %%amp;amp; Пресс</target>
+        <trans-unit id="resources\Watertown Tab and Press" translate="yes" xml:space="preserve">
+          <source>Watertown Tab and Press</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Уотертаун вкладку и нажмите</target>
         </trans-unit>
         <trans-unit id="resources\Waterville" translate="yes" xml:space="preserve">
           <source>Waterville</source>
@@ -20302,9 +20298,9 @@
           <source>Worcester Business Journal</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Вустер бизнес журнал</target>
         </trans-unit>
-        <trans-unit id="resources\Worcester Telegram &amp;amp; Gazette" translate="yes" xml:space="preserve">
-          <source>Worcester Telegram %%amp;amp; Gazette</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Вустер Телеграмма %%amp;amp; Вестник</target>
+        <trans-unit id="resources\Worcester Telegram and Gazette" translate="yes" xml:space="preserve">
+          <source>Worcester Telegram and Gazette</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Вустер Телеграмма и Вестник</target>
         </trans-unit>
         <trans-unit id="resources\World, The" translate="yes" xml:space="preserve">
           <source>World, The</source>
@@ -20374,9 +20370,9 @@
           <source>Yankton</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Янктон</target>
         </trans-unit>
-        <trans-unit id="resources\Yankton Daily Press &amp;amp; Dakotan" translate="yes" xml:space="preserve">
-          <source>Yankton Daily Press %%amp;amp; Dakotan</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Янктон ежедневные пресс %%amp;amp; Дакоты</target>
+        <trans-unit id="resources\Yankton Daily Press and Dakotan" translate="yes" xml:space="preserve">
+          <source>Yankton Daily Press and Dakotan</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Янктон ежедневной печати и Дакоты</target>
         </trans-unit>
         <trans-unit id="resources\Yellow Springs" translate="yes" xml:space="preserve">
           <source>Yellow Springs</source>
