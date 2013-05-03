@@ -62,6 +62,14 @@
           <source>Abilene Reporter-News</source>
           <target state="new">Abilene Reporter-News</target>
         </trans-unit>
+        <trans-unit id="resources\About" translate="yes" xml:space="preserve">
+          <source>About</source>
+          <target state="new">About</target>
+        </trans-unit>
+        <trans-unit id="resources\About Us" translate="yes" xml:space="preserve">
+          <source>About Us</source>
+          <target state="new">About Us</target>
+        </trans-unit>
         <trans-unit id="resources\Abruzzo, Pescara" translate="yes" xml:space="preserve">
           <source>Abruzzo, Pescara</source>
           <target state="new">Abruzzo, Pescara</target>
@@ -3650,6 +3658,18 @@
           <source>Colville</source>
           <target state="new">Colville</target>
         </trans-unit>
+        <trans-unit id="resources\Command1Label" translate="yes" xml:space="preserve">
+          <source>Favorites</source>
+          <target state="new">Favorites</target>
+        </trans-unit>
+        <trans-unit id="resources\Command2Label" translate="yes" xml:space="preserve">
+          <source>Add to Fav</source>
+          <target state="new">Add to Fav</target>
+        </trans-unit>
+        <trans-unit id="resources\Command3Label" translate="yes" xml:space="preserve">
+          <source>Remove From Favs</source>
+          <target state="new">Remove From Favs</target>
+        </trans-unit>
         <trans-unit id="resources\Commercial Appeal, The" translate="yes" xml:space="preserve">
           <source>Commercial Appeal, The</source>
           <target state="new">Commercial Appeal, The</target>
@@ -6374,6 +6394,10 @@
           <source>Fontana Herald News</source>
           <target state="new">Fontana Herald News</target>
         </trans-unit>
+        <trans-unit id="resources\For information regarding the information stored by these application, please read the privacy policy of the internet browsers on your device" translate="yes" xml:space="preserve">
+          <source>For information regarding the information stored by these application, please read the privacy policy of the internet browsers on your device</source>
+          <target state="new">For information regarding the information stored by these application, please read the privacy policy of the internet browsers on your device</target>
+        </trans-unit>
         <trans-unit id="resources\Forest Lake" translate="yes" xml:space="preserve">
           <source>Forest Lake</source>
           <target state="new">Forest Lake</target>
@@ -8526,6 +8550,10 @@
           <source>Idyllwild Town Crier</source>
           <target state="new">Idyllwild Town Crier</target>
         </trans-unit>
+        <trans-unit id="resources\If you have any issues or have a suggestion for the app, please email us at" translate="yes" xml:space="preserve">
+          <source>If you have any issues or have a suggestion for the app, please email us at</source>
+          <target state="new">If you have any issues or have a suggestion for the app, please email us at</target>
+        </trans-unit>
         <trans-unit id="resources\Il Centro" translate="yes" xml:space="preserve">
           <source>Il Centro</source>
           <target state="new">Il Centro</target>
@@ -8841,6 +8869,10 @@
         <trans-unit id="resources\Ithaca Times" translate="yes" xml:space="preserve">
           <source>Ithaca Times</source>
           <target state="new">Ithaca Times</target>
+        </trans-unit>
+        <trans-unit id="resources\Its like your virtual shelf" translate="yes" xml:space="preserve">
+          <source>Its like your virtual shelf</source>
+          <target state="new">Its like your virtual shelf</target>
         </trans-unit>
         <trans-unit id="resources\Ivanhoe" translate="yes" xml:space="preserve">
           <source>Ivanhoe</source>
@@ -13050,6 +13082,10 @@
           <source>Newsday</source>
           <target state="new">Newsday</target>
         </trans-unit>
+        <trans-unit id="resources\Newspapers app does not collect, store, or share any personal information, or anything related to your device" translate="yes" xml:space="preserve">
+          <source>Newspapers app does not collect, store, or share any personal information, or anything related to your device</source>
+          <target state="new">Newspapers app does not collect, store, or share any personal information, or anything related to your device</target>
+        </trans-unit>
         <trans-unit id="resources\Newton" translate="yes" xml:space="preserve">
           <source>Newton</source>
           <target state="new">Newton</target>
@@ -13137,6 +13173,10 @@
         <trans-unit id="resources\Nine O'Clock" translate="yes" xml:space="preserve">
           <source>Nine O'Clock</source>
           <target state="new">Nine O'Clock</target>
+        </trans-unit>
+        <trans-unit id="resources\No Newspapers in your favorites!" translate="yes" xml:space="preserve">
+          <source>No Newspapers in your favorites!</source>
+          <target state="new">No Newspapers in your favorites!</target>
         </trans-unit>
         <trans-unit id="resources\Nogales" translate="yes" xml:space="preserve">
           <source>Nogales</source>
@@ -14622,6 +14662,10 @@
           <source>Pleasanton Express</source>
           <target state="new">Pleasanton Express</target>
         </trans-unit>
+        <trans-unit id="resources\Please select the Newspaper(s) to add into your favorites." translate="yes" xml:space="preserve">
+          <source>Please select the Newspaper(s) to add into your favorites.</source>
+          <target state="new">Please select the Newspaper(s) to add into your favorites.</target>
+        </trans-unit>
         <trans-unit id="resources\Plum" translate="yes" xml:space="preserve">
           <source>Plum</source>
           <target state="new">Plum</target>
@@ -14998,6 +15042,10 @@
           <source>Prior Lake American</source>
           <target state="new">Prior Lake American</target>
         </trans-unit>
+        <trans-unit id="resources\Privacy Policy" translate="yes" xml:space="preserve">
+          <source>Privacy Policy</source>
+          <target state="new">Privacy Policy</target>
+        </trans-unit>
         <trans-unit id="resources\Progress Online" translate="yes" xml:space="preserve">
           <source>Progress Online</source>
           <target state="new">Progress Online</target>
@@ -15349,6 +15397,14 @@
         <trans-unit id="resources\Rehoboth Beach" translate="yes" xml:space="preserve">
           <source>Rehoboth Beach</source>
           <target state="new">Rehoboth Beach</target>
+        </trans-unit>
+        <trans-unit id="resources\Remaining Newspaper(s) added to the favorites list." translate="yes" xml:space="preserve">
+          <source>Remaining Newspaper(s) added to the favorites list.</source>
+          <target state="new">Remaining Newspaper(s) added to the favorites list.</target>
+        </trans-unit>
+        <trans-unit id="resources\Remaining Newspaper(s) were deleted from favorite list." translate="yes" xml:space="preserve">
+          <source>Remaining Newspaper(s) were deleted from favorite list.</source>
+          <target state="new">Remaining Newspaper(s) were deleted from favorite list.</target>
         </trans-unit>
         <trans-unit id="resources\Reminder" translate="yes" xml:space="preserve">
           <source>Reminder</source>
@@ -16461,6 +16517,14 @@
         <trans-unit id="resources\Seguin" translate="yes" xml:space="preserve">
           <source>Seguin</source>
           <target state="new">Seguin</target>
+        </trans-unit>
+        <trans-unit id="resources\Selected Newspaper(s) added to your favorites." translate="yes" xml:space="preserve">
+          <source>Selected Newspaper(s) added to your favorites.</source>
+          <target state="new">Selected Newspaper(s) added to your favorites.</target>
+        </trans-unit>
+        <trans-unit id="resources\Selected Newspaper(s) deleted from favorites." translate="yes" xml:space="preserve">
+          <source>Selected Newspaper(s) deleted from favorites.</source>
+          <target state="new">Selected Newspaper(s) deleted from favorites.</target>
         </trans-unit>
         <trans-unit id="resources\Selma" translate="yes" xml:space="preserve">
           <source>Selma</source>
@@ -18082,6 +18146,10 @@
           <source>The News</source>
           <target state="new">The News</target>
         </trans-unit>
+        <trans-unit id="resources\The Newspapers app for Windows 8 offers the top newspapers in the world at your fingertips" translate="yes" xml:space="preserve">
+          <source>The Newspapers app for Windows 8 offers the top newspapers in the world at your fingertips</source>
+          <target state="new">The Newspapers app for Windows 8 offers the top newspapers in the world at your fingertips</target>
+        </trans-unit>
         <trans-unit id="resources\The Nottingham Evening Post" translate="yes" xml:space="preserve">
           <source>The Nottingham Evening Post</source>
           <target state="new">The Nottingham Evening Post</target>
@@ -18126,6 +18194,10 @@
           <source>The Times of Oman</source>
           <target state="new">The Times of Oman</target>
         </trans-unit>
+        <trans-unit id="resources\The URLs might be saved by internet browsers on your device" translate="yes" xml:space="preserve">
+          <source>The URLs might be saved by internet browsers on your device</source>
+          <target state="new">The URLs might be saved by internet browsers on your device</target>
+        </trans-unit>
         <trans-unit id="resources\The Village Voice" translate="yes" xml:space="preserve">
           <source>The Village Voice</source>
           <target state="new">The Village Voice</target>
@@ -18142,6 +18214,46 @@
           <source>The Weirs Times</source>
           <target state="new">The Weirs Times</target>
         </trans-unit>
+        <trans-unit id="resources\The app links to newspaper websites from all over the world" translate="yes" xml:space="preserve">
+          <source>The app links to newspaper websites from all over the world</source>
+          <target state="new">The app links to newspaper websites from all over the world</target>
+        </trans-unit>
+        <trans-unit id="resources\The app was developed by DaksaTech. We have many more apps for Windows 8 as well as Windows Phone." translate="yes" xml:space="preserve">
+          <source>The app was developed by DaksaTech. We have many more apps for Windows 8 as well as Windows Phone.</source>
+          <target state="new">The app was developed by DaksaTech. We have many more apps for Windows 8 as well as Windows Phone.</target>
+        </trans-unit>
+        <trans-unit id="resources\The application allows you to open website URLs from the application" translate="yes" xml:space="preserve">
+          <source>The application allows you to open website URLs from the application</source>
+          <target state="new">The application allows you to open website URLs from the application</target>
+        </trans-unit>
+        <trans-unit id="resources\The best way to view the newspapers is to put the app in Snapped view and then browse the different newspapers" translate="yes" xml:space="preserve">
+          <source>The best way to view the newspapers is to put the app in Snapped view and then browse the different newspapers</source>
+          <target state="new">The best way to view the newspapers is to put the app in Snapped view and then browse the different newspapers</target>
+        </trans-unit>
+        <trans-unit id="resources\The countries are organized by regions. Select the country and then select the newspaper" translate="yes" xml:space="preserve">
+          <source>The countries are organized by regions. Select the country and then select the newspaper</source>
+          <target state="new">The countries are organized by regions. Select the country and then select the newspaper</target>
+        </trans-unit>
+        <trans-unit id="resources\The following News paper(s) already added to the favorite list." translate="yes" xml:space="preserve">
+          <source>The following News paper(s) already added to the favorite list.</source>
+          <target state="new">The following News paper(s) already added to the favorite list.</target>
+        </trans-unit>
+        <trans-unit id="resources\The following News paper(s) are deleted from favorite list." translate="yes" xml:space="preserve">
+          <source>The following News paper(s) are deleted from favorite list.</source>
+          <target state="new">The following News paper(s) are deleted from favorite list.</target>
+        </trans-unit>
+        <trans-unit id="resources\The following Newspaper(s) already exist in your favorites list." translate="yes" xml:space="preserve">
+          <source>The following Newspaper(s) already exist in your favorites list.</source>
+          <target state="new">The following Newspaper(s) already exist in your favorites list.</target>
+        </trans-unit>
+        <trans-unit id="resources\The following Newspaper(s) were not deleted from favorite list." translate="yes" xml:space="preserve">
+          <source>The following Newspaper(s) were not deleted from favorite list.</source>
+          <target state="new">The following Newspaper(s) were not deleted from favorite list.</target>
+        </trans-unit>
+        <trans-unit id="resources\These websites may collect information regarding your visit to those sites" translate="yes" xml:space="preserve">
+          <source>These websites may collect information regarding your visit to those sites</source>
+          <target state="new">These websites may collect information regarding your visit to those sites</target>
+        </trans-unit>
         <trans-unit id="resources\Thibodaux" translate="yes" xml:space="preserve">
           <source>Thibodaux</source>
           <target state="new">Thibodaux</target>
@@ -18154,6 +18266,10 @@
           <source>Thief River Falls Times, The</source>
           <target state="new">Thief River Falls Times, The</target>
         </trans-unit>
+        <trans-unit id="resources\This Privacy Policy covers your use of this application" translate="yes" xml:space="preserve">
+          <source>This Privacy Policy covers your use of this application</source>
+          <target state="new">This Privacy Policy covers your use of this application</target>
+        </trans-unit>
         <trans-unit id="resources\This Week" translate="yes" xml:space="preserve">
           <source>This Week</source>
           <target state="new">This Week</target>
@@ -18165,6 +18281,10 @@
         <trans-unit id="resources\This is Local London" translate="yes" xml:space="preserve">
           <source>This is Local London</source>
           <target state="new">This is Local London</target>
+        </trans-unit>
+        <trans-unit id="resources\This will open the Newspapers website in a browser" translate="yes" xml:space="preserve">
+          <source>This will open the Newspapers website in a browser</source>
+          <target state="new">This will open the Newspapers website in a browser</target>
         </trans-unit>
         <trans-unit id="resources\Thomasville" translate="yes" xml:space="preserve">
           <source>Thomasville</source>
@@ -18821,6 +18941,14 @@
         <trans-unit id="resources\UnRavel the Gavel NH's Antiques and Auction Newspaper" translate="yes" xml:space="preserve">
           <source>UnRavel the Gavel NH's Antiques and Auction Newspaper</source>
           <target state="new">UnRavel the Gavel NH's Antiques and Auction Newspaper</target>
+        </trans-unit>
+        <trans-unit id="resources\Unable to add Newpaper to favorites!." translate="yes" xml:space="preserve">
+          <source>Unable to add Newpaper to favorites!.</source>
+          <target state="new">Unable to add Newpaper to favorites!.</target>
+        </trans-unit>
+        <trans-unit id="resources\Unable to delete Newpapers from Favorites." translate="yes" xml:space="preserve">
+          <source>Unable to delete Newpapers from Favorites.</source>
+          <target state="new">Unable to delete Newpapers from Favorites.</target>
         </trans-unit>
         <trans-unit id="resources\Union" translate="yes" xml:space="preserve">
           <source>Union</source>
@@ -19650,6 +19778,10 @@
           <source>Wayzata</source>
           <target state="new">Wayzata</target>
         </trans-unit>
+        <trans-unit id="resources\We do not collect any statistics, trends, neither do we track user movements" translate="yes" xml:space="preserve">
+          <source>We do not collect any statistics, trends, neither do we track user movements</source>
+          <target state="new">We do not collect any statistics, trends, neither do we track user movements</target>
+        </trans-unit>
         <trans-unit id="resources\Weatherford" translate="yes" xml:space="preserve">
           <source>Weatherford</source>
           <target state="new">Weatherford</target>
@@ -20186,6 +20318,14 @@
           <source>Window Rock</source>
           <target state="new">Window Rock</target>
         </trans-unit>
+        <trans-unit id="resources\Windows 8 Apps" translate="yes" xml:space="preserve">
+          <source>Windows 8 Apps</source>
+          <target state="new">Windows 8 Apps</target>
+        </trans-unit>
+        <trans-unit id="resources\Windows Phone Apps" translate="yes" xml:space="preserve">
+          <source>Windows Phone Apps</source>
+          <target state="new">Windows Phone Apps</target>
+        </trans-unit>
         <trans-unit id="resources\Winfield" translate="yes" xml:space="preserve">
           <source>Winfield</source>
           <target state="new">Winfield</target>
@@ -20461,6 +20601,10 @@
         <trans-unit id="resources\Yorkshire Evening Post" translate="yes" xml:space="preserve">
           <source>Yorkshire Evening Post</source>
           <target state="new">Yorkshire Evening Post</target>
+        </trans-unit>
+        <trans-unit id="resources\You can view the top newspapers in any of the more than 150 countries and also the 50 states of the United States" translate="yes" xml:space="preserve">
+          <source>You can view the top newspapers in any of the more than 150 countries and also the 50 states of the United States</source>
+          <target state="new">You can view the top newspapers in any of the more than 150 countries and also the 50 states of the United States</target>
         </trans-unit>
         <trans-unit id="resources\Youngstown" translate="yes" xml:space="preserve">
           <source>Youngstown</source>

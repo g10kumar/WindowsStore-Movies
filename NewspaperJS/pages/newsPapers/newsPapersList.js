@@ -106,6 +106,7 @@
             else {
                 // A license is inactive only when there's an error.
             }
+            //window.indexedDB.deleteDatabase("FavoritesDB", 1);
             createDB();
 
             document.getElementById("appbar").addEventListener("click", AddtoFav, false);
@@ -192,6 +193,8 @@
         favoriteStore.createIndex("newsTitle", "newsTitle", { unique: true });
         favoriteStore.createIndex("title", "title", { unique: false });
         favoriteStore.createIndex("webSite", "webSite", { unique: false });
+        favoriteStore.createIndex("orgnewsTitle", "orgnewsTitle", { unique: false });
+        favoriteStore.createIndex("orgtitle", "orgtitle", { unique: false });
 
         // Once the creation of the object stores is finished (they are created asynchronously), log success.
         txn.oncomplete = function () { };
@@ -213,7 +216,9 @@
                 var newsPapers = {
                     title: selectedItem.data.title.trim(),
                     newsTitle: selectedItem.data.newsTitle.trim(),
-                    webSite: selectedItem.data.webSite.trim()
+                    webSite: selectedItem.data.webSite.trim(),
+                    orgtitle: selectedItem.data.orgtitle.trim(),
+                    orgnewsTitle: selectedItem.data.orgnewsTitle.trim()
                 };
                 addingFavoriteNodes.push(newsPapers);
             });
@@ -248,22 +253,27 @@
                 }
 
                 msg = "";
-                if (exitsNewsPapers != "") {
-                    var len = exitsNewsPapers.trim().length;
-                    exitsNewsPapers = exitsNewsPapers.slice(0, len - 1);
+                if (addingFavoriteNodes.length != 0) {
+                    if (exitsNewsPapers != "") {
+                        var len = exitsNewsPapers.trim().length;
+                        exitsNewsPapers = exitsNewsPapers.slice(0, len - 1);
 
-                    if (currentSelectionItems._value.length > exitsNewsPapers.split(",").length) {
-                        msg += "The following Newspaper(s) already exist in your favorites list. " + "\n";
-                        msg += exitsNewsPapers + "\n\n";
-                        msg += "Remaining Newspaper(s) added to the favorites list. "
+                        if (currentSelectionItems._value.length > exitsNewsPapers.split(",").length) {
+                            msg += WinJS.Resources.getString('The following Newspaper(s) already exist in your favorites list.').value + " " + "\n";
+                            msg += exitsNewsPapers + "\n\n";
+                            msg += WinJS.Resources.getString('Remaining Newspaper(s) added to the favorites list.').value + " "
+                        }
+                        else if (currentSelectionItems._value.length == exitsNewsPapers.split(",").length) {
+                            msg += WinJS.Resources.getString('The following News paper(s) already added to the favorite list.').value + " " + "\n";
+                            msg += exitsNewsPapers + "\n";
+                        }
                     }
-                    else if (currentSelectionItems._value.length == exitsNewsPapers.split(",").length) {
-                        msg += "The following News paper(s) already added to the favorite list. " + "\n";
-                        msg += exitsNewsPapers + "\n";
+                    else {
+                        msg += WinJS.Resources.getString('Selected Newspaper(s) added to your favorites.').value;
                     }
                 }
                 else {
-                    msg += "Selected Newspaper(s) added to your favorites.";
+                    msg += WinJS.Resources.getString('Please select the Newspaper(s) to add into your favorites.').value;
                 }
 
                 var msgdialog = new Windows.UI.Popups.MessageDialog(msg);
@@ -278,7 +288,7 @@
                 
             };
         } catch (e) {
-            var msg = new Windows.UI.Popups.MessageDialog("Unable to add Newpaper to favorites!.");
+            var msg = new Windows.UI.Popups.MessageDialog(WinJS.Resources.getString('Unable to add Newpaper to favorites!.').value);
             msg.showAsync().done(function (command) {
                 if (command.id == 1) {
 
@@ -332,6 +342,8 @@
                             title: WinJS.Resources.getString(newsPaper[newsIndex].attributes.getNamedItem("name").textContent).value,
                             newsTitle: WinJS.Resources.getString(newsPaperList[newsPaperIndex].querySelector("Name").textContent.replace("&", "and")).value,
                             webSite: newsPaperList[newsPaperIndex].querySelector("WebSite").textContent,
+                            orgtitle: newsPaper[newsIndex].attributes.getNamedItem("name").textContent,
+                            orgnewsTitle: newsPaperList[newsPaperIndex].querySelector("Name").textContent,
                             backgroundImage: "../../../images/Country/" + newsPaper[newsIndex].attributes.getNamedItem("name").textContent + "_" + newsPaperList[newsPaperIndex].querySelector("Name").textContent + ".jpg"
                         };
                         newsPapersNodes.push(newsPapers);
