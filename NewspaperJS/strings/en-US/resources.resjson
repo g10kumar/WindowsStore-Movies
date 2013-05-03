@@ -5800,8 +5800,85 @@
 "South Florida Sun-Sentinel":"South Florida Sun-Sentinel",
 "Syracuse Post-Standard":"Syracuse Post-Standard",
 "USA Today":"USA Today",
-"Wall Street Journal":"Wall Street Journal"
-        
-    
+"Wall Street Journal":"Wall Street Journal",
+
+// Favorites Content
+
+"Command1Label":"Favorites",
+
+"Command2Label":"Add to Fav",
+
+"Command3Label":"Remove From Favs",
+
+"The following Newspaper(s) already exist in your favorites list."  :   "The following Newspaper(s) already exist in your favorites list.",
+
+"Remaining Newspaper(s) added to the favorites list."   :   "Remaining Newspaper(s) added to the favorites list.",
+
+"The following News paper(s) already added to the favorite list."   :   "The following News paper(s) already added to the favorite list.",
+
+"Selected Newspaper(s) added to your favorites."    :   "Selected Newspaper(s) added to your favorites.",
+
+"Please select the Newspaper(s) to add into your favorites." :   "Please select the Newspaper(s) to add into your favorites.",
+
+"Unable to add Newpaper to favorites!." :   "Unable to add Newpaper to favorites!.",
+
+"No Newspapers in your favorites!"  :   "No Newspapers in your favorites!",
+
+"The following Newspaper(s) were not deleted from favorite list."  :   "The following Newspaper(s) were not deleted from favorite list.",
+
+"Remaining Newspaper(s) were deleted from favorite list."  :   "Remaining Newspaper(s) were deleted from favorite list.",
+
+"The following News paper(s) are deleted from favorite list."  :   "The following News paper(s) are deleted from favorite list.",
+
+"Selected Newspaper(s) deleted from favorites."  :   "Selected Newspaper(s) deleted from favorites.",
+
+"Unable to delete Newpapers from Favorites."  :   "Unable to delete Newpapers from Favorites.",
+
+// About Us Content
+
+"About" :   "About",
+
+"About Us"  :   "About Us",
+
+"The Newspapers app for Windows 8 offers the top newspapers in the world at your fingertips"    :   "The Newspapers app for Windows 8 offers the top newspapers in the world at your fingertips",
+
+"You can view the top newspapers in any of the more than 150 countries and also the 50 states of the United States" :   "You can view the top newspapers in any of the more than 150 countries and also the 50 states of the United States",
+
+"The countries are organized by regions. Select the country and then select the newspaper"  :   "The countries are organized by regions. Select the country and then select the newspaper",
+
+"This will open the Newspapers website in a browser"  :   "This will open the Newspapers website in a browser",
+
+"The best way to view the newspapers is to put the app in Snapped view and then browse the different newspapers"  :   "The best way to view the newspapers is to put the app in Snapped view and then browse the different newspapers",
+
+"Its like your virtual shelf"   :   "Its like your virtual shelf",
+
+"If you have any issues or have a suggestion for the app, please email us at"   :   "If you have any issues or have a suggestion for the app, please email us at",
+
+"The app was developed by DaksaTech. We have many more apps for Windows 8 as well as Windows Phone."    :   "The app was developed by DaksaTech. We have many more apps for Windows 8 as well as Windows Phone.",
+
+"Windows 8 Apps"    :   "Windows 8 Apps",
+
+"Windows Phone Apps"    :   "Windows Phone Apps",
+
+// Privacy Policy Content
+
+"Privacy Policy"    :   "Privacy Policy",
+
+"This Privacy Policy covers your use of this application"   :   "This Privacy Policy covers your use of this application",
+
+"Newspapers app does not collect, store, or share any personal information, or anything related to your device" :   "Newspapers app does not collect, store, or share any personal information, or anything related to your device",
+
+"We do not collect any statistics, trends, neither do we track user movements"  :   "We do not collect any statistics, trends, neither do we track user movements",
+
+"The application allows you to open website URLs from the application"  :   "The application allows you to open website URLs from the application",
+
+"The URLs might be saved by internet browsers on your device"   :   "The URLs might be saved by internet browsers on your device",
+
+"For information regarding the information stored by these application, please read the privacy policy of the internet browsers on your device" :   "For information regarding the information stored by these application, please read the privacy policy of the internet browsers on your device",
+
+"The app links to newspaper websites from all over the world"   :   "The app links to newspaper websites from all over the world",
+
+"These websites may collect information regarding your visit to those sites"    :   "These websites may collect information regarding your visit to those sites"
+
     
 }

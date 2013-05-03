@@ -65,6 +65,10 @@
         ready: function (element, options) {
 
             element.querySelector(".titlearea .pagetitle").textContent = WinJS.Resources.getString('News Papers').value;
+
+            //document.getElementById("btnFavorites").lang = WinJS.Resources.getString('Favorites').value;
+           // document.getElementById("btnFavorites").lang = "ru-RU";
+
             var listView = element.querySelector(".groupeditemslist").winControl;
             listView.groupHeaderTemplate = element.querySelector(".headerTemplate");
             listView.itemTemplate = element.querySelector(".itemtemplate");

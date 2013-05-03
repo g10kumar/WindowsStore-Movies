@@ -3646,6 +3646,7 @@
     <None Include="MultilingualResources\NewspapersJS_qps-ploc.xlf" />
     <None Include="MultilingualResources\NewspapersJS_ru-RU.xlf" />
     <Content Include="pages\about\about.html" />
+    <Content Include="pages\about\about.js" />
     <Content Include="pages\favorites\favorites.css" />
     <Content Include="pages\favorites\favorites.html" />
     <Content Include="pages\favorites\favorites.js" />
@@ -3663,6 +3664,7 @@
     <Content Include="pages\newsPapers\newsPapersList.html" />
     <Content Include="pages\newsPapers\newsPapersList.js" />
     <Content Include="pages\privacypolicy\privacypolicy.html" />
+    <Content Include="pages\privacypolicy\privacypolicy.js" />
     <Content Include="xml\Country.xml">
       <SubType>Designer</SubType>
     </Content>
