@@ -25,6 +25,8 @@
 
             element.querySelector(".titlearea .pagetitle").textContent = options.split("#")[1];
 
+            document.getElementById("btnAddtoFav").winControl.label = WinJS.Resources.getString('Command2Label').value;
+
             // Initialize the license info for use in the app that is uploaded to the Store.
             // uncomment for release
             // currentApp = Windows.ApplicationModel.Store.CurrentApp;
@@ -167,7 +169,7 @@
             favoriteCursorRequest.onsuccess = function (e) {
                 var cursor = e.target.result;
                 if (cursor) {
-                    addedFavorites += cursor.value.newsTitle + ",";
+                    addedFavorites += cursor.value.orgnewsTitle + ",";
                     cursor.continue();
                 }
             };
@@ -189,7 +191,7 @@
 
         // Create the favorites object store, with an index on the news paper title. Note that we set the returned object store to a variable
         // in order to make further calls (index creation) on that object store.
-        var favoriteStore = db.createObjectStore("favorites", { keyPath: "newsTitle" });
+        var favoriteStore = db.createObjectStore("favorites", { keyPath: "orgnewsTitle" });
         favoriteStore.createIndex("newsTitle", "newsTitle", { unique: true });
         favoriteStore.createIndex("title", "title", { unique: false });
         favoriteStore.createIndex("webSite", "webSite", { unique: false });
@@ -244,7 +246,7 @@
 
                 for (var i = 0; i < addingFavoriteNodes.length; i++) {
 
-                    if (addedFavorites.indexOf(addingFavoriteNodes[i].newsTitle, 0) == -1) {
+                    if (addedFavorites.indexOf(addingFavoriteNodes[i].orgnewsTitle, 0) == -1) {
                         favoritesStore.add(addingFavoriteNodes[i]);
                     }
                     else {
@@ -276,7 +278,26 @@
                     msg += WinJS.Resources.getString('Please select the Newspaper(s) to add into your favorites.').value;
                 }
 
+                //var msgdialog = new Windows.UI.Popups.MessageDialog(msg);
+                //msgdialog.showAsync().done(function (command) {
+                //    if (command.id == 1) {
+
+                //    }
+                //    else {
+
+                //    }
+                //});
+
+                // Create the message dialog and set its content
                 var msgdialog = new Windows.UI.Popups.MessageDialog(msg);
+
+                // Add commands and set their command handlers
+                msgdialog.commands.append(new Windows.UI.Popups.UICommand(WinJS.Resources.getString('Close').value));
+
+                // Set the command that will be invoked by default
+                msgdialog.defaultCommandIndex = 0;
+
+                // Show the message dialog
                 msgdialog.showAsync().done(function (command) {
                     if (command.id == 1) {
 
@@ -288,7 +309,28 @@
                 
             };
         } catch (e) {
+
+           
+            //var msg = new Windows.UI.Popups.MessageDialog(WinJS.Resources.getString('Unable to add Newpaper to favorites!.').value);
+            //msg.showAsync().done(function (command) {
+            //    if (command.id == 1) {
+
+            //    }
+            //    else {
+
+            //    }
+            //});
+            
+
             var msg = new Windows.UI.Popups.MessageDialog(WinJS.Resources.getString('Unable to add Newpaper to favorites!.').value);
+
+            // Add commands and set their command handlers
+            msg.commands.append(new Windows.UI.Popups.UICommand(WinJS.Resources.getString('Close').value));
+
+            // Set the command that will be invoked by default
+            msg.defaultCommandIndex = 0;
+
+            // Show the message dialog
             msg.showAsync().done(function (command) {
                 if (command.id == 1) {
 
@@ -351,18 +393,80 @@
                 }
             }
 
-            var dataList = new WinJS.Binding.List(newsPapersNodes);
-            var listView = element.querySelector(".newsPaperslist").winControl;
-            listView.itemDataSource = dataList.dataSource;
-            listView.groupHeaderTemplate = element.querySelector(".headerTemplate");
-            listView.addEventListener("iteminvoked", itemInvokedHandler, false);
-            listView.itemTemplate = element.querySelector(".itemtemplate");
-            initializeLayout(listView, appView.value);
-            listView.element.focus();
+            if (newsPapersNodes.length != 0) {
+                var dataList = new WinJS.Binding.List(newsPapersNodes);
+                var listView = element.querySelector(".newsPaperslist").winControl;
+                listView.itemDataSource = dataList.dataSource;
+                listView.groupHeaderTemplate = element.querySelector(".headerTemplate");
+                listView.addEventListener("iteminvoked", itemInvokedHandler, false);
+                listView.itemTemplate = element.querySelector(".itemtemplate");
+                initializeLayout(listView, appView.value);
+                listView.element.focus();
+            }
+            else {
+
+                //var msg = new Windows.UI.Popups.MessageDialog(WinJS.Resources.getString('Unable to display the newspapers.').value);
+                //msg.showAsync().done(function (command) {
+                //    if (command.id == 1) {
+
+                //    }
+                //    else {
+
+                //    }
+                //});
+
+                // Create the message dialog and set its content
+                var msg = new Windows.UI.Popups.MessageDialog(WinJS.Resources.getString('Unable to display the newspapers.').value);
+
+                // Add commands and set their command handlers
+                msg.commands.append(new Windows.UI.Popups.UICommand(WinJS.Resources.getString('Close').value));
+
+                // Set the command that will be invoked by default
+                msg.defaultCommandIndex = 0;
+
+                // Show the message dialog
+                msg.showAsync().done(function (command) {
+                    if (command.id == 1) {
+
+                    }
+                    else {
+
+                    }
+                });
+            }
         },
         function (error) {
-            document.getElementById("outputDiv").style.display = 'block';
-            document.getElementById("outputDiv").innerHTML = "Unable to display the newspapers.";
+            //document.getElementById("outputDiv").style.display = 'block';
+            //document.getElementById("outputDiv").innerHTML = "Unable to display the newspapers.";
+
+            //var msg = new Windows.UI.Popups.MessageDialog(WinJS.Resources.getString('Unable to display the newspapers.').value);
+            //msg.showAsync().done(function (command) {
+            //    if (command.id == 1) {
+
+            //    }
+            //    else {
+
+            //    }
+            //});
+
+            // Create the message dialog and set its content
+            var msg = new Windows.UI.Popups.MessageDialog(WinJS.Resources.getString('Unable to display the newspapers.').value);
+
+            // Add commands and set their command handlers
+            msg.commands.append(new Windows.UI.Popups.UICommand(WinJS.Resources.getString('Close').value));
+
+            // Set the command that will be invoked by default
+            msg.defaultCommandIndex = 0;
+
+            // Show the message dialog
+            msg.showAsync().done(function (command) {
+                if (command.id == 1) {
+
+                }
+                else {
+
+                }
+            });
         });
     }
 

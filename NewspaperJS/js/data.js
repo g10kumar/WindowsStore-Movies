@@ -13,6 +13,7 @@
 
     //var regionArray = new Array(WinJS.Resources.getString('unitedstates').value, WinJS.Resources.getString('africa').value, WinJS.Resources.getString('asia').value, WinJS.Resources.getString('caribbean').value, WinJS.Resources.getString('europe').value, WinJS.Resources.getString('middleeast').value, WinJS.Resources.getString('theamericas').value, WinJS.Resources.getString('oceania').value);
     var regionArray = new Array("United States", "Africa", "Asia", "Caribbean", "Europe", "Middle East", "The Americas", "Oceania");
+    
 
     var dataPromises = [];
 

@@ -3514,6 +3514,10 @@
           <source>Cloquet Pine Knot</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Узел Клоке сосна</target>
         </trans-unit>
+        <trans-unit id="resources\Close" translate="yes" xml:space="preserve">
+          <source>Close</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Закрыть</target>
+        </trans-unit>
         <trans-unit id="resources\Cloudcroft" translate="yes" xml:space="preserve">
           <source>Cloudcroft</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Клоудкрофт</target>
@@ -18949,6 +18953,10 @@
         <trans-unit id="resources\Unable to delete Newpapers from Favorites." translate="yes" xml:space="preserve">
           <source>Unable to delete Newpapers from Favorites.</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Не удается удалить газетах из избранного.</target>
+        </trans-unit>
+        <trans-unit id="resources\Unable to display the newspapers." translate="yes" xml:space="preserve">
+          <source>Unable to display the newspapers.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Не удается отобразить в газетах.</target>
         </trans-unit>
         <trans-unit id="resources\Union" translate="yes" xml:space="preserve">
           <source>Union</source>

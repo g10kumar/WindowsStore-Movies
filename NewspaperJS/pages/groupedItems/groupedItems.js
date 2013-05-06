@@ -65,9 +65,13 @@
         ready: function (element, options) {
 
             element.querySelector(".titlearea .pagetitle").textContent = WinJS.Resources.getString('News Papers').value;
-
+            
             //document.getElementById("btnFavorites").lang = WinJS.Resources.getString('Favorites').value;
-           // document.getElementById("btnFavorites").lang = "ru-RU";
+            //document.getElementById("cmdCommand1").win-label == WinJS.Resources.getString('Command1Label').value;
+
+            //document.getElementById("appbar").tagName = "es";
+
+            document.getElementById("cmdCommand1").winControl.label = WinJS.Resources.getString('Command1Label').value;
 
             var listView = element.querySelector(".groupeditemslist").winControl;
             listView.groupHeaderTemplate = element.querySelector(".headerTemplate");
