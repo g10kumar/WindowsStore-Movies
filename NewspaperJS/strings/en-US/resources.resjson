@@ -5878,7 +5878,10 @@
 
 "The app links to newspaper websites from all over the world"   :   "The app links to newspaper websites from all over the world",
 
-"These websites may collect information regarding your visit to those sites"    :   "These websites may collect information regarding your visit to those sites"
+"These websites may collect information regarding your visit to those sites"    :   "These websites may collect information regarding your visit to those sites",
 
+"Unable to display the newspapers." :   "Unable to display the newspapers.",
+
+"Close" :   "Close"
     
 }

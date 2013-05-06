@@ -21,6 +21,8 @@
 
             element.querySelector(".titlearea .pagetitle").textContent = WinJS.Resources.getString('Command1Label').value;
 
+            document.getElementById("btnDeleteFavorites").winControl.label = WinJS.Resources.getString('Command3Label').value;
+
             // Initialize the license info for use in the app that is uploaded to the Store.
             // uncomment for release
             // currentApp = Windows.ApplicationModel.Store.CurrentApp;
@@ -78,7 +80,26 @@
             window.indexedDB.deleteDatabase("FavoritesDB", 1);
 
             if (newsPapersNodes.length == 0) {
+                //var msg = new Windows.UI.Popups.MessageDialog(WinJS.Resources.getString('No Newspapers in your favorites!').value);
+                //msg.showAsync().done(function (command) {
+                //    if (command.id == 1) {
+
+                //    }
+                //    else {
+
+                //    }
+                //});
+
+                // Create the message dialog and set its content
                 var msg = new Windows.UI.Popups.MessageDialog(WinJS.Resources.getString('No Newspapers in your favorites!').value);
+
+                // Add commands and set their command handlers
+                msg.commands.append(new Windows.UI.Popups.UICommand(WinJS.Resources.getString('Close').value));
+
+                // Set the command that will be invoked by default
+                msg.defaultCommandIndex = 0;
+
+                // Show the message dialog
                 msg.showAsync().done(function (command) {
                     if (command.id == 1) {
 
@@ -150,7 +171,26 @@
             if (listView != null) {
                 listView.itemDataSource = null;
             }
+            //var msg = new Windows.UI.Popups.MessageDialog(WinJS.Resources.getString('No Newspapers in your favorites!').value);
+            //msg.showAsync().done(function (command) {
+            //    if (command.id == 1) {
+
+            //    }
+            //    else {
+
+            //    }
+            //});
+
+            // Create the message dialog and set its content
             var msg = new Windows.UI.Popups.MessageDialog(WinJS.Resources.getString('No Newspapers in your favorites!').value);
+
+            // Add commands and set their command handlers
+            msg.commands.append(new Windows.UI.Popups.UICommand(WinJS.Resources.getString('Close').value));
+
+            // Set the command that will be invoked by default
+            msg.defaultCommandIndex = 0;
+
+            // Show the message dialog
             msg.showAsync().done(function (command) {
                 if (command.id == 1) {
 
@@ -202,7 +242,7 @@
                 for (var i = 0; i < deletingFavoriteNodes.length; i++) {
 
                     try{
-                        favoritesStore.delete(deletingFavoriteNodes[i].newsTitle);
+                        favoritesStore.delete(deletingFavoriteNodes[i].orgnewsTitle);
                         //delete newsPapersNodes[i]
                     }
                     catch(e) {
@@ -229,7 +269,28 @@
                     msg += WinJS.Resources.getString('Selected Newspaper(s) deleted from favorites.').value;
                 }
 
+                //var msgdialog = new Windows.UI.Popups.MessageDialog(msg);
+                //msgdialog.showAsync().done(function (command) {
+                //    if (command.id == 1) {
+
+                //    }
+                //    else {
+
+                //    }
+
+                //    createDB();
+                //});
+
+                // Create the message dialog and set its content
                 var msgdialog = new Windows.UI.Popups.MessageDialog(msg);
+
+                // Add commands and set their command handlers
+                msgdialog.commands.append(new Windows.UI.Popups.UICommand(WinJS.Resources.getString('Close').value));
+
+                // Set the command that will be invoked by default
+                msgdialog.defaultCommandIndex = 0;
+
+                // Show the message dialog
                 msgdialog.showAsync().done(function (command) {
                     if (command.id == 1) {
 
@@ -237,16 +298,36 @@
                     else {
 
                     }
-
                     createDB();
                 });
+
+                
                 
                 //displayFavoriteNewsPapersList(newsPapersNodes);
 
             };
         } catch (e) {
-            var msg = new Windows.UI.Popups.MessageDialog(WinJS.Resources.getString('Unable to delete Newpapers from Favorites.').value);
-            msg.showAsync().done(function (command) {
+            //var msg = new Windows.UI.Popups.MessageDialog(WinJS.Resources.getString('Unable to delete Newpapers from Favorites.').value);
+            //msg.showAsync().done(function (command) {
+            //    if (command.id == 1) {
+
+            //    }
+            //    else {
+
+            //    }
+            //});
+
+            // Create the message dialog and set its content
+            var msgdialog = new Windows.UI.Popups.MessageDialog(WinJS.Resources.getString('Unable to delete Newpapers from Favorites.').value);
+
+            // Add commands and set their command handlers
+            msgdialog.commands.append(new Windows.UI.Popups.UICommand(WinJS.Resources.getString('Close').value));
+
+            // Set the command that will be invoked by default
+            msgdialog.defaultCommandIndex = 0;
+
+            // Show the message dialog
+            msgdialog.showAsync().done(function (command) {
                 if (command.id == 1) {
 
                 }
