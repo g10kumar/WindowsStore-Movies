@@ -382,7 +382,7 @@
 
                         var newsPapers = {
                             title: WinJS.Resources.getString(newsPaper[newsIndex].attributes.getNamedItem("name").textContent).value,
-                            newsTitle: WinJS.Resources.getString(newsPaperList[newsPaperIndex].querySelector("Name").textContent.replace("&", "and")).value,
+                            newsTitle: WinJS.Resources.getString(newsPaperList[newsPaperIndex].querySelector("Name").textContent.replace("and", "&")).value,
                             webSite: newsPaperList[newsPaperIndex].querySelector("WebSite").textContent,
                             orgtitle: newsPaper[newsIndex].attributes.getNamedItem("name").textContent,
                             orgnewsTitle: newsPaperList[newsPaperIndex].querySelector("Name").textContent,
