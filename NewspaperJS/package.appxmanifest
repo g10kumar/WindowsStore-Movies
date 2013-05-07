@@ -2,7 +2,7 @@
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
   <Identity Name="DaksaTech.Newspapers" Version="1.0.0.12" Publisher="CN=42750936-DE0C-415B-9312-C587E65FD9EC" />
   <Properties>
-    <DisplayName>Newspapers</DisplayName>
+    <DisplayName>ms-resource:displayName</DisplayName>
     <PublisherDisplayName>DaksaTech</PublisherDisplayName>
     <Logo>images\storelogo.png</Logo>
   </Properties>
@@ -15,8 +15,8 @@
   </Resources>
   <Applications>
     <Application Id="App" StartPage="default.html">
-      <VisualElements DisplayName="Newspapers" Logo="images\logo.png" SmallLogo="images\smalllogo.png" Description="Newspapers" ForegroundText="dark" BackgroundColor="#ffffff">
-        <DefaultTile ShowName="noLogos" ShortName="Newspapers" WideLogo="images\widelogo.png" />
+      <VisualElements DisplayName="ms-resource:displayName" Logo="images\logo.png" SmallLogo="images\smalllogo.png" Description="ms-resource:description" ForegroundText="dark" BackgroundColor="#ffffff">
+        <DefaultTile ShowName="noLogos" ShortName="ms-resource:shortName" WideLogo="images\widelogo.png" />
         <SplashScreen Image="images\splashscreen.png" BackgroundColor="#ffffff" />
       </VisualElements>
     </Application>

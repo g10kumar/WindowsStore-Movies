@@ -20738,6 +20738,14 @@
           <source>Zycie Warszawy</source>
           <target state="new">Zycie Warszawy</target>
         </trans-unit>
+        <trans-unit id="resources\description" translate="yes" xml:space="preserve">
+          <source>Newspapers</source>
+          <target state="new">Newspapers</target>
+        </trans-unit>
+        <trans-unit id="resources\displayName" translate="yes" xml:space="preserve">
+          <source>Newspapers</source>
+          <target state="new">Newspapers</target>
+        </trans-unit>
         <trans-unit id="resources\fvn.no" translate="yes" xml:space="preserve">
           <source>fvn.no</source>
           <target state="new">fvn.no</target>
@@ -20773,6 +20781,10 @@
         <trans-unit id="resources\seattlepi.com" translate="yes" xml:space="preserve">
           <source>seattlepi.com</source>
           <target state="new">seattlepi.com</target>
+        </trans-unit>
+        <trans-unit id="resources\shortName" translate="yes" xml:space="preserve">
+          <source>Newspapers</source>
+          <target state="new">Newspapers</target>
         </trans-unit>
         <trans-unit id="resources\taz.de" translate="yes" xml:space="preserve">
           <source>taz.de</source>

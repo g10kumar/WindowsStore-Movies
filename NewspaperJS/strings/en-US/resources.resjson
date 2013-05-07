@@ -5882,6 +5882,12 @@
 
 "Unable to display the newspapers." :   "Unable to display the newspapers.",
 
-"Close" :   "Close"
+"Close" :   "Close",
+
+"displayName":"Newspapers",
+
+ "description":"Newspapers",
+ 
+ "shortName":"Newspapers"
     
 }
