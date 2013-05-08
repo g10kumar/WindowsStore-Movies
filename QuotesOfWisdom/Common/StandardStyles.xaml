@@ -1197,6 +1197,28 @@
         </Grid>
     </DataTemplate>
 
+    <DataTemplate x:Key="Standard250x40ItemTemplateAllAuthors">
+        <Grid HorizontalAlignment="Left" Width="250" Height="40" VerticalAlignment="Top">
+            <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left" Orientation="Horizontal" Background="Transparent" Height="40">
+                <TextBlock Text="{Binding Author}" Foreground="{StaticResource ListViewItemOverlayForegroundThemeBrush}" Style="{StaticResource TitleTextStyle}" Height="40" Margin="15,0,15,0"/>
+                <TextBlock Text="(" Foreground="{StaticResource ListViewItemOverlayForegroundThemeBrush}" Style="{StaticResource TitleTextStyle}" Height="40"/>
+                <TextBlock Text="{Binding ct}" Foreground="{StaticResource ListViewItemOverlayForegroundThemeBrush}" Style="{StaticResource TitleTextStyle}"/>
+                <TextBlock Text=")" Foreground="{StaticResource ListViewItemOverlayForegroundThemeBrush}" Style="{StaticResource TitleTextStyle}" Height="40"/>
+            </StackPanel>
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="Standard250x40ItemTemplateAllCategories">
+        <Grid HorizontalAlignment="Left" Width="250" Height="40" VerticalAlignment="Top">
+            <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left" Orientation="Horizontal" Background="Transparent" Height="40">
+                <TextBlock Text="{Binding category}" Foreground="{StaticResource ListViewItemOverlayForegroundThemeBrush}" Style="{StaticResource TitleTextStyle}" Height="40" Margin="15,0,15,0"/>
+                <TextBlock Text="(" Foreground="{StaticResource ListViewItemOverlayForegroundThemeBrush}" Style="{StaticResource TitleTextStyle}" Height="40"/>
+                <TextBlock Text="{Binding ct}" Foreground="{StaticResource ListViewItemOverlayForegroundThemeBrush}" Style="{StaticResource TitleTextStyle}"/>
+                <TextBlock Text=")" Foreground="{StaticResource ListViewItemOverlayForegroundThemeBrush}" Style="{StaticResource TitleTextStyle}" Height="40"/>
+            </StackPanel>
+        </Grid>
+    </DataTemplate>
+    
     
     <DataTemplate x:Key="Standard250x250ItemTemplateQuotes">
         <Grid HorizontalAlignment="Left" Width="250" Height="250">
@@ -1294,6 +1316,36 @@
             <StackPanel Grid.Column="1" Margin="10,0,0,0">
                 <TextBlock Text="{Binding Title}" Style="{StaticResource ItemTextStyle}" MaxHeight="40"/>
                 <TextBlock Text="{Binding Subtitle}" Style="{StaticResource CaptionTextStyle}" TextWrapping="NoWrap"/>
+            </StackPanel>
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="Standard80ItemTemplateAllAuthors">
+        <Grid Margin="6">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="1" VerticalAlignment="Bottom" Margin="10,0,0,0" Orientation="Horizontal">
+                <TextBlock Text="{Binding Author}" Style="{StaticResource TitleTextStyle}" TextWrapping="NoWrap"/>
+                <TextBlock Text="(" Style="{StaticResource CaptionTextStyle}" TextWrapping="NoWrap"/>
+                <TextBlock Text="{Binding ct}" Style="{StaticResource CaptionTextStyle}" TextWrapping="NoWrap"/>
+                <TextBlock Text=")" Style="{StaticResource CaptionTextStyle}" TextWrapping="NoWrap"/>
+            </StackPanel>
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="Standard80ItemTemplateAllCategories">
+        <Grid Margin="6">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="1" VerticalAlignment="Bottom" Margin="10,0,0,0" Orientation="Horizontal">
+                <TextBlock Text="{Binding category}" Style="{StaticResource TitleTextStyle}" TextWrapping="NoWrap"/>
+                <TextBlock Text="(" Style="{StaticResource CaptionTextStyle}" TextWrapping="NoWrap"/>
+                <TextBlock Text="{Binding ct}" Style="{StaticResource CaptionTextStyle}" TextWrapping="NoWrap"/>
+                <TextBlock Text=")" Style="{StaticResource CaptionTextStyle}" TextWrapping="NoWrap"/>
             </StackPanel>
         </Grid>
     </DataTemplate>
@@ -1457,4 +1509,18 @@
         <Setter Property="Content" Value="&#xE103;"/>
     </Style>
 
+    <!-- style for "All Cats" application bar button in Quoteview page -->
+    <Style x:Key="AllCatsAppBarButtonStyle" TargetType="Button" BasedOn="{StaticResource AppBarButtonStyle}">
+        <Setter Property="AutomationProperties.AutomationId" Value="FavoriteAppBarButton"/>
+        <Setter Property="AutomationProperties.Name" Value="More Categories"/>
+        <Setter Property="Content" Value="&#xE14C;"/>
+    </Style>
+
+    <!-- style for "All Authors" application bar button in Quoteview page -->
+    <Style x:Key="AllAuthorsAppBarButtonStyle" TargetType="Button" BasedOn="{StaticResource AppBarButtonStyle}">
+        <Setter Property="AutomationProperties.AutomationId" Value="FavoriteAppBarButton"/>
+        <Setter Property="AutomationProperties.Name" Value="More Authors"/>
+        <Setter Property="Content" Value="&#xE125;"/>
+    </Style>
+    
 </ResourceDictionary>
