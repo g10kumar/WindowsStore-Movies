@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Machine>WORKS9</Machine>
+    <WindowsUser>Veeru</WindowsUser>
+    <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
+    <PackageArchitecture>neutral</PackageArchitecture>
+    <RegisteredManifestChecksum>D1DD8BAB2299C18209CF88B8D6E8608CC8A1B24DC6D8CF2C249434B2BFD7D9B4</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>5af3a496-1611-4400-bbb6-4232dd8615a9_1.0.0.0_neutral__a2y5vxsqmmwx2</RegisteredPackageMoniker>
+    <RegisteredUserModeAppID>5af3a496-1611-4400-bbb6-4232dd8615a9_a2y5vxsqmmwx2!App</RegisteredUserModeAppID>
+    <RegisteredPackageID>5af3a496-1611-4400-bbb6-4232dd8615a9</RegisteredPackageID>
+    <RegisteredPackagePublisher>CN=Veeru</RegisteredPackagePublisher>
+    <RegisteredVersion>1.0.0.0</RegisteredVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppXManifest Include="D:\TestWIN8\AdTest\AdTest\bin\Debug\AppxManifest.xml">
+      <PackagePath>AppxManifest.xml</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2013-05-08T07:44:17.120</Modified>
+    </AppXManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxPackagedFile Include="D:\TestWIN8\AdTest\AdTest\bin\Debug\AdTest.exe">
+      <PackagePath>AdTest.exe</PackagePath>
+      <Modified>2013-05-08T11:33:32.117</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TestWIN8\AdTest\AdTest\bin\Debug\AdTest.pdb">
+      <PackagePath>AdTest.pdb</PackagePath>
+      <Modified>2013-05-08T11:33:32.083</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\MSAdvertisingXaml\6.1\References\CommonConfiguration\neutral\Microsoft.Advertising.WinRT.UI.winmd">
+      <PackagePath>Microsoft.Advertising.WinRT.UI.winmd</PackagePath>
+      <Modified>2012-11-16T10:45:56.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\MSAdvertisingXaml\6.1\References\CommonConfiguration\neutral\MicrosoftAdvertising.winmd">
+      <PackagePath>MicrosoftAdvertising.winmd</PackagePath>
+      <Modified>2012-11-16T10:45:56.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\MSAdvertisingXaml\6.1\References\CommonConfiguration\neutral\Microsoft.Advertising.WinRT.UI.xml">
+      <PackagePath>Microsoft.Advertising.WinRT.UI.xml</PackagePath>
+      <Modified>2012-11-16T10:48:42.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\MSAdvertisingXaml\6.1\References\CommonConfiguration\neutral\MicrosoftAdvertising.xml">
+      <PackagePath>MicrosoftAdvertising.xml</PackagePath>
+      <Modified>2012-11-16T10:48:42.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TestWIN8\AdTest\packages\AdDuplexWindows.8.0.3.0\lib\winrt45\AdDuplex.Windows.dll">
+      <PackagePath>AdDuplex.Windows.dll</PackagePath>
+      <Modified>2013-05-08T07:26:38.293</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TestWIN8\AdTest\packages\AdRotatorWin8.1.0.10\lib\netcore45\AdRotatorWin8.dll">
+      <PackagePath>AdRotatorWin8.dll</PackagePath>
+      <Modified>2013-05-08T07:26:38.379</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\MSAdvertisingXaml\6.1\Redist\CommonConfiguration\neutral\Microsoft.Advertising.WinRT.UI\bootstrap.html">
+      <PackagePath>Microsoft.Advertising.WinRT.UI\bootstrap.html</PackagePath>
+      <Modified>2012-11-16T10:13:56.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\MSAdvertisingXaml\6.1\Redist\CommonConfiguration\neutral\Microsoft.Advertising.WinRT.UI\Themes\Generic.xaml">
+      <PackagePath>Microsoft.Advertising.WinRT.UI\Themes\Generic.xaml</PackagePath>
+      <Modified>2012-11-16T10:13:56.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\MSAdvertisingXaml\6.1\Redist\CommonConfiguration\neutral\Microsoft.Advertising.WinRT.UI\ormma.js">
+      <PackagePath>Microsoft.Advertising.WinRT.UI\ormma.js</PackagePath>
+      <Modified>2012-11-16T10:15:34.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TestWIN8\AdTest\AdTest\Assets\Logo.png">
+      <PackagePath>Assets\Logo.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2012-03-15T15:12:52.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TestWIN8\AdTest\AdTest\Assets\SmallLogo.png">
+      <PackagePath>Assets\SmallLogo.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2012-03-15T15:12:52.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TestWIN8\AdTest\AdTest\Assets\SplashScreen.png">
+      <PackagePath>Assets\SplashScreen.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2012-03-15T15:12:52.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TestWIN8\AdTest\AdTest\Assets\StoreLogo.png">
+      <PackagePath>Assets\StoreLogo.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2012-03-15T15:12:52.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TestWIN8\AdTest\AdTest\DefaultAd\AdRotator.png">
+      <PackagePath>DefaultAd\AdRotator.png</PackagePath>
+      <Modified>2013-05-08T07:05:54.207</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TestWIN8\AdTest\AdTest\defaultAdSettings.xml">
+      <PackagePath>defaultAdSettings.xml</PackagePath>
+      <Modified>2013-05-08T07:26:44.182</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TestWIN8\AdTest\AdTest\ReadMe-AdRotator-XAML.txt">
+      <PackagePath>ReadMe-AdRotator-XAML.txt</PackagePath>
+      <Modified>2013-05-08T07:26:44.158</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TestWIN8\AdTest\AdTest\bin\Debug\App.xaml">
+      <PackagePath>App.xaml</PackagePath>
+      <Modified>2013-05-08T07:00:52.437</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TestWIN8\AdTest\AdTest\bin\Debug\DefaultAd\MyDefaultAd.xaml">
+      <PackagePath>DefaultAd\MyDefaultAd.xaml</PackagePath>
+      <Modified>2013-05-08T07:15:19.560</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TestWIN8\AdTest\AdTest\bin\Debug\Common\StandardStyles.xaml">
+      <PackagePath>Common\StandardStyles.xaml</PackagePath>
+      <Modified>2012-06-26T10:49:20.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TestWIN8\AdTest\AdTest\bin\Debug\MainPage.xaml">
+      <PackagePath>MainPage.xaml</PackagePath>
+      <Modified>2013-05-08T07:41:31.141</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TestWIN8\AdTest\packages\AdDuplexWindows.8.0.3.0\lib\winrt45\AdDuplex.Windows\Themes\Generic.xaml">
+      <PackagePath>AdDuplex.Windows\Themes\Generic.xaml</PackagePath>
+      <Modified>2013-05-08T07:26:38.299</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TestWIN8\AdTest\packages\AdRotatorWin8.1.0.10\lib\netcore45\AdRotatorWin8\Themes\Generic.xaml">
+      <PackagePath>AdRotatorWin8\Themes\Generic.xaml</PackagePath>
+      <Modified>2013-05-08T07:26:38.409</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TestWIN8\AdTest\AdTest\bin\Debug\resources.pri">
+      <PackagePath>resources.pri</PackagePath>
+      <Modified>2013-05-08T07:31:35.451</Modified>
+    </AppxPackagedFile>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+</Project>

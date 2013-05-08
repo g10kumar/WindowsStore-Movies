@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>AdRotatorWin8</id>
+    <version>1.0.10</version>
+    <title>Ad Rotator for Windows 8</title>
+    <authors>Simon Jackson, Gergely Orosz</authors>
+    <owners>Simon Jackson, Gergely Orosz</owners>
+    <projectUrl>http://wp7adrotator.codeplex.com/</projectUrl>
+    <iconUrl>http://adrotator.apphb.com/AdRotator.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>An AdRotator control for Windows 8 to support multiple Ad Providers in your apps / games</description>
+    <releaseNotes>**Note - Default Ad implementation now uses a string instead of an object, it is also now alo available in the config XML as a secondary ID for DefaulAds.
+Format = &lt;namespace&gt;.&lt;ClassName&gt;
+
+This version supports:
+* Local Config
+* Remote Config
+* Sliding Ad features
+
+Supports the following Ad Providers
+* AdDuplex
+* Pubcenter
+* Local &amp; Remote House Ads
+
+Please Ensure you install ALL the Ad Providers from Nuget and MS SDK even if you are using only one provider</releaseNotes>
+    <copyright />
+    <language />
+    <tags>AdDuplex,PubCenter,AdRotator</tags>
+    <dependencies>
+      <dependency id="AdDuplexWindows" version="8.0.2.0" />
+    </dependencies>
+  </metadata>
+</package>
