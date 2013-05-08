@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
-  <Identity Name="DaksaTech.Newspapers" Version="1.0.0.15" Publisher="CN=42750936-DE0C-415B-9312-C587E65FD9EC" />
+  <Identity Name="DaksaTech.Newspapers" Version="1.0.0.16" Publisher="CN=42750936-DE0C-415B-9312-C587E65FD9EC" />
   <Properties>
     <DisplayName>ms-resource:displayName</DisplayName>
     <PublisherDisplayName>DaksaTech</PublisherDisplayName>
