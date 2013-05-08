@@ -1,0 +1,1 @@
+D:\TestWIN8\AdTest\AdTest\AdTest.csproj;neutral
