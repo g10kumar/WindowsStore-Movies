@@ -20740,11 +20740,11 @@
         </trans-unit>
         <trans-unit id="resources\description" translate="yes" xml:space="preserve">
           <source>Newspapers</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Газеты</target>
+          <target state="translated">газет</target>
         </trans-unit>
         <trans-unit id="resources\displayName" translate="yes" xml:space="preserve">
           <source>Newspapers</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Газеты</target>
+          <target state="translated">газет</target>
         </trans-unit>
         <trans-unit id="resources\fvn.no" translate="yes" xml:space="preserve">
           <source>fvn.no</source>
@@ -20784,7 +20784,7 @@
         </trans-unit>
         <trans-unit id="resources\shortName" translate="yes" xml:space="preserve">
           <source>Newspapers</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Газеты</target>
+          <target state="translated">газет</target>
         </trans-unit>
         <trans-unit id="resources\taz.de" translate="yes" xml:space="preserve">
           <source>taz.de</source>

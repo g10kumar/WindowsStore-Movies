@@ -3643,7 +3643,6 @@
     <Content Include="js\default.js" />
     <Content Include="js\navigator.js" />
     <None Include="Package.StoreAssociation.xml" />
-    <None Include="MultilingualResources\NewspapersJS_qps-ploc.xlf" />
     <None Include="MultilingualResources\NewspapersJS_ru-RU.xlf" />
     <None Include="MultilingualResources\NewspapersJS_es.xlf" />
     <Content Include="pages\about\about.html" />
