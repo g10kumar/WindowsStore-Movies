@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>AdDuplexWindows</id>
+    <version>8.0.3.0</version>
+    <title>AdDuplex SDK for Windows 8</title>
+    <authors>AdDuplex</authors>
+    <owners>AdDuplex</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>AdDuplex (cross-promotion network for Windows Phone and Windows 8 apps) SDK for managed Windows 8 XAML apps</description>
+    <releaseNotes>BUGFIX: in rare occasions control went into rapid fire ad loading loop severely affecting network performance</releaseNotes>
+    <copyright>AdDuplex</copyright>
+  </metadata>
+</package>
