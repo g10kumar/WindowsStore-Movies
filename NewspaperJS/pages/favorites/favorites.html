@@ -28,6 +28,8 @@
     <div class="itemtemplate" data-win-control="WinJS.Binding.Template">
         <img class="item-image" src="#" data-win-bind="src: backgroundImage; alt: title" />
         <div class="item-overlay">
+            <h1 class="item-title" style="visibility:collapse;" data-win-bind="textContent: orgtitle"></h1>
+            <h1 class="item-title" style="visibility:collapse;" data-win-bind="textContent: orgnewsTitle"></h1>
             <h4 class="item-title" data-win-bind="textContent: newsTitle"></h4>
         </div>
     </div>

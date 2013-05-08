@@ -11,7 +11,9 @@
     var mediumGray = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXY5g8dcZ/AAY/AsAlWFQ+AAAAAElFTkSuQmCC";
     var darkGray = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXY3B0cPoPAANMAcOba1BlAAAAAElFTkSuQmCC";
 
+    //var regionArray = new Array(WinJS.Resources.getString('unitedstates').value, WinJS.Resources.getString('africa').value, WinJS.Resources.getString('asia').value, WinJS.Resources.getString('caribbean').value, WinJS.Resources.getString('europe').value, WinJS.Resources.getString('middleeast').value, WinJS.Resources.getString('theamericas').value, WinJS.Resources.getString('oceania').value);
     var regionArray = new Array("United States", "Africa", "Asia", "Caribbean", "Europe", "Middle East", "The Americas", "Oceania");
+    
 
     var dataPromises = [];
 
@@ -25,8 +27,8 @@
         var len = regionArray.length;
         for (var i = 0; i < len; i++) {
             var obj = {
-                key: regionArray[i],
-                title: regionArray[i],
+                key: WinJS.Resources.getString(regionArray[i]).value,
+                title: WinJS.Resources.getString(regionArray[i]).value,
                 subtitle: regionArray[i],
                 backgroundImage: darkGray,
                 description: "",
@@ -68,7 +70,7 @@
                     // Process each region
                     for (var regionIndex = 0; regionIndex < regions.length; regionIndex++) {
 
-                        if (region.title == regions[regionIndex].attributes.getNamedItem("name").textContent)
+                        if (region.title == WinJS.Resources.getString(regions[regionIndex].attributes.getNamedItem("name").textContent).value)
                         {
                             // Get the info for each region countries
                             var countries = regions[regionIndex].querySelectorAll("c");
@@ -78,7 +80,7 @@
 
                                 regionGroupItems.push({
                                     group: region,
-                                    title: countries[countryIndex].attributes.getNamedItem("name").textContent,
+                                    title: WinJS.Resources.getString(countries[countryIndex].attributes.getNamedItem("name").textContent).value,
                                     subtitle: countries[countryIndex].querySelector("abbr").textContent,
                                     content: "",
                                     backgroundImage: "../Flag/" + countries[countryIndex].querySelector("flag").textContent

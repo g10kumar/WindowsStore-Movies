@@ -19,7 +19,9 @@
 
         ready: function (element, options) {
 
-            element.querySelector(".titlearea .pagetitle").textContent = "Favorites";
+            element.querySelector(".titlearea .pagetitle").textContent = WinJS.Resources.getString('Command1Label').value;
+
+            document.getElementById("btnDeleteFavorites").winControl.label = WinJS.Resources.getString('Command3Label').value;
 
             // Initialize the license info for use in the app that is uploaded to the Store.
             // uncomment for release
@@ -78,7 +80,26 @@
             window.indexedDB.deleteDatabase("FavoritesDB", 1);
 
             if (newsPapersNodes.length == 0) {
-                var msg = new Windows.UI.Popups.MessageDialog("No Newspapers in your favorites!");
+                //var msg = new Windows.UI.Popups.MessageDialog(WinJS.Resources.getString('No Newspapers in your favorites!').value);
+                //msg.showAsync().done(function (command) {
+                //    if (command.id == 1) {
+
+                //    }
+                //    else {
+
+                //    }
+                //});
+
+                // Create the message dialog and set its content
+                var msg = new Windows.UI.Popups.MessageDialog(WinJS.Resources.getString('No Newspapers in your favorites!').value);
+
+                // Add commands and set their command handlers
+                msg.commands.append(new Windows.UI.Popups.UICommand(WinJS.Resources.getString('Close').value));
+
+                // Set the command that will be invoked by default
+                msg.defaultCommandIndex = 0;
+
+                // Show the message dialog
                 msg.showAsync().done(function (command) {
                     if (command.id == 1) {
 
@@ -116,10 +137,12 @@
                 var cursor = e.target.result;
                 if (cursor) {
                     var newsPapers = {
-                        title: cursor.value.title.trim(),
-                        newsTitle: cursor.value.newsTitle.trim(),
+                        title: WinJS.Resources.getString(cursor.value.orgtitle.trim()).value,
+                        newsTitle: WinJS.Resources.getString(cursor.value.orgnewsTitle.trim()).value,
                         webSite: cursor.value.webSite.trim(),
-                        backgroundImage: "../../../images/Country/" + cursor.value.title.trim() + "_" + cursor.value.newsTitle.trim() + ".jpg"
+                        orgtitle: cursor.value.orgtitle.trim(),
+                        orgnewsTitle: cursor.value.orgnewsTitle.trim(),
+                        backgroundImage: "../../../images/Country/" + cursor.value.orgtitle.trim() + "_" + cursor.value.orgnewsTitle.trim() + ".jpg"
                     };
                     newsPapersNodes.push(newsPapers);
                     cursor.continue();
@@ -148,7 +171,26 @@
             if (listView != null) {
                 listView.itemDataSource = null;
             }
-            var msg = new Windows.UI.Popups.MessageDialog("No Newspapers in your favorites!");
+            //var msg = new Windows.UI.Popups.MessageDialog(WinJS.Resources.getString('No Newspapers in your favorites!').value);
+            //msg.showAsync().done(function (command) {
+            //    if (command.id == 1) {
+
+            //    }
+            //    else {
+
+            //    }
+            //});
+
+            // Create the message dialog and set its content
+            var msg = new Windows.UI.Popups.MessageDialog(WinJS.Resources.getString('No Newspapers in your favorites!').value);
+
+            // Add commands and set their command handlers
+            msg.commands.append(new Windows.UI.Popups.UICommand(WinJS.Resources.getString('Close').value));
+
+            // Set the command that will be invoked by default
+            msg.defaultCommandIndex = 0;
+
+            // Show the message dialog
             msg.showAsync().done(function (command) {
                 if (command.id == 1) {
 
@@ -175,7 +217,9 @@
                 var newsPapers = {
                     title: selectedItem.data.title.trim(),
                     newsTitle: selectedItem.data.newsTitle.trim(),
-                    webSite: selectedItem.data.webSite.trim()
+                    webSite: selectedItem.data.webSite.trim(),
+                    orgtitle: selectedItem.data.orgtitle.trim(),
+                    orgnewsTitle: selectedItem.data.orgnewsTitle.trim()
                 };
                 deletingFavoriteNodes.push(newsPapers);
             });
@@ -198,7 +242,7 @@
                 for (var i = 0; i < deletingFavoriteNodes.length; i++) {
 
                     try{
-                        favoritesStore.delete(deletingFavoriteNodes[i].newsTitle);
+                        favoritesStore.delete(deletingFavoriteNodes[i].orgnewsTitle);
                         //delete newsPapersNodes[i]
                     }
                     catch(e) {
@@ -212,20 +256,41 @@
                     notdeletingpapers = notdeletingpapers.slice(0, len - 1);
 
                     if (currentSelectionItems._value.length > notdeletingpapers.split(",").length) {
-                        msg += "The following Newspaper(s) were not deleted from favorite list." + "\n";
+                        msg += WinJS.Resources.getString('The following Newspaper(s) were not deleted from favorite list.').vlaue + "\n";
                         msg += notdeletingpapers + "\n\n";
-                        msg += "Remaining Newspaper(s) were deleted from favorite list."
+                        msg += WinJS.Resources.getString('Remaining Newspaper(s) were deleted from favorite list.').value
                     }
                     else if (currentSelectionItems._value.length == notdeletingpapers.split(",").length) {
-                        msg += "The following News paper(s) are deleted from favorite list." + "\n";
+                        msg += WinJS.Resources.getString('The following News paper(s) are deleted from favorite list.').value + "\n";
                         msg += notdeletingpapers + "\n";
                     }
                 }
                 else {
-                    msg += "Selected Newspaper(s) deleted from favorites.";
+                    msg += WinJS.Resources.getString('Selected Newspaper(s) deleted from favorites.').value;
                 }
 
+                //var msgdialog = new Windows.UI.Popups.MessageDialog(msg);
+                //msgdialog.showAsync().done(function (command) {
+                //    if (command.id == 1) {
+
+                //    }
+                //    else {
+
+                //    }
+
+                //    createDB();
+                //});
+
+                // Create the message dialog and set its content
                 var msgdialog = new Windows.UI.Popups.MessageDialog(msg);
+
+                // Add commands and set their command handlers
+                msgdialog.commands.append(new Windows.UI.Popups.UICommand(WinJS.Resources.getString('Close').value));
+
+                // Set the command that will be invoked by default
+                msgdialog.defaultCommandIndex = 0;
+
+                // Show the message dialog
                 msgdialog.showAsync().done(function (command) {
                     if (command.id == 1) {
 
@@ -233,16 +298,36 @@
                     else {
 
                     }
-
                     createDB();
                 });
+
+                
                 
                 //displayFavoriteNewsPapersList(newsPapersNodes);
 
             };
         } catch (e) {
-            var msg = new Windows.UI.Popups.MessageDialog("Unable to delete Newpapers from Favorites.");
-            msg.showAsync().done(function (command) {
+            //var msg = new Windows.UI.Popups.MessageDialog(WinJS.Resources.getString('Unable to delete Newpapers from Favorites.').value);
+            //msg.showAsync().done(function (command) {
+            //    if (command.id == 1) {
+
+            //    }
+            //    else {
+
+            //    }
+            //});
+
+            // Create the message dialog and set its content
+            var msgdialog = new Windows.UI.Popups.MessageDialog(WinJS.Resources.getString('Unable to delete Newpapers from Favorites.').value);
+
+            // Add commands and set their command handlers
+            msgdialog.commands.append(new Windows.UI.Popups.UICommand(WinJS.Resources.getString('Close').value));
+
+            // Set the command that will be invoked by default
+            msgdialog.defaultCommandIndex = 0;
+
+            // Show the message dialog
+            msgdialog.showAsync().done(function (command) {
                 if (command.id == 1) {
 
                 }

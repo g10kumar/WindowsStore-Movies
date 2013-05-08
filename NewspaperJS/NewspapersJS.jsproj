@@ -48,6 +48,10 @@
     <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
     <PackageCertificateThumbprint>E96EBDB899FC422A534AD4B20287398F6C91AB7C</PackageCertificateThumbprint>
   </PropertyGroup>
+  <PropertyGroup Label="MultilingualAppToolkit">
+    <MakePriLog>$(Temp)\$(MSBuildProjectName)_Multilingual.prilog.xml</MakePriLog>
+    <AppxGenerateProjectPriFileAdditionalMakepriExeParameters>/IndexLog "$(MakePriLog)"</AppxGenerateProjectPriFileAdditionalMakepriExeParameters>
+  </PropertyGroup>
   <ItemGroup>
     <AppxManifest Include="package.appxmanifest">
       <SubType>Designer</SubType>
@@ -3639,7 +3643,10 @@
     <Content Include="js\default.js" />
     <Content Include="js\navigator.js" />
     <None Include="Package.StoreAssociation.xml" />
+    <None Include="MultilingualResources\NewspapersJS_ru-RU.xlf" />
+    <None Include="MultilingualResources\NewspapersJS_es.xlf" />
     <Content Include="pages\about\about.html" />
+    <Content Include="pages\about\about.js" />
     <Content Include="pages\favorites\favorites.css" />
     <Content Include="pages\favorites\favorites.html" />
     <Content Include="pages\favorites\favorites.js" />
@@ -3657,6 +3664,7 @@
     <Content Include="pages\newsPapers\newsPapersList.html" />
     <Content Include="pages\newsPapers\newsPapersList.js" />
     <Content Include="pages\privacypolicy\privacypolicy.html" />
+    <Content Include="pages\privacypolicy\privacypolicy.js" />
     <Content Include="xml\Country.xml">
       <SubType>Designer</SubType>
     </Content>
@@ -3669,7 +3677,11 @@
     <SDKReference Include="Microsoft.WinJS.1.0, Version=1.0" />
     <SDKReference Include="MSAdvertisingJS, Version=6.1" />
   </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="strings\en-US\resources.resjson" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\$(WMSJSProjectDirectory)\Microsoft.VisualStudio.$(WMSJSProject).targets" />
+  <Import Label="MultilingualAppToolkit" Project="$(MSBuildExtensionsPath32)\Microsoft\Multilingual App Toolkit\v1.0\MultilingualBuildTasks.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\Multilingual App Toolkit\v1.0\MultilingualBuildTasks.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
@@ -3677,4 +3689,7 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <Target Name="AfterBuild">
+    <MultilingualBuild Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\Multilingual App Toolkit\v1.0\MultilingualBuildTasks.targets')" ContinueOnError="false" BldOutputPath="$(IntermediateOutputPath)" BinOutputPath="bin\$(Configuration)" AppName="$(ProjectName)" ProjectPath="$(ProjectPath)" ProjectPriFullPath="$(ProjectPriFullPath)" MakePriLog="$(MakePriLog)" SourceLanguage="$(DefaultLanguage)" />
+  </Target>
 </Project>

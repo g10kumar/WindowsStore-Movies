@@ -47,7 +47,7 @@
                 // If the page is not snapped, the user invoked an item.
                 var item = Data.items.getAt(args.detail.itemIndex);
                 //nav.navigate("/pages/itemDetail/itemDetail.html", { item: Data.getItemReference(item) });
-                var region = item.group.title.toLowerCase();
+                var region = item.group.subtitle.toLowerCase();
                 region = region.replace(" ", "_");
                 //var tmpregion = region.tolower();
                 var country = item.title;
@@ -63,6 +63,16 @@
         // This function is called whenever a user navigates to this page. It
         // populates the page elements with the app's data.
         ready: function (element, options) {
+
+            element.querySelector(".titlearea .pagetitle").textContent = WinJS.Resources.getString('News Papers').value;
+            
+            //document.getElementById("btnFavorites").lang = WinJS.Resources.getString('Favorites').value;
+            //document.getElementById("cmdCommand1").win-label == WinJS.Resources.getString('Command1Label').value;
+
+            //document.getElementById("appbar").tagName = "es";
+
+            document.getElementById("cmdCommand1").winControl.label = WinJS.Resources.getString('Command1Label').value;
+
             var listView = element.querySelector(".groupeditemslist").winControl;
             listView.groupHeaderTemplate = element.querySelector(".headerTemplate");
             listView.itemTemplate = element.querySelector(".itemtemplate");
