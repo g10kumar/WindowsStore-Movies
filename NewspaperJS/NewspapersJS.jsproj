@@ -3678,9 +3678,7 @@
     <SDKReference Include="MSAdvertisingJS, Version=6.1" />
   </ItemGroup>
   <ItemGroup>
-    <PRIResource Include="strings\de-DE\resources.resjson" />
     <PRIResource Include="strings\en-US\resources.resjson" />
-    <PRIResource Include="strings\fr-FR\resources.resjson" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\$(WMSJSProjectDirectory)\Microsoft.VisualStudio.$(WMSJSProject).targets" />
   <Import Label="MultilingualAppToolkit" Project="$(MSBuildExtensionsPath32)\Microsoft\Multilingual App Toolkit\v1.0\MultilingualBuildTasks.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\Multilingual App Toolkit\v1.0\MultilingualBuildTasks.targets')" />
