@@ -40,6 +40,7 @@ using Windows.Security.Cryptography.Core;
 using Windows.Security.Cryptography;
 using nsoftware.IPWorksSSL;
 using ShareAll.Common;
+using Windows.ApplicationModel.Resources;
 
 namespace ShareAll
 {
@@ -571,10 +572,11 @@ namespace ShareAll
 
         private async void btnShare_Click(object sender, RoutedEventArgs e)
         {
+            var loader = new Windows.ApplicationModel.Resources.ResourceLoader();
             
             fbPostMessage.Text = "";
             TwitterPostMessage.Text = "";
-            if (FBLinktoShare.Text == "Link")
+            if (FBLinktoShare.Text == loader.GetString("Link"))
             {
                 FBLinktoShare.Text = "";
             }
@@ -608,7 +610,8 @@ namespace ShareAll
                         //await _fb.DeleteTaskAsync(_lastMessageId);
                         //Windows.UI.Popups.MessageDialog dialog = new Windows.UI.Popups.MessageDialog("Posted to your Facebook wall.");
                         //await dialog.ShowAsync();
-                        fbPostMessage.Text = "Posted to Facebook.";
+                        //fbPostMessage.Text = loader.GetString("Posted to Facebook.");
+                        fbPostMessage.Text = loader.GetString("Posted to Facebook");
                         fbPostMessage.Foreground = new SolidColorBrush(Colors.Green);
                         shareProgressBar.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
                     }
@@ -616,7 +619,8 @@ namespace ShareAll
                     {
                         //Windows.UI.Popups.MessageDialog dialog = new Windows.UI.Popups.MessageDialog("Post to wall failed. Please try again.");
                         //await dialog.ShowAsync();
-                        fbPostMessage.Text = "Post to Facebook failed. Please try again.";
+                        //fbPostMessage.Text = loader.GetString("Post to Facebook failed. Please try again.");
+                        fbPostMessage.Text = loader.GetString("Post to Facebook failed_Please try again");
                         fbPostMessage.Foreground = new SolidColorBrush(Colors.Red);
                         shareProgressBar.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
                     }
@@ -628,13 +632,15 @@ namespace ShareAll
                     //dialog.ShowAsync();
                     if (foauthex.ErrorCode == 506)
                     {
-                        fbPostMessage.Text = "Post to Facebook failed. Message already exists on Facebook.";
+                        //fbPostMessage.Text = loader.GetString("Post to Facebook failed. Message already exists on Facebook.");
+                        fbPostMessage.Text = loader.GetString("Post to Facebook failed_Message already exists on Facebook");
                         fbPostMessage.Foreground = new SolidColorBrush(Colors.Red);
                         shareProgressBar.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
                     }
                     else if (foauthex.ErrorCode >= 100 & foauthex.ErrorCode < 200)
                     {
-                        fbPostMessage.Text = "Post to Facebook failed. Please click on Settings icon and authorize the app before trying again.";
+                        //fbPostMessage.Text = loader.GetString("Post to Facebook failed. Please click on Settings icon and authorize the app before trying again.");
+                        fbPostMessage.Text = loader.GetString("Facebook_Authorize_Error");
                         fbPostMessage.Foreground = new SolidColorBrush(Colors.Red);
                         ApplicationData.Current.RoamingSettings.Values["isFBConfigure"] = 0;
                         btnFBConfigure.Visibility = Windows.UI.Xaml.Visibility.Visible;
@@ -644,7 +650,8 @@ namespace ShareAll
                     {
                         if (foauthex.Message.IndexOf("Error validating access token") != 0 || foauthex.Message.IndexOf("Invalid OAuth access token") != 0 || foauthex.Message.IndexOf("An active access token must be used") != 0)
                         {
-                            fbPostMessage.Text = "Post to Facebook failed. Please click on Settings icon and authorize the app before trying again.";
+                            //fbPostMessage.Text = loader.GetString("Post to Facebook failed. Please click on Settings icon and authorize the app before trying again.");
+                            fbPostMessage.Text = loader.GetString("Facebook_Authorize_Error");
                             fbPostMessage.Foreground = new SolidColorBrush(Colors.Red);
                             ApplicationData.Current.RoamingSettings.Values["isFBConfigure"] = 0;
                             btnFBConfigure.Visibility = Windows.UI.Xaml.Visibility.Visible;
@@ -652,7 +659,8 @@ namespace ShareAll
                         }
                         else
                         {
-                            fbPostMessage.Text = "Post to Facebook failed. " + foauthex.Message.ToString();
+                            //fbPostMessage.Text = loader.GetString("Post to Facebook failed. ") + " " + foauthex.Message.ToString();
+                            fbPostMessage.Text = loader.GetString("Post to Facebook failed") + " " + foauthex.Message.ToString();
                             fbPostMessage.Foreground = new SolidColorBrush(Colors.Red);
                             shareProgressBar.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
                         }
@@ -662,7 +670,8 @@ namespace ShareAll
                 {
                     //Windows.UI.Popups.MessageDialog dialog = new Windows.UI.Popups.MessageDialog(flimitex.Message.ToString());
                     //dialog.ShowAsync();
-                    fbPostMessage.Text = "Post to Facebook failed. " + flimitex.Message.ToString();
+                    //fbPostMessage.Text = loader.GetString("Post to Facebook failed. ") + " " + flimitex.Message.ToString();
+                    fbPostMessage.Text = loader.GetString("Post to Facebook failed") + " " + flimitex.Message.ToString();
                     fbPostMessage.Foreground = new SolidColorBrush(Colors.Red);
                     shareProgressBar.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
                 }
@@ -670,7 +679,8 @@ namespace ShareAll
                 {
                     //Windows.UI.Popups.MessageDialog dialog = new Windows.UI.Popups.MessageDialog(fapiex.Message.ToString());
                     //dialog.ShowAsync();
-                    fbPostMessage.Text = "Post to Facebook failed. " + fapiex.Message.ToString();
+                    //fbPostMessage.Text = loader.GetString("Post to Facebook failed. ") + " " + fapiex.Message.ToString();
+                    fbPostMessage.Text = loader.GetString("Post to Facebook failed") + " " + fapiex.Message.ToString();
                     fbPostMessage.Foreground = new SolidColorBrush(Colors.Red);
                     shareProgressBar.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
                 }
@@ -678,7 +688,8 @@ namespace ShareAll
                 {
                     //Windows.UI.Popups.MessageDialog dialog = new Windows.UI.Popups.MessageDialog(ex.Message.ToString());
                     //dialog.ShowAsync();
-                    fbPostMessage.Text = "Post to Facebook failed. " + ex.Message.ToString();
+                    //fbPostMessage.Text = loader.GetString("Post to Facebook failed. ") + " " + ex.Message.ToString();
+                    fbPostMessage.Text = loader.GetString("Post to Facebook failed") + " " + ex.Message.ToString();
                     fbPostMessage.Foreground = new SolidColorBrush(Colors.Red);
                     shareProgressBar.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
                 }
@@ -699,7 +710,8 @@ namespace ShareAll
                     {
                         //Windows.UI.Popups.MessageDialog dialog = new Windows.UI.Popups.MessageDialog("Posted to Twitter.");
                         //await dialog.ShowAsync();
-                        TwitterPostMessage.Text = "Posted to Twitter.";
+                        //TwitterPostMessage.Text = loader.GetString("Posted to Twitter.");
+                        TwitterPostMessage.Text = loader.GetString("Posted to Twitter");
                         TwitterPostMessage.Foreground = new SolidColorBrush(Colors.Green);
                         shareProgressBar.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
                     }
@@ -717,10 +729,12 @@ namespace ShareAll
                                 case "401":
                                     ApplicationData.Current.RoamingSettings.Values["isTweetConfigure"] = 0;
                                     EnableTwitterOptions();
-                                    twitterErrorMessage = "Could not post to Twitter because of authentication issue. Please click Settings icon and authorize app.";
+                                    //twitterErrorMessage = loader.GetString("Could not post to Twitter because of authentication issue. Please click Settings icon and authorize app.");
+                                    twitterErrorMessage = loader.GetString("Twitter_Error_401");
                                     break;
                                 case "403":
-                                    twitterErrorMessage = "The post was rejected by Twitter.";
+                                    //twitterErrorMessage = loader.GetString("The post was rejected by Twitter.");
+                                    twitterErrorMessage = loader.GetString("The post was rejected by Twitter");
                                     break;
                                 case "404":
                                     twitterErrorMessage = "";
@@ -732,16 +746,19 @@ namespace ShareAll
                                     twitterErrorMessage = "";
                                     break;
                                 case "422":
-                                    twitterErrorMessage = "Could not post image to Twitter. Try again later.";
+                                    //twitterErrorMessage = loader.GetString("Could not post image to Twitter. Try again later.");
+                                    twitterErrorMessage = loader.GetString("Twitter_Error_422");
                                     break;
                                 case "429":
-                                    twitterErrorMessage = "Could not post to Twitter. Try again later.";
+                                    //twitterErrorMessage = loader.GetString("Could not post to Twitter. Try again later.");
+                                    twitterErrorMessage = loader.GetString("Could not post to Twitter_Try again later");
                                     break;
                                 case "500":
                                 case "502":
                                 case "503":
                                 case "504":
-                                    twitterErrorMessage = "Could not post to Twitter. It seems to be overloaded. Try again later.";
+                                    //twitterErrorMessage = loader.GetString("Could not post to Twitter. It seems to be overloaded. Try again later.");
+                                    twitterErrorMessage = loader.GetString("Twitter_Error_500To504");
                                     break;
                                 default:
                                     twitterErrorMessage = "";
@@ -764,7 +781,8 @@ namespace ShareAll
                         ApplicationData.Current.RoamingSettings.Values["isTweetConfigure"] = 0;
                         EnableTwitterOptions();
 
-                        TwitterPostMessage.Text = "Could not post to Twitter. Please click on Settings icon and authorize the app.";
+                        //TwitterPostMessage.Text = loader.GetString("Could not post to Twitter. Please click on Settings icon and authorize the app.");
+                        TwitterPostMessage.Text = loader.GetString("Could not post to Twitter_Please click on Settings icon and authorize the app");
                         TwitterPostMessage.Foreground = new SolidColorBrush(Colors.Red);
                         shareProgressBar.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
                     }
@@ -772,7 +790,8 @@ namespace ShareAll
                     {
                         //Windows.UI.Popups.MessageDialog dialog = new Windows.UI.Popups.MessageDialog(ex.Message.ToString());
                         //dialog.ShowAsync();
-                        TwitterPostMessage.Text = "Could not post to Twitter. " + ex.Message.ToString();
+                        //TwitterPostMessage.Text = loader.GetString("Could not post to Twitter. ") + " " + ex.Message.ToString();
+                        TwitterPostMessage.Text = loader.GetString("Could not post to Twitter") + " " + ex.Message.ToString();
                         TwitterPostMessage.Foreground = new SolidColorBrush(Colors.Red);
                         shareProgressBar.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
                     }
@@ -780,7 +799,6 @@ namespace ShareAll
                 
             }
             #endregion
-
 
             #region Email
             //if (chkEmail.IsChecked == true)
@@ -873,14 +891,19 @@ namespace ShareAll
                     if (returnString == "Success")
                     {
                         // wrap the below around if else statements; only enable if email test was successful
-                        EmailPostMessage.Text = "Mail was sent successfully.";
+                        //EmailPostMessage.Text = loader.GetString("Mail was sent successfully.");
+                        EmailPostMessage.Text = loader.GetString("Mail was sent successfully");
                         EmailPostMessage.Foreground = new SolidColorBrush(Colors.Green);
-                        EmailTo.Text = "To Emails (separate with comma, space or semi colon)";
+                        //EmailTo.Text = loader.GetString("To Emails (separate with comma, space or semi colon)");
+                        EmailTo.Text = loader.GetString("To Emails (separate with comma, space or semi colon)");
+                        EmailSubject.Text = "";
+                        EmailMessage.Text = "";
                         shareProgressBar.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
                     }
                     else
                     {
-                        EmailPostMessage.Text = "Unable to send mail. Check your 'To Email' address or 'Email settings'";
+                        //EmailPostMessage.Text = loader.GetString("Unable to send mail. Check your 'To Email' address or 'Email settings'");
+                        EmailPostMessage.Text = loader.GetString("Email_Failure");
                         EmailPostMessage.Foreground = new SolidColorBrush(Colors.Red);
                         shareProgressBar.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
                     }
@@ -1074,7 +1097,8 @@ namespace ShareAll
 
         private void FBLinktoShare_GotFocus_1(object sender, RoutedEventArgs e)
         {
-            if (FBLinktoShare.Text == "Link")
+            var loader = new Windows.ApplicationModel.Resources.ResourceLoader();
+            if (FBLinktoShare.Text == loader.GetString("Link"))
             {
                 FBLinktoShare.Text = "";
             }
@@ -1101,6 +1125,8 @@ namespace ShareAll
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
+            var loader = new Windows.ApplicationModel.Resources.ResourceLoader();
+
             #region Commented
             /*
             if (txtPassword.Password.ToString() == txtVerifyPassword.Password.ToString())
@@ -1197,20 +1223,24 @@ namespace ShareAll
 
             if (cbi == null)
             {
-                EmailConfigMessage.Text = "Please select the Domain";
+                //EmailConfigMessage.Text = loader.GetString("Please select the Domain");
+                EmailConfigMessage.Text = loader.GetString("Please select the Domain");
             }
             else if (txtEmail.Text == "")
             {
-                EmailConfigMessage.Text = "Please enter Email to use for sending";
+                //EmailConfigMessage.Text = loader.GetString("Please enter Email to use for sending");
+                EmailConfigMessage.Text = loader.GetString("Please enter Email to use for sending");
             }
             else if (!u.IsEmail(txtEmail.Text))
             {
-                EmailConfigMessage.Text = "Please enter valid Email";
+                //EmailConfigMessage.Text = loader.GetString("Please enter valid Email");
+                EmailConfigMessage.Text = loader.GetString("Please enter valid Email");
             }
             else if (txtPassword.Password.ToString() != txtVerifyPassword.Password.ToString())
             {
 
-                EmailConfigMessage.Text = "Password and Verify Password should be same";
+                //EmailConfigMessage.Text = loader.GetString("Password and Verify Password should be same");
+                EmailConfigMessage.Text = loader.GetString("Password and Verify Password should be same");
             }
             else
             {
@@ -1231,7 +1261,8 @@ namespace ShareAll
                     }
                     else
                     {
-                        EmailConfigMessage.Text = "For Hotmail, valid emails are hotmail.com, msn.com & live.com";
+                        //EmailConfigMessage.Text = loader.GetString("For Hotmail, valid emails are hotmail.com, msn.com & live.com");
+                        EmailConfigMessage.Text = loader.GetString("Hotmail_Domain_Failure");
                         return;
                     }
                 }
@@ -1244,7 +1275,8 @@ namespace ShareAll
                     }
                     else
                     {
-                        EmailConfigMessage.Text = "Please enter the Email which exists in the domain you selected.";
+                        //EmailConfigMessage.Text = loader.GetString("Please enter the Email which exists in the domain you selected.");
+                        EmailConfigMessage.Text = loader.GetString("Please enter the Email which exists in the domain you selected");
                         return;
                     }
                 }
@@ -1258,7 +1290,7 @@ namespace ShareAll
                 string returnString = "";
                 try
                 {
-                    returnString = u.SendEmail(htmlmailer, serverDomain, serverType, txtEmail.Text, txtPassword.Password, txtEmail.Text, txtEmail.Text, "Test Email", "This is a test email from Share All.");
+                    returnString = u.SendEmail(htmlmailer, serverDomain, serverType, txtEmail.Text, txtPassword.Password, txtEmail.Text, txtEmail.Text, loader.GetString("Test Email"), loader.GetString("This is a test email from Share All"));
 
                     if (returnString == "Success")
                     {
@@ -1275,14 +1307,16 @@ namespace ShareAll
                         ApplicationData.Current.RoamingSettings.Values["EmailConfigureEmail"] = entryptConfigEmail;
                         ApplicationData.Current.RoamingSettings.Values["EmailConfigurePwd"] = entryptConfigPwd;
                         ApplicationData.Current.RoamingSettings.Values["isEmailConfigure"] = 1;
-                        EmailConfigMessage.Text = "Email settings saved.";                        
+                        //EmailConfigMessage.Text = loader.GetString("Email settings saved.");                        
+                        EmailConfigMessage.Text = loader.GetString("Email settings saved");                        
                         myPopup.IsOpen = false;
                         EnableConfigurationOptions();
 
                     }
                     else
                     {
-                        EmailConfigMessage.Text = "Unable to send mail now.";
+                        //EmailConfigMessage.Text = loader.GetString("Unable to send mail now.");
+                        EmailConfigMessage.Text = loader.GetString("Unable to send mail now");
                     }
                 }
                 catch (Exception ex)
@@ -1365,7 +1399,13 @@ namespace ShareAll
 
         private void EmailTo_GotFocus_1(object sender, RoutedEventArgs e)
         {
-            if (EmailTo.Text == "To Emails (separate with comma, space or semi colon)")
+            var loader = new Windows.ApplicationModel.Resources.ResourceLoader();
+
+            //if (EmailTo.Text == loader.GetString("To Emails (separate with comma, space or semi colon)"))
+            //{
+            //    EmailTo.Text = "";
+            //}
+            if (EmailTo.Text == loader.GetString("To Emails (separate with comma, space or semi colon)"))
             {
                 EmailTo.Text = "";
             }
@@ -1374,9 +1414,14 @@ namespace ShareAll
 
         private void EmailTo_LostFocus_1(object sender, RoutedEventArgs e)
         {
+            var loader = new Windows.ApplicationModel.Resources.ResourceLoader();
+            //if (EmailTo.Text == "")
+            //{
+            //    EmailTo.Text = loader.GetString("To Emails (separate with comma, space or semi colon)");
+            //}
             if (EmailTo.Text == "")
             {
-                EmailTo.Text = "To Emails (separate with comma, space or semi colon)";
+                EmailTo.Text = loader.GetString("To Emails (separate with comma, space or semi colon)");
             }
         }
 

@@ -32,6 +32,7 @@ using Windows.UI.ViewManagement;
 using nsoftware.IPWorksSSL;
 using ShareAll.Common;
 using System.Text.RegularExpressions;
+using Windows.ApplicationModel.Resources;
 
 namespace ShareAll
 {
@@ -47,6 +48,7 @@ namespace ShareAll
 
         string _permissions = "user_about_me,read_stream,publish_stream"; // Set your permissions here
         FacebookClient _fb = new FacebookClient();
+        
 
         #region Email
         string entryptConfigEmail = "";
@@ -164,13 +166,19 @@ namespace ShareAll
             }
         }
 
+
         private bool GetShareContent(DataRequest request)
         {
+            var loader = new Windows.ApplicationModel.Resources.ResourceLoader();
+
             bool succeeded = false;
             DataPackage requestData = request.Data;
-            requestData.Properties.Title = "Your link title goes here.";
-            requestData.Properties.Description = "This is the description of the message."; // The description is optional.
-            requestData.SetText("This is the text to share.");
+            //requestData.Properties.Title = loader.GetString("Your link title goes here.");
+            //requestData.Properties.Description = loader.GetString("This is the description of the message."); // The description is optional.
+            //requestData.SetText(loader.GetString("This is the text to share."));
+            requestData.Properties.Title = loader.GetString("Your link title goes here");
+            requestData.Properties.Description = loader.GetString("This is the description of the message"); // The description is optional.
+            requestData.SetText(loader.GetString("This is the text to share"));
             //requestData.SetUri("");
 
             succeeded = true;
@@ -271,6 +279,7 @@ namespace ShareAll
         {
             // If the user clicks the share button, invoke the share flow programatically.
             DataTransferManager.ShowShareUI();
+            //this.Frame.Navigate(typeof(ShareIt));            
         }
 
         private void btnConfigureEmail_Click(object sender, RoutedEventArgs e)
@@ -295,25 +304,31 @@ namespace ShareAll
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
+            var loader = new Windows.ApplicationModel.Resources.ResourceLoader();
+
             ComboBoxItem cbi = (ComboBoxItem)domainPicker.SelectedItem;
 
 
             if (cbi == null)
             {
-                EmailConfigMessage.Text = "Please select the Domain.";
+                //EmailConfigMessage.Text = loader.GetString("Please select the Domain.");
+                EmailConfigMessage.Text = loader.GetString("Please select the Domain");
             }
             else if (txtEmail.Text == "")
             {
-                EmailConfigMessage.Text = "Please enter the Email.";
+                //EmailConfigMessage.Text = loader.GetString("Please enter the Email.");
+                EmailConfigMessage.Text = loader.GetString("Please enter the Email");
             }
             else if (!u.IsEmail(txtEmail.Text))
             {
-                EmailConfigMessage.Text = "Please enter the valid Email.";
+                //EmailConfigMessage.Text = loader.GetString("Please enter the valid Email.");
+                EmailConfigMessage.Text = loader.GetString("Please enter the valid Email");
             }
             else if (txtPassword.Password.ToString() != txtVerifyPassword.Password.ToString())
             {
 
-                EmailConfigMessage.Text = "Password and Veriy Password should be same.";
+                //EmailConfigMessage.Text = loader.GetString("Password and Veriy Password should be same.");
+                EmailConfigMessage.Text = loader.GetString("Password and Veriy Password should be same");
             }
             else
             {
@@ -334,7 +349,8 @@ namespace ShareAll
                     }
                     else
                     {
-                        EmailConfigMessage.Text = "Please enter the Email which exists in the domain you selected.";
+                        //EmailConfigMessage.Text = loader.GetString("Please enter the Email which exists in the domain you selected.");
+                        EmailConfigMessage.Text = loader.GetString("Please enter the Email which exists in the domain you selected");
                         return;
                     }
                 }
@@ -347,7 +363,8 @@ namespace ShareAll
                     }
                     else
                     {
-                        EmailConfigMessage.Text = "Please enter the Email which exists in the domain you selected.";
+                        //EmailConfigMessage.Text = loader.GetString("Please enter the Email which exists in the domain you selected.");
+                        EmailConfigMessage.Text = loader.GetString("Please enter the Email which exists in the domain you selected");
                         return;
                     }
                 }
@@ -361,7 +378,8 @@ namespace ShareAll
                 string returnString = "";
                 try
                 {
-                    returnString = u.SendEmail(htmlmailer, serverDomain, serverType, txtEmail.Text, txtPassword.Password, txtEmail.Text, txtEmail.Text, "Test Email", "This is a test email from Share All.");
+                    //returnString = u.SendEmail(htmlmailer, serverDomain, serverType, txtEmail.Text, txtPassword.Password, txtEmail.Text, txtEmail.Text, "Test Email", "This is a test email from Share All.");
+                    returnString = u.SendEmail(htmlmailer, serverDomain, serverType, txtEmail.Text, txtPassword.Password, txtEmail.Text, txtEmail.Text, loader.GetString("Test Email"), loader.GetString("This is a test email from Share All"));
 
                     if (returnString == "Success")
                     {
@@ -378,7 +396,8 @@ namespace ShareAll
                         ApplicationData.Current.RoamingSettings.Values["EmailConfigureEmail"] = entryptConfigEmail;
                         ApplicationData.Current.RoamingSettings.Values["EmailConfigurePwd"] = entryptConfigPwd;
                         ApplicationData.Current.RoamingSettings.Values["isEmailConfigure"] = 1;
-                        EmailConfigMessage.Text = "Email settings saved.";
+                        //EmailConfigMessage.Text = loader.GetString("Email settings saved.");
+                        EmailConfigMessage.Text = loader.GetString("Email settings saved");
                         myPopup.IsOpen = false;
                         var frame = new Frame();
                         frame.Navigate(typeof(MainPage));
@@ -389,7 +408,8 @@ namespace ShareAll
                     }
                     else
                     {
-                        EmailConfigMessage.Text = "Unable to send Email now.";
+                        //EmailConfigMessage.Text = loader.GetString("Unable to send Email now.");
+                        EmailConfigMessage.Text = loader.GetString("Unable to send Email now");
                     }
                 }
                 catch (Exception ex)

@@ -2,7 +2,7 @@
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
   <Identity Name="DaksaTech.ShareAll" Publisher="CN=42750936-DE0C-415B-9312-C587E65FD9EC" Version="2.0.0.1" />
   <Properties>
-    <DisplayName>Share All</DisplayName>
+    <DisplayName>ms-resource:AppName</DisplayName>
     <PublisherDisplayName>DaksaTech</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
@@ -15,8 +15,8 @@
   </Resources>
   <Applications>
     <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="ShareAll.App">
-      <VisualElements DisplayName="Share All" Logo="Assets\Logo.png" SmallLogo="Assets\SmallLogo.png" Description="Share All" ForegroundText="dark" BackgroundColor="#ffffff">
-        <DefaultTile ShowName="allLogos" ShortName="Share All" />
+      <VisualElements DisplayName="ms-resource:AppName" Logo="Assets\Logo.png" SmallLogo="Assets\SmallLogo.png" Description="ms-resource:AppName" ForegroundText="dark" BackgroundColor="#ffffff">
+        <DefaultTile ShowName="allLogos" ShortName="ms-resource:AppName" />
         <SplashScreen Image="Assets\SplashScreen.png" BackgroundColor="#ffffff" />
       </VisualElements>
       <Extensions>

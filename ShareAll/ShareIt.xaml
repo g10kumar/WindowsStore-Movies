@@ -66,7 +66,7 @@
                             </Grid.ColumnDefinitions>-->
         <!--<StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Width="300" >-->
         <CheckBox x:Name="chkFacebook" IsChecked="True" Grid.Column="1" Grid.Row="1" Margin="-2,0,0,0" Padding="0" BorderThickness="0"></CheckBox>
-        <TextBlock Text="Facebook" Foreground="White" VerticalAlignment="Center" FontSize="22" Margin="10,0,10,0" Grid.Row="1" Grid.Column="2"/>
+        <TextBlock x:Uid="Facebook" x:Name="Facebook" Text="Facebook" Foreground="White" VerticalAlignment="Center" FontSize="22" Margin="10,0,10,0" Grid.Row="1" Grid.Column="2"/>
         <!--</StackPanel>-->
         <!--<StackPanel Orientation="Horizontal" HorizontalAlignment="Right" >-->
         <Button Grid.Row="1" Grid.Column="3" x:Name="btnFBConfigure" HorizontalAlignment="Right" VerticalAlignment="Center" Click="btnFBConfigure_Click" Padding="2" BorderThickness="0">
@@ -80,15 +80,15 @@
         <!--</Grid>-->
         <!--</StackPanel>-->
         <StackPanel Orientation="Vertical" x:Name="stackFacebook" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="4" Visibility="Visible">
-            <TextBox Text="Message" x:Name="FBMessage" Width="425" HorizontalAlignment="Left" VerticalAlignment="Top" Height="80" TextWrapping="Wrap" Margin="0,5,0,5"></TextBox>
-            <TextBox Text="Link Title" x:Name="FBTitle" Width="425" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30" Margin="0,5,0,5"></TextBox>
-            <TextBox Text="Link" x:Name="FBLinktoShare" Width="425" GotFocus="FBLinktoShare_GotFocus_1" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30" Margin="0,5,0,5"></TextBox>
+            <TextBox x:Uid="FBMessage" Text="Message" x:Name="FBMessage" Width="425" HorizontalAlignment="Left" VerticalAlignment="Top" Height="80" TextWrapping="Wrap" Margin="0,5,0,5"></TextBox>
+            <TextBox x:Uid="FBTitle" Text="Link Title" x:Name="FBTitle" Width="425" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30" Margin="0,5,0,5"></TextBox>
+            <TextBox x:Uid="FBLinktoShare" Text="Link" x:Name="FBLinktoShare" Width="425" GotFocus="FBLinktoShare_GotFocus_1" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30" Margin="0,5,0,5"></TextBox>
         </StackPanel>
         <!--</StackPanel>-->
         <!--<StackPanel Orientation="Vertical"  VerticalAlignment="Top"  Margin="0,5,10,10">
                     <StackPanel Orientation="Horizontal">-->
         <CheckBox x:Name="chkTweet" IsChecked="True" Grid.Column="1" Grid.Row="4"></CheckBox>
-        <TextBlock Text="Twitter" Foreground="White" VerticalAlignment="Center" FontSize="22" Margin="10,0,10,0" Grid.Column="2" Grid.Row="4" />
+        <TextBlock x:Uid="Twitter" x:Name="Twitter" Text="Twitter" Foreground="White" VerticalAlignment="Center" FontSize="22" Margin="10,0,10,0" Grid.Column="2" Grid.Row="4" />
 
         <Button Grid.Column="3" Grid.Row="4" x:Name="btnTweetConfigure" VerticalAlignment="Center" HorizontalAlignment="Right" Click="btnTweetConfigure_Click" Padding="2" BorderThickness="0">
             <Image Source="/Assets/Settings.png" Margin="0,0,0,0" Stretch="None" />
@@ -101,12 +101,12 @@
         <StackPanel Orientation="Vertical" x:Name="stackTweet"  Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="4" Visibility="Collapsed">
             <TextBox x:Name="TweetMessage" Width="425" HorizontalAlignment="Left" VerticalAlignment="Top" Height="80"  Margin="0,5,0,5" TextWrapping="Wrap" KeyUp="TweetMessage_KeyUp"></TextBox>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right"  Margin="0,5,0,5">
-                <TextBlock Width="110" Text="Character Count: "  Style="{StaticResource BasicTextStyle}"></TextBlock>
+                <TextBlock Width="110" x:Uid="CharacterCount" x:Name="CharacterCount" Text="Character Count: "  Style="{StaticResource BasicTextStyle}"></TextBlock>
                 <TextBlock x:Name="txtCount" Text="140" Style="{StaticResource BasicTextStyle}" Width="30"/>
             </StackPanel>
         </StackPanel>
         <CheckBox x:Name="chkEmail" IsChecked="True" Grid.Column="1" Grid.Row="7" Padding="0"></CheckBox>
-        <TextBlock Text="Email" Foreground="White" VerticalAlignment="Center" FontSize="22" Margin="10,0,10,0" Grid.Column="2" Grid.Row="7"></TextBlock>
+        <TextBlock x:Name="Email" x:Uid="Email" Text="Email" Foreground="White" VerticalAlignment="Center" FontSize="22" Margin="10,0,10,0" Grid.Column="2" Grid.Row="7"></TextBlock>
         <Button Grid.Column="3" Grid.Row="7" x:Name="btnEmailConfigure" Click="btnEmailConfigure_Click" VerticalAlignment="Center" HorizontalAlignment="Right" Padding="2" BorderThickness="0">
             <Image Source="/Assets/Settings.png" Margin="0,0,0,0" Stretch="None" />
         </Button>
@@ -117,7 +117,7 @@
             <Border CornerRadius="10" Background="White" BorderThickness="2" BorderBrush="Black" Padding="2">
                 <StackPanel Margin="10" Height="300" Orientation="Vertical">
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock x:Name="txtDomain" Text="Domain" Style="{StaticResource BasicTextStyle}" Width="70"/>
+                        <TextBlock x:Uid="txtDomain" x:Name="txtDomain" Text="Domain" Style="{StaticResource BasicTextStyle}" Width="70"/>
                         <ComboBox x:Name="domainPicker" Margin="20,0,0,0" Grid.Row="2" Grid.Column="1" Width="150" HorizontalAlignment="Left" VerticalAlignment="Center">
                             <ComboBoxItem Content="Hotmail"></ComboBoxItem>
                             <ComboBoxItem Content="Google"></ComboBoxItem>
@@ -128,30 +128,30 @@
 
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock x:Name="txtUserName" Text="Email" Style="{StaticResource BasicTextStyle}" Width="70"/>
+                        <TextBlock x:Uid="txtUserName" x:Name="txtUserName" Text="Email" Style="{StaticResource BasicTextStyle}" Width="70"/>
                         <TextBox x:Name="txtEmail" Width="150" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30" Margin="20,0,0,0"/>
                     </StackPanel>
                     <StackPanel Height="10">
 
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock x:Name="Password" Text="Password" Style="{StaticResource BasicTextStyle}" Width="70"/>
+                        <TextBlock x:Uid="Password" x:Name="Password" Text="Password" Style="{StaticResource BasicTextStyle}" Width="70"/>
                         <PasswordBox x:Name="txtPassword" Width="150" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30" Margin="20,0,0,0"></PasswordBox>
                     </StackPanel>
                     <StackPanel Height="10">
 
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
-                    <TextBlock x:Name="VerifyPassword" Text="Verify Password" Style="{StaticResource BasicTextStyle}" Width="70"/>
+                        <TextBlock x:Uid="VerifyPassword" x:Name="VerifyPassword" Text="Verify Password" Style="{StaticResource BasicTextStyle}" Width="70"/>
                         <PasswordBox x:Name="txtVerifyPassword" Width="150" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30" Margin="20,0,0,0"></PasswordBox>
                     </StackPanel>
                 <StackPanel Height="10">
 
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <Button Background="#FF15BBF9" Grid.Row="7" x:Name="btnSave" Grid.ColumnSpan="2" Content="SAVE" Height="40" Width="119" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="12" Click="btnSave_Click" >
+                        <Button Background="#FF15BBF9" Grid.Row="7" x:Uid="btnSave" x:Name="btnSave" Grid.ColumnSpan="2" Content="SAVE" Height="40" Width="119" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="12" Click="btnSave_Click" >
                     </Button>
-                    <Button Background="#FF15BBF9" Grid.Row="7" x:Name="btnClose" Grid.ColumnSpan="2" Content="Close" Height="40" Width="119" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="12" Click="btnClose_Click" >
+                        <Button Background="#FF15BBF9" Grid.Row="7" x:Uid="btnClose" x:Name="btnClose" Grid.ColumnSpan="2" Content="Close" Height="40" Width="119" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="12" Click="btnClose_Click" >
                     </Button>
                 </StackPanel>
                 <StackPanel Height="10">
@@ -164,7 +164,7 @@
             </Border>
         </Popup>
         <StackPanel Orientation="Vertical" x:Name="stackEmail" Grid.Column="1" Grid.Row="8" Grid.ColumnSpan="4" Visibility="Collapsed">
-            <TextBox x:Name="EmailTo" Text="To Emails (separate with comma, space or semi colon)" Width="425" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30" Margin="0,5,0,5" IsSpellCheckEnabled="False" InputScope="EmailSmtpAddress" GotFocus="EmailTo_GotFocus_1" LostFocus="EmailTo_LostFocus_1" TextChanged="EmailTo_TextChanged_1"></TextBox>
+            <TextBox x:Uid="EmailTo" x:Name="EmailTo" Text="To Emails (separate with comma, space or semi colon)" Width="425" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30" Margin="0,5,0,5" IsSpellCheckEnabled="False" InputScope="EmailSmtpAddress" GotFocus="EmailTo_GotFocus_1" LostFocus="EmailTo_LostFocus_1" TextChanged="EmailTo_TextChanged_1"></TextBox>
             <TextBox x:Name="EmailSubject" Width="425" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30" Margin="0,5,0,5"></TextBox>
             <TextBox x:Name="EmailMessage" Width="425" HorizontalAlignment="Left" VerticalAlignment="Top" Height="80" TextWrapping="Wrap" Margin="0,5,0,5"></TextBox>
         </StackPanel>
@@ -185,7 +185,7 @@
                         <TextBox x:Name="EmailMessage" Width="464" HorizontalAlignment="Left" VerticalAlignment="Top" Height="80" TextWrapping="Wrap"></TextBox>
                     </StackPanel>
                 </StackPanel>-->
-        <Button Grid.Column="1" Content="SHARE" Background="#FF15BBF9" Grid.Row="9" x:Name="btnShare" Click="btnShare_Click" Grid.ColumnSpan="2" Height="40" Width="119" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="18" >
+        <Button Grid.Column="1" Content="SHARE" Background="#FF15BBF9" Grid.Row="9" x:Uid="btnShare" x:Name="btnShare" Click="btnShare_Click" Grid.ColumnSpan="2" Height="40" Width="119" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="18" >
         </Button>
         <ProgressBar x:Name="shareProgressBar" Visibility="Collapsed" IsIndeterminate="True" Grid.Column="1" Grid.ColumnSpan="4" Grid.Row="10" ></ProgressBar>
         <StackPanel Orientation="Vertical" Grid.Column="1" Grid.ColumnSpan="4" Grid.Row="11" >
