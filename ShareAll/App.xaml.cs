@@ -84,9 +84,10 @@ namespace ShareAll
 
         void OnCommandsRequested(SettingsPane sender, SettingsPaneCommandsRequestedEventArgs args)
         {
+            var loader = new Windows.ApplicationModel.Resources.ResourceLoader();
 
             // Add a About command
-            var about = new SettingsCommand("about", "About Us", (handler) =>
+            var about = new SettingsCommand("about", loader.GetString("About Us"), (handler) =>
             {
                 var settings = new SettingsFlyout();
                 settings.ShowFlyout(new AboutUsUserControl());
@@ -97,7 +98,7 @@ namespace ShareAll
 
 
             // Add a Privacy Policy command
-            var privacypolicy = new SettingsCommand("privacypolicy", "Privacy Policy", (handler) =>
+            var privacypolicy = new SettingsCommand("privacypolicy", loader.GetString("Privacy Policy"), (handler) =>
             {
                 var settings = new SettingsFlyout();
                 settings.ShowFlyout(new PrivacyPolicyUserControl());

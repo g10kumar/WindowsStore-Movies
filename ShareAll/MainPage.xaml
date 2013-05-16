@@ -28,21 +28,21 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Button x:Name="backButton" Click="GoBack" IsEnabled="{Binding Frame.CanGoBack, ElementName=pageRoot}" Style="{StaticResource BackButtonStyle}"/>
-            <TextBlock x:Name="pageTitle" Grid.Column="1" Text="{StaticResource AppName}" Style="{StaticResource PageHeaderTextStyle}"/>
+            <TextBlock x:Uid="pageTitle" x:Name="pageTitle" Grid.Column="1" Text="{StaticResource AppName}" Style="{StaticResource PageHeaderTextStyle}"/>
         </Grid>
         <ScrollViewer HorizontalScrollBarVisibility="Visible" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="1">
         <StackPanel x:Name="stackPanelFull" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="1" Orientation="Horizontal">
                 <StackPanel  Grid.Column="1" Grid.Row="1" Orientation="Horizontal">
                     <StackPanel Orientation="Vertical" VerticalAlignment="Top"  Margin="10,10,10,10">
-                        <TextBlock Style="{StaticResource AboutText}" Text="'Share All' allows you to share stuff from any app to multiple social platforms with one click. To start sharing, configure your Facebook and Twitter accounts by clicking on the buttons to the right. You can also configure from the 'Share All' Share Charm." />
-                        <TextBlock Style="{StaticResource AboutText}" Margin="0,20,0,0" Text="How to Share:" FontSize="24" />
-                        <TextBlock Style="{StaticResource AboutText}" Text="From any app, activate the 'Share' charm. Select 'Share All' from the many options." />
-                        <TextBlock Style="{StaticResource AboutText}" Text="If you have not already configured your accounts, you can do so by clicking the blue Settings icon." />
-                        <TextBlock Style="{StaticResource AboutText}" Text="Inside the 'Share All' charm, ensure that the Facebook title, URLs, message and Twitter message is fine. Shorten the Twitter message if needed." />
-                        <TextBlock Style="{StaticResource AboutText}" Text="Click on 'Share' button." />
-                        <TextBlock Style="{StaticResource AboutText}" Margin="0,20,0,0" Text="How to Open Share Charm:" FontSize="24" />
-                        <TextBlock Style="{StaticResource AboutText}" Text="Swipe in from the right edge of the screen, and then tap Share. (If you're using a mouse, point to the upper-right corner of the screen, move the mouse pointer down, and then click Share.)" />
-                        <Button Content="Share Now" Background="#FF15BBF9" Click="Button_Click_1" Margin="0,50,0,0" HorizontalAlignment="Center" />
+                        <TextBlock Style="{StaticResource AboutText}" x:Uid="Main1" Text="" />
+                        <TextBlock Style="{StaticResource AboutText}" x:Uid="Main2" Margin="0,20,0,0" Text="" FontSize="24" />
+                        <TextBlock Style="{StaticResource AboutText}" x:Uid="Main3" Text="" />
+                        <TextBlock Style="{StaticResource AboutText}" x:Uid="Main4" Text="" />
+                        <TextBlock Style="{StaticResource AboutText}" x:Uid="Main5" Text="" />
+                        <TextBlock Style="{StaticResource AboutText}" x:Uid="Main6" Text="" />
+                        <TextBlock Style="{StaticResource AboutText}" x:Uid="Main7" Margin="0,20,0,0" Text="" FontSize="24" />
+                        <TextBlock Style="{StaticResource AboutText}" x:Uid="Main8" Text="" />
+                        <Button IsEnabled="True" x:Uid="btnShareNow" x:Name="btnShareNow" Background="#FF15BBF9" Click="Button_Click_1" Margin="0,50,0,0" HorizontalAlignment="Center" />
                     </StackPanel>
                 </StackPanel>
                 <StackPanel Grid.Column="2" Grid.Row="1" Orientation="Vertical" ScrollViewer.HorizontalScrollBarVisibility="Visible">
@@ -52,13 +52,13 @@
                             <Button x:Name="btnConfigureFacebook" Height="200" BorderThickness="0" Width="200"  HorizontalAlignment="Center" VerticalAlignment="Top" Click="btnConfigureFacebook_Click" >
                                 <Image Source="Assets/Facebook_400x400.png" />
                             </Button>
-                            <TextBlock Text="Configure Facebook" FontSize="20" HorizontalAlignment="Center" />
+                            <TextBlock x:Uid="ConfigureFacebook" Text="Configure Facebook" FontSize="20" HorizontalAlignment="Center" />
                         </StackPanel>
                         <StackPanel Orientation="Vertical"  VerticalAlignment="Top"  Margin="10,10,10,10">
                             <Button x:Name="btnConfigureTwitter" Height="200" Width="200" BorderThickness="0" HorizontalAlignment="Center" VerticalAlignment="Top" Click="btnConfigureTwitter_Click" >
                                 <Image Source="Assets/Twitter_400x400.png" />
                             </Button>
-                            <TextBlock Text="Configure Twitter" FontSize="20" HorizontalAlignment="Center" />
+                            <TextBlock x:Uid="ConfigureTwitter" Text="Configure Twitter" FontSize="20" HorizontalAlignment="Center" />
                         </StackPanel>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
@@ -66,7 +66,7 @@
                             <Button x:Name="btnConfigureEmail" Height="200" BorderThickness="0" Width="200"  HorizontalAlignment="Center" VerticalAlignment="Top" Click="btnConfigureEmail_Click" >
                                 <Image Source="Assets/eMail_200x200.png" />
                             </Button>
-                            <TextBlock Text="Configure Email" FontSize="20" HorizontalAlignment="Center" />
+                            <TextBlock x:Uid="ConfigureEmail" Text="Configure Email" FontSize="20" HorizontalAlignment="Center" />
                         </StackPanel>
                     </StackPanel>
 
@@ -77,10 +77,10 @@
             <Border CornerRadius="10" Background="White" BorderThickness="2" BorderBrush="Black" Padding="2">
                 <StackPanel Margin="10" Height="300" Orientation="Vertical">
                     <StackPanel>
-                        <TextBlock Text="Email Settings" Style="{StaticResource SubheaderTextStyle}" FontSize="20" HorizontalAlignment="Center"/>
+                        <TextBlock x:Uid="EmailSettings" x:Name="EmailSettings" Text="" Style="{StaticResource SubheaderTextStyle}" FontSize="20" HorizontalAlignment="Center"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
-                        <TextBlock x:Name="txtDomain" Text="Domain" Style="{StaticResource BasicTextStyle}" Width="70"/>
+                        <TextBlock x:Uid="txtDomain" x:Name="txtDomain" Text="Domain" Style="{StaticResource BasicTextStyle}" Width="70"/>
                         <ComboBox x:Name="domainPicker" Margin="20,0,0,0" Grid.Row="2" Grid.Column="1" Width="150" HorizontalAlignment="Left" VerticalAlignment="Center">
                             <ComboBoxItem Content="Hotmail"></ComboBoxItem>
                             <ComboBoxItem Content="Google"></ComboBoxItem>
@@ -89,26 +89,26 @@
                     </StackPanel>
 
                     <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
-                        <TextBlock x:Name="txtUserName" Text="Email" Style="{StaticResource BasicTextStyle}" Width="70"/>
+                        <TextBlock x:Uid="txtUserName" x:Name="txtUserName" Text="Email" Style="{StaticResource BasicTextStyle}" Width="70"/>
                         <TextBox x:Name="txtEmail" Width="150" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30" Margin="20,0,0,0"/>
                     </StackPanel>
 
                     <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
-                        <TextBlock x:Name="Password" Text="Password" Style="{StaticResource BasicTextStyle}" Width="70"/>
+                        <TextBlock x:Uid="Password" x:Name="Password" Text="Password" Style="{StaticResource BasicTextStyle}" Width="70"/>
                         <PasswordBox x:Name="txtPassword" Width="150" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30" Margin="20,0,0,0"></PasswordBox>
                     </StackPanel>
 
                     <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
-                        <TextBlock x:Name="VerifyPassword" Text="Verify Password" Style="{StaticResource BasicTextStyle}" Width="70"/>
+                        <TextBlock x:Uid="VerifyPassword" x:Name="VerifyPassword" Text="Verify Password" Style="{StaticResource BasicTextStyle}" Width="70"/>
                         <PasswordBox x:Name="txtVerifyPassword" Width="150" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30" Margin="20,0,0,0"></PasswordBox>
                     </StackPanel>
                     <StackPanel Height="10">
 
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
-                        <Button Background="#FF15BBF9" Grid.Row="7" x:Name="btnSave" Grid.ColumnSpan="2" Content="SAVE" Height="40" Width="119" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="12" Click="btnSave_Click" >
+                        <Button Background="#FF15BBF9" Grid.Row="7" x:Uid="btnSave" x:Name="btnSave" Grid.ColumnSpan="2" Content="SAVE" Height="40" Width="119" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="12" Click="btnSave_Click" >
                         </Button>
-                        <Button Background="#FF15BBF9" Grid.Row="7" x:Name="btnClose" Grid.ColumnSpan="2" Content="Close" Height="40" Width="119" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="12" Click="btnClose_Click" >
+                        <Button Background="#FF15BBF9" Grid.Row="7" x:Uid="btnClose" x:Name="btnClose" Grid.ColumnSpan="2" Content="Close" Height="40" Width="119" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="12" Click="btnClose_Click" >
                         </Button>
                     </StackPanel>
 
@@ -124,7 +124,7 @@
             <!--<ScrollViewer x:Name="stackPanelSnapped" Visibility="Collapsed" VerticalScrollMode="Enabled" VerticalScrollBarVisibility="Auto" Grid.ColumnSpan="3"  Grid.Column="0" Grid.Row="1" VerticalAlignment="Top" Height="1200">-->
             <StackPanel Orientation="Vertical"  VerticalAlignment="Top" Height="1600">
                 <StackPanel Orientation="Vertical" VerticalAlignment="Top">
-                    <TextBlock Style="{StaticResource AboutTextSnapped}" Text="'Share All' allows you to share stuff from any app to multiple social platforms with one click. To start sharing, configure your Facebook and Twitter accounts by clicking on the buttons to the right. You can also configure from the 'Share All' Share Charm." />
+                    <TextBlock x:Uid="Main1Snapped" x:Name="Main1Snapped" Style="{StaticResource AboutTextSnapped}" Text="'Share All' allows you to share stuff from any app to multiple social platforms with one click. To start sharing, configure your Facebook and Twitter accounts by clicking on the buttons to the right. You can also configure from the 'Share All' Share Charm." />
                     <!--<TextBlock Style="{StaticResource AboutTextSnapped}" Margin="0,20,0,0" Text="How to Share:" FontSize="24" />
                         <TextBlock Style="{StaticResource AboutTextSnapped}" Text="From any app, activate the 'Share' charm. Select 'Share All' from the many options." />
                         <TextBlock Style="{StaticResource AboutTextSnapped}" Text="If you have not already configured your accounts, you can do so by clicking the blue Settings icon." />
@@ -132,25 +132,25 @@
                         <TextBlock Style="{StaticResource AboutTextSnapped}" Text="Click on 'Share' button." />
                         <TextBlock Style="{StaticResource AboutTextSnapped}" Margin="0,20,0,0" Text="How to Open Share Charm:" FontSize="24" />
                         <TextBlock Style="{StaticResource AboutTextSnapped}" Text="Swipe in from the right edge of the screen, and then tap Share. (If you're using a mouse, point to the upper-right corner of the screen, move the mouse pointer down, and then click Share.)" />-->
-                    <Button Visibility="Collapsed" Content="Share Now" Background="#FF15BBF9" Click="Button_Click_1" HorizontalAlignment="Center" />
+                    <Button Visibility="Collapsed" x:Uid="btnShareNow" Content="Share Now" Background="#FF15BBF9" Click="Button_Click_1" HorizontalAlignment="Center" />
                 </StackPanel>
                 <StackPanel Orientation="Vertical" VerticalAlignment="Top">
                     <Button x:Name="btnConfigureFacebookSnapped" Height="100" BorderThickness="0" Width="100"  HorizontalAlignment="Center" VerticalAlignment="Top" Click="btnConfigureFacebook_Click" >
                         <Image Source="Assets/Facebook_400x400.png" />
                     </Button>
-                    <TextBlock Text="Configure Facebook" FontSize="18" HorizontalAlignment="Center" />
+                    <TextBlock x:Uid="ConfigureFacebook" Text="Configure Facebook" FontSize="18" HorizontalAlignment="Center" />
                 </StackPanel>
                 <StackPanel Orientation="Vertical" VerticalAlignment="Top">
                     <Button x:Name="btnConfigureTwitterSnapped" Height="100" Width="100" BorderThickness="0" HorizontalAlignment="Center" VerticalAlignment="Top" Click="btnConfigureTwitter_Click" >
                         <Image Source="Assets/Twitter_400x400.png" />
                     </Button>
-                    <TextBlock Text="Configure Twitter" FontSize="18" HorizontalAlignment="Center" />
+                    <TextBlock x:Uid="ConfigureTwitter" Text="Configure Twitter" FontSize="18" HorizontalAlignment="Center" />
                 </StackPanel>
                 <StackPanel Orientation="Vertical" VerticalAlignment="Top">
                     <Button x:Name="btnConfigureEmailSnapped" Height="100" Width="100" BorderThickness="0" HorizontalAlignment="Center" VerticalAlignment="Top" Click="btnConfigureEmail_Click" >
                         <Image Source="Assets/eMail_200x200.png" />
                     </Button>
-                    <TextBlock Text="Configure Email" FontSize="18" HorizontalAlignment="Center" />
+                    <TextBlock x:Uid="ConfigureEmail" Text="Configure Email" FontSize="18" HorizontalAlignment="Center" />
                 </StackPanel>
             </StackPanel>
             <!--</ScrollViewer>-->
