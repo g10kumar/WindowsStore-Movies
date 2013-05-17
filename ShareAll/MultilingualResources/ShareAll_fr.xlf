@@ -1,0 +1,316 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
+  <file datatype="xml" source-language="en-US" target-language="fr" original="ShareAll_Multilingual.prilog.xml" tool-id="MultilingualAppToolkit" product-name="ShareAll" product-version="1.0.0.0" build-num="0001">
+    <header>
+      <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="1.2.2017.0" tool-company="Microsoft" />
+    </header>
+    <body>
+      <group id="Resources">
+        <trans-unit id="Resources\btnShareNow\Content" translate="yes" xml:space="preserve">
+          <source>Share Now</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Partagez maintenant</target>
+        </trans-unit>
+        <trans-unit id="Resources\ConfigureEmail\Text" translate="yes" xml:space="preserve">
+          <source>Configure Email</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Configurer le courrier électronique</target>
+        </trans-unit>
+        <trans-unit id="Resources\ConfigureFacebook\Text" translate="yes" xml:space="preserve">
+          <source>Configure Facebook</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Configurer Facebook</target>
+        </trans-unit>
+        <trans-unit id="Resources\ConfigureTwitter\Text" translate="yes" xml:space="preserve">
+          <source>Configure Twitter</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Configurer Twitter</target>
+        </trans-unit>
+        <trans-unit id="Resources\Main1\Text" translate="yes" xml:space="preserve">
+          <source>'Share All' allows you to share stuff from any app to multiple social platforms with one click. To start sharing, configure your Facebook and Twitter accounts by clicking on the buttons to the right. You can also configure from the 'Share All' Share Charm.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">« Tout partager » vous permet de partager des choses à partir de n'importe quelle application à plusieurs plateformes sociales en un seul clic. Pour commencer à partager, configurer vos comptes Facebook et Twitter en cliquant sur les boutons à droite. Vous pouvez également configurer du charme part « Share All ».</target>
+        </trans-unit>
+        <trans-unit id="Resources\Main2\Text" translate="yes" xml:space="preserve">
+          <source>How to Share:</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Comment partager :</target>
+        </trans-unit>
+        <trans-unit id="Resources\Main3\Text" translate="yes" xml:space="preserve">
+          <source>From any app, activate the 'Share' charm. Select 'Share All' from the many options.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Depuis n'importe quelle application, activez le charme de « Partager ». Sélectionnez « All Share » de nombreuses options.</target>
+        </trans-unit>
+        <trans-unit id="Resources\Main4\Text" translate="yes" xml:space="preserve">
+          <source>If you have not already configured your accounts, you can do so by clicking the blue Settings icon.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Si vous n'avez pas déjà configuré vos comptes, vous pouvez le faire en cliquant sur l'icône bleue de paramètres.</target>
+        </trans-unit>
+        <trans-unit id="Resources\Main5\Text" translate="yes" xml:space="preserve">
+          <source>Inside the 'Share All' charm, ensure that the Facebook title, URLs, message and Twitter message is fine. Shorten the Twitter message if needed.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">À l'intérieur le charme « All Share », faire en sorte que le titre de Facebook, URLs, message et message Twitter est très bien. Raccourcir le message Twitter si nécessaire.</target>
+        </trans-unit>
+        <trans-unit id="Resources\Main6\Text" translate="yes" xml:space="preserve">
+          <source>Click on 'Share' button.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Cliquez sur le bouton « Partager ».</target>
+        </trans-unit>
+        <trans-unit id="Resources\Main7\Text" translate="yes" xml:space="preserve">
+          <source>How to Open Share Charm:</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Comment ouvrir le charme de part :</target>
+        </trans-unit>
+        <trans-unit id="Resources\Main8\Text" translate="yes" xml:space="preserve">
+          <source>Swipe in from the right edge of the screen, and then tap Share. (If you're using a mouse, point to the upper-right corner of the screen, move the mouse pointer down, and then click Share.)</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Glissez à partir du bord droit de l'écran et puis cliquez sur partage. (Si vous utilisez une souris, pointez sur le coin supérieur droit de l'écran, déplacez le pointeur de la souris vers le bas et puis cliquez sur partager).</target>
+        </trans-unit>
+        <trans-unit id="Resources\pageTitle\Text" translate="yes" xml:space="preserve">
+          <source>Share All</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Partager tout</target>
+        </trans-unit>
+        <trans-unit id="Resources\btnShare\Content" translate="yes" xml:space="preserve">
+          <source>SHARE</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Partager</target>
+        </trans-unit>
+        <trans-unit id="Resources\CharacterCount\Text" translate="yes" xml:space="preserve">
+          <source>Character Count:</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Nombre de caractères :</target>
+        </trans-unit>
+        <trans-unit id="Resources\Email\Text" translate="yes" xml:space="preserve">
+          <source>Email</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Messagerie</target>
+        </trans-unit>
+        <trans-unit id="Resources\EmailTo\Text" translate="yes" xml:space="preserve">
+          <source>To Emails (separate with comma, space or semi colon)</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">D'Emails (séparé avec deux points virgule, espace ou semi)</target>
+        </trans-unit>
+        <trans-unit id="Resources\Facebook\Text" translate="yes" xml:space="preserve">
+          <source>Facebook</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Facebook</target>
+        </trans-unit>
+        <trans-unit id="Resources\FBLinktoShare\Text" translate="yes" xml:space="preserve">
+          <source>Link</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Lien</target>
+        </trans-unit>
+        <trans-unit id="Resources\FBMessage\Text" translate="yes" xml:space="preserve">
+          <source>Message</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Message</target>
+        </trans-unit>
+        <trans-unit id="Resources\FBTitle\Text" translate="yes" xml:space="preserve">
+          <source>Link Title</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Titre lien</target>
+        </trans-unit>
+        <trans-unit id="Resources\Twitter\Text" translate="yes" xml:space="preserve">
+          <source>Twitter</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Twitter</target>
+        </trans-unit>
+        <trans-unit id="Resources\btnClose\Content" translate="yes" xml:space="preserve">
+          <source>Close</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Fermer</target>
+        </trans-unit>
+        <trans-unit id="Resources\btnSave\Content" translate="yes" xml:space="preserve">
+          <source>SAVE</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">ENREGISTRER</target>
+        </trans-unit>
+        <trans-unit id="Resources\Password\Text" translate="yes" xml:space="preserve">
+          <source>Password</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Mot de passe</target>
+        </trans-unit>
+        <trans-unit id="Resources\txtDomain\Text" translate="yes" xml:space="preserve">
+          <source>Domain</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Domaine</target>
+        </trans-unit>
+        <trans-unit id="Resources\txtUserName\Text" translate="yes" xml:space="preserve">
+          <source>Email</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Messagerie</target>
+        </trans-unit>
+        <trans-unit id="Resources\VerifyPassword\Text" translate="yes" xml:space="preserve">
+          <source>Verify Password</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Vérifier le mot de passe</target>
+        </trans-unit>
+        <trans-unit id="Resources\About Us" translate="yes" xml:space="preserve">
+          <source>About Us</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Qui sommes-nous</target>
+        </trans-unit>
+        <trans-unit id="Resources\About\Text" translate="yes" xml:space="preserve">
+          <source>About</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Sur</target>
+        </trans-unit>
+        <trans-unit id="Resources\About1\Text" translate="yes" xml:space="preserve">
+          <source>'Share All' allows you to share stuff from any app to multiple social platforms with one click. To start sharing, configure your Facebook and Twitter accounts by clicking on the buttons to the right. You can also configure from the 'Share All' Share Charm.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">« Tout partager » vous permet de partager des choses à partir de n'importe quelle application à plusieurs plateformes sociales en un seul clic. Pour commencer à partager, configurer vos comptes Facebook et Twitter en cliquant sur les boutons à droite. Vous pouvez également configurer du charme part « Share All ».</target>
+        </trans-unit>
+        <trans-unit id="Resources\About2\Text" translate="yes" xml:space="preserve">
+          <source>The app was developed by Daksa Technologies. We develop apps for Windows Phone %%amp;amp; Windows 8, web applications, websites and custom Windows software.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">L'app a été développé par les Technologies de Daksa. Nous développons des applications pour Windows Phone %%amp;amp ; Windows 8, applications web, sites Web et des logiciels personnalisés de Windows.</target>
+        </trans-unit>
+        <trans-unit id="Resources\About3\Text" translate="yes" xml:space="preserve">
+          <source>Contact us for your next web or mobile project at info@daksatech.com</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Contactez-nous pour votre prochain web ou un projet mobile à info@daksatech.com</target>
+        </trans-unit>
+        <trans-unit id="Resources\About4\Text" translate="yes" xml:space="preserve">
+          <source>If you have a support issue or would like to suggest a feature, please email us at support@daksatech.com</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Si vous avez un problème de support ou voudriez suggérer une fonctionnalité, s'il vous plaît écrivez-nous à support@daksatech.com</target>
+        </trans-unit>
+        <trans-unit id="Resources\EmailSettings\Text" translate="yes" xml:space="preserve">
+          <source>Email Settings</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Paramètres de messagerie</target>
+        </trans-unit>
+        <trans-unit id="Resources\Main1Snapped\Text" translate="yes" xml:space="preserve">
+          <source>'Share All' allows you to share stuff from any app to multiple social platforms with one click. To start sharing, configure your Facebook and Twitter accounts by clicking on the buttons to the right. You can also configure from the 'Share All' Share Charm.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">« Tout partager » vous permet de partager des choses à partir de n'importe quelle application à plusieurs plateformes sociales en un seul clic. Pour commencer à partager, configurer vos comptes Facebook et Twitter en cliquant sur les boutons à droite. Vous pouvez également configurer du charme part « Share All ».</target>
+        </trans-unit>
+        <trans-unit id="Resources\PP1\Text" translate="yes" xml:space="preserve">
+          <source>This Privacy Policy covers your use of the 'Share All' Windows 8 application. The application does not collect, store, or share any personal information, or anything related to your device. We do not collect any statistics, trends, neither do we track user movements.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Cette politique de confidentialité couvre l'utilisation de l'application « All Share » Windows 8. L'application ne pas collecter, stocker ou partager des renseignements personnels, ou tout ce qui touche à votre appareil. Nous ne recueillons des statistiques, tendances, ni nous suivre les mouvements de l'utilisateur.</target>
+        </trans-unit>
+        <trans-unit id="Resources\PP2\Text" translate="yes" xml:space="preserve">
+          <source>The application allows you to post messages or links to your various social network accounts. More specifically the app allows you to post to your Facebook and Twitter accounts. We do not collect or store your Facebook or Twitter account credentials. We redirect your to those sites so you can authorize the 'Share All' app to post to those sites. When you enter your social network credentials, you are doing so at their sites.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">L'application vous permet d'afficher des messages ou des liens vers vos différents comptes de réseau social. Plus précisément l'application vous permet d'afficher sur vos comptes Facebook et Twitter. Nous ne pas collecter ou stocker vos identifiants de compte Facebook ou Twitter. Nous redirigeons votre à ces sites, donc vous pouvez autoriser l'app « All Share » à publier sur ces sites. Lorsque vous entrez vos informations d'identification réseau social, vous le font à leurs sites.</target>
+        </trans-unit>
+        <trans-unit id="Resources\PP3\Text" translate="yes" xml:space="preserve">
+          <source>Your email credentials are stored on your machine using industry standard 'Advanced Encryption Standard (AES). Your email credentials are only sent to the email providers - Gmail, Hotmail or Yahoo.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Vos identifiants de messagerie sont stockées sur votre ordinateur à l'aide de la norme de l'industrie ' Advanced Encryption Standard (AES). Vos informations d'identification de courrier électronique sont envoyées uniquement aux fournisseurs de courriel - Gmail, Hotmail ou Yahoo.</target>
+        </trans-unit>
+        <trans-unit id="Resources\PP4\Text" translate="yes" xml:space="preserve">
+          <source>We will never ask you to provide us with your account usernames/ passwords. We do not collect your email or any other information.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Nous ne demanderons jamais à vous de nous fournir votre nom d'utilisateur du compte / mot de passe. Nous ne recueillons pas votre email ou toute autre information.</target>
+        </trans-unit>
+        <trans-unit id="Resources\Privacy Policy" translate="yes" xml:space="preserve">
+          <source>Privacy Policy</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Politique de confidentialité</target>
+        </trans-unit>
+        <trans-unit id="Resources\PrivacyPolicy\Text" translate="yes" xml:space="preserve">
+          <source>Privacy Policy</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Politique de confidentialité</target>
+        </trans-unit>
+        <trans-unit id="Resources\Test Email" translate="yes" xml:space="preserve">
+          <source>Test Email</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Test Email</target>
+        </trans-unit>
+        <trans-unit id="Resources\This is a test email from Share All" translate="yes" xml:space="preserve">
+          <source>This is a test email from Share All.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Il s'agit d'un courriel de test de la part de tous.</target>
+        </trans-unit>
+        <trans-unit id="Resources\AppName" translate="yes" xml:space="preserve">
+          <source>Share All</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Partager tout</target>
+        </trans-unit>
+        <trans-unit id="Resources\Password and Verify Password should be same" translate="yes" xml:space="preserve">
+          <source>Password and Verify Password should be same</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Mot de passe et vérifier le mot de passe doivent être le même</target>
+        </trans-unit>
+        <trans-unit id="Resources\Please enter the Email" translate="yes" xml:space="preserve">
+          <source>Please enter the Email.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Veuillez saisir l'Email.</target>
+        </trans-unit>
+        <trans-unit id="Resources\Please enter the valid Email" translate="yes" xml:space="preserve">
+          <source>Please enter the valid Email.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Veuillez saisir l'Email valide.</target>
+        </trans-unit>
+        <trans-unit id="Resources\Please select the Domain" translate="yes" xml:space="preserve">
+          <source>Please select the Domain.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Veuillez sélectionner le domaine.</target>
+        </trans-unit>
+        <trans-unit id="Resources\This is the description of the message" translate="yes" xml:space="preserve">
+          <source>This is the description of the message.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Il s'agit de la description du message.</target>
+        </trans-unit>
+        <trans-unit id="Resources\This is the text to share" translate="yes" xml:space="preserve">
+          <source>This is the text to share.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Ce texte est celui de partager.</target>
+        </trans-unit>
+        <trans-unit id="Resources\Your link title goes here" translate="yes" xml:space="preserve">
+          <source>Your link title goes here.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Insérer ici le titre de votre lien.</target>
+        </trans-unit>
+        <trans-unit id="Resources\Please enter the Email which exists in the domain you selected" translate="yes" xml:space="preserve">
+          <source>Please enter the Email which exists in the domain you selected.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">S'il vous plaît entrez l'Email qui existe dans le domaine que vous avez sélectionné.</target>
+        </trans-unit>
+        <trans-unit id="Resources\Email settings saved" translate="yes" xml:space="preserve">
+          <source>Email settings saved.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Paramètres de messagerie enregistrés.</target>
+        </trans-unit>
+        <trans-unit id="Resources\Unable to send Email now" translate="yes" xml:space="preserve">
+          <source>Unable to send Email now.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Impossible d'envoyer des Email maintenant.</target>
+        </trans-unit>
+        <trans-unit id="Resources\Twitter_Error_422" translate="yes" xml:space="preserve">
+          <source>Could not post image to Twitter. Try again later.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Pouvait pas poster image sur Twitter. Réessayez plus tard.</target>
+        </trans-unit>
+        <trans-unit id="Resources\Could not post to Twitter" translate="yes" xml:space="preserve">
+          <source>Could not post to Twitter.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Pouvait pas poster sur Twitter.</target>
+        </trans-unit>
+        <trans-unit id="Resources\Twitter_Error_401" translate="yes" xml:space="preserve">
+          <source>Could not post to Twitter because of authentication issue. Please click Settings icon and authorize app.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Pouvait pas poster sur Twitter à cause de problème d'authentification. S'il vous plaît cliquez sur icône Paramètres et autoriser l'application.</target>
+        </trans-unit>
+        <trans-unit id="Resources\Twitter_Error_500To504" translate="yes" xml:space="preserve">
+          <source>Could not post to Twitter. It seems to be overloaded. Try again later.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Pouvait pas poster sur Twitter. Il semble être surchargé. Réessayez plus tard.</target>
+        </trans-unit>
+        <trans-unit id="Resources\Could not post to Twitter_Please click on Settings icon and authorize the app" translate="yes" xml:space="preserve">
+          <source>Could not post to Twitter. Please click on Settings icon and authorize the app.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Pouvait pas poster sur Twitter. S'il vous plaît cliquer sur l'icône Paramètres et autoriser l'application.</target>
+        </trans-unit>
+        <trans-unit id="Resources\Could not post to Twitter_Try again later" translate="yes" xml:space="preserve">
+          <source>Could not post to Twitter. Try again later.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Pouvait pas poster sur Twitter. Réessayez plus tard.</target>
+        </trans-unit>
+        <trans-unit id="Resources\Mail was sent successfully" translate="yes" xml:space="preserve">
+          <source>Mail was sent successfully.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Mail a été envoyé avec succès.</target>
+        </trans-unit>
+        <trans-unit id="Resources\Please enter Email to use for sending" translate="yes" xml:space="preserve">
+          <source>Please enter Email to use for sending</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Entrez s'il vous plaît E-mail à utiliser pour l'envoi</target>
+        </trans-unit>
+        <trans-unit id="Resources\Please enter valid Email" translate="yes" xml:space="preserve">
+          <source>Please enter valid Email</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">S'il vous plaît entrer Email valide</target>
+        </trans-unit>
+        <trans-unit id="Resources\Post to Facebook failed" translate="yes" xml:space="preserve">
+          <source>Post to Facebook failed.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Publier sur Facebook a échoué.</target>
+        </trans-unit>
+        <trans-unit id="Resources\Post to Facebook failed_Message already exists on Facebook" translate="yes" xml:space="preserve">
+          <source>Post to Facebook failed. Message already exists on Facebook.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Publier sur Facebook a échoué. Il existe déjà des message sur Facebook.</target>
+        </trans-unit>
+        <trans-unit id="Resources\Facebook_Authorize_Error" translate="yes" xml:space="preserve">
+          <source>Post to Facebook failed. Please click on Settings icon and authorize the app before trying again.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Publier sur Facebook a échoué. S'il vous plaît cliquer sur l'icône Paramètres et autoriser l'application avant de réessayer.</target>
+        </trans-unit>
+        <trans-unit id="Resources\Post to Facebook failed_Please try again" translate="yes" xml:space="preserve">
+          <source>Post to Facebook failed. Please try again.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Publier sur Facebook a échoué. S'il vous plaît essayer de nouveau.</target>
+        </trans-unit>
+        <trans-unit id="Resources\Posted to Facebook" translate="yes" xml:space="preserve">
+          <source>Posted to Facebook.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Posté sur Facebook.</target>
+        </trans-unit>
+        <trans-unit id="Resources\Posted to Twitter" translate="yes" xml:space="preserve">
+          <source>Posted to Twitter.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Posté sur Twitter.</target>
+        </trans-unit>
+        <trans-unit id="Resources\The post was rejected by Twitter" translate="yes" xml:space="preserve">
+          <source>The post was rejected by Twitter.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Le poste a été rejeté par Twitter.</target>
+        </trans-unit>
+        <trans-unit id="Resources\To Emails (separate with comma, space or semi colon)" translate="yes" xml:space="preserve">
+          <source>To Emails (separate with comma, space or semi colon)</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">D'Emails (séparé avec deux points virgule, espace ou semi)</target>
+        </trans-unit>
+        <trans-unit id="Resources\Email_Failure" translate="yes" xml:space="preserve">
+          <source>Unable to send mail. Check your 'To Email' address or 'Email settings'</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Impossible d'envoyer un mail. Vérifiez votre adresse "À" adresse E-mail"ou « Paramètres de messagerie »</target>
+        </trans-unit>
+        <trans-unit id="Resources\Hotmail_Domain_Failure" translate="yes" xml:space="preserve">
+          <source>For Hotmail, valid emails are hotmail.com, msn.com and live.com</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Pour Hotmail, e-mails valides sont hotmail.com, msn.com et live.com</target>
+        </trans-unit>
+        <trans-unit id="Resources\Unable to send mail now" translate="yes" xml:space="preserve">
+          <source>Unable to send mail now.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Impossible d'envoyer un mail maintenant.</target>
+        </trans-unit>
+        <trans-unit id="Resources\Link" translate="yes" xml:space="preserve">
+          <source>Link</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Lien</target>
+        </trans-unit>
+      </group>
+    </body>
+  </file>
+</xliff>
