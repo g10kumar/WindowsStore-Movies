@@ -134,8 +134,29 @@
       <SubType>Designer</SubType>
     </AppxManifest>
     <None Include="Dlls\nsoftware.IPWorksSSL.winmd" />
+    <None Include="MultilingualResources\ShareAll_de.xlf">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MultilingualResources\ShareAll_es.xlf">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MultilingualResources\ShareAll_fr.xlf">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MultilingualResources\ShareAll_it.xlf">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MultilingualResources\ShareAll_ja-JP.xlf">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MultilingualResources\ShareAll_ko-KR.xlf">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="MultilingualResources\ShareAll_qps-ploc.xlf" />
     <None Include="MultilingualResources\ShareAll_ru-RU.xlf">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MultilingualResources\ShareAll_zh-Hans.xlf">
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
