@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using Windows.UI.Xaml.Controls;
-
+using Windows.ApplicationModel.DataTransfer;
 // The Basic Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234237
-
+using Windows.Foundation;
+using Windows.ApplicationModel.Store;
 namespace Marketing2
 {
     /// <summary>
@@ -11,9 +12,32 @@ namespace Marketing2
     /// </summary>
     public sealed partial class DetailPage : Marketing2.Common.LayoutAwarePage
     {
+        public DataTransferManager datatransferManager;
+        FeedItem sharedFeedItem;
         public DetailPage()
         {
             this.InitializeComponent();
+            //ShareSourceLoad();
+            
+        }
+
+        public void ShareSourceLoad()
+        {
+            datatransferManager = DataTransferManager.GetForCurrentView();
+            datatransferManager.DataRequested += new TypedEventHandler<DataTransferManager, DataRequestedEventArgs>(this.DataRequested);
+        }
+
+        void DataRequested(DataTransferManager sender, DataRequestedEventArgs e)
+        {
+            //FeedItem selectedItem = this.itemListView.SelectedItem as FeedItem;
+            if (sharedFeedItem != null && this.Frame != null)
+            {
+                e.Request.Data.Properties.Title = sharedFeedItem.Title;
+                e.Request.Data.Properties.Description = sharedFeedItem.Title + "-" + sharedFeedItem.Author + Environment.NewLine + sharedFeedItem.Link.AbsoluteUri.ToString();
+                e.Request.Data.SetText(sharedFeedItem.Title + "-" + sharedFeedItem.Author + Environment.NewLine + sharedFeedItem.Link.AbsoluteUri.ToString());
+                e.Request.Data.SetUri(sharedFeedItem.Link);
+                e.Request.Data.SetHtmlFormat(sharedFeedItem.Title + "<br /> - " + sharedFeedItem.Author + "<br /><br />" + sharedFeedItem.Link.AbsoluteUri.ToString() + "<br /><br />" + "Shared from <a href='" + CurrentAppSimulator.LinkUri + "'>Marketing</a> app.");
+            }
         }
 
         /// <summary>
@@ -33,13 +57,27 @@ namespace Marketing2
             if (sb != null) sb.Begin();
 
             // Add this code to navigate the web view to the selected blog post.
+            //string itemTitle = (string)navigationParameter;
+            //FeedItem feedItem = FeedDataSource.GetItem(itemTitle);
+            //sharedFeedItem = FeedDataSource.GetItem(itemTitle);
+
+            //if (feedItem != null)
+            //{
+            //    this.contentView.Navigate(feedItem.Link);
+            //    this.DataContext = feedItem;
+            //}
+
             string itemTitle = (string)navigationParameter;
             FeedItem feedItem = FeedDataSource.GetItem(itemTitle);
+            sharedFeedItem = FeedDataSource.GetItem(itemTitle);
+
             if (feedItem != null)
             {
                 this.contentView.Navigate(feedItem.Link);
                 this.DataContext = feedItem;
-            }
+
+                ShareSourceLoad();
+            }            
         }
 
         /// <summary>

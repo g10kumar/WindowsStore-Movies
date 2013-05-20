@@ -141,7 +141,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="defaultAdSettings.xml" />
     <None Include="Package.StoreAssociation.xml" />
     <Page Include="PrivacyControl.xaml">
       <Generator>MSBuild:Compile</Generator>
