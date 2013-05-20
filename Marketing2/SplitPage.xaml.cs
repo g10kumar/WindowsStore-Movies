@@ -136,6 +136,7 @@ namespace Marketing2
             {
                 string itemTitle = selectedItem.Title;
                 this.Frame.Navigate(typeof(DetailPage), itemTitle);
+                //this.Frame.Navigate(typeof(DetailPage), selectedItem);
             }
         }
 
