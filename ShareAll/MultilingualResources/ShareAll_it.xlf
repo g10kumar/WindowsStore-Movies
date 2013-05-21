@@ -184,7 +184,7 @@
         </trans-unit>
         <trans-unit id="Resources\AppName" translate="yes" xml:space="preserve">
           <source>Share All</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Condividere tutte le</target>
+          <target state="translated">Condividi Tutte</target>
         </trans-unit>
         <trans-unit id="Resources\Password and Verify Password should be same" translate="yes" xml:space="preserve">
           <source>Password and Verify Password should be same</source>

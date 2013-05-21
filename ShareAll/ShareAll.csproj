@@ -152,7 +152,6 @@
     <None Include="MultilingualResources\ShareAll_ko-KR.xlf">
       <SubType>Designer</SubType>
     </None>
-    <None Include="MultilingualResources\ShareAll_qps-ploc.xlf" />
     <None Include="MultilingualResources\ShareAll_ru-RU.xlf">
       <SubType>Designer</SubType>
     </None>
@@ -214,17 +213,15 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Facebook, Version=6.0.10.0, Culture=neutral, PublicKeyToken=58cb4f2111d1e6de, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Veeru-Win8 Trial Version\desktop\d\Windows8\ShareAll\bin\Debug\Facebook.dll</HintPath>
+    <Reference Include="Facebook">
+      <HintPath>Dlls\Facebook.dll</HintPath>
     </Reference>
     <Reference Include="nsoftware.IPWorksSSL, Version=9.0.4738.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Users\veeru_000\Desktop\nsoftware\nsoftware.IPWorksSSL.winmd</HintPath>
     </Reference>
-    <Reference Include="TwitterRtLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Veeru-Win8 Trial Version\desktop\d\Windows8\ShareAll\bin\Debug\TwitterRtLibrary.dll</HintPath>
+    <Reference Include="TwitterRtLibrary">
+      <HintPath>Dlls\TwitterRtLibrary.dll</HintPath>
     </Reference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '11.0' ">
