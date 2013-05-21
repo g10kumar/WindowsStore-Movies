@@ -10,6 +10,6 @@
     <UseSimulator>False</UseSimulator>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
-    <UseSimulator>True</UseSimulator>
+    <UseSimulator>False</UseSimulator>
   </PropertyGroup>
 </Project>
