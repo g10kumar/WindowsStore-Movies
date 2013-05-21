@@ -3662,11 +3662,13 @@
     </paper>
   </c>
   <c name="Lebanon" value="middle_east">
+    <!--
     <paper>
       <Name>Al Anwar</Name>
       <City/>
       <WebSite>http://www.alanwar.com/</WebSite>
     </paper>
+    -->
     <paper>
       <Name>An Nahar</Name>
       <City/>
@@ -6049,11 +6051,6 @@
       <Name>Tri-Valley Herald</Name>
       <City>Pleasanton</City>
       <WebSite>http://www.insidebayarea.com/trivalleyherald</WebSite>
-    </paper>
-    <paper>
-      <Name>Turlock Journal</Name>
-      <City>Turlock</City>
-      <WebSite>http://www.turlockjournal.com/</WebSite>
     </paper>
     <paper>
       <Name>Ukiah Daily, The</Name>
