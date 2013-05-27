@@ -32,7 +32,7 @@
                     </Grid.ColumnDefinitions>
 
                     <Button Click="OnBackButtonClicked" Margin="0,3,0,0" Style="{StaticResource SettingsBackButtonStyle}" Grid.Column="0" HorizontalAlignment="Left" />
-                    <TextBlock Margin="10,0,0,0" Grid.Column="1" Foreground="Black" FontFamily="Segoe UI" FontWeight="SemiLight" FontSize="26.6667" Text="Privacy Policy" HorizontalAlignment="Left" />
+                    <TextBlock Margin="10,0,0,0" Grid.Column="1" Foreground="Black" FontFamily="Segoe UI" FontWeight="SemiLight" FontSize="26.6667" x:Uid="PrivacyPolicy" Text="Privacy Policy" HorizontalAlignment="Left" />
                 </Grid>
 
             </Grid>
@@ -46,10 +46,10 @@
                 </Grid.Transitions>
                 <StackPanel Orientation="Vertical">
                     <StackPanel Orientation="Vertical">
-                        <TextBlock Text="This Privacy Policy covers your use of the 'Share All' Windows 8 application. The application does not collect, store, or share any personal information, or anything related to your device. We do not collect any statistics, trends, neither do we track user movements."  Style="{StaticResource AboutUsTextStyle}"  />
-                        <TextBlock Text="The application allows you to post messages or links to your various social network accounts. More specifically the app allows you to post to your Facebook and Twitter accounts. We do not collect or store your Facebook or Twitter account credentials. We redirect your to those sites so you can authorize the 'Share All' app to post to those sites. When you enter your social network credentials, you are doing so at their sites."  Style="{StaticResource AboutUsTextStyle}" />
-                        <TextBlock Text="Your email credentials are stored on your machine using industry standard 'Advanced Encryption Standard (AES). Your email credentials are only sent to the email providers - Gmail, Hotmail or Yahoo."   Style="{StaticResource AboutUsTextStyle}" />
-                        <TextBlock Text="We will never ask you to provide us with your account usernames/ passwords. We do not collect your email or any other information."  Style="{StaticResource AboutUsTextStyle}" />
+                        <TextBlock x:Uid="PP1" Text="This Privacy Policy covers your use of the 'Share All' Windows 8 application. The application does not collect, store, or share any personal information, or anything related to your device. We do not collect any statistics, trends, neither do we track user movements."  Style="{StaticResource AboutUsTextStyle}"  />
+                        <TextBlock x:Uid="PP2" Text="The application allows you to post messages or links to your various social network accounts. More specifically the app allows you to post to your Facebook and Twitter accounts. We do not collect or store your Facebook or Twitter account credentials. We redirect your to those sites so you can authorize the 'Share All' app to post to those sites. When you enter your social network credentials, you are doing so at their sites."  Style="{StaticResource AboutUsTextStyle}" />
+                        <TextBlock x:Uid="PP3" Text="Your email credentials are stored on your machine using industry standard 'Advanced Encryption Standard (AES). Your email credentials are only sent to the email providers - Gmail, Hotmail or Yahoo."   Style="{StaticResource AboutUsTextStyle}" />
+                        <TextBlock x:Uid="PP4" Text="We will never ask you to provide us with your account usernames/ passwords. We do not collect your email or any other information."  Style="{StaticResource AboutUsTextStyle}" />
                     </StackPanel>
                 </StackPanel>
             </Grid>

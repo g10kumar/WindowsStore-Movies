@@ -1,0 +1,316 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
+  <file datatype="xml" source-language="en-US" target-language="ja-JP" original="ShareAll_Multilingual.prilog.xml" tool-id="MultilingualAppToolkit" product-name="ShareAll" product-version="1.0.0.0" build-num="0001">
+    <header>
+      <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="1.2.2017.0" tool-company="Microsoft" />
+    </header>
+    <body>
+      <group id="Resources">
+        <trans-unit id="Resources\btnShareNow\Content" translate="yes" xml:space="preserve">
+          <source>Share Now</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">今を共有します。</target>
+        </trans-unit>
+        <trans-unit id="Resources\ConfigureEmail\Text" translate="yes" xml:space="preserve">
+          <source>Configure Email</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">電子メールを構成します。</target>
+        </trans-unit>
+        <trans-unit id="Resources\ConfigureFacebook\Text" translate="yes" xml:space="preserve">
+          <source>Configure Facebook</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Facebook を構成します。</target>
+        </trans-unit>
+        <trans-unit id="Resources\ConfigureTwitter\Text" translate="yes" xml:space="preserve">
+          <source>Configure Twitter</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Twitter を構成します。</target>
+        </trans-unit>
+        <trans-unit id="Resources\Main1\Text" translate="yes" xml:space="preserve">
+          <source>'Share All' allows you to share stuff from any app to multiple social platforms with one click. To start sharing, configure your Facebook and Twitter accounts by clicking on the buttons to the right. You can also configure from the 'Share All' Share Charm.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">'すべてを共有する' ワンクリックで複数の社会プラットフォームに任意のアプリケーションからのものを共有することができます。共有を開始するには、右側のボタンをクリックすると、Facebook や Twitter のアカウントを構成します。共有すべての共有の魅力からを構成することもできます。</target>
+        </trans-unit>
+        <trans-unit id="Resources\Main2\Text" translate="yes" xml:space="preserve">
+          <source>How to Share:</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">共有する方法。</target>
+        </trans-unit>
+        <trans-unit id="Resources\Main3\Text" translate="yes" xml:space="preserve">
+          <source>From any app, activate the 'Share' charm. Select 'Share All' from the many options.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">任意のアプリケーションから「共有」魅力アクティブにします。共有すべてから多くのオプションを選択します。</target>
+        </trans-unit>
+        <trans-unit id="Resources\Main4\Text" translate="yes" xml:space="preserve">
+          <source>If you have not already configured your accounts, you can do so by clicking the blue Settings icon.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">あなたのアカウントを既に構成していない場合は、ブルーの設定アイコンをクリックして行うことができます。</target>
+        </trans-unit>
+        <trans-unit id="Resources\Main5\Text" translate="yes" xml:space="preserve">
+          <source>Inside the 'Share All' charm, ensure that the Facebook title, URLs, message and Twitter message is fine. Shorten the Twitter message if needed.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">共有すべてのお守りの中に、Facebook のタイトル、Url、メッセージ、Twitter のメッセージが正常であることを確認します。Twitter のメッセージは、必要に応じて短縮します。</target>
+        </trans-unit>
+        <trans-unit id="Resources\Main6\Text" translate="yes" xml:space="preserve">
+          <source>Click on 'Share' button.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">'共有' ボタンをクリックします。</target>
+        </trans-unit>
+        <trans-unit id="Resources\Main7\Text" translate="yes" xml:space="preserve">
+          <source>How to Open Share Charm:</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">どのように共有魅力を開くには：</target>
+        </trans-unit>
+        <trans-unit id="Resources\Main8\Text" translate="yes" xml:space="preserve">
+          <source>Swipe in from the right edge of the screen, and then tap Share. (If you're using a mouse, point to the upper-right corner of the screen, move the mouse pointer down, and then click Share.)</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">画面の右端から強打し、[共有] をタップします。（ダウンの移動のマウス ポインター、マウスを使用している場合、画面の右上隅にポイントし、[共有] をクリックします。</target>
+        </trans-unit>
+        <trans-unit id="Resources\pageTitle\Text" translate="yes" xml:space="preserve">
+          <source>Share All</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">すべてを共有します。</target>
+        </trans-unit>
+        <trans-unit id="Resources\btnShare\Content" translate="yes" xml:space="preserve">
+          <source>SHARE</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">共有</target>
+        </trans-unit>
+        <trans-unit id="Resources\CharacterCount\Text" translate="yes" xml:space="preserve">
+          <source>Character Count:</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">文字数:</target>
+        </trans-unit>
+        <trans-unit id="Resources\Email\Text" translate="yes" xml:space="preserve">
+          <source>Email</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">電子メール</target>
+        </trans-unit>
+        <trans-unit id="Resources\EmailTo\Text" translate="yes" xml:space="preserve">
+          <source>To Emails (separate with comma, space or semi colon)</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">（カンマ、スペース、または半コロンと別の） メールします。</target>
+        </trans-unit>
+        <trans-unit id="Resources\Facebook\Text" translate="yes" xml:space="preserve">
+          <source>Facebook</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Facebook</target>
+        </trans-unit>
+        <trans-unit id="Resources\FBLinktoShare\Text" translate="yes" xml:space="preserve">
+          <source>Link</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">リンク</target>
+        </trans-unit>
+        <trans-unit id="Resources\FBMessage\Text" translate="yes" xml:space="preserve">
+          <source>Message</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">メッセージ</target>
+        </trans-unit>
+        <trans-unit id="Resources\FBTitle\Text" translate="yes" xml:space="preserve">
+          <source>Link Title</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">リンクのタイトル</target>
+        </trans-unit>
+        <trans-unit id="Resources\Twitter\Text" translate="yes" xml:space="preserve">
+          <source>Twitter</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Twitter</target>
+        </trans-unit>
+        <trans-unit id="Resources\btnClose\Content" translate="yes" xml:space="preserve">
+          <source>Close</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">閉じる</target>
+        </trans-unit>
+        <trans-unit id="Resources\btnSave\Content" translate="yes" xml:space="preserve">
+          <source>SAVE</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">保存</target>
+        </trans-unit>
+        <trans-unit id="Resources\Password\Text" translate="yes" xml:space="preserve">
+          <source>Password</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">パスワード</target>
+        </trans-unit>
+        <trans-unit id="Resources\txtDomain\Text" translate="yes" xml:space="preserve">
+          <source>Domain</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">ドメイン</target>
+        </trans-unit>
+        <trans-unit id="Resources\txtUserName\Text" translate="yes" xml:space="preserve">
+          <source>Email</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">電子メール</target>
+        </trans-unit>
+        <trans-unit id="Resources\VerifyPassword\Text" translate="yes" xml:space="preserve">
+          <source>Verify Password</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">パスワードを確認してください。</target>
+        </trans-unit>
+        <trans-unit id="Resources\About Us" translate="yes" xml:space="preserve">
+          <source>About Us</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">我々について</target>
+        </trans-unit>
+        <trans-unit id="Resources\About\Text" translate="yes" xml:space="preserve">
+          <source>About</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">について</target>
+        </trans-unit>
+        <trans-unit id="Resources\About1\Text" translate="yes" xml:space="preserve">
+          <source>'Share All' allows you to share stuff from any app to multiple social platforms with one click. To start sharing, configure your Facebook and Twitter accounts by clicking on the buttons to the right. You can also configure from the 'Share All' Share Charm.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">'すべてを共有する' ワンクリックで複数の社会プラットフォームに任意のアプリケーションからのものを共有することができます。共有を開始するには、右側のボタンをクリックすると、Facebook や Twitter のアカウントを構成します。共有すべての共有の魅力からを構成することもできます。</target>
+        </trans-unit>
+        <trans-unit id="Resources\About2\Text" translate="yes" xml:space="preserve">
+          <source>The app was developed by Daksa Technologies. We develop apps for Windows Phone %%amp;amp; Windows 8, web applications, websites and custom Windows software.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">アプリ Daksa 技術によって開発されました。我々 のアプリケーションを Windows Phone%%amp;開発アンプ;Windows 8、web アプリケーション、カスタムの Windows ソフトウェアのウェブサイト</target>
+        </trans-unit>
+        <trans-unit id="Resources\About3\Text" translate="yes" xml:space="preserve">
+          <source>Contact us for your next web or mobile project at info@daksatech.com</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">あなたの次の web やモバイル プロジェクト info@daksatech.com でお問い合わせ</target>
+        </trans-unit>
+        <trans-unit id="Resources\About4\Text" translate="yes" xml:space="preserve">
+          <source>If you have a support issue or would like to suggest a feature, please email us at support@daksatech.com</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">サポートの問題があるまたは、機能を提案したい場合は、してください電子メール私達に support@daksatech.com</target>
+        </trans-unit>
+        <trans-unit id="Resources\EmailSettings\Text" translate="yes" xml:space="preserve">
+          <source>Email Settings</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">電子メールの設定</target>
+        </trans-unit>
+        <trans-unit id="Resources\Main1Snapped\Text" translate="yes" xml:space="preserve">
+          <source>'Share All' allows you to share stuff from any app to multiple social platforms with one click. To start sharing, configure your Facebook and Twitter accounts by clicking on the buttons to the right. You can also configure from the 'Share All' Share Charm.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">'すべてを共有する' ワンクリックで複数の社会プラットフォームに任意のアプリケーションからのものを共有することができます。共有を開始するには、右側のボタンをクリックすると、Facebook や Twitter のアカウントを構成します。共有すべての共有の魅力からを構成することもできます。</target>
+        </trans-unit>
+        <trans-unit id="Resources\PP1\Text" translate="yes" xml:space="preserve">
+          <source>This Privacy Policy covers your use of the 'Share All' Windows 8 application. The application does not collect, store, or share any personal information, or anything related to your device. We do not collect any statistics, trends, neither do we track user movements.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">このプライバシー ポリシーは、共有すべて Windows 8 アプリケーションの使用について説明します。アプリケーションを収集、格納、か個人情報を共有または何か、デバイスに関連します。我々 はすべての統計情報、動向を収集しません、どちらも我々 ユーザーの動きを追跡しないでください。</target>
+        </trans-unit>
+        <trans-unit id="Resources\PP2\Text" translate="yes" xml:space="preserve">
+          <source>The application allows you to post messages or links to your various social network accounts. More specifically the app allows you to post to your Facebook and Twitter accounts. We do not collect or store your Facebook or Twitter account credentials. We redirect your to those sites so you can authorize the 'Share All' app to post to those sites. When you enter your social network credentials, you are doing so at their sites.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">アプリケーションのメッセージや、様々 なソーシャル ネットワークのアカウントへのリンクを投稿することができます。具体的には、アプリケーションを Facebook や Twitter のアカウントに投稿することができます。いない収集か、Facebook や Twitter のアカウントの資格情報を格納します。リダイレクトをそれらのサイトに投稿する、共有すべてのアプリを承認することができますので、これらのサイトへ。あなたの社会的ネットワークの資格情報を入力すると、そう自分のサイトをやっています。</target>
+        </trans-unit>
+        <trans-unit id="Resources\PP3\Text" translate="yes" xml:space="preserve">
+          <source>Your email credentials are stored on your machine using industry standard 'Advanced Encryption Standard (AES). Your email credentials are only sent to the email providers - Gmail, Hotmail or Yahoo.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">業界標準を使用してあなたのマシン上、電子メールの資格情報が格納されている ' 高度な暗号化標準 (AES)。あなたの電子メールの資格情報は、電子メール プロバイダー - Gmail、Hotmail あるいは Yahoo のみ送信されます。</target>
+        </trans-unit>
+        <trans-unit id="Resources\PP4\Text" translate="yes" xml:space="preserve">
+          <source>We will never ask you to provide us with your account usernames/ passwords. We do not collect your email or any other information.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">我々 は、アカウントのユーザー名をお知らせするように求められます/パスワード。あなたのメール アドレスやその他の情報を収集しません。</target>
+        </trans-unit>
+        <trans-unit id="Resources\Privacy Policy" translate="yes" xml:space="preserve">
+          <source>Privacy Policy</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">プライバシー ポリシー</target>
+        </trans-unit>
+        <trans-unit id="Resources\PrivacyPolicy\Text" translate="yes" xml:space="preserve">
+          <source>Privacy Policy</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">プライバシー ポリシー</target>
+        </trans-unit>
+        <trans-unit id="Resources\Test Email" translate="yes" xml:space="preserve">
+          <source>Test Email</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">テスト電子メール</target>
+        </trans-unit>
+        <trans-unit id="Resources\This is a test email from Share All" translate="yes" xml:space="preserve">
+          <source>This is a test email from Share All.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">これは、テスト メール共有すべてからです。</target>
+        </trans-unit>
+        <trans-unit id="Resources\AppName" translate="yes" xml:space="preserve">
+          <source>Share All</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">すべてを共有します。</target>
+        </trans-unit>
+        <trans-unit id="Resources\Password and Verify Password should be same" translate="yes" xml:space="preserve">
+          <source>Password and Verify Password should be same</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">パスワードと確認のパスワードが同じでなければなりません</target>
+        </trans-unit>
+        <trans-unit id="Resources\Please enter the Email" translate="yes" xml:space="preserve">
+          <source>Please enter the Email.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">電子メールを入力してください。</target>
+        </trans-unit>
+        <trans-unit id="Resources\Please enter the valid Email" translate="yes" xml:space="preserve">
+          <source>Please enter the valid Email.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">有効な電子メールを入力してください。</target>
+        </trans-unit>
+        <trans-unit id="Resources\Please select the Domain" translate="yes" xml:space="preserve">
+          <source>Please select the Domain.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">ドメインを選択してください。</target>
+        </trans-unit>
+        <trans-unit id="Resources\This is the description of the message" translate="yes" xml:space="preserve">
+          <source>This is the description of the message.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">これは、メッセージの説明です。</target>
+        </trans-unit>
+        <trans-unit id="Resources\This is the text to share" translate="yes" xml:space="preserve">
+          <source>This is the text to share.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">これを共有するテキストです。</target>
+        </trans-unit>
+        <trans-unit id="Resources\Your link title goes here" translate="yes" xml:space="preserve">
+          <source>Your link title goes here.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">リンクのタイトルはここに行きます。</target>
+        </trans-unit>
+        <trans-unit id="Resources\Please enter the Email which exists in the domain you selected" translate="yes" xml:space="preserve">
+          <source>Please enter the Email which exists in the domain you selected.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">選択したドメインに存在する電子メールを入力してください。</target>
+        </trans-unit>
+        <trans-unit id="Resources\Email settings saved" translate="yes" xml:space="preserve">
+          <source>Email settings saved.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">電子メールの設定が保存されました。</target>
+        </trans-unit>
+        <trans-unit id="Resources\Unable to send Email now" translate="yes" xml:space="preserve">
+          <source>Unable to send Email now.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">今すぐメールを送信できませんでした。</target>
+        </trans-unit>
+        <trans-unit id="Resources\Twitter_Error_422" translate="yes" xml:space="preserve">
+          <source>Could not post image to Twitter. Try again later.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">イメージは、Twitter に投稿できませんでした。後でもう一度試してください。</target>
+        </trans-unit>
+        <trans-unit id="Resources\Could not post to Twitter" translate="yes" xml:space="preserve">
+          <source>Could not post to Twitter.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Twitter に投稿できませんでした。</target>
+        </trans-unit>
+        <trans-unit id="Resources\Twitter_Error_401" translate="yes" xml:space="preserve">
+          <source>Could not post to Twitter because of authentication issue. Please click Settings icon and authorize app.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Twitter には、認証の問題が原因を投稿できませんでした。設定アイコンをクリックしてのアプリを承認します。</target>
+        </trans-unit>
+        <trans-unit id="Resources\Twitter_Error_500To504" translate="yes" xml:space="preserve">
+          <source>Could not post to Twitter. It seems to be overloaded. Try again later.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Twitter に投稿できませんでした。それをオーバー ロードするようです。後でもう一度試してください。</target>
+        </trans-unit>
+        <trans-unit id="Resources\Could not post to Twitter_Please click on Settings icon and authorize the app" translate="yes" xml:space="preserve">
+          <source>Could not post to Twitter. Please click on Settings icon and authorize the app.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Twitter に投稿できませんでした。設定アイコンをクリックして、アプリを承認します。</target>
+        </trans-unit>
+        <trans-unit id="Resources\Could not post to Twitter_Try again later" translate="yes" xml:space="preserve">
+          <source>Could not post to Twitter. Try again later.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Twitter に投稿できませんでした。後でもう一度試してください。</target>
+        </trans-unit>
+        <trans-unit id="Resources\Mail was sent successfully" translate="yes" xml:space="preserve">
+          <source>Mail was sent successfully.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">メールは正常に送信されました。</target>
+        </trans-unit>
+        <trans-unit id="Resources\Please enter Email to use for sending" translate="yes" xml:space="preserve">
+          <source>Please enter Email to use for sending</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">送信に使用する電子メールを入力してください。</target>
+        </trans-unit>
+        <trans-unit id="Resources\Please enter valid Email" translate="yes" xml:space="preserve">
+          <source>Please enter valid Email</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">有効なメール アドレスを入力してください。</target>
+        </trans-unit>
+        <trans-unit id="Resources\Post to Facebook failed" translate="yes" xml:space="preserve">
+          <source>Post to Facebook failed.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">失敗した Facebook に投稿してください。</target>
+        </trans-unit>
+        <trans-unit id="Resources\Post to Facebook failed_Message already exists on Facebook" translate="yes" xml:space="preserve">
+          <source>Post to Facebook failed. Message already exists on Facebook.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">失敗した Facebook に投稿してください。メッセージは既に Facebook に存在します。</target>
+        </trans-unit>
+        <trans-unit id="Resources\Facebook_Authorize_Error" translate="yes" xml:space="preserve">
+          <source>Post to Facebook failed. Please click on Settings icon and authorize the app before trying again.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">失敗した Facebook に投稿してください。設定アイコンをクリックして再試行する前に、アプリを承認します。</target>
+        </trans-unit>
+        <trans-unit id="Resources\Post to Facebook failed_Please try again" translate="yes" xml:space="preserve">
+          <source>Post to Facebook failed. Please try again.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">失敗した Facebook に投稿してください。くださいもう一度やり直してください。</target>
+        </trans-unit>
+        <trans-unit id="Resources\Posted to Facebook" translate="yes" xml:space="preserve">
+          <source>Posted to Facebook.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Facebook に掲示されます。</target>
+        </trans-unit>
+        <trans-unit id="Resources\Posted to Twitter" translate="yes" xml:space="preserve">
+          <source>Posted to Twitter.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Twitter に掲示されます。</target>
+        </trans-unit>
+        <trans-unit id="Resources\The post was rejected by Twitter" translate="yes" xml:space="preserve">
+          <source>The post was rejected by Twitter.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">ポストは Twitter によって拒否されました。</target>
+        </trans-unit>
+        <trans-unit id="Resources\To Emails (separate with comma, space or semi colon)" translate="yes" xml:space="preserve">
+          <source>To Emails (separate with comma, space or semi colon)</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">（カンマ、スペース、または半コロンと別の） メールします。</target>
+        </trans-unit>
+        <trans-unit id="Resources\Email_Failure" translate="yes" xml:space="preserve">
+          <source>Unable to send mail. Check your 'To Email' address or 'Email settings'</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">メールを送信できませんでした。'に' メールまたは [メール設定] を確認します。</target>
+        </trans-unit>
+        <trans-unit id="Resources\Hotmail_Domain_Failure" translate="yes" xml:space="preserve">
+          <source>For Hotmail, valid emails are hotmail.com, msn.com and live.com</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Hotmail の有効な電子メール live.com msn.com および hotmail.com が</target>
+        </trans-unit>
+        <trans-unit id="Resources\Unable to send mail now" translate="yes" xml:space="preserve">
+          <source>Unable to send mail now.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">今すぐメールを送信できませんでした。</target>
+        </trans-unit>
+        <trans-unit id="Resources\Link" translate="yes" xml:space="preserve">
+          <source>Link</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">リンク</target>
+        </trans-unit>
+      </group>
+    </body>
+  </file>
+</xliff>

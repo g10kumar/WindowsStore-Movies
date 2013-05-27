@@ -1,0 +1,316 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
+  <file datatype="xml" source-language="en-US" target-language="ru-RU" original="ShareAll_Multilingual.prilog.xml" tool-id="MultilingualAppToolkit" product-name="ShareAll" product-version="1.0.0.0" build-num="0001">
+    <header>
+      <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="1.2.2017.0" tool-company="Microsoft" />
+    </header>
+    <body>
+      <group id="Resources">
+        <trans-unit id="Resources\btnShareNow\Content" translate="yes" xml:space="preserve">
+          <source>Share Now</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Доля сейчас</target>
+        </trans-unit>
+        <trans-unit id="Resources\ConfigureEmail\Text" translate="yes" xml:space="preserve">
+          <source>Configure Email</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Настройка электронной почты</target>
+        </trans-unit>
+        <trans-unit id="Resources\ConfigureFacebook\Text" translate="yes" xml:space="preserve">
+          <source>Configure Facebook</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Настройка Facebook</target>
+        </trans-unit>
+        <trans-unit id="Resources\ConfigureTwitter\Text" translate="yes" xml:space="preserve">
+          <source>Configure Twitter</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Настройка щебетать</target>
+        </trans-unit>
+        <trans-unit id="Resources\Main1\Text" translate="yes" xml:space="preserve">
+          <source>'Share All' allows you to share stuff from any app to multiple social platforms with one click. To start sharing, configure your Facebook and Twitter accounts by clicking on the buttons to the right. You can also configure from the 'Share All' Share Charm.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Доля всех позволяет вам поделиться вещи из любого приложения в различных социальных платформ с одним щелчком мыши. Чтобы начать обмен, настройте Ваш Facebook и Twitter счета, нажав на кнопку справа. Можно также настроить от «Доля все» долю очарование.</target>
+        </trans-unit>
+        <trans-unit id="Resources\Main2\Text" translate="yes" xml:space="preserve">
+          <source>How to Share:</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Как поделиться:</target>
+        </trans-unit>
+        <trans-unit id="Resources\Main3\Text" translate="yes" xml:space="preserve">
+          <source>From any app, activate the 'Share' charm. Select 'Share All' from the many options.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">От любого app активируйте «Доля» очарование. Выберите «Доля все» из многих вариантов.</target>
+        </trans-unit>
+        <trans-unit id="Resources\Main4\Text" translate="yes" xml:space="preserve">
+          <source>If you have not already configured your accounts, you can do so by clicking the blue Settings icon.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Если не вы уже настроили ваши счета, это можно сделать, нажав на синий значок настройки.</target>
+        </trans-unit>
+        <trans-unit id="Resources\Main5\Text" translate="yes" xml:space="preserve">
+          <source>Inside the 'Share All' charm, ensure that the Facebook title, URLs, message and Twitter message is fine. Shorten the Twitter message if needed.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Внутри «Доля все» очарование убедитесь, что Facebook название, URL-адреса, сообщения и сообщения Twitter хорошо. При необходимости укоротите сообщения Twitter.</target>
+        </trans-unit>
+        <trans-unit id="Resources\Main6\Text" translate="yes" xml:space="preserve">
+          <source>Click on 'Share' button.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Нажмите на кнопку «Доля».</target>
+        </trans-unit>
+        <trans-unit id="Resources\Main7\Text" translate="yes" xml:space="preserve">
+          <source>How to Open Share Charm:</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Как открыть доля очарование:</target>
+        </trans-unit>
+        <trans-unit id="Resources\Main8\Text" translate="yes" xml:space="preserve">
+          <source>Swipe in from the right edge of the screen, and then tap Share. (If you're using a mouse, point to the upper-right corner of the screen, move the mouse pointer down, and then click Share.)</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Коромысло в от правого края экрана, а затем коснитесь доля. (Если вы используете мышь, указывать на верхнем левом углу экрана, переместите указатель мыши и выберите пункт Общий доступ.)</target>
+        </trans-unit>
+        <trans-unit id="Resources\pageTitle\Text" translate="yes" xml:space="preserve">
+          <source>Share All</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Разделяем все</target>
+        </trans-unit>
+        <trans-unit id="Resources\btnShare\Content" translate="yes" xml:space="preserve">
+          <source>SHARE</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Предоставить общий доступ</target>
+        </trans-unit>
+        <trans-unit id="Resources\CharacterCount\Text" translate="yes" xml:space="preserve">
+          <source>Character Count:</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Количество символов:</target>
+        </trans-unit>
+        <trans-unit id="Resources\Email\Text" translate="yes" xml:space="preserve">
+          <source>Email</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Отправить по электронной почте</target>
+        </trans-unit>
+        <trans-unit id="Resources\EmailTo\Text" translate="yes" xml:space="preserve">
+          <source>To Emails (separate with comma, space or semi colon)</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Для письма (отдельно с запятую, пробел или полу толстой кишки)</target>
+        </trans-unit>
+        <trans-unit id="Resources\Facebook\Text" translate="yes" xml:space="preserve">
+          <source>Facebook</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Facebook</target>
+        </trans-unit>
+        <trans-unit id="Resources\FBLinktoShare\Text" translate="yes" xml:space="preserve">
+          <source>Link</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Ссылка</target>
+        </trans-unit>
+        <trans-unit id="Resources\FBMessage\Text" translate="yes" xml:space="preserve">
+          <source>Message</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Сообщение</target>
+        </trans-unit>
+        <trans-unit id="Resources\FBTitle\Text" translate="yes" xml:space="preserve">
+          <source>Link Title</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Название ссылки</target>
+        </trans-unit>
+        <trans-unit id="Resources\Twitter\Text" translate="yes" xml:space="preserve">
+          <source>Twitter</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Щебетать</target>
+        </trans-unit>
+        <trans-unit id="Resources\btnClose\Content" translate="yes" xml:space="preserve">
+          <source>Close</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Закрыть</target>
+        </trans-unit>
+        <trans-unit id="Resources\btnSave\Content" translate="yes" xml:space="preserve">
+          <source>SAVE</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">СОХРАНИТЬ</target>
+        </trans-unit>
+        <trans-unit id="Resources\Password\Text" translate="yes" xml:space="preserve">
+          <source>Password</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Пароль</target>
+        </trans-unit>
+        <trans-unit id="Resources\txtDomain\Text" translate="yes" xml:space="preserve">
+          <source>Domain</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Домен</target>
+        </trans-unit>
+        <trans-unit id="Resources\txtUserName\Text" translate="yes" xml:space="preserve">
+          <source>Email</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Отправить по электронной почте</target>
+        </trans-unit>
+        <trans-unit id="Resources\VerifyPassword\Text" translate="yes" xml:space="preserve">
+          <source>Verify Password</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Проверка пароля</target>
+        </trans-unit>
+        <trans-unit id="Resources\About Us" translate="yes" xml:space="preserve">
+          <source>About Us</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">О нас</target>
+        </trans-unit>
+        <trans-unit id="Resources\About\Text" translate="yes" xml:space="preserve">
+          <source>About</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">О</target>
+        </trans-unit>
+        <trans-unit id="Resources\About1\Text" translate="yes" xml:space="preserve">
+          <source>'Share All' allows you to share stuff from any app to multiple social platforms with one click. To start sharing, configure your Facebook and Twitter accounts by clicking on the buttons to the right. You can also configure from the 'Share All' Share Charm.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Доля всех позволяет вам поделиться вещи из любого приложения в различных социальных платформ с одним щелчком мыши. Чтобы начать обмен, настройте Ваш Facebook и Twitter счета, нажав на кнопку справа. Можно также настроить от «Доля все» долю очарование.</target>
+        </trans-unit>
+        <trans-unit id="Resources\About2\Text" translate="yes" xml:space="preserve">
+          <source>The app was developed by Daksa Technologies. We develop apps for Windows Phone %%amp;amp; Windows 8, web applications, websites and custom Windows software.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">App был разработан Дакса технологий. Мы разрабатываем приложения для Windows Phone %%amp;amp; Windows 8, веб-приложений, веб-сайты и пользовательского программного обеспечения Windows.</target>
+        </trans-unit>
+        <trans-unit id="Resources\About3\Text" translate="yes" xml:space="preserve">
+          <source>Contact us for your next web or mobile project at info@daksatech.com</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Свяжитесь с нами для вашего следующего веб- или мобильный проект на info@daksatech.com</target>
+        </trans-unit>
+        <trans-unit id="Resources\About4\Text" translate="yes" xml:space="preserve">
+          <source>If you have a support issue or would like to suggest a feature, please email us at support@daksatech.com</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Если у вас есть проблема поддержки или хотели бы предложить функцию, пожалуйста, напишите нам на support@daksatech.com</target>
+        </trans-unit>
+        <trans-unit id="Resources\EmailSettings\Text" translate="yes" xml:space="preserve">
+          <source>Email Settings</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Настройки электронной почты</target>
+        </trans-unit>
+        <trans-unit id="Resources\Main1Snapped\Text" translate="yes" xml:space="preserve">
+          <source>'Share All' allows you to share stuff from any app to multiple social platforms with one click. To start sharing, configure your Facebook and Twitter accounts by clicking on the buttons to the right. You can also configure from the 'Share All' Share Charm.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Доля всех позволяет вам поделиться вещи из любого приложения в различных социальных платформ с одним щелчком мыши. Чтобы начать обмен, настройте Ваш Facebook и Twitter счета, нажав на кнопку справа. Можно также настроить от «Доля все» долю очарование.</target>
+        </trans-unit>
+        <trans-unit id="Resources\PP1\Text" translate="yes" xml:space="preserve">
+          <source>This Privacy Policy covers your use of the 'Share All' Windows 8 application. The application does not collect, store, or share any personal information, or anything related to your device. We do not collect any statistics, trends, neither do we track user movements.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Эта политика конфиденциальности охватывает использование приложения «Доля все» Windows 8. Приложение не собирать, хранить или поделиться личной информацией, или, что связано с устройством. Мы не собираем никаких статистических данных, тенденции, ни мы отслеживать движения пользователя.</target>
+        </trans-unit>
+        <trans-unit id="Resources\PP2\Text" translate="yes" xml:space="preserve">
+          <source>The application allows you to post messages or links to your various social network accounts. More specifically the app allows you to post to your Facebook and Twitter accounts. We do not collect or store your Facebook or Twitter account credentials. We redirect your to those sites so you can authorize the 'Share All' app to post to those sites. When you enter your social network credentials, you are doing so at their sites.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Приложение позволяет вам отправлять сообщения или ссылки на ваши различные счета социальной сети. Более конкретно app позволяет вам разместить ваши Facebook и Twitter счета. Мы не собирать или хранить учетные данные учетной записи Facebook или Twitter. Мы перенаправить ваши на эти сайты, так что вы можете авторизовать «Доля все» app для того чтобы разместить на этих сайтах. Когда вы вводите учетные данные социальной сети, вы делаете это на их сайтах.</target>
+        </trans-unit>
+        <trans-unit id="Resources\PP3\Text" translate="yes" xml:space="preserve">
+          <source>Your email credentials are stored on your machine using industry standard 'Advanced Encryption Standard (AES). Your email credentials are only sent to the email providers - Gmail, Hotmail or Yahoo.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Учетные данные электронной почты хранятся на вашем компьютере, используя промышленный стандарт ' Расширенный стандарт шифрования (AES). Учетные данные электронной почты отправляются только поставщики услуг электронной почты - Gmail, Hotmail или Yahoo.</target>
+        </trans-unit>
+        <trans-unit id="Resources\PP4\Text" translate="yes" xml:space="preserve">
+          <source>We will never ask you to provide us with your account usernames/ passwords. We do not collect your email or any other information.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Мы никогда не попросим вас предоставить нам с вашей учетной записи имен пользователей / паролей. Мы не собираем адрес электронной почты или любой другой информации.</target>
+        </trans-unit>
+        <trans-unit id="Resources\Privacy Policy" translate="yes" xml:space="preserve">
+          <source>Privacy Policy</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Политика конфиденциальности</target>
+        </trans-unit>
+        <trans-unit id="Resources\PrivacyPolicy\Text" translate="yes" xml:space="preserve">
+          <source>Privacy Policy</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Политика конфиденциальности</target>
+        </trans-unit>
+        <trans-unit id="Resources\Test Email" translate="yes" xml:space="preserve">
+          <source>Test Email</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Тестовое сообщение</target>
+        </trans-unit>
+        <trans-unit id="Resources\This is a test email from Share All" translate="yes" xml:space="preserve">
+          <source>This is a test email from Share All.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Это тестовое сообщение от всех акций.</target>
+        </trans-unit>
+        <trans-unit id="Resources\AppName" translate="yes" xml:space="preserve">
+          <source>Share All</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Разделяем все</target>
+        </trans-unit>
+        <trans-unit id="Resources\Password and Verify Password should be same" translate="yes" xml:space="preserve">
+          <source>Password and Verify Password should be same</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Пароль и подтверждение пароля должны быть одинаковыми</target>
+        </trans-unit>
+        <trans-unit id="Resources\Please enter the Email" translate="yes" xml:space="preserve">
+          <source>Please enter the Email.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Пожалуйста, введите Email.</target>
+        </trans-unit>
+        <trans-unit id="Resources\Please enter the valid Email" translate="yes" xml:space="preserve">
+          <source>Please enter the valid Email.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Пожалуйста введите действующий Email.</target>
+        </trans-unit>
+        <trans-unit id="Resources\Please select the Domain" translate="yes" xml:space="preserve">
+          <source>Please select the Domain.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Пожалуйста выберите домен.</target>
+        </trans-unit>
+        <trans-unit id="Resources\This is the description of the message" translate="yes" xml:space="preserve">
+          <source>This is the description of the message.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Это описание сообщения.</target>
+        </trans-unit>
+        <trans-unit id="Resources\This is the text to share" translate="yes" xml:space="preserve">
+          <source>This is the text to share.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Это текст поделиться.</target>
+        </trans-unit>
+        <trans-unit id="Resources\Your link title goes here" translate="yes" xml:space="preserve">
+          <source>Your link title goes here.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Ссылка название идет здесь.</target>
+        </trans-unit>
+        <trans-unit id="Resources\Please enter the Email which exists in the domain you selected" translate="yes" xml:space="preserve">
+          <source>Please enter the Email which exists in the domain you selected.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Пожалуйста, введите адрес электронной почты, который существует в домене, выбранные вами.</target>
+        </trans-unit>
+        <trans-unit id="Resources\Email settings saved" translate="yes" xml:space="preserve">
+          <source>Email settings saved.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Настройки электронной почты сохранены.</target>
+        </trans-unit>
+        <trans-unit id="Resources\Unable to send Email now" translate="yes" xml:space="preserve">
+          <source>Unable to send Email now.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Не удается отправить электронной почты теперь.</target>
+        </trans-unit>
+        <trans-unit id="Resources\Twitter_Error_422" translate="yes" xml:space="preserve">
+          <source>Could not post image to Twitter. Try again later.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Не удалось отправить изображения в Twitter. Повторите попытку позже.</target>
+        </trans-unit>
+        <trans-unit id="Resources\Could not post to Twitter" translate="yes" xml:space="preserve">
+          <source>Could not post to Twitter.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Не удалось отправить в Твиттер.</target>
+        </trans-unit>
+        <trans-unit id="Resources\Twitter_Error_401" translate="yes" xml:space="preserve">
+          <source>Could not post to Twitter because of authentication issue. Please click Settings icon and authorize app.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Не удалось отправить в Twitter из-за ошибки проверки подлинности. Нажмите значок Параметры и санкционировать app.</target>
+        </trans-unit>
+        <trans-unit id="Resources\Twitter_Error_500To504" translate="yes" xml:space="preserve">
+          <source>Could not post to Twitter. It seems to be overloaded. Try again later.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Не удалось отправить в Твиттер. Кажется чтобы быть перегружен. Повторите попытку позже.</target>
+        </trans-unit>
+        <trans-unit id="Resources\Could not post to Twitter_Please click on Settings icon and authorize the app" translate="yes" xml:space="preserve">
+          <source>Could not post to Twitter. Please click on Settings icon and authorize the app.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Не удалось отправить в Твиттер. Пожалуйста нажмите на значок настроек и санкционировать app.</target>
+        </trans-unit>
+        <trans-unit id="Resources\Could not post to Twitter_Try again later" translate="yes" xml:space="preserve">
+          <source>Could not post to Twitter. Try again later.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Не удалось отправить в Твиттер. Повторите попытку позже.</target>
+        </trans-unit>
+        <trans-unit id="Resources\Mail was sent successfully" translate="yes" xml:space="preserve">
+          <source>Mail was sent successfully.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Почта успешно отправлен.</target>
+        </trans-unit>
+        <trans-unit id="Resources\Please enter Email to use for sending" translate="yes" xml:space="preserve">
+          <source>Please enter Email to use for sending</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Пожалуйста, введите Email использовать для отправки</target>
+        </trans-unit>
+        <trans-unit id="Resources\Please enter valid Email" translate="yes" xml:space="preserve">
+          <source>Please enter valid Email</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Пожалуйста, введите действительный адрес электронной почты</target>
+        </trans-unit>
+        <trans-unit id="Resources\Post to Facebook failed" translate="yes" xml:space="preserve">
+          <source>Post to Facebook failed.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Опубликовать в Facebook не удалось.</target>
+        </trans-unit>
+        <trans-unit id="Resources\Post to Facebook failed_Message already exists on Facebook" translate="yes" xml:space="preserve">
+          <source>Post to Facebook failed. Message already exists on Facebook.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Опубликовать в Facebook не удалось. Сообщение уже существует на Facebook.</target>
+        </trans-unit>
+        <trans-unit id="Resources\Facebook_Authorize_Error" translate="yes" xml:space="preserve">
+          <source>Post to Facebook failed. Please click on Settings icon and authorize the app before trying again.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Опубликовать в Facebook не удалось. Пожалуйста нажмите на значок настроек и санкционировать app прежде чем пытаться снова.</target>
+        </trans-unit>
+        <trans-unit id="Resources\Post to Facebook failed_Please try again" translate="yes" xml:space="preserve">
+          <source>Post to Facebook failed. Please try again.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Опубликовать в Facebook не удалось. Пожалуйста, попробуйте еще раз.</target>
+        </trans-unit>
+        <trans-unit id="Resources\Posted to Facebook" translate="yes" xml:space="preserve">
+          <source>Posted to Facebook.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Опубликовано в Facebook.</target>
+        </trans-unit>
+        <trans-unit id="Resources\Posted to Twitter" translate="yes" xml:space="preserve">
+          <source>Posted to Twitter.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Написал в Twitter.</target>
+        </trans-unit>
+        <trans-unit id="Resources\The post was rejected by Twitter" translate="yes" xml:space="preserve">
+          <source>The post was rejected by Twitter.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Пост был отвергнут Twitter.</target>
+        </trans-unit>
+        <trans-unit id="Resources\To Emails (separate with comma, space or semi colon)" translate="yes" xml:space="preserve">
+          <source>To Emails (separate with comma, space or semi colon)</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Для письма (отдельно с запятую, пробел или полу толстой кишки)</target>
+        </trans-unit>
+        <trans-unit id="Resources\Email_Failure" translate="yes" xml:space="preserve">
+          <source>Unable to send mail. Check your 'To Email' address or 'Email settings'</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Не удается отправить почту. Проверьте адрес «Электронной почты» или «Настройки электронной почты»</target>
+        </trans-unit>
+        <trans-unit id="Resources\Hotmail_Domain_Failure" translate="yes" xml:space="preserve">
+          <source>For Hotmail, valid emails are hotmail.com, msn.com and live.com</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Для Hotmail действительный письма являются hotmail.com, msn.com и live.com</target>
+        </trans-unit>
+        <trans-unit id="Resources\Unable to send mail now" translate="yes" xml:space="preserve">
+          <source>Unable to send mail now.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Не удается отправить почту сейчас.</target>
+        </trans-unit>
+        <trans-unit id="Resources\Link" translate="yes" xml:space="preserve">
+          <source>Link</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Ссылка</target>
+        </trans-unit>
+      </group>
+    </body>
+  </file>
+</xliff>

@@ -973,7 +973,6 @@ namespace ShareAll
             }
             #endregion
 
-
             #region Email
             //if (chkEmail.IsChecked == true)
             //{
