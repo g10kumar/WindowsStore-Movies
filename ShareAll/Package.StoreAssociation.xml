@@ -240,7 +240,6 @@
     <Language Code="pt-br" InMinimumRequirementSet="true" />
     <Language Code="pt-pt" InMinimumRequirementSet="true" />
     <Language Code="quc-latn" InMinimumRequirementSet="false" />
-    <Language Code="qut" InMinimumRequirementSet="false" />
     <Language Code="qut-gt" InMinimumRequirementSet="false" />
     <Language Code="qut-latn" InMinimumRequirementSet="false" />
     <Language Code="quz" InMinimumRequirementSet="false" />
@@ -292,9 +291,10 @@
     <Language Code="ti" InMinimumRequirementSet="false" />
     <Language Code="ti-et" InMinimumRequirementSet="false" />
     <Language Code="tk-cyrl" InMinimumRequirementSet="false" />
+    <Language Code="tk-cyrl-tr" InMinimumRequirementSet="false" />
     <Language Code="tk-latn" InMinimumRequirementSet="false" />
+    <Language Code="tk-latn-tr" InMinimumRequirementSet="false" />
     <Language Code="tk-tm" InMinimumRequirementSet="false" />
-    <Language Code="tk-tr" InMinimumRequirementSet="false" />
     <Language Code="tn" InMinimumRequirementSet="false" />
     <Language Code="tn-bw" InMinimumRequirementSet="false" />
     <Language Code="tn-za" InMinimumRequirementSet="false" />
@@ -341,6 +341,14 @@
     <ReservedNames>
       <ReservedName>Share All</ReservedName>
       <ReservedName>Universal Share</ReservedName>
+      <ReservedName>Partagez All</ReservedName>
+      <ReservedName>Teile Alle</ReservedName>
+      <ReservedName>Compartir Todo</ReservedName>
+      <ReservedName>Condividi Tutte</ReservedName>
+      <ReservedName>すべてを共有します。</ReservedName>
+      <ReservedName>모든 공유</ReservedName>
+      <ReservedName>Разделяем все</ReservedName>
+      <ReservedName>共享所有</ReservedName>
     </ReservedNames>
   </ProductReservedInfo>
   <AccountPackageIdentityNames>
@@ -362,7 +370,7 @@
   <PackageInfoList LandingUrl="https://appdev.microsoft.com:443/StorePortals/Developer/Catalog/ReleaseAnchor/3fd7dbee-5c18-4f0d-b8c6-0553533c4422">
     <PackageInfo>
       <PackageArchitecture>neutral</PackageArchitecture>
-      <PackageMaxArchitectureVersion>2.0.0.0</PackageMaxArchitectureVersion>
+      <PackageMaxArchitectureVersion>2.0.0.1</PackageMaxArchitectureVersion>
     </PackageInfo>
   </PackageInfoList>
 </StoreAssociation>

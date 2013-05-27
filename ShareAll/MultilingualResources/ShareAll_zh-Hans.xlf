@@ -1,0 +1,316 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
+  <file datatype="xml" source-language="en-US" target-language="zh-Hans" original="ShareAll_Multilingual.prilog.xml" tool-id="MultilingualAppToolkit" product-name="ShareAll" product-version="1.0.0.0" build-num="0001">
+    <header>
+      <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="1.2.2017.0" tool-company="Microsoft" />
+    </header>
+    <body>
+      <group id="Resources">
+        <trans-unit id="Resources\btnShareNow\Content" translate="yes" xml:space="preserve">
+          <source>Share Now</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">现在分享</target>
+        </trans-unit>
+        <trans-unit id="Resources\ConfigureEmail\Text" translate="yes" xml:space="preserve">
+          <source>Configure Email</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">配置电子邮件</target>
+        </trans-unit>
+        <trans-unit id="Resources\ConfigureFacebook\Text" translate="yes" xml:space="preserve">
+          <source>Configure Facebook</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">配置 Facebook</target>
+        </trans-unit>
+        <trans-unit id="Resources\ConfigureTwitter\Text" translate="yes" xml:space="preserve">
+          <source>Configure Twitter</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">配置 Twitter</target>
+        </trans-unit>
+        <trans-unit id="Resources\Main1\Text" translate="yes" xml:space="preserve">
+          <source>'Share All' allows you to share stuff from any app to multiple social platforms with one click. To start sharing, configure your Facebook and Twitter accounts by clicking on the buttons to the right. You can also configure from the 'Share All' Share Charm.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">共享所有允许您通过一次单击共享东西从任何应用程序到多个社交平台。若要开始共享，通过点击右侧按钮配置您的 Facebook 和 Twitter 帐户。您还可以配置从 '共享所有' 共享魅力。</target>
+        </trans-unit>
+        <trans-unit id="Resources\Main2\Text" translate="yes" xml:space="preserve">
+          <source>How to Share:</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">如何共享：</target>
+        </trans-unit>
+        <trans-unit id="Resources\Main3\Text" translate="yes" xml:space="preserve">
+          <source>From any app, activate the 'Share' charm. Select 'Share All' from the many options.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">从任何应用程序，激活的 '分享' 魅力。从许多选项中选择共享全部。</target>
+        </trans-unit>
+        <trans-unit id="Resources\Main4\Text" translate="yes" xml:space="preserve">
+          <source>If you have not already configured your accounts, you can do so by clicking the blue Settings icon.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">如果你还没有配置您的帐户，你可以通过单击蓝色设置图标。</target>
+        </trans-unit>
+        <trans-unit id="Resources\Main5\Text" translate="yes" xml:space="preserve">
+          <source>Inside the 'Share All' charm, ensure that the Facebook title, URLs, message and Twitter message is fine. Shorten the Twitter message if needed.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">里面的 '共享所有' 的魅力，确保 Facebook 标题、 Url、 和 Twitter 消息的是精细的。如果需要，请缩短的 Twitter 消息。</target>
+        </trans-unit>
+        <trans-unit id="Resources\Main6\Text" translate="yes" xml:space="preserve">
+          <source>Click on 'Share' button.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">单击共享按钮。</target>
+        </trans-unit>
+        <trans-unit id="Resources\Main7\Text" translate="yes" xml:space="preserve">
+          <source>How to Open Share Charm:</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">如何打开共享的魅力：</target>
+        </trans-unit>
+        <trans-unit id="Resources\Main8\Text" translate="yes" xml:space="preserve">
+          <source>Swipe in from the right edge of the screen, and then tap Share. (If you're using a mouse, point to the upper-right corner of the screen, move the mouse pointer down, and then click Share.)</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">在刷了从屏幕的右边缘，然后点击共享。（指向右上角的屏幕上，如果您使用鼠标，将鼠标指针移动下来，然后单击共享）。</target>
+        </trans-unit>
+        <trans-unit id="Resources\pageTitle\Text" translate="yes" xml:space="preserve">
+          <source>Share All</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">共享所有</target>
+        </trans-unit>
+        <trans-unit id="Resources\btnShare\Content" translate="yes" xml:space="preserve">
+          <source>SHARE</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">共享</target>
+        </trans-unit>
+        <trans-unit id="Resources\CharacterCount\Text" translate="yes" xml:space="preserve">
+          <source>Character Count:</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">字符数：</target>
+        </trans-unit>
+        <trans-unit id="Resources\Email\Text" translate="yes" xml:space="preserve">
+          <source>Email</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">电子邮件</target>
+        </trans-unit>
+        <trans-unit id="Resources\EmailTo\Text" translate="yes" xml:space="preserve">
+          <source>To Emails (separate with comma, space or semi colon)</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">对电子邮件 （用逗号、 空格或半冒号分开）</target>
+        </trans-unit>
+        <trans-unit id="Resources\Facebook\Text" translate="yes" xml:space="preserve">
+          <source>Facebook</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Facebook</target>
+        </trans-unit>
+        <trans-unit id="Resources\FBLinktoShare\Text" translate="yes" xml:space="preserve">
+          <source>Link</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">链接</target>
+        </trans-unit>
+        <trans-unit id="Resources\FBMessage\Text" translate="yes" xml:space="preserve">
+          <source>Message</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">消息</target>
+        </trans-unit>
+        <trans-unit id="Resources\FBTitle\Text" translate="yes" xml:space="preserve">
+          <source>Link Title</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">链接标题</target>
+        </trans-unit>
+        <trans-unit id="Resources\Twitter\Text" translate="yes" xml:space="preserve">
+          <source>Twitter</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Twitter</target>
+        </trans-unit>
+        <trans-unit id="Resources\btnClose\Content" translate="yes" xml:space="preserve">
+          <source>Close</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">关闭</target>
+        </trans-unit>
+        <trans-unit id="Resources\btnSave\Content" translate="yes" xml:space="preserve">
+          <source>SAVE</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">保存</target>
+        </trans-unit>
+        <trans-unit id="Resources\Password\Text" translate="yes" xml:space="preserve">
+          <source>Password</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">密码</target>
+        </trans-unit>
+        <trans-unit id="Resources\txtDomain\Text" translate="yes" xml:space="preserve">
+          <source>Domain</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">域</target>
+        </trans-unit>
+        <trans-unit id="Resources\txtUserName\Text" translate="yes" xml:space="preserve">
+          <source>Email</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">电子邮件</target>
+        </trans-unit>
+        <trans-unit id="Resources\VerifyPassword\Text" translate="yes" xml:space="preserve">
+          <source>Verify Password</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">验证密码</target>
+        </trans-unit>
+        <trans-unit id="Resources\About Us" translate="yes" xml:space="preserve">
+          <source>About Us</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">关于我们</target>
+        </trans-unit>
+        <trans-unit id="Resources\About\Text" translate="yes" xml:space="preserve">
+          <source>About</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">关于</target>
+        </trans-unit>
+        <trans-unit id="Resources\About1\Text" translate="yes" xml:space="preserve">
+          <source>'Share All' allows you to share stuff from any app to multiple social platforms with one click. To start sharing, configure your Facebook and Twitter accounts by clicking on the buttons to the right. You can also configure from the 'Share All' Share Charm.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">共享所有允许您通过一次单击共享东西从任何应用程序到多个社交平台。若要开始共享，通过点击右侧按钮配置您的 Facebook 和 Twitter 帐户。您还可以配置从 '共享所有' 共享魅力。</target>
+        </trans-unit>
+        <trans-unit id="Resources\About2\Text" translate="yes" xml:space="preserve">
+          <source>The app was developed by Daksa Technologies. We develop apps for Windows Phone %%amp;amp; Windows 8, web applications, websites and custom Windows software.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">这款应用程序是由 Daksa 技术开发的。我们发展的应用程序，Windows Phone %%amp;amp;Windows 8、 web 应用程序、 网站和自定义的 Windows 软件。</target>
+        </trans-unit>
+        <trans-unit id="Resources\About3\Text" translate="yes" xml:space="preserve">
+          <source>Contact us for your next web or mobile project at info@daksatech.com</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">联系我们为您的下一个网站或在 info@daksatech.com 移动项目</target>
+        </trans-unit>
+        <trans-unit id="Resources\About4\Text" translate="yes" xml:space="preserve">
+          <source>If you have a support issue or would like to suggest a feature, please email us at support@daksatech.com</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">如果你有一个支持问题，或者想要推荐功能，请发电子邮件我们在 support@daksatech.com</target>
+        </trans-unit>
+        <trans-unit id="Resources\EmailSettings\Text" translate="yes" xml:space="preserve">
+          <source>Email Settings</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">电子邮件设置</target>
+        </trans-unit>
+        <trans-unit id="Resources\Main1Snapped\Text" translate="yes" xml:space="preserve">
+          <source>'Share All' allows you to share stuff from any app to multiple social platforms with one click. To start sharing, configure your Facebook and Twitter accounts by clicking on the buttons to the right. You can also configure from the 'Share All' Share Charm.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">共享所有允许您通过一次单击共享东西从任何应用程序到多个社交平台。若要开始共享，通过点击右侧按钮配置您的 Facebook 和 Twitter 帐户。您还可以配置从 '共享所有' 共享魅力。</target>
+        </trans-unit>
+        <trans-unit id="Resources\PP1\Text" translate="yes" xml:space="preserve">
+          <source>This Privacy Policy covers your use of the 'Share All' Windows 8 application. The application does not collect, store, or share any personal information, or anything related to your device. We do not collect any statistics, trends, neither do we track user movements.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">本私隐政策涵盖您的 '共享所有' Windows 8 应用程序使用。应用程序不会收集、 存储、 或共享任何个人信息，或者任何有关您的设备。我们不会收集任何统计趋势，我们既不跟踪用户的运动。</target>
+        </trans-unit>
+        <trans-unit id="Resources\PP2\Text" translate="yes" xml:space="preserve">
+          <source>The application allows you to post messages or links to your various social network accounts. More specifically the app allows you to post to your Facebook and Twitter accounts. We do not collect or store your Facebook or Twitter account credentials. We redirect your to those sites so you can authorize the 'Share All' app to post to those sites. When you enter your social network credentials, you are doing so at their sites.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">该应用程序使您可以发布消息或链接到各种社交网络帐户。更具体的应用程序允许您发布到您的 Facebook 和 Twitter 帐户。我们不收集或存储您 Facebook 或者 Twitter 的帐户凭据。我们重定向您向这些站点，以便您可以授权 '共享所有' 应用程序发布到这些网站。当您输入您的社交网络凭据时，你这样做在自己的网站。</target>
+        </trans-unit>
+        <trans-unit id="Resources\PP3\Text" translate="yes" xml:space="preserve">
+          <source>Your email credentials are stored on your machine using industry standard 'Advanced Encryption Standard (AES). Your email credentials are only sent to the email providers - Gmail, Hotmail or Yahoo.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">您的电子邮件凭据存储在您的机器使用行业标准上 ' 高级加密标准 (AES)。您的电子邮件凭据只发送到电子邮件提供商-Gmail，Hotmail 或雅虎。</target>
+        </trans-unit>
+        <trans-unit id="Resources\PP4\Text" translate="yes" xml:space="preserve">
+          <source>We will never ask you to provide us with your account usernames/ passwords. We do not collect your email or any other information.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">我们永远不会要求您向我们提供您的帐户的用户名 / 密码。我们不收集您的电子邮件或任何其他信息。</target>
+        </trans-unit>
+        <trans-unit id="Resources\Privacy Policy" translate="yes" xml:space="preserve">
+          <source>Privacy Policy</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">私隐政策</target>
+        </trans-unit>
+        <trans-unit id="Resources\PrivacyPolicy\Text" translate="yes" xml:space="preserve">
+          <source>Privacy Policy</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">私隐政策</target>
+        </trans-unit>
+        <trans-unit id="Resources\Test Email" translate="yes" xml:space="preserve">
+          <source>Test Email</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">测试电子邮件</target>
+        </trans-unit>
+        <trans-unit id="Resources\This is a test email from Share All" translate="yes" xml:space="preserve">
+          <source>This is a test email from Share All.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">这是从共享所有测试电子邮件。</target>
+        </trans-unit>
+        <trans-unit id="Resources\AppName" translate="yes" xml:space="preserve">
+          <source>Share All</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">共享所有</target>
+        </trans-unit>
+        <trans-unit id="Resources\Password and Verify Password should be same" translate="yes" xml:space="preserve">
+          <source>Password and Verify Password should be same</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">密码和验证密码应该相同</target>
+        </trans-unit>
+        <trans-unit id="Resources\Please enter the Email" translate="yes" xml:space="preserve">
+          <source>Please enter the Email.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">请输入电子邮件。</target>
+        </trans-unit>
+        <trans-unit id="Resources\Please enter the valid Email" translate="yes" xml:space="preserve">
+          <source>Please enter the valid Email.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">请输入有效的电子邮件。</target>
+        </trans-unit>
+        <trans-unit id="Resources\Please select the Domain" translate="yes" xml:space="preserve">
+          <source>Please select the Domain.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">请选择的域。</target>
+        </trans-unit>
+        <trans-unit id="Resources\This is the description of the message" translate="yes" xml:space="preserve">
+          <source>This is the description of the message.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">这是邮件的说明。</target>
+        </trans-unit>
+        <trans-unit id="Resources\This is the text to share" translate="yes" xml:space="preserve">
+          <source>This is the text to share.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">这是要分享的文本。</target>
+        </trans-unit>
+        <trans-unit id="Resources\Your link title goes here" translate="yes" xml:space="preserve">
+          <source>Your link title goes here.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">这里是您的链接的标题。</target>
+        </trans-unit>
+        <trans-unit id="Resources\Please enter the Email which exists in the domain you selected" translate="yes" xml:space="preserve">
+          <source>Please enter the Email which exists in the domain you selected.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">请输入的电子邮件，在选定的域中存在。</target>
+        </trans-unit>
+        <trans-unit id="Resources\Email settings saved" translate="yes" xml:space="preserve">
+          <source>Email settings saved.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">保存的电子邮件设置。</target>
+        </trans-unit>
+        <trans-unit id="Resources\Unable to send Email now" translate="yes" xml:space="preserve">
+          <source>Unable to send Email now.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">无法立即发送电子邮件。</target>
+        </trans-unit>
+        <trans-unit id="Resources\Twitter_Error_422" translate="yes" xml:space="preserve">
+          <source>Could not post image to Twitter. Try again later.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">无法过帐到 Twitter 的图像。稍后再试。</target>
+        </trans-unit>
+        <trans-unit id="Resources\Could not post to Twitter" translate="yes" xml:space="preserve">
+          <source>Could not post to Twitter.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">无法过帐到 Twitter。</target>
+        </trans-unit>
+        <trans-unit id="Resources\Twitter_Error_401" translate="yes" xml:space="preserve">
+          <source>Could not post to Twitter because of authentication issue. Please click Settings icon and authorize app.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">由于身份验证问题而不能发布到 Twitter。请单击设置图标并授权的应用程序。</target>
+        </trans-unit>
+        <trans-unit id="Resources\Twitter_Error_500To504" translate="yes" xml:space="preserve">
+          <source>Could not post to Twitter. It seems to be overloaded. Try again later.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">无法过帐到 Twitter。它似乎被重载。稍后再试。</target>
+        </trans-unit>
+        <trans-unit id="Resources\Could not post to Twitter_Please click on Settings icon and authorize the app" translate="yes" xml:space="preserve">
+          <source>Could not post to Twitter. Please click on Settings icon and authorize the app.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">无法过帐到 Twitter。请单击设置图标，并授权该应用程序。</target>
+        </trans-unit>
+        <trans-unit id="Resources\Could not post to Twitter_Try again later" translate="yes" xml:space="preserve">
+          <source>Could not post to Twitter. Try again later.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">无法过帐到 Twitter。稍后再试。</target>
+        </trans-unit>
+        <trans-unit id="Resources\Mail was sent successfully" translate="yes" xml:space="preserve">
+          <source>Mail was sent successfully.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">已成功发送邮件。</target>
+        </trans-unit>
+        <trans-unit id="Resources\Please enter Email to use for sending" translate="yes" xml:space="preserve">
+          <source>Please enter Email to use for sending</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">请输入要用于发送的电子邮件</target>
+        </trans-unit>
+        <trans-unit id="Resources\Please enter valid Email" translate="yes" xml:space="preserve">
+          <source>Please enter valid Email</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">请输入有效的电子邮件</target>
+        </trans-unit>
+        <trans-unit id="Resources\Post to Facebook failed" translate="yes" xml:space="preserve">
+          <source>Post to Facebook failed.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">发布到 Facebook 失败。</target>
+        </trans-unit>
+        <trans-unit id="Resources\Post to Facebook failed_Message already exists on Facebook" translate="yes" xml:space="preserve">
+          <source>Post to Facebook failed. Message already exists on Facebook.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">发布到 Facebook 失败。在 Facebook 上已存在的消息。</target>
+        </trans-unit>
+        <trans-unit id="Resources\Facebook_Authorize_Error" translate="yes" xml:space="preserve">
+          <source>Post to Facebook failed. Please click on Settings icon and authorize the app before trying again.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">发布到 Facebook 失败。请单击设置图标并授权该应用程序然后重试。</target>
+        </trans-unit>
+        <trans-unit id="Resources\Post to Facebook failed_Please try again" translate="yes" xml:space="preserve">
+          <source>Post to Facebook failed. Please try again.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">发布到 Facebook 失败。请再试一次。</target>
+        </trans-unit>
+        <trans-unit id="Resources\Posted to Facebook" translate="yes" xml:space="preserve">
+          <source>Posted to Facebook.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">发布到 Facebook。</target>
+        </trans-unit>
+        <trans-unit id="Resources\Posted to Twitter" translate="yes" xml:space="preserve">
+          <source>Posted to Twitter.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">过帐到 Twitter。</target>
+        </trans-unit>
+        <trans-unit id="Resources\The post was rejected by Twitter" translate="yes" xml:space="preserve">
+          <source>The post was rejected by Twitter.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">该职位的 Twitter 被否决。</target>
+        </trans-unit>
+        <trans-unit id="Resources\To Emails (separate with comma, space or semi colon)" translate="yes" xml:space="preserve">
+          <source>To Emails (separate with comma, space or semi colon)</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">对电子邮件 （用逗号、 空格或半冒号分开）</target>
+        </trans-unit>
+        <trans-unit id="Resources\Email_Failure" translate="yes" xml:space="preserve">
+          <source>Unable to send mail. Check your 'To Email' address or 'Email settings'</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">无法发送邮件。请检查您的地址到电子邮件或电子邮件设置</target>
+        </trans-unit>
+        <trans-unit id="Resources\Hotmail_Domain_Failure" translate="yes" xml:space="preserve">
+          <source>For Hotmail, valid emails are hotmail.com, msn.com and live.com</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Hotmail，为有效的电子邮件是 hotmail.com、 msn.com 和 live.com</target>
+        </trans-unit>
+        <trans-unit id="Resources\Unable to send mail now" translate="yes" xml:space="preserve">
+          <source>Unable to send mail now.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">无法立即发送邮件。</target>
+        </trans-unit>
+        <trans-unit id="Resources\Link" translate="yes" xml:space="preserve">
+          <source>Link</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">链接</target>
+        </trans-unit>
+      </group>
+    </body>
+  </file>
+</xliff>

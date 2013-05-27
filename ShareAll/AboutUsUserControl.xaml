@@ -33,7 +33,7 @@
                         </Grid.ColumnDefinitions>
 
                         <Button Click="OnBackButtonClicked" Margin="0,3,0,0" Style="{StaticResource SettingsBackButtonStyle}" Grid.Column="0" HorizontalAlignment="Left" />
-                        <TextBlock Margin="10,0,0,0" Grid.Column="1" Foreground="Black" FontFamily="Segoe UI" FontWeight="SemiLight" FontSize="26.6667" Text="About" HorizontalAlignment="Left" />
+                        <TextBlock Margin="10,0,0,0" Grid.Column="1" Foreground="Black" FontFamily="Segoe UI" FontWeight="SemiLight" FontSize="26.6667" x:Uid="About" Text="About" HorizontalAlignment="Left" />
                     </Grid>
 
                 </Grid>
@@ -47,11 +47,11 @@
                     </Grid.Transitions>
                     <StackPanel Orientation="Vertical">
                         <StackPanel Orientation="Vertical">
-                            <TextBlock Text="'Share All' allows you to share stuff from any app to multiple social platforms with one click. To start sharing, configure your Facebook and Twitter accounts by clicking on the buttons to the right. You can also configure from the 'Share All' Share Charm."  Style="{StaticResource AboutUsTextStyle}" />
-                            <TextBlock Text="The app was developed by Daksa Technologies. We develop apps for Windows Phone &amp; Windows 8, web applications, websites and custom Windows software."  Style="{StaticResource AboutUsTextStyle}" />
-                            <TextBlock Text="Contact us for your next web or mobile project at info@daksatech.com" Style="{StaticResource AboutUsTextStyle}" />
+                            <TextBlock x:Uid="About1" Text="'Share All' allows you to share stuff from any app to multiple social platforms with one click. To start sharing, configure your Facebook and Twitter accounts by clicking on the buttons to the right. You can also configure from the 'Share All' Share Charm."  Style="{StaticResource AboutUsTextStyle}" />
+                            <TextBlock x:Uid="About2" Text="The app was developed by Daksa Technologies. We develop apps for Windows Phone &amp; Windows 8, web applications, websites and custom Windows software."  Style="{StaticResource AboutUsTextStyle}" />
+                            <TextBlock x:Uid="About3" Text="Contact us for your next web or mobile project at info@daksatech.com" Style="{StaticResource AboutUsTextStyle}" />
 
-                            <TextBlock Text="If you have a support issue or would like to suggest a feature, please email us at support@daksatech.com" Style="{StaticResource AboutUsTextStyle}"></TextBlock>
+                            <TextBlock x:Uid="About4" Text="If you have a support issue or would like to suggest a feature, please email us at support@daksatech.com" Style="{StaticResource AboutUsTextStyle}"></TextBlock>
                         </StackPanel>
                     </StackPanel>
                 </Grid>

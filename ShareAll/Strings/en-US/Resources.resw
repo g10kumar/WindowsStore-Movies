@@ -1,0 +1,348 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="btnShareNow.Content" xml:space="preserve">
+    <value>Share Now</value>
+  </data>
+  <data name="ConfigureEmail.Text" xml:space="preserve">
+    <value>Configure Email</value>
+  </data>
+  <data name="ConfigureFacebook.Text" xml:space="preserve">
+    <value>Configure Facebook</value>
+  </data>
+  <data name="ConfigureTwitter.Text" xml:space="preserve">
+    <value>Configure Twitter</value>
+  </data>
+  <data name="Main1.Text" xml:space="preserve">
+    <value>'Share All' allows you to share stuff from any app to multiple social platforms with one click. To start sharing, configure your Facebook and Twitter accounts by clicking on the buttons to the right. You can also configure from the 'Share All' Share Charm.</value>
+  </data>
+  <data name="Main2.Text" xml:space="preserve">
+    <value>How to Share:</value>
+  </data>
+  <data name="Main3.Text" xml:space="preserve">
+    <value>From any app, activate the 'Share' charm. Select 'Share All' from the many options.</value>
+  </data>
+  <data name="Main4.Text" xml:space="preserve">
+    <value>If you have not already configured your accounts, you can do so by clicking the blue Settings icon.</value>
+  </data>
+  <data name="Main5.Text" xml:space="preserve">
+    <value>Inside the 'Share All' charm, ensure that the Facebook title, URLs, message and Twitter message is fine. Shorten the Twitter message if needed.</value>
+  </data>
+  <data name="Main6.Text" xml:space="preserve">
+    <value>Click on 'Share' button.</value>
+  </data>
+  <data name="Main7.Text" xml:space="preserve">
+    <value>How to Open Share Charm:</value>
+  </data>
+  <data name="Main8.Text" xml:space="preserve">
+    <value>Swipe in from the right edge of the screen, and then tap Share. (If you're using a mouse, point to the upper-right corner of the screen, move the mouse pointer down, and then click Share.)</value>
+  </data>
+  <data name="pageTitle.Text" xml:space="preserve">
+    <value>Share All</value>
+  </data>
+  <data name="btnShare.Content" xml:space="preserve">
+    <value>SHARE</value>
+  </data>
+  <data name="CharacterCount.Text" xml:space="preserve">
+    <value>Character Count:</value>
+  </data>
+  <data name="Email.Text" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="EmailTo.Text" xml:space="preserve">
+    <value>To Emails (separate with comma, space or semi colon)</value>
+  </data>
+  <data name="Facebook.Text" xml:space="preserve">
+    <value>Facebook</value>
+  </data>
+  <data name="FBLinktoShare.Text" xml:space="preserve">
+    <value>Link</value>
+  </data>
+  <data name="FBMessage.Text" xml:space="preserve">
+    <value>Message</value>
+  </data>
+  <data name="FBTitle.Text" xml:space="preserve">
+    <value>Link Title</value>
+  </data>
+  <data name="Twitter.Text" xml:space="preserve">
+    <value>Twitter</value>
+  </data>
+  <data name="btnClose.Content" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="btnSave.Content" xml:space="preserve">
+    <value>SAVE</value>
+  </data>
+  <data name="Password.Text" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="txtDomain.Text" xml:space="preserve">
+    <value>Domain</value>
+  </data>
+  <data name="txtUserName.Text" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="VerifyPassword.Text" xml:space="preserve">
+    <value>Verify Password</value>
+  </data>
+  <data name="About Us" xml:space="preserve">
+    <value>About Us</value>
+  </data>
+  <data name="About.Text" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="About1.Text" xml:space="preserve">
+    <value>'Share All' allows you to share stuff from any app to multiple social platforms with one click. To start sharing, configure your Facebook and Twitter accounts by clicking on the buttons to the right. You can also configure from the 'Share All' Share Charm.</value>
+  </data>
+  <data name="About2.Text" xml:space="preserve">
+    <value>The app was developed by Daksa Technologies. We develop apps for Windows Phone &amp;amp; Windows 8, web applications, websites and custom Windows software.</value>
+  </data>
+  <data name="About3.Text" xml:space="preserve">
+    <value>Contact us for your next web or mobile project at info@daksatech.com</value>
+  </data>
+  <data name="About4.Text" xml:space="preserve">
+    <value>If you have a support issue or would like to suggest a feature, please email us at support@daksatech.com</value>
+  </data>
+  <data name="EmailSettings.Text" xml:space="preserve">
+    <value>Email Settings</value>
+  </data>
+  <data name="Main1Snapped.Text" xml:space="preserve">
+    <value>'Share All' allows you to share stuff from any app to multiple social platforms with one click. To start sharing, configure your Facebook and Twitter accounts by clicking on the buttons to the right. You can also configure from the 'Share All' Share Charm.</value>
+  </data>
+  <data name="PP1.Text" xml:space="preserve">
+    <value>This Privacy Policy covers your use of the 'Share All' Windows 8 application. The application does not collect, store, or share any personal information, or anything related to your device. We do not collect any statistics, trends, neither do we track user movements.</value>
+  </data>
+  <data name="PP2.Text" xml:space="preserve">
+    <value>The application allows you to post messages or links to your various social network accounts. More specifically the app allows you to post to your Facebook and Twitter accounts. We do not collect or store your Facebook or Twitter account credentials. We redirect your to those sites so you can authorize the 'Share All' app to post to those sites. When you enter your social network credentials, you are doing so at their sites.</value>
+  </data>
+  <data name="PP3.Text" xml:space="preserve">
+    <value>Your email credentials are stored on your machine using industry standard 'Advanced Encryption Standard (AES). Your email credentials are only sent to the email providers - Gmail, Hotmail or Yahoo.</value>
+  </data>
+  <data name="PP4.Text" xml:space="preserve">
+    <value>We will never ask you to provide us with your account usernames/ passwords. We do not collect your email or any other information.</value>
+  </data>
+  <data name="Privacy Policy" xml:space="preserve">
+    <value>Privacy Policy</value>
+  </data>
+  <data name="PrivacyPolicy.Text" xml:space="preserve">
+    <value>Privacy Policy</value>
+  </data>
+  <data name="Test Email" xml:space="preserve">
+    <value>Test Email</value>
+  </data>
+  <data name="This is a test email from Share All" xml:space="preserve">
+    <value>This is a test email from Share All.</value>
+  </data>
+  <data name="AppName" xml:space="preserve">
+    <value>Share All</value>
+  </data>
+  <data name="Password and Verify Password should be same" xml:space="preserve">
+    <value>Password and Verify Password should be same</value>
+  </data>
+  <data name="Please enter the Email" xml:space="preserve">
+    <value>Please enter the Email.</value>
+  </data>
+  <data name="Please enter the valid Email" xml:space="preserve">
+    <value>Please enter the valid Email.</value>
+  </data>
+  <data name="Please select the Domain" xml:space="preserve">
+    <value>Please select the Domain.</value>
+  </data>
+  <data name="This is the description of the message" xml:space="preserve">
+    <value>This is the description of the message.</value>
+  </data>
+  <data name="This is the text to share" xml:space="preserve">
+    <value>This is the text to share.</value>
+  </data>
+  <data name="Your link title goes here" xml:space="preserve">
+    <value>Your link title goes here.</value>
+  </data>
+  <data name="Please enter the Email which exists in the domain you selected" xml:space="preserve">
+    <value>Please enter the Email which exists in the domain you selected.</value>
+  </data>
+  <data name="Email settings saved" xml:space="preserve">
+    <value>Email settings saved.</value>
+  </data>
+  <data name="Unable to send Email now" xml:space="preserve">
+    <value>Unable to send Email now.</value>
+  </data>
+  <data name="Twitter_Error_422" xml:space="preserve">
+    <value>Could not post image to Twitter. Try again later.</value>
+  </data>
+  <data name="Could not post to Twitter" xml:space="preserve">
+    <value>Could not post to Twitter.</value>
+  </data>
+  <data name="Twitter_Error_401" xml:space="preserve">
+    <value>Could not post to Twitter because of authentication issue. Please click Settings icon and authorize app.</value>
+  </data>
+  <data name="Twitter_Error_500To504" xml:space="preserve">
+    <value>Could not post to Twitter. It seems to be overloaded. Try again later.</value>
+  </data>
+  <data name="Could not post to Twitter_Please click on Settings icon and authorize the app" xml:space="preserve">
+    <value>Could not post to Twitter. Please click on Settings icon and authorize the app.</value>
+  </data>
+  <data name="Could not post to Twitter_Try again later" xml:space="preserve">
+    <value>Could not post to Twitter. Try again later.</value>
+  </data>
+  <data name="Mail was sent successfully" xml:space="preserve">
+    <value>Mail was sent successfully.</value>
+  </data>
+  <data name="Please enter Email to use for sending" xml:space="preserve">
+    <value>Please enter Email to use for sending</value>
+  </data>
+  <data name="Please enter valid Email" xml:space="preserve">
+    <value>Please enter valid Email</value>
+  </data>
+  <data name="Post to Facebook failed" xml:space="preserve">
+    <value>Post to Facebook failed.</value>
+  </data>
+  <data name="Post to Facebook failed_Message already exists on Facebook" xml:space="preserve">
+    <value>Post to Facebook failed. Message already exists on Facebook.</value>
+  </data>
+  <data name="Facebook_Authorize_Error" xml:space="preserve">
+    <value>Post to Facebook failed. Please click on Settings icon and authorize the app before trying again.</value>
+  </data>
+  <data name="Post to Facebook failed_Please try again" xml:space="preserve">
+    <value>Post to Facebook failed. Please try again.</value>
+  </data>
+  <data name="Posted to Facebook" xml:space="preserve">
+    <value>Posted to Facebook.</value>
+  </data>
+  <data name="Posted to Twitter" xml:space="preserve">
+    <value>Posted to Twitter.</value>
+  </data>
+  <data name="The post was rejected by Twitter" xml:space="preserve">
+    <value>The post was rejected by Twitter.</value>
+  </data>
+  <data name="To Emails (separate with comma, space or semi colon)" xml:space="preserve">
+    <value>To Emails (separate with comma, space or semi colon)</value>
+  </data>
+  <data name="Email_Failure" xml:space="preserve">
+    <value>Unable to send mail. Check your 'To Email' address or 'Email settings'</value>
+  </data>
+  <data name="Hotmail_Domain_Failure" xml:space="preserve">
+    <value>For Hotmail, valid emails are hotmail.com, msn.com and live.com</value>
+  </data>
+  <data name="Unable to send mail now" xml:space="preserve">
+    <value>Unable to send mail now.</value>
+  </data>
+  <data name="Link" xml:space="preserve">
+    <value>Link</value>
+  </data>
+</root>
