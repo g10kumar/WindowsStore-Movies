@@ -80,8 +80,7 @@
                     <TextBlock Text="{Binding ElementName=title, Path=Text}" FontSize="18" TextWrapping="Wrap" x:Name="title"/>
                 </syncfusion:SfHubTile.Title>
                 <syncfusion:SfHubTile.SecondaryContent>
-                    <TextBlock Text="{Binding ElementName=secondarytitle, Path=Text}" FontSize="18" TextWrapping="Wrap" x:Name="secondarytitle" Margin="5,5,5,5" />
-                    <!--<Image Source="/Assets/Logo.png" />-->
+                    <TextBlock Text="{Binding ElementName=secondarytitle, Path=Text}" FontSize="18" TextWrapping="Wrap" x:Name="secondarytitle" Margin="5,5,5,5" />                    
                 </syncfusion:SfHubTile.SecondaryContent>
             </syncfusion:SfHubTile>
             <!--<Input:TextBoxExt Text="" x:Name="title" Visibility="Collapsed"/>

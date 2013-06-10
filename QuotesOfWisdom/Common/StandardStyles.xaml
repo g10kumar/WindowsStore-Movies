@@ -226,6 +226,14 @@
         </Setter>
     </Style>
 
+    <Style x:Key="dynamicStyle" TargetType="Grid">
+        <Setter Property="Background">
+            <Setter.Value>
+                <ImageBrush ImageSource="Assets/background/drop3.jpg" />
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
     <!---->
     
     <!-- Style for back button in settings page -->

@@ -7,18 +7,23 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:as="using:QuotesOfWisdom.Common"
     mc:Ignorable="d" LayoutUpdated="LayoutRoot_LayoutUpdated"
-    d:DesignHeight="740"
+    d:DesignHeight="900"
     d:DesignWidth="400">
 
     <UserControl.Resources>
         <as:AppSettings x:Key="appSettings"></as:AppSettings>
     </UserControl.Resources>
 
-    <Border BorderBrush="Black" BorderThickness="1,0,0,0">
-        <Grid x:Name="LayoutRoot" Height="1000" VerticalAlignment="Stretch">
+    <Border BorderBrush="Black" BorderThickness="1,0,0,0" ScrollViewer.VerticalScrollBarVisibility="Visible">
+        <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Visible">
+            <StackPanel Height="900">
+        <Grid x:Name="LayoutRoot" Height="900" ScrollViewer.VerticalScrollBarVisibility="Visible" VerticalAlignment="Stretch">
             <!-- Root grid definition -->
             <Grid.RowDefinitions>
                 <RowDefinition Height="80" />
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="80"/>
                 <RowDefinition Height="80"/>
                 <RowDefinition Height="80"/>
                 <RowDefinition Height="80"/>
@@ -140,10 +145,26 @@
             <Button x:Name="btnRedPaper" Click="btnRedPaper_Click" BorderBrush="Transparent" Background="Transparent" Grid.ColumnSpan="2" Grid.Row="6" Grid.Column="0">
                 <Image HorizontalAlignment="Center" VerticalAlignment="Top" Source="Assets/background/paper1_sm.jpg" Height="100" Width="150" Margin="0,0,0,0" />
             </Button>
+            <Button x:Name="btndynamic1" BorderBrush="Yellow" Background="Transparent" Grid.Row="7" Grid.Column="0">
+                <Image HorizontalAlignment="Center" VerticalAlignment="Top" Source="http://pcdn.500px.net/28502501/c7c96c99e199d050f3379de6e504d9d558d60248/5.jpg" Height="100" Width="150" Margin="0,0,0,0" />
+            </Button>
+            <RadioButton Grid.Row="7" Click="radioButton0_Checked" Grid.Column="1" Height="100" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,0,0,0" x:Name="radioButton0" GroupName="BkgImageSouce"/>
             <!--<Button Content="Select Background Image" x:Name="btnCustomImage" Click="btnCustomImage_Click" BorderBrush="White" Grid.ColumnSpan="2" Background="Transparent" Grid.Row="7" Grid.Column="0" Margin="16,21,0,21" RenderTransformOrigin="0.784,0.539" />-->
             <!--</Grid>-->
-            <TextBlock Grid.Row="7" Grid.Column="0" Text="Auto-play Time (seconds)" TextWrapping="Wrap" Style="{StaticResource SettingsTextStyle}"></TextBlock>
-            <Slider Name="autoPlaySlider" Grid.Row="7" Grid.Column="1" Margin="20,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Left" Minimum="5" Maximum="300" Width="200" Value="{Binding Source={StaticResource appSettings}, Path=AutoPlay, Mode=TwoWay}"/>
+            <Button x:Name="btndynamic2" BorderBrush="Red" Background="Transparent" Grid.Row="8" Grid.Column="0">
+                <Image HorizontalAlignment="Center" VerticalAlignment="Top" Source="http://pcdn.500px.net/31534509/8308c7932ff69d2e1dce153b5ab1a3102e0d186f/5.jpg" Height="100" Width="150" Margin="0,0,0,0" />
+            </Button>
+            <RadioButton Grid.Row="8" Click="radioButton1_Checked" Grid.Column="1" Height="100" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,0,0,0" x:Name="radioButton1" GroupName="BkgImageSouce"/>
+
+
+            <Button x:Name="btndynamic3" BorderBrush="Green" Background="Transparent" Grid.Row="9" Grid.Column="0">
+                <Image HorizontalAlignment="Center" VerticalAlignment="Top" Source="http://pcdn.500px.net/26985727/0d21887a29303788c139e74b04ac679be56a0c8d/5.jpg" Height="100" Width="150" Margin="0,0,0,0" />
+            </Button>
+            <RadioButton Grid.Row="9" Click="radioButton2_Checked" Grid.Column="1" Height="100" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,0,0,0" x:Name="radioButton2" GroupName="BkgImageSouce"/>
+            <TextBlock Grid.Row="10" Grid.Column="0" Text="Auto-play Time (seconds)" TextWrapping="Wrap" Style="{StaticResource SettingsTextStyle}"></TextBlock>
+            <Slider Name="autoPlaySlider" Grid.Row="10" Grid.Column="1" Margin="20,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Left" Minimum="5" Maximum="300" Width="200" Value="{Binding Source={StaticResource appSettings}, Path=AutoPlay, Mode=TwoWay}"/>
         </Grid>
+            </StackPanel>
+        </ScrollViewer>
     </Border>
 </UserControl>

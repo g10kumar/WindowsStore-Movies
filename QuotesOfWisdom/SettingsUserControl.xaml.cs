@@ -21,10 +21,29 @@ using QuotesOfWisdom.Common;
 //using System.Threading.Tasks;
 //using Windows.UI.Xaml.Media.Imaging;
 
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
+using System.Runtime.CompilerServices;
+using Windows.UI;
+using Windows.UI.Xaml.Media.Imaging;
 namespace QuotesOfWisdom
 {
-    public sealed partial class SettingsUserControl : UserControl
+    public sealed partial class SettingsUserControl : UserControl, INotifyPropertyChanged
     {
+        private Style _backGroundStyle;
+        public Style BackGroundStyle
+        {
+            get { return this._backGroundStyle; }
+
+            set
+            {
+                if (value == this._backGroundStyle) return;
+                this._backGroundStyle = value;
+                NotifyPropertyChanged();
+            }
+        }
+
         #region Objects
 
         //string fileToken = "";
@@ -231,6 +250,59 @@ namespace QuotesOfWisdom
             {
                 Windows.UI.Popups.MessageDialog dialog = new Windows.UI.Popups.MessageDialog("Oops! There was a problem. Please try again.");
                 dialog.ShowAsync();
+            }
+        }
+
+        private void radioButton0_Checked(object sender, RoutedEventArgs e)
+        {
+            BackgroundChangedDynamically();
+        }
+        private void radioButton1_Checked(object sender, RoutedEventArgs e)
+        {
+            BackgroundChangedDynamically();
+        }
+
+        private void radioButton2_Checked(object sender, RoutedEventArgs e)
+        {
+            BackgroundChangedDynamically();
+        }
+
+        void BackgroundChangedDynamically()
+        {
+            BackGroundStyle = Application.Current.Resources["dynamicStyle"] as Style;
+
+            var res = new ResourceDictionary { Source = new Uri("ms-appx:///Common/StandardStyles.xaml", UriKind.Absolute) };
+
+            var style = res["dynamicStyle"] as Style;
+
+            style.Setters.RemoveAt(0); // if it is the first item otherwise for more accurat removal se below :D
+
+            foreach (var item in style.Setters.Cast<Setter>().Where(item => item.Property == BackgroundProperty))
+                style.Setters.Remove(item);
+
+            ImageBrush ib = new ImageBrush();
+
+            BitmapImage bi = new BitmapImage();
+            bi.UriSource = new Uri(this.BaseUri, "http://www.daksatech.com/images/2.jpg");
+            ib.ImageSource = bi;
+
+            //ib.ImageSource = "http://pcdn.500px.net/28502501/c7c96c99e199d050f3379de6e504d9d558d60248/5.jpg";
+
+            style.Setters.Add(new Setter(Grid.BackgroundProperty, ib));
+            //style.Setters.Add(new Setter(Grid.BackgroundProperty, new SolidColorBrush(Colors.Red)));
+
+            BackGroundStyle = style;
+
+            LayoutRoot.Style = style;
+            //LayoutRoot.Background = ib;
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        private void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
             }
         }
     }
