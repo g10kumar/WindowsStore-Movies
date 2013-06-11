@@ -119,22 +119,42 @@ namespace QuotesOfWisdom
         {
             ChangeWindowState();
 
-            if (ApplicationData.Current.RoamingSettings.Values["Settings"] != null)
+            #region Commented on 11.06.2013
+            //if (ApplicationData.Current.RoamingSettings.Values["Settings"] != null)
+            //{
+            //    // Initialize the Radio button from roaming settings
+            //    if (ApplicationData.Current.RoamingSettings.Values.ContainsKey("Settings"))
+            //    {
+            //        LayoutRoot.Style = App.Current.Resources[(string)ApplicationData.Current.RoamingSettings.Values["Settings"].ToString()] as Style;
+            //    }
+            //    else
+            //    {
+            //        LayoutRoot.Style = App.Current.Resources["layoutBlockStyle4"] as Style;
+            //    }
+
+            //}
+            //else
+            //{
+            //    LayoutRoot.Style = App.Current.Resources["layoutBlockStyle4"] as Style;
+            //}
+            #endregion
+
+            if (ApplicationData.Current.RoamingSettings.Values.ContainsKey("Settings"))
             {
-                // Initialize the Radio button from roaming settings
-                if (ApplicationData.Current.RoamingSettings.Values.ContainsKey("Settings"))
+                if ((string)ApplicationData.Current.RoamingSettings.Values["Settings"].ToString() != "dynamicStyle")
                 {
                     LayoutRoot.Style = App.Current.Resources[(string)ApplicationData.Current.RoamingSettings.Values["Settings"].ToString()] as Style;
+
                 }
                 else
                 {
-                    LayoutRoot.Style = App.Current.Resources["layoutBlockStyle4"] as Style;
+                    Utilities.dynamicBackgroundChange(LayoutRoot);
                 }
-
             }
             else
             {
                 LayoutRoot.Style = App.Current.Resources["layoutBlockStyle4"] as Style;
+
             }
         }
 

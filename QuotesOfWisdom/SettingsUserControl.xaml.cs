@@ -43,7 +43,7 @@ namespace QuotesOfWisdom
                 NotifyPropertyChanged();
             }
         }
-
+        
         #region Objects
 
         //string fileToken = "";
@@ -89,15 +89,16 @@ namespace QuotesOfWisdom
         /// </summary>
         private void ChangeBackground()
         {
+            #region Commented on 11.06.2013
             //// Initialize the Radio button from roaming settings
-            if (ApplicationData.Current.RoamingSettings.Values.ContainsKey("Settings"))
-            {
-                LayoutRoot.Style = App.Current.Resources[(string)ApplicationData.Current.RoamingSettings.Values["Settings"].ToString()] as Style;
-            }
-            else
-            {
-                LayoutRoot.Style = App.Current.Resources["layoutBlockStyle6"] as Style;
-            }
+            //if (ApplicationData.Current.RoamingSettings.Values.ContainsKey("Settings"))
+            //{
+            //    LayoutRoot.Style = App.Current.Resources[(string)ApplicationData.Current.RoamingSettings.Values["Settings"].ToString()] as Style;
+            //}
+            //else
+            //{
+            //    LayoutRoot.Style = App.Current.Resources["layoutBlockStyle6"] as Style;
+            //}
 
             #region Custom Image selection
             // Initialize the Radio button from roaming settings
@@ -157,6 +158,25 @@ namespace QuotesOfWisdom
 
             //}
             #endregion
+            #endregion
+
+            if (ApplicationData.Current.RoamingSettings.Values.ContainsKey("Settings"))
+            {
+                if ((string)ApplicationData.Current.RoamingSettings.Values["Settings"].ToString() != "dynamicStyle")
+                {
+                    LayoutRoot.Style = App.Current.Resources[(string)ApplicationData.Current.RoamingSettings.Values["Settings"].ToString()] as Style;
+                    
+                }
+                else
+                {
+                    Utilities.dynamicBackgroundChange(LayoutRoot);
+                }
+            }
+            else
+            {
+                LayoutRoot.Style = App.Current.Resources["layoutBlockStyle4"] as Style;
+
+            }
         }        
 
         #region Click events for Buttons
@@ -255,20 +275,22 @@ namespace QuotesOfWisdom
 
         private void radioButton0_Checked(object sender, RoutedEventArgs e)
         {
-            BackgroundChangedDynamically();
+            BackgroundChangedDynamically(radioButton0);
         }
         private void radioButton1_Checked(object sender, RoutedEventArgs e)
         {
-            BackgroundChangedDynamically();
+            BackgroundChangedDynamically(radioButton1);
         }
 
         private void radioButton2_Checked(object sender, RoutedEventArgs e)
         {
-            BackgroundChangedDynamically();
+            BackgroundChangedDynamically(radioButton2);
         }
 
-        void BackgroundChangedDynamically()
+        void BackgroundChangedDynamically(RadioButton rb)
         {
+            #region Commented
+            /* 
             BackGroundStyle = Application.Current.Resources["dynamicStyle"] as Style;
 
             var res = new ResourceDictionary { Source = new Uri("ms-appx:///Common/StandardStyles.xaml", UriKind.Absolute) };
@@ -295,6 +317,12 @@ namespace QuotesOfWisdom
 
             LayoutRoot.Style = style;
             //LayoutRoot.Background = ib;
+             * */
+            #endregion
+
+            ApplicationData.Current.RoamingSettings.Values["Settings"] = "dynamicStyle";
+            ApplicationData.Current.RoamingSettings.Values["ImageURLForDynamicStyle"] = rb.Tag.ToString();
+            Utilities.dynamicBackgroundChange(LayoutRoot);
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
