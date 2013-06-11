@@ -11,6 +11,7 @@ using QuotesOfWisdom.Data;
 using SQLite;
 using Windows.ApplicationModel.DataTransfer;
 using System.Collections.ObjectModel;
+using QuotesOfWisdom.Common;
 //using System.IO;
 //using Windows.Foundation.Collections;
 //using Windows.UI.Xaml.Controls.Primitives;
@@ -86,46 +87,66 @@ namespace QuotesOfWisdom
         /// </summary>
         private void ChangeBackground()
         {
-            if (ApplicationData.Current.RoamingSettings.Values["Settings"] != null)
+            #region Commented on 11.06.2013
+            //if (ApplicationData.Current.RoamingSettings.Values["Settings"] != null)
+            //{
+            //    if (ApplicationData.Current.RoamingSettings.Values.ContainsKey("Settings"))
+            //    {
+            //        LayoutRoot.Style = App.Current.Resources[(string)ApplicationData.Current.RoamingSettings.Values["Settings"].ToString()] as Style;
+            //    }
+            //    else
+            //    {
+            //        LayoutRoot.Style = App.Current.Resources["layoutBlockStyle4"] as Style;
+            //    }
+
+            //    #region Custom Image Selection
+            //    /*
+            //    if (ApplicationData.Current.RoamingSettings.Values["Settings"].ToString() != "CustomImage")
+            //    {
+            //        LayoutRoot.Style = App.Current.Resources[(string)ApplicationData.Current.RoamingSettings.Values["Settings"].ToString()] as Style;
+            //    }
+            //    else
+            //    {
+            //        StorageFile file;
+
+            //        file = await Windows.Storage.AccessCache.StorageApplicationPermissions.FutureAccessList.GetFileAsync(ApplicationData.Current.RoamingSettings.Values["fileToken"].ToString());
+
+            //        ImageBrush ib = new ImageBrush();
+
+            //        BitmapImage src = new BitmapImage();
+            //        src.SetSource(await file.OpenAsync(FileAccessMode.Read));
+
+
+            //        ib.ImageSource = src;
+
+            //        LayoutRoot.Background = ib;
+
+            //    }
+            //     * */
+            //    #endregion
+            //}
+            //else
+            //{
+            //    LayoutRoot.Style = App.Current.Resources["layoutBlockStyle4"] as Style;
+            //}
+            #endregion
+
+            if (ApplicationData.Current.RoamingSettings.Values.ContainsKey("Settings"))
             {
-                if (ApplicationData.Current.RoamingSettings.Values.ContainsKey("Settings"))
+                if ((string)ApplicationData.Current.RoamingSettings.Values["Settings"].ToString() != "dynamicStyle")
                 {
                     LayoutRoot.Style = App.Current.Resources[(string)ApplicationData.Current.RoamingSettings.Values["Settings"].ToString()] as Style;
+
                 }
                 else
                 {
-                    LayoutRoot.Style = App.Current.Resources["layoutBlockStyle4"] as Style;
+                    Utilities.dynamicBackgroundChange(LayoutRoot);
                 }
-
-                #region Custom Image Selection
-                /*
-                if (ApplicationData.Current.RoamingSettings.Values["Settings"].ToString() != "CustomImage")
-                {
-                    LayoutRoot.Style = App.Current.Resources[(string)ApplicationData.Current.RoamingSettings.Values["Settings"].ToString()] as Style;
-                }
-                else
-                {
-                    StorageFile file;
-
-                    file = await Windows.Storage.AccessCache.StorageApplicationPermissions.FutureAccessList.GetFileAsync(ApplicationData.Current.RoamingSettings.Values["fileToken"].ToString());
-
-                    ImageBrush ib = new ImageBrush();
-
-                    BitmapImage src = new BitmapImage();
-                    src.SetSource(await file.OpenAsync(FileAccessMode.Read));
-
-
-                    ib.ImageSource = src;
-
-                    LayoutRoot.Background = ib;
-
-                }
-                 * */
-                #endregion
             }
             else
             {
                 LayoutRoot.Style = App.Current.Resources["layoutBlockStyle4"] as Style;
+
             }
         }
 

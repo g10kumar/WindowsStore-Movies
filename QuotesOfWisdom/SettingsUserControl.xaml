@@ -17,51 +17,51 @@
     <Border BorderBrush="Black" BorderThickness="1,0,0,0" ScrollViewer.VerticalScrollBarVisibility="Visible">
         <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Visible">
             <StackPanel Height="900">
-        <Grid x:Name="LayoutRoot" Height="900" ScrollViewer.VerticalScrollBarVisibility="Visible" VerticalAlignment="Stretch">
-            <!-- Root grid definition -->
-            <Grid.RowDefinitions>
-                <RowDefinition Height="80" />
-                <RowDefinition Height="80"/>
-                <RowDefinition Height="80"/>
-                <RowDefinition Height="80"/>
-                <RowDefinition Height="80"/>
-                <RowDefinition Height="80"/>
-                <RowDefinition Height="80"/>
-                <RowDefinition Height="80"/>
-                <RowDefinition Height="80"/>
-                <RowDefinition Height="80"/>
-                <RowDefinition Height="80"/>
-                <RowDefinition Height="120"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="200" />
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
-            <!-- Header area for panel -->
-            <Grid Grid.Row="0" Grid.ColumnSpan="2">
-                <Grid Margin="30,32,17,13">
-                    <Grid.Transitions>
-                        <TransitionCollection>
-                            <EntranceThemeTransition FromHorizontalOffset="50" />
-                        </TransitionCollection>
-                    </Grid.Transitions>
+                <Grid x:Name="LayoutRoot" Height="900" ScrollViewer.VerticalScrollBarVisibility="Visible" VerticalAlignment="Stretch">
+                    <!-- Root grid definition -->
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="80" />
+                        <RowDefinition Height="80"/>
+                        <RowDefinition Height="80"/>
+                        <RowDefinition Height="80"/>
+                        <RowDefinition Height="80"/>
+                        <RowDefinition Height="80"/>
+                        <RowDefinition Height="80"/>
+                        <RowDefinition Height="80"/>
+                        <RowDefinition Height="80"/>
+                        <RowDefinition Height="80"/>
+                        <RowDefinition Height="80"/>
+                        <RowDefinition Height="120"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
 
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="30" />
+                        <ColumnDefinition Width="200" />
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
-                    
-                    <Button Click="OnBackButtonClicked" Margin="0,3,0,0" Grid.Column="0" Style="{StaticResource SettingsBackButtonStyle}" HorizontalAlignment="Left" />
-                    <TextBlock Margin="10,0,0,0" Grid.Column="1" FontFamily="Segoe UI" FontWeight="SemiLight" FontSize="26.6667" Text="Settings" HorizontalAlignment="Left" />
-                    
-                </Grid>
+                    <!-- Header area for panel -->
+                    <Grid Grid.Row="0" Grid.ColumnSpan="2">
+                        <Grid Margin="30,32,17,13">
+                            <Grid.Transitions>
+                                <TransitionCollection>
+                                    <EntranceThemeTransition FromHorizontalOffset="50" />
+                                </TransitionCollection>
+                            </Grid.Transitions>
 
-            </Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="30" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
 
-            <!-- Settings Panel Content -->
-            <!--<Rectangle Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Top" Height="100" Width="150" Margin="0,0,0,0">
+                            <Button Click="OnBackButtonClicked" Margin="0,3,0,0" Grid.Column="0" Style="{StaticResource SettingsBackButtonStyle}" HorizontalAlignment="Left" />
+                            <TextBlock Margin="10,0,0,0" Grid.Column="1" FontFamily="Segoe UI" FontWeight="SemiLight" FontSize="26.6667" Text="Settings" HorizontalAlignment="Left" />
+
+                        </Grid>
+
+                    </Grid>
+
+                    <!-- Settings Panel Content -->
+                    <!--<Rectangle Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Top" Height="100" Width="150" Margin="0,0,0,0">
                 <Rectangle.Fill>
                     <SolidColorBrush Color="Blue" />
                 </Rectangle.Fill>
@@ -84,7 +84,7 @@
             <RadioButton Grid.Row="5" Grid.Column="1" Content="Leaf" Height="80" HorizontalAlignment="Left" Margin="0,0,0,0" x:Name="radioButton4" VerticalAlignment="Top" GroupName="BkgImageSouce" Click="radioButton4_Checked" />
             <RadioButton Grid.Row="6" Grid.Column="1" Content="Tulip Petal" Height="80" HorizontalAlignment="Left" Margin="0,0,0,0" x:Name="radioButton5" VerticalAlignment="Top" GroupName="BkgImageSouce" Click="radioButton5_Checked" />
             <RadioButton Grid.Row="7" Grid.Column="1" Content="Red Paper" Height="80" HorizontalAlignment="Left" Margin="0,0,0,0" x:Name="radioButton6" VerticalAlignment="Top" GroupName="BkgImageSouce" Click="radioButton6_Checked" />-->
-            <!--<Button x:Name="btnBlue" Click="btnBlue_Click" BorderBrush="Transparent" Background="Transparent" Grid.ColumnSpan="2" Grid.Row="1" Grid.Column="0">
+                    <!--<Button x:Name="btnBlue" Click="btnBlue_Click" BorderBrush="Transparent" Background="Transparent" Grid.ColumnSpan="2" Grid.Row="1" Grid.Column="0">
                 <Rectangle HorizontalAlignment="Center" VerticalAlignment="Top" Height="100" Width="150" Margin="0,0,0,0">
                     <Rectangle.Fill>
                         <SolidColorBrush Color="Blue" />
@@ -98,72 +98,72 @@
                     </Rectangle.Fill>
                 </Rectangle>
             </Button>-->
-            <StackPanel Orientation="Vertical" Grid.Row="1">
-                <TextBlock Margin="10,0,0,0" FontFamily="Segoe UI" FontWeight="SemiLight" FontSize="18" Text="Change Background" HorizontalAlignment="Left" />
+                    <StackPanel Orientation="Vertical" Grid.Row="1">
+                        <TextBlock Margin="10,0,0,0" FontFamily="Segoe UI" FontWeight="SemiLight" FontSize="18" Text="Change Background" HorizontalAlignment="Left" />
 
-                <ComboBox x:Name="colorPicker" Margin="20,0,0,0" Grid.Column="0" Width="150" HorizontalAlignment="Left" VerticalAlignment="Top" SelectionChanged="colorPicker_SelectionChanged" ItemContainerStyle="{StaticResource colorComboBox}">
-                    <ComboBoxItem Background="#f2b100"></ComboBoxItem>
-                    <ComboBoxItem Background="#76b800"></ComboBoxItem>
-                    <ComboBoxItem Background="#2471ea"></ComboBoxItem>
-                    <ComboBoxItem Background="#ac0f3b"></ComboBoxItem>
-                    <ComboBoxItem Background="#632f00"></ComboBoxItem>
-                    <ComboBoxItem Background="#ae1c00"></ComboBoxItem>
-                    <ComboBoxItem Background="#c0004e"></ComboBoxItem>
-                    <ComboBoxItem Background="#7100ab"></ComboBoxItem>
-                    <ComboBoxItem Background="#4516b3"></ComboBoxItem>
-                    <ComboBoxItem Background="#0069c0"></ComboBoxItem>
-                    <ComboBoxItem Background="#004d60"></ComboBoxItem>
-                    <ComboBoxItem Background="#179700"></ComboBoxItem>
-                    <ComboBoxItem Background="#00c13f"></ComboBoxItem>
-                    <ComboBoxItem Background="#fd961b"></ComboBoxItem>
-                    <ComboBoxItem Background="#fe2d11"></ComboBoxItem>
-                    <ComboBoxItem Background="#fe1c76"></ComboBoxItem>
-                    <ComboBoxItem Background="#a83efd"></ComboBoxItem>
-                    <ComboBoxItem Background="#1dacfd"></ComboBoxItem>
-                    <ComboBoxItem Background="#55c4fe"></ComboBoxItem>
-                    <ComboBoxItem Background="#00d7cb"></ComboBoxItem>
-                    <ComboBoxItem Background="#90d000"></ComboBoxItem>
-                    <ComboBoxItem Background="#dfb500"></ComboBoxItem>
-                    <ComboBoxItem Background="#e064b7"></ComboBoxItem>
-                    <ComboBoxItem Background="#00a4a4"></ComboBoxItem>
-                    <ComboBoxItem Background="#fd7b21"></ComboBoxItem>
-                </ComboBox>
-            </StackPanel>
+                        <ComboBox x:Name="colorPicker" Margin="20,0,0,0" Grid.Column="0" Width="150" HorizontalAlignment="Left" VerticalAlignment="Top" SelectionChanged="colorPicker_SelectionChanged" ItemContainerStyle="{StaticResource colorComboBox}">
+                            <ComboBoxItem Background="#f2b100"></ComboBoxItem>
+                            <ComboBoxItem Background="#76b800"></ComboBoxItem>
+                            <ComboBoxItem Background="#2471ea"></ComboBoxItem>
+                            <ComboBoxItem Background="#ac0f3b"></ComboBoxItem>
+                            <ComboBoxItem Background="#632f00"></ComboBoxItem>
+                            <ComboBoxItem Background="#ae1c00"></ComboBoxItem>
+                            <ComboBoxItem Background="#c0004e"></ComboBoxItem>
+                            <ComboBoxItem Background="#7100ab"></ComboBoxItem>
+                            <ComboBoxItem Background="#4516b3"></ComboBoxItem>
+                            <ComboBoxItem Background="#0069c0"></ComboBoxItem>
+                            <ComboBoxItem Background="#004d60"></ComboBoxItem>
+                            <ComboBoxItem Background="#179700"></ComboBoxItem>
+                            <ComboBoxItem Background="#00c13f"></ComboBoxItem>
+                            <ComboBoxItem Background="#fd961b"></ComboBoxItem>
+                            <ComboBoxItem Background="#fe2d11"></ComboBoxItem>
+                            <ComboBoxItem Background="#fe1c76"></ComboBoxItem>
+                            <ComboBoxItem Background="#a83efd"></ComboBoxItem>
+                            <ComboBoxItem Background="#1dacfd"></ComboBoxItem>
+                            <ComboBoxItem Background="#55c4fe"></ComboBoxItem>
+                            <ComboBoxItem Background="#00d7cb"></ComboBoxItem>
+                            <ComboBoxItem Background="#90d000"></ComboBoxItem>
+                            <ComboBoxItem Background="#dfb500"></ComboBoxItem>
+                            <ComboBoxItem Background="#e064b7"></ComboBoxItem>
+                            <ComboBoxItem Background="#00a4a4"></ComboBoxItem>
+                            <ComboBoxItem Background="#fd7b21"></ComboBoxItem>
+                        </ComboBox>
+                    </StackPanel>
 
-            <Button x:Name="btnRosePetals" Click="btnRosePetals_Click" BorderBrush="Transparent" Background="Transparent" Grid.ColumnSpan="2" Grid.Row="2" Grid.Column="0">
-                <Image  HorizontalAlignment="Center" VerticalAlignment="Top" Source="Assets/background/drop1_sm.jpg" Height="100" Width="150" Margin="0,0,0,0" />
-            </Button>
-            <Button x:Name="btnBeerMug" Click="btnBeerMug_Click" BorderBrush="Transparent" Background="Transparent" Grid.ColumnSpan="2" Grid.Row="3" Grid.Column="0">
-                <Image HorizontalAlignment="Center" VerticalAlignment="Top" Source="Assets/background/drop2_sm.jpg" Height="100" Width="150" Margin="0,0,0,0" />
-            </Button>
-            <Button x:Name="btnLeaf" Click="btnLeaf_Click" BorderBrush="Transparent" Background="Transparent" Grid.ColumnSpan="2" Grid.Row="4" Grid.Column="0">
-                <Image  HorizontalAlignment="Center" VerticalAlignment="Top" Source="Assets/background/drop3_sm.jpg" Height="100" Width="150"  Margin="0,0,0,0" />
-            </Button>
-            <Button x:Name="btnTulipPetal" Click="btnTulipPetal_Click" BorderBrush="Transparent" Background="Transparent" Grid.ColumnSpan="2" Grid.Row="5" Grid.Column="0">
-                <Image  HorizontalAlignment="Center" VerticalAlignment="Top" Source="Assets/background/drop4_sm.jpg" Height="100" Width="150" Margin="0,0,0,0" />
-            </Button>
-            <Button x:Name="btnRedPaper" Click="btnRedPaper_Click" BorderBrush="Transparent" Background="Transparent" Grid.ColumnSpan="2" Grid.Row="6" Grid.Column="0">
-                <Image HorizontalAlignment="Center" VerticalAlignment="Top" Source="Assets/background/paper1_sm.jpg" Height="100" Width="150" Margin="0,0,0,0" />
-            </Button>
-            <Button x:Name="btndynamic1" BorderBrush="Yellow" Background="Transparent" Grid.Row="7" Grid.Column="0">
-                <Image HorizontalAlignment="Center" VerticalAlignment="Top" Source="http://pcdn.500px.net/28502501/c7c96c99e199d050f3379de6e504d9d558d60248/5.jpg" Height="100" Width="150" Margin="0,0,0,0" />
-            </Button>
-            <RadioButton Grid.Row="7" Click="radioButton0_Checked" Grid.Column="1" Height="100" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,0,0,0" x:Name="radioButton0" GroupName="BkgImageSouce"/>
-            <!--<Button Content="Select Background Image" x:Name="btnCustomImage" Click="btnCustomImage_Click" BorderBrush="White" Grid.ColumnSpan="2" Background="Transparent" Grid.Row="7" Grid.Column="0" Margin="16,21,0,21" RenderTransformOrigin="0.784,0.539" />-->
-            <!--</Grid>-->
-            <Button x:Name="btndynamic2" BorderBrush="Red" Background="Transparent" Grid.Row="8" Grid.Column="0">
-                <Image HorizontalAlignment="Center" VerticalAlignment="Top" Source="http://pcdn.500px.net/31534509/8308c7932ff69d2e1dce153b5ab1a3102e0d186f/5.jpg" Height="100" Width="150" Margin="0,0,0,0" />
-            </Button>
-            <RadioButton Grid.Row="8" Click="radioButton1_Checked" Grid.Column="1" Height="100" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,0,0,0" x:Name="radioButton1" GroupName="BkgImageSouce"/>
+                    <Button x:Name="btnRosePetals" Click="btnRosePetals_Click" BorderBrush="Transparent" Background="Transparent" Grid.ColumnSpan="2" Grid.Row="2" Grid.Column="0">
+                        <Image  HorizontalAlignment="Center" VerticalAlignment="Top" Source="Assets/background/drop1_sm.jpg" Height="100" Width="150" Margin="0,0,0,0" />
+                    </Button>
+                    <Button x:Name="btnBeerMug" Click="btnBeerMug_Click" BorderBrush="Transparent" Background="Transparent" Grid.ColumnSpan="2" Grid.Row="3" Grid.Column="0">
+                        <Image HorizontalAlignment="Center" VerticalAlignment="Top" Source="Assets/background/drop2_sm.jpg" Height="100" Width="150" Margin="0,0,0,0" />
+                    </Button>
+                    <Button x:Name="btnLeaf" Click="btnLeaf_Click" BorderBrush="Transparent" Background="Transparent" Grid.ColumnSpan="2" Grid.Row="4" Grid.Column="0">
+                        <Image  HorizontalAlignment="Center" VerticalAlignment="Top" Source="Assets/background/drop3_sm.jpg" Height="100" Width="150"  Margin="0,0,0,0" />
+                    </Button>
+                    <Button x:Name="btnTulipPetal" Click="btnTulipPetal_Click" BorderBrush="Transparent" Background="Transparent" Grid.ColumnSpan="2" Grid.Row="5" Grid.Column="0">
+                        <Image  HorizontalAlignment="Center" VerticalAlignment="Top" Source="Assets/background/drop4_sm.jpg" Height="100" Width="150" Margin="0,0,0,0" />
+                    </Button>
+                    <Button x:Name="btnRedPaper" Click="btnRedPaper_Click" BorderBrush="Transparent" Background="Transparent" Grid.ColumnSpan="2" Grid.Row="6" Grid.Column="0">
+                        <Image HorizontalAlignment="Center" VerticalAlignment="Top" Source="Assets/background/paper1_sm.jpg" Height="100" Width="150" Margin="0,0,0,0" />
+                    </Button>
+                    <Button x:Name="btndynamic0" BorderBrush="Transparent" Background="Transparent" Grid.Row="7" Grid.Column="0">
+                        <Image HorizontalAlignment="Center" VerticalAlignment="Top" Source="http://www.daksatech.com/images/2.jpg" Height="100" Width="150" Margin="0,0,0,0" />
+                    </Button>
+                    <RadioButton Grid.Row="7" Click="radioButton0_Checked" Tag="http://www.daksatech.com/images/2.jpg" Grid.Column="1" Height="100" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,0,0,0" x:Name="radioButton0" GroupName="BkgImageSouce"/>
+                    <!--<Button Content="Select Background Image" x:Name="btnCustomImage" Click="btnCustomImage_Click" BorderBrush="White" Grid.ColumnSpan="2" Background="Transparent" Grid.Row="7" Grid.Column="0" Margin="16,21,0,21" RenderTransformOrigin="0.784,0.539" />-->
+                    <!--</Grid>-->
+                    <Button x:Name="btndynamic1" BorderBrush="Transparent" Background="Transparent" Grid.Row="8" Grid.Column="0">
+                        <Image HorizontalAlignment="Center" VerticalAlignment="Top" Source="http://www.daksatech.com/images/1pic1.jpg" Height="100" Width="150" Margin="0,0,0,0" />
+                    </Button>
+                    <RadioButton Grid.Row="8" Click="radioButton1_Checked" Tag="http://www.daksatech.com/images/1pic1.jpg" Grid.Column="1" Height="100" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,0,0,0" x:Name="radioButton1" GroupName="BkgImageSouce"/>
 
 
-            <Button x:Name="btndynamic3" BorderBrush="Green" Background="Transparent" Grid.Row="9" Grid.Column="0">
-                <Image HorizontalAlignment="Center" VerticalAlignment="Top" Source="http://pcdn.500px.net/26985727/0d21887a29303788c139e74b04ac679be56a0c8d/5.jpg" Height="100" Width="150" Margin="0,0,0,0" />
-            </Button>
-            <RadioButton Grid.Row="9" Click="radioButton2_Checked" Grid.Column="1" Height="100" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,0,0,0" x:Name="radioButton2" GroupName="BkgImageSouce"/>
-            <TextBlock Grid.Row="10" Grid.Column="0" Text="Auto-play Time (seconds)" TextWrapping="Wrap" Style="{StaticResource SettingsTextStyle}"></TextBlock>
-            <Slider Name="autoPlaySlider" Grid.Row="10" Grid.Column="1" Margin="20,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Left" Minimum="5" Maximum="300" Width="200" Value="{Binding Source={StaticResource appSettings}, Path=AutoPlay, Mode=TwoWay}"/>
-        </Grid>
+                    <Button x:Name="btndynamic2" BorderBrush="Transparent" Background="Transparent" Grid.Row="9" Grid.Column="0">
+                        <Image HorizontalAlignment="Center" VerticalAlignment="Top" Source="http://www.daksatech.com/images/1pic2.jpg" Height="100" Width="150" Margin="0,0,0,0" />
+                    </Button>
+                    <RadioButton Grid.Row="9" Click="radioButton2_Checked" Tag="http://www.daksatech.com/images/1pic2.jpg" Grid.Column="1" Height="100" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,0,0,0" x:Name="radioButton2" GroupName="BkgImageSouce"/>
+                    <TextBlock Grid.Row="10" Grid.Column="0" Text="Auto-play Time (seconds)" TextWrapping="Wrap" Style="{StaticResource SettingsTextStyle}"></TextBlock>
+                    <Slider Name="autoPlaySlider" Grid.Row="10" Grid.Column="1" Margin="20,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Left" Minimum="5" Maximum="300" Width="200" Value="{Binding Source={StaticResource appSettings}, Path=AutoPlay, Mode=TwoWay}"/>
+                </Grid>
             </StackPanel>
         </ScrollViewer>
     </Border>

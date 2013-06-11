@@ -9,6 +9,8 @@ using Windows.Storage;
 using Windows.Storage.Streams;
 using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
+using Windows.UI.Xaml.Media.Imaging;
+using Windows.UI.Xaml.Media;
 
 namespace QuotesOfWisdom.Common
 {
@@ -230,6 +232,23 @@ namespace QuotesOfWisdom.Common
                 viewState = windowWidth >= 1366 ? ApplicationViewState.FullScreenLandscape : ApplicationViewState.Filled;
             }
             return viewState.ToString();
-        }        
+        }
+
+        public static void dynamicBackgroundChange(Windows.UI.Xaml.Controls.Grid gd)
+        {
+            if (ApplicationData.Current.RoamingSettings.Values.ContainsKey("Settings"))
+            {
+                if ((string)ApplicationData.Current.RoamingSettings.Values["Settings"].ToString() == "dynamicStyle")
+                {
+                    ImageBrush ib = new ImageBrush();
+
+                    BitmapImage bi = new BitmapImage();
+                    bi.UriSource = new Uri(ApplicationData.Current.RoamingSettings.Values["ImageURLForDynamicStyle"].ToString());
+                    ib.ImageSource = bi;
+
+                    gd.Background = ib;
+                }
+            }
+        }
     }
 }
