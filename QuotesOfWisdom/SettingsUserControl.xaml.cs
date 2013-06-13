@@ -273,19 +273,19 @@ namespace QuotesOfWisdom
             }
         }
 
-        private void radioButton0_Checked(object sender, RoutedEventArgs e)
-        {
-            BackgroundChangedDynamically(radioButton0);
-        }
-        private void radioButton1_Checked(object sender, RoutedEventArgs e)
-        {
-            BackgroundChangedDynamically(radioButton1);
-        }
+        //private void radioButton0_Checked(object sender, RoutedEventArgs e)
+        //{
+        //    BackgroundChangedDynamically(radioButton0);
+        //}
+        //private void radioButton1_Checked(object sender, RoutedEventArgs e)
+        //{
+        //    BackgroundChangedDynamically(radioButton1);
+        //}
 
-        private void radioButton2_Checked(object sender, RoutedEventArgs e)
-        {
-            BackgroundChangedDynamically(radioButton2);
-        }
+        //private void radioButton2_Checked(object sender, RoutedEventArgs e)
+        //{
+        //    BackgroundChangedDynamically(radioButton2);
+        //}
 
         void BackgroundChangedDynamically(RadioButton rb)
         {
@@ -332,6 +332,11 @@ namespace QuotesOfWisdom
             {
                 PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
             }
+        }
+
+        private void hplbtnMoreImages_Click(object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 }
