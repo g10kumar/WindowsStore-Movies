@@ -122,6 +122,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Background.xaml.cs" />
     <Compile Include="BlankPage1.xaml.cs">
       <DependentUpon>BlankPage1.xaml</DependentUpon>
     </Compile>
@@ -202,6 +203,11 @@
       <SubType>Designer</SubType>
     </Page>
     <Content Include="Assets\Ads\ShareAllBanner.png" />
+    <Page Include="Background.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Content Include="Dlls\Newtonsoft.Json.dll" />
     <Content Include="Xml\Ads.xml" />
     <Content Include="Xml\in-app-purchase.xml">
       <SubType>Designer</SubType>
@@ -406,9 +412,7 @@
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\ServiceReference1\" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Dlls\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <SDKReference Include="Microsoft.VCLibs, Version=11.0">
       <Name>Microsoft Visual C++ Runtime Package</Name>
@@ -421,6 +425,10 @@
     </SDKReference>
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\TestWIN8\QuotesOfWisdom\Dlls\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="Syncfusion.SfHubTile.WinRT">
       <HintPath>..\..\..\Program Files (x86)\Syncfusion\Essential Studio\11.1.0.21\Assemblies for WinRT\Syncfusion.SfHubTile.WinRT.dll</HintPath>
     </Reference>

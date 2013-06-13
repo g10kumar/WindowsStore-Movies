@@ -1,0 +1,43 @@
+﻿<Page
+    x:Class="QuotesOfWisdom.Background"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:QuotesOfWisdom"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" LayoutUpdated="LayoutRoot_LayoutUpdated">
+
+    <Grid x:Name="LayoutRoot">
+        <!--<GridView  
+            x:Name="bgImagesGridView" VerticalAlignment="Top"
+            AutomationProperties.AutomationId="bgImagesGridView"
+            AutomationProperties.Name="Grouped Items"
+            ItemTemplate="{StaticResource BGItemTemplate}"
+            SelectionMode="None"
+            IsItemClickEnabled="True">
+            <GridView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapGrid ItemWidth="400" ItemHeight="150" MaximumRowsOrColumns="5" VerticalChildrenAlignment="Top" />
+                </ItemsPanelTemplate>
+            </GridView.ItemsPanel>
+        </GridView>-->
+        <ScrollViewer x:Name="ContentGrid" Grid.Row="1" VerticalScrollBarVisibility="Auto" Background="Transparent" Margin="0,0,0,0">
+            <StackPanel Height="Auto" Name="imageStackPanel" VerticalAlignment="Top" Orientation="Vertical" Margin="10,10,0,0">
+
+            </StackPanel>
+        </ScrollViewer>
+        <Popup x:Name="myPopup" Loaded="myPopup_Loaded_1" Margin="200,40">
+            <Border CornerRadius="10"  BorderThickness="2" BorderBrush="Black" Padding="2" Background="White">
+                <StackPanel Margin="10" Height="700" Width="600" Orientation="Vertical">
+                    <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Visible" ScrollViewer.HorizontalScrollBarVisibility="Visible">
+                        <StackPanel Height="650">
+                            <Image x:Name="imgPreview" Stretch="UniformToFill" Height="600" Width="600" Margin="0,0,0,0"/>
+                        </StackPanel>
+                    </ScrollViewer>
+                    <Button Content="Close" Background="#FF15BBF9" Margin="0,10,0,10" x:Name="btClose" Click="btClose_Click"></Button>
+                </StackPanel>
+
+            </Border>
+        </Popup>
+    </Grid>
+</Page>
