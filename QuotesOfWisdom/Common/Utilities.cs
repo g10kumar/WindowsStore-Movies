@@ -250,5 +250,15 @@ namespace QuotesOfWisdom.Common
                 }
             }
         }
+
+        /// <summary>
+        /// Method for showing pop up messages
+        /// </summary>
+        /// <param name="msg"></param>
+        public static async void ShowMessage(string msg)
+        {
+            Windows.UI.Popups.MessageDialog dialog = new Windows.UI.Popups.MessageDialog(msg);
+            await dialog.ShowAsync();
+        }
     }
 }
