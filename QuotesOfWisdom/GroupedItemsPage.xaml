@@ -66,7 +66,7 @@
             </Grid.ColumnDefinitions>
 
             <TextBlock Grid.Row="0" x:Name="txtOthers" Grid.Column="0" Style="{StaticResource SubheaderTextStyle}" Margin="100,-10,0,0">Others</TextBlock>
-            <!--<syncfusion:SfHubTile Width="250" Grid.Column="0" Height="250" Margin="100,-5,0,0" Interval="8"
+            <syncfusion:SfHubTile Width="250" Grid.Column="0" Height="250" Margin="100,-5,0,0" Interval="8"
                                 Header="Random Quotes" 
                                 Foreground="White" 
                                 BorderBrush="DarkGray"
@@ -82,12 +82,12 @@
                 <syncfusion:SfHubTile.SecondaryContent>
                     <TextBlock Text="{Binding ElementName=secondarytitle, Path=Text}" FontSize="18" TextWrapping="Wrap" x:Name="secondarytitle" Margin="5,5,5,5" />                    
                 </syncfusion:SfHubTile.SecondaryContent>
-            </syncfusion:SfHubTile>-->
+            </syncfusion:SfHubTile>
             <!--<Input:TextBoxExt Text="" x:Name="title" Visibility="Collapsed"/>
             <Input:TextBoxExt Text="" x:Name="secondarytitle" Visibility="Collapsed"/>-->
 
 
-            <!--<syncfusion:SfHubTile Width="250" Grid.Column="0" Height="250" Margin="100,255,0,0"
+            <syncfusion:SfHubTile Width="250" Grid.Column="0" Height="250" Margin="100,255,0,0"
                                 Header="Favorite Quotes" Interval="8"
                                 Foreground="White" 
                                 BorderBrush="DarkGray"
@@ -103,7 +103,7 @@
                 <syncfusion:SfHubTile.SecondaryContent>
                     <TextBlock Text="{Binding ElementName=favoriteseconarytitle, Path=Text}" FontSize="18" TextWrapping="Wrap" x:Name="favoriteseconarytitle" Margin="5,5,5,5" />
                 </syncfusion:SfHubTile.SecondaryContent>
-            </syncfusion:SfHubTile>-->
+            </syncfusion:SfHubTile>
             <!--<Input:TextBoxExt Text="" x:Name="favoritetitle" Visibility="Collapsed"/>
             <Input:TextBoxExt Text="" x:Name="favoriteseconarytitle" Visibility="Collapsed"/>-->
             <!--<Button x:Name="btnRandomQuotes" Click="btnRandomQuotes_Click" Content="Random Quotes" Width="250" Visibility="Collapsed" Margin="10,-20"></Button>

@@ -14,7 +14,6 @@
                  -->
                 <ResourceDictionary Source="Common/StandardStyles.xaml"/>
             </ResourceDictionary.MergedDictionaries>
-
             <!-- Application-specific resources -->
 
             <x:String x:Key="AppName">Quotes Of Wisdom</x:String>

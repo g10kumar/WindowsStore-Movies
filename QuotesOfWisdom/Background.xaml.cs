@@ -31,7 +31,11 @@ using Windows.Data.Json;
 using System.ServiceModel;
 using System.Runtime.Serialization.Json;
 using Newtonsoft.Json;
+using Windows.UI.Core;
 using Windows.UI.Popups;
+using Windows.UI.ViewManagement;
+using Windows.ApplicationModel;
+using Windows.ApplicationModel.Store;
 
 namespace QuotesOfWisdom
 {
@@ -43,32 +47,132 @@ namespace QuotesOfWisdom
         // creating bgImages list object
         List<BGImages> bglist = new List<BGImages>();
         int cnt = 0;
+        string genericURL = "";
+        bool isBackgroundButtonVisible = true;
+        LicenseChangedEventHandler licenseChangeHandler = null;
+
         public Background()
         {
-            this.InitializeComponent();
+            this.InitializeComponent();            
         }
 
+        /// <summary>
+        /// Method for loading App Purchase proxy file
+        /// </summary>
+        /// <returns></returns>
+        private async Task LoadInAppPurchaseProxyFileAsync()
+        {
+            StorageFolder proxyDataFolder = await Package.Current.InstalledLocation.GetFolderAsync("Xml");
+            StorageFile proxyFile = await proxyDataFolder.GetFileAsync("in-app-purchase.xml");
+            licenseChangeHandler = new LicenseChangedEventHandler(InAppPurchaseRefreshScenario);
+
+            CurrentApp.LicenseInformation.LicenseChanged += licenseChangeHandler;
+        }
+
+        /// <summary>
+        /// Refresg method ofr App Purchase
+        /// </summary>
+        private void InAppPurchaseRefreshScenario()
+        {
+            LicenseInformation licenseInformation = CurrentApp.LicenseInformation;
+            var imageLicense = licenseInformation.ProductLicenses["More Background Images"];
+            if (imageLicense.IsActive)
+            {
+                isBackgroundButtonVisible = true;
+            }
+            else
+            {
+                string visualState = ApplicationView.Value.ToString();
+                //if (visualState == "Snapped")
+                //{
+                    
+                //}
+                //else
+                //{
+                    
+                //}
+                isBackgroundButtonVisible = false;
+            }
+        }
+
+        /// <summary>
+        /// Invoked when this page is about to unload
+        /// </summary>
+        /// <param name="e"></param>
+        protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
+        {
+            if (licenseChangeHandler != null)
+            {
+                //CurrentAppSimulator.LicenseInformation.LicenseChanged -= licenseChangeHandler;
+                CurrentApp.LicenseInformation.LicenseChanged -= licenseChangeHandler;
+            }
+            base.OnNavigatingFrom(e);
+        }
+        
         /// <summary>
         /// Invoked when this page is about to be displayed in a Frame.
         /// </summary>
         /// <param name="e">Event data that describes how this page was reached.  The Parameter
         /// property is typically used to configure the page.</param>
-        protected override void OnNavigatedTo(NavigationEventArgs e)
+        protected async override void OnNavigatedTo(NavigationEventArgs e)
         {
-            LoadBackgroundImages();
+            await LoadInAppPurchaseProxyFileAsync();
+
+            LicenseInformation licenseInformation = CurrentApp.LicenseInformation;
+            string visualState = ApplicationView.Value.ToString();
+
+            var imageLicense = licenseInformation.ProductLicenses["More Background Images"];
+            if (imageLicense.IsActive)
+            {
+                isBackgroundButtonVisible = true;
+            }
+            else
+            {
+                if (visualState == "Snapped")
+                {
+                    
+                }
+                else
+                {
+                    
+                }
+                isBackgroundButtonVisible = false;
+            }
         }
 
-        private async void LoadBackgroundImages()
+        private void btnSearch_Click(object sender, RoutedEventArgs e)
+        {
+            stackMessage.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+            stackProgressRing.Visibility = Windows.UI.Xaml.Visibility.Visible;
+            imageStackPanel.Children.Clear();
+            if (txtSearch.Text != "")
+            {
+                genericURL = "https://api.500px.com/v1/photos?search?term=" + txtSearch.Text.Trim() + "&consumer_key=it4eyt0SylP9boHkIM4IMh9cBVmy0NB9XuWGC4AK&image_size[]=3&image_size[]=4";
+                
+            }
+            else
+            {
+                genericURL = "https://api.500px.com/v1/photos?consumer_key=it4eyt0SylP9boHkIM4IMh9cBVmy0NB9XuWGC4AK&image_size[]=3&image_size[]=4&rpp=16&license_type=6";
+            }
+
+            LoadBackgroundImages(genericURL);
+        }
+
+        private async void LoadBackgroundImages(string URL)
         {
             try
             {
                 var client = new HttpClient();
-                var response = await client.GetAsync("https://api.500px.com/v1/photos?consumer_key=it4eyt0SylP9boHkIM4IMh9cBVmy0NB9XuWGC4AK&image_size[]=3&image_size[]=4&rpp=16&license_type=6");
+                var response = await client.GetAsync(URL);
                 var jsonbgImageresult = await response.Content.ReadAsStringAsync();
                 jsonbgImageresult = jsonbgImageresult.Replace(@"\", "");
 
                 var bgItems = JsonConvert.DeserializeObject<BGImageListings>(jsonbgImageresult);
 
+                if (bglist.Count > 0)
+                {
+                    bglist.Clear();
+                }
 
 
                 for (int i = 0; i < bgItems.photos.Count(); i++)
@@ -94,23 +198,28 @@ namespace QuotesOfWisdom
             }
             catch
             {
-                // Create the message dialog and set its content and title
-                var messageDialog = new MessageDialog("Unable load images now.  Please try later!", "Network Error");
+                stackProgressRing.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+                imageStackPanel.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+                stackMessage.Visibility = Windows.UI.Xaml.Visibility.Visible;
+                txtMessage.Text = "Unable load images now.  Please try later!";
+                
+                //// Create the message dialog and set its content and title
+                //var messageDialog = new MessageDialog("Unable load images now.  Please try later!", "Network Error");
 
-                // Add commands and set their command ids
-                messageDialog.Commands.Add(new UICommand("Close", null, 0));
+                //// Add commands and set their command ids
+                //messageDialog.Commands.Add(new UICommand("Close", null, 0));
 
-                // Set the command that will be invoked by default
-                messageDialog.DefaultCommandIndex = 0;
+                //// Set the command that will be invoked by default
+                //messageDialog.DefaultCommandIndex = 0;
 
-                // Show the message dialog and get the event that was invoked via the async operator
-                var commandChosen = messageDialog.ShowAsync();
+                //// Show the message dialog and get the event that was invoked via the async operator
+                //var commandChosen = messageDialog.ShowAsync();
 
-                if (commandChosen.Id == 0)
-                {
-                    // Use the navigation frame to return to the previous page
-                    if (this.Frame != null && this.Frame.CanGoBack) this.Frame.GoBack();
-                }               
+                //if (commandChosen.Id == 0)
+                //{
+                //    // Use the navigation frame to return to the previous page
+                //    if (this.Frame != null && this.Frame.CanGoBack) this.Frame.GoBack();
+                //}               
             }
         }
 
@@ -118,13 +227,17 @@ namespace QuotesOfWisdom
         {
             try
             {
+                imageStackPanel.Visibility = Windows.UI.Xaml.Visibility.Visible;
+                stackMessage.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+                
                 // clears the main stack panel
                 imageStackPanel.Children.Clear();
 
                 // creating temp. stack panel
                 StackPanel sptmp = new StackPanel();
                 sptmp.Orientation = Orientation.Horizontal;
-                
+                sptmp.Margin = new Thickness(0, 0, 0, 15);
+
                 for (var i = 0; i < bglist.Count; i++)
                 {
                     // checks the conditions for displaying 4 items per row
@@ -142,15 +255,20 @@ namespace QuotesOfWisdom
                     {
                         sptmp = new StackPanel();
                         sptmp.Orientation = Orientation.Horizontal;
+                        sptmp.Margin = new Thickness(0, 0, 0, 15);
                     }
 
                     cnt++;
                     try
                     {
+                        StackPanel spMain = new StackPanel();
+                        spMain.Orientation = Orientation.Vertical;
+                        spMain.Margin = new Thickness(0, 0, 20, 5);
+
                         // creates the stack panel object for adding image control
                         StackPanel sp = new StackPanel();
-                        sp.Margin = new Thickness(0, 0, 20, 20);
-
+                        sp.Margin = new Thickness(0, 0, 20, 5);
+                        sp.Width = 250;
                         // creates the image object and assigns the its Uri proerty
                         Image img = new Image();
                         Uri uri = new Uri(bglist[i].ImageURLsmall.ToString(), UriKind.Absolute);
@@ -158,25 +276,37 @@ namespace QuotesOfWisdom
                         img.Source = newSource;
                         img.Margin = new Thickness(0, 0, 0, 0);
                         img.Height = 150;
-                        img.Width = 150;
+                        img.Width = 250;
+                        img.Stretch = Stretch.UniformToFill;
 
                         sp.Children.Add(img);
                         
                         // creates the stack panel object for adding button controls
                         StackPanel sp1 = new StackPanel();
-                        sp1.Orientation = Orientation.Vertical;
+                        sp1.Orientation = Orientation.Horizontal;
                         sp1.Name = "sp#" + i.ToString();
 
                         // creating the Preview Button control
                         Button btnPreview = new Button();
                         btnPreview.Content = "Preview";
-                        btnPreview.Margin = new Thickness(0, 10, 0, 10);
+                        btnPreview.Margin = new Thickness(0, 0, 0, 0);
+                        btnPreview.FontSize = 16;
                         btnPreview.Tag = bglist[i].ImageURLbig.ToString();
                         btnPreview.Click += new RoutedEventHandler(btnPreview_Click);
 
                         // creating the Set as Background Button control
                         Button btnBackground = new Button();
-                        btnBackground.Content = "Set as Background";
+
+                        if (isBackgroundButtonVisible)
+                        {
+                            btnBackground.Content = "Set as Background";
+                        }
+                        else
+                        {
+                            btnBackground.Content = "Buy Images";
+                        }
+                        btnBackground.FontSize = 16;
+                        btnBackground.Margin = new Thickness(0, 0, 0, 0);
                         btnBackground.Tag = bglist[i].ImageURLbig.ToString();
                         btnBackground.Click += new RoutedEventHandler(btnBackground_Click);
 
@@ -184,8 +314,13 @@ namespace QuotesOfWisdom
                         sp1.Children.Add(btnPreview);
                         sp1.Children.Add(btnBackground);
 
-                        sptmp.Children.Add(sp);
-                        sptmp.Children.Add(sp1);
+                        //sptmp.Children.Add(sp);
+                        //sptmp.Children.Add(sp1);
+
+                        spMain.Children.Add(sp);
+                        spMain.Children.Add(sp1);
+
+                        sptmp.Children.Add(spMain);
 
                     }
                     catch
@@ -199,6 +334,8 @@ namespace QuotesOfWisdom
             {
                 
             }
+
+            stackProgressRing.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
         }
 
         /// <summary>
@@ -245,12 +382,40 @@ namespace QuotesOfWisdom
             imgPreview.Source = newSource;            
         }
 
-        private void btnBackground_Click(object sender, RoutedEventArgs e)
+        private async void btnBackground_Click(object sender, RoutedEventArgs e)
         {
             Button background = (Button)sender;
-            ApplicationData.Current.RoamingSettings.Values["Settings"] = "dynamicStyle";
-            ApplicationData.Current.RoamingSettings.Values["ImageURLForDynamicStyle"] = background.Tag.ToString();
-            Utilities.dynamicBackgroundChange(LayoutRoot);
+
+            if (background.Content.ToString() != "Buy Images")
+            {
+                ApplicationData.Current.RoamingSettings.Values["Settings"] = "dynamicStyle";
+                ApplicationData.Current.RoamingSettings.Values["ImageURLForDynamicStyle"] = background.Tag.ToString();
+                Utilities.dynamicBackgroundChange(LayoutRoot);
+            }
+            else
+            {
+                LicenseInformation licenseInformation = CurrentApp.LicenseInformation;
+                var imageLicense = licenseInformation.ProductLicenses["More Background Images"];
+                if (!imageLicense.IsActive)
+                {
+                    try
+                    {
+                        await CurrentApp.RequestProductPurchaseAsync("More Background Images", false);
+                        if (imageLicense.IsActive)
+                        {
+                            Utilities.ShowMessage("You bought the More Background Images version.");
+                        }
+                    }
+                    catch (Exception)
+                    {
+                        Utilities.ShowMessage("Unable to buy More Background Images version.");
+                    }
+                }
+                else
+                {
+                    Utilities.ShowMessage("You already own More Background Images version of app.");
+                }
+            }
         }
 
         private void myPopup_Loaded_1(object sender, RoutedEventArgs e)
@@ -267,6 +432,19 @@ namespace QuotesOfWisdom
         private void btClose_Click(object sender, RoutedEventArgs e)
         {
             myPopup.IsOpen = false;
+        }
+
+        /// <summary>
+        /// Click event of the Back button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void GoBack(object sender, RoutedEventArgs e)
+        {
+            isBackgroundButtonVisible = false;
+            stackProgressRing.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+            // Use the navigation frame to return to the previous page
+            if (this.Frame != null && this.Frame.CanGoBack) this.Frame.GoBack();
         }
     }
 

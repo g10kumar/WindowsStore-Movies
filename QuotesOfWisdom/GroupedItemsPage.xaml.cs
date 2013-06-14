@@ -78,8 +78,8 @@ namespace QuotesOfWisdom
             if (visualState == "Snapped")
             {
                 txtOthers.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-            //    favhubtile.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-            //    hubtile.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+                favhubtile.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+                hubtile.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
                 itemGridView.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
                 itemListView.Visibility = Windows.UI.Xaml.Visibility.Visible;
                 backButton.Style = App.Current.Resources["SnappedBackButtonStyle"] as Style;
@@ -90,8 +90,8 @@ namespace QuotesOfWisdom
             else
             {
                 txtOthers.Visibility = Windows.UI.Xaml.Visibility.Visible;
-            //    favhubtile.Visibility = Windows.UI.Xaml.Visibility.Visible;
-            //    hubtile.Visibility = Windows.UI.Xaml.Visibility.Visible;
+                favhubtile.Visibility = Windows.UI.Xaml.Visibility.Visible;
+                hubtile.Visibility = Windows.UI.Xaml.Visibility.Visible;
                 itemGridView.Visibility = Windows.UI.Xaml.Visibility.Visible;
                 itemListView.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
                 backButton.Style = App.Current.Resources["BackButtonStyle"] as Style;
@@ -190,69 +190,69 @@ namespace QuotesOfWisdom
         /// </summary>
         private async void LoadFavQuotes()
         {
-            //List<Quotations> listFav = new List<Quotations>();
+            List<Quotations> listFav = new List<Quotations>();
 
-            //StorageFolder roamingFolder = ApplicationData.Current.RoamingFolder;
-            //StorageFile sampleFile;
+            StorageFolder roamingFolder = ApplicationData.Current.RoamingFolder;
+            StorageFile sampleFile;
 
-            //sampleFile = await GetFileIfExistsAsync(roamingFolder, "favQuotes.xml");
+            sampleFile = await GetFileIfExistsAsync(roamingFolder, "favQuotes.xml");
 
-            //if (sampleFile != null)
-            //{
-            //    try
-            //    {
-            //        sampleFile = await roamingFolder.GetFileAsync("favQuotes.xml");
-            //        string fileContent = await FileIO.ReadTextAsync(sampleFile);
-            //        fileContent = fileContent.TrimStart('\0');
-            //        fileContent = fileContent.TrimEnd(' ');
-            //        XElement xe = XElement.Parse(fileContent.Trim());
+            if (sampleFile != null)
+            {
+                try
+                {
+                    sampleFile = await roamingFolder.GetFileAsync("favQuotes.xml");
+                    string fileContent = await FileIO.ReadTextAsync(sampleFile);
+                    fileContent = fileContent.TrimStart('\0');
+                    fileContent = fileContent.TrimEnd(' ');
+                    XElement xe = XElement.Parse(fileContent.Trim());
 
-            //        var query = (from quotes in xe.Elements("q")
-            //                     select new Quotations
-            //                     {
-            //                         Quote = quotes.Element("d").Value,
-            //                         QuoteId = quotes.Attribute("id").Value,
-            //                         Author = quotes.Element("a").Value,
-            //                         Cat = quotes.Element("c").Value
-            //                     });
+                    var query = (from quotes in xe.Elements("q")
+                                 select new Quotations
+                                 {
+                                     Quote = quotes.Element("d").Value,
+                                     QuoteId = quotes.Attribute("id").Value,
+                                     Author = quotes.Element("a").Value,
+                                     Cat = quotes.Element("c").Value
+                                 });
 
 
 
-            //        foreach (Quotations q in query)
-            //        {
-            //            listFav.Add(q);
-            //        }
-            //        sessionData.currentFavoriteQuotes = listFav.ToList();
+                    foreach (Quotations q in query)
+                    {
+                        listFav.Add(q);
+                    }
+                    sessionData.currentFavoriteQuotes = listFav.ToList();
 
-            //        if (listFav.Count == 0)
-            //        {
-            //            favoritetitle.Text = "No Favorites Yet";
-            //            favoriteseconarytitle.Text = "No Favorites Yet";
-            //        }
-            //        else
-            //        {
-            //            if (listFav.Count == 1)
-            //            {
-            //                favoritetitle.Text = Utilities.GetTeaser(listFav[0].Quote.ToString(), 200);
-            //                favoriteseconarytitle.Text = Utilities.GetTeaser(listFav[0].Quote.ToString(), 200);
-            //            }
-            //            else
-            //            {
-            //                favoritetitle.Text = Utilities.GetTeaser(listFav[randNum.Next(1, listFav.Count)].Quote.ToString(), 200);
-            //                favoriteseconarytitle.Text = Utilities.GetTeaser(listFav[randNum.Next(2, listFav.Count)].Quote.ToString(), 200);
-            //            }
-            //        }
-            //    }
-            //    catch
-            //    {
+                    if (listFav.Count == 0)
+                    {
+                        favoritetitle.Text = "No Favorites Yet";
+                        favoriteseconarytitle.Text = "No Favorites Yet";
+                    }
+                    else
+                    {
+                        if (listFav.Count == 1)
+                        {
+                            favoritetitle.Text = Utilities.GetTeaser(listFav[0].Quote.ToString(), 200);
+                            favoriteseconarytitle.Text = Utilities.GetTeaser(listFav[0].Quote.ToString(), 200);
+                        }
+                        else
+                        {
+                            favoritetitle.Text = Utilities.GetTeaser(listFav[randNum.Next(1, listFav.Count)].Quote.ToString(), 200);
+                            favoriteseconarytitle.Text = Utilities.GetTeaser(listFav[randNum.Next(2, listFav.Count)].Quote.ToString(), 200);
+                        }
+                    }
+                }
+                catch
+                {
 
-            //    }
-            //}
-            //else
-            //{
-            //    favoritetitle.Text = "No Favorites Yet";
-            //    favoriteseconarytitle.Text = "No Favorites Yet";
-            //}
+                }
+            }
+            else
+            {
+                favoritetitle.Text = "No Favorites Yet";
+                favoriteseconarytitle.Text = "No Favorites Yet";
+            }
         }
 
         /// <summary>
@@ -260,26 +260,37 @@ namespace QuotesOfWisdom
         /// </summary>
         private void LoadRandomQuotes()
         {
-            //try
-            //{
-            //    string rand1 = "";
-            //    string rand2 = "";
-            //    using (SQLiteConnection db = new SQLiteConnection("thefile2.db", SQLiteOpenFlags.ReadOnly))
-            //    {
-            //        rand1 = randNum.Next(1, 54000).ToString();
-            //        rand2 = randNum.Next(1, 54000).ToString();
-            //        var query = from q in db.Table<Quotations>()
-            //                    where q.QuoteId == rand1 || q.QuoteId == rand2
-            //                    select q;
+            try
+            {
+                string rand1 = "";
+                string rand2 = "";
+                using (SQLiteConnection db = new SQLiteConnection("thefile2.db", SQLiteOpenFlags.ReadOnly))
+                {
+                    rand1 = randNum.Next(1, 54000).ToString();
+                    rand2 = randNum.Next(1, 54000).ToString();
+                    var query = from q in db.Table<Quotations>()
+                                where q.QuoteId == rand1 || q.QuoteId == rand2
+                                select q;
 
-            //        list = query.ToList();
-            //    }
+                    list = query.ToList();
+                }
 
-            //    title.Text = Utilities.GetTeaser(list[0].Quote.ToString(), 200);
-            //    secondarytitle.Text = Utilities.GetTeaser(list[1].Quote.ToString(), 200);
-            //}
-            //catch
-            //{ }
+                title.Text = Utilities.GetTeaser(list[0].Quote.ToString(), 200);
+
+                if (list[1].Quote.ToString() != "")
+                {
+                    secondarytitle.Text = Utilities.GetTeaser(list[1].Quote.ToString(), 200);
+                }
+                else
+                {
+                    secondarytitle.Text = "";
+                }
+            }
+            catch (Exception ex)
+            {
+                Windows.UI.Popups.MessageDialog dialog = new Windows.UI.Popups.MessageDialog(ex.Message.ToString());
+                dialog.ShowAsync();
+            }
         }
 
         /// <summary>
@@ -300,11 +311,11 @@ namespace QuotesOfWisdom
         /// <param name="e"></param>
         private void hubtile_Loaded(object sender, RoutedEventArgs e)
         {
-         //   hubtile.Interval = TimeSpan.FromSeconds(Double.Parse("8"));
+            hubtile.Interval = TimeSpan.FromSeconds(Double.Parse("8"));
             collection.Add(slidetransition);
             collection.Add(rotatetransition);
             collection.Add(fadetransition);
-        //    hubtile.HubTileTransitions = collection;
+           // hubtile.HubTileTransitions = collection;
         }
 
         /// <summary>
@@ -314,11 +325,11 @@ namespace QuotesOfWisdom
         /// <param name="e"></param>
         private void favhubtile_Loaded(object sender, RoutedEventArgs e)
         {
-        //    favhubtile.Interval = TimeSpan.FromSeconds(Double.Parse("6"));
+            favhubtile.Interval = TimeSpan.FromSeconds(Double.Parse("6"));
             collection.Add(slidetransition);
             collection.Add(rotatetransition);
             collection.Add(fadetransition);
-         //   favhubtile.HubTileTransitions = collection;
+            //favhubtile.HubTileTransitions = collection;
         }
 
         /// <summary>
