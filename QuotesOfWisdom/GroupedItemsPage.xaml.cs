@@ -275,14 +275,14 @@ namespace QuotesOfWisdom
                     list = query.ToList();
                 }
 
-                title.Text = Utilities.GetTeaser(list[0].Quote.ToString(), 200);
-
-                if (list[1].Quote.ToString() != "")
+                if (list.Count == 2)
                 {
+                    title.Text = Utilities.GetTeaser(list[0].Quote.ToString(), 200);
                     secondarytitle.Text = Utilities.GetTeaser(list[1].Quote.ToString(), 200);
                 }
                 else
                 {
+                    title.Text = Utilities.GetTeaser(list[0].Quote.ToString(), 200);
                     secondarytitle.Text = "";
                 }
             }
@@ -315,7 +315,7 @@ namespace QuotesOfWisdom
             collection.Add(slidetransition);
             collection.Add(rotatetransition);
             collection.Add(fadetransition);
-           // hubtile.HubTileTransitions = collection;
+            hubtile.HubTileTransitions = collection;
         }
 
         /// <summary>
@@ -329,7 +329,7 @@ namespace QuotesOfWisdom
             collection.Add(slidetransition);
             collection.Add(rotatetransition);
             collection.Add(fadetransition);
-            //favhubtile.HubTileTransitions = collection;
+            favhubtile.HubTileTransitions = collection;
         }
 
         /// <summary>

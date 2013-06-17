@@ -423,6 +423,9 @@
     <SDKReference Include="SQLite.WinRT, Version=3.7.17">
       <Name>SQLite for Windows Runtime %28SQLite.WinRT, Version=3.7.17%29</Name>
     </SDKReference>
+    <SDKReference Include="Syncfusion controls for WinRT XAML, Version=11.1.0.21">
+      <Name>Syncfusion Controls for WinRT XAML</Name>
+    </SDKReference>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
