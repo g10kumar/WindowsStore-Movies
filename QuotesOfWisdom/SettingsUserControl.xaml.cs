@@ -336,7 +336,11 @@ namespace QuotesOfWisdom
 
         private void hplbtnMoreImages_Click(object sender, RoutedEventArgs e)
         {
-            
+            if (this.Parent.GetType() == typeof(Popup))
+            {
+                ((Popup)this.Parent).IsOpen = false;
+            }
+   
         }
     }
 }
