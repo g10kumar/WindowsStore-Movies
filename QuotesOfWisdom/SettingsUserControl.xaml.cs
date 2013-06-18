@@ -27,9 +27,12 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using Windows.UI;
 using Windows.UI.Xaml.Media.Imaging;
+
+using Windows.Foundation;
+
 namespace QuotesOfWisdom
 {
-    public sealed partial class SettingsUserControl : UserControl, INotifyPropertyChanged
+    public sealed partial class SettingsUserControl : UserControl, INotifyPropertyChanged    
     {
         private Style _backGroundStyle;
         public Style BackGroundStyle
@@ -160,6 +163,7 @@ namespace QuotesOfWisdom
             #endregion
             #endregion
 
+            
             if (ApplicationData.Current.RoamingSettings.Values.ContainsKey("Settings"))
             {
                 if ((string)ApplicationData.Current.RoamingSettings.Values["Settings"].ToString() != "dynamicStyle")
@@ -339,6 +343,8 @@ namespace QuotesOfWisdom
             if (this.Parent.GetType() == typeof(Popup))
             {
                 ((Popup)this.Parent).IsOpen = false;
+                var settings = new SettingsFlyout();
+                settings.ShowBackgroundFlyout(new BackgroundUserControl(),1000);                
             }
    
         }
