@@ -48,6 +48,24 @@ namespace QuotesOfWisdom.Common
             _popup.IsOpen = true;
         }
 
+        public void ShowBackgroundFlyout(UserControl control, int width)
+        {
+            _popup = new Popup();
+            _popup.Closed += OnPopupClosed;
+            Window.Current.Activated += OnWindowActivated;
+            _popup.IsLightDismissEnabled = true;
+            _popup.Width = width;
+            _popup.Height = Window.Current.Bounds.Height;
+
+            control.Width = width;
+            control.Height = Window.Current.Bounds.Height;
+
+            _popup.Child = control;
+            _popup.SetValue(Canvas.LeftProperty, Window.Current.Bounds.Width - width);
+            _popup.SetValue(Canvas.TopProperty, 0);
+            _popup.IsOpen = true;
+        }
+
         private void OnWindowActivated(object sender, Windows.UI.Core.WindowActivatedEventArgs e)
         {
             if (e.WindowActivationState == Windows.UI.Core.CoreWindowActivationState.Deactivated)

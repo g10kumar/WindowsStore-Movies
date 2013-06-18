@@ -1,0 +1,77 @@
+﻿<UserControl
+    x:Class="QuotesOfWisdom.BackgroundUserControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:QuotesOfWisdom"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"  LayoutUpdated="LayoutRoot_LayoutUpdated"
+    d:DesignWidth="1000">
+    <Border BorderBrush="Black" BorderThickness="1,0,0,0" Width="1000">
+        <Grid x:Name="LayoutRoot" VerticalAlignment="Stretch">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <!-- Back button -->
+            <Grid Grid.Row="0">
+                <Grid Margin="30,32,17,13">
+                    <Grid.Transitions>
+                        <TransitionCollection>
+                            <EntranceThemeTransition FromHorizontalOffset="50" />
+                        </TransitionCollection>
+                    </Grid.Transitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="30"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button Click="OnBackButtonClicked" Margin="0,0,0,0" Style="{StaticResource SettingsBackButtonStyle}" Grid.Column="0" HorizontalAlignment="Left" />
+                    <TextBlock Margin="10,0,0,0" Grid.Column="1" FontFamily="Segoe UI" FontWeight="SemiLight" FontSize="26.6667" Text="Background Images" HorizontalAlignment="Left" />
+                </Grid>
+            </Grid>
+            <Grid Grid.Row="1"  Margin="10,-10,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="1" Margin="10,0,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="80"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Grid.Row="0" Orientation="Horizontal">
+                        <TextBox x:Name="txtSearch" Height="28" Width="200"></TextBox>
+                        <Button Content="Search" x:Name="btnSearch" Click="btnSearch_Click"></Button>
+                    </StackPanel>
+                    <ScrollViewer x:Name="ContentGrid" Grid.Row="1" VerticalScrollBarVisibility="Auto" Background="Transparent" Margin="0,0,0,0">
+                        <StackPanel>
+                            <Grid x:Name="stackProgressRing" Visibility="Collapsed" Margin="-100,170,0,0" Height="100" Width="100">
+                                <StackPanel  Height="Auto">
+                                    <ProgressRing x:Name="progressRing" Foreground="White" Height="100" Width="100" IsActive="True"></ProgressRing>
+                                </StackPanel>
+                            </Grid>
+                            <StackPanel Height="Auto" Name="imageStackPanel" VerticalAlignment="Top" Orientation="Vertical" Margin="0,5,0,0">
+
+                            </StackPanel>
+                            <StackPanel x:Name="stackMessage">
+                                <TextBlock x:Name="txtMessage" Style="{StaticResource SubheaderTextStyle}"></TextBlock>
+                            </StackPanel>
+                        </StackPanel>
+                    </ScrollViewer>
+                    <Popup x:Name="myPopup" Loaded="myPopup_Loaded_1" Margin="120,-50,50,50">
+                        <Border CornerRadius="10"  BorderThickness="2" BorderBrush="Black" Padding="2" Background="White">
+                            <StackPanel Margin="10" Height="670" Width="600" Orientation="Vertical">
+                                <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Visible" ScrollViewer.HorizontalScrollBarVisibility="Visible">
+                                    <StackPanel Height="600">
+                                        <Image x:Name="imgPreview" Stretch="UniformToFill" Height="600" Width="600" Margin="0,0,0,0"/>
+                                    </StackPanel>
+                                </ScrollViewer>
+                                <Button Content="Close" Background="#FF15BBF9" Margin="0,10,0,10" x:Name="btClose" Click="btClose_Click"></Button>
+                            </StackPanel>
+                        </Border>
+                    </Popup>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Border>
+</UserControl>

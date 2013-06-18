@@ -262,6 +262,10 @@ namespace QuotesOfWisdom
         {
             try
             {
+                if (list.Count == 0)
+                {
+                    list.Clear();
+                }
                 string rand1 = "";
                 string rand2 = "";
                 using (SQLiteConnection db = new SQLiteConnection("thefile2.db", SQLiteOpenFlags.ReadOnly))
@@ -286,11 +290,15 @@ namespace QuotesOfWisdom
                     secondarytitle.Text = "";
                 }
             }
-            catch (Exception ex)
+            catch 
             {
-                Windows.UI.Popups.MessageDialog dialog = new Windows.UI.Popups.MessageDialog(ex.Message.ToString());
-                dialog.ShowAsync();
+                
             }
+            //catch (Exception ex)
+            //{
+            //    Windows.UI.Popups.MessageDialog dialog = new Windows.UI.Popups.MessageDialog(ex.Message.ToString());
+            //    dialog.ShowAsync();
+            //}
         }
 
         /// <summary>
@@ -521,8 +529,7 @@ namespace QuotesOfWisdom
         /// <param name="e"></param>
         void btnAllCats_Click(object sender, RoutedEventArgs e)
         {
-            //this.Frame.Navigate(typeof(AllCategories));
-            this.Frame.Navigate(typeof(Background));
+            this.Frame.Navigate(typeof(AllCategories));            
         }
 
         /// <summary>
