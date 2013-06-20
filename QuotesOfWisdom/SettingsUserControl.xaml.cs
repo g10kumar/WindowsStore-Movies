@@ -90,7 +90,7 @@ namespace QuotesOfWisdom
         /// <summary>
         /// Method of changing background
         /// </summary>
-        private void ChangeBackground()
+        private async void ChangeBackground()
         {
             #region Commented on 11.06.2013
             //// Initialize the Radio button from roaming settings
@@ -169,7 +169,23 @@ namespace QuotesOfWisdom
                 if ((string)ApplicationData.Current.RoamingSettings.Values["Settings"].ToString() != "dynamicStyle")
                 {
                     LayoutRoot.Style = App.Current.Resources[(string)ApplicationData.Current.RoamingSettings.Values["Settings"].ToString()] as Style;
+
+                    #region Directly assigning background property of the Main Grid
+                    //Windows.Storage.StorageFolder storageFolder = await Windows.ApplicationModel.Package.Current.InstalledLocation.GetFolderAsync("Assets");
+                    //Windows.Storage.StorageFolder storageFolder1 = await storageFolder.GetFolderAsync("background");
+                    //StorageFile sampleFile = await storageFolder1.GetFileAsync("drop1.jpg");
+
+                    //ImageBrush ib = new ImageBrush();
+
+                    //BitmapImage src = new BitmapImage();
+                    //src.SetSource(await sampleFile.OpenAsync(FileAccessMode.Read));
+
+
+                    //ib.ImageSource = src;
+                    //LayoutRoot.Background = ib;
                     
+                    #endregion
+
                 }
                 else
                 {

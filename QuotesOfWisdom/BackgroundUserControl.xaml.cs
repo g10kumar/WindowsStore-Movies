@@ -51,6 +51,11 @@ namespace QuotesOfWisdom
         {
             this.InitializeComponent();
             LoadFormData();
+            stackMessage.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+            stackProgressRing.Visibility = Windows.UI.Xaml.Visibility.Visible;
+            imageStackPanel.Children.Clear();
+            genericURL = "https://api.500px.com/v1/photos?consumer_key=it4eyt0SylP9boHkIM4IMh9cBVmy0NB9XuWGC4AK&image_size[]=3&image_size[]=4&rpp=100&license_type=6";
+            LoadBackgroundImages(genericURL);
         }
 
         private async void LoadFormData()
@@ -136,7 +141,6 @@ namespace QuotesOfWisdom
                 if ((string)ApplicationData.Current.RoamingSettings.Values["Settings"].ToString() != "dynamicStyle")
                 {
                     LayoutRoot.Style = App.Current.Resources[(string)ApplicationData.Current.RoamingSettings.Values["Settings"].ToString()] as Style;
-
                 }
                 else
                 {
@@ -234,7 +238,7 @@ namespace QuotesOfWisdom
             }
             else
             {
-                genericURL = "https://api.500px.com/v1/photos?consumer_key=it4eyt0SylP9boHkIM4IMh9cBVmy0NB9XuWGC4AK&image_size[]=3&image_size[]=4&rpp=16&license_type=6";
+                genericURL = "https://api.500px.com/v1/photos?consumer_key=it4eyt0SylP9boHkIM4IMh9cBVmy0NB9XuWGC4AK&image_size[]=3&image_size[]=4&rpp=100&license_type=6";
             }
 
             LoadBackgroundImages(genericURL);
