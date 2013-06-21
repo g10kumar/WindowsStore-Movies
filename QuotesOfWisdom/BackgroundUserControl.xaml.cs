@@ -36,6 +36,8 @@ using Windows.UI.Popups;
 using Windows.UI.ViewManagement;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Store;
+using System.Text.RegularExpressions;
+
 namespace QuotesOfWisdom
 {
     public sealed partial class BackgroundUserControl : UserControl
@@ -47,6 +49,9 @@ namespace QuotesOfWisdom
         bool isBackgroundButtonVisible = true;
         LicenseChangedEventHandler licenseChangeHandler = null;
 
+        //Regex despRegex = new Regex("(\"description\":\")([^}]\"[^}])(\",\"times_viewed\")", RegexOptions.IgnoreCase | RegexOptions.IgnorePatternWhitespace);
+        Regex despRegex = new Regex(@"(?<=""description"":"").*?(?="",""times_viewed"")", RegexOptions.IgnoreCase | RegexOptions.IgnorePatternWhitespace);
+        Regex nameRegex = new Regex("(\"name\":\")([^}]\"[^}])(\",\"description\")", RegexOptions.IgnoreCase | RegexOptions.IgnorePatternWhitespace);
         public BackgroundUserControl()
         {
             this.InitializeComponent();
@@ -54,7 +59,7 @@ namespace QuotesOfWisdom
             stackMessage.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
             stackProgressRing.Visibility = Windows.UI.Xaml.Visibility.Visible;
             imageStackPanel.Children.Clear();
-            genericURL = "https://api.500px.com/v1/photos?consumer_key=it4eyt0SylP9boHkIM4IMh9cBVmy0NB9XuWGC4AK&image_size[]=3&image_size[]=4&rpp=100&license_type=6";
+            genericURL = "https://api.500px.com/v1/photos?consumer_key=it4eyt0SylP9boHkIM4IMh9cBVmy0NB9XuWGC4AK&image_size[]=3&image_size[]=4&rpp=16&license_type=6";
             LoadBackgroundImages(genericURL);
         }
 
@@ -238,7 +243,7 @@ namespace QuotesOfWisdom
             }
             else
             {
-                genericURL = "https://api.500px.com/v1/photos?consumer_key=it4eyt0SylP9boHkIM4IMh9cBVmy0NB9XuWGC4AK&image_size[]=3&image_size[]=4&rpp=100&license_type=6";
+                genericURL = "https://api.500px.com/v1/photos?consumer_key=it4eyt0SylP9boHkIM4IMh9cBVmy0NB9XuWGC4AK&image_size[]=3&image_size[]=4&rpp=16&license_type=6";
             }
 
             LoadBackgroundImages(genericURL);
@@ -248,12 +253,62 @@ namespace QuotesOfWisdom
         {
             try
             {
+                List<string> listDesp = new List<string>();
+                List<string> listName = new List<string>();
+
                 var client = new HttpClient();
                 var response = await client.GetAsync(URL);
                 var jsonbgImageresult = await response.Content.ReadAsStringAsync();
+
                 jsonbgImageresult = jsonbgImageresult.Replace(@"\", "");
 
-                var bgItems = JsonConvert.DeserializeObject<BGImageListings>(jsonbgImageresult);
+                string desppattern = @"(?<=""description"":"").*?(?="",""times_viewed"")";
+
+                string despoutresult = Regex.Replace(jsonbgImageresult, desppattern, match => match.Value.Replace("\"", ""));
+
+                string namepattern = @"(?<=""name"":"").*?(?="",""description"")";
+
+                string nameoutresult = Regex.Replace(despoutresult, namepattern, match => match.Value.Replace("\"", ""));
+
+
+                //MatchCollection despCollection = despRegex.Matches(jsonbgImageresult);
+
+                //if (despCollection.Count > 0)
+                //{
+                //    foreach (Match match in despCollection)
+                //    {
+                //        listDesp.Add(match.Groups[0].Index + "#" + match.Groups[0].Value);
+                //    }
+
+
+                //    for (int i = 0; i < listDesp.Count; i++)
+                //    {
+                //        jsonbgImageresult = jsonbgImageresult.Replace(listDesp[i].Split('#')[1].ToString(), "");
+                //    }
+                //}
+
+                //MatchCollection nameCollection = nameRegex.Matches(jsonbgImageresult);
+
+                //if (nameCollection.Count > 0)
+                //{
+                //    foreach (Match match in nameCollection)
+                //    {
+                //        listName.Add(match.Groups[0].Index + "#" + match.Groups[0].Value);
+                //    }
+
+
+                //    for (int i = 0; i < listName.Count; i++)
+                //    {
+                //        jsonbgImageresult = jsonbgImageresult.Replace(listName[i].Split('#')[1].ToString(), "");
+                //    }
+                //}
+
+                //jsonbgImageresult = jsonbgImageresult.Replace(@"\", "");
+
+                //var bgItems = JsonConvert.DeserializeObject<BGImageListings>(jsonbgImageresult);
+                var bgItems = JsonConvert.DeserializeObject<BGImageListings>(nameoutresult);
+
+                //var bgItems = JsonConvert.DeserializeObject<BGImageListings>(jsonbgImageresult);
 
                 if (bglist.Count > 0)
                 {
@@ -282,12 +337,12 @@ namespace QuotesOfWisdom
                 //bgImagesGridView.ItemsSource = bglist.ToList();
                 BindBGImages();
             }
-            catch
+            catch(Exception ex)
             {
                 stackProgressRing.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
                 imageStackPanel.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
                 stackMessage.Visibility = Windows.UI.Xaml.Visibility.Visible;
-                txtMessage.Text = "Unable load images now.  Please try later!";
+                txtMessage.Text = "Unable load images now.  Please try later! \r\n " + ex.Message.ToString();
 
                 //// Create the message dialog and set its content and title
                 //var messageDialog = new MessageDialog("Unable load images now.  Please try later!", "Network Error");

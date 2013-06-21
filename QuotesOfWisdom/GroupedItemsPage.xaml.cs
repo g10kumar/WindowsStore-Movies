@@ -529,7 +529,8 @@ namespace QuotesOfWisdom
         /// <param name="e"></param>
         void btnAllCats_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(AllCategories));            
+            this.Frame.Navigate(typeof(AllCategories));  
+            //this.Frame.Navigate(typeof(Background));
         }
 
         /// <summary>
