@@ -123,6 +123,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Background.xaml.cs" />
+    <Compile Include="BackgroundModifiedUserControl.xaml.cs" />
     <Compile Include="BackgroundUserControl.xaml.cs">
       <DependentUpon>BackgroundUserControl.xaml</DependentUpon>
     </Compile>
@@ -130,6 +131,10 @@
       <DependentUpon>BlankPage1.xaml</DependentUpon>
     </Compile>
     <Compile Include="Common\AppSettings.cs" />
+    <Compile Include="Common\Flickr.cs" />
+    <Compile Include="Common\IncrementalSource.cs" />
+    <Compile Include="Common\IPagedResponse.cs" />
+    <Compile Include="Common\IPagedSource.cs" />
     <Compile Include="Common\SettingsFlyout.cs" />
     <Compile Include="Common\Utilities.cs" />
     <Compile Include="DataModel\Category.cs" />
@@ -213,6 +218,10 @@
     <Page Include="BackgroundUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BackgroundModifiedUserControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Content Include="Dlls\Newtonsoft.Json.dll" />
     <Content Include="Xml\Ads.xml" />
