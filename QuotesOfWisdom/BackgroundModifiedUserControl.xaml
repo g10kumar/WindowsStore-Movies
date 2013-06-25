@@ -55,7 +55,7 @@
                                 <GridView x:Name="gvImages" IsSwipeEnabled="False" SelectionMode="None" IsItemClickEnabled="True">
                                     <GridView.ItemsPanel>
                                         <ItemsPanelTemplate>
-                                            <WrapGrid Orientation="Vertical" MaximumRowsOrColumns="1000" ItemHeight="200" ItemWidth="250" VerticalAlignment="Center" />
+                                            <WrapGrid Orientation="Vertical" MaximumRowsOrColumns="3" ItemHeight="200" ItemWidth="250" VerticalAlignment="Center" />
                                         </ItemsPanelTemplate>
                                     </GridView.ItemsPanel>
                                     <GridView.ItemContainerTransitions>
@@ -89,10 +89,10 @@
                     </ScrollViewer>
                     <Popup x:Name="myPopup" Loaded="myPopup_Loaded_1" Margin="120,-50,50,50">
                         <Border CornerRadius="10"  BorderThickness="2" BorderBrush="Black" Padding="2" Background="White">
-                            <StackPanel Margin="10" Height="670" Width="600" Orientation="Vertical">
+                            <StackPanel Margin="10" Height="670" Width="700" Orientation="Vertical">
                                 <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Visible" ScrollViewer.HorizontalScrollBarVisibility="Visible">
                                     <StackPanel Height="600">
-                                        <Image x:Name="imgPreview" Stretch="UniformToFill" Height="600" Width="600" Margin="0,0,0,0"/>
+                                        <Image x:Name="imgPreview" Stretch="UniformToFill" Height="600" Width="700" Margin="0,0,0,0"/>
                                     </StackPanel>
                                 </ScrollViewer>
                                 <HyperlinkButton Foreground="Black" x:Name="hplbtnClose" Click="btClose_Click">Close</HyperlinkButton>

@@ -56,9 +56,14 @@ namespace QuotesOfWisdom
             LoadFormData();
             stackMessage.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
             stackProgressRing.Visibility = Windows.UI.Xaml.Visibility.Visible;
+
+            if (genericURL != "")
+            {
+                genericURL = "";
+            }
+
             genericURL = "https://api.500px.com/v1/photos?consumer_key=it4eyt0SylP9boHkIM4IMh9cBVmy0NB9XuWGC4AK&image_size[]=3&image_size[]=4&rpp=100&license_type=6";
             DisplayImages();
-            
         }
 
         private void FrameworkElement_OnLoaded(object sender, RoutedEventArgs e)
@@ -264,16 +269,26 @@ namespace QuotesOfWisdom
             stackMessage.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
             stackProgressRing.Visibility = Windows.UI.Xaml.Visibility.Visible;
             //imageStackPanel.Children.Clear();
+
+            if (genericURL != "")
+            {
+                genericURL = "";
+            }
+
             if (txtSearch.Text != "")
             {
                 genericURL = "https://api.500px.com/v1/photos?search?term=" + txtSearch.Text.Trim() + "&consumer_key=it4eyt0SylP9boHkIM4IMh9cBVmy0NB9XuWGC4AK&image_size[]=3&image_size[]=4";
+                //genericURL = "https://api.500px.com/v1/photos?search?term=" + txtSearch.Text.Trim() + "&consumer_key=it4eyt0SylP9boHkIM4IMh9cBVmy0NB9XuWGC4AK";
+                //genericURL = "https://api.500px.com/v1/photos/search?term=bike&page=1&consumer_key=it4eyt0SylP9boHkIM4IMh9cBVmy0NB9XuWGC4AK&image_size[]=3&image_size[]=4";
+                //genericURL = "https://api.500px.com/v1/photos?search?term=" + txtSearch.Text.Trim() + "&consumer_key=it4eyt0SylP9boHkIM4IMh9cBVmy0NB9XuWGC4AK&image_size[]=3&image_size[]=4&license_type=6";
+                //genericURL = "https://api.500px.com/v1/photos?search?term=" + txtSearch.Text.Trim() + "&consumer_key=it4eyt0SylP9boHkIM4IMh9cBVmy0NB9XuWGC4AK&image_size[]=3&image_size[]=4&only=" + txtSearch.Text.Trim();
 
             }
             else
             {
                 genericURL = "https://api.500px.com/v1/photos?consumer_key=it4eyt0SylP9boHkIM4IMh9cBVmy0NB9XuWGC4AK&image_size[]=3&image_size[]=4&rpp=100&license_type=6";
             }
-
+            this.gvImages.ItemsSource = null;
             DisplayImages();
             //gvImages.ItemsSource = new IncrementalSource<Flickr, FlickrPhoto>(genericURL);
             //LoadBackgroundImages(genericURL);
