@@ -32,7 +32,7 @@ namespace QuotesOfWisdom.Common
         
         public bool HasMoreItems
         {
-            get { return this.VirtualCount > this.CurrentPage * 100; }
+            get { return this.VirtualCount > this.CurrentPage * 12; }
         }
 
         public IAsyncOperation<LoadMoreItemsResult> LoadMoreItemsAsync(uint count)
@@ -42,7 +42,7 @@ namespace QuotesOfWisdom.Common
             return Task.Run<LoadMoreItemsResult>(
                 async () =>
                 {
-                    IPagedResponse<K> result = await this.Source.GetPage(this.Query, ++this.CurrentPage, 100);
+                    IPagedResponse<K> result = await this.Source.GetPage(this.Query, ++this.CurrentPage, 12);
                     
                     this.VirtualCount = result.VirtualCount;
 
