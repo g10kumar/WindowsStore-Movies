@@ -282,6 +282,8 @@ namespace QuotesOfWisdom
                 //genericURL = "https://api.500px.com/v1/photos/search?term=bike&page=1&consumer_key=it4eyt0SylP9boHkIM4IMh9cBVmy0NB9XuWGC4AK&image_size[]=3&image_size[]=4";
                 //genericURL = "https://api.500px.com/v1/photos?search?term=" + txtSearch.Text.Trim() + "&consumer_key=it4eyt0SylP9boHkIM4IMh9cBVmy0NB9XuWGC4AK&image_size[]=3&image_size[]=4&license_type=6";
                 //genericURL = "https://api.500px.com/v1/photos?search?term=" + txtSearch.Text.Trim() + "&consumer_key=it4eyt0SylP9boHkIM4IMh9cBVmy0NB9XuWGC4AK&image_size[]=3&image_size[]=4&only=" + txtSearch.Text.Trim();
+                //genericURL = "https://api.500px.com/v1/photos?search?term=" + txtSearch.Text.Trim() + "&consumer_key=it4eyt0SylP9boHkIM4IMh9cBVmy0NB9XuWGC4AK&Consumer_Secret=umzO3TMSuooMAKbWGdw7J0tFSAQFJw3P0LTTksUv&image_size[]=3&image_size[]=4&&license_type=6";
+                //genericURL = "https://api.500px.com/v1/photos?search?term=" + txtSearch.Text.Trim() + "&type=photos&consumer_key=it4eyt0SylP9boHkIM4IMh9cBVmy0NB9XuWGC4AK&image_size[]=3&image_size[]=4&&license_type=-1";
 
             }
             else
