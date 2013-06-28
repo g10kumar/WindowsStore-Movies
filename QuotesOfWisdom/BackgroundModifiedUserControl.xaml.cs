@@ -45,9 +45,9 @@ namespace QuotesOfWisdom
         List<BGImages> bglist = new List<BGImages>();
         List<string> bglistphoto = new List<string>();
         int cnt = 0;
-        string genericURL = "";
+        //string genericURL = "";
         bool isBackgroundButtonVisible = true;
-        LicenseChangedEventHandler licenseChangeHandler = null;
+        LicenseChangedEventHandler licenseChangeHandler = null;       
 
         public BackgroundModifiedUserControl()
         {
@@ -57,12 +57,12 @@ namespace QuotesOfWisdom
             stackMessage.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
             stackProgressRing.Visibility = Windows.UI.Xaml.Visibility.Visible;
 
-            if (genericURL != "")
+            if (sessionData.genericURL != "")
             {
-                genericURL = "";
+                sessionData.genericURL = "";
             }
 
-            genericURL = "https://api.500px.com/v1/photos?consumer_key=it4eyt0SylP9boHkIM4IMh9cBVmy0NB9XuWGC4AK&image_size[]=3&image_size[]=4&rpp=100&license_type=6";
+            sessionData.genericURL = "https://api.500px.com/v1/photos?consumer_key=it4eyt0SylP9boHkIM4IMh9cBVmy0NB9XuWGC4AK&image_size[]=3&image_size[]=4&rpp=100&license_type=6";
             DisplayImages();
         }
 
@@ -84,7 +84,8 @@ namespace QuotesOfWisdom
             try
             {
                 stackMessage.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-                gvImages.ItemsSource = new IncrementalSource<Flickr, FlickrPhoto>(genericURL);
+                IncrementalSource<Flickr, FlickrPhoto> _data = new IncrementalSource<Flickr, FlickrPhoto>(sessionData.genericURL);
+                gvImages.ItemsSource = _data;
                 stackProgressRing.Visibility = Windows.UI.Xaml.Visibility.Collapsed;                
             }
             catch {
@@ -249,6 +250,9 @@ namespace QuotesOfWisdom
             //    ((Popup)this.Parent).IsOpen = false;
             //}
             //SettingsPane.Show();
+
+            sessionData.isSearchClicked = false;
+            sessionData.genericURL = "";
             isBackgroundButtonVisible = false;
             stackProgressRing.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
             if (licenseChangeHandler != null)
@@ -266,18 +270,28 @@ namespace QuotesOfWisdom
 
         private void btnSearch_Click(object sender, RoutedEventArgs e)
         {
+            //FlickrResponse fr = new FlickrResponse(null,0);            
+
+            //IncrementalSource<Flickr, FlickrPhoto> iload = new IncrementalSource<Flickr, FlickrPhoto>("");
+            gvImages.LoadMoreItemsAsync().Cancel();
+            //iload.VirtualCount = sessionData.totalImages + 10;
+            sessionData.isSearchClicked = true;
+            //await gvImages.LoadMoreItemsAsync();
+            var gridTemplate = gvImages.Template;
+            gvImages.Template = null;
+
             stackMessage.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
             stackProgressRing.Visibility = Windows.UI.Xaml.Visibility.Visible;
             //imageStackPanel.Children.Clear();
 
-            if (genericURL != "")
+            if (sessionData.genericURL != "")
             {
-                genericURL = "";
+                sessionData.genericURL = "";
             }
 
             if (txtSearch.Text != "")
             {
-                genericURL = "https://api.500px.com/v1/photos?search?term=" + txtSearch.Text.Trim() + "&consumer_key=it4eyt0SylP9boHkIM4IMh9cBVmy0NB9XuWGC4AK&image_size[]=3&image_size[]=4";
+                sessionData.genericURL = "https://api.500px.com/v1/photos?search?term=" + txtSearch.Text.Trim() + "&consumer_key=it4eyt0SylP9boHkIM4IMh9cBVmy0NB9XuWGC4AK&image_size[]=3&image_size[]=4";
                 //genericURL = "https://api.500px.com/v1/photos?search?term=" + txtSearch.Text.Trim() + "&consumer_key=it4eyt0SylP9boHkIM4IMh9cBVmy0NB9XuWGC4AK";
                 //genericURL = "https://api.500px.com/v1/photos/search?term=bike&page=1&consumer_key=it4eyt0SylP9boHkIM4IMh9cBVmy0NB9XuWGC4AK&image_size[]=3&image_size[]=4";
                 //genericURL = "https://api.500px.com/v1/photos?search?term=" + txtSearch.Text.Trim() + "&consumer_key=it4eyt0SylP9boHkIM4IMh9cBVmy0NB9XuWGC4AK&image_size[]=3&image_size[]=4&license_type=6";
@@ -288,9 +302,10 @@ namespace QuotesOfWisdom
             }
             else
             {
-                genericURL = "https://api.500px.com/v1/photos?consumer_key=it4eyt0SylP9boHkIM4IMh9cBVmy0NB9XuWGC4AK&image_size[]=3&image_size[]=4&rpp=100&license_type=6";
+                sessionData.genericURL = "https://api.500px.com/v1/photos?consumer_key=it4eyt0SylP9boHkIM4IMh9cBVmy0NB9XuWGC4AK&image_size[]=3&image_size[]=4&rpp=100&license_type=6";
             }
             this.gvImages.ItemsSource = null;
+            gvImages.Template = gridTemplate;
             DisplayImages();
             //gvImages.ItemsSource = new IncrementalSource<Flickr, FlickrPhoto>(genericURL);
             //LoadBackgroundImages(genericURL);
