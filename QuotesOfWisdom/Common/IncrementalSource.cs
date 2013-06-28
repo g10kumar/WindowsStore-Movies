@@ -16,7 +16,7 @@ namespace QuotesOfWisdom.Common
         where T: IPagedSource<K>, new()
     {
         private string Query { get; set; }
-        private int VirtualCount { get; set; }
+        public int VirtualCount { get; set; }
         private int CurrentPage { get; set; }
         private IPagedSource<K> Source { get; set; }
 
@@ -32,7 +32,13 @@ namespace QuotesOfWisdom.Common
         
         public bool HasMoreItems
         {
-            get { return this.VirtualCount > this.CurrentPage * 12; }
+            get {
+                //if (sessionData.isSearchClicked)
+                //{
+                //    sessionData.isSearchClicked = false;
+                //    return false;
+                //}
+                return this.VirtualCount > this.CurrentPage * 12; }
         }
 
         public IAsyncOperation<LoadMoreItemsResult> LoadMoreItemsAsync(uint count)
@@ -42,7 +48,16 @@ namespace QuotesOfWisdom.Common
             return Task.Run<LoadMoreItemsResult>(
                 async () =>
                 {
-                    IPagedResponse<K> result = await this.Source.GetPage(this.Query, ++this.CurrentPage, 12);
+                    
+                    //sessionData.curPageCount = this.CurrentPage;
+                    IPagedResponse<K> result;
+
+                    if (sessionData.isSearchClicked)
+                    {
+                        result = null;
+                        sessionData.isSearchClicked = false;
+                    }
+                    result = await this.Source.GetPage(this.Query, ++this.CurrentPage, 12);
                     
                     this.VirtualCount = result.VirtualCount;
 

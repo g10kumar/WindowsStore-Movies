@@ -48,6 +48,8 @@ namespace QuotesOfWisdom.Common
 
                 var bgItems = JsonConvert.DeserializeObject<BGImageListings>(nameoutresult);
 
+                sessionData.totalImages = Convert.ToInt32(bgItems.total_items.ToString());
+
                 int virtualCount;
 
                 if (!int.TryParse(bgItems.total_items.ToString(), out virtualCount))

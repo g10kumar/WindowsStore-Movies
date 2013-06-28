@@ -273,7 +273,11 @@ namespace QuotesOfWisdom
         public static bool isSearchCat = false;
         public static bool isSearchAut = false;
         public static string searchKeyWord { get; set; }
-
+        public static bool isSearchClicked = false;
+        public static int curPageCount { get; set; }
+        public static int noOfImages { get; set; }
+        public static int totalImages { get; set; }
+        public static string genericURL { get; set; }
         public static void resetValues()
         {
             sessionData.currentAuthor = "";
@@ -311,6 +315,11 @@ namespace QuotesOfWisdom
             sessionData.isSearchCat = false;
             sessionData.isSearchAut = false;
             sessionData.searchKeyWord = "";
+            sessionData.isSearchClicked = false;
+            sessionData.curPageCount = 0;
+            sessionData.noOfImages = 12;
+            sessionData.totalImages = 0;
+            sessionData.genericURL = "";
         }
     }
     /// <summary>
