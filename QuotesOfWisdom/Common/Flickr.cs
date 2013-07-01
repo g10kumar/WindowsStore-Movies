@@ -30,7 +30,16 @@ namespace QuotesOfWisdom.Common
                     throw new ArgumentOutOfRangeException("pageSize");
 
                 query += "&page=" + pageIndex;
-
+                
+                //if (query.Contains("term"))
+                //{
+                //    sessionData.searchKeyWord = "keyword";
+                //}
+                //else
+                //{
+                //    sessionData.searchKeyWord = "normal";
+                //}
+                //sessionData.totalImages = pageIndex;
                 HttpClient client = new HttpClient();
                 var response = await client.GetAsync(query);
 
@@ -48,7 +57,7 @@ namespace QuotesOfWisdom.Common
 
                 var bgItems = JsonConvert.DeserializeObject<BGImageListings>(nameoutresult);
 
-                sessionData.totalImages = Convert.ToInt32(bgItems.total_items.ToString());
+                //sessionData.totalImages = Convert.ToInt32(bgItems.total_items.ToString());
 
                 int virtualCount;
 

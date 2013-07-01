@@ -9,16 +9,18 @@ using Windows.Foundation.Collections;
 using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Data;
+using System.Threading;
 
 namespace QuotesOfWisdom.Common
 {
     public class IncrementalSource<T, K> : ObservableCollection<K>, ISupportIncrementalLoading
-        where T: IPagedSource<K>, new()
+        where T : IPagedSource<K>, new()
     {
         private string Query { get; set; }
         public int VirtualCount { get; set; }
         private int CurrentPage { get; set; }
         private IPagedSource<K> Source { get; set; }
+
 
         public IncrementalSource(string query)
         {
@@ -29,50 +31,63 @@ namespace QuotesOfWisdom.Common
         }
 
         #region ISupportIncrementalLoading
-        
+
         public bool HasMoreItems
         {
-            get {
+            get
+            {
                 //if (sessionData.isSearchClicked)
                 //{
                 //    sessionData.isSearchClicked = false;
                 //    return false;
                 //}
-                return this.VirtualCount > this.CurrentPage * 12; }
+                return this.VirtualCount > this.CurrentPage * 12;
+            }
         }
 
         public IAsyncOperation<LoadMoreItemsResult> LoadMoreItemsAsync(uint count)
         {
+            sessionData.tokenSource = new CancellationTokenSource();
             CoreDispatcher dispatcher = Window.Current.Dispatcher;
+
 
             return Task.Run<LoadMoreItemsResult>(
                 async () =>
                 {
-                    
+
+
                     //sessionData.curPageCount = this.CurrentPage;
-                    IPagedResponse<K> result;
+                    IPagedResponse<K> result = null;
 
-                    if (sessionData.isSearchClicked)
+                    //if (sessionData.isSearchClicked)
+                    //{
+                    //    result = null;
+                    //    sessionData.isSearchClicked = false;
+                    //}
+                    if (!sessionData.tokenSource.IsCancellationRequested)
                     {
-                        result = null;
-                        sessionData.isSearchClicked = false;
-                    }
-                    result = await this.Source.GetPage(this.Query, ++this.CurrentPage, 12);
-                    
-                    this.VirtualCount = result.VirtualCount;
+                        result = await this.Source.GetPage(this.Query, ++this.CurrentPage, 12);
 
-                    await dispatcher.RunAsync(
-                        CoreDispatcherPriority.Normal,
-                        () =>
+                        this.VirtualCount = result.VirtualCount;
+
+                        await Task.Factory.StartNew(async () =>
                         {
-                            foreach (K item in result.Items)
-                                this.Add(item);
-                        });
+                            await dispatcher.RunAsync(
+                                CoreDispatcherPriority.Normal,
+                                    () =>
+                                    {
+                                        foreach (K item in result.Items)
+                                            this.Add(item);
+                                    });
+                        }, sessionData.tokenSource.Token);
 
+                    }
                     return new LoadMoreItemsResult() { Count = (uint)result.Items.Count() };
 
                 }).AsAsyncOperation<LoadMoreItemsResult>();
-        } 
+
+
+        }
 
         #endregion
     }

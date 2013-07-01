@@ -36,6 +36,7 @@ using Windows.UI.Popups;
 using Windows.UI.ViewManagement;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Store;
+using System.Threading;
 
 namespace QuotesOfWisdom
 {
@@ -47,8 +48,9 @@ namespace QuotesOfWisdom
         int cnt = 0;
         //string genericURL = "";
         bool isBackgroundButtonVisible = true;
-        LicenseChangedEventHandler licenseChangeHandler = null;       
-
+        LicenseChangedEventHandler licenseChangeHandler = null;
+        //CancellationTokenSource cts = new CancellationTokenSource();
+        
         public BackgroundModifiedUserControl()
         {
             
@@ -63,6 +65,7 @@ namespace QuotesOfWisdom
             }
 
             sessionData.genericURL = "https://api.500px.com/v1/photos?consumer_key=it4eyt0SylP9boHkIM4IMh9cBVmy0NB9XuWGC4AK&image_size[]=3&image_size[]=4&rpp=100&license_type=6";
+           // sessionData.genericURL = "https://api.500px.com/v1/photos?search?term=bike&consumer_key=it4eyt0SylP9boHkIM4IMh9cBVmy0NB9XuWGC4AK&image_size[]=3&image_size[]=4";
             DisplayImages();
         }
 
@@ -86,6 +89,7 @@ namespace QuotesOfWisdom
                 stackMessage.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
                 IncrementalSource<Flickr, FlickrPhoto> _data = new IncrementalSource<Flickr, FlickrPhoto>(sessionData.genericURL);
                 gvImages.ItemsSource = _data;
+                //txtSearch.Text = sessionData.searchKeyWord + " --- " + sessionData.totalImages.ToString();
                 stackProgressRing.Visibility = Windows.UI.Xaml.Visibility.Collapsed;                
             }
             catch {
@@ -270,8 +274,12 @@ namespace QuotesOfWisdom
 
         private void btnSearch_Click(object sender, RoutedEventArgs e)
         {
+            sessionData.tokenSource.Cancel();
+            //sessionData.tokenSource.Dispose();
             //FlickrResponse fr = new FlickrResponse(null,0);            
-
+            //CancellationToken token = cts.Token;
+            //token.Register(() => cts.Cancel());
+           // cts.Cancel();
             //IncrementalSource<Flickr, FlickrPhoto> iload = new IncrementalSource<Flickr, FlickrPhoto>("");
             gvImages.LoadMoreItemsAsync().Cancel();
             //iload.VirtualCount = sessionData.totalImages + 10;
@@ -305,6 +313,7 @@ namespace QuotesOfWisdom
                 sessionData.genericURL = "https://api.500px.com/v1/photos?consumer_key=it4eyt0SylP9boHkIM4IMh9cBVmy0NB9XuWGC4AK&image_size[]=3&image_size[]=4&rpp=100&license_type=6";
             }
             this.gvImages.ItemsSource = null;
+            sessionData.tokenSource = new CancellationTokenSource();
             gvImages.Template = gridTemplate;
             DisplayImages();
             //gvImages.ItemsSource = new IncrementalSource<Flickr, FlickrPhoto>(genericURL);

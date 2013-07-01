@@ -20,6 +20,8 @@ using SQLite;
 using Windows.Storage;
 using Windows.UI.ApplicationSettings;
 using Windows.ApplicationModel.DataTransfer;
+using System.Threading;
+
 namespace QuotesOfWisdom
 {
     /// <summary>
@@ -278,6 +280,8 @@ namespace QuotesOfWisdom
         public static int noOfImages { get; set; }
         public static int totalImages { get; set; }
         public static string genericURL { get; set; }
+        public static CancellationTokenSource tokenSource { get; set; }
+
         public static void resetValues()
         {
             sessionData.currentAuthor = "";
@@ -320,6 +324,7 @@ namespace QuotesOfWisdom
             sessionData.noOfImages = 12;
             sessionData.totalImages = 0;
             sessionData.genericURL = "";
+            sessionData.tokenSource = null;
         }
     }
     /// <summary>
