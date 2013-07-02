@@ -530,7 +530,7 @@ namespace QuotesOfWisdom
         void btnAllCats_Click(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(AllCategories));  
-            //this.Frame.Navigate(typeof(Background));
+            //this.Frame.Navigate(typeof(BlankPage1));
         }
 
         /// <summary>

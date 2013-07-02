@@ -360,7 +360,7 @@ namespace QuotesOfWisdom
             {
                 ((Popup)this.Parent).IsOpen = false;
                 var settings = new SettingsFlyout();
-                settings.ShowBackgroundFlyout(new BackgroundModifiedUserControl(), 1000);                
+                settings.ShowBackgroundFlyout(new BackgroundMoreImages(), 1000);                
             }
    
         }

@@ -505,25 +505,25 @@ namespace QuotesOfWisdom
         }
     }
 
-    public class BGImageListings
-    {
-        public photos[] photos = { };
-    }
+    //public class BGImageListings
+    //{
+    //    public photos[] photos = { };
+    //}
 
-    public class photos
-    {
-        public images[] images = { };
-    }
+    //public class photos
+    //{
+    //    public images[] images = { };
+    //}
 
-    public class images
-    {
-        public string size { get; set; }
-        public string url { get; set; }
-    }
+    //public class images
+    //{
+    //    public string size { get; set; }
+    //    public string url { get; set; }
+    //}
 
-    public class BGImages
-    {
-        public string ImageURLsmall { get; set; }
-        public string ImageURLbig { get; set; }
-    }
+    //public class BGImages
+    //{
+    //    public string ImageURLsmall { get; set; }
+    //    public string ImageURLbig { get; set; }
+    //}
 }

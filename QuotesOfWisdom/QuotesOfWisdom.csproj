@@ -124,6 +124,9 @@
     </Compile>
     <Compile Include="Background.xaml.cs" />
     <Compile Include="BackgroundModifiedUserControl.xaml.cs" />
+    <Compile Include="BackgroundMoreImages.xaml.cs">
+      <DependentUpon>BackgroundMoreImages.xaml</DependentUpon>
+    </Compile>
     <Compile Include="BackgroundUserControl.xaml.cs">
       <DependentUpon>BackgroundUserControl.xaml</DependentUpon>
     </Compile>
@@ -222,6 +225,10 @@
     <Page Include="BackgroundModifiedUserControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="BackgroundMoreImages.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Content Include="Dlls\Newtonsoft.Json.dll" />
     <Content Include="Xml\Ads.xml" />
