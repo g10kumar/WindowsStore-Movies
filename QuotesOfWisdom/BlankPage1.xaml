@@ -8,9 +8,10 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
+    <Grid Background="White">
+        <ProgressBar x:Name="shareProgressBar"  IsIndeterminate="True"></ProgressBar>
         <!--<FlipView x:Name="f1" Width="1000" Height="700">
-            <FlipViewItem>
+            <FlipViewItem>{StaticResource ApplicationPageBackgroundThemeBrush}
                 <StackPanel>
                     <TextBlock Text="Ability" />
                     <FlipView x:Name="f2" Width="600" Height="500">
@@ -58,7 +59,7 @@
                 </Rectangle.Fill>
             </Rectangle></Button>
         <ScrollBar HorizontalAlignment="Left" VerticalAlignment="Top"/>-->
-        <Image Source="http://img2.etsystatic.com/000/0/5134811/il_170x135.319993622.jpg"></Image>
+        <!--<Image Source="http://img2.etsystatic.com/000/0/5134811/il_170x135.319993622.jpg"></Image>
         <ComboBox x:Name="colorPicker" HorizontalAlignment="Left" VerticalAlignment="Top">
             <ComboBoxItem Background="AliceBlue">Alice Blue</ComboBoxItem>
             <ComboBoxItem Background="AntiqueWhite">Antique White</ComboBoxItem>
@@ -72,6 +73,6 @@
             <ComboBoxItem Background="Blue">Blue</ComboBoxItem>
             <ComboBoxItem Background="Olive">Olive</ComboBoxItem>
         </ComboBox>
-        <FlipView HorizontalAlignment="Left" VerticalAlignment="Top" SelectionChanged="FlipView_SelectionChanged_1"/>
+        <FlipView HorizontalAlignment="Left" VerticalAlignment="Top" SelectionChanged="FlipView_SelectionChanged_1"/>-->
     </Grid>
 </Page>
