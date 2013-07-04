@@ -53,11 +53,13 @@ namespace QuotesOfWisdom
             //txtSearch.Text = "bike";
             if (txtSearch.Text != "")
             {
-                genericURL = "https://api.500px.com/v1/photos?search?term=" + txtSearch.Text.Trim() + "&consumer_key=it4eyt0SylP9boHkIM4IMh9cBVmy0NB9XuWGC4AK&image_size[]=3&image_size[]=4&rpp=40&license_type=6&page=" + sessionData.currentPage;
+                //genericURL = "https://api.500px.com/v1/photos/search?term=" + txtSearch.Text.Trim() + "&consumer_key=it4eyt0SylP9boHkIM4IMh9cBVmy0NB9XuWGC4AK&image_size[]=3&image_size[]=4&rpp=40&exclude_nude=true&page=" + sessionData.currentPage;
+                genericURL = "https://api.500px.com/v1/photos/search?term=" + txtSearch.Text.Trim() + "&consumer_key=it4eyt0SylP9boHkIM4IMh9cBVmy0NB9XuWGC4AK&rpp=36&sort=votes_count&exclude_nude=true&page=" + sessionData.currentPage;
             }
             else
             {
-                genericURL = "https://api.500px.com/v1/photos?consumer_key=it4eyt0SylP9boHkIM4IMh9cBVmy0NB9XuWGC4AK&image_size[]=3&image_size[]=4&rpp=40&license_type=6&page=" + sessionData.currentPage;
+                //genericURL = "https://api.500px.com/v1/photos?consumer_key=it4eyt0SylP9boHkIM4IMh9cBVmy0NB9XuWGC4AK&image_size[]=3&image_size[]=4&exclude_nude=true&rpp=40&page=" + sessionData.currentPage;
+                genericURL = "https://api.500px.com/v1/photos?consumer_key=it4eyt0SylP9boHkIM4IMh9cBVmy0NB9XuWGC4AK&exclude_nude=true&sort=votes_count&rpp=36&page=" + sessionData.currentPage;
             }
             LoadBackgroundImages(genericURL);
         }        
@@ -198,8 +200,13 @@ namespace QuotesOfWisdom
                 List<string> listDesp = new List<string>();
                 List<string> listName = new List<string>();
 
-                var client = new HttpClient();
-                var response = await client.GetAsync(URL);
+                var handler = new HttpClientHandler { AllowAutoRedirect = false };
+                var client = new HttpClient(handler);
+                client.DefaultRequestHeaders.Add("user-agent", "Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.1453.116 Safari/537.36");
+
+                var randString = System.Guid.NewGuid();
+
+                var response = await client.GetAsync(URL + "&" + randString);
                 var jsonbgImageresult = await response.Content.ReadAsStringAsync();
 
                 jsonbgImageresult = jsonbgImageresult.Replace(@"\", "");
@@ -220,15 +227,18 @@ namespace QuotesOfWisdom
                 {
                     BGImages s = new BGImages();
 
-                    if (bgItems.photos[i].images[0].size == "3")
-                    {
-                        s.ImageURLsmall = bgItems.photos[i].images[0].url.ToString();
-                    }
+                    s.ImageURLsmall = bgItems.photos[i].images[0].url.ToString().Replace("2.jpg", "3.jpg");
+                    s.ImageURLbig = bgItems.photos[i].images[0].url.ToString().Replace("2.jpg", "4.jpg");
 
-                    if (bgItems.photos[i].images[1].size == "4")
-                    {
-                        s.ImageURLbig = bgItems.photos[i].images[1].url.ToString();
-                    }
+                    //if (bgItems.photos[i].images[0].size == "3")
+                    //{
+                    //    s.ImageURLsmall = bgItems.photos[i].images[0].url.ToString();
+                    //}
+
+                    //if (bgItems.photos[i].images[1].size == "4")
+                    //{
+                    //    s.ImageURLbig = bgItems.photos[i].images[1].url.ToString();
+                    //}
 
                     bglist.Add(s);
                     s = null;
@@ -301,11 +311,11 @@ namespace QuotesOfWisdom
 
             if (txtSearch.Text != "")
             {
-                genericURL = "https://api.500px.com/v1/photos?search?term=" + txtSearch.Text.Trim() + "&consumer_key=it4eyt0SylP9boHkIM4IMh9cBVmy0NB9XuWGC4AK&image_size[]=3&image_size[]=4&rpp=40&license_type=6&page=" + sessionData.currentPage;
+                genericURL = "https://api.500px.com/v1/photos/search?term=" + txtSearch.Text.Trim() + "&consumer_key=it4eyt0SylP9boHkIM4IMh9cBVmy0NB9XuWGC4AK&rpp=36&sort=votes_count&page=" + sessionData.currentPage;
             }
             else
             {
-                genericURL = "https://api.500px.com/v1/photos?consumer_key=it4eyt0SylP9boHkIM4IMh9cBVmy0NB9XuWGC4AK&image_size[]=3&image_size[]=4&rpp=40&license_type=6&page=" + sessionData.currentPage;
+                genericURL = "https://api.500px.com/v1/photos?consumer_key=it4eyt0SylP9boHkIM4IMh9cBVmy0NB9XuWGC4AK&rpp=36&sort=votes_count&page=" + sessionData.currentPage;
             }
 
             LoadBackgroundImages(genericURL);
@@ -378,7 +388,8 @@ namespace QuotesOfWisdom
             gvImages.ItemsSource = null;
             stackMessage.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
             stackProgressRing.Visibility = Windows.UI.Xaml.Visibility.Visible;
-            genericURL = "https://api.500px.com/v1/photos?search?term=" + txtSearch.Text.Trim() + "&consumer_key=it4eyt0SylP9boHkIM4IMh9cBVmy0NB9XuWGC4AK&image_size[]=3&image_size[]=4&rpp=40&license_type=6&page=" + sessionData.currentPage;
+            //genericURL = "https://api.500px.com/v1/photos?search?term=" + txtSearch.Text.Trim() + "&sort=votes_count&exclude_nude=true&consumer_key=it4eyt0SylP9boHkIM4IMh9cBVmy0NB9XuWGC4AK&image_size[]=3&image_size[]=4&rpp=40&page=" + sessionData.currentPage;
+            genericURL = "https://api.500px.com/v1/photos/search?term=" + txtSearch.Text.Trim() + "&page=" + sessionData.currentPage + "&rpp=36&consumer_key=it4eyt0SylP9boHkIM4IMh9cBVmy0NB9XuWGC4AK&sort=votes_count&exclude_nude=true";
             LoadBackgroundImages(genericURL);
         }
 
