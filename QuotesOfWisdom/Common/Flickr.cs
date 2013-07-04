@@ -40,8 +40,14 @@ namespace QuotesOfWisdom.Common
                 //    sessionData.searchKeyWord = "normal";
                 //}
                 //sessionData.totalImages = pageIndex;
-                HttpClient client = new HttpClient();
-                var response = await client.GetAsync(query);
+                //HttpClient client = new HttpClient();
+                var handler = new HttpClientHandler { AllowAutoRedirect = false };
+                var client = new HttpClient(handler);
+                client.DefaultRequestHeaders.Add("user-agent", "Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.1453.116 Safari/537.36");
+
+                var randString = System.Guid.NewGuid();
+
+                var response = await client.GetAsync(query + "&" + randString);
 
                 var jsonbgImageresult = await response.Content.ReadAsStringAsync();
 
@@ -58,17 +64,56 @@ namespace QuotesOfWisdom.Common
                 var bgItems = JsonConvert.DeserializeObject<BGImageListings>(nameoutresult);
 
                 //sessionData.totalImages = Convert.ToInt32(bgItems.total_items.ToString());
+                //Title = p.name.ToString(),
+                //UserName = p.user.firstname.ToString() + " " + p.user.lastname.ToString()
 
                 int virtualCount;
 
                 if (!int.TryParse(bgItems.total_items.ToString(), out virtualCount))
                     virtualCount = 1000;
 
-                return new FlickrResponse(from p in bgItems.photos
+                List<BGImages> bglist = new List<BGImages>();
+
+                for (int i = 0; i < bgItems.photos.Count(); i++)
+                {
+                    BGImages s = new BGImages();
+
+                    s.ImageURLsmall = bgItems.photos[i].images[0].url.ToString().Replace("2.jpg", "3.jpg");
+                    s.ImageURLbig = bgItems.photos[i].images[0].url.ToString().Replace("2.jpg", "4.jpg");
+                    if (bgItems.photos[i].name.ToString() != "Untitled")
+                    {
+                        s.Title = bgItems.photos[i].name.ToString();
+                    }
+                    else
+                    {
+                        s.Title = "";
+                    }
+
+                    string userName = "";
+
+                    if (bgItems.photos[i].user.firstname != null)
+                    {
+                        userName += bgItems.photos[i].user.firstname.ToString();
+                    }
+
+                    if (bgItems.photos[i].user.lastname != null)
+                    {
+                        userName += " " + bgItems.photos[i].user.lastname.ToString();
+                    }
+
+                    s.UserName = userName;
+
+                    bglist.Add(s);
+                    s = null;
+                }
+
+                return new FlickrResponse(from p in bglist
                                           select new FlickrPhoto
                                           {
-                                              ImageURLsmall = p.images[0].url,
-                                              ImageURLbig = p.images[1].url
+                                              ImageURLsmall = p.ImageURLsmall.ToString(),
+                                              ImageURLbig = p.ImageURLbig.ToString(),
+                                              Title = p.Title.ToString(),
+                                              UserName = p.UserName.ToString()
                                           }, virtualCount);
                 
             }
@@ -89,7 +134,9 @@ namespace QuotesOfWisdom.Common
 
     public class photos
     {
-        public images[] images = { };
+        public string name { get; set; }
+        public images[] images = { }; 
+        public user user = new user();
     }
 
     public class images
@@ -103,6 +150,8 @@ namespace QuotesOfWisdom.Common
     {
         public string ImageURLsmall { get; set; }
         public string ImageURLbig { get; set; }
+        public string UserName { get; set; }
+        public string Title { get; set; }
     }    
 
     [DebuggerDisplay("PageIndex = {PageIndex} - PageSize = {PageSize} - VirtualCount = {VirtualCount}")]

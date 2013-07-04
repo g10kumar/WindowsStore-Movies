@@ -55,7 +55,7 @@
                                 <GridView x:Name="gvImages" IsSwipeEnabled="False" SelectionMode="None" IsItemClickEnabled="True">
                                     <GridView.ItemsPanel>
                                         <ItemsPanelTemplate>
-                                            <WrapGrid Orientation="Vertical" MaximumRowsOrColumns="3" ItemHeight="200" ItemWidth="250" VerticalAlignment="Center" />
+                                            <WrapGrid Orientation="Vertical" MaximumRowsOrColumns="3" ItemHeight="250" ItemWidth="250" VerticalAlignment="Center" />                                            
                                         </ItemsPanelTemplate>
                                     </GridView.ItemsPanel>
                                     <GridView.ItemContainerTransitions>
@@ -65,17 +65,21 @@
                                     </GridView.ItemContainerTransitions>
                                     <GridView.ItemTemplate>
                                         <DataTemplate>
-                                            <Grid Margin="0">
+                                            <Grid Margin="0" Width="250" Height="250">
                                                 <Grid.RowDefinitions>
-                                                    <RowDefinition Height="150"/>
+                                                    <RowDefinition Height="200"/>
                                                     <RowDefinition Height="50"/>
                                                 </Grid.RowDefinitions>
-                                                <Border Grid.Row="0" Background="{StaticResource ListViewItemPlaceholderBackgroundThemeBrush}" Height="150">
-                                                    <Image Source="{Binding ImageURLsmall}" Stretch="UniformToFill" Height="150" Width="250" Margin="0,0,0,0"/>
+                                                <Border Grid.Row="0" VerticalAlignment="Top" Background="{StaticResource ListViewItemPlaceholderBackgroundThemeBrush}">
+                                                    <Image Source="{Binding ImageURLsmall}" Stretch="UniformToFill" Height="200" Margin="0,0,0,0"/>
                                                 </Border>
+                                                <StackPanel VerticalAlignment="Bottom" Orientation="Vertical" Background="{StaticResource ListViewItemOverlayBackgroundThemeBrush}" Height="43">
+                                                    <TextBlock Text="{Binding Title}" VerticalAlignment="Bottom" Foreground="{StaticResource ListViewItemOverlayForegroundThemeBrush}" Style="{StaticResource TitleStyle}" Height="18" Margin="15,0,0,0"/>
+                                                    <TextBlock Text="{Binding UserName}" VerticalAlignment="Top" Foreground="{StaticResource ListViewItemOverlayForegroundThemeBrush}" Style="{StaticResource NameStyle}" Margin="15,0,0,0"/>
+                                                </StackPanel>
                                                 <StackPanel Grid.Row="1" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Orientation="Horizontal">
                                                     <Button Content="Preview" x:Name="btnPreview" Tag="{Binding ImageURLbig}" Click="btnPreview_Click"></Button>
-                                                    <Button Content="Set as Background" x:Name="btnBackground" Loaded="FrameworkElement_OnLoaded" Tag="{Binding ImageURLbig}" Click="btnBackground_Click"></Button>
+                                                    <Button Content="Set Background" x:Name="btnBackground" Tag="{Binding ImageURLbig}" Click="btnBackground_Click"></Button>
                                                 </StackPanel>
                                             </Grid>
                                         </DataTemplate>

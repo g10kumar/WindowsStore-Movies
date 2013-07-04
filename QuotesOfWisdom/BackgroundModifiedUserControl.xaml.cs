@@ -64,8 +64,8 @@ namespace QuotesOfWisdom
                 sessionData.genericURL = "";
             }
 
-            sessionData.genericURL = "https://api.500px.com/v1/photos?consumer_key=it4eyt0SylP9boHkIM4IMh9cBVmy0NB9XuWGC4AK&image_size[]=3&image_size[]=4&rpp=100&license_type=6";
-           // sessionData.genericURL = "https://api.500px.com/v1/photos?search?term=bike&consumer_key=it4eyt0SylP9boHkIM4IMh9cBVmy0NB9XuWGC4AK&image_size[]=3&image_size[]=4";
+            sessionData.genericURL = "https://api.500px.com/v1/photos?consumer_key=it4eyt0SylP9boHkIM4IMh9cBVmy0NB9XuWGC4AK&exclude_nude=true&sort=votes_count&rpp=36";
+           // sessionData.genericURL = "https://api.500px.com/v1/photos/search?term=bike&consumer_key=it4eyt0SylP9boHkIM4IMh9cBVmy0NB9XuWGC4AK&image_size[]=3&image_size[]=4";
             DisplayImages();
         }
 
@@ -299,7 +299,7 @@ namespace QuotesOfWisdom
 
             if (txtSearch.Text != "")
             {
-                sessionData.genericURL = "https://api.500px.com/v1/photos?search?term=" + txtSearch.Text.Trim() + "&consumer_key=it4eyt0SylP9boHkIM4IMh9cBVmy0NB9XuWGC4AK&image_size[]=3&image_size[]=4";
+                sessionData.genericURL = "https://api.500px.com/v1/photos/search?term=" + txtSearch.Text.Trim() + "&consumer_key=it4eyt0SylP9boHkIM4IMh9cBVmy0NB9XuWGC4AK&rpp=36&sort=votes_count&exclude_nude=true";                            
                 //genericURL = "https://api.500px.com/v1/photos?search?term=" + txtSearch.Text.Trim() + "&consumer_key=it4eyt0SylP9boHkIM4IMh9cBVmy0NB9XuWGC4AK";
                 //genericURL = "https://api.500px.com/v1/photos/search?term=bike&page=1&consumer_key=it4eyt0SylP9boHkIM4IMh9cBVmy0NB9XuWGC4AK&image_size[]=3&image_size[]=4";
                 //genericURL = "https://api.500px.com/v1/photos?search?term=" + txtSearch.Text.Trim() + "&consumer_key=it4eyt0SylP9boHkIM4IMh9cBVmy0NB9XuWGC4AK&image_size[]=3&image_size[]=4&license_type=6";
@@ -310,7 +310,8 @@ namespace QuotesOfWisdom
             }
             else
             {
-                sessionData.genericURL = "https://api.500px.com/v1/photos?consumer_key=it4eyt0SylP9boHkIM4IMh9cBVmy0NB9XuWGC4AK&image_size[]=3&image_size[]=4&rpp=100&license_type=6";
+                sessionData.genericURL = "https://api.500px.com/v1/photos?consumer_key=it4eyt0SylP9boHkIM4IMh9cBVmy0NB9XuWGC4AK&exclude_nude=true&sort=votes_count&rpp=36";
+                                         
             }
             this.gvImages.ItemsSource = null;
             sessionData.tokenSource = new CancellationTokenSource();
