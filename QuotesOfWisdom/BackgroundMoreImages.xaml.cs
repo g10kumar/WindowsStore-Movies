@@ -30,6 +30,7 @@ using System.Xml.Linq;
 using System.Security;
 using System.Net;
 using System.ComponentModel;
+using Windows.UI.Popups;
 
 namespace QuotesOfWisdom
 {
@@ -102,8 +103,8 @@ namespace QuotesOfWisdom
             StorageFolder proxyDataFolder = await Package.Current.InstalledLocation.GetFolderAsync("Xml");
             StorageFile proxyFile = await proxyDataFolder.GetFileAsync("in-app-purchase.xml");
             licenseChangeHandler = new LicenseChangedEventHandler(InAppPurchaseRefreshScenario);
-
             CurrentApp.LicenseInformation.LicenseChanged += licenseChangeHandler;
+            await CurrentAppSimulator.ReloadSimulatorAsync(proxyFile);
         }
 
         /// <summary>
@@ -142,7 +143,6 @@ namespace QuotesOfWisdom
             // Calls the Background change method
             ChangeBackground();
         }
-
 
         /// <summary>
         /// Method for changing background
@@ -213,13 +213,41 @@ namespace QuotesOfWisdom
 
                 string desppattern = @"(?<=""description"":"").*?(?="",""times_viewed"")";
 
-                string despoutresult = Regex.Replace(jsonbgImageresult, desppattern, match => match.Value.Replace("\"", ""));
+                string despparseresult = Regex.Replace(jsonbgImageresult, desppattern, match => match.Value.Replace("\"", ""));
 
                 string namepattern = @"(?<=""name"":"").*?(?="",""description"")";
 
-                string nameoutresult = Regex.Replace(despoutresult, namepattern, match => match.Value.Replace("\"", ""));
+                string nameparseresult = Regex.Replace(despparseresult, namepattern, match => match.Value.Replace("\"", ""));
 
-                var bgItems = JsonConvert.DeserializeObject<BGImageListings>(nameoutresult);
+                #region Commented
+                /*
+                string usernamepattern = @"(?<=""id"":"").*?(?="",""firstname"")";
+
+                string usernameparseresult = Regex.Replace(nameparseresult, usernamepattern, match => match.Value.Replace("\"", ""));
+
+                string firstnamepattern = @"(?<=""username"":"").*?(?="",""lastname"")";
+
+                string firstnameparseresult = Regex.Replace(usernameparseresult, firstnamepattern, match => match.Value.Replace("\"", ""));
+
+                string lastnamepattern = @"(?<=""firstname"":"").*?(?="",""city"")";
+
+                string lastnameparseresult = Regex.Replace(firstnameparseresult, lastnamepattern, match => match.Value.Replace("\"", ""));
+
+                string citypattern = @"(?<=""lastname"":"").*?(?="",""country"")";
+
+                string cityparseresult = Regex.Replace(lastnameparseresult, citypattern, match => match.Value.Replace("\"", ""));
+
+                string countrypattern = @"(?<=""city"":"").*?(?="",""fullname"")";
+
+                string countryparseresult = Regex.Replace(cityparseresult, countrypattern, match => match.Value.Replace("\"", ""));
+
+                string fullnamepattern = @"(?<=""country"":"").*?(?="",""userpic_url"")";
+
+                string fullnameparseresult = Regex.Replace(countryparseresult, fullnamepattern, match => match.Value.Replace("\"", ""));
+                */
+                #endregion
+
+                var bgItems = JsonConvert.DeserializeObject<BGImageListings>(nameparseresult);
 
                 sessionData.totalImagesCount = Convert.ToInt32(bgItems.total_items.ToString());
 
@@ -229,7 +257,47 @@ namespace QuotesOfWisdom
 
                     s.ImageURLsmall = bgItems.photos[i].images[0].url.ToString().Replace("2.jpg", "3.jpg");
                     s.ImageURLbig = bgItems.photos[i].images[0].url.ToString().Replace("2.jpg", "4.jpg");
+                    if (bgItems.photos[i].name.ToString() != "Untitled")
+                    {
+                        s.Title = bgItems.photos[i].name.ToString();
+                    }
+                    else
+                    {
+                        s.Title = "";
+                    }
 
+                    string userName = "";
+
+                    if (bgItems.photos[i].user.firstname != null)
+                    {
+                        userName += bgItems.photos[i].user.firstname.ToString();
+                    }
+
+                    if (bgItems.photos[i].user.lastname != null)
+                    {
+                        userName += " " + bgItems.photos[i].user.lastname.ToString();
+                    }
+
+                    s.UserName = userName;
+
+                    //if (bgItems.photos[i].user.fullname != null)
+                    //{
+                    //    s.UserName = bgItems.photos[i].user.fullname.ToString();
+                    //}
+                    //else
+                    //{
+                    //    
+
+                    //    if (bgItems.photos[i].user.firstname != null)
+                    //    {
+                    //        userName += bgItems.photos[i].user.firstname.ToString(); 
+                    //    }
+
+                    //    if (bgItems.photos[i].user.lastname != null)
+                    //    {
+                    //        userName += " " + bgItems.photos[i].user.lastname.ToString();
+                    //    }
+                    //}
                     //if (bgItems.photos[i].images[0].size == "3")
                     //{
                     //    s.ImageURLsmall = bgItems.photos[i].images[0].url.ToString();
@@ -273,7 +341,8 @@ namespace QuotesOfWisdom
                     // binds the bg images list
                     gvImages.ItemsSource = sessionData.currentBackgroundImages.ToList();
 
-                    gvImages.ScrollIntoView(gvImages.Items[0]);
+                    int pos = Convert.ToInt32(gvImages.Items.Count()) - 36;
+                    gvImages.ScrollIntoView(gvImages.Items[pos]);
 
                     stackProgressRing.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
 
@@ -321,7 +390,6 @@ namespace QuotesOfWisdom
             LoadBackgroundImages(genericURL);
         }
 
-
         /// <summary>
         /// Click event of the Preview button
         /// </summary>
@@ -341,10 +409,13 @@ namespace QuotesOfWisdom
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private async void btnBackground_Click(object sender, RoutedEventArgs e)
+        private void btnBackground_Click(object sender, RoutedEventArgs e)
         {
             Button background = (Button)sender;
 
+            #region Commented on 04.07.2013
+            /*
+            
             if (background.Content.ToString() != "Buy Images")
             {
                 ApplicationData.Current.RoamingSettings.Values["Settings"] = "dynamicStyle";
@@ -375,6 +446,69 @@ namespace QuotesOfWisdom
                     Utilities.ShowMessage("You already own More Background Images version of app.");
                 }
             }
+             * */
+            #endregion
+
+            #region Commented
+            /*
+            // Create the message dialog and set its content
+            var messageDialog = new MessageDialog("Custom background images is a paid feature. Purchase this feature now?");
+
+            // Add commands and set their callbacks; both buttons use the same callback function instead of inline event handlers
+            messageDialog.Commands.Add(new UICommand("Yes", new UICommandInvokedHandler(this.CommandInvokedHandler)));
+            messageDialog.Commands.Add(new UICommand("No", new UICommandInvokedHandler(this.CommandInvokedHandler)));
+
+            // Set the command that will be invoked by default
+            messageDialog.DefaultCommandIndex = 0;
+
+            // Set the command to be invoked when escape is pressed
+            messageDialog.CancelCommandIndex = 1;
+
+            // Show the message dialog
+            await messageDialog.ShowAsync();
+             **/
+            #endregion
+
+            if (isBackgroundButtonVisible)
+            {
+                ApplicationData.Current.RoamingSettings.Values["Settings"] = "dynamicStyle";
+                ApplicationData.Current.RoamingSettings.Values["ImageURLForDynamicStyle"] = background.Tag.ToString();
+                Utilities.dynamicBackgroundChange(LayoutRoot);
+            }
+            else
+            {
+                setBackgroundPopup.IsOpen = true;
+            }
+        }
+
+        private async void btnYes_Click(object sender, RoutedEventArgs e)
+        {
+            LicenseInformation licenseInformation = CurrentApp.LicenseInformation;
+            var imageLicense = licenseInformation.ProductLicenses["More Background Images"];
+            if (!imageLicense.IsActive)
+            {
+                try
+                {
+                    await CurrentApp.RequestProductPurchaseAsync("More Background Images", false);
+                    if (imageLicense.IsActive)
+                    {
+                        Utilities.ShowMessage("You bought the More Background Images version.");
+                    }
+                }
+                catch (Exception)
+                {
+                    Utilities.ShowMessage("Unable to buy More Background Images version.");
+                }
+            }
+            else
+            {
+                Utilities.ShowMessage("You already own More Background Images version of app.");
+            }
+        }
+
+        private void btnNo_Click(object sender, RoutedEventArgs e)
+        {
+            setBackgroundPopup.IsOpen = false;
         }
 
         /// <summary>
@@ -384,6 +518,7 @@ namespace QuotesOfWisdom
         /// <param name="e"></param>
         private void btnSearch_Click(object sender, RoutedEventArgs e)
         {
+            btnMore.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
             sessionData.currentBackgroundImages = null;
             gvImages.ItemsSource = null;
             stackMessage.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
@@ -437,7 +572,16 @@ namespace QuotesOfWisdom
 
     public class photos
     {
+        public string name { get; set; }
         public images[] images = { };
+        public user user = new user();
+    }
+
+    public class user
+    {
+        public string firstname { get; set; }
+        public string lastname { get; set; }
+        public string fullname { get; set; }
     }
 
     public class images
@@ -450,5 +594,7 @@ namespace QuotesOfWisdom
     {
         public string ImageURLsmall { get; set; }
         public string ImageURLbig { get; set; }
+        public string UserName { get; set; }
+        public string Title { get; set; }
     }
 }

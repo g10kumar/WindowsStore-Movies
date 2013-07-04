@@ -44,18 +44,19 @@
                     </Grid.RowDefinitions>
                     <StackPanel Grid.Row="0" Orientation="Horizontal">
                         <TextBox x:Name="txtSearch" Height="28" Width="200"></TextBox>
-                        <Button Content="Search" x:Name="btnSearch" Click="btnSearch_Click"></Button>                        
+                        <Button Content="Search" x:Name="btnSearch" Click="btnSearch_Click"></Button>
+                        <Button Content="More" Visibility="Collapsed" Click="btnMore_Click" Style="{StaticResource btnMore}"  Margin="550,20,20,20" x:Name="btnMore" VerticalAlignment="Top"  HorizontalAlignment="Right"/>
                     </StackPanel>
                     <StackPanel x:Name="stackProgressRing" Grid.Row="1" Visibility="Collapsed" Margin="0,0,0,0" Height="auto">
                         <ProgressBar x:Name="shareProgressBar" IsIndeterminate="True" Background="Transparent" Foreground="White"></ProgressBar>
-                    </StackPanel>                   
+                    </StackPanel>
                     <ScrollViewer x:Name="ContentGrid" Grid.Row="2" VerticalScrollBarVisibility="Auto" Background="Transparent" Margin="0,5,0,0">
                         <StackPanel Grid.Row="2">
                             <StackPanel Height="Auto" Name="imageStackPanel" Grid.Row="2" VerticalAlignment="Top" Orientation="Vertical">
                                 <GridView x:Name="gvImages" IsSwipeEnabled="False" SelectionMode="None" IsItemClickEnabled="True">
                                     <GridView.ItemsPanel>
                                         <ItemsPanelTemplate>
-                                            <WrapGrid Orientation="Vertical" MaximumRowsOrColumns="3" ItemHeight="200" ItemWidth="250" VerticalAlignment="Center" />
+                                            <WrapGrid Orientation="Vertical" MaximumRowsOrColumns="3" ItemHeight="250" ItemWidth="250" VerticalAlignment="Center" />
                                         </ItemsPanelTemplate>
                                     </GridView.ItemsPanel>
                                     <GridView.ItemContainerTransitions>
@@ -65,23 +66,26 @@
                                     </GridView.ItemContainerTransitions>
                                     <GridView.ItemTemplate>
                                         <DataTemplate>
-                                            <Grid Margin="0">
+                                            <Grid Margin="0" Width="250" Height="250">
                                                 <Grid.RowDefinitions>
-                                                    <RowDefinition Height="150"/>
+                                                    <RowDefinition Height="200"/>
                                                     <RowDefinition Height="50"/>
                                                 </Grid.RowDefinitions>
-                                                <Border Grid.Row="0" Background="{StaticResource ListViewItemPlaceholderBackgroundThemeBrush}" Height="150">
-                                                    <Image Source="{Binding ImageURLsmall}" Stretch="UniformToFill" Height="150" Width="250" Margin="0,0,0,0"/>
+                                                <Border Grid.Row="0" VerticalAlignment="Top" Background="{StaticResource ListViewItemPlaceholderBackgroundThemeBrush}">
+                                                    <Image Source="{Binding ImageURLsmall}" Stretch="UniformToFill" Height="200" Margin="0,0,0,0"/>
                                                 </Border>
+                                                <StackPanel VerticalAlignment="Bottom" Orientation="Vertical" Background="{StaticResource ListViewItemOverlayBackgroundThemeBrush}" Height="43">
+                                                    <TextBlock Text="{Binding Title}" VerticalAlignment="Bottom" Foreground="{StaticResource ListViewItemOverlayForegroundThemeBrush}" Style="{StaticResource TitleStyle}" Height="18" Margin="15,0,0,0"/>
+                                                    <TextBlock Text="{Binding UserName}" VerticalAlignment="Top" Foreground="{StaticResource ListViewItemOverlayForegroundThemeBrush}" Style="{StaticResource NameStyle}" Margin="15,0,0,0"/>
+                                                </StackPanel>
                                                 <StackPanel Grid.Row="1" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Orientation="Horizontal">
                                                     <Button Content="Preview" x:Name="btnPreview" Tag="{Binding ImageURLbig}" Click="btnPreview_Click"></Button>
-                                                    <Button Content="Set as Background" x:Name="btnBackground" Loaded="FrameworkElement_OnLoaded" Tag="{Binding ImageURLbig}" Click="btnBackground_Click"></Button>
+                                                    <Button Content="Set Background" x:Name="btnBackground" Tag="{Binding ImageURLbig}" Click="btnBackground_Click"></Button>
                                                 </StackPanel>
                                             </Grid>
                                         </DataTemplate>
                                     </GridView.ItemTemplate>
                                 </GridView>
-                                <Button Content="More" Visibility="Collapsed" Click="btnMore_Click" Style="{StaticResource btnMore}"  Margin="0,-70,20,20" x:Name="btnMore" VerticalAlignment="Top"  HorizontalAlignment="Right"/>
                             </StackPanel>
                             <StackPanel x:Name="stackMessage">
                                 <TextBlock x:Name="txtMessage" Style="{StaticResource SubheaderTextStyle}"></TextBlock>
@@ -97,6 +101,19 @@
                                     </StackPanel>
                                 </ScrollViewer>
                                 <HyperlinkButton Foreground="Black" x:Name="hplbtnClose" Click="btClose_Click">Close</HyperlinkButton>
+                            </StackPanel>
+                        </Border>
+                    </Popup>
+                    <Popup x:Name="setBackgroundPopup" Margin="120,100,50,50">
+                        <Border CornerRadius="10"  BorderThickness="2" BorderBrush="Black" Padding="2" Background="White">
+                            <StackPanel Margin="10" Height="150" Width="400" Orientation="Vertical">
+                                <StackPanel Height="100">
+                                    <TextBlock Margin="20,20" FontSize="16" TextWrapping="Wrap" Foreground="Black" Text="Custom background images is a paid feature. Purchase this feature now?"></TextBlock>
+                                </StackPanel>
+                                <StackPanel Height="50" Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <HyperlinkButton Foreground="Black" Background="White" BorderThickness="2" BorderBrush="Black" x:Name="hplbtnYes" Click="btnYes_Click">Yes</HyperlinkButton>
+                                    <HyperlinkButton Foreground="Black" Background="White" BorderThickness="2" BorderBrush="Black" x:Name="hplbtnNo" Click="btnNo_Click">No</HyperlinkButton>
+                                </StackPanel>
                             </StackPanel>
                         </Border>
                     </Popup>
