@@ -55,12 +55,12 @@ namespace QuotesOfWisdom
             if (txtSearch.Text != "")
             {
                 //genericURL = "https://api.500px.com/v1/photos/search?term=" + txtSearch.Text.Trim() + "&consumer_key=it4eyt0SylP9boHkIM4IMh9cBVmy0NB9XuWGC4AK&image_size[]=3&image_size[]=4&rpp=40&exclude_nude=true&page=" + sessionData.currentPage;
-                genericURL = "https://api.500px.com/v1/photos/search?term=" + txtSearch.Text.Trim() + "&consumer_key=it4eyt0SylP9boHkIM4IMh9cBVmy0NB9XuWGC4AK&rpp=36&sort=votes_count&exclude_nude=true&page=" + sessionData.currentPage;
+                genericURL = "https://api.500px.com/v1/photos/search?term=" + txtSearch.Text.Trim() + "&consumer_key=it4eyt0SylP9boHkIM4IMh9cBVmy0NB9XuWGC4AK&rpp=36&sort=votes_count&exclude=Nude&page=" + sessionData.currentPage;
             }
             else
             {
-                //genericURL = "https://api.500px.com/v1/photos?consumer_key=it4eyt0SylP9boHkIM4IMh9cBVmy0NB9XuWGC4AK&image_size[]=3&image_size[]=4&exclude_nude=true&rpp=40&page=" + sessionData.currentPage;
-                genericURL = "https://api.500px.com/v1/photos?consumer_key=it4eyt0SylP9boHkIM4IMh9cBVmy0NB9XuWGC4AK&exclude_nude=true&sort=votes_count&rpp=36&page=" + sessionData.currentPage;
+                //genericURL = "https://api.500px.com/v1/photos?consumer_key=it4eyt0SylP9boHkIM4IMh9cBVmy0NB9XuWGC4AK&image_size[]=3&image_size[]=4&exclude=Nude&rpp=40&page=" + sessionData.currentPage;
+                genericURL = "https://api.500px.com/v1/photos?consumer_key=it4eyt0SylP9boHkIM4IMh9cBVmy0NB9XuWGC4AK&exclude=Nude&sort=votes_count&rpp=36&page=" + sessionData.currentPage;
             }
             LoadBackgroundImages(genericURL);
         }        
@@ -72,7 +72,8 @@ namespace QuotesOfWisdom
         {
             await LoadInAppPurchaseProxyFileAsync();
 
-            LicenseInformation licenseInformation = CurrentApp.LicenseInformation;
+            LicenseInformation licenseInformation = CurrentAppSimulator.LicenseInformation;
+            //LicenseInformation licenseInformation = CurrentApp.LicenseInformation;
             string visualState = ApplicationView.Value.ToString();
 
             var imageLicense = licenseInformation.ProductLicenses["More Background Images"];
@@ -103,7 +104,9 @@ namespace QuotesOfWisdom
             StorageFolder proxyDataFolder = await Package.Current.InstalledLocation.GetFolderAsync("Xml");
             StorageFile proxyFile = await proxyDataFolder.GetFileAsync("in-app-purchase.xml");
             licenseChangeHandler = new LicenseChangedEventHandler(InAppPurchaseRefreshScenario);
-            CurrentApp.LicenseInformation.LicenseChanged += licenseChangeHandler;
+
+            CurrentAppSimulator.LicenseInformation.LicenseChanged += licenseChangeHandler;
+            //CurrentApp.LicenseInformation.LicenseChanged += licenseChangeHandler;
             await CurrentAppSimulator.ReloadSimulatorAsync(proxyFile);
         }
 
@@ -112,7 +115,8 @@ namespace QuotesOfWisdom
         /// </summary>
         private void InAppPurchaseRefreshScenario()
         {
-            LicenseInformation licenseInformation = CurrentApp.LicenseInformation;
+            LicenseInformation licenseInformation = CurrentAppSimulator.LicenseInformation;
+            //LicenseInformation licenseInformation = CurrentApp.LicenseInformation;
             var imageLicense = licenseInformation.ProductLicenses["More Background Images"];
             if (imageLicense.IsActive)
             {
@@ -329,6 +333,8 @@ namespace QuotesOfWisdom
 
                 if (tmpbglist.Count != 0)
                 {
+                    imageStackPanel.Visibility = Windows.UI.Xaml.Visibility.Visible;
+                    stackMessage.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
                     if (sessionData.currentBackgroundImages.Count() >= sessionData.totalImagesCount)
                     {
                         btnMore.Visibility = Windows.UI.Xaml.Visibility.Collapsed; 
@@ -352,7 +358,7 @@ namespace QuotesOfWisdom
                     stackProgressRing.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
                     imageStackPanel.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
                     stackMessage.Visibility = Windows.UI.Xaml.Visibility.Visible;
-                    txtMessage.Text = "Unable load images now.  Please try later!";
+                    txtMessage.Text = "No images found. Please try a different keyword!";
                 }
 
             }
@@ -361,7 +367,7 @@ namespace QuotesOfWisdom
                 stackProgressRing.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
                 imageStackPanel.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
                 stackMessage.Visibility = Windows.UI.Xaml.Visibility.Visible;
-                txtMessage.Text = "Unable load images now.  Please try later! \r\n " + ex.Message.ToString();
+                txtMessage.Text = "Unable to load images now. Please try later!";// \r\n" + ex.Message.ToString();
             }
 
         }
@@ -380,11 +386,11 @@ namespace QuotesOfWisdom
 
             if (txtSearch.Text != "")
             {
-                genericURL = "https://api.500px.com/v1/photos/search?term=" + txtSearch.Text.Trim() + "&consumer_key=it4eyt0SylP9boHkIM4IMh9cBVmy0NB9XuWGC4AK&rpp=36&sort=votes_count&page=" + sessionData.currentPage;
+                genericURL = "https://api.500px.com/v1/photos/search?term=" + txtSearch.Text.Trim() + "&consumer_key=it4eyt0SylP9boHkIM4IMh9cBVmy0NB9XuWGC4AK&rpp=36&sort=votes_count&exclude=Nude&page=" + sessionData.currentPage;
             }
             else
             {
-                genericURL = "https://api.500px.com/v1/photos?consumer_key=it4eyt0SylP9boHkIM4IMh9cBVmy0NB9XuWGC4AK&rpp=36&sort=votes_count&page=" + sessionData.currentPage;
+                genericURL = "https://api.500px.com/v1/photos?consumer_key=it4eyt0SylP9boHkIM4IMh9cBVmy0NB9XuWGC4AK&rpp=36&sort=votes_count&exclude=Nude&page=" + sessionData.currentPage;
             }
 
             LoadBackgroundImages(genericURL);
@@ -483,13 +489,15 @@ namespace QuotesOfWisdom
 
         private async void btnYes_Click(object sender, RoutedEventArgs e)
         {
-            LicenseInformation licenseInformation = CurrentApp.LicenseInformation;
+            LicenseInformation licenseInformation = CurrentAppSimulator.LicenseInformation;
+            //LicenseInformation licenseInformation = CurrentApp.LicenseInformation;
             var imageLicense = licenseInformation.ProductLicenses["More Background Images"];
             if (!imageLicense.IsActive)
             {
                 try
                 {
-                    await CurrentApp.RequestProductPurchaseAsync("More Background Images", false);
+                    await CurrentAppSimulator.RequestProductPurchaseAsync("More Background Images", false);
+                    //await CurrentApp.RequestProductPurchaseAsync("More Background Images", false);
                     if (imageLicense.IsActive)
                     {
                         Utilities.ShowMessage("You bought the More Background Images version.");
@@ -524,7 +532,7 @@ namespace QuotesOfWisdom
             stackMessage.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
             stackProgressRing.Visibility = Windows.UI.Xaml.Visibility.Visible;
             //genericURL = "https://api.500px.com/v1/photos?search?term=" + txtSearch.Text.Trim() + "&sort=votes_count&exclude_nude=true&consumer_key=it4eyt0SylP9boHkIM4IMh9cBVmy0NB9XuWGC4AK&image_size[]=3&image_size[]=4&rpp=40&page=" + sessionData.currentPage;
-            genericURL = "https://api.500px.com/v1/photos/search?term=" + txtSearch.Text.Trim() + "&page=" + sessionData.currentPage + "&rpp=36&consumer_key=it4eyt0SylP9boHkIM4IMh9cBVmy0NB9XuWGC4AK&sort=votes_count&exclude_nude=true";
+            genericURL = "https://api.500px.com/v1/photos/search?term=" + txtSearch.Text.Trim() + "&page=" + sessionData.currentPage + "&rpp=36&consumer_key=it4eyt0SylP9boHkIM4IMh9cBVmy0NB9XuWGC4AK&sort=votes_count&exclude=Nude";
             LoadBackgroundImages(genericURL);
         }
 
@@ -542,7 +550,8 @@ namespace QuotesOfWisdom
             sessionData.totalImagesCount = 0;
             if (licenseChangeHandler != null)
             {
-                CurrentApp.LicenseInformation.LicenseChanged -= licenseChangeHandler;
+                CurrentAppSimulator.LicenseInformation.LicenseChanged -= licenseChangeHandler;
+                //CurrentApp.LicenseInformation.LicenseChanged -= licenseChangeHandler;
             }
 
             if (this.Parent.GetType() == typeof(Popup))
@@ -562,6 +571,8 @@ namespace QuotesOfWisdom
         {
             myPopup.IsOpen = false;
         }
+
+      
     }
 
     public class BGImageListings

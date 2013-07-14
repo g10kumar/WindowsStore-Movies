@@ -243,6 +243,11 @@
     </Style>
     
     <!---->
+
+
+    
+    
+    
     
     <!-- Style for back button in settings page -->
     <Style x:Key="SettingsBackButtonStyle" TargetType="Button">
