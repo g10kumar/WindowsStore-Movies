@@ -38,25 +38,25 @@
                 </Grid.ColumnDefinitions>
                 <Grid Grid.Column="1" Margin="10,0,0,0">
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="80"/>
-                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="40"/>
+                        <!--<RowDefinition Height="20"/>-->
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
                     <StackPanel Grid.Row="0" Orientation="Horizontal">
                         <TextBox x:Name="txtSearch" Height="28" Width="200"></TextBox>
-                        <Button Content="Search" x:Name="btnSearch" Click="btnSearch_Click"></Button>
-                        <Button Content="More" Visibility="Collapsed" Click="btnMore_Click" Style="{StaticResource btnMore}"  Margin="550,20,20,20" x:Name="btnMore" VerticalAlignment="Top"  HorizontalAlignment="Right"/>
+                        <Button Content="Search" x:Name="btnSearch"  Click="btnSearch_Click"></Button>
+                        <Button Content="More..." Visibility="Visible" Click="btnMore_Click" Style="{StaticResource btnMore}"  Margin="550,0,20,0" x:Name="btnMore" VerticalAlignment="Center"  HorizontalAlignment="Right"/>
                     </StackPanel>
                     <StackPanel x:Name="stackProgressRing" Grid.Row="1" Visibility="Collapsed" Margin="0,0,0,0" Height="auto">
                         <ProgressBar x:Name="shareProgressBar" IsIndeterminate="True" Background="Transparent" Foreground="White"></ProgressBar>
                     </StackPanel>
-                    <ScrollViewer x:Name="ContentGrid" Grid.Row="2" VerticalScrollBarVisibility="Auto" Background="Transparent" Margin="0,5,0,0">
+                    <ScrollViewer x:Name="ContentGrid" Grid.Row="1" VerticalScrollBarVisibility="Auto" Background="Transparent" Margin="0,5,0,0">
                         <StackPanel Grid.Row="2">
-                            <StackPanel Height="Auto" Name="imageStackPanel" Grid.Row="2" VerticalAlignment="Top" Orientation="Vertical">
+                            <StackPanel Height="Auto" Name="imageStackPanel" Grid.Row="1" VerticalAlignment="Top" Orientation="Vertical">
                                 <GridView x:Name="gvImages" IsSwipeEnabled="False" SelectionMode="None" IsItemClickEnabled="True">
                                     <GridView.ItemsPanel>
                                         <ItemsPanelTemplate>
-                                            <WrapGrid Orientation="Vertical" MaximumRowsOrColumns="3" ItemHeight="250" ItemWidth="250" VerticalAlignment="Center" />
+                                            <WrapGrid Orientation="Vertical" MaximumRowsOrColumns="3" Margin="0" ItemHeight="200" ItemWidth="250" VerticalAlignment="Center" />
                                         </ItemsPanelTemplate>
                                     </GridView.ItemsPanel>
                                     <GridView.ItemContainerTransitions>
@@ -66,22 +66,27 @@
                                     </GridView.ItemContainerTransitions>
                                     <GridView.ItemTemplate>
                                         <DataTemplate>
-                                            <Grid Margin="0" Width="250" Height="250">
+                                            <Grid Margin="0" Width="250" Height="200">
                                                 <Grid.RowDefinitions>
                                                     <RowDefinition Height="200"/>
-                                                    <RowDefinition Height="50"/>
+                                                    <!--<RowDefinition Height="50"/>-->
                                                 </Grid.RowDefinitions>
                                                 <Border Grid.Row="0" VerticalAlignment="Top" Background="{StaticResource ListViewItemPlaceholderBackgroundThemeBrush}">
                                                     <Image Source="{Binding ImageURLsmall}" Stretch="UniformToFill" Height="200" Margin="0,0,0,0"/>
                                                 </Border>
-                                                <StackPanel VerticalAlignment="Bottom" Orientation="Vertical" Background="{StaticResource ListViewItemOverlayBackgroundThemeBrush}" Height="43">
+                                                <StackPanel Grid.Row="0" Margin="0,0,0,0" HorizontalAlignment="Right" VerticalAlignment="Top" Orientation="Horizontal">
+                                                    <Button BorderThickness="0" x:Name="btnPreview" Tag="{Binding ImageURLbig}" Click="btnPreview_Click" Margin="30,1,1,0">
+                                                        <Image Source="Assets/Preview.png" Height="36" Width="36" Margin="0" />
+                                                    </Button>
+                                                    <Button BorderThickness="0" x:Name="btnBackground" Tag="{Binding ImageURLbig}" Click="btnBackground_Click" Margin="-10,1,1,0">
+                                                        <Image Source="Assets/PaintBucket.png" Height="36" Width="36" Margin="0" />
+                                                    </Button>
+                                                </StackPanel>
+                                                <StackPanel Grid.Row="0" VerticalAlignment="Bottom" Orientation="Vertical" Background="{StaticResource ListViewItemOverlayBackgroundThemeBrush}" Height="55">
                                                     <TextBlock Text="{Binding Title}" VerticalAlignment="Bottom" Foreground="{StaticResource ListViewItemOverlayForegroundThemeBrush}" Style="{StaticResource TitleStyle}" Height="18" Margin="15,0,0,0"/>
                                                     <TextBlock Text="{Binding UserName}" VerticalAlignment="Top" Foreground="{StaticResource ListViewItemOverlayForegroundThemeBrush}" Style="{StaticResource NameStyle}" Margin="15,0,0,0"/>
                                                 </StackPanel>
-                                                <StackPanel Grid.Row="1" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Orientation="Horizontal">
-                                                    <Button Content="Preview" x:Name="btnPreview" Tag="{Binding ImageURLbig}" Click="btnPreview_Click"></Button>
-                                                    <Button Content="Set Background" x:Name="btnBackground" Tag="{Binding ImageURLbig}" Click="btnBackground_Click"></Button>
-                                                </StackPanel>
+
                                             </Grid>
                                         </DataTemplate>
                                     </GridView.ItemTemplate>
@@ -97,7 +102,7 @@
                             <StackPanel Margin="10" Height="670" Width="700" Orientation="Vertical">
                                 <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Visible" ScrollViewer.HorizontalScrollBarVisibility="Visible">
                                     <StackPanel Height="600">
-                                        <Image x:Name="imgPreview" Stretch="UniformToFill" Height="600" Width="700" Margin="0,0,0,0"/>
+                                        <Image x:Name="imgPreview" Stretch="Uniform" Height="600" Width="700" Margin="0,0,0,0"/>
                                     </StackPanel>
                                 </ScrollViewer>
                                 <HyperlinkButton Foreground="Black" x:Name="hplbtnClose" Click="btClose_Click">Close</HyperlinkButton>
