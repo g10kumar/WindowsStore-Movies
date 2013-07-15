@@ -31,6 +31,8 @@ using System.Security;
 using System.Net;
 using System.ComponentModel;
 using Windows.UI.Popups;
+using Windows.UI.ApplicationSettings;
+using Windows.System.Threading;
 
 namespace QuotesOfWisdom
 {
@@ -62,7 +64,19 @@ namespace QuotesOfWisdom
                 //genericURL = "https://api.500px.com/v1/photos?consumer_key=it4eyt0SylP9boHkIM4IMh9cBVmy0NB9XuWGC4AK&image_size[]=3&image_size[]=4&exclude=Nude&rpp=40&page=" + sessionData.currentPage;
                 genericURL = "https://api.500px.com/v1/photos?consumer_key=it4eyt0SylP9boHkIM4IMh9cBVmy0NB9XuWGC4AK&exclude=Nude&sort=votes_count&rpp=36&page=" + sessionData.currentPage;
             }
-            LoadBackgroundImages(genericURL);
+            //Task.Delay(TimeSpan.FromSeconds(30));
+            //try
+            //{
+                LoadBackgroundImages(genericURL);
+            //}
+            //catch (Exception ex)
+            //{
+            //    stackProgressRing.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+            //    imageStackPanel.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+            //    stackMessage.Visibility = Windows.UI.Xaml.Visibility.Visible;
+            //    txtMessage.Text = "Unable to load images now. Please try later! \r\n" + ex.Message.ToString();
+            //}
+            
         }        
 
         /// <summary>
@@ -146,7 +160,7 @@ namespace QuotesOfWisdom
         {
             // Calls the Background change method
             ChangeBackground();
-        }
+        }        
 
         /// <summary>
         /// Method for changing background
@@ -334,6 +348,7 @@ namespace QuotesOfWisdom
                 if (tmpbglist.Count != 0)
                 {
                     imageStackPanel.Visibility = Windows.UI.Xaml.Visibility.Visible;
+                    gvImages.Visibility = Windows.UI.Xaml.Visibility.Visible;
                     stackMessage.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
                     if (sessionData.currentBackgroundImages.Count() >= sessionData.totalImagesCount)
                     {
@@ -405,6 +420,7 @@ namespace QuotesOfWisdom
         {
             myPopup.IsOpen = true;
             Button preview = (Button)sender;
+            hplbtnBackground.Tag = preview.Tag.ToString();
             Uri uri = new Uri(preview.Tag.ToString(), UriKind.Absolute);
             ImageSource newSource = new Windows.UI.Xaml.Media.Imaging.BitmapImage(uri);
             imgPreview.Source = newSource;
@@ -475,10 +491,28 @@ namespace QuotesOfWisdom
              **/
             #endregion
 
+            #region Commented on 15.07.2013
+            /*
             if (isBackgroundButtonVisible)
             {
                 ApplicationData.Current.RoamingSettings.Values["Settings"] = "dynamicStyle";
                 ApplicationData.Current.RoamingSettings.Values["ImageURLForDynamicStyle"] = background.Tag.ToString();
+                Utilities.dynamicBackgroundChange(LayoutRoot);
+            }
+            else
+            {
+                setBackgroundPopup.IsOpen = true;
+            }*/
+            #endregion
+            SetAsBackground(background.Tag.ToString());
+        }
+
+        private void SetAsBackground(string ImageURL)
+        {
+            if (isBackgroundButtonVisible)
+            {
+                ApplicationData.Current.RoamingSettings.Values["Settings"] = "dynamicStyle";
+                ApplicationData.Current.RoamingSettings.Values["ImageURLForDynamicStyle"] = ImageURL.ToString();
                 Utilities.dynamicBackgroundChange(LayoutRoot);
             }
             else
@@ -560,6 +594,12 @@ namespace QuotesOfWisdom
                 var settings = new SettingsFlyout();
                 settings.ShowFlyout(new SettingsUserControl());
             }
+
+            //if (this.Parent.GetType() == typeof(Popup))
+            //{
+            //    ((Popup)this.Parent).IsOpen = false;
+            //}
+            //SettingsPane.Show();
         }
 
         /// <summary>
@@ -572,6 +612,35 @@ namespace QuotesOfWisdom
             myPopup.IsOpen = false;
         }
 
+        /// <summary>
+        /// Click event of the pop up Set Background button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void hplbtnBackground_Click(object sender, RoutedEventArgs e)
+        {
+            HyperlinkButton background = (HyperlinkButton)sender;
+            SetAsBackground(background.Tag.ToString());
+        }
+
+        /// <summary>
+        /// Unloaded event of the page
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void LayoutRoot_Unloaded(object sender, RoutedEventArgs e)
+        {
+            genericURL = "";
+            isBackgroundButtonVisible = false;
+            stackProgressRing.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+            sessionData.currentBackgroundImages = null;
+            sessionData.totalImagesCount = 0;
+            if (licenseChangeHandler != null)
+            {
+                CurrentAppSimulator.LicenseInformation.LicenseChanged -= licenseChangeHandler;
+                //CurrentApp.LicenseInformation.LicenseChanged -= licenseChangeHandler;
+            }
+        }
       
     }
 
