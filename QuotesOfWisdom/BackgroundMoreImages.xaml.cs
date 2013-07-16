@@ -33,7 +33,7 @@ using System.ComponentModel;
 using Windows.UI.Popups;
 using Windows.UI.ApplicationSettings;
 using Windows.System.Threading;
-
+using Windows.UI.Xaml.Media.Imaging;
 namespace QuotesOfWisdom
 {
     public sealed partial class BackgroundMoreImages : UserControl
@@ -42,6 +42,7 @@ namespace QuotesOfWisdom
         bool isBackgroundButtonVisible = true;
         LicenseChangedEventHandler licenseChangeHandler = null;
         string genericURL = "";
+        StorageFolder localFolder = null;
         #endregion
 
         /// <summary>
@@ -50,6 +51,7 @@ namespace QuotesOfWisdom
         public BackgroundMoreImages()
         {
             this.InitializeComponent();
+            sessionData.isBackgroundChanged = true;
             LoadFormData();
             stackMessage.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
             stackProgressRing.Visibility = Windows.UI.Xaml.Visibility.Visible;
@@ -76,6 +78,13 @@ namespace QuotesOfWisdom
             //    stackMessage.Visibility = Windows.UI.Xaml.Visibility.Visible;
             //    txtMessage.Text = "Unable to load images now. Please try later! \r\n" + ex.Message.ToString();
             //}
+
+                // Calls the Background change method
+                if (sessionData.isBackgroundChanged)
+                {
+                    ChangeBackground();
+                    sessionData.isBackgroundChanged = false;
+                }
             
         }        
 
@@ -159,7 +168,11 @@ namespace QuotesOfWisdom
         private void LayoutRoot_LayoutUpdated(object sender, object e)
         {
             // Calls the Background change method
-            ChangeBackground();
+            if (sessionData.isBackgroundChanged)
+            {
+                ChangeBackground();
+                sessionData.isBackgroundChanged = false;
+            }
         }        
 
         /// <summary>
@@ -507,19 +520,104 @@ namespace QuotesOfWisdom
             SetAsBackground(background.Tag.ToString());
         }
 
-        private void SetAsBackground(string ImageURL)
+        /// <summary>
+        /// Method for checking whether storage file exists or not
+        /// </summary>
+        /// <param name="folder"></param>
+        /// <param name="fileName"></param>
+        /// <returns></returns>
+        public async void SetAsBackground(string ImageURL)
         {
             if (isBackgroundButtonVisible)
             {
                 ApplicationData.Current.RoamingSettings.Values["Settings"] = "dynamicStyle";
                 ApplicationData.Current.RoamingSettings.Values["ImageURLForDynamicStyle"] = ImageURL.ToString();
-                Utilities.dynamicBackgroundChange(LayoutRoot);
+
+                #region Save the Remote URL Image into Local folder
+
+                localFolder = ApplicationData.Current.LocalFolder;
+                StorageFile file;
+
+                file = await localFolder.CreateFileAsync("backgroundImage.jpg ", CreationCollisionOption.ReplaceExisting);
+
+                var client = new HttpClient();
+                HttpRequestMessage request = new
+                    HttpRequestMessage(HttpMethod.Get, ImageURL);
+                var response = await client.
+                    SendAsync(request, HttpCompletionOption.ResponseHeadersRead);
+
+                var fs = await file.OpenAsync(FileAccessMode.ReadWrite);
+                var writer = new DataWriter(fs.GetOutputStreamAt(0));
+                writer.WriteBytes(await response.Content.ReadAsByteArrayAsync());
+                await writer.StoreAsync();
+                writer.DetachStream();
+                await fs.FlushAsync();
+                
+                #endregion
+
+                //sessionData.isBackgroundChanged = true;
+                //ChangeBackground();
+                //Utilities.dynamicBackgroundChange(LayoutRoot);
+
+                //file = await localFolder.GetFileAsync("backgroundImage.jpg");
+                //using (IRandomAccessStream fileStream = await file.OpenAsync(Windows.Storage.FileAccessMode.Read))
+                //{
+                //    ImageBrush imageBrush = new ImageBrush();
+
+                //    // Set the image source to the selected bitmap
+                //    BitmapImage bitmapImage = new BitmapImage();
+                //    bitmapImage.SetSource(fileStream);
+                //    imageBrush.ImageSource = bitmapImage;
+                //    LayoutRoot.Background = imageBrush;
+                //}
+
+                //var settings = new SettingsFlyout();
+                //settings.ShowBackgroundFlyout(new BackgroundMoreImages(), 1000);
             }
             else
             {
                 setBackgroundPopup.IsOpen = true;
             }
         }
+
+        #region Commented on 16.07.2013
+        /*
+        async public Task<string> AddtoBackground(string ImageURL)
+        {
+            localFolder = ApplicationData.Current.LocalFolder;
+            StorageFile file;
+
+            file = await localFolder.CreateFileAsync("backgroundImage.jpg ", CreationCollisionOption.ReplaceExisting);
+
+            var client = new HttpClient();
+            HttpRequestMessage request = new
+                HttpRequestMessage(HttpMethod.Get, ImageURL);
+            var response = await client.
+                SendAsync(request, HttpCompletionOption.ResponseHeadersRead);
+
+            var fs = await file.OpenAsync(FileAccessMode.ReadWrite);
+            var writer = new DataWriter(fs.GetOutputStreamAt(0));
+            writer.WriteBytes(await response.Content.ReadAsByteArrayAsync());
+            await writer.StoreAsync();
+            writer.DetachStream();
+            await fs.FlushAsync();
+            return "Added";
+            //using (IRandomAccessStream readStream = await file.OpenAsync(FileAccessMode.ReadWrite))
+            //{
+            //    IOutputStream ioutStream = readStream.GetOutputStreamAt(0);
+            //    Stream outStream = Task.Run(() => readStream.AsStreamForWrite()).Result;
+
+            //    var fs = await file.OpenAsync(FileAccessMode.ReadWrite);
+            //    var writer = new DataWriter(outStream.GetOutputStreamAt(0));
+            //    writer.WriteBytes(await response.Content.ReadAsByteArrayAsync());
+            //    await writer.StoreAsync();
+            //    writer.DetachStream();
+            //    await fs.FlushAsync();
+            //    return "Added";
+            //}
+        }
+        */
+        #endregion
 
         private async void btnYes_Click(object sender, RoutedEventArgs e)
         {
@@ -640,6 +738,7 @@ namespace QuotesOfWisdom
                 CurrentAppSimulator.LicenseInformation.LicenseChanged -= licenseChangeHandler;
                 //CurrentApp.LicenseInformation.LicenseChanged -= licenseChangeHandler;
             }
+            
         }
       
     }

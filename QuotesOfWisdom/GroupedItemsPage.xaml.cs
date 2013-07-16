@@ -15,7 +15,7 @@ using SQLite;
 using System.Xml.Linq;
 using Windows.UI.ViewManagement;
 using Windows.UI.Core;
-
+using Windows.UI.Xaml.Media;
 //using System.IO;
 //using Windows.Foundation.Collections;
 //using Windows.UI.Xaml.Controls.Primitives;
@@ -53,6 +53,7 @@ namespace QuotesOfWisdom
         public GroupedItemsPage()
         {
             this.InitializeComponent();
+            sessionData.isBackgroundChanged = true;
             ShareSourceLoad();            
             Window.Current.SizeChanged += Current_SizeChanged;            
         }
@@ -438,22 +439,29 @@ namespace QuotesOfWisdom
             
             #endregion
 
-            if (ApplicationData.Current.RoamingSettings.Values.ContainsKey("Settings"))
+            if (sessionData.isBackgroundChanged)
             {
-                if ((string)ApplicationData.Current.RoamingSettings.Values["Settings"].ToString() != "dynamicStyle")
+                if (ApplicationData.Current.RoamingSettings.Values.ContainsKey("Settings"))
                 {
-                    LayoutRoot.Style = App.Current.Resources[(string)ApplicationData.Current.RoamingSettings.Values["Settings"].ToString()] as Style;
+                    if ((string)ApplicationData.Current.RoamingSettings.Values["Settings"].ToString() != "dynamicStyle")
+                    {
+                        //LayoutRoot.Style = App.Current.Resources[(string)ApplicationData.Current.RoamingSettings.Values["Settings"].ToString()] as Style;
+                        SolidColorBrush sbColorBrush = new SolidColorBrush(Utilities.HexColor(ApplicationData.Current.RoamingSettings.Values["bgColor"].ToString()));
+                        LayoutRoot.Background = sbColorBrush;
 
+                    }
+                    else
+                    {
+                        Utilities.dynamicBackgroundChange(LayoutRoot);
+                    }
                 }
                 else
                 {
-                    Utilities.dynamicBackgroundChange(LayoutRoot);
-                }
-            }
-            else
-            {
-                LayoutRoot.Style = App.Current.Resources["layoutBlockStyle4"] as Style;
+                    LayoutRoot.Style = App.Current.Resources["layoutBlockStyle4"] as Style;
 
+                }
+
+                sessionData.isBackgroundChanged = false;
             }
         }
 

@@ -56,7 +56,7 @@ namespace QuotesOfWisdom
         public SettingsUserControl()
         {
             this.InitializeComponent();
-
+            sessionData.isBackgroundChanged = true;
             if (ApplicationData.Current.RoamingSettings.Values.ContainsKey("Auto-play"))
             {
                 autoPlaySlider.Value = Convert.ToInt32(ApplicationData.Current.RoamingSettings.Values["Auto-play"].ToString());
@@ -261,7 +261,11 @@ namespace QuotesOfWisdom
         private void LayoutRoot_LayoutUpdated(object sender, object e)
         {
             // Calls the Background change method
-            ChangeBackground();
+            if (sessionData.isBackgroundChanged)
+            {
+                ChangeBackground();
+                sessionData.isBackgroundChanged = false;
+            }
         }
 
         /// <summary>
@@ -282,8 +286,9 @@ namespace QuotesOfWisdom
                 sessionData.colorValue = colorValue;
 
                 string layout = Utilities.GetLayout(sessionData.colorValue);
-
+                ApplicationData.Current.RoamingSettings.Values["bgColor"] = sessionData.colorValue.ToString();
                 ApplicationData.Current.RoamingSettings.Values["Settings"] = layout;
+                sessionData.isBackgroundChanged = true;
                 ChangeBackground();
             }
             catch

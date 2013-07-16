@@ -55,6 +55,7 @@ namespace QuotesOfWisdom
         public BackgroundUserControl()
         {
             this.InitializeComponent();
+            sessionData.isBackgroundChanged = true;
             LoadFormData();
             stackMessage.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
             stackProgressRing.Visibility = Windows.UI.Xaml.Visibility.Visible;
@@ -136,7 +137,11 @@ namespace QuotesOfWisdom
         private void LayoutRoot_LayoutUpdated(object sender, object e)
         {
             // Calls the Background change method
-            ChangeBackground();            
+            if (sessionData.isBackgroundChanged)
+            {
+                ChangeBackground();
+                sessionData.isBackgroundChanged = false;
+            }           
         }
 
         private void ChangeBackground()
