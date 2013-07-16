@@ -25,9 +25,17 @@ namespace QuotesOfWisdom
         public AboutUserControl()
         {
             this.InitializeComponent();
+            sessionData.isBackgroundChanged = true;
+
             //AssemblyFileVersionAttribute MyAssemblyFileVersionAttribute = typeof(AboutUserControl).GetTypeInfo().Assembly.GetCustomAttribute<AssemblyFileVersionAttribute>();
             //this.appVersion.Text = MyAssemblyFileVersionAttribute.Version;
-            ChangeBackground();
+            //ChangeBackground();
+            if (sessionData.isBackgroundChanged)
+            {
+                ChangeBackground();
+                sessionData.isBackgroundChanged = false;
+            }
+            
         }
 
         /// <summary>
@@ -38,7 +46,11 @@ namespace QuotesOfWisdom
         private void LayoutRoot_LayoutUpdated(object sender, object e)
         {
             // Calls the Background change method
-            ChangeBackground();
+            if (sessionData.isBackgroundChanged)
+            {
+                ChangeBackground();
+                sessionData.isBackgroundChanged = false;
+            }
         }
         /// <summary>
         /// Method of changing background

@@ -230,6 +230,8 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Content Include="Assets\PaintBucket.png" />
+    <Content Include="Assets\Preview.png" />
     <Content Include="Dlls\Newtonsoft.Json.dll" />
     <Content Include="Xml\Ads.xml" />
     <Content Include="Xml\in-app-purchase.xml">

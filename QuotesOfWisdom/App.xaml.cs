@@ -276,6 +276,7 @@ namespace QuotesOfWisdom
         public static bool isSearchAut = false;
         public static string searchKeyWord { get; set; }
         public static bool isSearchClicked = false;
+        public static bool isBackgroundChanged = false;
         public static int curPageCount { get; set; }
         public static int noOfImages { get; set; }
         public static int totalImagesCount { get; set; }
@@ -327,6 +328,8 @@ namespace QuotesOfWisdom
             sessionData.genericURL = "";
             sessionData.tokenSource = null;
             sessionData.currentBackgroundImages = null;
+            sessionData.isBackgroundChanged = false;
+
         }
     }
     /// <summary>

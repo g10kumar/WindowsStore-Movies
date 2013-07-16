@@ -16,7 +16,8 @@ namespace QuotesOfWisdom.Common
 {
     public static class Utilities
     {
-        
+
+
         /// <summary>
         /// Method for returning Quotation for trimming the quotation for passing input length
         /// </summary>
@@ -30,7 +31,7 @@ namespace QuotesOfWisdom.Common
             else
                 return strParam;
         }
-        
+
         /// <summary>
         /// Deserializing the JSON string method for Quotes
         /// </summary>
@@ -44,7 +45,7 @@ namespace QuotesOfWisdom.Common
                 return (List<Quotations>)serializer.ReadObject(ms);
             }
         }
-        
+
         /// <summary>
         /// Hex Color method
         /// </summary>
@@ -187,7 +188,7 @@ namespace QuotesOfWisdom.Common
                 default:
                     return "layoutBlockStyle_fd7b21";
             }
-            
+
             //switch (colorValue)
             //{
             //    case "#FF00C13F":
@@ -234,19 +235,62 @@ namespace QuotesOfWisdom.Common
             return viewState.ToString();
         }
 
-        public static void dynamicBackgroundChange(Windows.UI.Xaml.Controls.Grid gd)
+        public static async void dynamicBackgroundChange(Windows.UI.Xaml.Controls.Grid gd)
         {
+            StorageFolder localFolder = null;
+            StorageFile file;
+            localFolder = ApplicationData.Current.LocalFolder;
             if (ApplicationData.Current.RoamingSettings.Values.ContainsKey("Settings"))
             {
                 if ((string)ApplicationData.Current.RoamingSettings.Values["Settings"].ToString() == "dynamicStyle")
                 {
-                    ImageBrush ib = new ImageBrush();
+                    #region Commented on 16.07.2013
 
-                    BitmapImage bi = new BitmapImage();
-                    bi.UriSource = new Uri(ApplicationData.Current.RoamingSettings.Values["ImageURLForDynamicStyle"].ToString());
-                    ib.ImageSource = bi;
+                    //ImageBrush ib = new ImageBrush();
 
-                    gd.Background = ib;
+                    //BitmapImage bi = new BitmapImage();
+                    //bi.UriSource = new Uri(ApplicationData.Current.RoamingSettings.Values["ImageURLForDynamicStyle"].ToString());
+                    //ib.ImageSource = bi;
+
+                    //gd.Background = ib;
+
+                    #endregion
+
+                    #region Commented
+                    /*
+                    file = await localFolder.GetFileAsync("backgroundImage.jpg");
+                    using (IRandomAccessStream fileStream = await file.OpenAsync(Windows.Storage.FileAccessMode.Read))
+                    {
+
+                        ////file = await localFolder.GetFileAsync("backgroundImage.jpg");
+                        ////if (file != null)
+                        ////{
+                        //    //var fileStream = await file.OpenAsync(Windows.Storage.FileAccessMode.ReadWrite);
+
+                        ImageBrush ib = new ImageBrush();
+
+                        //    // Set the image source to the selected bitmap
+                        BitmapImage bitmapImage = new BitmapImage();
+                        //    ib.ImageSource = new BitmapImage(new Uri("ms-appdata:///local/backgroundImage.jpg", UriKind.Absolute));
+                        bitmapImage.SetSource(fileStream);
+                        ib.ImageSource = bitmapImage;
+                        gd.Background = ib;
+                        ////}
+                    }
+                    */
+                    #endregion
+
+                    file = await localFolder.GetFileAsync("backgroundImage.jpg");
+                    using (IRandomAccessStream fileStream = await file.OpenAsync(Windows.Storage.FileAccessMode.Read))
+                    {
+                        ImageBrush imageBrush = new ImageBrush();
+
+                        // Set the image source to the selected bitmap
+                        BitmapImage bitmapImage = new BitmapImage();
+                        bitmapImage.SetSource(fileStream);
+                        imageBrush.ImageSource = bitmapImage;
+                        gd.Background = imageBrush;
+                    }
                 }
             }
         }
@@ -260,5 +304,7 @@ namespace QuotesOfWisdom.Common
             Windows.UI.Popups.MessageDialog dialog = new Windows.UI.Popups.MessageDialog(msg);
             await dialog.ShowAsync();
         }
+
+
     }
 }

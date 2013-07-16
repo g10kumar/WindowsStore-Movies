@@ -59,6 +59,7 @@ namespace QuotesOfWisdom
         public ItemDetailPage()
         {
             this.InitializeComponent();
+            sessionData.isBackgroundChanged = true;
             //fv = flipView.FindName("listQuotes") as FlipView;            
             ShareSourceLoad();
             Window.Current.SizeChanged += Current_SizeChanged;
@@ -378,6 +379,7 @@ namespace QuotesOfWisdom
         /// session.  This will be null the first time a page is visited.</param>
         protected async override void LoadState(Object navigationParameter, Dictionary<String, Object> pageState)
         {
+            sessionData.isBackgroundChanged = true;
             await LoadInAppPurchaseProxyFileAsync();
 
             //LicenseInformation licenseInformation = CurrentAppSimulator.LicenseInformation;
@@ -642,7 +644,11 @@ namespace QuotesOfWisdom
         private void LayoutRoot_LayoutUpdated(object sender, object e)
         {
             // Calls the Background change method
-            ChangeBackground();
+            if (sessionData.isBackgroundChanged)
+            {
+                ChangeBackground();
+                sessionData.isBackgroundChanged = false;
+            }
         }
 
 

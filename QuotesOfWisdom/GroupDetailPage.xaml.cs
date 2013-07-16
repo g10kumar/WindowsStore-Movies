@@ -28,6 +28,7 @@ namespace QuotesOfWisdom
         public GroupDetailPage()
         {
             this.InitializeComponent();
+            sessionData.isBackgroundChanged = true;
         }
 
         /// <summary>
@@ -140,7 +141,11 @@ namespace QuotesOfWisdom
         private void LayoutRoot_LayoutUpdated(object sender, object e)
         {
             // Calls the Background change method
-            ChangeBackground();
+            if (sessionData.isBackgroundChanged)
+            {
+                ChangeBackground();
+                sessionData.isBackgroundChanged = false;
+            }
         }
     }
 }

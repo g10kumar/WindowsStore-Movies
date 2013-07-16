@@ -32,6 +32,7 @@ namespace QuotesOfWisdom
         public FavoriteQuotes()
         {
             this.InitializeComponent();
+            sessionData.isBackgroundChanged = true;
             Windows.Storage.ApplicationData.Current.DataChanged += new TypedEventHandler<ApplicationData, object>(DataChangeHandler);
             Window.Current.SizeChanged += Current_SizeChanged;            
         }
@@ -154,7 +155,11 @@ namespace QuotesOfWisdom
         private void LayoutRoot_LayoutUpdated(object sender, object e)
         {
             // Calls the Background change method
-            ChangeBackground();
+            if (sessionData.isBackgroundChanged)
+            {
+                ChangeBackground();
+                sessionData.isBackgroundChanged = false;
+            }
         }
         /// <summary>
         /// Method of changing background
