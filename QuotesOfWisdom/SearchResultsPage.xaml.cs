@@ -12,12 +12,14 @@ using SQLite;
 using Windows.ApplicationModel.DataTransfer;
 using System.Collections.ObjectModel;
 using QuotesOfWisdom.Common;
+using Windows.UI.Xaml.Media;
+
 //using System.IO;
 //using Windows.Foundation.Collections;
 //using Windows.UI.Xaml.Controls.Primitives;
 //using Windows.UI.Xaml.Data;
 //using Windows.UI.Xaml.Input;
-//using Windows.UI.Xaml.Media;
+
 //using Windows.UI.Xaml.Navigation;
 //using System.Xml.Linq;
 //using QuotesOfWisdom.ServiceReference1;
@@ -140,7 +142,17 @@ namespace QuotesOfWisdom
             {
                 if ((string)ApplicationData.Current.RoamingSettings.Values["Settings"].ToString() != "dynamicStyle")
                 {
-                    LayoutRoot.Style = App.Current.Resources[(string)ApplicationData.Current.RoamingSettings.Values["Settings"].ToString()] as Style;
+                    //LayoutRoot.Style = App.Current.Resources[(string)ApplicationData.Current.RoamingSettings.Values["Settings"].ToString()] as Style;
+                    if ((string)ApplicationData.Current.RoamingSettings.Values["bgColor"].ToString() != "")
+                    {
+                        SolidColorBrush sbColorBrush = new SolidColorBrush(Utilities.HexColor(ApplicationData.Current.RoamingSettings.Values["bgColor"].ToString()));
+                        LayoutRoot.Background = sbColorBrush;
+                    }
+                    else
+                    {
+                        SolidColorBrush sbColorBrush = new SolidColorBrush(Utilities.HexColor("#f2b100"));
+                        LayoutRoot.Background = sbColorBrush;
+                    }
 
                 }
                 else

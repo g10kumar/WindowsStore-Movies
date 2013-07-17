@@ -168,7 +168,17 @@ namespace QuotesOfWisdom
             {
                 if ((string)ApplicationData.Current.RoamingSettings.Values["Settings"].ToString() != "dynamicStyle")
                 {
-                    LayoutRoot.Style = App.Current.Resources[(string)ApplicationData.Current.RoamingSettings.Values["Settings"].ToString()] as Style;
+                    //LayoutRoot.Style = App.Current.Resources[(string)ApplicationData.Current.RoamingSettings.Values["Settings"].ToString()] as Style;
+                    if ((string)ApplicationData.Current.RoamingSettings.Values["bgColor"].ToString() != "")
+                    {
+                        SolidColorBrush sbColorBrush = new SolidColorBrush(Utilities.HexColor(ApplicationData.Current.RoamingSettings.Values["bgColor"].ToString()));
+                        LayoutRoot.Background = sbColorBrush;
+                    }
+                    else
+                    {
+                        SolidColorBrush sbColorBrush = new SolidColorBrush(Utilities.HexColor("#f2b100"));
+                        LayoutRoot.Background = sbColorBrush;
+                    }
 
                     #region Directly assigning background property of the Main Grid
                     //Windows.Storage.StorageFolder storageFolder = await Windows.ApplicationModel.Package.Current.InstalledLocation.GetFolderAsync("Assets");

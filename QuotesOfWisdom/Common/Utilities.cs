@@ -280,17 +280,38 @@ namespace QuotesOfWisdom.Common
                     */
                     #endregion
 
-                    file = await localFolder.GetFileAsync("backgroundImage.jpg");
-                    using (IRandomAccessStream fileStream = await file.OpenAsync(Windows.Storage.FileAccessMode.Read))
+                    try
                     {
-                        ImageBrush imageBrush = new ImageBrush();
 
-                        // Set the image source to the selected bitmap
-                        BitmapImage bitmapImage = new BitmapImage();
-                        bitmapImage.SetSource(fileStream);
-                        imageBrush.ImageSource = bitmapImage;
-                        gd.Background = imageBrush;
+                        //gd.Background = new ImageBrush
+                        //{
+                        //    Stretch = Windows.UI.Xaml.Media.Stretch.UniformToFill,
+                        //    ImageSource =
+                        //        new BitmapImage { UriSource = new Uri("ms-appx:///local/backgroundImage.jpg") }
+                        //};
+
+                        file = await localFolder.GetFileAsync("backgroundImage.jpg");
+
+                        if (file != null)
+                        {
+                            using (IRandomAccessStream fileStream = await file.OpenAsync(Windows.Storage.FileAccessMode.Read))
+                            {
+                                ImageBrush imageBrush = new ImageBrush();
+
+                                // Set the image source to the selected bitmap
+                                BitmapImage bitmapImage = new BitmapImage();
+                                bitmapImage.SetSource(fileStream);
+                                imageBrush.ImageSource = bitmapImage;
+                                gd.Background = imageBrush;
+                            }
+                        }
                     }
+                    catch
+                    {
+                        ApplicationData.Current.RoamingSettings.Values["bgColor"] = "#f2b100";
+                        SolidColorBrush sbColorBrush = new SolidColorBrush(Utilities.HexColor("#f2b100"));
+                        gd.Background = sbColorBrush;
+                    }                    
                 }
             }
         }
