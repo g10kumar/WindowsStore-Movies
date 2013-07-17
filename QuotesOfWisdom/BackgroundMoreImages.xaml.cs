@@ -43,6 +43,7 @@ namespace QuotesOfWisdom
         LicenseChangedEventHandler licenseChangeHandler = null;
         string genericURL = "";
         StorageFolder localFolder = null;
+        StorageFile file = null;
         #endregion
 
         /// <summary>
@@ -184,7 +185,17 @@ namespace QuotesOfWisdom
             {
                 if ((string)ApplicationData.Current.RoamingSettings.Values["Settings"].ToString() != "dynamicStyle")
                 {
-                    LayoutRoot.Style = App.Current.Resources[(string)ApplicationData.Current.RoamingSettings.Values["Settings"].ToString()] as Style;
+                    //LayoutRoot.Style = App.Current.Resources[(string)ApplicationData.Current.RoamingSettings.Values["Settings"].ToString()] as Style;
+                    if ((string)ApplicationData.Current.RoamingSettings.Values["bgColor"].ToString() != "")
+                    {
+                        SolidColorBrush sbColorBrush = new SolidColorBrush(Utilities.HexColor(ApplicationData.Current.RoamingSettings.Values["bgColor"].ToString()));
+                        LayoutRoot.Background = sbColorBrush;
+                    }
+                    else
+                    {
+                        SolidColorBrush sbColorBrush = new SolidColorBrush(Utilities.HexColor("#f2b100"));
+                        LayoutRoot.Background = sbColorBrush;
+                    }
                 }
                 else
                 {
@@ -536,8 +547,7 @@ namespace QuotesOfWisdom
                 #region Save the Remote URL Image into Local folder
 
                 localFolder = ApplicationData.Current.LocalFolder;
-                StorageFile file;
-
+                
                 file = await localFolder.CreateFileAsync("backgroundImage.jpg ", CreationCollisionOption.ReplaceExisting);
 
                 var client = new HttpClient();
@@ -546,18 +556,22 @@ namespace QuotesOfWisdom
                 var response = await client.
                     SendAsync(request, HttpCompletionOption.ResponseHeadersRead);
 
-                var fs = await file.OpenAsync(FileAccessMode.ReadWrite);
-                var writer = new DataWriter(fs.GetOutputStreamAt(0));
-                writer.WriteBytes(await response.Content.ReadAsByteArrayAsync());
-                await writer.StoreAsync();
-                writer.DetachStream();
-                await fs.FlushAsync();
+                using (IRandomAccessStream fs = await file.OpenAsync(FileAccessMode.ReadWrite))
+                {
+                    //var fs = await file.OpenAsync(FileAccessMode.ReadWrite);
+                    var writer = new DataWriter(fs.GetOutputStreamAt(0));
+                    writer.WriteBytes(await response.Content.ReadAsByteArrayAsync());
+                    await writer.StoreAsync();
+                    writer.DetachStream();
+                    await fs.FlushAsync();
+                }
+
                 
                 #endregion
 
-                //sessionData.isBackgroundChanged = true;
+                sessionData.isBackgroundChanged = true;
                 //ChangeBackground();
-                //Utilities.dynamicBackgroundChange(LayoutRoot);
+                Utilities.dynamicBackgroundChange(LayoutRoot);
 
                 //file = await localFolder.GetFileAsync("backgroundImage.jpg");
                 //using (IRandomAccessStream fileStream = await file.OpenAsync(Windows.Storage.FileAccessMode.Read))
