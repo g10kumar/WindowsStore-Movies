@@ -238,7 +238,7 @@ namespace QuotesOfWisdom.Common
         public static async void dynamicBackgroundChange(Windows.UI.Xaml.Controls.Grid gd)
         {
             StorageFolder localFolder = null;
-            StorageFile file;
+            StorageFile file = null;
             localFolder = ApplicationData.Current.LocalFolder;
             if (ApplicationData.Current.RoamingSettings.Values.ContainsKey("Settings"))
             {
@@ -283,15 +283,8 @@ namespace QuotesOfWisdom.Common
                     try
                     {
 
-                        //gd.Background = new ImageBrush
-                        //{
-                        //    Stretch = Windows.UI.Xaml.Media.Stretch.UniformToFill,
-                        //    ImageSource =
-                        //        new BitmapImage { UriSource = new Uri("ms-appx:///local/backgroundImage.jpg") }
-                        //};
-
+                    
                         file = await localFolder.GetFileAsync("backgroundImage.jpg");
-
                         if (file != null)
                         {
                             using (IRandomAccessStream fileStream = await file.OpenAsync(Windows.Storage.FileAccessMode.Read))
@@ -306,15 +299,69 @@ namespace QuotesOfWisdom.Common
                             }
                         }
                     }
+                    catch (FileNotFoundException ex)
+                    {
+                        ApplicationData.Current.RoamingSettings.Values["bgColor"] = "#000000";
+                        SolidColorBrush sbColorBrush = new SolidColorBrush(Utilities.HexColor("#000000"));
+                        gd.Background = sbColorBrush;
+                    }
                     catch
                     {
-                        ApplicationData.Current.RoamingSettings.Values["bgColor"] = "#f2b100";
-                        SolidColorBrush sbColorBrush = new SolidColorBrush(Utilities.HexColor("#f2b100"));
+                        ApplicationData.Current.RoamingSettings.Values["bgColor"] = "#000000";
+                        SolidColorBrush sbColorBrush = new SolidColorBrush(Utilities.HexColor("#000000"));
                         gd.Background = sbColorBrush;
-                    }                    
+
+                        #region Commented on 18.07.2013
+
+                        //ApplicationData.Current.RoamingSettings.Values["bgColor"] = "#000000";
+                        //SolidColorBrush sbColorBrush = new SolidColorBrush(Utilities.HexColor("#000000"));
+                        //gd.Background = sbColorBrush;
+
+                        //SetAlternateBackground(file, gd);  
+                        #endregion
+
+                    }
                 }
             }
         }
+
+        #region Commented on 18.07.2013
+        /*
+        private async static void SetAlternateBackground(StorageFile file, Windows.UI.Xaml.Controls.Grid gd)
+        {
+            string token = string.Empty;
+            try
+            {
+                if ((string)ApplicationData.Current.RoamingSettings.Values["fileToken"].ToString() != "")
+                {
+                    token = ApplicationData.Current.RoamingSettings.Values["fileToken"].ToString();
+                }
+                file = await Windows.Storage.AccessCache.StorageApplicationPermissions.FutureAccessList.GetFileAsync(token);
+            }
+            catch (Exception ex)
+            { }
+
+            //string fileContents = await FileIO.ReadBufferAsyncc(file);
+
+            //var imageBitmap = new Windows.UI.Xaml.Media.Imaging.BitmapImage();
+            //imageBitmap.SetSource(fileContents);
+            BitmapImage src = new BitmapImage();
+            if (file != null)
+            {
+                using (IRandomAccessStream fileStream = await file.OpenAsync(Windows.Storage.FileAccessMode.Read))
+                {
+                    ImageBrush imageBrush = new ImageBrush();
+
+                    // Set the image source to the selected bitmap
+                    BitmapImage bitmapImage = new BitmapImage();
+                    bitmapImage.SetSource(fileStream);
+                    imageBrush.ImageSource = bitmapImage;
+                    gd.Background = imageBrush;
+                }
+            }
+        }
+        */
+        #endregion
 
         /// <summary>
         /// Method for showing pop up messages

@@ -35,6 +35,7 @@ namespace QuotesOfWisdom
         {
             this.InitializeComponent();
             sessionData.isBackgroundChanged = true;
+            ChangeBackground();
             Window.Current.SizeChanged += Current_SizeChanged; 
         }
 
@@ -149,7 +150,7 @@ namespace QuotesOfWisdom
                     }
                     else
                     {
-                        SolidColorBrush sbColorBrush = new SolidColorBrush(Utilities.HexColor("#f2b100"));
+                        SolidColorBrush sbColorBrush = new SolidColorBrush(Utilities.HexColor("#000000"));
                         LayoutRoot.Background = sbColorBrush;
                     }
 

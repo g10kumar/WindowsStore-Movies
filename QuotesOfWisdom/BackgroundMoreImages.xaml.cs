@@ -34,6 +34,7 @@ using Windows.UI.Popups;
 using Windows.UI.ApplicationSettings;
 using Windows.System.Threading;
 using Windows.UI.Xaml.Media.Imaging;
+using Windows.Networking.BackgroundTransfer;
 namespace QuotesOfWisdom
 {
     public sealed partial class BackgroundMoreImages : UserControl
@@ -193,7 +194,7 @@ namespace QuotesOfWisdom
                     }
                     else
                     {
-                        SolidColorBrush sbColorBrush = new SolidColorBrush(Utilities.HexColor("#f2b100"));
+                        SolidColorBrush sbColorBrush = new SolidColorBrush(Utilities.HexColor("#000000"));
                         LayoutRoot.Background = sbColorBrush;
                     }
                 }
@@ -546,31 +547,60 @@ namespace QuotesOfWisdom
 
                 #region Save the Remote URL Image into Local folder
 
-                localFolder = ApplicationData.Current.LocalFolder;
+                #region Commented on 18.07.2013
+                //localFolder = ApplicationData.Current.LocalFolder;
                 
-                file = await localFolder.CreateFileAsync("backgroundImage.jpg ", CreationCollisionOption.ReplaceExisting);
+                //file = await localFolder.CreateFileAsync("backgroundImage.jpg ", CreationCollisionOption.ReplaceExisting);
 
-                var client = new HttpClient();
-                HttpRequestMessage request = new
-                    HttpRequestMessage(HttpMethod.Get, ImageURL);
-                var response = await client.
-                    SendAsync(request, HttpCompletionOption.ResponseHeadersRead);
+                //var client = new HttpClient();
+                //HttpRequestMessage request = new
+                //    HttpRequestMessage(HttpMethod.Get, ImageURL);
+                //var response = await client.
+                //    SendAsync(request, HttpCompletionOption.ResponseHeadersRead);
 
-                using (IRandomAccessStream fs = await file.OpenAsync(FileAccessMode.ReadWrite))
+                //using (IRandomAccessStream fs = await file.OpenAsync(FileAccessMode.ReadWrite))
+                //{
+                //    //var fs = await file.OpenAsync(FileAccessMode.ReadWrite);
+                //    var writer = new DataWriter(fs.GetOutputStreamAt(0));
+                //    writer.WriteBytes(await response.Content.ReadAsByteArrayAsync());
+                //    await writer.StoreAsync();
+                //    writer.DetachStream();
+                //    await fs.FlushAsync();
+
+                //    ApplicationData.Current.RoamingSettings.Values["fileToken"] = Windows.Storage.AccessCache.StorageApplicationPermissions.FutureAccessList.Add(file);
+                //}
+                #endregion
+
+                ImageBrush imageBrush = new ImageBrush();
+                Uri source = new Uri(ImageURL.ToString());
+                StorageFile destinationFile;
+                try
                 {
-                    //var fs = await file.OpenAsync(FileAccessMode.ReadWrite);
-                    var writer = new DataWriter(fs.GetOutputStreamAt(0));
-                    writer.WriteBytes(await response.Content.ReadAsByteArrayAsync());
-                    await writer.StoreAsync();
-                    writer.DetachStream();
-                    await fs.FlushAsync();
-                }
+                    destinationFile = await ApplicationData.Current.LocalFolder.CreateFileAsync(
+                        "backgroundImage.jpg", CreationCollisionOption.ReplaceExisting);
 
+                    BackgroundDownloader downloader = new BackgroundDownloader();
+                    DownloadOperation download = downloader.CreateDownload(source, destinationFile);
+                    await download.StartAsync();
+                    ResponseInformation alternateresponse = download.GetResponseInformation();
+                    Uri imageUri;
+                    BitmapImage image = null;
+
+                    if (Uri.TryCreate(destinationFile.Path, UriKind.RelativeOrAbsolute, out imageUri))
+                    {
+                        image = new BitmapImage(imageUri);
+                    }
+                    imageBrush.ImageSource = image;
+                    LayoutRoot.Background = imageBrush;
+                }
+                catch (FileNotFoundException ex)
+                {
+                    return;
+                }
                 
                 #endregion
 
                 sessionData.isBackgroundChanged = true;
-                //ChangeBackground();
                 Utilities.dynamicBackgroundChange(LayoutRoot);
 
                 //file = await localFolder.GetFileAsync("backgroundImage.jpg");
