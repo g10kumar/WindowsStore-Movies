@@ -84,6 +84,7 @@
     <Style x:Key="layoutBlockStyle_f2b100" TargetType="Grid">
         <Setter Property="Background" Value="#f2b100"></Setter>
     </Style>
+    
 
     <Style x:Key="layoutBlockStyle_76b800" TargetType="Grid">
         <Setter Property="Background" Value="#76b800"></Setter>

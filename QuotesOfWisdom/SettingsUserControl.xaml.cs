@@ -176,7 +176,7 @@ namespace QuotesOfWisdom
                     }
                     else
                     {
-                        SolidColorBrush sbColorBrush = new SolidColorBrush(Utilities.HexColor("#f2b100"));
+                        SolidColorBrush sbColorBrush = new SolidColorBrush(Utilities.HexColor("#000000"));
                         LayoutRoot.Background = sbColorBrush;
                     }
 

@@ -16,6 +16,8 @@ using System.Xml.Linq;
 using Windows.UI.ViewManagement;
 using Windows.UI.Core;
 using Windows.UI.Xaml.Media;
+using System.IO;
+
 //using System.IO;
 //using Windows.Foundation.Collections;
 //using Windows.UI.Xaml.Controls.Primitives;
@@ -54,8 +56,9 @@ namespace QuotesOfWisdom
         {
             this.InitializeComponent();
             sessionData.isBackgroundChanged = true;
-            ShareSourceLoad();            
-            Window.Current.SizeChanged += Current_SizeChanged;            
+            ChangeBackground();
+            ShareSourceLoad();
+            Window.Current.SizeChanged += Current_SizeChanged;
         }
 
         /// <summary>
@@ -66,7 +69,7 @@ namespace QuotesOfWisdom
         void Current_SizeChanged(object sender, WindowSizeChangedEventArgs e)
         {
             // Calls the ChangeWindowState method
-            ChangeWindowState();            
+            ChangeWindowState();
         }
 
         /// <summary>
@@ -100,7 +103,7 @@ namespace QuotesOfWisdom
                 //btnFavoriteQuotes.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
                 //btnRandomQuotes.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
             }
-        }        
+        }
 
         /// <summary>
         /// Method for Declaring and Initializing datatransfer object
@@ -116,7 +119,7 @@ namespace QuotesOfWisdom
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        async void DataRequested(DataTransferManager sender, DataRequestedEventArgs e)
+        void DataRequested(DataTransferManager sender, DataRequestedEventArgs e)
         {
             e.Request.Data.Properties.Title = "Quotes of Wisdom on Windows 8";
             e.Request.Data.Properties.Description = "Quotes of Wisdom ";
@@ -135,7 +138,7 @@ namespace QuotesOfWisdom
         protected override void LoadState(Object navigationParameter, Dictionary<String, Object> pageState)
         {
             sessionData.isSearch = false;
-            
+
             var quotesGroups = Quotes.GetGroups((String)navigationParameter);
             this.DefaultViewModel["Groups"] = quotesGroups;
 
@@ -147,9 +150,13 @@ namespace QuotesOfWisdom
                 PeriodicUpdateRecurrence recurrence = PeriodicUpdateRecurrence.Daily;
                 TileUpdateManager.CreateTileUpdaterForApplication().StartPeriodicUpdate(polledUri, recurrence);
             }
+            catch (FileNotFoundException ex)
+            {
+                this.ShowMessage("Err1 " + ex.Message.ToString());
+            }
             catch
             {
-                
+
             }
             datatransferManager.DataRequested -= new TypedEventHandler<DataTransferManager, DataRequestedEventArgs>(this.DataRequested);
             #endregion
@@ -160,12 +167,12 @@ namespace QuotesOfWisdom
 
             #region load Favorite Quotes
             LoadFavQuotes();
-            #endregion            
+            #endregion
 
             dtrandomQuoteDisplay.Interval = TimeSpan.FromSeconds(24.0);
             dtrandomQuoteDisplay.Tick += dtrandomQuoteDisplay_Tick;
             dtrandomQuoteDisplay.Start();
-            
+
         }
 
         /// <summary>
@@ -191,70 +198,82 @@ namespace QuotesOfWisdom
         /// </summary>
         private async void LoadFavQuotes()
         {
-            List<Quotations> listFav = new List<Quotations>();
-
-            StorageFolder roamingFolder = ApplicationData.Current.RoamingFolder;
-            StorageFile sampleFile;
-
-            sampleFile = await GetFileIfExistsAsync(roamingFolder, "favQuotes.xml");
-
-            if (sampleFile != null)
+            try
             {
-                try
+                List<Quotations> listFav = new List<Quotations>();
+
+                StorageFolder roamingFolder = ApplicationData.Current.RoamingFolder;
+                StorageFile sampleFile;
+
+                sampleFile = await GetFileIfExistsAsync(roamingFolder, "favQuotes.xml");
+
+                if (sampleFile != null)
                 {
-                    sampleFile = await roamingFolder.GetFileAsync("favQuotes.xml");
-                    string fileContent = await FileIO.ReadTextAsync(sampleFile);
-                    fileContent = fileContent.TrimStart('\0');
-                    fileContent = fileContent.TrimEnd(' ');
-                    XElement xe = XElement.Parse(fileContent.Trim());
-
-                    var query = (from quotes in xe.Elements("q")
-                                 select new Quotations
-                                 {
-                                     Quote = quotes.Element("d").Value,
-                                     QuoteId = quotes.Attribute("id").Value,
-                                     Author = quotes.Element("a").Value,
-                                     Cat = quotes.Element("c").Value
-                                 });
-
-
-
-                    foreach (Quotations q in query)
+                    try
                     {
-                        listFav.Add(q);
-                    }
-                    sessionData.currentFavoriteQuotes = listFav.ToList();
+                        sampleFile = await roamingFolder.GetFileAsync("favQuotes.xml");
+                        string fileContent = await FileIO.ReadTextAsync(sampleFile);
+                        fileContent = fileContent.TrimStart('\0');
+                        fileContent = fileContent.TrimEnd(' ');
+                        XElement xe = XElement.Parse(fileContent.Trim());
 
-                    if (listFav.Count == 0)
-                    {
-                        favoritetitle.Text = "No Favorites Yet";
-                        favoriteseconarytitle.Text = "No Favorites Yet";
-                    }
-                    else
-                    {
-                        if (listFav.Count == 1)
+                        var query = (from quotes in xe.Elements("q")
+                                     select new Quotations
+                                     {
+                                         Quote = quotes.Element("d").Value,
+                                         QuoteId = quotes.Attribute("id").Value,
+                                         Author = quotes.Element("a").Value,
+                                         Cat = quotes.Element("c").Value
+                                     });
+
+
+
+                        foreach (Quotations q in query)
                         {
-                            favoritetitle.Text = Utilities.GetTeaser(listFav[0].Quote.ToString(), 200);
-                            favoriteseconarytitle.Text = Utilities.GetTeaser(listFav[0].Quote.ToString(), 200);
+                            listFav.Add(q);
+                        }
+                        sessionData.currentFavoriteQuotes = listFav.ToList();
+
+                        if (listFav.Count == 0)
+                        {
+                            favoritetitle.Text = "No Favorites Yet";
+                            favoriteseconarytitle.Text = "No Favorites Yet";
                         }
                         else
                         {
-                            favoritetitle.Text = Utilities.GetTeaser(listFav[randNum.Next(1, listFav.Count)].Quote.ToString(), 200);
-                            favoriteseconarytitle.Text = Utilities.GetTeaser(listFav[randNum.Next(2, listFav.Count)].Quote.ToString(), 200);
+                            if (listFav.Count == 1)
+                            {
+                                favoritetitle.Text = Utilities.GetTeaser(listFav[0].Quote.ToString(), 200);
+                                favoriteseconarytitle.Text = Utilities.GetTeaser(listFav[0].Quote.ToString(), 200);
+                            }
+                            else
+                            {
+                                favoritetitle.Text = Utilities.GetTeaser(listFav[randNum.Next(1, listFav.Count)].Quote.ToString(), 200);
+                                favoriteseconarytitle.Text = Utilities.GetTeaser(listFav[randNum.Next(2, listFav.Count)].Quote.ToString(), 200);
+                            }
                         }
                     }
-                }
-                catch
-                {
+                    catch (FileNotFoundException ex)
+                    {
+                        this.ShowMessage("Err2 " + ex.Message.ToString());
+                    }
+                    catch
+                    {
 
+                    }
+                }
+                else
+                {
+                    favoritetitle.Text = "No Favorites Yet";
+                    favoriteseconarytitle.Text = "No Favorites Yet";
                 }
             }
-            else
+            catch (FileNotFoundException ex)
             {
-                favoritetitle.Text = "No Favorites Yet";
-                favoriteseconarytitle.Text = "No Favorites Yet";
+                this.ShowMessage("Err2 " + ex.Message.ToString());
             }
         }
+
 
         /// <summary>
         /// Random Quotes loading method
@@ -291,9 +310,13 @@ namespace QuotesOfWisdom
                     secondarytitle.Text = "";
                 }
             }
-            catch 
+            catch (FileNotFoundException ex)
             {
-                
+                this.ShowMessage("Err3 " + ex.Message.ToString());
+            }
+            catch
+            {
+
             }
             //catch (Exception ex)
             //{
@@ -391,9 +414,9 @@ namespace QuotesOfWisdom
         private void ChangeBackground()
         {
             ChangeWindowState();
-            
+
             #region Commented on 11.06.2013
-           
+
             //if (ApplicationData.Current.RoamingSettings.Values["Settings"] != null)
             //{
             //    // Initialize the Radio button from roaming settings
@@ -436,7 +459,7 @@ namespace QuotesOfWisdom
             //{
             //    LayoutRoot.Style = App.Current.Resources["layoutBlockStyle4"] as Style;
             //}
-            
+
             #endregion
 
             if (sessionData.isBackgroundChanged)
@@ -453,14 +476,21 @@ namespace QuotesOfWisdom
                         }
                         else
                         {
-                            SolidColorBrush sbColorBrush = new SolidColorBrush(Utilities.HexColor("#f2b100"));
+                            SolidColorBrush sbColorBrush = new SolidColorBrush(Utilities.HexColor("#000000"));
                             LayoutRoot.Background = sbColorBrush;
                         }
 
                     }
                     else
                     {
-                        Utilities.dynamicBackgroundChange(LayoutRoot);
+                        try
+                        {
+                            Utilities.dynamicBackgroundChange(LayoutRoot);
+                        }
+                        catch (FileNotFoundException ex)
+                        {
+                            this.ShowMessage("Err4 " + ex.Message.ToString());
+                        }
                     }
                 }
                 else
@@ -545,7 +575,7 @@ namespace QuotesOfWisdom
         /// <param name="e"></param>
         void btnAllCats_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(AllCategories));  
+            this.Frame.Navigate(typeof(AllCategories));
             //this.Frame.Navigate(typeof(BlankPage1));
         }
 
