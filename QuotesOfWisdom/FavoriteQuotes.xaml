@@ -55,6 +55,9 @@
             ItemTemplate="{StaticResource Standard80ItemTemplateFavQuotes}"
             SelectionMode="Multiple">
             </ListView>
+            <StackPanel x:Name="stackContentSnapped" Visibility="Collapsed" Grid.Row="0" Grid.RowSpan="2" Grid.Column="1" Margin="50,10,10,10">
+                <TextBlock Text="No more Favorite Quotes!." TextWrapping="Wrap"  Style="{StaticResource SubheaderTextStyle}" />
+            </StackPanel>
             <VisualStateManager.VisualStateGroups>
 
                 <!-- Visual states reflect the application's view state -->

@@ -272,6 +272,11 @@ namespace QuotesOfWisdom
             LoadFavQuotes();
             #endregion
 
+            if(sessionData.currentFavoriteQuotes.Count == 0)
+            {
+                stackContentSnapped.Visibility = Windows.UI.Xaml.Visibility.Visible;
+            }
+
         }
 
         /// <summary>
