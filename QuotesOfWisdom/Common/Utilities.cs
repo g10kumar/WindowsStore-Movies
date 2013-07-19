@@ -283,7 +283,7 @@ namespace QuotesOfWisdom.Common
                     try
                     {
 
-                    
+
                         file = await localFolder.GetFileAsync("backgroundImage.jpg");
                         if (file != null)
                         {
@@ -297,6 +297,12 @@ namespace QuotesOfWisdom.Common
                                 imageBrush.ImageSource = bitmapImage;
                                 gd.Background = imageBrush;
                             }
+                        }
+                        else
+                        {
+                            ApplicationData.Current.RoamingSettings.Values["bgColor"] = "#000000";
+                            SolidColorBrush sbColorBrush = new SolidColorBrush(Utilities.HexColor("#000000"));
+                            gd.Background = sbColorBrush;
                         }
                     }
                     catch (FileNotFoundException ex)
@@ -325,6 +331,113 @@ namespace QuotesOfWisdom.Common
             }
         }
 
+        //public static async Task<string> dynamicBackgroundChange(Windows.UI.Xaml.Controls.Grid gd)
+        //{
+        //    StorageFolder localFolder = null;
+        //    StorageFile file = null;
+        //    string result = "";
+        //    localFolder = ApplicationData.Current.LocalFolder;
+        //    if (ApplicationData.Current.RoamingSettings.Values.ContainsKey("Settings"))
+        //    {
+        //        if ((string)ApplicationData.Current.RoamingSettings.Values["Settings"].ToString() == "dynamicStyle")
+        //        {
+        //            #region Commented on 16.07.2013
+
+        //            //ImageBrush ib = new ImageBrush();
+
+        //            //BitmapImage bi = new BitmapImage();
+        //            //bi.UriSource = new Uri(ApplicationData.Current.RoamingSettings.Values["ImageURLForDynamicStyle"].ToString());
+        //            //ib.ImageSource = bi;
+
+        //            //gd.Background = ib;
+
+        //            #endregion
+
+        //            #region Commented
+        //            /*
+        //            file = await localFolder.GetFileAsync("backgroundImage.jpg");
+        //            using (IRandomAccessStream fileStream = await file.OpenAsync(Windows.Storage.FileAccessMode.Read))
+        //            {
+
+        //                ////file = await localFolder.GetFileAsync("backgroundImage.jpg");
+        //                ////if (file != null)
+        //                ////{
+        //                //    //var fileStream = await file.OpenAsync(Windows.Storage.FileAccessMode.ReadWrite);
+
+        //                ImageBrush ib = new ImageBrush();
+
+        //                //    // Set the image source to the selected bitmap
+        //                BitmapImage bitmapImage = new BitmapImage();
+        //                //    ib.ImageSource = new BitmapImage(new Uri("ms-appdata:///local/backgroundImage.jpg", UriKind.Absolute));
+        //                bitmapImage.SetSource(fileStream);
+        //                ib.ImageSource = bitmapImage;
+        //                gd.Background = ib;
+        //                ////}
+        //            }
+        //            */
+        //            #endregion
+
+        //            try
+        //            {
+
+
+        //                file = await localFolder.GetFileAsync("backgroundImage.jpg");
+        //                if (file != null)
+        //                {
+        //                    using (IRandomAccessStream fileStream = await file.OpenAsync(Windows.Storage.FileAccessMode.Read))
+        //                    {
+        //                        ImageBrush imageBrush = new ImageBrush();
+
+        //                        // Set the image source to the selected bitmap
+        //                        BitmapImage bitmapImage = new BitmapImage();
+        //                        bitmapImage.SetSource(fileStream);
+        //                        imageBrush.ImageSource = bitmapImage;
+        //                        gd.Background = imageBrush;
+        //                    }
+
+        //                    result = "Success";
+        //                    //return result;
+        //                }
+        //                else
+        //                {
+        //                    result = "Fail";
+        //                    ApplicationData.Current.RoamingSettings.Values["bgColor"] = "#000000";
+        //                    SolidColorBrush sbColorBrush = new SolidColorBrush(Utilities.HexColor("#000000"));
+        //                    gd.Background = sbColorBrush;
+        //                    //return result;
+        //                }
+        //            }
+        //            catch (FileNotFoundException ex)
+        //            {
+        //                result = "Fail";
+        //                ApplicationData.Current.RoamingSettings.Values["bgColor"] = "#000000";
+        //                SolidColorBrush sbColorBrush = new SolidColorBrush(Utilities.HexColor("#000000"));
+        //                gd.Background = sbColorBrush;
+        //            }
+        //            catch
+        //            {
+
+        //                result = "Fail";
+        //                ApplicationData.Current.RoamingSettings.Values["bgColor"] = "#000000";
+        //                SolidColorBrush sbColorBrush = new SolidColorBrush(Utilities.HexColor("#000000"));
+        //                gd.Background = sbColorBrush;
+
+        //                #region Commented on 18.07.2013
+
+        //                //ApplicationData.Current.RoamingSettings.Values["bgColor"] = "#000000";
+        //                //SolidColorBrush sbColorBrush = new SolidColorBrush(Utilities.HexColor("#000000"));
+        //                //gd.Background = sbColorBrush;
+
+        //                //SetAlternateBackground(file, gd);  
+        //                #endregion
+
+        //            }
+
+                    
+        //        }
+        //    }
+        //    return result;
+        //}
         #region Commented on 18.07.2013
         /*
         private async static void SetAlternateBackground(StorageFile file, Windows.UI.Xaml.Controls.Grid gd)

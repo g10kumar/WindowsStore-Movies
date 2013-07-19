@@ -78,11 +78,11 @@ namespace QuotesOfWisdom
             var rootFrame = new Frame();
             SuspensionManager.RegisterFrame(rootFrame, "AppFrame");
 
-            if (args.PreviousExecutionState == ApplicationExecutionState.Terminated)
-            {
-                // Restore the saved session state only when appropriate
-                await SuspensionManager.RestoreAsync();
-            }
+            //if (args.PreviousExecutionState == ApplicationExecutionState.Terminated)
+            //{
+            //    // Restore the saved session state only when appropriate
+            //    await SuspensionManager.RestoreAsync();
+            //}
 
             if (rootFrame.Content == null)
             {

@@ -603,6 +603,7 @@ namespace QuotesOfWisdom
                 sessionData.isBackgroundChanged = true;
                 Utilities.dynamicBackgroundChange(LayoutRoot);
 
+                #region Commented on 19.07.2013
                 //file = await localFolder.GetFileAsync("backgroundImage.jpg");
                 //using (IRandomAccessStream fileStream = await file.OpenAsync(Windows.Storage.FileAccessMode.Read))
                 //{
@@ -617,6 +618,7 @@ namespace QuotesOfWisdom
 
                 //var settings = new SettingsFlyout();
                 //settings.ShowBackgroundFlyout(new BackgroundMoreImages(), 1000);
+                #endregion
             }
             else
             {

@@ -152,7 +152,7 @@ namespace QuotesOfWisdom
             }
             catch (FileNotFoundException ex)
             {
-                this.ShowMessage("Err1 " + ex.Message.ToString());
+                //this.ShowMessage("Err1 " + ex.Message.ToString());
             }
             catch
             {
@@ -255,7 +255,7 @@ namespace QuotesOfWisdom
                     }
                     catch (FileNotFoundException ex)
                     {
-                        this.ShowMessage("Err2 " + ex.Message.ToString());
+                        //this.ShowMessage("Err2 " + ex.Message.ToString());
                     }
                     catch
                     {
@@ -312,7 +312,7 @@ namespace QuotesOfWisdom
             }
             catch (FileNotFoundException ex)
             {
-                this.ShowMessage("Err3 " + ex.Message.ToString());
+                //this.ShowMessage("Err3 " + ex.Message.ToString());
             }
             catch
             {
@@ -461,7 +461,7 @@ namespace QuotesOfWisdom
             //}
 
             #endregion
-
+            string returnValue;
             if (sessionData.isBackgroundChanged)
             {
                 if (ApplicationData.Current.RoamingSettings.Values.ContainsKey("Settings"))
@@ -486,10 +486,24 @@ namespace QuotesOfWisdom
                         try
                         {
                             Utilities.dynamicBackgroundChange(LayoutRoot);
+
+                            #region Commented on 19.07.2013
+                            //if (returnValue != "Success")
+                            //{
+                            //    ApplicationData.Current.RoamingSettings.Values["bgColor"] = "#000000";
+                            //    SolidColorBrush sbColorBrush = new SolidColorBrush(Utilities.HexColor("#000000"));
+                            //    LayoutRoot.Background = sbColorBrush;
+                            //}
+                            #endregion 
                         }
                         catch (FileNotFoundException ex)
                         {
-                            this.ShowMessage("Err4 " + ex.Message.ToString());
+                            #region Commented on 19.07.2013
+                            //this.ShowMessage("Err4 " + ex.Message.ToString());
+                            //ApplicationData.Current.RoamingSettings.Values["bgColor"] = "#000000";
+                            //SolidColorBrush sbColorBrush = new SolidColorBrush(Utilities.HexColor("#000000"));
+                            //LayoutRoot.Background = sbColorBrush;
+                            #endregion
                         }
                     }
                 }
@@ -576,7 +590,6 @@ namespace QuotesOfWisdom
         void btnAllCats_Click(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(AllCategories));
-            //this.Frame.Navigate(typeof(BlankPage1));
         }
 
         /// <summary>
