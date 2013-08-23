@@ -166,7 +166,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\eMail_200x200.png" />
+    <Content Include="Dlls\Facebook.dll" />
     <Content Include="Dlls\nsoftware.IPWorksSSL.xml" />
+    <Content Include="Dlls\TwitterRtLibrary.dll" />
     <None Include="Package.StoreAssociation.xml" />
     <Page Include="ShareItModified.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -214,14 +216,14 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Facebook">
-      <HintPath>Dlls\Facebook.dll</HintPath>
+      <HintPath>..\..\..\TestWIN8\ShareAll\bin\Release\Facebook.dll</HintPath>
     </Reference>
     <Reference Include="nsoftware.IPWorksSSL, Version=9.0.4738.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Users\veeru_000\Desktop\nsoftware\nsoftware.IPWorksSSL.winmd</HintPath>
     </Reference>
     <Reference Include="TwitterRtLibrary">
-      <HintPath>Dlls\TwitterRtLibrary.dll</HintPath>
+      <HintPath>..\..\..\TestWIN8\ShareAll\bin\Release\TwitterRtLibrary.dll</HintPath>
     </Reference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '11.0' ">
