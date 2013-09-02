@@ -95,10 +95,10 @@ namespace QuotesOfWisdom
         /// </summary>
         private async void LoadFormData()
         {
-            await LoadInAppPurchaseProxyFileAsync();
+            //await LoadInAppPurchaseProxyFileAsync();
 
-            LicenseInformation licenseInformation = CurrentAppSimulator.LicenseInformation;
-            //LicenseInformation licenseInformation = CurrentApp.LicenseInformation;
+            //LicenseInformation licenseInformation = CurrentAppSimulator.LicenseInformation;
+            LicenseInformation licenseInformation = CurrentApp.LicenseInformation;
             string visualState = ApplicationView.Value.ToString();
 
             var imageLicense = licenseInformation.ProductLicenses["More Background Images"];
@@ -130,9 +130,9 @@ namespace QuotesOfWisdom
             StorageFile proxyFile = await proxyDataFolder.GetFileAsync("in-app-purchase.xml");
             licenseChangeHandler = new LicenseChangedEventHandler(InAppPurchaseRefreshScenario);
 
-            CurrentAppSimulator.LicenseInformation.LicenseChanged += licenseChangeHandler;
-            //CurrentApp.LicenseInformation.LicenseChanged += licenseChangeHandler;
-            await CurrentAppSimulator.ReloadSimulatorAsync(proxyFile);
+            //CurrentAppSimulator.LicenseInformation.LicenseChanged += licenseChangeHandler;
+            CurrentApp.LicenseInformation.LicenseChanged += licenseChangeHandler;
+            //await CurrentAppSimulator.ReloadSimulatorAsync(proxyFile);
         }
 
         /// <summary>
@@ -140,8 +140,8 @@ namespace QuotesOfWisdom
         /// </summary>
         private void InAppPurchaseRefreshScenario()
         {
-            LicenseInformation licenseInformation = CurrentAppSimulator.LicenseInformation;
-            //LicenseInformation licenseInformation = CurrentApp.LicenseInformation;
+            //LicenseInformation licenseInformation = CurrentAppSimulator.LicenseInformation;
+            LicenseInformation licenseInformation = CurrentApp.LicenseInformation;
             var imageLicense = licenseInformation.ProductLicenses["More Background Images"];
             if (imageLicense.IsActive)
             {
@@ -667,15 +667,15 @@ namespace QuotesOfWisdom
 
         private async void btnYes_Click(object sender, RoutedEventArgs e)
         {
-            LicenseInformation licenseInformation = CurrentAppSimulator.LicenseInformation;
-            //LicenseInformation licenseInformation = CurrentApp.LicenseInformation;
+            //LicenseInformation licenseInformation = CurrentAppSimulator.LicenseInformation;
+            LicenseInformation licenseInformation = CurrentApp.LicenseInformation;
             var imageLicense = licenseInformation.ProductLicenses["More Background Images"];
             if (!imageLicense.IsActive)
             {
                 try
                 {
-                    await CurrentAppSimulator.RequestProductPurchaseAsync("More Background Images", false);
-                    //await CurrentApp.RequestProductPurchaseAsync("More Background Images", false);
+                    //await CurrentAppSimulator.RequestProductPurchaseAsync("More Background Images", false);
+                    await CurrentApp.RequestProductPurchaseAsync("More Background Images", false);
                     if (imageLicense.IsActive)
                     {
                         Utilities.ShowMessage("You bought the More Background Images version.");
@@ -728,8 +728,8 @@ namespace QuotesOfWisdom
             sessionData.totalImagesCount = 0;
             if (licenseChangeHandler != null)
             {
-                CurrentAppSimulator.LicenseInformation.LicenseChanged -= licenseChangeHandler;
-                //CurrentApp.LicenseInformation.LicenseChanged -= licenseChangeHandler;
+                //CurrentAppSimulator.LicenseInformation.LicenseChanged -= licenseChangeHandler;
+                CurrentApp.LicenseInformation.LicenseChanged -= licenseChangeHandler;
             }
 
             if (this.Parent.GetType() == typeof(Popup))
@@ -781,8 +781,8 @@ namespace QuotesOfWisdom
             sessionData.totalImagesCount = 0;
             if (licenseChangeHandler != null)
             {
-                CurrentAppSimulator.LicenseInformation.LicenseChanged -= licenseChangeHandler;
-                //CurrentApp.LicenseInformation.LicenseChanged -= licenseChangeHandler;
+                //CurrentAppSimulator.LicenseInformation.LicenseChanged -= licenseChangeHandler;
+                CurrentApp.LicenseInformation.LicenseChanged -= licenseChangeHandler;
             }
             
         }
