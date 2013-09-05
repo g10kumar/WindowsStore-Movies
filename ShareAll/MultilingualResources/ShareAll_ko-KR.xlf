@@ -310,6 +310,18 @@
           <source>Link</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">링크</target>
         </trans-unit>
+        <trans-unit id="Resources\ConfigureLinkedIn\Text" translate="yes" xml:space="preserve">
+          <source>Configure LinkedIn</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">링크 드 인 구성</target>
+        </trans-unit>
+        <trans-unit id="Resources\LinkedIn_Failure" translate="yes" xml:space="preserve">
+          <source>Could not post to LinkedIn. Try again later.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">LinkedIn에 게시할 수 없습니다. 나중에 다시 시도 합니다.</target>
+        </trans-unit>
+        <trans-unit id="Resources\LinkedIn_Success" translate="yes" xml:space="preserve">
+          <source>Posted to LinkedIn.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">LinkedIn에 게시 됩니다.</target>
+        </trans-unit>
       </group>
     </body>
   </file>

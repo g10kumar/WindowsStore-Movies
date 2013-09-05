@@ -21,6 +21,10 @@
             <RowDefinition Height="10" />
             <RowDefinition Height="Auto" /> <!-- email header row -->
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="Auto" /> <!-- linkedin header row -->
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
@@ -50,6 +54,14 @@
                 <SolidColorBrush Color="#27aae1" />
             </Border.Background>
         </Border>
+
+        <Border Grid.Row="10" Grid.Column="1" Grid.ColumnSpan="4">
+            <Border.Background>
+                <SolidColorBrush Color="#1582bb" />
+            </Border.Background>
+        </Border>
+
+
         <Border Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="4">
             <Border.Background>
                 <SolidColorBrush Color="#00758a" />
@@ -168,6 +180,18 @@
             <TextBox x:Name="EmailSubject" Width="425" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30" Margin="0,5,0,5"></TextBox>
             <TextBox x:Name="EmailMessage" Width="425" HorizontalAlignment="Left" VerticalAlignment="Top" Height="80" TextWrapping="Wrap" Margin="0,5,0,5"></TextBox>
         </StackPanel>
+        <CheckBox x:Name="chkLinkedin" Grid.Column="1" Grid.Row="10" Padding="0"></CheckBox>
+        <TextBlock x:Uid="LinkedIn" x:Name="LinkedIn" Text="LinkedIn" Foreground="White" VerticalAlignment="Center" FontSize="22" Margin="10,0,10,0" Grid.Column="2" Grid.Row="10" />
+
+        <Button Grid.Column="3" Grid.Row="10" x:Name="btnLinkedInConfigure" VerticalAlignment="Center" HorizontalAlignment="Right" Click="btnLinkedInConfigure_Click" Padding="2" BorderThickness="0">
+            <Image Source="/Assets/Settings.png" Margin="0,0,0,0" Stretch="None" />
+        </Button>
+        <Button Grid.Column="4" Grid.Row="10" x:Name="btnLinkedIn"  VerticalAlignment="Center" Click="btnLinkedIn_Click" Padding="2" BorderThickness="0" >
+            <Image x:Name="imgLinkedIn" Source="/Assets/expandBox.png" Margin="0,0,0,0" />
+        </Button>
+        <StackPanel Orientation="Vertical" x:Name="stackLinkedIn"  Grid.Column="1" Grid.Row="11" Grid.ColumnSpan="4" Visibility="Collapsed">
+            <TextBox x:Name="LinkedInMessage" Width="425" HorizontalAlignment="Left" VerticalAlignment="Top" Height="80"  Margin="0,5,0,5" TextWrapping="Wrap"></TextBox>
+        </StackPanel>
         <!--</StackPanel>-->
         <!--<StackPanel Orientation="Vertical" Grid.Column="1" Grid.Row="3" VerticalAlignment="Top"  Margin="0,5,10,10">
                     <StackPanel Orientation="Horizontal">
@@ -185,13 +209,14 @@
                         <TextBox x:Name="EmailMessage" Width="464" HorizontalAlignment="Left" VerticalAlignment="Top" Height="80" TextWrapping="Wrap"></TextBox>
                     </StackPanel>
                 </StackPanel>-->
-        <Button Grid.Column="1" Content="SHARE" Background="#FF15BBF9" Grid.Row="9" x:Uid="btnShare" x:Name="btnShare" Click="btnShare_Click" Grid.ColumnSpan="2" Height="40" Width="119" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="18" >
+        <Button Grid.Column="1" Content="SHARE" Background="#FF15BBF9" Grid.Row="13" x:Uid="btnShare" x:Name="btnShare" Click="btnShare_Click" Grid.ColumnSpan="2" Height="40" Width="119" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="18" >
         </Button>
-        <ProgressBar x:Name="shareProgressBar" Visibility="Collapsed" IsIndeterminate="True" Grid.Column="1" Grid.ColumnSpan="4" Grid.Row="10" ></ProgressBar>
-        <StackPanel Orientation="Vertical" Grid.Column="1" Grid.ColumnSpan="4" Grid.Row="11" >
+        <ProgressBar x:Name="shareProgressBar" Visibility="Collapsed" IsIndeterminate="True" Grid.Column="1" Grid.ColumnSpan="4" Grid.Row="14" ></ProgressBar>
+        <StackPanel Orientation="Vertical" Grid.Column="1" Grid.ColumnSpan="4" Grid.Row="15" >
             <TextBlock x:Name="fbPostMessage" Foreground="Red" Width="400" Text="" TextWrapping="Wrap" Style="{StaticResource BasicTextStyle}" HorizontalAlignment="Left" VerticalAlignment="Top"/>
             <TextBlock x:Name="TwitterPostMessage" Foreground="Red" Width="400" TextWrapping="Wrap" Text="" Grid.Column="1" Grid.ColumnSpan="4" Grid.Row="8"  Style="{StaticResource BasicTextStyle}" HorizontalAlignment="Left" VerticalAlignment="Top"/>
             <TextBlock x:Name="EmailPostMessage" Foreground="Red" Width="400" TextWrapping="Wrap" Text="" Grid.Column="1" Grid.ColumnSpan="4" Grid.Row="8"  Style="{StaticResource BasicTextStyle}" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <TextBlock x:Name="LinkedInPostMessage" Foreground="Red" Width="400" TextWrapping="Wrap" Text="" Grid.Column="1" Grid.ColumnSpan="4" Grid.Row="8"  Style="{StaticResource BasicTextStyle}" HorizontalAlignment="Left" VerticalAlignment="Top"/>
         </StackPanel>
         <!--</StackPanel>-->
         <!--</ScrollViewer>-->
