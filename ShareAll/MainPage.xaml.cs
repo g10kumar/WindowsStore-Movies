@@ -33,6 +33,7 @@ using nsoftware.IPWorksSSL;
 using ShareAll.Common;
 using System.Text.RegularExpressions;
 using Windows.ApplicationModel.Resources;
+using LinkedInRTLibrary;
 
 namespace ShareAll
 {
@@ -76,6 +77,7 @@ namespace ShareAll
             //TwitterRt = new TwitterRt("EhY3grAWGzIxF0YXPr70Yw", "uwXl6wNaLowV9No68bNHtQNbMhSpSSgXCXEk4P0g", "http://www.daksatech.com");
             TwitterRt = new TwitterRt("OGAYZv3HDfykHsQw5dtng", "80cs06pnqehabIhv6PY1Vy1RuZX26G5twxJn6Oti0yU", "http://www.daksatech.com");
             htmlmailer.OnSSLServerAuthentication += htmlmailer_OnSSLServerAuthentication;
+            context = new OAuthContext("kvpcelszx805", "yZyeKbgdvNTYsk8T", "https://api.linkedin.com/uas/oauth/requestToken", "https://api.linkedin.com/uas/oauth/authorize", "https://api.linkedin.com/uas/oauth/accessToken", "http://www.daksatech.com/");
             Window.Current.SizeChanged += Current_SizeChanged;
         }
 
@@ -120,7 +122,8 @@ namespace ShareAll
         }
 
         public TwitterRt TwitterRt { get; private set; }
-
+        public OAuthContext context { get; set; }
+        public Client client { get; private set; }
         /// <summary>
         /// Invoked when this page is about to be displayed in a Frame.
         /// </summary>
@@ -267,6 +270,64 @@ namespace ShareAll
                 ApplicationData.Current.RoamingSettings.Values["TweetOauthToken"] = TwitterRt.OauthToken;
                 ApplicationData.Current.RoamingSettings.Values["TweetOauthTokenSecret"] = TwitterRt.OauthTokenSecret;
                 ApplicationData.Current.RoamingSettings.Values["TweetUserID"] = TwitterRt.UserID;
+                var frame = new Frame();
+                frame.Navigate(typeof(MainPage));
+
+                Window.Current.Content = frame;
+                Window.Current.Activate();
+            }
+        }
+
+        private async void btnConfigureLinkedIn_Click(object sender, RoutedEventArgs e)
+        {
+            String verificationCode = "";
+            client = new Client(context);
+            String requestTokenResponse = await client.MakeRequest("GET")
+                    .ForRequestToken()
+                    .Sign()
+                    .ExecuteRequest();
+
+            client.RequestToken = LinkedInRTLibrary.Credentials.TokenContainer.Parse(requestTokenResponse);
+            Uri authorizationUri = client.GetAuthorizationUri();
+
+            //Authorize the temporary token using the authorizationUri
+            //One option is to use the supplied WebAuthenticationBroker
+
+            WebAuthenticationResult WebAuthenticationResult = await WebAuthenticationBroker.AuthenticateAsync(WebAuthenticationOptions.None, authorizationUri, client.Context.CallbackUri);
+
+            //The verification code could be returned in the response
+            //i.e. Parse it out of WebAuthenticationResult.ResponseData.ToString();
+            //Or it could be displayed to the user and they will have to enter it into your application manually
+
+
+            string[] VerificationCodePairs = WebAuthenticationResult.ResponseData.ToString().Split('&');
+
+            for (int j = 0; j < VerificationCodePairs.Length; j++)
+            {
+                String[] VerificationTokensSplits = VerificationCodePairs[j].Split('=');
+                switch (VerificationTokensSplits[0])
+                {
+                    case "oauth_verifier":
+                        verificationCode = VerificationTokensSplits[1];
+                        break;
+                }
+            }
+
+            String accessTokenResponse = await client.MakeRequest("GET")
+                    .ForAccessToken(client.RequestToken.Token, verificationCode)
+                    .Sign(client.RequestToken.Secret)
+                    .ExecuteRequest();
+
+            client.AccessToken = LinkedInRTLibrary.Credentials.TokenContainer.Parse(accessTokenResponse);
+
+            if (client.AccessToken != null)
+            {
+                ApplicationData.Current.RoamingSettings.Values["isLinkedInConfigure"] = "1";
+                ApplicationData.Current.RoamingSettings.Values["LinkedInRequestToken"] = client.RequestToken.Token;
+                ApplicationData.Current.RoamingSettings.Values["LinkedInRequestTokenSecret"] = client.RequestToken.Secret;
+                ApplicationData.Current.RoamingSettings.Values["LinkedInVerificationCode"] = verificationCode;
+                ApplicationData.Current.RoamingSettings.Values["LinkedInOauthToken"] = client.AccessToken.Token;
+                ApplicationData.Current.RoamingSettings.Values["LinkedInOauthTokenSecret"] = client.AccessToken.Secret;
                 var frame = new Frame();
                 frame.Navigate(typeof(MainPage));
 

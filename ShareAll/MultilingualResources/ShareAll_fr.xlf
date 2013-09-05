@@ -310,6 +310,18 @@
           <source>Link</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Lien</target>
         </trans-unit>
+        <trans-unit id="Resources\ConfigureLinkedIn\Text" translate="yes" xml:space="preserve">
+          <source>Configure LinkedIn</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Configurer LinkedIn</target>
+        </trans-unit>
+        <trans-unit id="Resources\LinkedIn_Failure" translate="yes" xml:space="preserve">
+          <source>Could not post to LinkedIn. Try again later.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Ne pouvait sur LinkedIn. Réessayez plus tard.</target>
+        </trans-unit>
+        <trans-unit id="Resources\LinkedIn_Success" translate="yes" xml:space="preserve">
+          <source>Posted to LinkedIn.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Posté sur LinkedIn.</target>
+        </trans-unit>
       </group>
     </body>
   </file>

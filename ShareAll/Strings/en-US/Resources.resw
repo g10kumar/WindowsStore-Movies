@@ -345,4 +345,13 @@
   <data name="Link" xml:space="preserve">
     <value>Link</value>
   </data>
+  <data name="ConfigureLinkedIn.Text" xml:space="preserve">
+    <value>Configure LinkedIn</value>
+  </data>
+  <data name="LinkedIn_Failure" xml:space="preserve">
+    <value>Could not post to LinkedIn. Try again later.</value>
+  </data>
+  <data name="LinkedIn_Success" xml:space="preserve">
+    <value>Posted to LinkedIn.</value>
+  </data>
 </root>

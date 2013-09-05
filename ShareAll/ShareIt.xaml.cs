@@ -41,7 +41,7 @@ using Windows.Security.Cryptography;
 using nsoftware.IPWorksSSL;
 using ShareAll.Common;
 using Windows.ApplicationModel.Resources;
-
+using LinkedInRTLibrary;
 namespace ShareAll
 {
     /// <summary>
@@ -49,6 +49,7 @@ namespace ShareAll
     /// </summary>
     public sealed partial class ShareIt : ShareAll.Common.LayoutAwarePage
     {
+        #region Objects
         //dynamic parameters = new ExpandoObject();
         ShareOperation shareOperation;
         private string sharedDataTitle;
@@ -80,11 +81,14 @@ namespace ShareAll
         bool checkValidEmail = true;
         #endregion
 
+        #endregion
+
         public ShareIt()
         {
             this.InitializeComponent();
             //TwitterRt = new TwitterRt("EhY3grAWGzIxF0YXPr70Yw", "uwXl6wNaLowV9No68bNHtQNbMhSpSSgXCXEk4P0g", "http://www.daksatech.com");
             TwitterRt = new TwitterRt("OGAYZv3HDfykHsQw5dtng", "80cs06pnqehabIhv6PY1Vy1RuZX26G5twxJn6Oti0yU", "http://www.daksatech.com");
+            context = new OAuthContext("kvpcelszx805", "yZyeKbgdvNTYsk8T", "https://api.linkedin.com/uas/oauth/requestToken", "https://api.linkedin.com/uas/oauth/authorize", "https://api.linkedin.com/uas/oauth/accessToken", "http://www.daksatech.com/");
             htmlmailer.OnSSLServerAuthentication += htmlmailer_OnSSLServerAuthentication;
 
         }
@@ -96,7 +100,8 @@ namespace ShareAll
         }
 
         public TwitterRt TwitterRt { get; private set; }
-
+        public OAuthContext context { get; set; }
+        public Client client { get; private set; }
         /// <summary>
         /// Invoked when this page is about to be displayed in a Frame.
         /// </summary>
@@ -160,6 +165,7 @@ namespace ShareAll
                     if (this.sharedText != null)
                     {
                         FBMessage.Text = this.sharedText;
+                        LinkedInMessage.Text = this.sharedText;
                         sText = this.sharedText;
                         //TweetMessage.Text = this.sharedText;
                         EmailMessage.Text = this.sharedText;
@@ -167,6 +173,7 @@ namespace ShareAll
                     else if (this.sharedDataDescription != null)
                     {
                         FBMessage.Text = this.sharedDataDescription.ToString();
+                        LinkedInMessage.Text = this.sharedDataDescription.ToString();
                         sText = this.sharedDataDescription.ToString();
                         //TweetMessage.Text = this.sharedDataDescription.ToString();
                         EmailMessage.Text = this.sharedDataDescription.ToString();
@@ -246,125 +253,6 @@ namespace ShareAll
 
             //TweetMessage.Text = "Metro style apps are full screen apps tailored to your users' needs, tailored to the device they run on, tailored for touch interaction, and tailored to the Windows user interface. Windows helps you interact with your users, and your users interact with your app.";
             //EnableTwitterorNot(TweetMessage.Text.Trim());
-
-        }
-
-        private void EnableTwitterorNot(string sText)
-        {
-            List<string> listURL = new List<string>();
-            //Regex linkRegex = new Regex(@"(http|ftp|https)://([\w+?\.\w+])+([a-zA-Z0-9\~\!\@\#\$\%\^\&\*\(\)_\-\=\+\\\/\?\.\:\;\'\,]*)?", RegexOptions.IgnoreCase | RegexOptions.IgnorePatternWhitespace);
-
-            string reURLs = @"(?xi)
-\b
-(                       # Capture 1: entire matched URL
-  (?:
-    https?://               # http or https protocol
-    |                       #   or
-    www\d{0,3}[.]           # 'www.', 'www1.', 'www2.' … 'www999.'
-    |
-    [a-z0-9\-]{3,}\.
-    |                           #   or
-    [a-z0-9.\-]+[.][a-z]{2,4}/  # looks like domain name followed by a slash
-  )
-  (?:                       # One or more:
-    [^\s()<>]+                  # Run of non-space, non-()<>
-    |                           #   or
-    \(([^\s()<>]+|(\([^\s()<>]+\)))*\)  # balanced parens, up to 2 levels
-  )+
-  (?:                       # End with:
-    \(([^\s()<>]+|(\([^\s()<>]+\)))*\)  # balanced parens, up to 2 levels
-    |                               #   or
-    [^\s`!()\[\]{};:'"".,<>?«»“”‘’]        # not a space or one of these punct chars
-  )
-)";
-            
-            string[] gTLD = {"aero","asia","biz","cat","com","coop","edu","gov","info","int","jobs","mil","mobi","museum","name","net","org","pro","tel","travel","xxx"};
-            string[] ccTLD = {"ac","ad","ae","af","ag","ai","al","am","an","ao","aq","ar","as","at","au","aw","ax","az","ba","bb","bd","be","bf","bg","bh","bi","bj","bm","bn","bo","br","bs","bt","bv","bw","by","bz","ca","cc","cd","cf","cg","ch","ci","ck","cl","cm","cn","co","cr","cs","cu","cv","cx","cy","cz","dd","de","dj","dk","dm","do","dz","ec","ee","eg","eh","er","es","et","eu","fi","fj","fk","fm","fo","fr","ga","gb","gd","ge","gf","gg","gh","gi","gl","gm","gn","gp","gq","gr","gs","gt","gu","gw","gy","hk","hm","hn","hr","ht","hu","id","ie","il","im","in","io","iq","ir","is","it","je","jm","jo","jp","ke","kg","kh","ki","km","kn","kp","kr","kw","ky","kz","la","lb","lc","li","lk","lr","ls","lt","lu","lv","ly","ma","mc","md","me","mg","mh","mk","ml","mm","mn","mo","mp","mq","mr","ms","mt","mu","mv","mw","mx","my","mz","na","nc","ne","nf","ng","ni","nl","no","np","nr","nu","nz","om","pa","pe","pf","pg","ph","pk","pl","pm","pn","pr","ps","pt","pw","py","qa","re","ro","rs","ru","rw","sa","sb","sc","sd","se","sg","sh","si","sj","sk","sl","sm","sn","so","sr","ss","st","su","sv","sy","sz","tc","td","tf","tg","th","tj","tk","tl","tm","tn","to","tp","tr","tt","tv","tw","tz","ua","ug","uk","us","uy","uz","va","vc","ve","vg","vi","vn","vu","wf","ws","ye","yt","za","zm","zw"};
-            
-            
-            Regex linkRegex = new Regex(reURLs, RegexOptions.IgnoreCase | RegexOptions.IgnorePatternWhitespace);
-            MatchCollection linkCollection = linkRegex.Matches(sText);
-
-
-
-
-            foreach (Match match in linkCollection)
-            {
-                if(match.Groups[0].Value.Split(':').Count() == 1)
-                {
-                    string topDomain = match.Groups[0].Value.Split('.').Last().ToString();
-                    if(gTLD.Contains(topDomain) | ccTLD.Contains(topDomain))
-                    {
-                        listURL.Add(match.Groups[0].Value);
-                    }
-                }
-                else
-                {
-                    listURL.Add(match.Groups[0].Value);
-                }
-            }
-
-            if (listURL.Count > 0)
-            {
-                for (int i = 0; i < listURL.Count; i++)
-                {
-                    sText = ReplaceFirstOccurrance(sText, listURL[i].ToString(), "01234567890123456789");
-                }
-            }
-
-            int diff;
-
-            diff = 140 - Convert.ToInt32(sText.Length);
-
-            
-
-         if (diff < 0)
-            {
-                txtCount.Text = diff.ToString();              
-                txtCount.Foreground = new SolidColorBrush(Colors.Red);                
-                btnTweetConfigure.IsEnabled = false;
-                chkTweet.IsEnabled = false;
-                chkTweet.IsChecked = false;
-            }
-            else
-            {
-                txtCount.Text = diff.ToString();                
-                txtCount.Foreground = new SolidColorBrush(Colors.Black);
-                btnTweetConfigure.IsEnabled = true;                
-                if (ApplicationData.Current.RoamingSettings.Values["isTweetConfigure"] != null && ApplicationData.Current.RoamingSettings.Values["isTweetConfigure"].ToString() == "1")
-                {
-                    btnTweetConfigure.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-                    chkTweet.IsEnabled = true;
-                    if (chkTweet.IsChecked == false)
-                    {
-                        chkTweet.IsChecked = true;
-                    }
-                }
-                else
-                {
-                    chkTweet.IsEnabled = false;
-                    if (chkTweet.IsChecked == true)
-                    {
-                        chkTweet.IsChecked = false;
-                    }
-                    btnTweetConfigure.Visibility = Windows.UI.Xaml.Visibility.Visible;
-                }
-            }
-        }
-
-        private string ExtractLinkFromText(string sText)
-        {
-
-            string extractedURL = "";
-            Regex linkRegex = new Regex(@"(http|ftp|https)://([\w+?\.\w+])+([a-zA-Z0-9\~\!\@\#\$\%\^\&\*\(\)_\-\=\+\\\/\?\.\:\;\'\,]*)?", RegexOptions.IgnoreCase | RegexOptions.IgnorePatternWhitespace);
-            MatchCollection linkCollection = linkRegex.Matches(sText);
-            if (linkCollection.Count > 0)
-            {
-                extractedURL = linkCollection[0].ToString();
-
-            }
-
-            return extractedURL ;
 
         }
 
@@ -518,47 +406,25 @@ namespace ShareAll
                 }
                 btnEmailConfigure.Visibility = Windows.UI.Xaml.Visibility.Visible;
             }
-        }
 
-        private void chkFacebook_Checked_1(object sender, RoutedEventArgs e)
-        {
-            if (chkFacebook.IsChecked == true)
+            if (ApplicationData.Current.RoamingSettings.Values["isLinkedInConfigure"] != null && ApplicationData.Current.RoamingSettings.Values["isLinkedInConfigure"].ToString() == "1")
             {
-                chkFacebook.IsChecked = false;
-            }
-            else
-            {
-                chkFacebook.IsChecked = true;
-            }
-        }
-
-        private void btnFacebook_Click(object sender, RoutedEventArgs e)
-        {
-            if (stackFacebook.Visibility == Windows.UI.Xaml.Visibility.Visible)
-            {
-                stackFacebook.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-                imgFB.Source = new BitmapImage(new Uri("ms-appx:///Assets/ExpandBox.png", UriKind.Absolute));
+                btnLinkedInConfigure.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+                chkLinkedin.IsEnabled = true;
+                if (chkLinkedin.IsChecked == false)
+                {
+                    chkLinkedin.IsChecked = true;
+                }
 
             }
             else
             {
-                stackFacebook.Visibility = Windows.UI.Xaml.Visibility.Visible;
-                imgFB.Source = new BitmapImage(new Uri("ms-appx:///Assets/CollapseBox.png", UriKind.Absolute));
-            }
-        }
-
-        private void btnTweet_Click(object sender, RoutedEventArgs e)
-        {
-            if (stackTweet.Visibility == Windows.UI.Xaml.Visibility.Visible)
-            {
-                stackTweet.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-                imgTwitter.Source = new BitmapImage(new Uri("ms-appx:///Assets/ExpandBox.png", UriKind.Absolute));
-
-            }
-            else
-            {
-                stackTweet.Visibility = Windows.UI.Xaml.Visibility.Visible;
-                imgTwitter.Source = new BitmapImage(new Uri("ms-appx:///Assets/CollapseBox.png", UriKind.Absolute));
+                chkLinkedin.IsEnabled = false;
+                if (chkLinkedin.IsChecked == true)
+                {
+                    chkLinkedin.IsChecked = false;
+                }
+                btnLinkedInConfigure.Visibility = Windows.UI.Xaml.Visibility.Visible;
             }
         }
 
@@ -920,6 +786,56 @@ namespace ShareAll
             }
             #endregion
 
+            #region LinkedIn
+
+            if (chkLinkedin.IsChecked == true)
+            {
+                try
+                {
+                    shareProgressBar.Visibility = Windows.UI.Xaml.Visibility.Visible;
+
+                    Uri protectedResourceUri = new Uri("http://api.linkedin.com/v1/people/~/current-status");
+
+                    string xml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>";
+                    xml += "<current-status>" + LinkedInMessage.Text + "</current-status>";
+
+                    
+                    client = new Client(context);                   
+                    client.RequestToken = LinkedInRTLibrary.Credentials.TokenContainer.Parse("oauth_token=" + ApplicationData.Current.RoamingSettings.Values["LinkedInRequestToken"].ToString() + "&oauth_token_secret=" + ApplicationData.Current.RoamingSettings.Values["LinkedInRequestTokenSecret"].ToString());
+                    client.AccessToken = LinkedInRTLibrary.Credentials.TokenContainer.Parse("oauth_token=" + ApplicationData.Current.RoamingSettings.Values["LinkedInOauthToken"].ToString() + "&oauth_token_secret=" + ApplicationData.Current.RoamingSettings.Values["LinkedInOauthTokenSecret"].ToString());
+                    
+                    String postResponse = await client.MakeRequest("PUT")
+                                      .WithData(xml)
+                                      .ForResource(ApplicationData.Current.RoamingSettings.Values["LinkedInOauthToken"].ToString(), protectedResourceUri)
+                                      .Sign(ApplicationData.Current.RoamingSettings.Values["LinkedInOauthTokenSecret"].ToString())
+                                      .ExecuteRequest();
+
+                    if (postResponse == "")
+                    {
+                        LinkedInPostMessage.Text = loader.GetString("LinkedIn_Success");
+                        LinkedInPostMessage.Foreground = new SolidColorBrush(Colors.Green);
+                        shareProgressBar.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+                    }
+                    else
+                    {
+                        ApplicationData.Current.RoamingSettings.Values["isLinkedInConfigure"] = 0;
+                        LinkedInPostMessage.Text = loader.GetString("LinkedIn_Failure");
+                        LinkedInPostMessage.Foreground = new SolidColorBrush(Colors.Red);
+                        shareProgressBar.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+                    }
+                }
+
+                catch (Exception ex)
+                {
+                    ApplicationData.Current.RoamingSettings.Values["isLinkedInConfigure"] = 0;
+                    LinkedInPostMessage.Text = loader.GetString("LinkedIn_Failure");
+                    LinkedInPostMessage.Foreground = new SolidColorBrush(Colors.Red);
+                    shareProgressBar.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+                }
+
+            }
+            #endregion
+
             #region Commented
             //try
             //{
@@ -961,44 +877,7 @@ namespace ShareAll
             #endregion
         }
 
-        private string createCSVEmailList(string[] mailToEmailsArray, string delimiter)
-        {
-            string returnString = "";
-
-            for (int i = 0; i < mailToEmailsArray.Length; i++)
-            {
-                returnString += mailToEmailsArray[i].ToString().Trim();
-                
-                if(i != (mailToEmailsArray.Length-1))
-                 returnString += delimiter;
-
-            }
-
-            return returnString;
-        }
-
-        private void EnableTwitterOptions()
-        {
-            if (ApplicationData.Current.RoamingSettings.Values["isTweetConfigure"] != null && ApplicationData.Current.RoamingSettings.Values["isTweetConfigure"].ToString() == "1")
-            {
-                btnTweetConfigure.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-                chkTweet.IsEnabled = true;
-                if (chkTweet.IsChecked == false)
-                {
-                    chkTweet.IsChecked = true;
-                }
-            }
-            else
-            {
-                chkTweet.IsEnabled = false;
-                if (chkTweet.IsChecked == true)
-                {
-                    chkTweet.IsChecked = false;
-                }
-                btnTweetConfigure.Visibility = Windows.UI.Xaml.Visibility.Visible;
-            }
-        }
-
+        #region Facebook
         private async void btnFBConfigure_Click(object sender, RoutedEventArgs e)
         {
 
@@ -1066,8 +945,48 @@ namespace ShareAll
             ApplicationData.Current.RoamingSettings.Values["isFBConfigure"] = "1";
             //sessionData.isFBConfigure = true;
             EnableConfigurationOptions();
+        }
+
+        private void chkFacebook_Checked_1(object sender, RoutedEventArgs e)
+        {
+            if (chkFacebook.IsChecked == true)
+            {
+                chkFacebook.IsChecked = false;
+            }
+            else
+            {
+                chkFacebook.IsChecked = true;
+            }
+        }
+
+        private void btnFacebook_Click(object sender, RoutedEventArgs e)
+        {
+            if (stackFacebook.Visibility == Windows.UI.Xaml.Visibility.Visible)
+            {
+                stackFacebook.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+                imgFB.Source = new BitmapImage(new Uri("ms-appx:///Assets/ExpandBox.png", UriKind.Absolute));
+
+            }
+            else
+            {
+                stackFacebook.Visibility = Windows.UI.Xaml.Visibility.Visible;
+                imgFB.Source = new BitmapImage(new Uri("ms-appx:///Assets/CollapseBox.png", UriKind.Absolute));
+            }
+        }
+
+        private void FBLinktoShare_GotFocus_1(object sender, RoutedEventArgs e)
+        {
+            var loader = new Windows.ApplicationModel.Resources.ResourceLoader();
+            if (FBLinktoShare.Text == loader.GetString("Link"))
+            {
+                FBLinktoShare.Text = "";
+            }
 
         }
+
+        #endregion
+
+        #region Twitter
 
         private async void btnTweetConfigure_Click(object sender, RoutedEventArgs e)
         {
@@ -1095,16 +1014,41 @@ namespace ShareAll
             EnableTwitterorNot(TweetMessage.Text.Trim());
         }
 
-        private void FBLinktoShare_GotFocus_1(object sender, RoutedEventArgs e)
+        private void btnTweet_Click(object sender, RoutedEventArgs e)
         {
-            var loader = new Windows.ApplicationModel.Resources.ResourceLoader();
-            if (FBLinktoShare.Text == loader.GetString("Link"))
+            if (stackTweet.Visibility == Windows.UI.Xaml.Visibility.Visible)
             {
-                FBLinktoShare.Text = "";
+                stackTweet.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+                imgTwitter.Source = new BitmapImage(new Uri("ms-appx:///Assets/ExpandBox.png", UriKind.Absolute));
+
             }
-
+            else
+            {
+                stackTweet.Visibility = Windows.UI.Xaml.Visibility.Visible;
+                imgTwitter.Source = new BitmapImage(new Uri("ms-appx:///Assets/CollapseBox.png", UriKind.Absolute));
+            }
         }
-
+        private void EnableTwitterOptions()
+        {
+            if (ApplicationData.Current.RoamingSettings.Values["isTweetConfigure"] != null && ApplicationData.Current.RoamingSettings.Values["isTweetConfigure"].ToString() == "1")
+            {
+                btnTweetConfigure.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+                chkTweet.IsEnabled = true;
+                if (chkTweet.IsChecked == false)
+                {
+                    chkTweet.IsChecked = true;
+                }
+            }
+            else
+            {
+                chkTweet.IsEnabled = false;
+                if (chkTweet.IsChecked == true)
+                {
+                    chkTweet.IsChecked = false;
+                }
+                btnTweetConfigure.Visibility = Windows.UI.Xaml.Visibility.Visible;
+            }
+        }
 
         public static string ReplaceFirstOccurrance(string original, string oldValue, string newValue)
         {
@@ -1118,6 +1062,127 @@ namespace ShareAll
             return original.Remove(loc, oldValue.Length).Insert(loc, newValue);
         }
 
+        private string ExtractLinkFromText(string sText)
+        {
+
+            string extractedURL = "";
+            Regex linkRegex = new Regex(@"(http|ftp|https)://([\w+?\.\w+])+([a-zA-Z0-9\~\!\@\#\$\%\^\&\*\(\)_\-\=\+\\\/\?\.\:\;\'\,]*)?", RegexOptions.IgnoreCase | RegexOptions.IgnorePatternWhitespace);
+            MatchCollection linkCollection = linkRegex.Matches(sText);
+            if (linkCollection.Count > 0)
+            {
+                extractedURL = linkCollection[0].ToString();
+
+            }
+
+            return extractedURL;
+
+        }
+
+        private void EnableTwitterorNot(string sText)
+        {
+            List<string> listURL = new List<string>();
+            //Regex linkRegex = new Regex(@"(http|ftp|https)://([\w+?\.\w+])+([a-zA-Z0-9\~\!\@\#\$\%\^\&\*\(\)_\-\=\+\\\/\?\.\:\;\'\,]*)?", RegexOptions.IgnoreCase | RegexOptions.IgnorePatternWhitespace);
+
+            string reURLs = @"(?xi)
+\b
+(                       # Capture 1: entire matched URL
+  (?:
+    https?://               # http or https protocol
+    |                       #   or
+    www\d{0,3}[.]           # 'www.', 'www1.', 'www2.' … 'www999.'
+    |
+    [a-z0-9\-]{3,}\.
+    |                           #   or
+    [a-z0-9.\-]+[.][a-z]{2,4}/  # looks like domain name followed by a slash
+  )
+  (?:                       # One or more:
+    [^\s()<>]+                  # Run of non-space, non-()<>
+    |                           #   or
+    \(([^\s()<>]+|(\([^\s()<>]+\)))*\)  # balanced parens, up to 2 levels
+  )+
+  (?:                       # End with:
+    \(([^\s()<>]+|(\([^\s()<>]+\)))*\)  # balanced parens, up to 2 levels
+    |                               #   or
+    [^\s`!()\[\]{};:'"".,<>?«»“”‘’]        # not a space or one of these punct chars
+  )
+)";
+
+            string[] gTLD = { "aero", "asia", "biz", "cat", "com", "coop", "edu", "gov", "info", "int", "jobs", "mil", "mobi", "museum", "name", "net", "org", "pro", "tel", "travel", "xxx" };
+            string[] ccTLD = { "ac", "ad", "ae", "af", "ag", "ai", "al", "am", "an", "ao", "aq", "ar", "as", "at", "au", "aw", "ax", "az", "ba", "bb", "bd", "be", "bf", "bg", "bh", "bi", "bj", "bm", "bn", "bo", "br", "bs", "bt", "bv", "bw", "by", "bz", "ca", "cc", "cd", "cf", "cg", "ch", "ci", "ck", "cl", "cm", "cn", "co", "cr", "cs", "cu", "cv", "cx", "cy", "cz", "dd", "de", "dj", "dk", "dm", "do", "dz", "ec", "ee", "eg", "eh", "er", "es", "et", "eu", "fi", "fj", "fk", "fm", "fo", "fr", "ga", "gb", "gd", "ge", "gf", "gg", "gh", "gi", "gl", "gm", "gn", "gp", "gq", "gr", "gs", "gt", "gu", "gw", "gy", "hk", "hm", "hn", "hr", "ht", "hu", "id", "ie", "il", "im", "in", "io", "iq", "ir", "is", "it", "je", "jm", "jo", "jp", "ke", "kg", "kh", "ki", "km", "kn", "kp", "kr", "kw", "ky", "kz", "la", "lb", "lc", "li", "lk", "lr", "ls", "lt", "lu", "lv", "ly", "ma", "mc", "md", "me", "mg", "mh", "mk", "ml", "mm", "mn", "mo", "mp", "mq", "mr", "ms", "mt", "mu", "mv", "mw", "mx", "my", "mz", "na", "nc", "ne", "nf", "ng", "ni", "nl", "no", "np", "nr", "nu", "nz", "om", "pa", "pe", "pf", "pg", "ph", "pk", "pl", "pm", "pn", "pr", "ps", "pt", "pw", "py", "qa", "re", "ro", "rs", "ru", "rw", "sa", "sb", "sc", "sd", "se", "sg", "sh", "si", "sj", "sk", "sl", "sm", "sn", "so", "sr", "ss", "st", "su", "sv", "sy", "sz", "tc", "td", "tf", "tg", "th", "tj", "tk", "tl", "tm", "tn", "to", "tp", "tr", "tt", "tv", "tw", "tz", "ua", "ug", "uk", "us", "uy", "uz", "va", "vc", "ve", "vg", "vi", "vn", "vu", "wf", "ws", "ye", "yt", "za", "zm", "zw" };
+
+
+            Regex linkRegex = new Regex(reURLs, RegexOptions.IgnoreCase | RegexOptions.IgnorePatternWhitespace);
+            MatchCollection linkCollection = linkRegex.Matches(sText);
+
+
+
+
+            foreach (Match match in linkCollection)
+            {
+                if (match.Groups[0].Value.Split(':').Count() == 1)
+                {
+                    string topDomain = match.Groups[0].Value.Split('.').Last().ToString();
+                    if (gTLD.Contains(topDomain) | ccTLD.Contains(topDomain))
+                    {
+                        listURL.Add(match.Groups[0].Value);
+                    }
+                }
+                else
+                {
+                    listURL.Add(match.Groups[0].Value);
+                }
+            }
+
+            if (listURL.Count > 0)
+            {
+                for (int i = 0; i < listURL.Count; i++)
+                {
+                    sText = ReplaceFirstOccurrance(sText, listURL[i].ToString(), "01234567890123456789");
+                }
+            }
+
+            int diff;
+
+            diff = 140 - Convert.ToInt32(sText.Length);
+
+
+
+            if (diff < 0)
+            {
+                txtCount.Text = diff.ToString();
+                txtCount.Foreground = new SolidColorBrush(Colors.Red);
+                btnTweetConfigure.IsEnabled = false;
+                chkTweet.IsEnabled = false;
+                chkTweet.IsChecked = false;
+            }
+            else
+            {
+                txtCount.Text = diff.ToString();
+                txtCount.Foreground = new SolidColorBrush(Colors.Black);
+                btnTweetConfigure.IsEnabled = true;
+                if (ApplicationData.Current.RoamingSettings.Values["isTweetConfigure"] != null && ApplicationData.Current.RoamingSettings.Values["isTweetConfigure"].ToString() == "1")
+                {
+                    btnTweetConfigure.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+                    chkTweet.IsEnabled = true;
+                    if (chkTweet.IsChecked == false)
+                    {
+                        chkTweet.IsChecked = true;
+                    }
+                }
+                else
+                {
+                    chkTweet.IsEnabled = false;
+                    if (chkTweet.IsChecked == true)
+                    {
+                        chkTweet.IsChecked = false;
+                    }
+                    btnTweetConfigure.Visibility = Windows.UI.Xaml.Visibility.Visible;
+                }
+            }
+        }
+        #endregion
+
+        #region Email
         private void btnEmailConfigure_Click(object sender, RoutedEventArgs e)
         {
             myPopup.IsOpen = true;
@@ -1328,6 +1393,22 @@ namespace ShareAll
             }
         }
 
+        private string createCSVEmailList(string[] mailToEmailsArray, string delimiter)
+        {
+            string returnString = "";
+
+            for (int i = 0; i < mailToEmailsArray.Length; i++)
+            {
+                returnString += mailToEmailsArray[i].ToString().Trim();
+
+                if (i != (mailToEmailsArray.Length - 1))
+                    returnString += delimiter;
+
+            }
+
+            return returnString;
+        }
+
         private void btnClose_Click(object sender, RoutedEventArgs e)
         {
             myPopup.IsOpen = false;
@@ -1454,5 +1535,83 @@ namespace ShareAll
                 }
             }
         }
+        #endregion
+
+        #region LinkedIn
+        private async void btnLinkedInConfigure_Click(object sender, RoutedEventArgs e)
+        {
+            String verificationCode = "";
+            client = new Client(context);
+            String requestTokenResponse = await client.MakeRequest("GET")
+                    .ForRequestToken()
+                    .Sign()
+                    .ExecuteRequest();
+
+            client.RequestToken = LinkedInRTLibrary.Credentials.TokenContainer.Parse(requestTokenResponse);
+            Uri authorizationUri = client.GetAuthorizationUri();
+
+            //Authorize the temporary token using the authorizationUri
+            //One option is to use the supplied WebAuthenticationBroker
+
+            WebAuthenticationResult WebAuthenticationResult = await WebAuthenticationBroker.AuthenticateAsync(WebAuthenticationOptions.None, authorizationUri, client.Context.CallbackUri);
+
+            //The verification code could be returned in the response
+            //i.e. Parse it out of WebAuthenticationResult.ResponseData.ToString();
+            //Or it could be displayed to the user and they will have to enter it into your application manually
+
+
+            string[] VerificationCodePairs = WebAuthenticationResult.ResponseData.ToString().Split('&');
+
+            for (int j = 0; j < VerificationCodePairs.Length; j++)
+            {
+                String[] VerificationTokensSplits = VerificationCodePairs[j].Split('=');
+                switch (VerificationTokensSplits[0])
+                {
+                    case "oauth_verifier":
+                        verificationCode = VerificationTokensSplits[1];
+                        break;
+                }
+            }
+
+            String accessTokenResponse = await client.MakeRequest("GET")
+                    .ForAccessToken(client.RequestToken.Token, verificationCode)
+                    .Sign(client.RequestToken.Secret)
+                    .ExecuteRequest();
+
+            client.AccessToken = LinkedInRTLibrary.Credentials.TokenContainer.Parse(accessTokenResponse);
+
+            if (client.AccessToken != null)
+            {
+                ApplicationData.Current.RoamingSettings.Values["isLinkedInConfigure"] = "1";
+                ApplicationData.Current.RoamingSettings.Values["LinkedInRequestToken"] = client.RequestToken.Token;
+                ApplicationData.Current.RoamingSettings.Values["LinkedInRequestTokenSecret"] = client.RequestToken.Secret;
+                ApplicationData.Current.RoamingSettings.Values["LinkedInVerificationCode"] = verificationCode;
+                ApplicationData.Current.RoamingSettings.Values["LinkedInOauthToken"] = client.AccessToken.Token;
+                ApplicationData.Current.RoamingSettings.Values["LinkedInOauthTokenSecret"] = client.AccessToken.Secret;
+                EnableConfigurationOptions();
+            }
+            else
+            {
+                ApplicationData.Current.RoamingSettings.Values["isLinkedInConfigure"] = "0";
+                EnableConfigurationOptions();
+            }
+        }
+
+        private void btnLinkedIn_Click(object sender, RoutedEventArgs e)
+        {
+            if (stackLinkedIn.Visibility == Windows.UI.Xaml.Visibility.Visible)
+            {
+                stackLinkedIn.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+                imgLinkedIn.Source = new BitmapImage(new Uri("ms-appx:///Assets/ExpandBox.png", UriKind.Absolute));
+
+            }
+            else
+            {
+                stackLinkedIn.Visibility = Windows.UI.Xaml.Visibility.Visible;
+                imgLinkedIn.Source = new BitmapImage(new Uri("ms-appx:///Assets/CollapseBox.png", UriKind.Absolute));
+            }
+        }
+
+        #endregion
     }
 }
