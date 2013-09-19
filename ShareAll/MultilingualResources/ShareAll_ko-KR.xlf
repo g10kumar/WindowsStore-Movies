@@ -322,6 +322,10 @@
           <source>Posted to LinkedIn.</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">LinkedIn에 게시 됩니다.</target>
         </trans-unit>
+        <trans-unit id="Resources\LinkedIn\Text" translate="yes" xml:space="preserve">
+          <source>LinkedIn</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">링크 드 인</target>
+        </trans-unit>
       </group>
     </body>
   </file>

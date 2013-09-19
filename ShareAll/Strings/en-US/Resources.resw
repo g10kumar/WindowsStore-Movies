@@ -354,4 +354,7 @@
   <data name="LinkedIn_Success" xml:space="preserve">
     <value>Posted to LinkedIn.</value>
   </data>
+  <data name="LinkedIn.Text" xml:space="preserve">
+    <value>LinkedIn</value>
+  </data>
 </root>

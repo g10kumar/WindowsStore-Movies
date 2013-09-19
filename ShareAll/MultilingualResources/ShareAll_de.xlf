@@ -322,6 +322,10 @@
           <source>Posted to LinkedIn.</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Auf LinkedIn gebucht.</target>
         </trans-unit>
+        <trans-unit id="Resources\LinkedIn\Text" translate="yes" xml:space="preserve">
+          <source>LinkedIn</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">LinkedIn</target>
+        </trans-unit>
       </group>
     </body>
   </file>
