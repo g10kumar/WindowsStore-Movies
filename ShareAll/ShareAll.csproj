@@ -110,6 +110,7 @@
     </Compile>
     <Compile Include="Common\LayoutAwarePage.cs" />
     <Compile Include="Common\NotificationObject.cs" />
+    <Compile Include="Common\OAuthUtil.cs" />
     <Compile Include="Common\SettingsFlyout.cs" />
     <Compile Include="Common\Utilities.cs" />
     <Compile Include="MainPage.xaml.cs">
@@ -167,8 +168,10 @@
   <ItemGroup>
     <Content Include="Assets\eMail_200x200.png" />
     <Content Include="Assets\Linkedin_400x400.png" />
+    <Content Include="Assets\WordPress_400x400.png" />
     <Content Include="Dlls\Facebook.dll" />
     <Content Include="Dlls\LinkedInRTLibrary.dll" />
+    <Content Include="Dlls\Newtonsoft.Json.dll" />
     <Content Include="Dlls\nsoftware.IPWorksSSL.xml" />
     <Content Include="Dlls\TwitterRtLibrary.dll" />
     <None Include="Package.StoreAssociation.xml" />
@@ -223,6 +226,10 @@
     <Reference Include="LinkedInRTLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Dlls\LinkedInRTLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dlls\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="nsoftware.IPWorksSSL, Version=9.0.4738.0, Culture=neutral, PublicKeyToken=cdc168f89cffe9cf, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
