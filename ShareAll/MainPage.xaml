@@ -60,6 +60,12 @@
                             </Button>
                             <TextBlock x:Uid="ConfigureTwitter" Text="Configure Twitter" FontSize="20" HorizontalAlignment="Center" />
                         </StackPanel>
+                        <StackPanel Orientation="Vertical"  VerticalAlignment="Top"  Margin="10,10,10,10">
+                            <Button x:Name="btnConfigureWordPress" Height="200" Width="200" BorderThickness="0" HorizontalAlignment="Center" VerticalAlignment="Top" Click="btnConfigureWordPress_Click" >
+                                <Image Source="Assets/WordPress_400x400.png" />
+                            </Button>
+                            <TextBlock x:Uid="ConfigureWordPress" Text="Configure WordPress" FontSize="20" HorizontalAlignment="Center" />
+                        </StackPanel>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <StackPanel Orientation="Vertical" VerticalAlignment="Top"  Margin="10,10,10,0">

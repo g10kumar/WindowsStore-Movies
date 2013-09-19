@@ -42,6 +42,7 @@ using nsoftware.IPWorksSSL;
 using ShareAll.Common;
 using Windows.ApplicationModel.Resources;
 using LinkedInRTLibrary;
+using Newtonsoft.Json;
 namespace ShareAll
 {
     /// <summary>
@@ -79,6 +80,15 @@ namespace ShareAll
         public const string MatchEmailPattern = @"\w+([-+.]\w+)*@(yahoo|gmail|hotmail|msn|live)\.com";
         Utilities u = new Utilities();
         bool checkValidEmail = true;
+        #endregion
+
+        #region WordPress
+        string _wppermissions = "publish_stream";
+        public const string _consumerKey = "1434";
+        public const string _consumerSecret = "NE6igTB5q6xDCM72ksBReGY4tqJdNOMSDb68RPno18pm4L8o36t6ba9ZxkziiyVV";
+        public const string _callbackUrl = "http://www.daksatech.com";
+        public string wpcode = "";
+        OAuthUtil oAuthUtil = new OAuthUtil();
         #endregion
 
         #endregion
@@ -159,12 +169,15 @@ namespace ShareAll
                     if (this.sharedDataTitle != null)
                     {
                         FBTitle.Text = this.sharedDataTitle;
+                        WPTitle.Text = this.sharedDataTitle;
                         EmailSubject.Text = this.sharedDataTitle;
                     }
 
                     if (this.sharedText != null)
                     {
                         FBMessage.Text = this.sharedText;
+                        WPMessage.Text = this.sharedText;
+
                         LinkedInMessage.Text = this.sharedText;
                         sText = this.sharedText;
                         //TweetMessage.Text = this.sharedText;
@@ -173,6 +186,7 @@ namespace ShareAll
                     else if (this.sharedDataDescription != null)
                     {
                         FBMessage.Text = this.sharedDataDescription.ToString();
+                        WPMessage.Text = this.sharedDataDescription.ToString();
                         LinkedInMessage.Text = this.sharedDataDescription.ToString();
                         sText = this.sharedDataDescription.ToString();
                         //TweetMessage.Text = this.sharedDataDescription.ToString();
@@ -425,6 +439,25 @@ namespace ShareAll
                     chkLinkedin.IsChecked = false;
                 }
                 btnLinkedInConfigure.Visibility = Windows.UI.Xaml.Visibility.Visible;
+            }
+
+            if (ApplicationData.Current.RoamingSettings.Values["isWordPressConfigure"] != null && ApplicationData.Current.RoamingSettings.Values["isWordPressConfigure"].ToString() == "1")
+            {
+                btnWPConfigure.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+                chkWordPress.IsEnabled = true;
+                if (chkWordPress.IsChecked == false)
+                {
+                    chkWordPress.IsChecked = true;
+                }
+            }
+            else
+            {
+                btnWPConfigure.Visibility = Windows.UI.Xaml.Visibility.Visible;
+                chkWordPress.IsEnabled = false;
+                if (chkWordPress.IsChecked == true)
+                {
+                    chkWordPress.IsChecked = false;
+                }
             }
         }
 
@@ -830,6 +863,126 @@ namespace ShareAll
                     ApplicationData.Current.RoamingSettings.Values["isLinkedInConfigure"] = 0;
                     LinkedInPostMessage.Text = loader.GetString("LinkedIn_Failure");
                     LinkedInPostMessage.Foreground = new SolidColorBrush(Colors.Red);
+                    shareProgressBar.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+                }
+
+            }
+            #endregion
+
+            #region WordPress
+            if (chkWordPress.IsChecked == true)
+            {
+                try
+                {
+                    shareProgressBar.Visibility = Windows.UI.Xaml.Visibility.Visible;
+
+                    Post p = new Post();
+                    p.title = WPTitle.Text;
+                    p.description = WPMessage.Text + " " + DateTime.Now;
+                    p.format = "standard";
+                    p.categories = new string[] { "Uncategorized" };
+                    p.tags = new string[] { "test" };
+
+                    //var pp = new Post()
+                    //{
+                    //    title = "I Need a Good REST",
+                    //    description = "That's probably the corniest blog title ever created...",
+                    //    format = "standard",
+                    //};
+
+                    //var data = "title:" + p.title + ", content: " + p.description + ", format: " + p.format + ", tags:test, categories:Uncategorized";
+
+                    //string sigBaseStringParamspost = "oauth_signature_method=" + "HMAC-SHA1";
+                    //sigBaseStringParamspost += "&" + "oauth_timestamp=" + timeStamp;
+                    //sigBaseStringParamspost += "&" + "title=" + p.title;
+                    //sigBaseStringParamspost += "&" + "content=" + p.content;
+                    //sigBaseStringParamspost += "&" + "format=" + p.format;
+                    //sigBaseStringParamspost += "&" + "tags=tests";
+                    //sigBaseStringParamspost += "&" + "categories=API";
+                    //sigBaseStringParamspost += "&" + "Bearer=" + accesstoken;
+                    //sigBaseStringParamspost += "&" + "oauth_version=1.0";
+
+
+                    //metadata mdata = new metadata();
+                    //mdata.tmp[0].key = "add";
+                    //mdata.tmp[0].operation = "geo_address";
+                    //mdata.tmp[0].value = "San Francisco, CA";
+
+                    string sigBaseStringParamspost = "title=" + p.title;
+                    sigBaseStringParamspost += "&" + "content=" + p.description;
+                    sigBaseStringParamspost += "&" + "format=" + p.format;
+                    sigBaseStringParamspost += "&" + "tags=" + p.tags;
+                    sigBaseStringParamspost += "&" + "categories=" + p.categories;
+                    //////sigBaseStringParamspost += "&" + "SITE_ID=" + blogid;
+                    ////sigBaseStringParamspost += "&" + "ignore_errors=true";
+                    sigBaseStringParamspost += "&" + "Authorization: Bearer " + ApplicationData.Current.RoamingSettings.Values["WordPressAccessToken"].ToString();
+
+                    //string sigBaseStringParamspost = "title=" + p.title;
+                    //sigBaseStringParamspost += "&" + "description=" + p.content;
+                    //sigBaseStringParamspost += "&" + "Authorization: Bearer " + accesstoken;
+
+                    //string sigBaseStringParamspost = "Authorization: Bearer " + accesstoken;
+
+                    //string sigBaseStringParamspost = "Bearer " + accesstoken;
+                    //sigBaseStringParamspost += "&" + "client_id=1434";
+                    //sigBaseStringParamspost += "&" + "oauth_signature_method=" + "HMAC-SHA1";
+                    //sigBaseStringParamspost += "&" + "oauth_timestamp=" + timeStamp;
+                    //sigBaseStringParamspost += "&" + "oauth_version=1.0";
+                    //sigBaseStringParamspost += "&" + "content=" + p;
+                    //////string sigBaseStringParamspost = "data=" + pp;
+                    //sigBaseStringParamspost += "&" + "Bearer " + accesstoken;
+
+                    string sigBaseStringpost = "POST&";
+                    sigBaseStringpost += Uri.EscapeDataString("https://public-api.wordpress.com/rest/v1/sites/" + ApplicationData.Current.RoamingSettings.Values["WordPressBlogId"].ToString() + "/posts/new/") + "&" + Uri.EscapeDataString(sigBaseStringParamspost);
+                    //sigBaseStringpost += Uri.EscapeDataString("https://public-api.wordpress.com/rest/v1/sites/" + blogid + "/posts/new/" + "&" + sigBaseStringParamspost);
+                    //sigBaseStringpost += Uri.EscapeDataString("https://public-api.wordpress.com/rest/v1/sites/" + blogurl + "/posts/new/?pretty=true") + "&" + Uri.EscapeDataString(sigBaseStringParamspost);
+
+                    string signaturepost = oAuthUtil.GetSignature(sigBaseStringpost, _consumerSecret, null);
+
+                    var postresponseText = await oAuthUtil.PostData("https://public-api.wordpress.com/rest/v1/sites/" + ApplicationData.Current.RoamingSettings.Values["WordPressBlogId"].ToString() + "/posts/new/", sigBaseStringParamspost + "&oauth_signature=" + Uri.EscapeDataString(signaturepost));
+                    //var postresponseText = await oAuthUtil.PostData("https://public-api.wordpress.com/rest/v1/sites/" + blogurl + "/posts/new/?pretty=true", sigBaseStringParamspost + "&oauth_signature=" + Uri.EscapeDataString(signaturepost));
+
+                    //{"error":"unauthorized","message":"User cannot publish posts"}
+
+                    postresponseText = postresponseText.Replace(@"\", "");
+
+                    if (!string.IsNullOrEmpty(postresponseText))
+                    {
+                        //return contents from json serialize object
+                        var WPErrorItems = JsonConvert.DeserializeObject<WPError>(postresponseText);
+
+                        if (WPErrorItems != null)
+                        {
+                            #region Error
+
+                            if (WPErrorItems.error == null)
+                            {
+                                WPPostMessage.Text = "Posted to WordPress.";
+                                WPPostMessage.Foreground = new SolidColorBrush(Colors.Green);
+                                shareProgressBar.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+                            }
+                            else
+                            {
+                                ApplicationData.Current.RoamingSettings.Values["isWordPressConfigure"] = 0;
+                                WPPostMessage.Text = WPErrorItems.message.ToString() + "  Try again later.";                                
+                                //WPPostMessage.Text = "Could not post to WordPress. Try again later.";
+                                WPPostMessage.Foreground = new SolidColorBrush(Colors.Red);
+                                shareProgressBar.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+                            }
+
+                            #endregion
+
+                        }
+                    }
+
+                    
+                }
+
+                catch (Exception ex)
+                {
+                    ApplicationData.Current.RoamingSettings.Values["isWordPressConfigure"] = 0;
+                    WPPostMessage.Text = "Could not post to WordPress. Try again later.";
+                    WPPostMessage.Foreground = new SolidColorBrush(Colors.Red);
                     shareProgressBar.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
                 }
 
@@ -1612,6 +1765,87 @@ namespace ShareAll
             }
         }
 
+        #endregion
+
+        #region WordPress
+        private async void btnWPConfigure_Click(object sender, RoutedEventArgs e)
+        {
+            System.Uri StartUri = new Uri("https://public-api.wordpress.com/oauth2/authorize?client_id=" + _consumerKey + "&redirect_uri=" + _callbackUrl + "&response_type=code&scope=" + _wppermissions);
+            System.Uri EndUri = new Uri("http://www.daksatech.com");
+
+            WebAuthenticationResult WebAuthenticationResult = await WebAuthenticationBroker.AuthenticateAsync(
+                                                    WebAuthenticationOptions.None,
+                                                    StartUri,
+                                                    EndUri);
+            if (WebAuthenticationResult.ResponseStatus == WebAuthenticationStatus.Success)
+            {
+                String[] keyValPairs = WebAuthenticationResult.ResponseData.ToString().Split('?');
+
+                for (int i = 0; i < keyValPairs.Length; i++)
+                {
+                    String[] splits = keyValPairs[i].Split('=');
+                    switch (splits[0])
+                    {
+                        case "code":
+                            wpcode = splits[1].Split('&')[0].ToString();
+                            break;
+                    }
+                }
+
+                string nonce = oAuthUtil.GetNonce();
+                string timeStamp = oAuthUtil.GetTimeStamp();
+
+                string sigBaseStringParams = "client_id=" + _consumerKey;
+                sigBaseStringParams += "&" + "redirect_uri=" + _callbackUrl;
+                sigBaseStringParams += "&" + "grant_type=authorization_code";
+                sigBaseStringParams += "&" + "oauth_signature_method=" + "HMAC-SHA1";
+                sigBaseStringParams += "&" + "oauth_timestamp=" + timeStamp;
+                sigBaseStringParams += "&" + "code=" + wpcode;
+                sigBaseStringParams += "&" + "oauth_version=1.0";
+
+                string sigBaseString = "POST&";
+                sigBaseString += Uri.EscapeDataString("https://public-api.wordpress.com/oauth2/token") + "&" + Uri.EscapeDataString(sigBaseStringParams);
+
+                string signature = oAuthUtil.GetSignature(sigBaseString, _consumerSecret, null);
+
+                var responseText = await oAuthUtil.PostData("https://public-api.wordpress.com/oauth2/token", sigBaseStringParams + "&oauth_signature=" + Uri.EscapeDataString(signature));
+
+                responseText = responseText.Replace(@"\", "");
+
+                //return contents from json serialize object
+                var WPAccessTokenItems = JsonConvert.DeserializeObject<WPAccessToken>(responseText);
+
+                if (WPAccessTokenItems != null)
+                {
+                    #region Getting Auth Token
+
+                    ApplicationData.Current.RoamingSettings.Values["isWordPressConfigure"] = "1";
+                    ApplicationData.Current.RoamingSettings.Values["WordPressAccessToken"] = WPAccessTokenItems.access_token;
+                    ApplicationData.Current.RoamingSettings.Values["WordPressTokenType"] = WPAccessTokenItems.token_type;
+                    ApplicationData.Current.RoamingSettings.Values["WordPressBlogId"] = WPAccessTokenItems.blog_id;
+                    ApplicationData.Current.RoamingSettings.Values["WordPressBlogURL"] = WPAccessTokenItems.blog_url;
+                    ApplicationData.Current.RoamingSettings.Values["WordPressScope"] = WPAccessTokenItems.scope;
+
+                    EnableConfigurationOptions();
+                    #endregion
+                }
+            }
+        }
+
+        private void btnWordPress_Click(object sender, RoutedEventArgs e)
+        {
+            if (stackWordPress.Visibility == Windows.UI.Xaml.Visibility.Visible)
+            {
+                stackWordPress.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+                imgWP.Source = new BitmapImage(new Uri("ms-appx:///Assets/ExpandBox.png", UriKind.Absolute));
+
+            }
+            else
+            {
+                stackWordPress.Visibility = Windows.UI.Xaml.Visibility.Visible;
+                imgWP.Source = new BitmapImage(new Uri("ms-appx:///Assets/CollapseBox.png", UriKind.Absolute));
+            }
+        }
         #endregion
     }
 }

@@ -34,6 +34,7 @@ using ShareAll.Common;
 using System.Text.RegularExpressions;
 using Windows.ApplicationModel.Resources;
 using LinkedInRTLibrary;
+using Newtonsoft.Json;
 
 namespace ShareAll
 {
@@ -68,6 +69,17 @@ namespace ShareAll
         //     + @"([a-zA-Z]+[\w-]+\.)+[a-zA-Z]{2,4})$";
 
         public const string MatchEmailPattern = @"\w+([-+.]\w+)*@(yahoo|gmail|hotmail|msn|live)\.com";
+
+        #endregion
+
+        #region Word Press
+
+        string _wppermissions = "publish_stream";
+        public const string _consumerKey = "1434";
+        public const string _consumerSecret = "NE6igTB5q6xDCM72ksBReGY4tqJdNOMSDb68RPno18pm4L8o36t6ba9ZxkziiyVV";
+        public const string _callbackUrl = "http://www.daksatech.com";
+        public string wpcode = "";
+        OAuthUtil oAuthUtil = new OAuthUtil();
 
         #endregion
 
@@ -497,6 +509,75 @@ namespace ShareAll
             myPopup.HorizontalOffset = (Window.Current.Bounds.Width - myPopup.ActualWidth) / 2;
             myPopup.VerticalOffset = (Window.Current.Bounds.Height - mainGrid.ActualHeight) / 2;
         }
+
+        private async void btnConfigureWordPress_Click(object sender, RoutedEventArgs e)
+        {
+            System.Uri StartUri = new Uri("https://public-api.wordpress.com/oauth2/authorize?client_id="+_consumerKey+"&redirect_uri="+_callbackUrl+"&response_type=code&scope="+_wppermissions);
+            System.Uri EndUri = new Uri("http://www.daksatech.com");
+
+            WebAuthenticationResult WebAuthenticationResult = await WebAuthenticationBroker.AuthenticateAsync(
+                                                    WebAuthenticationOptions.None,
+                                                    StartUri,
+                                                    EndUri);
+            if (WebAuthenticationResult.ResponseStatus == WebAuthenticationStatus.Success)
+            {
+                String[] keyValPairs = WebAuthenticationResult.ResponseData.ToString().Split('?');
+
+                for (int i = 0; i < keyValPairs.Length; i++)
+                {
+                    String[] splits = keyValPairs[i].Split('=');
+                    switch (splits[0])
+                    {
+                        case "code":
+                            wpcode = splits[1].Split('&')[0].ToString();
+                            break;
+                    }
+                }
+
+                string nonce = oAuthUtil.GetNonce();
+                string timeStamp = oAuthUtil.GetTimeStamp();
+
+                string sigBaseStringParams = "client_id=" + _consumerKey;
+                sigBaseStringParams += "&" + "redirect_uri=" + _callbackUrl;
+                sigBaseStringParams += "&" + "grant_type=authorization_code";
+                sigBaseStringParams += "&" + "oauth_signature_method=" + "HMAC-SHA1";
+                sigBaseStringParams += "&" + "oauth_timestamp=" + timeStamp;
+                sigBaseStringParams += "&" + "code=" + wpcode;
+                sigBaseStringParams += "&" + "oauth_version=1.0";
+
+                string sigBaseString = "POST&";
+                sigBaseString += Uri.EscapeDataString("https://public-api.wordpress.com/oauth2/token") + "&" + Uri.EscapeDataString(sigBaseStringParams);
+
+                string signature = oAuthUtil.GetSignature(sigBaseString, _consumerSecret, null);
+
+                var responseText = await oAuthUtil.PostData("https://public-api.wordpress.com/oauth2/token", sigBaseStringParams + "&oauth_signature=" + Uri.EscapeDataString(signature));
+
+                responseText = responseText.Replace(@"\", "");
+
+                //return contents from json serialize object
+                var WPAccessTokenItems = JsonConvert.DeserializeObject<WPAccessToken>(responseText);
+
+                if (WPAccessTokenItems != null)
+                {
+                    #region Getting Auth Token
+
+                    ApplicationData.Current.RoamingSettings.Values["isWordPressConfigure"] = "1";
+                    ApplicationData.Current.RoamingSettings.Values["WordPressAccessToken"] = WPAccessTokenItems.access_token;
+                    ApplicationData.Current.RoamingSettings.Values["WordPressTokenType"] = WPAccessTokenItems.token_type;
+                    ApplicationData.Current.RoamingSettings.Values["WordPressBlogId"] = WPAccessTokenItems.blog_id;
+                    ApplicationData.Current.RoamingSettings.Values["WordPressBlogURL"] = WPAccessTokenItems.blog_url;
+                    ApplicationData.Current.RoamingSettings.Values["WordPressScope"] = WPAccessTokenItems.scope;
+                    var frame = new Frame();
+                    frame.Navigate(typeof(MainPage));
+
+                    Window.Current.Content = frame;
+                    Window.Current.Activate();
+
+                    #endregion
+                }
+            }
+        }
+
         //private void btnConfigureEmail_Click(object sender, RoutedEventArgs e)
         //{
         //   Frame.Navigate(typeof(ShareIt));
@@ -513,4 +594,41 @@ namespace ShareAll
         //}
 
     }
+
+    public class WPError
+    {
+        public string error { get; set; }
+        public string message { get; set; }
+    }
+    public class WPAccessToken
+    {
+        public string access_token { get; set; }
+        public string token_type { get; set; }
+        public string blog_id { get; set; }
+        public string blog_url { get; set; }
+        public string scope { get; set; }
+    }
+
+    public class metadataarray
+    {
+        public string operation { get; set; }
+        public string key { get; set; }
+        public string value { get; set; }
+
+    }
+
+    public class metadata
+    {
+        public metadataarray[] tmp = { };
+    }
+
+    public class Post
+    {
+        public string[] categories = { };
+        public string[] tags = { };
+        public string title { get; set; }
+        public string description { get; set; }
+        public string format { get; set; }
+    }
+
 }
