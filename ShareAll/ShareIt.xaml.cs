@@ -442,6 +442,9 @@ namespace ShareAll
             
             fbPostMessage.Text = "";
             TwitterPostMessage.Text = "";
+            LinkedInPostMessage.Text = "";
+            EmailPostMessage.Text = "";
+
             if (FBLinktoShare.Text == loader.GetString("Link"))
             {
                 FBLinktoShare.Text = "";
