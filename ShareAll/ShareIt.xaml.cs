@@ -471,6 +471,7 @@ namespace ShareAll
 
         private async void btnShare_Click(object sender, RoutedEventArgs e)
         {
+
             var loader = new Windows.ApplicationModel.Resources.ResourceLoader();
             
             fbPostMessage.Text = "";
@@ -908,14 +909,14 @@ namespace ShareAll
                     //mdata.tmp[0].operation = "geo_address";
                     //mdata.tmp[0].value = "San Francisco, CA";
 
-                    string sigBaseStringParamspost = "title=" + p.title;
-                    sigBaseStringParamspost += "&" + "content=" + p.description;
-                    sigBaseStringParamspost += "&" + "format=" + p.format;
-                    sigBaseStringParamspost += "&" + "tags=" + p.tags;
-                    sigBaseStringParamspost += "&" + "categories=" + p.categories;
-                    //////sigBaseStringParamspost += "&" + "SITE_ID=" + blogid;
-                    ////sigBaseStringParamspost += "&" + "ignore_errors=true";
-                    sigBaseStringParamspost += "&" + "Authorization: Bearer " + ApplicationData.Current.RoamingSettings.Values["WordPressAccessToken"].ToString();
+                    //string sigBaseStringParamspost = "title=" + p.title;
+                    //sigBaseStringParamspost += "&" + "content=" + p.description;
+                    //sigBaseStringParamspost += "&" + "format=" + p.format;
+                    //sigBaseStringParamspost += "&" + "tags=" + p.tags;
+                    //sigBaseStringParamspost += "&" + "categories=" + p.categories;
+                    ////////sigBaseStringParamspost += "&" + "SITE_ID=" + blogid;
+                    //////sigBaseStringParamspost += "&" + "ignore_errors=true";
+                    //sigBaseStringParamspost += "&" + "Authorization: Bearer " + ApplicationData.Current.RoamingSettings.Values["WordPressAccessToken"].ToString();
 
                     //string sigBaseStringParamspost = "title=" + p.title;
                     //sigBaseStringParamspost += "&" + "description=" + p.content;
@@ -923,12 +924,12 @@ namespace ShareAll
 
                     //string sigBaseStringParamspost = "Authorization: Bearer " + accesstoken;
 
-                    //string sigBaseStringParamspost = "Bearer " + accesstoken;
+                    string sigBaseStringParamspost = "Authorization: Bearer " + ApplicationData.Current.RoamingSettings.Values["WordPressAccessToken"].ToString();
                     //sigBaseStringParamspost += "&" + "client_id=1434";
                     //sigBaseStringParamspost += "&" + "oauth_signature_method=" + "HMAC-SHA1";
                     //sigBaseStringParamspost += "&" + "oauth_timestamp=" + timeStamp;
                     //sigBaseStringParamspost += "&" + "oauth_version=1.0";
-                    //sigBaseStringParamspost += "&" + "content=" + p;
+                    sigBaseStringParamspost += "&" + "content=" + p;
                     //////string sigBaseStringParamspost = "data=" + pp;
                     //sigBaseStringParamspost += "&" + "Bearer " + accesstoken;
 
@@ -964,18 +965,15 @@ namespace ShareAll
                             else
                             {
                                 ApplicationData.Current.RoamingSettings.Values["isWordPressConfigure"] = 0;
-                                WPPostMessage.Text = WPErrorItems.message.ToString() + "  Try again later.";                                
+                                WPPostMessage.Text = WPErrorItems.message.ToString() + ".  Try again later.";                                
                                 //WPPostMessage.Text = "Could not post to WordPress. Try again later.";
                                 WPPostMessage.Foreground = new SolidColorBrush(Colors.Red);
                                 shareProgressBar.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
                             }
 
                             #endregion
-
                         }
-                    }
-
-                    
+                    }                    
                 }
 
                 catch (Exception ex)
