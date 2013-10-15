@@ -20,20 +20,21 @@ namespace TopMovies.Views
         private double zoffset = 0;
         private double scaleoffset = 0.7;
         private double rotationangle = 45;
+        private ObservableCollection<Person> images;
 
         public CoverFlowProperties()
         {
-            Images = new ObservableCollection<Person>();
+            //Images = new ObservableCollection<Person>();
 
-            for (int iCount = 1; iCount <= 24; iCount++)
-            {
-                if (iCount == 10)
-                    continue;
-                images.Add(new Person() { Image = "ms-appx:///Assets/" + iCount + ".jpg" });
-            }
+            //for (int iCount = 1; iCount <= 24; iCount++)
+            //{
+            //    if (iCount == 10)
+            //        continue;
+            //    images.Add(new Person() { Image = "ms-appx:///Assets/" + iCount + ".jpg" });
+            //}
         }
 
-        private ObservableCollection<Person> images;
+        
 
         public ObservableCollection<Person> Images
         {

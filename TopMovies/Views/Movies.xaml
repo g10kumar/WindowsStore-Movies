@@ -10,7 +10,46 @@
     xmlns:UI="using:Microsoft.Advertising.WinRT.UI"
     x:Name="pageRoot"
     x:Class="TopMovies.Views.Movies"
+    xmlns:Navigation="using:Syncfusion.UI.Xaml.Controls.Navigation" 
     mc:Ignorable="d">
+    <UserControl.Resources>
+        <Style TargetType="Image">
+            <Setter Property="Width" Value="18"/>
+            <Setter Property="Stretch" Value="Uniform"/>
+        </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="Margin" Value="3"/>
+        </Style>
+        <Style x:Key="NavigationButtonStyle" TargetType="Button">
+            <Setter Property="FontFamily" Value="Segoe UI Symbol"/>
+            <Setter Property="BorderBrush" Value="#FF464646"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid Background="Transparent" Margin="-5">
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal"/>
+                                    <VisualState x:Name="PointerOver">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Fill" Storyboard.TargetName="BackgroundEllipse">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="LightGray"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <Ellipse Fill="White" x:Name="BackgroundEllipse" />
+                            <Ellipse Stroke="{TemplateBinding BorderBrush}" StrokeThickness="2"  Fill="Transparent"/>
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
 
 
     <Page.BottomAppBar>
@@ -19,7 +58,7 @@
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <Button IsEnabled="True" x:Uid="btnBuyDVD" Name="btnBuyDVD"  Style="{StaticResource ShopAppBarButtonStyle}" Click="btnBuyDVD_Click_1"  />
                     <Button IsEnabled="True" x:Uid="btnMovieDetails" Name="btnMovieDetails"  Style="{StaticResource MoreAppBarButtonStyle}" Click="btnMovieDetails_Click_1" />
-                    <Button IsEnabled="True" x:Uid="TraslateDetails" x:Name="TraslateDetails" Click="Translate" Style="{StaticResource TranslateAppBarButtonStyle}" Visibility="Collapsed"/>
+                    <!--<Button IsEnabled="True" x:Uid="TraslateDetails" x:Name="TraslateDetails" Click="Translate" Style="{StaticResource TranslateAppBarButtonStyle}" Visibility="Collapsed"/>-->
                     <!--<Button IsEnabled="True" x:Name="btnTextSize"  Style="{StaticResource EditAppBarButtonStyle}" Click="btnTextSize_Click" ></Button>-->
                 </StackPanel>
             </Grid>
@@ -28,6 +67,11 @@
 
 
     <Grid x:Name="Layout"  Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.ChildrenTransitions>
+            <TransitionCollection>
+                <PopupThemeTransition />
+            </TransitionCollection>
+        </Grid.ChildrenTransitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="140"/>
             <RowDefinition Height="50"/>
@@ -63,10 +107,10 @@
                     VerticalAlignment="Center" Grid.Column="2" AutomationProperties.Name="Options" Click="Options_Click"/>-->
         </Grid>
         <StackPanel Orientation="Horizontal" Grid.ColumnSpan="3" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center">
-            <TextBlock x:Name="txtName" Style="{StaticResource SubheaderTextStyle}" VerticalAlignment="Center"/>
+            <TextBlock x:Name="txtName" Style="{StaticResource SubheaderTextStyle}" VerticalAlignment="Center" TextAlignment="Justify"/>
             <TextBlock x:Name="convertedName" Style="{StaticResource SubheaderTextStyle}" VerticalAlignment="Center"/>
         </StackPanel>
-        <StackPanel x:Name="mainStack" Orientation="Vertical" Grid.ColumnSpan="3" Background="White" Grid.Row="2" Grid.RowSpan="5" VerticalAlignment="Top" Margin="70,10,70,0" Height="475" PointerEntered="Button_visible" PointerExited="Button_collapsed">
+        <StackPanel x:Name="mainStack" Orientation="Vertical" Grid.ColumnSpan="3" Grid.Row="2" Grid.RowSpan="5" VerticalAlignment="Top" Margin="70,10,70,0" Height="418">
 
             <!--<syncfusion:CoverFlow x:Name="CoverFlowControl" Height="400">
                 <syncfusion:CoverFlow.ItemTemplate>
@@ -78,16 +122,16 @@
 
             <syncfusion:SfCarousel x:Name="CoverFlowControl" Height="400"
                                   VerticalAlignment="Top" 
-                                  Margin="10"  SelectedIndex="20"
-                                  HorizontalAlignment="Left" SelectionChanged="CoverFlowControl_SelectionChanged" DoubleTapped="btnMoreInfo_Click"
+                                  Margin="10"  SelectedIndex="18"
+                                  HorizontalAlignment="Left" SelectionChanged="CoverFlowControl_SelectionChanged" DoubleTapped="btnMoreInfo_Click" ScaleOffset="0.5" RotationAngle="30" Duration="0:0:0.4"
                                   >
                 <syncfusion:SfCarousel.ItemTemplate>
                     <DataTemplate>
-                        <Image Source="{Binding Image}" Tag="{Binding Name}" Stretch="Uniform" />
+                        <Image Source="{Binding Image}" Tag="{Binding Name}"  Stretch="Uniform" />
                     </DataTemplate>
                 </syncfusion:SfCarousel.ItemTemplate>
             </syncfusion:SfCarousel>
-            <StackPanel x:Name="Button_stackpanel" Height="58" HorizontalAlignment="Center" Margin="0,-10,0,0" RenderTransformOrigin="0.488,0.52" VerticalAlignment="Center" Visibility="Collapsed">
+            <!--<StackPanel x:Name="Button_stackpanel" Height="58" HorizontalAlignment="Center" Margin="0,-10,0,0" RenderTransformOrigin="0.488,0.52" VerticalAlignment="Center" Visibility="Collapsed">
                 <Button ToolTipService.ToolTip="" x:Uid="Play_Button" x:Name="Play_Button" Margin="84,9,82,0" HorizontalAlignment="Center" Height="40"  Click="Auto_Play">
                     <Button.Template>
                         <ControlTemplate>
@@ -117,7 +161,7 @@
                         </ControlTemplate>
                     </Button.Template>
                 </Button>
-            </StackPanel>
+            </StackPanel>-->
 
 
         </StackPanel>
@@ -136,6 +180,70 @@
                 <ImageBrush/>
             </ProgressRing.Background>
         </ProgressRing>
+        <Navigation:SfRadialMenu  VerticalAlignment="Top" Height="208"
+                                 NavigationButtonStyle="{StaticResource NavigationButtonStyle}"
+                                   EnableFreeRotation="True" IsOpen="False"
+                                     x:Name="selectionmenu" Padding="5" Margin="887,84,87,0" RadiusX="110" RadiusY="100" Background="#FF01A2A6" RimBackground="#FF29D9C2" Opacity="0.85" CenterRimRadiusFactor="0.2" RimRadiusFactor="0.95" Grid.Column="1" Grid.Row="4" Grid.RowSpan="4" Grid.ColumnSpan="2">
+            <Navigation:SfRadialMenu.RenderTransform>
+                <CompositeTransform x:Name="transform1"/>
+            </Navigation:SfRadialMenu.RenderTransform>
+            <Navigation:SfRadialMenu.Icon>
+                <Grid Background="Transparent">
+                    <Image Source="ms-appx:///Assets/Tools.png" Width="20" Stretch="Uniform"/>
+                </Grid>
+            </Navigation:SfRadialMenu.Icon>
+            <Navigation:SfRadialMenuItem x:Uid="Forward_Button" x:Name="Forward_Button" Click="ForWard_move" ToolTip="" ToolTipPlacement="Top" Margin="6,-1,-6,1"  >
+                <Navigation:SfRadialMenuItem.Header>
+                    <Border Background="Transparent" Padding="5">
+                        <StackPanel>
+                            <Image Source="ms-appx:///Assets/forward.png"/>
+                            <TextBlock Text="Forward" LineHeight="1" TextWrapping="Wrap"/>
+                        </StackPanel>
+                    </Border>
+                </Navigation:SfRadialMenuItem.Header>
+            </Navigation:SfRadialMenuItem>
+            <Navigation:SfRadialMenuItem x:Uid="TraslateDetails" x:Name="TraslateDetails" Click="Translate" ToolTip="" ToolTipPlacement="Top" Margin="-24,3,24,-3" Visibility="Collapsed"  >
+                <Navigation:SfRadialMenuItem.Header>
+                    <Border Background="Transparent" Padding="5">
+                        <StackPanel>
+                            <Image Source="ms-appx:///Assets/Text Editor.png"/>
+                            <TextBlock Text="Trasnslate Title"/>
+                        </StackPanel>
+                    </Border>
+                </Navigation:SfRadialMenuItem.Header>
+            </Navigation:SfRadialMenuItem>
+            <Navigation:SfRadialMenuItem x:Uid="Backward_Button" x:Name="Backward_Button" Click="BackWard_move" ToolTip="" ToolTipPlacement="Top" Margin="-22,-42,22,42"  >
+                <Navigation:SfRadialMenuItem.Header>
+                    <Border Background="Transparent" Padding="5">
+                        <StackPanel>
+                            <Image Source="ms-appx:///Assets/backward.png"/>
+                            <TextBlock Text="Backward"/>
+                        </StackPanel>
+                    </Border>
+                </Navigation:SfRadialMenuItem.Header>
+            </Navigation:SfRadialMenuItem>
+            <Navigation:SfRadialMenuItem x:Uid="Play_Button" x:Name="Play_Button" Click="Auto_Play" ToolTip="" ToolTipPlacement="Top" Margin="55,-29,-55,29" Height="49" VerticalAlignment="Bottom"  >
+                <Navigation:SfRadialMenuItem.Header>
+                    <Border Background="Transparent" Padding="5">
+                        <StackPanel>
+                            <Image Source="ms-appx:///Assets/Play.png"/>
+                            <TextBlock Text="Auto Play"/>
+                        </StackPanel>
+                    </Border>
+                </Navigation:SfRadialMenuItem.Header>
+            </Navigation:SfRadialMenuItem>
+            <Navigation:SfRadialMenuItem x:Uid="Pause_Button" x:Name="Pause_Button" Click="AutoStop" ToolTip="" ToolTipPlacement="Top" Margin="-24,-3,24,3" Visibility="Collapsed"   >
+                <Navigation:SfRadialMenuItem.Header>
+                    <Border Background="Transparent" Padding="5">
+                        <StackPanel>
+                            <Image Source="ms-appx:///Assets/Pause.png"/>
+                            <TextBlock Text="Pause"/>
+                        </StackPanel>
+                    </Border>
+                </Navigation:SfRadialMenuItem.Header>
+            </Navigation:SfRadialMenuItem>
+
+        </Navigation:SfRadialMenu>
         <!--<UI:AdControl x:Name="AddLeft" ApplicationId="6310ffab-747b-4d73-84f5-40c5fa6a8272" AdUnitId="10067099" HorizontalAlignment="Left" Height="250" Margin="30,100,0,0" Grid.Row="2" Grid.RowSpan="5" VerticalAlignment="Top" Width="250" Grid.ColumnSpan="2"/>
         <UI:AdControl x:Name="AddRight" ApplicationId="6310ffab-747b-4d73-84f5-40c5fa6a8272"  AdUnitId="10067099" HorizontalAlignment="Right" Height="250" Margin="0,100,30,0" Grid.Row="2" Grid.RowSpan="5" VerticalAlignment="Top" Grid.ColumnSpan="2" Grid.Column="1" Width="250"/>-->
 
@@ -144,7 +252,7 @@
         <UI:AdControl x:Name="AddRight" ApplicationId="d25517cb-12d4-4699-8bdc-52040c712cab"  AdUnitId="10043104" HorizontalAlignment="Right" Height="250" Margin="0,100,30,0" Grid.Row="2" Grid.RowSpan="5" VerticalAlignment="Top" Grid.ColumnSpan="2" Grid.Column="1" Width="250" Visibility="Collapsed"/>-->
 
 
-          <!--<Grid>
+        <!--<Grid>
             <ContentControl x:Name="SampleContent"
                                 HorizontalContentAlignment="Stretch"
                                 VerticalContentAlignment="Stretch"/>

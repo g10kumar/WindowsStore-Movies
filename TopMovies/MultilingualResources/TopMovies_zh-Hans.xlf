@@ -70,21 +70,21 @@
           <source>Country Setting</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">国家/地区设置</target>
         </trans-unit>
-        <trans-unit id="Resources\Asian_Movies\Text" translate="yes" xml:space="preserve">
+        <trans-unit id="Resources\Asian_Movies\Header" translate="yes" xml:space="preserve">
           <source>Top Asian Movies</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">顶尖亚洲电影</target>
+          <target state="new">Top Asian Movies</target>
         </trans-unit>
-        <trans-unit id="Resources\Bollywood_Movies\Text" translate="yes" xml:space="preserve">
+        <trans-unit id="Resources\Bollywood_Movies\Header" translate="yes" xml:space="preserve">
           <source>Top Bollywood Movies</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">顶尖的宝莱坞电影</target>
+          <target state="new">Top Bollywood Movies</target>
         </trans-unit>
-        <trans-unit id="Resources\Hollywood_Movies\Text" translate="yes" xml:space="preserve">
+        <trans-unit id="Resources\Hollywood_Movies\Header" translate="yes" xml:space="preserve">
           <source>Top Hollywood Movies</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">顶级好莱坞电影</target>
+          <target state="new">Top Hollywood Movies</target>
         </trans-unit>
-        <trans-unit id="Resources\International_Movies\Text" translate="yes" xml:space="preserve">
+        <trans-unit id="Resources\International_Movies\Header" translate="yes" xml:space="preserve">
           <source>Top International Movies</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">顶级国际电影</target>
+          <target state="new">Top International Movies</target>
         </trans-unit>
         <trans-unit id="Resources\AsianTitle" translate="yes" xml:space="preserve">
           <source>Top Asian Movies</source>
@@ -126,9 +126,9 @@
           <source>Quick Forward</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">快速向前</target>
         </trans-unit>
-        <trans-unit id="Resources\Play_Button\[using:Windows.UI.Xaml.Controls]ToolTipService\ToolTip" translate="yes" xml:space="preserve">
+        <trans-unit id="Resources\Play_Button\ToolTip" translate="yes" xml:space="preserve">
           <source>Auto Play Titles</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">自动播放标题</target>
+          <target state="new">Auto Play Titles</target>
         </trans-unit>
         <trans-unit id="Resources\btnBuyDVD\[using:Windows.UI.Xaml.Controls]ToolTipService\ToolTip" translate="yes" xml:space="preserve">
           <source>Buy Movie Online</source>
@@ -138,9 +138,9 @@
           <source>Get Movie Details</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">获取电影的详细信息</target>
         </trans-unit>
-        <trans-unit id="Resources\TraslateDetails\[using:Windows.UI.Xaml.Controls]ToolTipService\ToolTip" translate="yes" xml:space="preserve">
+        <trans-unit id="Resources\TraslateDetails\ToolTip" translate="yes" xml:space="preserve">
           <source>Translate Movie Title To Native Language</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">翻译为本机语言电影标题</target>
+          <target state="new">Translate Movie Title To Native Language</target>
         </trans-unit>
       </group>
     </body>

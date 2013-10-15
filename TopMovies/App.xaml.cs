@@ -53,7 +53,7 @@ namespace TopMovies
             UnhandledException += App_UnhandledException;
             TaskScheduler.UnobservedTaskException += TaskScheduler_UnobservedTaskException;
 
-         //   DebugSettings.EnableFrameRateCounter = true;
+            DebugSettings.EnableFrameRateCounter = true;
 
             //DebugSettings.IsOverdrawHeatMapEnabled = true;
 

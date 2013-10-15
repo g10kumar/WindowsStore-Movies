@@ -165,16 +165,16 @@
   <data name="region" xml:space="preserve">
     <value>Country Setting</value>
   </data>
-  <data name="Asian_Movies.Text" xml:space="preserve">
+  <data name="Asian_Movies.Header" xml:space="preserve">
     <value>Top Asian Movies</value>
   </data>
-  <data name="Bollywood_Movies.Text" xml:space="preserve">
+  <data name="Bollywood_Movies.Header" xml:space="preserve">
     <value>Top Bollywood Movies</value>
   </data>
-  <data name="Hollywood_Movies.Text" xml:space="preserve">
+  <data name="Hollywood_Movies.Header" xml:space="preserve">
     <value>Top Hollywood Movies</value>
   </data>
-  <data name="International_Movies.Text" xml:space="preserve">
+  <data name="International_Movies.Header" xml:space="preserve">
     <value>Top International Movies</value>
   </data>
   <data name="AsianTitle" xml:space="preserve">
@@ -207,7 +207,7 @@
   <data name="Forward_Button.[using:Windows.UI.Xaml.Controls]ToolTipService.ToolTip" xml:space="preserve">
     <value>Quick Forward</value>
   </data>
-  <data name="Play_Button.[using:Windows.UI.Xaml.Controls]ToolTipService.ToolTip" xml:space="preserve">
+  <data name="Play_Button.ToolTip" xml:space="preserve">
     <value>Auto Play Titles</value>
   </data>
   <data name="btnBuyDVD.[using:Windows.UI.Xaml.Controls]ToolTipService.ToolTip" xml:space="preserve">
@@ -216,7 +216,7 @@
   <data name="btnMovieDetails.[using:Windows.UI.Xaml.Controls]ToolTipService.ToolTip" xml:space="preserve">
     <value>Get Movie Details</value>
   </data>
-  <data name="TraslateDetails.[using:Windows.UI.Xaml.Controls]ToolTipService.ToolTip" xml:space="preserve">
+  <data name="TraslateDetails.ToolTip" xml:space="preserve">
     <value>Translate Movie Title To Native Language</value>
   </data>
 </root>
