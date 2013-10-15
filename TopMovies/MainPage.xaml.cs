@@ -16,6 +16,8 @@ using Windows.UI.Core;
 using Windows.UI.ViewManagement;
 using TopMovies.Common;
 using DT.GoogleAnalytics.Metro;
+using Syncfusion.UI.Xaml.Controls.Notification;
+using Syncfusion.UI.Xaml.Controls;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -79,6 +81,21 @@ namespace TopMovies
         /// property is typically used to configure the page.</param>
         protected  override void OnNavigatedTo(NavigationEventArgs e)
         {
+            //List<string> category = new List<string>();            
+            //category.Add("TopEnglish");
+            //category.Add("TopForeign");
+            //category.Add("TopBollywood");
+            //category.Add("TopAsian");
+
+            TopEnglish.ImageList = GetImages("TopEnglish",185);
+            TopForeign.ImageList = GetImages("TopForeign",235);
+            TopBollywood.ImageList = GetImages("TopBollywood",111);
+            TopAsian.ImageList = GetImages("TopAsian",51);
+
+
+
+            
+
             AnalyticsHelper.TrackPageView("/MainPage");
             if (((App)(App.Current)).countryCode == "")
             {
@@ -86,6 +103,8 @@ namespace TopMovies
                 ((App)(App.Current)).countryCode = new Windows.Globalization.GeographicRegion().DisplayName;             
                 
             }
+
+
             //this.LoadState(e.Parameter, null);
         }
 
@@ -124,14 +143,15 @@ namespace TopMovies
             }
         }
 
+        //<summary>This function is executed on clicking the English Section </summary>
         private void btnTopEnglishMovies_Click(object sender, RoutedEventArgs e)
-        {                   
-
+        {               
             sessionData.selectCategory = "TopEnglish";
             // Navigates to Movies page
             this.Frame.Navigate(typeof(Movies));
         }
 
+        //<summary>This function is executed on clicking the International Section </summary>
         private void btnTopForeignMovies_Click(object sender, RoutedEventArgs e)
         {           
 
@@ -140,6 +160,7 @@ namespace TopMovies
             this.Frame.Navigate(typeof(Movies));
         }
 
+        //<summary>This function is executed on clicking the Bollywood Section </summary>
         private void btnTopBollywoodmovies_Click(object sender, RoutedEventArgs e)
         {            
 
@@ -148,7 +169,7 @@ namespace TopMovies
             this.Frame.Navigate(typeof(Movies));
         }
 
-
+        //<summary>This function is executed on clicking the Asian Section </summary>
         private void btnTopAsianmovies_Click(object sender, RoutedEventArgs e)
         {           
 
@@ -156,6 +177,22 @@ namespace TopMovies
             // Navigates to Movies page
             this.Frame.Navigate(typeof(Movies));
 
+        }
+
+        //<summary>This function populates the Hubtile element on the Main page </summary>
+        private ImageList GetImages(string category,int lenght)
+        {
+            ImageList list = new ImageList();
+            Random r = new Random();
+            for (int i = 1; i < 20; i++)
+            {
+                int pic = r.Next(1, lenght);
+                list.Add("Assets/" + category + "/" + pic + ".jpg");
+            }
+
+            return list;
+
+            
         }
         
     }

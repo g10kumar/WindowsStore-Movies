@@ -20,6 +20,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Navigation;
 using System.Threading;
 using DT.GoogleAnalytics.Metro;
+using System.Diagnostics;
 
 namespace TopMovies.Views
 {
@@ -75,7 +76,6 @@ namespace TopMovies.Views
             ShareSourceLoad();
             manageViewState();
             Window.Current.SizeChanged += Current_SizeChanged;
-
             countryList.Add("India", "IN");                             // Adding key & value to the countryList dictionary . 
             countryList.Add("United Kingdom", "GB");
             countryList.Add("United States", "US");
@@ -127,7 +127,6 @@ namespace TopMovies.Views
 
         void Current_SizeChanged(object sender, WindowSizeChangedEventArgs e)
         {
-
             manageViewState();
         }
 
@@ -227,6 +226,7 @@ namespace TopMovies.Views
         {
             AnalyticsHelper.TrackPageView("/Movies");
 
+            //<summary>Firstly we are getting the language information of the system , and then we are making changes accordingly.</summary>
             language = new Windows.ApplicationModel.Resources.Core.ResourceContext().Languages.FirstOrDefault();
 
             if(!language.Contains("en"))
@@ -234,30 +234,21 @@ namespace TopMovies.Views
                 TraslateDetails.Visibility = Windows.UI.Xaml.Visibility.Visible;
             }
 
-
             if (sessionData.selectCategory == "TopBollywood")
             {
-                var BollywoodTitle = loader.GetString("BollywoodTitle");
-
-                pageTitle.Text = BollywoodTitle;
+                pageTitle.Text = loader.GetString("BollywoodTitle");
             }
             else if (sessionData.selectCategory == "TopEnglish")
             {
-                var HollywoodTitle = loader.GetString("HollywoodTitle");
-
-                pageTitle.Text = HollywoodTitle;
+                pageTitle.Text = loader.GetString("HollywoodTitle");
             }
             else if (sessionData.selectCategory == "TopForeign")
             {
-                var InternationalTitle = loader.GetString("InternationalTitle");
-
-                pageTitle.Text = InternationalTitle;
+                pageTitle.Text = loader.GetString("InternationalTitle");
             }
             else if (sessionData.selectCategory == "TopAsian")
             {
-                var AsianTitle = loader.GetString("AsianTitle");
-
-                pageTitle.Text = AsianTitle;
+                pageTitle.Text = loader.GetString("AsianTitle");
             }
             else
                 pageTitle.Text = "Movies";
@@ -271,25 +262,31 @@ namespace TopMovies.Views
             AnalyticsHelper.Track(sessionData.selectCategory, "Movie_Cat_selection");
         }
 
+        //<summary>This function gets the current device Internet Connection Status</summary>
         private void GetIntertCondition()
         {
             InternetconnectionProfile = Windows.Networking.Connectivity.NetworkInformation.GetInternetConnectionProfile();
         }
 
+        //<summary>This function loads the Movie Images and title to the corousel on the Movie Page</summary>
         private async void LoadMovieData()
         {
-            List<Person> list = new List<Person>();
             Windows.Storage.StorageFolder storageFolder = await Windows.ApplicationModel.Package.Current.InstalledLocation.GetFolderAsync("Xml");
             string fileName = sessionData.selectCategory.ToString();
             movieFile = await storageFolder.GetFileAsync(fileName + ".xml");
-
             fileContent = await FileIO.ReadTextAsync(movieFile);
 
             XElement xe = XElement.Parse(fileContent);
 
             countofMovies = xe.Descendants("rank").Count();
 
-            await LoadMovie(fileName, xe);
+            Stopwatch stopWatch = new Stopwatch();
+            stopWatch.Start();
+            Tuple<bool, ObservableCollection<Person>> returened;
+            returened =   await LoadMovie(fileName, xe);
+            imageLoaded = returened.Item1;
+            CoverFlowControl.ItemsSource = returened.Item2;
+            
 
             #region Retrieving last viewing movie
 
@@ -352,22 +349,22 @@ namespace TopMovies.Views
 
             #endregion
 
-            CoverFlowControl.Offset = 50.0;
-            CoverFlowControl.SelectedItemOffset = 120.0;
-            CoverFlowControl.RotationAngle = 45.0;
-            CoverFlowControl.ZOffset = 30.0;
-            CoverFlowControl.ScaleOffset = 0.70;
+            //CoverFlowControl.Offset = 50.0;
+            //CoverFlowControl.SelectedItemOffset = 120.0;
+            //CoverFlowControl.RotationAngle = 45.0;
+            //CoverFlowControl.ZOffset = 30.0;
+            //CoverFlowControl.ScaleOffset = 0.70;
 
             if (imageLoaded)
             {
-
                 ProgressRing.IsActive = false;
             }
+            stopWatch.Stop();
 
             DisplayInfo();
         }
 
-        private async Task LoadMovie(string fileName, XElement xe)
+        private async Task<Tuple<bool,ObservableCollection<Person>>> LoadMovie(string fileName, XElement xe)
         {
 
             //language = new Windows.ApplicationModel.Resources.Core.ResourceContext().Languages.FirstOrDefault();
@@ -378,26 +375,23 @@ namespace TopMovies.Views
                              Desp = movies.Element("desc").Value,
                              //Image = "ms-appx:///Assets/" + movies.Element("rank").Value + " - " + movies.Element("name").Value + ".jpg"
                              Image = "ms-appx:///Assets/" + fileName + "/" + movies.Element("rank").Value + ".jpg"
-                         });
+                         }).AsParallel().AsSequential();
 
 
             Images = new ObservableCollection<Person>();
-
-
+            
             foreach (Person p in query)
             {
+                // await Task.Run(() => images.Add(new Person() { Image = p.Image, Name = p.Name + "#" + p.Desp }));
+                images.Add(p);
 
-                //list.Add(p);                 
-                await Task.Run(() => images.Add(new Person() { Image = p.Image, Name = p.Name + "#" + p.Desp }));
-                //images.Add(new Person() {p});
             }
+           Tuple<bool, ObservableCollection<Person>> _images = new Tuple<bool, ObservableCollection<Person>>(true, images);           
 
-
-            CoverFlowControl.ItemsSource = images;
-
-            imageLoaded = true;
+           return _images ;
         }
 
+        //<summary>This function downloads the information about the movie from WikiPedia</summary>
         private void DisplayInfo()
         {
             string movieName = ((Person)(CoverFlowControl.Items[CoverFlowControl.SelectedIndex])).Name.Split('#')[0].ToString();
@@ -513,7 +507,6 @@ namespace TopMovies.Views
         {         
             convertedName.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
             txtName.Visibility = Windows.UI.Xaml.Visibility.Visible;
-
             DisplayInfo();                           
             
         }
@@ -700,15 +693,15 @@ namespace TopMovies.Views
 
         }
 
-        private void Button_visible(object sender, PointerRoutedEventArgs e)
-        {
-            Button_stackpanel.Visibility = Windows.UI.Xaml.Visibility.Visible;
-        }
+        //private void Button_visible(object sender, PointerRoutedEventArgs e)
+        //{
+        //    Button_stackpanel.Visibility = Windows.UI.Xaml.Visibility.Visible;
+        //}
 
-        private void Button_collapsed(object sender, PointerRoutedEventArgs e)
-        {
-            Button_stackpanel.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-        }
+        //private void Button_collapsed(object sender, PointerRoutedEventArgs e)
+        //{
+        //    Button_stackpanel.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+        //}
 
         private void BackWard_move(object sender, RoutedEventArgs e)
         {
@@ -748,7 +741,7 @@ namespace TopMovies.Views
                         while (true)
                         {
                             
-                            await Task.Delay(3200);
+                            await Task.Delay(2000);
                             if (pos + 1 == countofMovies)
                             {
                                 await Dispatcher.RunAsync(CoreDispatcherPriority.High, delegate { Play_Button.Visibility = Windows.UI.Xaml.Visibility.Visible; Pause_Button.Visibility = Windows.UI.Xaml.Visibility.Collapsed; Backward_Button.Visibility = Windows.UI.Xaml.Visibility.Visible; Forward_Button.Visibility = Windows.UI.Xaml.Visibility.Visible; });
@@ -795,6 +788,8 @@ namespace TopMovies.Views
             ts.Cancel();
             autoPlayOn = false;
         }
+
+
 
     }
 
