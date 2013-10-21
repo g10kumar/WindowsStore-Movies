@@ -34,14 +34,14 @@
                                     <VisualState x:Name="PointerOver">
                                         <Storyboard>
                                             <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Fill" Storyboard.TargetName="BackgroundEllipse">
-                                                <DiscreteObjectKeyFrame KeyTime="0" Value="LightGray"/>
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="#FF1FAEFF"/>
                                             </ObjectAnimationUsingKeyFrames>
                                         </Storyboard>
 
                                     </VisualState>
                                 </VisualStateGroup>
                             </VisualStateManager.VisualStateGroups>
-                            <Ellipse Fill="White" x:Name="BackgroundEllipse" />
+                            <Ellipse Fill="#FF1FAEFF" x:Name="BackgroundEllipse" />
                             <Ellipse Stroke="{TemplateBinding BorderBrush}" StrokeThickness="2"  Fill="Transparent"/>
                             <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Grid>
@@ -103,11 +103,16 @@
                 </Button.Background>
             </Button>
             <TextBlock x:Name="pageTitle" Grid.Column="1" Text="{StaticResource AppName}" Style="{StaticResource PageHeaderTextStyle}"   />
+            <Button Content="sort" Grid.Column="1" HorizontalAlignment="Left" Margin="956,66,0,0" VerticalAlignment="Top" Click="sortingDescending"/>
             <!--<Button Style="{StaticResource SettingsAppBarButtonStyle}" x:Name="options"
                     VerticalAlignment="Center" Grid.Column="2" AutomationProperties.Name="Options" Click="Options_Click"/>-->
         </Grid>
-        <StackPanel Orientation="Horizontal" Grid.ColumnSpan="3" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center">
-            <TextBlock x:Name="txtName" Style="{StaticResource SubheaderTextStyle}" VerticalAlignment="Center" TextAlignment="Justify"/>
+        <StackPanel Orientation="Horizontal" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,5,0,123" Width="1086" Height="50" Grid.Row="1" Grid.RowSpan="2">
+            <TextBlock x:Name="txtName" Style="{StaticResource SubheaderTextStyle}" TextAlignment="Center" RenderTransformOrigin="0.5,0.5" Width="1088" Margin="0,-4">
+                <TextBlock.RenderTransform>
+                    <CompositeTransform TranslateX="-1" TranslateY="6"/>
+                </TextBlock.RenderTransform>
+            </TextBlock>
             <TextBlock x:Name="convertedName" Style="{StaticResource SubheaderTextStyle}" VerticalAlignment="Center"/>
         </StackPanel>
         <StackPanel x:Name="mainStack" Orientation="Vertical" Grid.ColumnSpan="3" Grid.Row="2" Grid.RowSpan="5" VerticalAlignment="Top" Margin="70,10,70,0" Height="418">
