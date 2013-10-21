@@ -87,13 +87,11 @@ namespace TopMovies
             //category.Add("TopBollywood");
             //category.Add("TopAsian");
 
+            //Passin the asset folder name with the number of image files inside the folder to populate the hub tile with the images . 
             TopEnglish.ImageList = GetImages("TopEnglish",185);
             TopForeign.ImageList = GetImages("TopForeign",235);
-            TopBollywood.ImageList = GetImages("TopBollywood",111);
-            TopAsian.ImageList = GetImages("TopAsian",51);
-
-
-
+            TopBollywood.ImageList = GetImages("TopBollywood",104);
+            TopAsian.ImageList = GetImages("TopAsian",112);
             
 
             AnalyticsHelper.TrackPageView("/MainPage");
@@ -119,29 +117,29 @@ namespace TopMovies
         /// <param name="pageState">A dictionary of state preserved by this page during an earlier
         /// session.  This will be null the first time a page is visited.</param>
 
-        protected override void LoadState(Object navigationParameter, Dictionary<String, Object> pageState)
-        {
-            // Restore values stored in session state.
-            //if (pageState != null && pageState.ContainsKey("greetingOutputText"))
-            //{
-            //    greetingOutput.Text = pageState["greetingOutputText"].ToString();
-            //}
+        //protected override void LoadState(Object navigationParameter, Dictionary<String, Object> pageState)
+        //{
+        //    // Restore values stored in session state.
+        //    //if (pageState != null && pageState.ContainsKey("greetingOutputText"))
+        //    //{
+        //    //    greetingOutput.Text = pageState["greetingOutputText"].ToString();
+        //    //}
 
-            // Restore values stored in app data.
-            Windows.Storage.ApplicationDataContainer roamingSettings = Windows.Storage.ApplicationData.Current.RoamingSettings;
-            if (roamingSettings.Values.ContainsKey("lastEnglishMovieIndex"))
-            {
-                sessionData.lastEnglishMovieIndex = roamingSettings.Values["lastEnglishMovieIndex"].ToString();
-            }
-            if (roamingSettings.Values.ContainsKey("lastBollywoodMovieIndex"))
-            {
-                sessionData.lastEnglishMovieIndex = roamingSettings.Values["lastBollywoodMovieIndex"].ToString();
-            }
-            if (roamingSettings.Values.ContainsKey("lastForeignMovieIndex"))
-            {
-                sessionData.lastEnglishMovieIndex = roamingSettings.Values["lastForeignMovieIndex"].ToString();
-            }
-        }
+        //    // Restore values stored in app data.
+        //    Windows.Storage.ApplicationDataContainer roamingSettings = Windows.Storage.ApplicationData.Current.RoamingSettings;
+        //    if (roamingSettings.Values.ContainsKey("lastEnglishMovieIndex"))
+        //    {
+        //        sessionData.lastEnglishMovieIndex = roamingSettings.Values["lastEnglishMovieIndex"].ToString();
+        //    }
+        //    if (roamingSettings.Values.ContainsKey("lastBollywoodMovieIndex"))
+        //    {
+        //        sessionData.lastEnglishMovieIndex = roamingSettings.Values["lastBollywoodMovieIndex"].ToString();
+        //    }
+        //    if (roamingSettings.Values.ContainsKey("lastForeignMovieIndex"))
+        //    {
+        //        sessionData.lastEnglishMovieIndex = roamingSettings.Values["lastForeignMovieIndex"].ToString();
+        //    }
+        //}
 
         //<summary>This function is executed on clicking the English Section </summary>
         private void btnTopEnglishMovies_Click(object sender, RoutedEventArgs e)

@@ -150,9 +150,7 @@ namespace TopMovies
             //tracker.
             AnalyticsHelper.Setup();
             AnalyticsHelper.Track("ApplicationLifecycle", "Start");
-
             Window.Current.Activate();
-
 
             // Register handler for CommandsRequested events from the settings pane
             SettingsPane.GetForCurrentView().CommandsRequested += OnCommandsRequested;
@@ -194,16 +192,6 @@ namespace TopMovies
                 settings.ShowFlyout(new PrivacyPolicyUserControl());
             });
             args.Request.ApplicationCommands.Add(privacypolicy);
-
-            // Add a More Apps command
-            //var moreapps = new SettingsCommand("moreapps", "More Apps", (handler) =>
-            //{
-            //    var settings = new SettingsFlyout();
-            //    settings.ShowFlyout(new MoreAppsUserControl());
-            //});
-
-            //args.Request.ApplicationCommands.Add(moreapps);
-
             
         }
 
@@ -216,6 +204,7 @@ namespace TopMovies
         /// <param name="e">Details about the suspend request.</param>
         private void OnSuspending(object sender, SuspendingEventArgs e)
         {
+            //sessionData.resetValues();
             var deferral = e.SuspendingOperation.GetDeferral();
             //TODO: Save application state and stop any background activity
             

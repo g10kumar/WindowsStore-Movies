@@ -4,9 +4,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TopMovies", "TopMovies.csproj", "{967C69DA-A97E-4C30-B33E-7E3F5DDBAAA7}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Performance Reports", "Performance Reports", "{159A4FC6-09B4-40AD-9D0E-EEE1E70F545F}"
-	ProjectSection(SolutionItems) = preProject
-		TopMovies131004.vspx = TopMovies131004.vspx
-	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

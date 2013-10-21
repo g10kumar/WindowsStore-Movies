@@ -1,157 +1,562 @@
 <?xml version="1.0" encoding="utf-8" ?><root>
-<movie><rank>1</rank>
-    <name>Samurai Rebellion  (Japanese)</name>
-    <desc></desc>
-	</movie><movie><rank>2</rank>
-    <name>Harakiri  (Japanese)</name>
-    <desc></desc>
-	</movie><movie><rank>3</rank>
-    <name>Survive Style 5+  (Japanese)</name>
-    <desc></desc>
-	</movie><movie><rank>4</rank>
-    <name>Ran  (Japanese)</name>
-    <desc></desc>
-	</movie><movie><rank>5</rank>
-    <name>Tony Takitani  (Japanese)</name>
-    <desc></desc>
-	</movie><movie><rank>6</rank>
-    <name>Sanjuro  (Japanese)</name>
-    <desc></desc>
-	</movie><movie><rank>7</rank>
-    <name>Ikiru  (Japanese)</name>
-    <desc></desc>
-	</movie><movie><rank>8</rank>
-    <name>Woman in the Dunes   (Japanese)</name>
-    <desc></desc>
-	</movie><movie><rank>9</rank>
-    <name>Kwaidan  (Japanese)</name>
-    <desc></desc>
-	</movie><movie><rank>10</rank>
-    <name>Tokyo Story  (Japanese)</name>
-    <desc></desc>
-	</movie><movie><rank>11</rank>
-    <name>Throne of Blood  (Japanese)</name>
-    <desc></desc>
-	</movie><movie><rank>12</rank>
-    <name>Seven Samurai  (Japanese)</name>
-    <desc></desc>
-	</movie><movie><rank>13</rank>
-    <name>Yojimbo  (Japanese)</name>
-    <desc></desc>
-	</movie><movie><rank>14</rank>
-    <name>Rashomon  (Japanese)</name>
-    <desc></desc>
-	</movie><movie><rank>15</rank>
-    <name>Sansho the Bailiff  (Japanese)</name>
-    <desc></desc>
-	</movie><movie><rank>16</rank>
-    <name>The Human Condition I: No Greater Love   (Japanese)</name>
-    <desc></desc>
-	</movie><movie><rank>17</rank>
-    <name>The Human Condition II: The Road to Eternity   (Japanese)</name>
-    <desc></desc>
-	</movie><movie><rank>18</rank>
-    <name>The Human Condition III: A Soldier's Prayer   (Japanese)</name>
-    <desc></desc>
-	</movie><movie><rank>19</rank>
-    <name>Shinobi: Heart Under Blade  (Japanese)</name>
-    <desc></desc>
-	</movie><movie><rank>20</rank>
-    <name>Departures  (Japanese)</name>
-    <desc></desc>
-	</movie><movie><rank>21</rank>
-    <name>Farewell My Concubine  (Chinese)</name>
-    <desc></desc>
-	</movie><movie><rank>22</rank>
-    <name>Hero  (Chinese)</name>
-    <desc></desc>
-	</movie><movie><rank>23</rank>
-    <name>To Live  (Chinese)</name>
-    <desc></desc>
-	</movie><movie><rank>24</rank>
-    <name>The Last Emperor  (Chinese)</name>
-    <desc></desc>
-	</movie><movie><rank>25</rank>
-    <name>Raise the Red Lantern  (Chinese)</name>
-    <desc></desc>
-	</movie><movie><rank>26</rank>
-    <name>In the Mood for Love  (Chinese)</name>
-    <desc></desc>
-	</movie><movie><rank>27</rank>
-    <name>2046  (Chinese)</name>
-    <desc></desc>
-	</movie><movie><rank>28</rank>
-    <name>Tuya's Marriage  (Chinese)</name>
-    <desc></desc>
-	</movie><movie><rank>29</rank>
-    <name>House of Flying Daggers  (Chinese)</name>
-    <desc></desc>
-	</movie><movie><rank>30</rank>
-    <name>The Road Home  (Chinese)</name>
-    <desc></desc>
-	</movie><movie><rank>31</rank>
-    <name>The Story of Qiu Ju  (Chinese)</name>
-    <desc></desc>
-	</movie><movie><rank>32</rank>
-    <name>Crouching Tiger, Hidden Dragon  (Chinese)</name>
-    <desc></desc>
-	</movie><movie><rank>33</rank>
-    <name>Shaolin Soccer  (Chinese)</name>
-    <desc></desc>
-	</movie><movie><rank>34</rank>
-    <name>Kung Fu Hustle  (Chinese)</name>
-    <desc></desc>
-	</movie><movie><rank>35</rank>
-    <name>Chungking Express  (Chinese)</name>
-    <desc></desc>
-	</movie><movie><rank>36</rank>
-    <name>Infernal Affairs  (Chinese)</name>
-    <desc></desc>
-	</movie><movie><rank>37</rank>
-    <name>The 36th Chamber of Shaolin  (Chinese)</name>
-    <desc></desc>
-	</movie><movie><rank>38</rank>
-    <name>Red Sorghum  (Chinese)</name>
-    <desc></desc>
-	</movie><movie><rank>39</rank>
-    <name>Fist of Fury (The Chinese Connection)  (Chinese)</name>
-    <desc></desc>
-	</movie><movie><rank>40</rank>
-    <name>Shinjuku Incident  (Chinese)</name>
-    <desc></desc>
-	</movie><movie><rank>41</rank>
-    <name>Spring, Summer, Fall, Winter... and Spring  (Korean)</name>
-    <desc></desc>
-	</movie><movie><rank>42</rank>
-    <name>Oldboy  (Korean)</name>
-    <desc></desc>
-	</movie><movie><rank>43</rank>
-    <name>The Bow  (Korean)</name>
-    <desc></desc>
-	</movie><movie><rank>44</rank>
-    <name>Memories of Murder  (Korean)</name>
-    <desc></desc>
-	</movie><movie><rank>45</rank>
-    <name>Time  (Korean)</name>
-    <desc></desc>
-	</movie><movie><rank>46</rank>
-    <name>Fighter in the Wind  (Korean)</name>
-    <desc></desc>
-	</movie><movie><rank>47</rank>
-    <name>Sympathy for Mr. Vengeance  (Korean)</name>
-    <desc></desc>
-	</movie><movie><rank>48</rank>
-    <name>3-Iron   (Korean)</name>
-    <desc></desc>
-	</movie><movie><rank>49</rank>
-    <name>A Moment to Remember  (Korean)</name>
-    <desc></desc>
-	</movie><movie><rank>50</rank>
-    <name>I Saw the Devil  (Korean)</name>
-    <desc></desc>
-	</movie><movie>
-    <rank>51</rank>
-    <name>Castle in the Sky  (Japanese)</name>
-    <desc></desc>
-  </movie>
+  <movie>
+<rank>1</rank>
+<name>Seven Samurai</name>
+<release>1954</release>
+</movie>
+<movie>
+<rank>2</rank>
+<name>Spirited Away</name>
+<release>2001</release>
+</movie>
+<movie>
+<rank>3</rank>
+<name>Princess Mononoke</name>
+<release>1997</release>
+</movie>
+<movie>
+<rank>4</rank>
+<name>Howl's Moving Castle</name>
+<release>2004</release>
+</movie>
+<movie>
+<rank>5</rank>
+<name>Letters from Iwo Jima</name>
+<release>2006</release>
+</movie>
+<movie>
+<rank>6</rank>
+<name>Battle Royale</name>
+<release>2000</release>
+</movie>
+<movie>
+<rank>7</rank>
+<name>Grave of the Fireflies</name>
+<release>1988</release>
+</movie>
+<movie>
+<rank>8</rank>
+<name>Rashomon</name>
+<release>1950</release>
+</movie>
+<movie>
+<rank>9</rank>
+<name>Ran</name>
+<release>1985</release>
+</movie>
+<movie>
+<rank>10</rank>
+<name>My Neighbor Totoro</name>
+<release>1988</release>
+</movie>
+<movie>
+<rank>11</rank>
+<name>Castle in the Sky</name>
+<release>1986</release>
+</movie>
+<movie>
+<rank>12</rank>
+<name>Akira</name>
+<release>1988</release>
+</movie>
+<movie>
+<rank>13</rank>
+<name>Ghost in the Shell</name>
+<release>1995</release>
+</movie>
+<movie>
+<rank>14</rank>
+<name>Ponyo</name>
+<release>2008</release>
+</movie>
+<movie>
+<rank>15</rank>
+<name>Yojimbo</name>
+<release>1961</release>
+</movie>
+<movie>
+<rank>16</rank>
+<name>Kiki's Delivery Service</name>
+<release>1989</release>
+</movie>
+<movie>
+<rank>17</rank>
+<name>Fearless</name>
+<release>2006</release>
+</movie>
+<movie>
+<rank>18</rank>
+<name>Audition</name>
+<release>1999</release>
+</movie>
+<movie>
+<rank>19</rank>
+<name>Final Fantasy VII: Advent Children</name>
+<release>2005</release>
+</movie>
+<movie>
+<rank>20</rank>
+<name>13 Assassins</name>
+<release>2010</release>
+</movie>
+<movie>
+<rank>21</rank>
+<name>The Blind Swordsman: Zatoichi</name>
+<release>2003</release>
+</movie>
+<movie>
+<rank>22</rank>
+<name>Ring</name>
+<release>1998</release>
+</movie>
+<movie>
+<rank>23</rank>
+<name>Ichi the Killer</name>
+<release>2001</release>
+</movie>
+<movie>
+<rank>24</rank>
+<name>Ikiru</name>
+<release>1952</release>
+</movie>
+<movie>
+<rank>25</rank>
+<name>Throne of Blood</name>
+<release>1957</release>
+</movie>
+<movie>
+<rank>26</rank>
+<name>Departures</name>
+<release>2008</release>
+</movie>
+<movie>
+<rank>27</rank>
+<name>The Girl Who Leapt Through Time</name>
+<release>2006</release>
+</movie>
+<movie>
+<rank>28</rank>
+<name>Ninja Scroll</name>
+<release>1993</release>
+</movie>
+<movie>
+<rank>29</rank>
+<name>Porco Rosso</name>
+<release>1992</release>
+</movie>
+<movie>
+<rank>30</rank>
+<name>Cowboy Bebop: The Movie</name>
+<release>2001</release>
+</movie>
+<movie>
+<rank>31</rank>
+<name>Paprika</name>
+<release>2006</release>
+</movie>
+<movie>
+<rank>32</rank>
+<name>The Secret World of Arrietty</name>
+<release>2010</release>
+</movie>
+<movie>
+<rank>33</rank>
+<name>Harakiri</name>
+<release>1962</release>
+</movie>
+<movie>
+<rank>34</rank>
+<name>High and Low</name>
+<release>1963</release>
+</movie>
+<movie>
+<rank>35</rank>
+<name>Tokyo Story</name>
+<release>1953</release>
+</movie>
+<movie>
+<rank>36</rank>
+<name>Ugetsu</name>
+<release>1953</release>
+</movie>
+<movie>
+<rank>37</rank>
+<name>Sanjuro</name>
+<release>1962</release>
+</movie>
+<movie>
+<rank>38</rank>
+<name>The Twilight Samurai</name>
+<release>2002</release>
+</movie>
+<movie>
+<rank>39</rank>
+<name>The Hidden Fortress</name>
+<release>1958</release>
+</movie>
+<movie>
+<rank>40</rank>
+<name>Nobody Knows</name>
+<release>2004</release>
+</movie>
+<movie>
+<rank>41</rank>
+<name>Kagemusha</name>
+<release>1980</release>
+</movie>
+<movie>
+<rank>42</rank>
+<name>Neon Genesis Evangelion: The End of Evangelion</name>
+<release>1997</release>
+</movie>
+<movie>
+<rank>43</rank>
+<name>Whisper of the Heart</name>
+<release>1995</release>
+</movie>
+<movie>
+<rank>44</rank>
+<name>Fireworks</name>
+<release>1997</release>
+</movie>
+<movie>
+<rank>45</rank>
+<name>5 Centimeters Per Second</name>
+<release>2007</release>
+</movie>
+<movie>
+<rank>46</rank>
+<name>Kikujiro</name>
+<release>1999</release>
+</movie>
+<movie>
+<rank>47</rank>
+<name>Confessions</name>
+<release>2010</release>
+</movie>
+<movie>
+<rank>48</rank>
+<name>Tokyo Godfathers</name>
+<release>2003</release>
+</movie>
+<movie>
+<rank>49</rank>
+<name>Vampire Hunter D: Bloodlust</name>
+<release>2000</release>
+</movie>
+<movie>
+<rank>50</rank>
+<name>Perfect Blue</name>
+<release>1997</release>
+</movie>
+<movie>
+<rank>51</rank>
+<name>Dolls</name>
+<release>2002</release>
+</movie>
+<movie>
+<rank>52</rank>
+<name>Dreams</name>
+<release>1990</release>
+</movie>
+<movie>
+<rank>53</rank>
+<name>Ghost in the Shell 2: Innocence</name>
+<release>2004</release>
+</movie>
+<movie>
+<rank>54</rank>
+<name>Sonatine</name>
+<release>1993</release>
+</movie>
+<movie>
+<rank>55</rank>
+<name>Godzilla</name>
+<release>1954</release>
+</movie>
+<movie>
+<rank>56</rank>
+<name>The Cat Returns</name>
+<release>2002</release>
+</movie>
+<movie>
+<rank>57</rank>
+<name>To Live</name>
+<release>1994</release>
+</movie>
+<movie>
+<rank>58</rank>
+<name>Raise the Red Lantern</name>
+<release>1991</release>
+</movie>
+<movie>
+<rank>59</rank>
+<name>Oldboy</name>
+<release>2003</release>
+</movie>
+<movie>
+<rank>60</rank>
+<name>Memories of Murder</name>
+<release>2003</release>
+</movie>
+<movie>
+<rank>61</rank>
+<name>Spring, Summer, Fall, Winter... and Spring</name>
+<release>2003</release>
+</movie>
+<movie>
+<rank>62</rank>
+<name>My Sassy Girl</name>
+<release>2001</release>
+</movie>
+<movie>
+<rank>63</rank>
+<name>Tae Guk Gi: The Brotherhood of War</name>
+<release>2004</release>
+</movie>
+<movie>
+<rank>64</rank>
+<name>3-Iron</name>
+<release>2004</release>
+</movie>
+<movie>
+<rank>65</rank>
+<name>A Moment to Remember</name>
+<release>2004</release>
+</movie>
+<movie>
+<rank>66</rank>
+<name>The Chaser</name>
+<release>2008</release>
+</movie>
+<movie>
+<rank>67</rank>
+<name>Mother</name>
+<release>2009</release>
+</movie>
+<movie>
+<rank>68</rank>
+<name>The Man from Nowhere</name>
+<release>2010</release>
+</movie>
+<movie>
+<rank>69</rank>
+<name>J.S.A.: Joint Security Area</name>
+<release>2000</release>
+</movie>
+<movie>
+<rank>70</rank>
+<name>I Saw the Devil</name>
+<release>2010</release>
+</movie>
+<movie>
+<rank>71</rank>
+<name>Sympathy for Mr. Vengeance</name>
+<release>2002</release>
+</movie>
+<movie>
+<rank>72</rank>
+<name>A Bittersweet Life</name>
+<release>2005</release>
+</movie>
+<movie>
+<rank>73</rank>
+<name>Sympathy for Lady Vengeance</name>
+<release>2005</release>
+</movie>
+<movie>
+<rank>74</rank>
+<name>The Good, the Bad, the Weird</name>
+<release>2008</release>
+</movie>
+<movie>
+<rank>75</rank>
+<name>A Tale of Two Sisters</name>
+<release>2003</release>
+</movie>
+<movie>
+<rank>76</rank>
+<name>Thirst</name>
+<release>2009</release>
+</movie>
+<movie>
+<rank>77</rank>
+<name>The Host</name>
+<release>2006</release>
+</movie>
+<movie>
+<rank>78</rank>
+<name>I'm a Cyborg, But That's OK</name>
+<release>2006</release>
+</movie>
+<movie>
+<rank>79</rank>
+<name>War of the Arrows</name>
+<release>2011</release>
+</movie>
+<movie>
+<rank>80</rank>
+<name>The Killer</name>
+<release>1989</release>
+</movie>
+<movie>
+<rank>81</rank>
+<name>Red Beard</name>
+<release>1965</release>
+</movie>
+<movie>
+<rank>82</rank>
+<name>Eat Drink Man Woman</name>
+<release>1994</release>
+</movie>
+<movie>
+<rank>83</rank>
+<name>In the Mood for Love</name>
+<release>2000</release>
+</movie>
+<movie>
+<rank>84</rank>
+<name>Hard Boiled</name>
+<release>1992</release>
+</movie>
+<movie>
+<rank>85</rank>
+<name>Infernal Affairs</name>
+<release>2002</release>
+</movie>
+<movie>
+<rank>86</rank>
+<name>Chungking Express</name>
+<release>1994</release>
+</movie>
+<movie>
+<rank>87</rank>
+<name>Ip Man</name>
+<release>2008</release>
+</movie>
+<movie>
+<rank>88</rank>
+<name>The King of Masks</name>
+<release>1997</release>
+</movie>
+<movie>
+<rank>89</rank>
+<name>The Wedding Banquet</name>
+<release>1993</release>
+</movie>
+<movie>
+<rank>90</rank>
+<name>Hero</name>
+<release>2002</release>
+</movie>
+<movie>
+<rank>91</rank>
+<name>Farewell My Concubine</name>
+<release>1993</release>
+</movie>
+<movie>
+<rank>92</rank>
+<name>Fist of Legend</name>
+<release>1994</release>
+</movie>
+<movie>
+<rank>93</rank>
+<name>Yi Yi</name>
+<release>2000</release>
+</movie>
+<movie>
+<rank>94</rank>
+<name>The Road Home</name>
+<release>1999</release>
+</movie>
+<movie>
+<rank>95</rank>
+<name>Fallen Angels</name>
+<release>1995</release>
+</movie>
+<movie>
+<rank>96</rank>
+<name>Castaway on the Moon</name>
+<release>2009</release>
+</movie>
+<movie>
+<rank>97</rank>
+<name>The Last Emperor</name>
+<release>1987</release>
+</movie>
+<movie>
+<rank>98</rank>
+<name>Poetry </name>
+<release>2010</release>
+</movie>
+<movie>
+<rank>99</rank>
+<name>Happy Together</name>
+<release>1997</release>
+</movie>
+<movie>
+<rank>100</rank>
+<name>Shower</name>
+<release>1999</release>
+</movie>
+<movie>
+<rank>101</rank>
+<name>The 36th Chamber of Shaolin</name>
+<release>1978</release>
+</movie>
+<movie>
+<rank>102</rank>
+<name>Aftershock</name>
+<release>2010</release>
+</movie>
+<movie>
+<rank>103</rank>
+<name>Ong-bak</name>
+<release>2003</release>
+</movie>
+<movie>
+<rank>104</rank>
+<name>Shutter</name>
+<release>2004</release>
+</movie>
+<movie>
+<rank>105</rank>
+<name>Last Life in the Universe</name>
+<release>2003</release>
+</movie>
+<movie>
+<rank>106</rank>
+<name>The Love of Siam</name>
+<release>2007</release>
+</movie>
+<movie>
+<rank>107</rank>
+<name>Syndromes and a Century</name>
+<release>2006</release>
+</movie>
+<movie>
+<rank>108</rank>
+<name>Lust, Caution</name>
+<release>2007</release>
+</movie>
+<movie>
+<rank>109</rank>
+<name>House of Flying Daggers</name>
+<release>2004</release>
+</movie>
+<movie>
+<rank>110</rank>
+<name>Days of Being Wild</name>
+<release>1990</release>
+</movie>
+<movie>
+<rank>111</rank>
+<name>Nausicaä of the Valley of the Wind</name>
+<release>1984</release>
+</movie>
+<movie>
+<rank>112</rank>
+<name>Death Note</name>
+<release>2006</release>
+</movie>
 </root>
