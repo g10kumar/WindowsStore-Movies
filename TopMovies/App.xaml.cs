@@ -101,21 +101,21 @@ namespace TopMovies
                 }
 
                 Windows.Storage.ApplicationDataContainer roamingSettings = Windows.Storage.ApplicationData.Current.RoamingSettings;
-                if (roamingSettings.Values.ContainsKey("lastEnglishMovieIndex"))
+                if (roamingSettings.Values.ContainsKey("lastEnglishMovie"))
                 {
-                    sessionData.lastEnglishMovieIndex = roamingSettings.Values["lastEnglishMovieIndex"].ToString();
+                    sessionData.lastEnglishMovie = roamingSettings.Values["lastEnglishMovie"].ToString();
                 }
-                if (roamingSettings.Values.ContainsKey("lastBollywoodMovieIndex"))
+                if (roamingSettings.Values.ContainsKey("lastBollywoodMovie"))
                 {
-                    sessionData.lastBollywoodMovieIndex = roamingSettings.Values["lastBollywoodMovieIndex"].ToString();
+                    sessionData.lastBollywoodMovie = roamingSettings.Values["lastBollywoodMovie"].ToString();
                 }
-                if (roamingSettings.Values.ContainsKey("lastForeignMovieIndex"))
+                if (roamingSettings.Values.ContainsKey("lastForeignMovie"))
                 {
-                    sessionData.lastForeignMovieIndex = roamingSettings.Values["lastForeignMovieIndex"].ToString();
+                    sessionData.lastForeignMovie = roamingSettings.Values["lastForeignMovie"].ToString();
                 }
-                if (roamingSettings.Values.ContainsKey("lastAsianMovieIndex"))
+                if (roamingSettings.Values.ContainsKey("lastAsianMovie"))
                 {
-                    sessionData.lastAsianMovieIndex = roamingSettings.Values["lastAsianMovieIndex"].ToString();
+                    sessionData.lastAsianMovie = roamingSettings.Values["lastAsianMovie"].ToString();
                 }
                 if (roamingSettings.Values["userCountrySetting"] != null)
                 {
@@ -224,22 +224,23 @@ namespace TopMovies
     {
         public static string selectCategory { get; set; }
         //public static string lastMovieIndex { get; set; }
-        public static string lastEnglishMovieIndex { get; set; }
-        public static string lastForeignMovieIndex { get; set; }
-        public static string lastBollywoodMovieIndex { get; set; }
-        public static string lastAsianMovieIndex { get; set; }
-        public static string userCountrySetting { get; set; }  
-
-               
+        public static string lastEnglishMovie { get; set; }
+        public static string lastForeignMovie { get; set; }
+        public static string lastBollywoodMovie { get; set; }
+        public static string lastAsianMovie { get; set; }
+        public static string userCountrySetting { get; set; }
+        public static int sortOrder { get; set; }
+        public static string filterLang { get; set; }
+        public static string filterGenere { get; set; }
         
 public static void resetValues()
         {
             sessionData.selectCategory = "";
             //sessionData.lastMovieIndex = "";
-            sessionData.lastEnglishMovieIndex = "";
-            sessionData.lastForeignMovieIndex = "";
-            sessionData.lastBollywoodMovieIndex = "";
-            sessionData.lastAsianMovieIndex = "";
+            sessionData.lastEnglishMovie = "";
+            sessionData.lastForeignMovie = "";
+            sessionData.lastBollywoodMovie = "";
+            sessionData.lastAsianMovie = "";
             sessionData.userCountrySetting = "";
         }
     }

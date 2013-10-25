@@ -12,14 +12,12 @@ namespace TopMovies
     class CarouselImagePopulator
     {
         //Declaring fields and variables . 
-        private int sort;
-        private string filterLanguage;
-        private string filterGenere;
         private string cate;
         int elementCount;
         string selectedMovie;
         private ObservableCollection<Person> images;
         int newIndex;
+        int movieCounter=0;
 
         public ObservableCollection<Person> Images
         {
@@ -28,11 +26,19 @@ namespace TopMovies
         }
 
         //This constructor takes in sortorder , language to filter, genere, catetory
-        //public CarouselImagePopulator(string language,string category)
+        //public CarouselImagePopulator(string filter, int filterType)
         //{
-        //    filterLanguage = language;
-        //    cate = category;
-        //}
+
+        //    if (filterType == 0)
+        //    {
+        //        filterLanguage = filter;
+        //    }
+        //    else
+        //    {
+        //        filterGenere = filter;
+        //    }
+
+        // }
 
         ////This constructor takes in sort order, genere and category. This is to be used in the English and the bollywood section . 
         //public CarouselImagePopulator(string genere, string category)
@@ -42,46 +48,40 @@ namespace TopMovies
         //}
 
 
-        public CarouselImagePopulator()
-        {
-            filterLanguage = null;
-            sort = 0;
-            filterGenere = null;
-        }
-
         //This constructor takes in sortorder , language to filter, genere, catetory
-        public CarouselImagePopulator(int sortOrder, string category,string movieName)
-        {
-            sort = sortOrder;
-            cate = category;
-            selectedMovie = movieName;
-        }
+        //public CarouselImagePopulator(int sortOrder)
+        //{
+        //    sort = sortOrder;
+        //}
 
-        public async Task<Tuple<bool, ObservableCollection<Person>,int>> LoadMovieData()
-        {
+        public async Task<Tuple<bool, ObservableCollection<Person>,int,int>> LoadMovieData()
+        {   
+            Images = new ObservableCollection<Person>();
+
+            IEnumerable<Person> query = null;
             #region Retrieving last viewing movie
 
             switch (sessionData.selectCategory)
             {
                 case "TopEnglish":
                     cate = "TopEnglish";
-                    //if (sessionData.lastEnglishMovieIndex != null)
-                    //    CoverFlowControl.SelectedIndex = Convert.ToInt32(sessionData.lastEnglishMovieIndex);
+                    if (sessionData.lastEnglishMovie != null)
+                        selectedMovie= sessionData.lastEnglishMovie;
                     break;
                 case "TopBollywood":
                     cate = "TopBollywood";
-                    //if (sessionData.lastBollywoodMovieIndex != null)
-                    //    CoverFlowControl.SelectedIndex = Convert.ToInt32(sessionData.lastBollywoodMovieIndex);
+                    if (sessionData.lastBollywoodMovie != null)
+                        selectedMovie = sessionData.lastBollywoodMovie;
                     break;
                 case "TopForeign":
                     cate = "TopForeign";
-                    //if (sessionData.lastForeignMovieIndex != null)
-                    //    CoverFlowControl.SelectedIndex = Convert.ToInt32(sessionData.lastForeignMovieIndex);
+                    if (sessionData.lastForeignMovie != null)
+                        selectedMovie = sessionData.lastForeignMovie;
                     break;
                 case "TopAsian":
                     cate = "TopAsian";
-                    //if (sessionData.lastAsianMovieIndex != null)
-                    //    CoverFlowControl.SelectedIndex = Convert.ToInt32(sessionData.lastAsianMovieIndex);
+                    if (sessionData.lastAsianMovie != null)
+                        selectedMovie = sessionData.lastAsianMovie;
                     break;
                 //default:
                 //    CoverFlowControl.SelectedIndex = 20;
@@ -95,68 +95,202 @@ namespace TopMovies
                 Windows.Storage.StorageFolder storageFolder = await Windows.ApplicationModel.Package.Current.InstalledLocation.GetFolderAsync("Xml");
                 XDocument xmlfile = XDocument.Load(storageFolder.Path + @"\" + cate + ".xml");
 
-                if (sort == 0 && filterLanguage == null && filterGenere == null)
-                {
-                    var query = (from movies in xmlfile.Root.Elements("movie")
-                                 select new Person
+                if (sessionData.sortOrder == 0 && sessionData.filterGenere == null && sessionData.filterLang == null)
+				{
+					    query = (from movies in xmlfile.Root.Elements("movie")
+                                select new Person
                                 {
-                                    Name = movies.Element("name").Value,
-                                    //Desp = movies.Element("desc").Value,
+                                    Name = movies.Element("name").Value,                                   
                                     Image = "ms-appx:///Assets/" + cate + "/" + movies.Element("rank").Value + ".jpg"
-                                }).AsParallel().AsSequential();
-
-                    elementCount = query.Count();
-
-                    Images = new ObservableCollection<Person>();
-
-                    foreach (Person p in query)
-                    {
-                        //Images.Add(p);
-                        images.Add(p);
-                        if (p.Name == selectedMovie)
-                        {
-                            newIndex = Convert.ToInt32(p.Image.Split(new char[] { '/', '.' })[5]);
-                        }
-                    }
+                                }).AsParallel().AsSequential();    
+								
+				}
+                else if (sessionData.sortOrder == 0 && (sessionData.filterGenere != null || sessionData.filterLang != null))
+                {
+                         query = (from movies in xmlfile.Root.Elements("movie")
+                                     select new Person
+                                    {
+                                		Genere = movies.Attribute("genere").Value,
+                                        Language = movies.Attribute("language").Value,
+                                        Name = movies.Element("name").Value,
+                                        Image = "ms-appx:///Assets/" + cate + "/" + movies.Element("rank").Value + ".jpg"
+                                    }).AsParallel().AsSequential();                  
                     
                 }
-                else if (sort == 1 && filterLanguage == null && filterGenere == null)
+                if (sessionData.sortOrder != 0 && sessionData.filterGenere == null && sessionData.filterLang == null)
                 {
-                    var query = (from movies in xmlfile.Root.Elements("movie")
-                                 orderby (int)movies.Element("release")
-                                 select new Person
-                                 {
-                                     Name = movies.Element("name").Value,
-                                     Image = "ms-appx:///Assets/" + cate + "/" + movies.Element("rank").Value + ".jpg"
-                                 }).AsParallel().AsSequential();
+
+                    switch (sessionData.sortOrder)
+                        {
+                            case 1:
+                                query = (from movies in xmlfile.Root.Elements("movie")
+                                         orderby movies.Attribute("release").Value
+                                         select new Person
+                                         {
+                                             Name = movies.Element("name").Value,
+                                             Image = "ms-appx:///Assets/" + cate + "/" + movies.Element("rank").Value + ".jpg"
+                                         }).AsParallel().AsSequential();
+                                break;
+                            case 2:
+                                 query = (from movies in xmlfile.Root.Elements("movie")
+                                         orderby movies.Attribute("release").Value descending
+                                         select new Person
+                                         {
+                                             Name = movies.Element("name").Value,
+                                             Image = "ms-appx:///Assets/" + cate + "/" + movies.Element("rank").Value + ".jpg"
+                                         }).AsParallel().AsSequential();
+                                break;
+                            case 3:
+                                query = (from movies in xmlfile.Root.Elements("movie")
+                                         orderby movies.Attribute("rating").Value
+                                         select new Person
+                                         {
+                                             Name = movies.Element("name").Value,
+                                             Image = "ms-appx:///Assets/" + cate + "/" + movies.Element("rank").Value + ".jpg"
+                                         }).AsParallel().AsSequential();
+                                break;
+                            case 4:
+                                query = (from movies in xmlfile.Root.Elements("movie")
+                                         orderby movies.Attribute("rating").Value descending
+                                         select new Person
+                                         {
+                                             Name = movies.Element("name").Value,
+                                             Image = "ms-appx:///Assets/" + cate + "/" + movies.Element("rank").Value + ".jpg"
+                                         }).AsParallel().AsSequential();
+                                break;
+
+                        }                
+
+                }
+                else if (sessionData.sortOrder != 0 && (sessionData.filterGenere != null || sessionData.filterLang != null))
+                {
+                    switch (sessionData.sortOrder)
+                    {
+                        case 1:
+                            query = (from movies in xmlfile.Root.Elements("movie")
+                                     orderby movies.Attribute("release").Value
+                                     select new Person
+                                     {
+                                         Genere = movies.Attribute("genere").Value,
+                                         Language = movies.Attribute("language").Value,
+                                         Name = movies.Element("name").Value,
+                                         Image = "ms-appx:///Assets/" + cate + "/" + movies.Element("rank").Value + ".jpg"
+                                     }).AsParallel().AsSequential();
+                            break;
+                        case 2:
+                            query = (from movies in xmlfile.Root.Elements("movie")
+                                     orderby movies.Attribute("release").Value descending
+                                     select new Person
+                                     {
+                                         Genere = movies.Attribute("genere").Value,
+                                         Language = movies.Attribute("language").Value,
+                                         Name = movies.Element("name").Value,
+                                         Image = "ms-appx:///Assets/" + cate + "/" + movies.Element("rank").Value + ".jpg"
+                                     }).AsParallel().AsSequential();
+                            break;
+                        case 3:
+                            query = (from movies in xmlfile.Root.Elements("movie")
+                                     orderby movies.Attribute("rating").Value
+                                     select new Person
+                                     {
+                                         Genere = movies.Attribute("genere").Value,
+                                         Language = movies.Attribute("language").Value,
+                                         Name = movies.Element("name").Value,
+                                         Image = "ms-appx:///Assets/" + cate + "/" + movies.Element("rank").Value + ".jpg"
+                                     }).AsParallel().AsSequential();
+                            break;
+                        case 4:
+                            query = (from movies in xmlfile.Root.Elements("movie")
+                                     orderby movies.Attribute("rating").Value descending
+                                     select new Person
+                                     {
+                                         Genere = movies.Attribute("genere").Value,
+                                         Language = movies.Attribute("language").Value,
+                                         Name = movies.Element("name").Value,
+                                         Image = "ms-appx:///Assets/" + cate + "/" + movies.Element("rank").Value + ".jpg"
+                                     }).AsParallel().AsSequential();
+                            break;
+                    }
+                
+                }
+
+                if ((sessionData.filterLang != null || sessionData.filterGenere != null) && query != null)
+                {
+                		IEnumerable<Person> filteredQuery = null;
+                        if (sessionData.filterLang != null && sessionData.filterGenere == null)
+                        {
+                        	     filteredQuery =  (from movies in query
+                                                   where movies.Language.Contains(sessionData.filterLang)
+ 												   select new Person 
+ 													{
+ 													  Name = movies.Name,
+                                     				  Image = movies.Image
+ 													}).AsParallel().AsSequential(); 	
+                        }
+                        else if (sessionData.filterLang == null && sessionData.filterGenere != null)
+                        {
+                    			  filteredQuery =  (from movies in query
+                                                    where movies.Genere.Contains(sessionData.filterGenere)
+ 												   select new Person 
+ 													{
+ 													 Name = movies.Name,
+                                        		     Image = movies.Image
+ 													}).AsParallel().AsSequential(); 	
+                    
+                        }
+                        else if (sessionData.filterLang != null && sessionData.filterGenere != null)
+                        {
+                     			  filteredQuery =  (from movies in query
+                                                    where movies.Genere.Contains(sessionData.filterGenere) && movies.Language.Contains(sessionData.filterLang)
+ 									               select new Person 
+ 													  {
+ 													    Name = movies.Name,
+                                     				    Image = movies.Image
+ 													  }).AsParallel().AsSequential(); 	
+                    
+                        }
+                    
+                        elementCount = filteredQuery.Count();
+                    
+                        foreach (Person p in filteredQuery)
+                        {
+
+                            //Images.Add(p);
+                            images.Add(p);
+                            if (p.Name == selectedMovie)
+                            {
+                                newIndex = movieCounter;
+                            }
+                            movieCounter++;
+                        }
+                Tuple<bool, ObservableCollection<Person>, int, int> _filteredImages = new Tuple<bool, ObservableCollection<Person>, int, int>(true, images, elementCount, newIndex);
+
+
+
+                return _filteredImages;
+                    
+                }
+               
 
                     elementCount = query.Count();
 
-                    Images = new ObservableCollection<Person>();
 
                     foreach (Person p in query)
                     {
+
                         //Images.Add(p);
                         images.Add(p);
                         if (p.Name == selectedMovie)
                         {
-                            newIndex = Convert.ToInt32(p.Image.Split(new char[] { '/', '.' })[5]);
+                            newIndex = movieCounter;
                         }
+                        movieCounter++;
                     }
 
-                }
+                    Tuple<bool, ObservableCollection<Person>, int, int> _images = new Tuple<bool, ObservableCollection<Person>, int, int>(true, images, elementCount, newIndex);
 
-                Tuple<bool, ObservableCollection<Person>, int> _images = new Tuple<bool, ObservableCollection<Person>, int>(true, images, elementCount);
-
-                return _images;
-
-
-
-            //var query = (from movies in xmlfile.Root.Elements("movie")
-            //             orderby (DateTime)movies.Element("release")
-            //             where movies.Element("genere").Value.Contains("Action")
-            //             select movies).AsParallel();
-
+                    return _images;
+                
 
         }
     }

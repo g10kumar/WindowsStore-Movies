@@ -94,21 +94,65 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
-            <Button x:Name="backButton" Click="GoBack" IsEnabled="{Binding Frame.CanGoBack, ElementName=pageRoot}" Style="{StaticResource BackButtonStyle}" >
+            <Button x:Name="backButton" Click="GoBack" IsEnabled="{Binding Frame.CanGoBack, ElementName=pageRoot}" Style="{StaticResource BackButtonStyle}" BorderBrush="#FF1FAEFF" Foreground="#FF1FAEFF" >
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="Black"/>
-                        <GradientStop Color="White" Offset="1"/>
-                    </LinearGradientBrush>
+                        <GradientStop Color="#FF1FAEFF"/>
+                        <GradientStop Color="#FF1FAEFF" Offset="1"/>
+                    </LinearGradientBrush>                    
                 </Button.Background>
             </Button>
-            <TextBlock x:Name="pageTitle" Grid.Column="1" Text="{StaticResource AppName}" Style="{StaticResource PageHeaderTextStyle}"   />
-            <Button Content="sort" Grid.Column="1" HorizontalAlignment="Left" Margin="956,66,0,0" VerticalAlignment="Top" Click="sortingDescending"/>
+            <TextBlock x:Name="pageTitle"  Style="{StaticResource PageHeaderTextStyle}" Grid.ColumnSpan="2" Margin="117,0,33,40" Foreground="#FF1FAEFF"   />
+            <ComboBox x:Name="sorter" Grid.Column="1" HorizontalAlignment="Left" Margin="981,72,0,0" VerticalAlignment="Top" BorderBrush="#FF1FAEFF" Foreground="#FF1FAEFF" Width="143">
+                <x:String>Sort By:Default</x:String>
+                <x:String>Oldest to Newest</x:String>
+                <x:String>Newest to Oldest</x:String>
+                <x:String>Rated Lowest to Highest</x:String>
+                <x:String>Rated Highest to Lowest</x:String>
+            </ComboBox>
+            <ComboBox x:Name="genere" Grid.Column="1" HorizontalAlignment="Left" Margin="821,72,0,0" VerticalAlignment="Top" BorderBrush="#FF1FAEFF" Foreground="#FF1FAEFF" RenderTransformOrigin="0.031,0.516" Width="125">
+                <x:String>Genere:Default</x:String>
+                <x:String>Action</x:String>
+                <x:String>Adventure</x:String>
+                <x:String>Animation</x:String>
+                <x:String>Comedy</x:String>
+                <x:String>Crime</x:String>
+                <x:String>Drama</x:String>
+                <x:String>Family</x:String>
+                <x:String>Fantasy</x:String>
+                <x:String>Horror</x:String>
+                <x:String>Mystery</x:String>
+                <x:String>Romance</x:String>
+                <x:String>Thriller</x:String>
+                <x:String>War</x:String>
+            </ComboBox>
+            <ComboBox x:Name="filterlang" Grid.Column="1" HorizontalAlignment="Left" Margin="647,72,0,0" VerticalAlignment="Top" Width="126" BorderBrush="#FF1FAEFF" Foreground="#FF1FAEFF" Visibility="Collapsed">
+                <x:String>Language:Default</x:String>
+                <x:String>English</x:String>
+                <x:String>French</x:String>
+                <x:String>German</x:String>
+                <x:String>Italian</x:String>
+                <x:String>Japanese</x:String>
+                <x:String>Polish</x:String>
+                <x:String>Portuguese</x:String>
+                <x:String>Russian</x:String>
+                <x:String>Spanish</x:String>
+                <x:String>Swedish</x:String>
+            </ComboBox>
+            <ComboBox x:Name="filterlang_asian" Grid.Column="1" HorizontalAlignment="Left" Margin="647,72,0,0" VerticalAlignment="Top" Width="126" BorderBrush="#FF1FAEFF" Foreground="#FF1FAEFF" Visibility="Collapsed">
+                <x:String>Language:Default</x:String>
+                <x:String>Cantonese</x:String>
+                <x:String>Chinese</x:String>
+                <x:String>English</x:String>
+                <x:String>Japanese</x:String>
+                <x:String>Korean</x:String>
+                <x:String>Thai</x:String>
+            </ComboBox>
             <!--<Button Style="{StaticResource SettingsAppBarButtonStyle}" x:Name="options"
                     VerticalAlignment="Center" Grid.Column="2" AutomationProperties.Name="Options" Click="Options_Click"/>-->
         </Grid>
         <StackPanel Orientation="Horizontal" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,5,0,123" Width="1086" Height="50" Grid.Row="1" Grid.RowSpan="2">
-            <TextBlock x:Name="txtName" Style="{StaticResource SubheaderTextStyle}" TextAlignment="Center" RenderTransformOrigin="0.5,0.5" Width="1088" Margin="0,-4">
+            <TextBlock x:Name="txtName" Style="{StaticResource SubheaderTextStyle}" TextAlignment="Center" RenderTransformOrigin="0.5,0.5" Width="1088" Margin="0,-4" Foreground="#FF1FAEFF">
                 <TextBlock.RenderTransform>
                     <CompositeTransform TranslateX="-1" TranslateY="6"/>
                 </TextBlock.RenderTransform>

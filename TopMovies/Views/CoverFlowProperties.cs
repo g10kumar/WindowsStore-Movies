@@ -80,16 +80,18 @@ namespace TopMovies.Views
 
         public string Image { get; set; }
 
-        public string Desp { get; set; }
+        public string Language { get; set; }
+
+        public string Genere { get; set; }
 
         public Person()
         { }
 
-        public Person(string name, string image, string desp, string title)
+        public Person(string name, string image, string title)
         {
             Name = name;
             Image = image;
-            Desp = desp;
+
         }
     }
 }
