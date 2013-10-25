@@ -132,7 +132,6 @@
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
-    <None Include="Assets\TopBollywood\Thumbs.db" />
     <None Include="MultilingualResources\TopMovies_de.xlf" />
     <None Include="MultilingualResources\TopMovies_es.xlf" />
     <None Include="MultilingualResources\TopMovies_fr.xlf" />
@@ -273,7 +272,6 @@
     <Content Include="Assets\TopBollywood\101.jpg" />
     <Content Include="Assets\TopBollywood\102.jpg" />
     <Content Include="Assets\TopBollywood\103.jpg" />
-    <Content Include="Assets\TopBollywood\104.jpg" />
     <Content Include="Assets\TopBollywood\11.jpg" />
     <Content Include="Assets\TopBollywood\12.jpg" />
     <Content Include="Assets\TopBollywood\13.jpg" />
@@ -846,8 +844,7 @@
     <Reference Include="DT.GoogleAnalytics.Metro">
       <HintPath>packages\w8ga.2.4\lib\winrt45\DT.GoogleAnalytics.Metro.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.SfCarousel.WinRT, Version=11.104.0.21, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Syncfusion.SfCarousel.WinRT">
       <HintPath>C:\Program Files\Syncfusion\Essential Studio\11.3.0.30\Assemblies for WinRT\Syncfusion.SfCarousel.WinRT.dll</HintPath>
     </Reference>
     <Reference Include="Syncfusion.SfHubTile.WinRT">
@@ -856,8 +853,7 @@
     <Reference Include="Syncfusion.SfRadialMenu.WinRT">
       <HintPath>C:\Program Files\Syncfusion\Essential Studio\11.3.0.30\Assemblies for WinRT\Syncfusion.SfRadialMenu.WinRT.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.SfShared.WinRT, Version=11.104.0.21, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Syncfusion.SfShared.WinRT">
       <HintPath>C:\Program Files\Syncfusion\Essential Studio\11.3.0.30\Assemblies for WinRT\Syncfusion.SfShared.WinRT.dll</HintPath>
     </Reference>
   </ItemGroup>

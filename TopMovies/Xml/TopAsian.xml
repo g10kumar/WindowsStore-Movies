@@ -1,562 +1,562 @@
 <?xml version="1.0" encoding="utf-8" ?><root>
-  <movie>
+   <movie release="1954" rating="0.89" genere="Action, Drama" language="Japanese">
 <rank>1</rank>
 <name>Seven Samurai</name>
-<release>1954</release>
+<imdbid>47478</imdbid>
 </movie>
-<movie>
+<movie release="2001" rating="0.85" genere="Animation, Adventure, Family, Fantasy, Mystery" language="Japanese">
 <rank>2</rank>
 <name>Spirited Away</name>
-<release>2001</release>
+<imdbid>245429</imdbid>
 </movie>
-<movie>
+<movie release="1997" rating="0.83" genere="Animation, Action, Adventure, Drama, Fantasy, Mystery, Romance, War" language="Japanese,English">
 <rank>3</rank>
 <name>Princess Mononoke</name>
-<release>1997</release>
+<imdbid>119698</imdbid>
 </movie>
-<movie>
+<movie release="2004" rating="0.81" genere="Animation, Action, Adventure, Family, Fantasy, Romance" language="Japanese">
 <rank>4</rank>
 <name>Howl's Moving Castle</name>
-<release>2004</release>
+<imdbid>347149</imdbid>
 </movie>
-<movie>
+<movie release="2006" rating="0.78" genere="Drama, History, War" language="Japanese,English">
 <rank>5</rank>
 <name>Letters from Iwo Jima</name>
-<release>2006</release>
+<imdbid>498380</imdbid>
 </movie>
-<movie>
+<movie release="2000" rating="0.79" genere="Adventure, Sci-Fi, Thriller" language="Japanese">
 <rank>6</rank>
 <name>Battle Royale</name>
-<release>2000</release>
+<imdbid>266308</imdbid>
 </movie>
-<movie>
+<movie release="1988" rating="0.85" genere="Animation, Drama, War" language="Japanese">
 <rank>7</rank>
 <name>Grave of the Fireflies</name>
-<release>1988</release>
+<imdbid>95327</imdbid>
 </movie>
-<movie>
+<movie release="1950" rating="0.85" genere="Crime, Drama" language="Japanese">
 <rank>8</rank>
 <name>Rashomon</name>
-<release>1950</release>
+<imdbid>42876</imdbid>
 </movie>
-<movie>
+<movie release="1985" rating="0.84" genere="Action, Drama, War" language="Japanese">
 <rank>9</rank>
 <name>Ran</name>
-<release>1985</release>
+<imdbid>89881</imdbid>
 </movie>
-<movie>
+<movie release="1988" rating="0.83" genere="Animation, Family, Fantasy" language="Japanese">
 <rank>10</rank>
 <name>My Neighbor Totoro</name>
-<release>1988</release>
+<imdbid>96283</imdbid>
 </movie>
-<movie>
+<movie release="1986" rating="0.81" genere="Animation, Action, Adventure, Family, Fantasy, Romance" language="Japanese">
 <rank>11</rank>
 <name>Castle in the Sky</name>
-<release>1986</release>
+<imdbid>92067</imdbid>
 </movie>
-<movie>
+<movie release="1988" rating="0.8" genere="Animation, Sci-Fi" language="Japanese">
 <rank>12</rank>
 <name>Akira</name>
-<release>1988</release>
+<imdbid>94625</imdbid>
 </movie>
-<movie>
+<movie release="1995" rating="0.78" genere="Animation, Action, Mystery, Sci-Fi, Thriller" language="English,Japanese">
 <rank>13</rank>
 <name>Ghost in the Shell</name>
-<release>1995</release>
+<imdbid>113568</imdbid>
 </movie>
-<movie>
+<movie release="2008" rating="0.77" genere="Animation, Adventure, Family, Fantasy" language="Japanese">
 <rank>14</rank>
 <name>Ponyo</name>
-<release>2008</release>
+<imdbid>876563</imdbid>
 </movie>
-<movie>
+<movie release="1961" rating="0.85" genere="Action, Adventure" language="Japanese">
 <rank>15</rank>
 <name>Yojimbo</name>
-<release>1961</release>
+<imdbid>55630</imdbid>
 </movie>
-<movie>
+<movie release="1989" rating="0.71" genere="Animation, Adventure, Drama, Family, Fantasy" language="Japanese">
 <rank>16</rank>
 <name>Kiki's Delivery Service</name>
-<release>1989</release>
+<imdbid>97814</imdbid>
 </movie>
-<movie>
+<movie release="2006" rating="0.75" genere="Action, Biography, Drama, Sport" language="English,Japanese,Chinese">
 <rank>17</rank>
 <name>Fearless</name>
-<release>2006</release>
+<imdbid>446059</imdbid>
 </movie>
-<movie>
+<movie release="1999" rating="0.73" genere="Horror, Thriller" language="Japanese">
 <rank>18</rank>
 <name>Audition</name>
-<release>1999</release>
+<imdbid>235198</imdbid>
 </movie>
-<movie>
+<movie release="2005" rating="0.73" genere="Animation, Action, Sci-Fi, Thriller" language="Japanese">
 <rank>19</rank>
 <name>Final Fantasy VII: Advent Children</name>
-<release>2005</release>
+<imdbid>385700</imdbid>
 </movie>
-<movie>
+<movie release="2010" rating="0.78" genere="Action, Adventure, Drama" language="Japanese">
 <rank>20</rank>
 <name>13 Assassins</name>
-<release>2010</release>
+<imdbid>1436045</imdbid>
 </movie>
-<movie>
+<movie release="2003" rating="0.77" genere="Action, Comedy, Crime, Drama, Music" language="Japanese">
 <rank>21</rank>
 <name>The Blind Swordsman: Zatoichi</name>
-<release>2003</release>
+<imdbid>363226</imdbid>
 </movie>
-<movie>
+<movie release="1998" rating="0.73" genere="Horror, Mystery, Thriller" language="Japanese">
 <rank>22</rank>
 <name>Ring</name>
-<release>1998</release>
+<imdbid>178868</imdbid>
 </movie>
-<movie>
+<movie release="2001" rating="0.72" genere="Action, Comedy, Crime, Drama, Horror, Thriller" language="Japanese">
 <rank>23</rank>
 <name>Ichi the Killer</name>
-<release>2001</release>
+<imdbid>296042</imdbid>
 </movie>
-<movie>
+<movie release="1952" rating="0.85" genere="Drama" language="Japanese">
 <rank>24</rank>
 <name>Ikiru</name>
-<release>1952</release>
+<imdbid>44741</imdbid>
 </movie>
-<movie>
+<movie release="1957" rating="0.83" genere="Drama" language="Japanese">
 <rank>25</rank>
 <name>Throne of Blood</name>
-<release>1957</release>
+<imdbid>50613</imdbid>
 </movie>
-<movie>
+<movie release="2008" rating="0.81" genere="Drama, Music" language="Japanese">
 <rank>26</rank>
 <name>Departures</name>
-<release>2008</release>
+<imdbid>1069238</imdbid>
 </movie>
-<movie>
+<movie release="2006" rating="0.79" genere="Animation, Comedy, Drama, Romance, Sci-Fi" language="Japanese">
 <rank>27</rank>
 <name>The Girl Who Leapt Through Time</name>
-<release>2006</release>
+<imdbid>808506</imdbid>
 </movie>
-<movie>
+<movie release="1993" rating="0.78" genere="Animation, Action, Adventure, Fantasy, Thriller" language="Japanese">
 <rank>28</rank>
 <name>Ninja Scroll</name>
-<release>1993</release>
+<imdbid>107692</imdbid>
 </movie>
-<movie>
+<movie release="1992" rating="0.77" genere="Animation, Adventure, Fantasy, Romance" language="Japanese">
 <rank>29</rank>
 <name>Porco Rosso</name>
-<release>1992</release>
+<imdbid>104652</imdbid>
 </movie>
-<movie>
+<movie release="2001" rating="0.77" genere="Animation, Action, Crime, Drama, Sci-Fi, Thriller" language="Japanese">
 <rank>30</rank>
 <name>Cowboy Bebop: The Movie</name>
-<release>2001</release>
+<imdbid>275277</imdbid>
 </movie>
-<movie>
+<movie release="2006" rating="0.77" genere="Animation, Mystery, Sci-Fi, Thriller" language="Japanese">
 <rank>31</rank>
 <name>Paprika</name>
-<release>2006</release>
+<imdbid>851578</imdbid>
 </movie>
-<movie>
+<movie release="2010" rating="0.78" genere="Animation, Adventure, Family, Fantasy" language="Japanese">
 <rank>32</rank>
 <name>The Secret World of Arrietty</name>
-<release>2010</release>
+<imdbid>1568921</imdbid>
 </movie>
-<movie>
+<movie release="1962" rating="0.86" genere="Drama" language="Japanese">
 <rank>33</rank>
 <name>Harakiri</name>
-<release>1962</release>
+<imdbid>56058</imdbid>
 </movie>
-<movie>
+<movie release="1963" rating="0.83" genere="Crime, Drama, Mystery, Thriller" language="Japanese">
 <rank>34</rank>
 <name>High and Low</name>
-<release>1963</release>
+<imdbid>57565</imdbid>
 </movie>
-<movie>
+<movie release="1953" rating="0.84" genere="Drama" language="Japanese">
 <rank>35</rank>
 <name>Tokyo Story</name>
-<release>1953</release>
+<imdbid>46438</imdbid>
 </movie>
-<movie>
+<movie release="1953" rating="0.83" genere="Drama, Fantasy, Mystery" language="Japanese">
 <rank>36</rank>
 <name>Ugetsu</name>
-<release>1953</release>
+<imdbid>46478</imdbid>
 </movie>
-<movie>
+<movie release="1962" rating="0.81" genere="Action, Drama, Thriller" language="Japanese">
 <rank>37</rank>
 <name>Sanjuro</name>
-<release>1962</release>
+<imdbid>56443</imdbid>
 </movie>
-<movie>
+<movie release="2002" rating="0.81" genere="Drama, Romance" language="Japanese">
 <rank>38</rank>
 <name>The Twilight Samurai</name>
-<release>2002</release>
+<imdbid>351817</imdbid>
 </movie>
-<movie>
+<movie release="1958" rating="0.81" genere="Adventure, Drama" language="Japanese">
 <rank>39</rank>
 <name>The Hidden Fortress</name>
-<release>1958</release>
+<imdbid>51808</imdbid>
 </movie>
-<movie>
+<movie release="2004" rating="0.81" genere="Drama" language="Japanese">
 <rank>40</rank>
 <name>Nobody Knows</name>
-<release>2004</release>
+<imdbid>408664</imdbid>
 </movie>
-<movie>
+<movie release="1980" rating="0.8" genere="Drama, History, War" language="Japanese">
 <rank>41</rank>
 <name>Kagemusha</name>
-<release>1980</release>
+<imdbid>80979</imdbid>
 </movie>
-<movie>
+<movie release="1997" rating="0.8" genere="Animation, Action, Drama, Fantasy, Sci-Fi" language="Japanese">
 <rank>42</rank>
 <name>Neon Genesis Evangelion: The End of Evangelion</name>
-<release>1997</release>
+<imdbid>169858</imdbid>
 </movie>
-<movie>
+<movie release="1995" rating="0.8" genere="Animation, Drama, Family, Music, Romance" language="Japanese">
 <rank>43</rank>
 <name>Whisper of the Heart</name>
-<release>1995</release>
+<imdbid>113824</imdbid>
 </movie>
-<movie>
+<movie release="1997" rating="0.8" genere="Crime, Drama, Romance, Thriller" language="Japanese">
 <rank>44</rank>
 <name>Fireworks</name>
-<release>1997</release>
+<imdbid>119250</imdbid>
 </movie>
-<movie>
+<movie release="2007" rating="0.8" genere="Animation, Drama, Romance" language="Japanese">
 <rank>45</rank>
 <name>5 Centimeters Per Second</name>
-<release>2007</release>
+<imdbid>983213</imdbid>
 </movie>
-<movie>
+<movie release="1999" rating="0.79" genere="Drama, Comedy" language="Japanese">
 <rank>46</rank>
 <name>Kikujiro</name>
-<release>1999</release>
+<imdbid>199683</imdbid>
 </movie>
-<movie>
+<movie release="2010" rating="0.79" genere="Drama, Mystery, Thriller" language="Japanese">
 <rank>47</rank>
 <name>Confessions</name>
-<release>2010</release>
+<imdbid>1590089</imdbid>
 </movie>
-<movie>
+<movie release="2003" rating="0.78" genere="Adventure, Animation, Drama, Comedy" language="Japanese">
 <rank>48</rank>
 <name>Tokyo Godfathers</name>
-<release>2003</release>
+<imdbid>388473</imdbid>
 </movie>
-<movie>
+<movie release="2000" rating="0.76" genere="Animation, Action, Adventure, Fantasy, Mystery, Sci-Fi" language="English,Japanese">
 <rank>49</rank>
 <name>Vampire Hunter D: Bloodlust</name>
-<release>2000</release>
+<imdbid>216651</imdbid>
 </movie>
-<movie>
+<movie release="1997" rating="0.77" genere="Animation, Horror, Mystery, Thriller" language="English,French,Italian,Japanese">
 <rank>50</rank>
 <name>Perfect Blue</name>
-<release>1997</release>
+<imdbid>156887</imdbid>
 </movie>
-<movie>
+<movie release="2002" rating="0.78" genere="Drama, Romance" language="Japanese">
 <rank>51</rank>
 <name>Dolls</name>
-<release>2002</release>
+<imdbid>330229</imdbid>
 </movie>
-<movie>
+<movie release="1990" rating="0.77" genere="Drama, Fantasy" language="Japanese">
 <rank>52</rank>
 <name>Dreams</name>
-<release>1990</release>
+<imdbid>100998</imdbid>
 </movie>
-<movie>
+<movie release="2004" rating="0.75" genere="Animation, Drama, Sci-Fi, Thriller" language="English,Japanese,Chinese">
 <rank>53</rank>
 <name>Ghost in the Shell 2: Innocence</name>
-<release>2004</release>
+<imdbid>347246</imdbid>
 </movie>
-<movie>
+<movie release="1993" rating="0.76" genere="Action, Crime, Drama, Thriller" language="Japanese">
 <rank>54</rank>
 <name>Sonatine</name>
-<release>1993</release>
+<imdbid>108188</imdbid>
 </movie>
-<movie>
+<movie release="1954" rating="0.76" genere="Drama,Horror,Sci-Fi" language="Japanese">
 <rank>55</rank>
 <name>Godzilla</name>
-<release>1954</release>
+<imdbid>47034</imdbid>
 </movie>
-<movie>
+<movie release="2002" rating="0.74" genere="Animation, Adventure, Comedy, Family, Fantasy" language="Japanese">
 <rank>56</rank>
 <name>The Cat Returns</name>
-<release>2002</release>
+<imdbid>347618</imdbid>
 </movie>
-<movie>
+<movie release="1994" rating="0.81" genere="Drama, War" language="Chinese">
 <rank>57</rank>
 <name>To Live</name>
-<release>1994</release>
+<imdbid>110081</imdbid>
 </movie>
-<movie>
+<movie release="1991" rating="0.81" genere="Drama" language="Chinese">
 <rank>58</rank>
 <name>Raise the Red Lantern</name>
-<release>1991</release>
+<imdbid>101640</imdbid>
 </movie>
-<movie>
+<movie release="2003" rating="0.85" genere="Drama, Mystery, Thriller" language="Korean">
 <rank>59</rank>
 <name>Oldboy</name>
-<release>2003</release>
+<imdbid>364569</imdbid>
 </movie>
-<movie>
+<movie release="2003" rating="0.82" genere="Crime, Drama, Mystery, Thriller" language="Korean">
 <rank>60</rank>
 <name>Memories of Murder</name>
-<release>2003</release>
+<imdbid>353969</imdbid>
 </movie>
-<movie>
+<movie release="2003" rating="0.81" genere="Drama" language="Korean">
 <rank>61</rank>
 <name>Spring, Summer, Fall, Winter... and Spring</name>
-<release>2003</release>
+<imdbid>374546</imdbid>
 </movie>
-<movie>
+<movie release="2001" rating="0.83" genere="Comedy, Drama, Romance" language="English,Korean">
 <rank>62</rank>
 <name>My Sassy Girl</name>
-<release>2001</release>
+<imdbid>293715</imdbid>
 </movie>
-<movie>
+<movie release="2004" rating="0.81" genere="Action, Drama, War" language="Korean">
 <rank>63</rank>
 <name>Tae Guk Gi: The Brotherhood of War</name>
-<release>2004</release>
+<imdbid>386064</imdbid>
 </movie>
-<movie>
+<movie release="2004" rating="0.82" genere="Crime, Drama, Romance" language="Korean">
 <rank>64</rank>
 <name>3-Iron</name>
-<release>2004</release>
+<imdbid>423866</imdbid>
 </movie>
-<movie>
+<movie release="2004" rating="0.82" genere="Drama, Romance" language="Korean">
 <rank>65</rank>
 <name>A Moment to Remember</name>
-<release>2004</release>
+<imdbid>428870</imdbid>
 </movie>
-<movie>
+<movie release="2008" rating="0.79" genere="Thriller" language="Korean">
 <rank>66</rank>
 <name>The Chaser</name>
-<release>2008</release>
+<imdbid>1190539</imdbid>
 </movie>
-<movie>
+<movie release="2009" rating="0.79" genere="Crime, Drama, Mystery, Thriller" language="Korean">
 <rank>67</rank>
 <name>Mother</name>
-<release>2009</release>
+<imdbid>1216496</imdbid>
 </movie>
-<movie>
+<movie release="2010" rating="0.8" genere="Action, Crime, Thriller" language="Korean">
 <rank>68</rank>
 <name>The Man from Nowhere</name>
-<release>2010</release>
+<imdbid>1527788</imdbid>
 </movie>
-<movie>
+<movie release="2000" rating="0.79" genere="Drama, Thriller, War" language="English,Korean">
 <rank>69</rank>
 <name>J.S.A.: Joint Security Area</name>
-<release>2000</release>
+<imdbid>260991</imdbid>
 </movie>
-<movie>
+<movie release="2010" rating="0.79" genere="Crime, Drama, Thriller" language="Korean">
 <rank>70</rank>
 <name>I Saw the Devil</name>
-<release>2010</release>
+<imdbid>1588170</imdbid>
 </movie>
-<movie>
+<movie release="2002" rating="0.77" genere="Crime, Drama" language="Korean">
 <rank>71</rank>
 <name>Sympathy for Mr. Vengeance</name>
-<release>2002</release>
+<imdbid>310775</imdbid>
 </movie>
-<movie>
+<movie release="2005" rating="0.51" genere="Action, Crime, Drama" language="Korean">
 <rank>72</rank>
 <name>A Bittersweet Life</name>
-<release>2005</release>
+<imdbid>456912</imdbid>
 </movie>
-<movie>
+<movie release="2005" rating="0.77" genere="Crime, Drama, Thriller" language="Korean,English,Japanese">
 <rank>73</rank>
 <name>Sympathy for Lady Vengeance</name>
-<release>2005</release>
+<imdbid>451094</imdbid>
 </movie>
-<movie>
+<movie release="2008" rating="0.75" genere="Action, Adventure, Comedy" language="Korean">
 <rank>74</rank>
 <name>The Good, the Bad, the Weird</name>
-<release>2008</release>
+<imdbid>901487</imdbid>
 </movie>
-<movie>
+<movie release="2003" rating="0.73" genere="Drama, Horror, Mystery, Thriller" language="Korean">
 <rank>75</rank>
 <name>A Tale of Two Sisters</name>
-<release>2003</release>
+<imdbid>365376</imdbid>
 </movie>
-<movie>
+<movie release="2009" rating="0.71" genere="Drama, Horror, Thriller" language="English,French,Korean">
 <rank>76</rank>
 <name>Thirst</name>
-<release>2009</release>
+<imdbid>762073</imdbid>
 </movie>
-<movie>
+<movie release="2006" rating="0.69" genere="Action, Horror, Sci-Fi, Thriller" language="Korean">
 <rank>77</rank>
 <name>The Host</name>
-<release>2006</release>
+<imdbid>468492</imdbid>
 </movie>
-<movie>
+<movie release="2006" rating="0.73" genere="Comedy, Drama, Romance, Sci-Fi" language="Korean">
 <rank>78</rank>
 <name>I'm a Cyborg, But That's OK</name>
-<release>2006</release>
+<imdbid>497137</imdbid>
 </movie>
-<movie>
+<movie release="2011" rating="0.73" genere="Action, History" language="Korean">
 <rank>79</rank>
 <name>War of the Arrows</name>
-<release>2011</release>
+<imdbid>2025526</imdbid>
 </movie>
-<movie>
+<movie release="1989" rating="0.8" genere="Action, Crime, Thriller" language="Japanese,Chinese,English">
 <rank>80</rank>
 <name>The Killer</name>
-<release>1989</release>
+<imdbid>97202</imdbid>
 </movie>
-<movie>
+<movie release="1965" rating="0.82" genere="Drama" language="Japanese">
 <rank>81</rank>
 <name>Red Beard</name>
-<release>1965</release>
+<imdbid>58888</imdbid>
 </movie>
-<movie>
+<movie release="1994" rating="0.77" genere="Comedy, Romance, Drama" language="Chinese">
 <rank>82</rank>
 <name>Eat Drink Man Woman</name>
-<release>1994</release>
+<imdbid>111797</imdbid>
 </movie>
-<movie>
+<movie release="2000" rating="0.83" genere="Drama, Romance" language="Chinese">
 <rank>83</rank>
 <name>In the Mood for Love</name>
-<release>2000</release>
+<imdbid>118694</imdbid>
 </movie>
-<movie>
+<movie release="1992" rating="0.79" genere="Action, Crime, Drama, Thriller" language="English,Chinese,Cantonese">
 <rank>84</rank>
 <name>Hard Boiled</name>
-<release>1992</release>
+<imdbid>104684</imdbid>
 </movie>
-<movie>
+<movie release="2002" rating="0.82" genere="Crime, Mystery, Thriller" language="Cantonese">
 <rank>85</rank>
 <name>Infernal Affairs</name>
-<release>2002</release>
+<imdbid>338564</imdbid>
 </movie>
-<movie>
+<movie release="1994" rating="0.81" genere="Drama, Mystery, Romance" language="Chinese,Cantonese">
 <rank>86</rank>
 <name>Chungking Express</name>
-<release>1994</release>
+<imdbid>109424</imdbid>
 </movie>
-<movie>
+<movie release="2008" rating="0.81" genere="Action, Biography, Drama, History, Sport" language="Chinese,Japanese,Cantonese">
 <rank>87</rank>
 <name>Ip Man</name>
-<release>2008</release>
+<imdbid>1220719</imdbid>
 </movie>
-<movie>
+<movie release="1997" rating="0.76" genere="Drama, Family" language="Chinese">
 <rank>88</rank>
 <name>The King of Masks</name>
-<release>1997</release>
+<imdbid>115669</imdbid>
 </movie>
-<movie>
+<movie release="1993" rating="0.75" genere="Comedy, Drama, Romance" language="English,Chinese">
 <rank>89</rank>
 <name>The Wedding Banquet</name>
-<release>1993</release>
+<imdbid>107156</imdbid>
 </movie>
-<movie>
+<movie release="2002" rating="0.72" genere="Action, Drama, History" language="Chinese">
 <rank>90</rank>
 <name>Hero</name>
-<release>2002</release>
+<imdbid>299977</imdbid>
 </movie>
-<movie>
+<movie release="1993" rating="0.79" genere="Drama, Music, Romance, War" language="Chinese">
 <rank>91</rank>
 <name>Farewell My Concubine</name>
-<release>1993</release>
+<imdbid>106332</imdbid>
 </movie>
-<movie>
+<movie release="1994" rating="0.75" genere="Action, Drama" language="English,Japanese,Chinese">
 <rank>92</rank>
 <name>Fist of Legend</name>
-<release>1994</release>
+<imdbid>110200</imdbid>
 </movie>
-<movie>
+<movie release="2000" rating="0.85" genere="Drama, Music, Romance" language="Japanese,English,Chinese">
 <rank>93</rank>
 <name>Yi Yi</name>
-<release>2000</release>
+<imdbid>244316</imdbid>
 </movie>
-<movie>
+<movie release="1999" rating="0.79" genere="Drama, Romance" language="Chinese">
 <rank>94</rank>
 <name>The Road Home</name>
-<release>1999</release>
+<imdbid>235060</imdbid>
 </movie>
-<movie>
+<movie release="1995" rating="0.77" genere="Crime, Drama, Romance" language="Chinese">
 <rank>95</rank>
 <name>Fallen Angels</name>
-<release>1995</release>
+<imdbid>112913</imdbid>
 </movie>
-<movie>
+<movie release="2009" rating="0.53" genere="Comedy, Drama, Romance" language="Korean">
 <rank>96</rank>
 <name>Castaway on the Moon</name>
-<release>2009</release>
+<imdbid>1499666</imdbid>
 </movie>
-<movie>
+<movie release="1987" rating="0.77" genere="Biography, Drama, History" language="English,Japanese,Chinese,ru">
 <rank>97</rank>
 <name>The Last Emperor</name>
-<release>1987</release>
+<imdbid>93389</imdbid>
 </movie>
-<movie>
+<movie release="2010" rating="0.78" genere="Drama" language="Korean">
 <rank>98</rank>
 <name>Poetry </name>
-<release>2010</release>
+<imdbid>1287878</imdbid>
 </movie>
-<movie>
+<movie release="1997" rating="0.77" genere="Drama, Romance" language="Chinese,Cantonese">
 <rank>99</rank>
 <name>Happy Together</name>
-<release>1997</release>
+<imdbid>118845</imdbid>
 </movie>
-<movie>
+<movie release="1999" rating="0.73" genere="Comedy, Drama" language="Chinese">
 <rank>100</rank>
 <name>Shower</name>
-<release>1999</release>
+<imdbid>215369</imdbid>
 </movie>
-<movie>
+<movie release="1978" rating="0.79" genere="Action, Adventure, Drama" language="Chinese">
 <rank>101</rank>
 <name>The 36th Chamber of Shaolin</name>
-<release>1978</release>
+<imdbid>78243</imdbid>
 </movie>
-<movie>
+<movie release="2010" rating="0.75" genere="Drama" language="Chinese">
 <rank>102</rank>
 <name>Aftershock</name>
-<release>2010</release>
+<imdbid>1393746</imdbid>
 </movie>
-<movie>
+<movie release="2003" rating="0.73" genere="Action, Thriller" language="English,Thai">
 <rank>103</rank>
 <name>Ong-bak</name>
-<release>2003</release>
+<imdbid>368909</imdbid>
 </movie>
-<movie>
+<movie release="2004" rating="0.71" genere="Horror, Mystery, Thriller" language="Thai">
 <rank>104</rank>
 <name>Shutter</name>
-<release>2004</release>
+<imdbid>440803</imdbid>
 </movie>
-<movie>
+<movie release="2003" rating="0.77" genere="Comedy, Drama, Romance" language="English,Japanese,Thai">
 <rank>105</rank>
 <name>Last Life in the Universe</name>
-<release>2003</release>
+<imdbid>345549</imdbid>
 </movie>
-<movie>
+<movie release="2007" rating="0.77" genere="Drama, Mystery, Romance" language="Thai">
 <rank>106</rank>
 <name>The Love of Siam</name>
-<release>2007</release>
+<imdbid>1152282</imdbid>
 </movie>
-<movie>
+<movie release="2006" rating="0.71" genere="Drama" language="Thai">
 <rank>107</rank>
 <name>Syndromes and a Century</name>
-<release>2006</release>
+<imdbid>477731</imdbid>
 </movie>
-<movie>
+<movie release="2007" rating="0.76" genere="Drama, Romance, Thriller, War" language="Chinese">
 <rank>108</rank>
 <name>Lust, Caution</name>
-<release>2007</release>
+<imdbid>808357</imdbid>
 </movie>
-<movie>
+<movie release="2004" rating="0.74" genere="Action, Adventure, Drama, Fantasy, Romance" language="Chinese">
 <rank>109</rank>
 <name>House of Flying Daggers</name>
-<release>2004</release>
+<imdbid>385004</imdbid>
 </movie>
-<movie>
+<movie release="1990" rating="0.77" genere="Crime, Drama, Romance" language="Chinese">
 <rank>110</rank>
 <name>Days of Being Wild</name>
-<release>1990</release>
+<imdbid>101258</imdbid>
 </movie>
-<movie>
+<movie release="1984" rating="0.81" genere="Animation, Action, Adventure, Drama, Fantasy, Sci-Fi" language="Japanese">
 <rank>111</rank>
 <name>Nausicaä of the Valley of the Wind</name>
-<release>1984</release>
+<imdbid>87544</imdbid>
 </movie>
-<movie>
+<movie release="2006" rating="0.8" genere="Adventure,Crime,Drama" language="Japanese">
 <rank>112</rank>
 <name>Death Note</name>
-<release>2006</release>
+<imdbid>758742</imdbid>
 </movie>
-</root>
+ </root>
