@@ -54,7 +54,7 @@ namespace TopMovies
         //    sort = sortOrder;
         //}
 
-        public async Task<Tuple<bool, ObservableCollection<Person>,int,int>> LoadMovieData()
+        public async Task<Tuple<ObservableCollection<Person>,int,int>> LoadMovieData()
         {   
             Images = new ObservableCollection<Person>();
 
@@ -101,7 +101,8 @@ namespace TopMovies
                                 select new Person
                                 {
                                     Name = movies.Element("name").Value,                                   
-                                    Image = "ms-appx:///Assets/" + cate + "/" + movies.Element("rank").Value + ".jpg"
+                                    Image = "ms-appx:///Assets/" + cate + "/" + movies.Element("rank").Value + ".jpg",
+                                    imdbID = Convert.ToInt32(movies.Element("imdbid").Value)
                                 }).AsParallel().AsSequential();    
 								
 				}
@@ -113,7 +114,8 @@ namespace TopMovies
                                 		Genere = movies.Attribute("genere").Value,
                                         Language = movies.Attribute("language").Value,
                                         Name = movies.Element("name").Value,
-                                        Image = "ms-appx:///Assets/" + cate + "/" + movies.Element("rank").Value + ".jpg"
+                                        Image = "ms-appx:///Assets/" + cate + "/" + movies.Element("rank").Value + ".jpg",
+                                        imdbID = Convert.ToInt32(movies.Element("imdbid").Value)
                                     }).AsParallel().AsSequential();                  
                     
                 }
@@ -128,7 +130,8 @@ namespace TopMovies
                                          select new Person
                                          {
                                              Name = movies.Element("name").Value,
-                                             Image = "ms-appx:///Assets/" + cate + "/" + movies.Element("rank").Value + ".jpg"
+                                             Image = "ms-appx:///Assets/" + cate + "/" + movies.Element("rank").Value + ".jpg",
+                                             imdbID = Convert.ToInt32(movies.Element("imdbid").Value)
                                          }).AsParallel().AsSequential();
                                 break;
                             case 2:
@@ -137,7 +140,8 @@ namespace TopMovies
                                          select new Person
                                          {
                                              Name = movies.Element("name").Value,
-                                             Image = "ms-appx:///Assets/" + cate + "/" + movies.Element("rank").Value + ".jpg"
+                                             Image = "ms-appx:///Assets/" + cate + "/" + movies.Element("rank").Value + ".jpg",
+                                             imdbID = Convert.ToInt32(movies.Element("imdbid").Value)
                                          }).AsParallel().AsSequential();
                                 break;
                             case 3:
@@ -146,7 +150,8 @@ namespace TopMovies
                                          select new Person
                                          {
                                              Name = movies.Element("name").Value,
-                                             Image = "ms-appx:///Assets/" + cate + "/" + movies.Element("rank").Value + ".jpg"
+                                             Image = "ms-appx:///Assets/" + cate + "/" + movies.Element("rank").Value + ".jpg",
+                                             imdbID = Convert.ToInt32(movies.Element("imdbid").Value)
                                          }).AsParallel().AsSequential();
                                 break;
                             case 4:
@@ -155,7 +160,8 @@ namespace TopMovies
                                          select new Person
                                          {
                                              Name = movies.Element("name").Value,
-                                             Image = "ms-appx:///Assets/" + cate + "/" + movies.Element("rank").Value + ".jpg"
+                                             Image = "ms-appx:///Assets/" + cate + "/" + movies.Element("rank").Value + ".jpg",
+                                             imdbID = Convert.ToInt32(movies.Element("imdbid").Value)
                                          }).AsParallel().AsSequential();
                                 break;
 
@@ -174,7 +180,8 @@ namespace TopMovies
                                          Genere = movies.Attribute("genere").Value,
                                          Language = movies.Attribute("language").Value,
                                          Name = movies.Element("name").Value,
-                                         Image = "ms-appx:///Assets/" + cate + "/" + movies.Element("rank").Value + ".jpg"
+                                         Image = "ms-appx:///Assets/" + cate + "/" + movies.Element("rank").Value + ".jpg",
+                                         imdbID = Convert.ToInt32(movies.Element("imdbid").Value)
                                      }).AsParallel().AsSequential();
                             break;
                         case 2:
@@ -185,7 +192,8 @@ namespace TopMovies
                                          Genere = movies.Attribute("genere").Value,
                                          Language = movies.Attribute("language").Value,
                                          Name = movies.Element("name").Value,
-                                         Image = "ms-appx:///Assets/" + cate + "/" + movies.Element("rank").Value + ".jpg"
+                                         Image = "ms-appx:///Assets/" + cate + "/" + movies.Element("rank").Value + ".jpg",
+                                         imdbID = Convert.ToInt32(movies.Element("imdbid").Value)
                                      }).AsParallel().AsSequential();
                             break;
                         case 3:
@@ -196,7 +204,8 @@ namespace TopMovies
                                          Genere = movies.Attribute("genere").Value,
                                          Language = movies.Attribute("language").Value,
                                          Name = movies.Element("name").Value,
-                                         Image = "ms-appx:///Assets/" + cate + "/" + movies.Element("rank").Value + ".jpg"
+                                         Image = "ms-appx:///Assets/" + cate + "/" + movies.Element("rank").Value + ".jpg",
+                                         imdbID = Convert.ToInt32(movies.Element("imdbid").Value)
                                      }).AsParallel().AsSequential();
                             break;
                         case 4:
@@ -207,7 +216,8 @@ namespace TopMovies
                                          Genere = movies.Attribute("genere").Value,
                                          Language = movies.Attribute("language").Value,
                                          Name = movies.Element("name").Value,
-                                         Image = "ms-appx:///Assets/" + cate + "/" + movies.Element("rank").Value + ".jpg"
+                                         Image = "ms-appx:///Assets/" + cate + "/" + movies.Element("rank").Value + ".jpg",
+                                         imdbID = Convert.ToInt32(movies.Element("imdbid").Value)
                                      }).AsParallel().AsSequential();
                             break;
                     }
@@ -224,7 +234,8 @@ namespace TopMovies
  												   select new Person 
  													{
  													  Name = movies.Name,
-                                     				  Image = movies.Image
+                                     				  Image = movies.Image,
+                                                      imdbID = movies.imdbID
  													}).AsParallel().AsSequential(); 	
                         }
                         else if (sessionData.filterLang == null && sessionData.filterGenere != null)
@@ -234,7 +245,8 @@ namespace TopMovies
  												   select new Person 
  													{
  													 Name = movies.Name,
-                                        		     Image = movies.Image
+                                        		     Image = movies.Image,
+                                                     imdbID = movies.imdbID
  													}).AsParallel().AsSequential(); 	
                     
                         }
@@ -245,7 +257,8 @@ namespace TopMovies
  									               select new Person 
  													  {
  													    Name = movies.Name,
-                                     				    Image = movies.Image
+                                     				    Image = movies.Image,
+                                                        imdbID = movies.imdbID
  													  }).AsParallel().AsSequential(); 	
                     
                         }
@@ -263,7 +276,7 @@ namespace TopMovies
                             }
                             movieCounter++;
                         }
-                Tuple<bool, ObservableCollection<Person>, int, int> _filteredImages = new Tuple<bool, ObservableCollection<Person>, int, int>(true, images, elementCount, newIndex);
+                Tuple<ObservableCollection<Person>, int, int> _filteredImages = new Tuple< ObservableCollection<Person>, int, int>( images, elementCount, newIndex);
 
 
 
@@ -287,7 +300,7 @@ namespace TopMovies
                         movieCounter++;
                     }
 
-                    Tuple<bool, ObservableCollection<Person>, int, int> _images = new Tuple<bool, ObservableCollection<Person>, int, int>(true, images, elementCount, newIndex);
+                    Tuple< ObservableCollection<Person>, int, int> _images = new Tuple<ObservableCollection<Person>, int, int>(images, elementCount, newIndex);
 
                     return _images;
                 

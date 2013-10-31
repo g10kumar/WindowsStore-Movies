@@ -84,6 +84,8 @@ namespace TopMovies.Views
 
         public string Genere { get; set; }
 
+        public int imdbID { get; set; }
+
         public Person()
         { }
 
