@@ -90,7 +90,7 @@ namespace TopMovies
             //Passin the asset folder name with the number of image files inside the folder to populate the hub tile with the images . 
             TopEnglish.ImageList = GetImages("TopEnglish",185);
             TopForeign.ImageList = GetImages("TopForeign",235);
-            TopBollywood.ImageList = GetImages("TopBollywood",103);
+            TopBollywood.ImageList = GetImages("TopBollywood",102);
             TopAsian.ImageList = GetImages("TopAsian",112);
             
 

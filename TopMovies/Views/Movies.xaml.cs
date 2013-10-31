@@ -31,8 +31,6 @@ namespace TopMovies.Views
     {        
         public DataTransferManager datatransferManager;
         Windows.Storage.ApplicationDataContainer roamingSettings = Windows.Storage.ApplicationData.Current.RoamingSettings;
-        //StorageFile movieFile = null;
-        //string fileContent = "";
         Dictionary<string, string> countryList = new Dictionary<string, string>();                      // Initialize a dictionaty to store the country list . Values added in the 
         // constructor
         int countofMovies;
@@ -41,8 +39,8 @@ namespace TopMovies.Views
         bool autoPlayOn = false;
         ConnectionProfile InternetconnectionProfile;
         ResourceLoader loader = new Windows.ApplicationModel.Resources.ResourceLoader();                // This is to get the resources defined in the resource.resw file . 
-        Tuple<bool, ObservableCollection<Person>,int,int> returened;
-
+        Tuple<ObservableCollection<Person>,int,int> returened;
+        bool updateName = false;
 
 
         private ObservableCollection<Person> images;
@@ -115,15 +113,31 @@ namespace TopMovies.Views
                 returened = await obj1.LoadMovieData();
             }
 
+            if (returened.Item2 != 0)
+            {
+                if (returened.Item3 == CoverFlowControl.SelectedIndex)
+                {
+                    updateName = true;
+                }
+                ProgressRing.IsActive = false;
+                CoverFlowControl.ItemsSource = returened.Item1;                     //Getting the images from the class
+                countofMovies = returened.Item2;                                    //Getting the count of the movies 
+                CoverFlowControl.SelectedIndex = returened.Item3;                   // Gettig the carousel selcted item . 
+                if (updateName)
+                {
+                    CoverFlowControlSpecialCase();
+                   updateName = false;
+                }
 
-
-            CoverFlowControl.ItemsSource = returened.Item2;                     //Getting the images from the class
-            countofMovies = returened.Item3;                                    //Getting the count of the movies 
-            CoverFlowControl.SelectedIndex = returened.Item4;                   // Gettig the carousel selcted item . 
-
-            if (returened.Item1)
+            }
+            else
             {
                 ProgressRing.IsActive = false;
+                if (sessionData.selectCategory != "TopBollywood" && sessionData.selectCategory != "TopEnglish")
+                    txtName.Text = "There are no " + sessionData.filterGenere + " Movies in " + sessionData.filterLang + " Language";
+                else
+                    txtName.Text = "There are no " + sessionData.filterGenere + " Movies in " + sessionData.selectCategory.Remove(0,3) + " Category";
+                updateName = true;
             }
 
             
@@ -148,17 +162,32 @@ namespace TopMovies.Views
                 returened = await obj1.LoadMovieData();
             }
 
+            if (returened.Item2!=0)
+            {
+                if (returened.Item3 == CoverFlowControl.SelectedIndex)
+                {
+                    updateName = true;
+                }
+                ProgressRing.IsActive = false;
+                CoverFlowControl.ItemsSource = returened.Item1;                     //Getting the images from the class
+                countofMovies = returened.Item2;                                    //Getting the count of the movies 
+                CoverFlowControl.SelectedIndex = returened.Item3;                   // Gettig the carousel selcted item . 
+                if (updateName)
+                {
+                    CoverFlowControlSpecialCase();
+                    updateName = false;
+                }
 
-
-            CoverFlowControl.ItemsSource = returened.Item2;                     //Getting the images from the class
-            countofMovies = returened.Item3;                                    //Getting the count of the movies 
-            CoverFlowControl.SelectedIndex = returened.Item4;                   // Gettig the carousel selcted item . 
-
-            if (returened.Item1)
+            }
+            else
             {
                 ProgressRing.IsActive = false;
+                if (sessionData.selectCategory != "TopBollywood" && sessionData.selectCategory != "TopEnglish")
+                    txtName.Text = "There are no " + sessionData.filterGenere + " Movies in " + sessionData.filterLang + " Language";
+                else
+                    txtName.Text = "There are no " + sessionData.filterGenere + " Movies in " + sessionData.selectCategory.Remove(0, 3) + " Category";
+                updateName = true;
             }
-
         }
 
         async void filterlang_asian_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -180,16 +209,33 @@ namespace TopMovies.Views
 
                 returened = await obj1.LoadMovieData();
             }
-           
-            
 
-            CoverFlowControl.ItemsSource = returened.Item2;                     //Getting the images from the class
-            countofMovies = returened.Item3;                                    //Getting the count of the movies 
-            CoverFlowControl.SelectedIndex = returened.Item4;                   // Gettig the carousel selcted item . 
+            if (returened.Item2!=0)
+            {
+                if (returened.Item3 == CoverFlowControl.SelectedIndex)
+                {
+                    updateName = true;
+                }
+                ProgressRing.IsActive = false;
+                CoverFlowControl.ItemsSource = returened.Item1;                     //Getting the images from the class
+                countofMovies = returened.Item2;                                    //Getting the count of the movies 
+                CoverFlowControl.SelectedIndex = returened.Item3;                   // Gettig the carousel selcted item . 
+                if (updateName)
+                {
 
-            if (returened.Item1)
+                    CoverFlowControlSpecialCase();
+                    updateName = false;
+                }
+
+            }
+            else
             {
                 ProgressRing.IsActive = false;
+                if (sessionData.selectCategory != "TopBollywood" && sessionData.selectCategory != "TopEnglish")
+                    txtName.Text = "There are no " + sessionData.filterGenere + " Movies in " + sessionData.filterLang + " Language";
+                else
+                    txtName.Text = "There are no " + sessionData.filterGenere + " Movies in " + sessionData.selectCategory.Remove(0, 3) + " Category";
+                updateName = true;
             }
 
 
@@ -223,13 +269,13 @@ namespace TopMovies.Views
 
             returened = await obj1.LoadMovieData();
 
-            CoverFlowControl.ItemsSource = returened.Item2;                     //Getting the images from the class
-            countofMovies = returened.Item3;                                    //Getting the count of the movies 
-            CoverFlowControl.SelectedIndex = returened.Item4;                   // Gettig the carousel selcted item . 
-
-            if (returened.Item1)
+            if (returened.Item2!=0)
             {
                 ProgressRing.IsActive = false;
+                CoverFlowControl.ItemsSource = returened.Item1;                     //Getting the images from the class
+                countofMovies = returened.Item2;                                    //Getting the count of the movies 
+                CoverFlowControl.SelectedIndex = returened.Item3;                   // Gettig the carousel selcted item . 
+
             }
 
 
@@ -365,11 +411,11 @@ namespace TopMovies.Views
         /// </summary>
         /// <param name="e">Event data that describes how this page was reached.  The Parameter
         /// property is typically used to configure the page.</param>
+        /// Firstly we are getting the language information of the system , and then we are making changes accordingly.
         protected async override void OnNavigatedTo(NavigationEventArgs e)
         {
             //AnalyticsHelper.TrackPageView("/Movies");
 
-            //<summary>Firstly we are getting the language information of the system , and then we are making changes accordingly.</summary>
             language = new Windows.ApplicationModel.Resources.Core.ResourceContext().Languages.FirstOrDefault();
 
             if(!language.Contains("en"))
@@ -407,188 +453,82 @@ namespace TopMovies.Views
                
             }
 
-            GetIntertCondition();
-            //LoadMovieData();           
-
-
             CarouselImagePopulator obj1 = new CarouselImagePopulator();
             returened = await obj1.LoadMovieData();
-            CoverFlowControl.ItemsSource = returened.Item2;                     //Getting the images from the class
-            countofMovies = returened.Item3;                                    //Getting the count of the movies 
-            CoverFlowControl.SelectedIndex = returened.Item4;                   // Gettig the carousel selcted item . 
 
-
-            string testString = ((Person)CoverFlowControl.SelectedItem).Name;
-            //#region Retrieving last viewing movie
-
-            //switch (sessionData.selectCategory)
-            //{
-            //    case "TopEnglish":
-            //        if (sessionData.lastEnglishMovie != null)
-            //            CoverFlowControl.SelectedIndex = Convert.ToInt32(sessionData.lastEnglishMovie);
-            //        break;
-            //    case "TopBollywood":
-            //        if (sessionData.lastBollywoodMovie != null)
-            //            CoverFlowControl.SelectedIndex = Convert.ToInt32(sessionData.lastBollywoodMovie);
-            //        break;
-            //    case "TopForeign":
-            //        if (sessionData.lastForeignMovie != null)
-            //            CoverFlowControl.SelectedIndex = Convert.ToInt32(sessionData.lastForeignMovie);
-            //        break;
-            //    case "TopAsian":
-            //        if (sessionData.lastAsianMovie != null)
-            //            CoverFlowControl.SelectedIndex = Convert.ToInt32(sessionData.lastAsianMovie);
-            //        break;
-            //    default:
-            //        CoverFlowControl.SelectedIndex = 20;
-            //        break;
-
-            //}
-
-            //#endregion
-
-            if (returened.Item1)
+            if (returened.Item2!=0)
             {
                 ProgressRing.IsActive = false;
+                CoverFlowControl.ItemsSource = returened.Item1;                     //Getting the images from the class
+                countofMovies = returened.Item2;                                    //Getting the count of the movies 
+                CoverFlowControl.SelectedIndex = returened.Item3;                   // Gettig the carousel selcted item . 
+
             }
 
             bottonBar.IsOpen = true;
 
            
 
-            AnalyticsHelper.Track(sessionData.selectCategory, "Movie_Cat_selection");
+            //AnalyticsHelper.Track(sessionData.selectCategory, "Movie_Cat_selection");
         }
 
-        //<summary>This function gets the current device Internet Connection Status</summary>
-        private void GetIntertCondition()
+        /// <summary>
+        /// This function gets the current device Internet Connection Status
+        /// </summary>
+        /// <returns></returns>
+        private bool GetIntertCondition()
         {
             InternetconnectionProfile = Windows.Networking.Connectivity.NetworkInformation.GetInternetConnectionProfile();
+            bool internetCondition = InternetconnectionProfile != null && InternetconnectionProfile.GetNetworkConnectivityLevel() == NetworkConnectivityLevel.InternetAccess;
+            return internetCondition;
         }
 
-        //<summary>This function loads the Movie Images and title to the corousel on the Movie Page</summary>
-        //private async void LoadMovieData()
-        //{
-        //    //Windows.Storage.StorageFolder storageFolder = await Windows.ApplicationModel.Package.Current.InstalledLocation.GetFolderAsync("Xml");
-            
-        //    //movieFile = await storageFolder.GetFileAsync(fileName + ".xml");
-        //    //fileContent = await FileIO.ReadTextAsync(movieFile);
-        //    //XElement xe = XElement.Parse(fileContent);          
 
-        //    //Stopwatch stopWatch = new Stopwatch();
-        //    //stopWatch.Start();
-        //    //countofMovies = xe.Descendants("rank").Count();
-        //    string fileName = sessionData.selectCategory.ToString();
-        //    CarouselImagePopulator obj1 = new CarouselImagePopulator(fileName);
-        //    returened = await obj1.LoadMovieData();
-        //    CoverFlowControl.ItemsSource = returened.Item2;
-           
-        //    countofMovies = returened.Item3;
-
-        //    #region Retrieving last viewing movie
-
-        //    switch (sessionData.selectCategory)
-        //    {
-        //        case "TopEnglish":
-        //            if (sessionData.lastEnglishMovieIndex != null)
-        //                CoverFlowControl.SelectedIndex = Convert.ToInt32(sessionData.lastEnglishMovieIndex);
-        //            break;
-        //        case "TopBollywood":
-        //            if (sessionData.lastBollywoodMovieIndex != null)
-        //                CoverFlowControl.SelectedIndex = Convert.ToInt32(sessionData.lastBollywoodMovieIndex);
-        //            break;
-        //        case "TopForeign":
-        //            if (sessionData.lastForeignMovieIndex != null)
-        //                CoverFlowControl.SelectedIndex = Convert.ToInt32(sessionData.lastForeignMovieIndex);
-        //            break;
-        //        case "TopAsian":
-        //            if (sessionData.lastAsianMovieIndex != null)
-        //                CoverFlowControl.SelectedIndex = Convert.ToInt32(sessionData.lastAsianMovieIndex);
-        //            break;
-        //        default:
-        //            CoverFlowControl.SelectedIndex = 20;
-        //            break;
-
-        //    }
-
-        //    #endregion
-
-        //    if (returened.Item1)
-        //    {
-        //        ProgressRing.IsActive = false;
-        //    }
-        //    //stopWatch.Stop();
-
-        //    //DisplayInfo();
-        //}
-
-        //private async Task<Tuple<bool,ObservableCollection<Person>>> LoadMovie(string fileName, XElement xe)
-        //{
-
-        //    //language = new Windows.ApplicationModel.Resources.Core.ResourceContext().Languages.FirstOrDefault();
-        //    var query = (from movies in xe.Elements("movie")
-        //                 select new Person
-        //                 {
-        //                     Name = movies.Element("name").Value,
-        //                     Desp = movies.Element("desc").Value,
-        //                     //Image = "ms-appx:///Assets/" + movies.Element("rank").Value + " - " + movies.Element("name").Value + ".jpg"
-        //                     Image = "ms-appx:///Assets/" + fileName + "/" + movies.Element("rank").Value + ".jpg"
-        //                 }).AsParallel().AsSequential();
-
-
-        //    Images = new ObservableCollection<Person>();
-            
-        //    foreach (Person p in query)
-        //    {
-        //        // await Task.Run(() => images.Add(new Person() { Image = p.Image, Name = p.Name + "#" + p.Desp }));
-        //        images.Add(p);
-
-        //    }
-        //   Tuple<bool, ObservableCollection<Person>> _images = new Tuple<bool, ObservableCollection<Person>>(true, images);           
-
-        //   return _images ;
-        //}
-
-        //<summary>This function downloads the information about the movie from WikiPedia</summary>
+        /// <summary>
+        /// This function downloads the information about the movie from WikiPedia
+        /// We cannot use ((Person)coverflowcontrol.selecteditem).Name for saving to sessiondata name since when the index is not changes in case of filter and genere , the
+        /// selection changed event is not fired and also the selected item is not updated. Using below way confirms that the sessiondata is always stored correctly.
+        /// </summary>
         private void DisplayInfo()
         {
-            string movieName = ((Person)(CoverFlowControl.SelectedItem)).Name.Split('#')[0].ToString();
-            txtName.Text = movieName;
 
+            string movieName = ((Person)CoverFlowControl.Items[CoverFlowControl.SelectedIndex]).Name.Split('#')[0].ToString();
+            txtName.Text = movieName;
 
             switch (sessionData.selectCategory)
             {
                 case "TopEnglish":
-                    sessionData.lastEnglishMovie = ((Person)CoverFlowControl.SelectedItem).Name;
+                    sessionData.lastEnglishMovie = ((Person)CoverFlowControl.Items[CoverFlowControl.SelectedIndex]).Name;
                     roamingSettings.Values["lastEnglishMovie"] = sessionData.lastEnglishMovie;
                     break;
                 case "TopBollywood":
-                    sessionData.lastBollywoodMovie = ((Person)CoverFlowControl.SelectedItem).Name;
+                    sessionData.lastBollywoodMovie = ((Person)CoverFlowControl.Items[CoverFlowControl.SelectedIndex]).Name;
                     roamingSettings.Values["lastBollywoodMovie"] = sessionData.lastBollywoodMovie;
                     break;
                 case "TopForeign":
-                    sessionData.lastForeignMovie = ((Person)CoverFlowControl.SelectedItem).Name;
+                    sessionData.lastForeignMovie = ((Person)CoverFlowControl.Items[CoverFlowControl.SelectedIndex]).Name;
                     roamingSettings.Values["lastForeignMovie"] = sessionData.lastForeignMovie;
                     break;
                 case "TopAsian":
-                    sessionData.lastAsianMovie = ((Person)CoverFlowControl.SelectedItem).Name;
+                    sessionData.lastAsianMovie = ((Person)CoverFlowControl.Items[CoverFlowControl.SelectedIndex]).Name;
                     roamingSettings.Values["lastAsianMovie"] = sessionData.lastAsianMovie;
                     break;
             }
 
 
 
-            try
-            {
-                if (sessionData.selectCategory == "TopForeign")
-                    movieName = movieName.Substring(0, movieName.IndexOf("/"));
-                if (sessionData.selectCategory == "TopAsian")
-                    movieName = movieName.Substring(0, movieName.IndexOf("("));
-            }
-            catch
-            { }
+            //try
+            //{
+            //    if (sessionData.selectCategory == "TopForeign")
+            //        movieName = movieName.Substring(0, movieName.IndexOf("/"));
+            //    if (sessionData.selectCategory == "TopAsian")
+            //        movieName = movieName.Substring(0, movieName.IndexOf("("));
+            //}
+            //catch
+            //{ }
             //txtDesp.Text = ((Person)(CoverFlowControl.Items[CoverFlowControl.SelectedIndex])).Name.Split('#')[1].ToString();
             
-            if (InternetconnectionProfile != null)          // Checking if Active internet connection is avaliable or not . 
+            if (GetIntertCondition())          // Checking if Active internet connection is avaliable or not . 
             {
                 movieWiki.Navigate(new Uri("http://en.m.wikipedia.org/wiki/" + movieName));
             }
@@ -597,9 +537,7 @@ namespace TopMovies.Views
         private void GoBack(object sender, RoutedEventArgs e)
         {
             if(autoPlayOn)
-            {
             AutoStop();
-            }
 
             //Below code was extra or still not determined why it was there on the first place.
             //sessionData.lastMovieIndex = sessionData.selectCategory.ToString() + "#" + CoverFlowControl.SelectedIndex.ToString();
@@ -627,22 +565,6 @@ namespace TopMovies.Views
 
         }
 
-        //private void Options_Click(object sender, RoutedEventArgs e)
-        //{
-        //    //ToggleSettings();
-        //    stackpop.Visibility = Windows.UI.Xaml.Visibility.Visible;
-        //}
-
-        public void ToggleSettings()
-        {
-            //SampleLayout element = SampleContent.Content as SampleLayout;
-            //if (element.SelectedItem.SettingsContent != null)
-            //{
-
-            //    element.SelectedItem.IsSettingsOpen = !element.SelectedItem.IsSettingsOpen;
-
-            //}
-        }
 
         private void previous_Click_1(object sender, RoutedEventArgs e)
         {
@@ -664,24 +586,29 @@ namespace TopMovies.Views
         }
 
         private void CoverFlowControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {         
+        {
+            CoverFlowControlSpecialCase();         
+        }
+
+        /// <summary>
+        /// It was noticed that when the coverflow index remains same , i.e 0 then the selection changed event was not fired , thus this function was created, and is being
+        /// called when filtered via language and rating. 
+        /// </summary>
+        private void CoverFlowControlSpecialCase()
+        {
             convertedName.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
             txtName.Visibility = Windows.UI.Xaml.Visibility.Visible;
-            DisplayInfo();                           
-            
+            DisplayInfo(); 
         }
 
         private void btnMoreInfo_Click(object sender, RoutedEventArgs e)
         {
-            GetIntertCondition();
             if (autoPlayOn)
-            {
                 AutoStop();
-            }
 
             AnalyticsHelper.Track("Movie_Info", "Button_click", txtName.Text);
 
-            if (InternetconnectionProfile == null)          // Functionality to check user internet connection & prompt is connection unavaliable . 
+            if (!GetIntertCondition())          // Functionality to check user internet connection & prompt is connection unavaliable . 
             {
                 var messageDialog = new Windows.UI.Popups.MessageDialog(loader.GetString("NoInternet"));
                 var result = messageDialog.ShowAsync();
@@ -694,22 +621,14 @@ namespace TopMovies.Views
             //btnWVClose.Visibility = Windows.UI.Xaml.Visibility.Visible;
         }
 
-        //private async void btnBuyOnAmazon_Click(object sender, RoutedEventArgs e)
-        //{
-        //    await Windows.System.Launcher.LaunchUriAsync(new Uri("http://www.amazon.com/s/?_encoding=UTF8&field-keywords="+txtName.Text+"&linkCode=ur2&tag=artmaya-20&url=search-alias%3Dmovies-tv"));
-        //}
-
 
         private async void btnBuyDVD_Click_1(object sender, RoutedEventArgs e)
         {
-            GetIntertCondition();
             if (autoPlayOn)
-            {
                 AutoStop();
-            }
 
             var movieName = "";
-            if (sessionData.selectCategory == "TopForeign" & txtName.Text.IndexOf("/") > 5)
+            if (sessionData.selectCategory == "TopForeign" && txtName.Text.IndexOf("/") > 5)
             {
                 movieName = txtName.Text.Substring(0, txtName.Text.IndexOf("/"));
             }
@@ -730,7 +649,7 @@ namespace TopMovies.Views
 
             }
 
-            if (InternetconnectionProfile == null)          // Functionality to check user internet connection & prompt is connection unavaliable . 
+            if (!GetIntertCondition())          // Functionality to check user internet connection & prompt is connection unavaliable . 
             {
                 var messageDialog = new Windows.UI.Popups.MessageDialog(loader.GetString("NoInternet"));
                 var result = messageDialog.ShowAsync();
@@ -739,7 +658,6 @@ namespace TopMovies.Views
             {
                 string url = countryWiseUrl(buyMovieCountrycode, movieName);
 
-                //await Windows.System.Launcher.LaunchUriAsync(new Uri("http://www.amazon.com/s/?_encoding=UTF8&field-keywords=" + txtName.Text + "&linkCode=ur2&tag=artmaya-20&url=search-alias%3Dmovies-tv"));
                 await Windows.System.Launcher.LaunchUriAsync(new Uri(url));
 
             }
@@ -747,29 +665,26 @@ namespace TopMovies.Views
 
         private void btnMovieDetails_Click_1(object sender, RoutedEventArgs e)
         {
-            GetIntertCondition();
             if (autoPlayOn)
-            {
                 AutoStop();
-            }
 
-            if (InternetconnectionProfile == null)          // Functionality to check user internet connection & prompt is connection unavaliable . 
-            {
-                var messageDialog = new Windows.UI.Popups.MessageDialog(loader.GetString("NoInternet"));
-                var result = messageDialog.ShowAsync();
-            }
-            else
-            {
-                stackPopup.Visibility = Windows.UI.Xaml.Visibility.Visible;
-                Layout.Opacity = .5;
-            }
-            AnalyticsHelper.Track("Movie_Info","Button_click",txtName.Text);
+            //InfoPage infoObj = new InfoPage(((Person)CoverFlowControl.Items[CoverFlowControl.SelectedIndex]).imdbID, ((Person)CoverFlowControl.Items[CoverFlowControl.SelectedIndex]).Image, ((Person)CoverFlowControl.Items[CoverFlowControl.SelectedIndex]).Name);
+           
+            //this.Frame.Navigate(typeof(InfoPage), new InfoPage(((Person)CoverFlowControl.Items[CoverFlowControl.SelectedIndex]).imdbID, ((Person)CoverFlowControl.Items[CoverFlowControl.SelectedIndex]).Image, ((Person)CoverFlowControl.Items[CoverFlowControl.SelectedIndex]).Name));
+            datatransferManager.DataRequested -= new TypedEventHandler<DataTransferManager, DataRequestedEventArgs>(this.DataRequested);
+            this.Frame.Navigate(typeof(InfoPage), new Tuple<int, string, string>(((Person)CoverFlowControl.Items[CoverFlowControl.SelectedIndex]).imdbID, ((Person)CoverFlowControl.Items[CoverFlowControl.SelectedIndex]).Image, ((Person)CoverFlowControl.Items[CoverFlowControl.SelectedIndex]).Name));
+            //if (!GetIntertCondition())          // Functionality to check user internet connection & prompt is connection unavaliable . 
+            //{
+            //    var messageDialog = new Windows.UI.Popups.MessageDialog(loader.GetString("NoInternet"));
+            //    var result = messageDialog.ShowAsync();
+            //}
+            //else
+            //{
+            //    stackPopup.Visibility = Windows.UI.Xaml.Visibility.Visible;
+            //    Layout.Opacity = .5;
+            //}
+            //AnalyticsHelper.Track("Movie_Info","Button_click",txtName.Text);
         }
-
-        //private void btnMoreInfo_Click(object sender, DoubleTappedRoutedEventArgs e)
-        //{
-
-        //}
 
 
         private string countryWiseUrl(string country, string movieName)
@@ -824,14 +739,13 @@ namespace TopMovies.Views
 
         private async void Translate(object sender, RoutedEventArgs e)
         {
-            GetIntertCondition();
             Pause_Button.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
             Play_Button.Visibility = Windows.UI.Xaml.Visibility.Visible;
             Forward_Button.Visibility = Windows.UI.Xaml.Visibility.Visible;
             Backward_Button.Visibility = Windows.UI.Xaml.Visibility.Visible;
             ts.Cancel();
 
-            if (InternetconnectionProfile == null)          // Functionality to check user internet connection & prompt is connection unavaliable . 
+            if (!GetIntertCondition())          // Functionality to check user internet connection & prompt is connection unavaliable . 
             {
                 var messageDialog = new Windows.UI.Popups.MessageDialog(loader.GetString("NoInternet"));
                 var result = messageDialog.ShowAsync();
