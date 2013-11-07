@@ -70,6 +70,22 @@
           <source>Country Setting</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Настройки для страны</target>
         </trans-unit>
+        <trans-unit translate="yes" id="Resources\InternationalTitle\Text" xml:space="preserve">
+          <source>Top International Movies</source>
+          <target state="translated">Лучшие международные фильмы</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\HollywoodTitle\Text" xml:space="preserve">
+          <source>Top Hollywood Movies</source>
+          <target state="translated">Лучшие голливудские фильмы</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\BollywoodTitle\Text" xml:space="preserve">
+          <source>Top Bollywood Movies</source>
+          <target state="translated">Топ Болливуд фильмы</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\AsianTitle\Text" xml:space="preserve">
+          <source>Top Asian Movies</source>
+          <target state="translated">Лучшие азиатские фильмы</target>
+        </trans-unit>
         <trans-unit id="Resources\Asian_Movies\Header" translate="yes" xml:space="preserve">
           <source>Top Asian Movies</source>
           <target state="new">Top Asian Movies</target>

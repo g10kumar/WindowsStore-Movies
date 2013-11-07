@@ -165,6 +165,20 @@
   <data name="region" xml:space="preserve">
     <value>Country Setting</value>
   </data>
+  
+    <data name="AsianTitle.Text" xml:space="preserve">
+    <value>Top Asian Movies</value>
+  </data>
+  <data name="BollywoodTitle.Text" xml:space="preserve">
+    <value>Top Bollywood Movies</value>
+  </data>
+  <data name="HollywoodTitle.Text" xml:space="preserve">
+    <value>Top Hollywood Movies</value>
+  </data>
+  <data name="InternationalTitle.Text" xml:space="preserve">
+    <value>Top International Movies</value>
+  </data>
+
   <data name="Asian_Movies.Header" xml:space="preserve">
     <value>Top Asian Movies</value>
   </data>

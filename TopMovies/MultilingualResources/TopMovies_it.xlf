@@ -70,6 +70,22 @@
           <source>Country Setting</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Impostazione del paese</target>
         </trans-unit>
+        <trans-unit translate="yes" id="Resources\InternationalTitle\Text" xml:space="preserve">
+          <source>Top International Movies</source>
+          <target state="translated">Top film internazionali</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\HollywoodTitle\Text" xml:space="preserve">
+          <source>Top Hollywood Movies</source>
+          <target state="translated">Top film di Hollywood</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\BollywoodTitle\Text" xml:space="preserve">
+          <source>Top Bollywood Movies</source>
+          <target state="new">Top Bollywood Movies</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\AsianTitle\Text" xml:space="preserve">
+          <source>Top Asian Movies</source>
+          <target state="translated">Top film Asiatici</target>
+        </trans-unit>
         <trans-unit id="Resources\Asian_Movies\Header" translate="yes" xml:space="preserve">
           <source>Top Asian Movies</source>
           <target state="new">Top Asian Movies</target>
@@ -88,7 +104,7 @@
         </trans-unit>
         <trans-unit id="Resources\AsianTitle" translate="yes" xml:space="preserve">
           <source>Top Asian Movies</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Top film asiatici</target>
+          <target state="translated">Top film Asiatici</target>
         </trans-unit>
         <trans-unit id="Resources\BollywoodTitle" translate="yes" xml:space="preserve">
           <source>Top Bollywood Movies</source>
