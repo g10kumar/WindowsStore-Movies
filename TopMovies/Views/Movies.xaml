@@ -111,7 +111,7 @@
                 <x:String>Rated Highest to Lowest</x:String>
             </ComboBox>
             <ComboBox x:Name="genere" Grid.Column="1" HorizontalAlignment="Left" Margin="821,72,0,0" VerticalAlignment="Top" BorderBrush="#FF01A2A6" Foreground="#FF01A2A6" RenderTransformOrigin="0.031,0.516" Width="125">
-                <x:String>Genere:Default</x:String>
+                <x:String>Genere:All</x:String>
                 <x:String>Action</x:String>
                 <x:String>Adventure</x:String>
                 <x:String>Animation</x:String>
@@ -127,7 +127,7 @@
                 <x:String>War</x:String>
             </ComboBox>
             <ComboBox x:Name="filterlang" Grid.Column="1" HorizontalAlignment="Left" Margin="647,72,0,0" VerticalAlignment="Top" Width="126" BorderBrush="#FF01A2A6" Foreground="#FF01A2A6" Visibility="Collapsed">
-                <x:String>Language:Default</x:String>
+                <x:String>Language:All</x:String>
                 <x:String>English</x:String>
                 <x:String>French</x:String>
                 <x:String>German</x:String>
@@ -140,7 +140,7 @@
                 <x:String>Swedish</x:String>
             </ComboBox>
             <ComboBox x:Name="filterlang_asian" Grid.Column="1" HorizontalAlignment="Left" Margin="647,72,0,0" VerticalAlignment="Top" Width="126" BorderBrush="#FF01A2A6" Foreground="#FF01A2A6" Visibility="Collapsed">
-                <x:String>Language:Default</x:String>
+                <x:String>Language:All</x:String>
                 <x:String>Cantonese</x:String>
                 <x:String>Chinese</x:String>
                 <x:String>English</x:String>
