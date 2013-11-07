@@ -263,6 +263,11 @@
       <City/>
       <WebSite>http://www.mg.co.za/</WebSite>
     </paper>
+	<paper>
+      <Name>Mercury, The</Name>
+      <City/>
+      <WebSite>http://www.themercury.co.za</WebSite>
+    </paper>
     <paper>
       <Name>Pretoria News</Name>
       <City/>
@@ -528,6 +533,11 @@
   </c>
   <c name="India" value="asia">
     <paper>
+      <Name>Aaj Tak (Hindi)</Name>
+      <City/>
+      <WebSite>http://aajtak.intoday.in/</WebSite>
+    </paper>
+    <paper>
       <Name>Amar Ujala</Name>
       <City/>
       <WebSite>http://www.amarujala.com/</WebSite>
@@ -543,6 +553,11 @@
       <WebSite>http://www.asianage.com/</WebSite>
     </paper>
     <paper>
+      <Name>Business Bhaskar</Name>
+      <City/>
+      <WebSite>http://business.bhaskar.com/</WebSite>
+    </paper>
+	<paper>
       <Name>Business Standard</Name>
       <City/>
       <WebSite>http://www.business-standard.com/</WebSite>
@@ -572,8 +587,12 @@
       <Name>Dinakaran</Name>
       <City/>
       <WebSite>http://www.dinakaran.com/</WebSite>
-    </paper>    
-      
+    </paper>
+    <paper>
+      <Name>Dinamani</Name>
+      <City/>
+      <WebSite> http://dinamani.com/</WebSite>
+    </paper>
     <paper>
       <Name>Economic Times, The</Name>
       <City/>
@@ -583,11 +602,6 @@
       <Name>Eenadu</Name>
       <City/>
       <WebSite>http://www.eenadu.net/</WebSite>
-    </paper>
-    <paper>
-      <Name>Express India</Name>
-      <City/>
-      <WebSite>http://www.expressindia.com/</WebSite>
     </paper>
     <paper>
       <Name>Gujarat Samachar</Name>
@@ -602,7 +616,7 @@
     </paper>
       
     <paper>
-      <Name>Hindustan Times , The</Name>
+      <Name>Hindustan Times, The</Name>
       <City/>
       <WebSite>http://www.hindustantimes.com/</WebSite>
     </paper>
@@ -612,20 +626,54 @@
       <WebSite>http://www.kaumudi.com/</WebSite>
     </paper>
     <paper>
+      <Name>Kannada Prabha</Name>
+      <City/>
+      <WebSite>http://www.kannadaprabha.com/</WebSite>
+    </paper>
+    <paper>
+      <Name>Lokmat</Name>
+      <City/>
+      <WebSite>http://lokmat.com</WebSite>
+    </paper>
+    <paper>
       <Name>Malayala Manorama</Name>
       <City/>
       <WebSite>http://www.manoramaonline.com/</WebSite>
     </paper>
-       
     <paper>
-      <Name>News India-Times On the Web</Name>
+      <Name>New Indian Express, The</Name>
       <City/>
-      <WebSite>http://www.newsindia-times.com/</WebSite>
+      <WebSite>http://m.newIndianExpress.com</WebSite>
+    </paper>
+    <paper>
+      <Name>One India</Name>
+      <City/>
+      <WebSite>http://www.oneindia.com</WebSite>
     </paper>
     <paper>
       <Name>Pioneer, The</Name>
       <City/>
       <WebSite>http://www.dailypioneer.com/</WebSite>
+    </paper>
+	<paper>
+      <Name>Punjab Kesari</Name>
+      <City/>
+      <WebSite>http://www.punjabkesari.in/</WebSite>
+    </paper>
+	<paper>
+      <Name>Rajasthan Patrika</Name>
+      <City/>
+      <WebSite>http://www.patrika.com/</WebSite>
+    </paper>
+	<paper>
+      <Name>Sakshi</Name>
+      <City/>
+      <WebSite>http://www.sakshi.com/</WebSite>
+    </paper>
+    <paper>
+      <Name>Sentinel Assam</Name>
+      <City/>
+      <WebSite>http://www.sentinelassam.com/</WebSite>
     </paper>
     <paper>
       <Name>Statesman, The</Name>
@@ -640,7 +688,7 @@
     <paper>
       <Name>Times of India, The</Name>
       <City/>
-      <WebSite>http://www.timesofindia.com/</WebSite>
+      <WebSite>http://timesofindia.indiatimes.com</WebSite>
     </paper>
     <paper>
       <Name>Tribune, The</Name>
@@ -820,8 +868,56 @@
     </paper>
   </c>
   <c name="Nepal" value="asia">
-    
-    
+    <paper>
+      <Name>Aarthik Abhiyan Daily</Name>
+      <City/>
+      <WebSite>http://www.abhiyan.com.np/</WebSite>
+    </paper>
+    <paper>
+      <Name>Arghakhanchi Times</Name>
+      <City/>
+      <WebSite>http://www.arghakhanchi.com/</WebSite>
+    </paper>
+    <paper>
+      <Name>Chitawan Online News Service</Name>
+      <City/>
+      <WebSite>http://www.chitawan.com/</WebSite>
+    </paper>
+    <paper>
+      <Name>Dhaulashree</Name>
+      <City/>
+      <WebSite>http://www.ebaglung.com/</WebSite>
+    </paper>
+    <paper>
+      <Name>Hamro Khotang</Name>
+      <City/>
+      <WebSite>http://www.hamrokhotang.com/</WebSite>
+    </paper>
+    <paper>
+      <Name>The Himalayan Times</Name>
+      <City/>
+      <WebSite>http://www.thehimalayantimes.com/</WebSite>
+    </paper>   
+	<paper>
+      <Name>Nepal Times</Name>
+      <City/>
+      <WebSite>http://nepalitimes.com/</WebSite>
+    </paper> 	
+	<paper>
+      <Name>Nepal News</Name>
+      <City/>
+      <WebSite>http://www.nepalnews.com/</WebSite>
+    </paper> 	
+	<paper>
+      <Name>Nepal Samacharpatra</Name>
+      <City/>
+      <WebSite>http://www.newsofnepal.com/</WebSite>
+    </paper> 	
+	<paper>
+      <Name>Sahara Sansar</Name>
+      <City/>
+      <WebSite>http://www.saharasansar.com/</WebSite>
+    </paper> 	
   </c>
   <c name="North Korea" value="asia">
     <paper>
@@ -1704,6 +1800,21 @@
       <WebSite>http://www.hbl.fi</WebSite>
     </paper>
     <paper>
+      <Name>Iltasanomat</Name>
+      <City>Helsinki</City>
+      <WebSite>http://iltasanomat.fi</WebSite>
+    </paper>
+    <paper>
+      <Name>Kaleva.fi</Name>
+      <City>Helsinki</City>
+      <WebSite>http://www.Kaleva.fi</WebSite>
+    </paper>
+    <paper>
+      <Name>Iltalehti</Name>
+      <City>Helsinki</City>
+      <WebSite>http://www.iltalehti.fi/</WebSite>
+    </paper>
+    <paper>
       <Name>Osterbottens Tidning</Name>
       <City/>
       <WebSite>http://www.ot.fi/</WebSite>
@@ -1815,6 +1926,11 @@
       <Name>Liberation</Name>
       <City>Paris</City>
       <WebSite>http://www.liberation.fr/</WebSite>
+    </paper>
+	    <paper>
+      <Name>MidiLibre</Name>
+      <City>Paris</City>
+      <WebSite>http://www.midilibre.fr</WebSite>
     </paper>
     <paper>
       <Name>Nice-Matin.com</Name>
