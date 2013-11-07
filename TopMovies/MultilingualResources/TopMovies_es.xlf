@@ -70,6 +70,22 @@
           <source>Country Setting</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Campestre</target>
         </trans-unit>
+        <trans-unit translate="yes" id="Resources\InternationalTitle\Text" xml:space="preserve">
+          <source>Top International Movies</source>
+          <target state="translated">Películas de internacionales superior</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\HollywoodTitle\Text" xml:space="preserve">
+          <source>Top Hollywood Movies</source>
+          <target state="translated">Películas de Hollywood superior</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\BollywoodTitle\Text" xml:space="preserve">
+          <source>Top Bollywood Movies</source>
+          <target state="translated">Películas de Bollywood superior</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\AsianTitle\Text" xml:space="preserve">
+          <source>Top Asian Movies</source>
+          <target state="translated">Películas de asiáticas superior</target>
+        </trans-unit>
         <trans-unit id="Resources\Asian_Movies\Header" translate="yes" xml:space="preserve">
           <source>Top Asian Movies</source>
           <target state="new">Top Asian Movies</target>

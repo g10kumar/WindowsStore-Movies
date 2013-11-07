@@ -70,9 +70,25 @@
           <source>Country Setting</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Ländereinstellung</target>
         </trans-unit>
+        <trans-unit translate="yes" id="Resources\InternationalTitle\Text" xml:space="preserve">
+          <source>Top International Movies</source>
+          <target state="translated">Internationale Top-Filme</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\HollywoodTitle\Text" xml:space="preserve">
+          <source>Top Hollywood Movies</source>
+          <target state="new">Top Hollywood Movies</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\BollywoodTitle\Text" xml:space="preserve">
+          <source>Top Bollywood Movies</source>
+          <target state="new">Top Bollywood Movies</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\AsianTitle\Text" xml:space="preserve">
+          <source>Top Asian Movies</source>
+          <target state="translated">Top Asiatische Filme</target>
+        </trans-unit>
         <trans-unit id="Resources\Asian_Movies\Header" translate="yes" xml:space="preserve">
           <source>Top Asian Movies</source>
-          <target state="new">Top Asian Movies</target>
+          <target state="translated">Top Asiatische Filme</target>
         </trans-unit>
         <trans-unit id="Resources\Bollywood_Movies\Header" translate="yes" xml:space="preserve">
           <source>Top Bollywood Movies</source>
@@ -84,11 +100,11 @@
         </trans-unit>
         <trans-unit id="Resources\International_Movies\Header" translate="yes" xml:space="preserve">
           <source>Top International Movies</source>
-          <target state="new">Top International Movies</target>
+          <target state="translated">Internationale Top-Filme</target>
         </trans-unit>
         <trans-unit id="Resources\AsianTitle" translate="yes" xml:space="preserve">
           <source>Top Asian Movies</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Top asiatische Filme</target>
+          <target state="translated">Top Asiatische Filme</target>
         </trans-unit>
         <trans-unit id="Resources\BollywoodTitle" translate="yes" xml:space="preserve">
           <source>Top Bollywood Movies</source>
