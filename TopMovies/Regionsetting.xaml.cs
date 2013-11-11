@@ -46,7 +46,7 @@ namespace TopMovies
             list.Add("Japan");
             list.Add("Spain");
             list.Add("United Kingdom");
-            list.Add("Uniited States");
+            list.Add("United States");
             list.Add("Others (Rest of the World)");
 
 
