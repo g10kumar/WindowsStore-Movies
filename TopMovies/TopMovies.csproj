@@ -106,11 +106,18 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="BasicPage1.xaml.cs">
+      <DependentUpon>BasicPage1.xaml</DependentUpon>
+    </Compile>
     <Compile Include="CarouselImagePopulator.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="GoogleTranslator.cs" />
+    <Compile Include="Common\BindableBase.cs" />
+    <Compile Include="Common\BooleanNegationConverter.cs" />
+    <Compile Include="Common\BooleanToVisibilityConverter.cs" />
     <Compile Include="Common\LayoutAwarePage.cs" />
+    <Compile Include="Common\RichTextColumns.cs" />
+    <Compile Include="GoogleTranslator.cs" />
     <Compile Include="Common\NotificationObject.cs" />
     <Compile Include="Common\SettingsFlyout.cs" />
     <Compile Include="Common\SuspensionManager.cs" />
@@ -129,10 +136,14 @@
     <Compile Include="Regionsetting.xaml.cs">
       <DependentUpon>Regionsetting.xaml</DependentUpon>
     </Compile>
+    <Compile Include="TrailerPage.xaml.cs">
+      <DependentUpon>TrailerPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\CoverFlowProperties.cs" />
     <Compile Include="Views\Movies.xaml.cs">
       <DependentUpon>Movies.xaml</DependentUpon>
     </Compile>
+    <Compile Include="YouTubeVideoId.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -153,8 +164,10 @@
   <ItemGroup>
     <Content Include="Assets\backward.png" />
     <Content Include="Assets\BlackLogo.png" />
-    <Content Include="Assets\Fast_Backward.png" />
-    <Content Include="Assets\Fast_Forward.png" />
+    <Content Include="Assets\Cart.png" />
+    <Content Include="Assets\Close.png" />
+    <Content Include="Assets\Film.png" />
+    <Content Include="Assets\Filter.png" />
     <Content Include="Assets\forward.png" />
     <Content Include="Assets\imdb.jpg" />
     <Content Include="Assets\Pause.png" />
@@ -802,9 +815,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Content Include="Assets\wiki.png" />
+    <Page Include="BasicPage1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Content Include="blank.html" />
+    <Content Include="Common\ReadMe.txt" />
     <Content Include="defaultAdSettings.xml" />
     <Page Include="InfoPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TrailerPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

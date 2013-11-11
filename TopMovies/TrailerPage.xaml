@@ -1,0 +1,30 @@
+﻿<Page
+    x:Class="TopMovies.TrailerPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:TopMovies"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="140"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="140"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="backButton" Click="GoBack" IsEnabled="{Binding Frame.CanGoBack, ElementName=pageRoot}" Style="{StaticResource BackButtonStyle}" BorderBrush="#FF1FAEFF" Foreground="#FF1FAEFF" Margin="36,0,0,36" >
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF1FAEFF"/>
+                    <GradientStop Color="#FF1FAEFF" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <WebView x:Name="trailerHolder" Height="490" Margin="120,0,253,0" VerticalAlignment="Top" Grid.Column="1" Grid.Row="1" RenderTransformOrigin="0.504,0.502" Width="853"/>
+
+    </Grid>
+</Page>
