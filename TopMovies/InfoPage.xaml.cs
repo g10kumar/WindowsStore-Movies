@@ -25,7 +25,7 @@ namespace TopMovies
     /// <summary>
     /// This page displayes movie information from imdb . Also user has the controls to check information from Wikipedia , watch youtube trailer and buy the title. 
     /// </summary>
-    public sealed partial class InfoPage : Page
+    public sealed partial class InfoPage : TopMovies.Common.LayoutAwarePage
     {
         string releaseYear;
         string title;
@@ -87,7 +87,6 @@ namespace TopMovies
                 }
 
                 busyIndicator.IsBusy = false;
-
                 accordion.ItemsSource = Information;
                 accordion.SelectedIndex = 0;
                 releaseYear = derivedContent.Item4.Split(new char[] { '|' })[0];

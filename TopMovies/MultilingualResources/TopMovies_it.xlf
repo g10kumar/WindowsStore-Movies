@@ -70,19 +70,19 @@
           <source>Country Setting</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Impostazione del paese</target>
         </trans-unit>
-        <trans-unit id="Resources\Asian_Movies\Header" translate="yes" xml:space="preserve">
-          <source>Top Asian Movies</source>
-          <target state="new">Top Asian Movies</target>
-        </trans-unit>
-        <trans-unit id="Resources\Bollywood_Movies\Header" translate="yes" xml:space="preserve">
+        <trans-unit translate="yes" id="Resources\Bollywood_Movies\Text" xml:space="preserve">
           <source>Top Bollywood Movies</source>
           <target state="new">Top Bollywood Movies</target>
         </trans-unit>
-        <trans-unit id="Resources\Hollywood_Movies\Header" translate="yes" xml:space="preserve">
+        <trans-unit translate="yes" id="Resources\Asian_Movies\Text" xml:space="preserve">
+          <source>Top Asian Movies</source>
+          <target state="new">Top Asian Movies</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\Hollywood_Movies\Text" xml:space="preserve">
           <source>Top Hollywood Movies</source>
           <target state="new">Top Hollywood Movies</target>
         </trans-unit>
-        <trans-unit id="Resources\International_Movies\Header" translate="yes" xml:space="preserve">
+        <trans-unit translate="yes" id="Resources\International_Movies\Text" xml:space="preserve">
           <source>Top International Movies</source>
           <target state="new">Top International Movies</target>
         </trans-unit>
@@ -175,8 +175,8 @@
           <target state="new">Cantonese</target>
         </trans-unit>
         <trans-unit translate="yes" id="Resources\asianLang1" xml:space="preserve">
-          <source>Language:Default</source>
-          <target state="new">Language:Default</target>
+          <source>Language:All</source>
+          <target state="new">Language:All</target>
         </trans-unit>
         <trans-unit translate="yes" id="Resources\Runtime" xml:space="preserve">
           <source>Runtime</source>
@@ -215,8 +215,8 @@
           <target state="new">Additional Information</target>
         </trans-unit>
         <trans-unit translate="yes" id="Resources\lang1" xml:space="preserve">
-          <source>Language:Default</source>
-          <target state="new">Language:Default</target>
+          <source>Language:All</source>
+          <target state="new">Language:All</target>
         </trans-unit>
         <trans-unit translate="yes" id="Resources\lang11" xml:space="preserve">
           <source>Swedish</source>
@@ -331,8 +331,8 @@
           <target state="new">Horror</target>
         </trans-unit>
         <trans-unit translate="yes" id="Resources\genre1" xml:space="preserve">
-          <source>Genre:Default</source>
-          <target state="new">Genre:Default</target>
+          <source>Genre:All</source>
+          <target state="new">Genre:All</target>
         </trans-unit>
       </group>
     </body>

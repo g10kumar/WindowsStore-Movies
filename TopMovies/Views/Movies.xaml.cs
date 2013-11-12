@@ -520,6 +520,9 @@ namespace TopMovies.Views
                 ProgressRing.IsBusy = false;
             }
 
+            if(this.Frame.CanGoForward)
+            CoverFlowControl.Refresh();
+
 
 
             if (sessionData.filterGenere != null || sessionData.filterLang != null || sessionData.sortOrder != 0)
@@ -936,6 +939,8 @@ namespace TopMovies.Views
             //filterPopUp.SetValue(Canvas.TopProperty,10);
             filterPopUp.IsOpen = true;
         }
+
+
 
 
 

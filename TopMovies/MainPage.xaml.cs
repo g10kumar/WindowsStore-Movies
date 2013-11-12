@@ -29,7 +29,6 @@ namespace TopMovies
     /// </summary>
     public sealed partial class MainPage : TopMovies.Common.LayoutAwarePage
     {
-        private SimpleOrientationSensor orientationSensor;
 
         public MainPage()
         {
@@ -40,7 +39,7 @@ namespace TopMovies
 
         //private void manageViewState()
         //{
-        //    string visualState = DetermineVisualState(ApplicationView.Value);
+         //  string visualState = DetermineVisualState(ApplicationView.Value);
 
         //    if (visualState == "Snapped")
         //    {
