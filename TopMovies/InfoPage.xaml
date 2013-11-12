@@ -1,25 +1,78 @@
-﻿<Page
+﻿<common:LayoutAwarePage
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:TopMovies"
+    xmlns:common="using:TopMovies.Common"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:Notification="using:Syncfusion.UI.Xaml.Controls.Notification"
     xmlns:Input="using:Syncfusion.UI.Xaml.Controls.Input"
     xmlns:Layout="using:Syncfusion.UI.Xaml.Controls.Layout"
+    xmlns:Navigation="using:Syncfusion.UI.Xaml.Controls.Navigation" 
     x:Class="TopMovies.InfoPage"
     mc:Ignorable="d">
+    <UserControl.Resources>
+        <Style TargetType="Image">
+            <Setter Property="Width" Value="18"/>
+            <Setter Property="Stretch" Value="Uniform"/>
+        </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="Margin" Value="3"/>
+        </Style>
+        <Style x:Key="NavigationButtonStyle" TargetType="Button">
+            <Setter Property="FontFamily" Value="Segoe UI Symbol"/>
+            <Setter Property="BorderBrush" Value="#FF464646"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid Background="Transparent" Margin="-5">
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal"/>
+                                    <VisualState x:Name="PointerOver">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Fill" Storyboard.TargetName="BackgroundEllipse">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="#FF1FAEFF"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <Ellipse Fill="#FF1FAEFF" x:Name="BackgroundEllipse" />
+                            <Ellipse Stroke="{TemplateBinding BorderBrush}" StrokeThickness="2"  Fill="Transparent"/>
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="CircularButton" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <Ellipse  Fill="#FFF4F4F5"  Stroke="Black" Width="10" Height="10"/>
+                            <Image Source="Assets/Close.png" Width="40"  />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+
 
     <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
             <RowDefinition Height="140"/>
-            <RowDefinition/>
+            <RowDefinition Height="13*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="140"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Button x:Name="backButton" Click="GoBack" IsEnabled="{Binding Frame.CanGoBack, ElementName=pageRoot}" Style="{StaticResource BackButtonStyle}" BorderBrush="#FF1FAEFF" Foreground="#FF1FAEFF" >
+        <Button x:Name="backButton" Click="GoBack" IsEnabled="{Binding Frame.CanGoBack, ElementName=pageRoot}" Style="{StaticResource BackButtonStyle}" BorderBrush="#FF1FAEFF" Foreground="#FF1FAEFF" Margin="36,0,0,36" >
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF1FAEFF"/>
@@ -27,18 +80,18 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <TextBlock x:Name="infoHeader" Grid.Column="1" HorizontalAlignment="Left" Margin="10,37,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Height="93" Width="1185" Foreground="#FF1FAEFF" FontSize="56" FontFamily="Segoe UI" TextAlignment="Center"/>
+        <TextBlock x:Name="infoHeader" Grid.Column="1" HorizontalAlignment="Left" Margin="10,37,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Height="93" Width="1185" Foreground="#FF1FAEFF" FontSize="36" FontFamily="Segoe UI" TextAlignment="Center" LineHeight="1"/>
 
 
-        <Notification:SfPulsingTile RadiusX="0" RadiusY="0" PulseDuration="00:00:10" PulseScale="2"  x:Name="imageHolder" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top" Width="350" Height="500" Background="{x:Null}" Grid.ColumnSpan="2" Margin="70,10,0,0" >
+        <Notification:SfPulsingTile  RadiusX="0" RadiusY="0" PulseDuration="00:00:10"  x:Name="imageHolder" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top" Width="350" Height="500" Background="{x:Null}" Grid.ColumnSpan="2" Margin="70,10,0,0" Grid.RowSpan="2" PulseScale="2" >
             <!--<Notification:SfPulsingTile.Content>
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>-->
-                    <Image x:Name="imageHolder2" VerticalAlignment="Stretch" HorizontalAlignment="Center" Height="500" Width="350"/>
-                    <!--<Grid Grid.Row="1">
+            <Image x:Name="imageHolder2" VerticalAlignment="Stretch" HorizontalAlignment="Center" Height="500" Width="350"/>
+            <!--<Grid Grid.Row="1">
                         <TextBlock Text="release"
                                                    FontSize="20" Margin="8" 
                                                    HorizontalAlignment="Stretch"/>
@@ -46,31 +99,32 @@
                 </Grid>
             </Notification:SfPulsingTile.Content>-->
         </Notification:SfPulsingTile>
-        <Notification:SfBusyIndicator x:Name="busyIndicator" Grid.Column="1" HorizontalAlignment="Left" Margin="460,203,0,0" Grid.Row="1" VerticalAlignment="Top" Height="100" Width="168" AnimationType="Flower" Foreground="#FF01A2A6"/>
-
-        <Input:SfRating x:Name="imdbRate" Grid.Column="1" HorizontalAlignment="Left" Height="30" Margin="354,94,0,0" Grid.Row="1" VerticalAlignment="Top" Width="311" ItemsCount="10" Precision="Exact">
-            <Input:SfRating.ItemContainerStyle>
-                <Style TargetType="Input:SfRatingItem">
-                    <Setter Property="RatedFill" Value="#FF01A2A6"/>
-                </Style>
-            </Input:SfRating.ItemContainerStyle>
-        </Input:SfRating>
-        <Image Source="Assets/imdb.jpg" Grid.Column="1" HorizontalAlignment="Left" Height="50" Grid.Row="1" VerticalAlignment="Top" Width="100" Margin="354,39,0,0"/>
-        <TextBlock x:Name="imdbNumber" Grid.Column="1" HorizontalAlignment="Left" Margin="487,39,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Height="47" Width="158" Foreground="#FF01A2A6" FontSize="50"/>
-        <TextBlock x:Name="imdbVotes" Grid.Column="1" HorizontalAlignment="Left" Margin="354,129,0,0" Grid.Row="1" TextWrapping="Wrap"  VerticalAlignment="Top" Width="291" Height="25" FontSize="18" Foreground="#FF01A2A6" TextAlignment="Center"/>
-        <Grid x:Name="tomatoGrid" HorizontalAlignment="Left" Height="184" Margin="354,177,0,0" Grid.Row="1" VerticalAlignment="Top" Width="320" Grid.Column="1" Visibility="Collapsed">
-            <Image Source="Assets/tomato.jpg" Height="51" Margin="10,28,0,105" HorizontalAlignment="Left" Width="68"/>
-            <Input:SfRating x:Name="tomatoRate" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="173" ItemsCount="5" Precision="Exact" Margin="0,79,0,0">
+        <Notification:SfBusyIndicator x:Name="busyIndicator" Grid.Column="1" Margin="0,194,608,0" Grid.Row="1" AnimationType="Flower" Foreground="#FF01A2A6" HorizontalAlignment="Right" Width="150" Height="100" VerticalAlignment="Top"/>
+        <Grid x:Name="imdbGrid" Grid.Column="1" HorizontalAlignment="Left" Height="125" Margin="338,26,0,0" Grid.Row="1" VerticalAlignment="Top" Width="336">
+            <Image  Source="Assets/imdb.jpg" HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="100" Margin="10,10,0,0"/>
+            <Input:SfRating x:Name="imdbRate" HorizontalAlignment="Left" Height="30" Margin="10,65,0,0" VerticalAlignment="Top" Width="311" ItemsCount="10" Precision="Exact" RenderTransformOrigin="0.529,2.083">
                 <Input:SfRating.ItemContainerStyle>
                     <Style TargetType="Input:SfRatingItem">
                         <Setter Property="RatedFill" Value="#FF01A2A6"/>
                     </Style>
                 </Input:SfRating.ItemContainerStyle>
             </Input:SfRating>
-            <TextBlock x:Name="tomatoVotes" HorizontalAlignment="Left" TextWrapping="Wrap" Width="291" Height="25" FontSize="18" Foreground="#FF01A2A6" Margin="0,114,0,45" TextAlignment="Center"/>
-            <TextBlock x:Name="tomatoNumber" HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Top" Height="47" Width="158" Foreground="#FF01A2A6" FontSize="50" Margin="0,27,29,0"/>
+            <TextBlock x:Name="imdbNumber" Margin="163,13,15,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="47" Foreground="#FF01A2A6" FontSize="50"/>
+            <TextBlock x:Name="imdbVotes" Margin="22,95,23,0" TextWrapping="Wrap"  VerticalAlignment="Top" Height="25" FontSize="18" Foreground="#FF01A2A6" TextAlignment="Center"/>
         </Grid>
-        <Layout:SfAccordion x:Name="accordion" AccentBrush="#FF01A2A6" Grid.Column="1" HorizontalAlignment="Left" Margin="745,23,0,0" Grid.Row="1" VerticalAlignment="Top" Width="450" ItemsSource="{Binding Information}" DisplayMemberPath="Header" SelectionMode="One">
+        <Grid x:Name="tomatoGrid" HorizontalAlignment="Left" Height="125" Margin="338,194,0,0" Grid.Row="1" VerticalAlignment="Top" Width="336" Grid.Column="1" Visibility="Collapsed">
+            <Image x:Name="image1" Source="Assets/tomato.jpg" Height="51" Margin="10,10,0,64" HorizontalAlignment="Left" Width="68"/>
+            <Input:SfRating x:Name="tomatoRate" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="173" ItemsCount="5" Precision="Exact" Margin="10,65,0,0">
+                <Input:SfRating.ItemContainerStyle>
+                    <Style TargetType="Input:SfRatingItem">
+                        <Setter Property="RatedFill" Value="#FF01A2A6"/>
+                    </Style>
+                </Input:SfRating.ItemContainerStyle>
+            </Input:SfRating>
+            <TextBlock x:Name="tomatoVotes" TextWrapping="Wrap" Height="25" FontSize="18" Foreground="#FF01A2A6" Margin="22,94,23,6" TextAlignment="Center"/>
+            <TextBlock x:Name="tomatoNumber" TextWrapping="Wrap" VerticalAlignment="Top" Height="47" Foreground="#FF01A2A6" FontSize="50" Margin="163,14,15,0"/>
+        </Grid>
+        <Layout:SfAccordion x:Name="accordion" AccentBrush="#FF01A2A6" Grid.Column="1" HorizontalAlignment="Left" Margin="745,23,0,0" Grid.Row="1" VerticalAlignment="Top" Width="450" DisplayMemberPath="Header" SelectionMode="One">
             <Layout:SfAccordion.ContentTemplate>
                 <DataTemplate>
                     <Border Height="Auto" Width="450">
@@ -91,7 +145,576 @@
                     </Grid>
                 </DataTemplate>
             </Layout:SfAccordion.HeaderTemplate>
+            <StackPanel Height="100" Width="100"/>
         </Layout:SfAccordion>
-
+        <Navigation:SfRadialMenu
+                                 NavigationButtonStyle="{StaticResource NavigationButtonStyle}"
+                                   EnableFreeRotation="True" IsOpen="False"
+                                     x:Name="selectionmenu" Padding="5" Margin="316,410,318,0" Background="#FF01A2A6" RimBackground="#FF29D9C2" CenterRimRadiusFactor="0.2" RimRadiusFactor="0.95" Grid.Column="1" Grid.Row="1" Height="208" VerticalAlignment="Top" RadiusX="100" RadiusY="100" RenderTransformOrigin="0.5,0.5">
+            <Navigation:SfRadialMenu.RenderTransform>
+                <CompositeTransform/>
+            </Navigation:SfRadialMenu.RenderTransform>
+            <Navigation:SfRadialMenu.Icon>
+                <Grid Background="Transparent">
+                    <Image Source="ms-appx:///Assets/Tools.png" Width="20" Stretch="Uniform"/>
+                </Grid>
+            </Navigation:SfRadialMenu.Icon>
+            <Navigation:SfRadialMenuItem Click="WikiPediaArticle"  ToolTipPlacement="Top" Margin="6,-1,-6,1"  >
+                <Navigation:SfRadialMenuItem.Header>
+                    <Border Background="Transparent" Padding="5">
+                        <StackPanel>
+                            <Image Source="ms-appx:///Assets/wiki.png"/>
+                            <TextBlock Text="Wikipedia" LineHeight="1" TextWrapping="Wrap"/>
+                        </StackPanel>
+                    </Border>
+                </Navigation:SfRadialMenuItem.Header>
+            </Navigation:SfRadialMenuItem>
+            <Navigation:SfRadialMenuItem ToolTipPlacement="Top" Margin="6,-1,-6,1" Click="BuyMovie"  >
+                <Navigation:SfRadialMenuItem.Header>
+                    <Border Background="Transparent" Padding="5">
+                        <StackPanel>
+                            <Image Source="ms-appx:///Assets/Cart.png"/>
+                            <TextBlock Text="Buy Movie" LineHeight="1" TextWrapping="Wrap"/>
+                        </StackPanel>
+                    </Border>
+                </Navigation:SfRadialMenuItem.Header>
+            </Navigation:SfRadialMenuItem>
+            <Navigation:SfRadialMenuItem Click="ShowTrailer"  ToolTipPlacement="Top" Margin="6,-1,-6,1"  >
+                <Navigation:SfRadialMenuItem.Header>
+                    <Border Background="Transparent" Padding="5">
+                        <StackPanel>
+                            <Image Source="ms-appx:///Assets/Film.png"/>
+                            <TextBlock Text="Trailer" LineHeight="1" TextWrapping="Wrap"/>
+                        </StackPanel>
+                    </Border>
+                </Navigation:SfRadialMenuItem.Header>
+            </Navigation:SfRadialMenuItem>
+        </Navigation:SfRadialMenu>
+        <Grid x:Name="wikiGrid" Grid.Column="1" HorizontalAlignment="Left" Height="500" Margin="338,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="857" Background="Transparent">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Button x:Name="wikiCloseButton" Style="{StaticResource CircularButton}" VerticalAlignment="Stretch" BorderBrush="Transparent" Background="Transparent" Click="btnClose_Click" Margin="392,5,393,448" HorizontalAlignment="Stretch" RenderTransformOrigin="0.5,0.5" >
+                <Button.RenderTransform>
+                    <CompositeTransform/>
+                </Button.RenderTransform>
+            </Button>
+            <StackPanel Margin="0,57,0,0">
+                <WebView x:Name="wikiView" Height="442"/>
+            </StackPanel>
+        </Grid>
+        <StackPanel Orientation="Vertical" VerticalAlignment="Top" x:Name="snappedStack" Grid.Row="0" Margin="2,10,3,0" HorizontalAlignment="Center" Height="750" Width="315" Grid.ColumnSpan="6" Grid.RowSpan="3" RenderTransformOrigin="0.5,0.5">
+            <Image x:Name="image" Source="ms-appx:///Assets/BlackLogo.png" Width="150" Height="102" Margin="83,0,82,0" />
+            <TextBlock x:Uid="SnappedMessage" x:Name="textBlock"  TextWrapping="Wrap" Style="{StaticResource AboutUsTextStyle}" Foreground="Black" FontSize="24"  Margin="30,40,33,10" RenderTransformOrigin="0.5,0.5" Height="233" >
+            </TextBlock>
+        </StackPanel>
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="ApplicationViewStates">
+                <VisualState x:Name="FullScreenLandscape">
+                    <Storyboard>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="snappedStack">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <Visibility>Collapsed</Visibility>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="wikiGrid">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <Visibility>Collapsed</Visibility>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="selectionmenu">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <Thickness>418,410,558,0</Thickness>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <DoubleAnimation Duration="0" To="110" Storyboard.TargetProperty="(SfRadialMenu.RadiusX)" Storyboard.TargetName="selectionmenu" d:IsOptimized="True"/>
+                    </Storyboard>
+                </VisualState>
+                <VisualState x:Name="Filled">
+                    <Storyboard>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="snappedStack">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <Visibility>Collapsed</Visibility>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="infoHeader">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <Thickness>10,37,0,0</Thickness>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="infoHeader">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <x:Double>864</x:Double>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Grid.RowSpan)" Storyboard.TargetName="imageHolder">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <x:Int32>1</x:Int32>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="imageHolder">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <x:Double>250</x:Double>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Height)" Storyboard.TargetName="imageHolder">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <x:Double>350</x:Double>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="busyIndicator">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <Thickness>365,196,369,0</Thickness>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.HorizontalAlignment)" Storyboard.TargetName="busyIndicator">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <HorizontalAlignment>Stretch</HorizontalAlignment>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="busyIndicator">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <x:Double>NaN</x:Double>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Grid.RowSpan)" Storyboard.TargetName="imageHolder2">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <x:Int32>1</x:Int32>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Height)" Storyboard.TargetName="imageHolder2">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <x:Double>350</x:Double>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="imageHolder2">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <x:Double>250</x:Double>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="imdbGrid">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <x:Double>336</x:Double>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Height)" Storyboard.TargetName="imdbGrid">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <x:Double>120</x:Double>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="imdbGrid">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <Thickness>70,378,0,0</Thickness>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Grid.Column)" Storyboard.TargetName="imdbGrid">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <x:Int32>0</x:Int32>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Grid.ColumnSpan)" Storyboard.TargetName="imdbGrid">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <x:Int32>2</x:Int32>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="accordion">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <Thickness>393,23,0,0</Thickness>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(SfPulsingTile.PulseScale)" Storyboard.TargetName="imageHolder" d:IsOptimized="True"/>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="tomatoGrid">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <Visibility>Collapsed</Visibility>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="tomatoGrid">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <Thickness>90,490,0,0</Thickness>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Grid.Column)" Storyboard.TargetName="tomatoGrid">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <x:Int32>0</x:Int32>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Grid.ColumnSpan)" Storyboard.TargetName="tomatoGrid">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <x:Int32>2</x:Int32>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="wikiGrid">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <Thickness>214,10,0,0</Thickness>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Grid.Column)" Storyboard.TargetName="wikiGrid">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <x:Int32>1</x:Int32>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Grid.ColumnSpan)" Storyboard.TargetName="wikiGrid">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <x:Int32>1</x:Int32>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="wikiGrid">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <x:Double>649</x:Double>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="wikiCloseButton">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <Thickness>299,5,299,448</Thickness>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="wikiGrid">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <Visibility>Collapsed</Visibility>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="selectionmenu">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <Thickness>254,410,430,0</Thickness>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                    </Storyboard>
+                </VisualState>
+                <VisualState x:Name="FullScreenPortrait">
+                    <Storyboard>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="snappedStack">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <Visibility>Collapsed</Visibility>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="infoHeader">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <x:Double>618</x:Double>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="infoHeader">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <Thickness>10,37,0,0</Thickness>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Grid.RowSpan)" Storyboard.TargetName="imageHolder">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <x:Int32>1</x:Int32>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="imageHolder">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <x:Double>250</x:Double>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Height)" Storyboard.TargetName="imageHolder">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <x:Double>350</x:Double>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(SfPulsingTile.PulseScale)" Storyboard.TargetName="imageHolder" d:IsOptimized="True"/>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="imageHolder2">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <x:Double>250</x:Double>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Height)" Storyboard.TargetName="imageHolder2">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <x:Double>350</x:Double>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Grid.Column)" Storyboard.TargetName="busyIndicator">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <x:Int32>1</x:Int32>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Grid.ColumnSpan)" Storyboard.TargetName="busyIndicator">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <x:Int32>1</x:Int32>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="busyIndicator">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <Thickness>0,494,292,0</Thickness>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="wikiGrid">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <Thickness>0,360,0,0</Thickness>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Grid.Column)" Storyboard.TargetName="wikiGrid">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <x:Int32>0</x:Int32>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Grid.ColumnSpan)" Storyboard.TargetName="wikiGrid">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <x:Int32>2</x:Int32>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="wikiGrid">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <x:Double>768</x:Double>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="accordion">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <Thickness>20,410,158,0</Thickness>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="wikiGrid">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <Visibility>Collapsed</Visibility>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.HorizontalAlignment)" Storyboard.TargetName="accordion">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <HorizontalAlignment>Stretch</HorizontalAlignment>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="accordion">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <x:Double>NaN</x:Double>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="imdbGrid">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <Thickness>266,26,26,0</Thickness>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.HorizontalAlignment)" Storyboard.TargetName="imdbGrid">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <HorizontalAlignment>Stretch</HorizontalAlignment>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="imdbGrid">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <x:Double>NaN</x:Double>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="tomatoGrid">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <Visibility>Collapsed</Visibility>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="tomatoGrid">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <Thickness>266,194,26,0</Thickness>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.HorizontalAlignment)" Storyboard.TargetName="tomatoGrid">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <HorizontalAlignment>Stretch</HorizontalAlignment>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="tomatoGrid">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <x:Double>NaN</x:Double>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="selectionmenu">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <Thickness>120,0,257,56</Thickness>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.VerticalAlignment)" Storyboard.TargetName="selectionmenu">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <VerticalAlignment>Bottom</VerticalAlignment>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <DoubleAnimation Duration="0" To="-1" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="wikiCloseButton" d:IsOptimized="True"/>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="wikiCloseButton">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <Thickness>363,5,362,448</Thickness>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                    </Storyboard>
+                </VisualState>
+                <VisualState x:Name="Snapped">
+                    <Storyboard>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="wikiGrid">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <Visibility>Collapsed</Visibility>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="selectionmenu">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <Visibility>Collapsed</Visibility>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="accordion">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <Visibility>Collapsed</Visibility>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="imdbGrid">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <Visibility>Collapsed</Visibility>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="busyIndicator">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <Visibility>Collapsed</Visibility>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="imageHolder">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <Visibility>Collapsed</Visibility>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="infoHeader">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <Visibility>Collapsed</Visibility>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="backButton">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <Visibility>Collapsed</Visibility>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                    </Storyboard>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
     </Grid>
-</Page>
+
+</common:LayoutAwarePage>

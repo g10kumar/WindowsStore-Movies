@@ -18,6 +18,7 @@ using TopMovies.Common;
 using DT.GoogleAnalytics.Metro;
 using Syncfusion.UI.Xaml.Controls.Notification;
 using Syncfusion.UI.Xaml.Controls;
+using Windows.Devices.Sensors;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -28,50 +29,41 @@ namespace TopMovies
     /// </summary>
     public sealed partial class MainPage : TopMovies.Common.LayoutAwarePage
     {
+
         public MainPage()
         {
             this.InitializeComponent();
-            Window.Current.SizeChanged += Current_SizeChanged;
+            //Window.Current.SizeChanged += this.WindowSizeChanged;
         }
 
 
-        private void manageViewState()
-        {
-            string visualState = DetermineVisualState(ApplicationView.Value);
+        //private void manageViewState()
+        //{
+         //  string visualState = DetermineVisualState(ApplicationView.Value);
 
-            if (visualState == "Snapped")
-            {
-                mainStack.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-                snappedStack.Visibility = Windows.UI.Xaml.Visibility.Visible;
-                backButton.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-                pageTitle.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-            }
-            else
-            {
-                mainStack.Visibility = Windows.UI.Xaml.Visibility.Visible;
-                snappedStack.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-                backButton.Style = App.Current.Resources["BackButtonStyle"] as Style;
-                pageTitle.Style = App.Current.Resources["PageHeaderTextStyle"] as Style;
+        //    if (visualState == "Snapped")
+        //    {
+        //        mainStack.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+        //        snappedStack.Visibility = Windows.UI.Xaml.Visibility.Visible;
+        //        //backButton.Style = App.Current.Resources["BackButtonStyle"] as Style;
+        //        //backButton.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+        //        //pageTitle.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+        //        //pageTitle.Style = App.Current.Resources["SnappedPageHeaderTextStyle"] as Style;
+        //    }
+        //    else
+        //    {
+        //        mainStack.Visibility = Windows.UI.Xaml.Visibility.Visible;
+        //        snappedStack.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+        //        backButton.Style = App.Current.Resources["BackButtonStyle"] as Style;
+        //        pageTitle.Style = App.Current.Resources["PageHeaderTextStyle"] as Style;
 
-            }
-        }
+        //    }
+        //}
 
-        void Current_SizeChanged(object sender, WindowSizeChangedEventArgs e)
-        {
-            manageViewState();
-        }
-
-        protected override string DetermineVisualState(ApplicationViewState viewState)
-        {
-            if (viewState == ApplicationViewState.Filled || viewState == ApplicationViewState.FullScreenLandscape)
-            {
-                // Allow pages to request that the Filled state be used only for landscape layouts narrower
-                // than 1366 virtual pixels
-                var windowWidth = Window.Current.Bounds.Width;
-                viewState = windowWidth >= 1366 ? ApplicationViewState.FullScreenLandscape : ApplicationViewState.Filled;
-            }
-            return viewState.ToString();
-        }
+        //void Current_SizeChanged(object sender, WindowSizeChangedEventArgs e)
+        //{
+        //    manageViewState();
+        //}
 
 
         /// <summary>
@@ -81,18 +73,16 @@ namespace TopMovies
         /// property is typically used to configure the page.</param>
         protected  override void OnNavigatedTo(NavigationEventArgs e)
         {
-            //List<string> category = new List<string>();            
-            //category.Add("TopEnglish");
-            //category.Add("TopForeign");
-            //category.Add("TopBollywood");
-            //category.Add("TopAsian");
 
             //Passin the asset folder name with the number of image files inside the folder to populate the hub tile with the images . 
             TopEnglish.ImageList = GetImages("TopEnglish",185);
             TopForeign.ImageList = GetImages("TopForeign",235);
             TopBollywood.ImageList = GetImages("TopBollywood",102);
             TopAsian.ImageList = GetImages("TopAsian",112);
-            
+
+            sessionData.sortOrder = 0;
+            sessionData.filterGenere = null;
+            sessionData.filterLang = null;
 
             AnalyticsHelper.TrackPageView("/MainPage");
             if (((App)(App.Current)).countryCode == "")
@@ -102,8 +92,7 @@ namespace TopMovies
                 
             }
 
-
-            //this.LoadState(e.Parameter, null);
+           // this.LoadState(e.Parameter, null);
         }
 
 
@@ -117,13 +106,13 @@ namespace TopMovies
         /// <param name="pageState">A dictionary of state preserved by this page during an earlier
         /// session.  This will be null the first time a page is visited.</param>
 
-        //protected override void LoadState(Object navigationParameter, Dictionary<String, Object> pageState)
+        protected override void LoadState(Object navigationParameter, Dictionary<String, Object> pageState)
+        {
+        // Restore values stored in session state.
+        //if (pageState != null && pageState.ContainsKey("greetingOutputText"))
         //{
-        //    // Restore values stored in session state.
-        //    //if (pageState != null && pageState.ContainsKey("greetingOutputText"))
-        //    //{
-        //    //    greetingOutput.Text = pageState["greetingOutputText"].ToString();
-        //    //}
+        //    greetingOutput.Text = pageState["greetingOutputText"].ToString();
+        //}
 
         //    // Restore values stored in app data.
         //    Windows.Storage.ApplicationDataContainer roamingSettings = Windows.Storage.ApplicationData.Current.RoamingSettings;
@@ -139,7 +128,7 @@ namespace TopMovies
         //    {
         //        sessionData.lastEnglishMovieIndex = roamingSettings.Values["lastForeignMovieIndex"].ToString();
         //    }
-        //}
+        }
 
         //<summary>This function is executed on clicking the English Section </summary>
         private void btnTopEnglishMovies_Click(object sender, RoutedEventArgs e)
