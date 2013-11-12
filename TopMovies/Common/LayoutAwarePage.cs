@@ -255,7 +255,7 @@ namespace TopMovies.Common
 
         private void WindowSizeChanged(object sender, WindowSizeChangedEventArgs e)
         {
-            this.InvalidateVisualState();
+           this.InvalidateVisualState();
         }
 
         /// <summary>

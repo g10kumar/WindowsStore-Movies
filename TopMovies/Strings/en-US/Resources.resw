@@ -165,16 +165,16 @@
   <data name="region" xml:space="preserve">
     <value>Country Setting</value>
   </data>
-  <data name="Asian_Movies.Header" xml:space="preserve">
+  <data name="Asian_Movies.Text" xml:space="preserve">
     <value>Top Asian Movies</value>
   </data>
-  <data name="Bollywood_Movies.Header" xml:space="preserve">
+  <data name="Bollywood_Movies.Text" xml:space="preserve">
     <value>Top Bollywood Movies</value>
   </data>
-  <data name="Hollywood_Movies.Header" xml:space="preserve">
+  <data name="Hollywood_Movies.Text" xml:space="preserve">
     <value>Top Hollywood Movies</value>
   </data>
-  <data name="International_Movies.Header" xml:space="preserve">
+  <data name="International_Movies.Text" xml:space="preserve">
     <value>Top International Movies</value>
   </data>
   <data name="AsianTitle" xml:space="preserve">
@@ -223,7 +223,7 @@
     <value>Genre</value>
   </data>
   <data name="genre1" xml:space="preserve">
-    <value>Genre:Default</value>
+    <value>Genre:All</value>
   </data>
   <data name="genre10" xml:space="preserve">
     <value>Horror</value>
@@ -280,7 +280,7 @@
     <value>Additional Information</value>
   </data>
   <data name="lang1" xml:space="preserve">
-    <value>Language:Default</value>
+    <value>Language:All</value>
   </data>
   <data name="lang10" xml:space="preserve">
     <value>Spanish</value>
@@ -340,7 +340,7 @@
     <value> User Votes</value>
   </data>
   <data name="asianLang1" xml:space="preserve">
-    <value>Language:Default</value>
+    <value>Language:All</value>
   </data>
   <data name="asianLang2" xml:space="preserve">
     <value>Cantonese</value>

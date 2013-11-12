@@ -12,6 +12,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using System.Text;
+using Windows.UI.ViewManagement;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -20,12 +21,15 @@ namespace TopMovies
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class TrailerPage : Page
+    public sealed partial class TrailerPage : TopMovies.Common.LayoutAwarePage
     {
         public TrailerPage()
         {
             this.InitializeComponent();
         }
+
+        public TrailerPage(string page)
+        { }
 
         /// <summary>
         /// Invoked when this page is about to be displayed in a Frame.
@@ -47,9 +51,6 @@ namespace TopMovies
             html.Append(@"<iframe type=""text/html"" frameborder=""0"" scrolling=""no"" style=""padding:0; margin:0"" width=""" + videoWidth + @""" height=""" + videoHeight + @""" src=" + videoSrc + "></iframe>");
             html.Append(@"</body></html>");
             //trailerHolder.Source = 
-            trailerHolder.IsTapEnabled = false;
-            trailerHolder.IsRightTapEnabled = false;
-            trailerHolder.IsDoubleTapEnabled = false;
             trailerHolder.NavigateToString(html.ToString());
         }
 

@@ -106,9 +106,6 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="BasicPage1.xaml.cs">
-      <DependentUpon>BasicPage1.xaml</DependentUpon>
-    </Compile>
     <Compile Include="CarouselImagePopulator.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -816,10 +813,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Content Include="Assets\wiki.png" />
-    <Page Include="BasicPage1.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Content Include="blank.html" />
     <Content Include="Common\ReadMe.txt" />
     <Content Include="defaultAdSettings.xml" />
