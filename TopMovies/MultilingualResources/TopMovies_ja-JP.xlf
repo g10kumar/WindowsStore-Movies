@@ -70,35 +70,19 @@
           <source>Country Setting</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">国の設定</target>
         </trans-unit>
-        <trans-unit translate="yes" id="Resources\InternationalTitle\Text" xml:space="preserve">
-          <source>Top International Movies</source>
-          <target state="translated">トップ国際映画</target>
-        </trans-unit>
-        <trans-unit translate="yes" id="Resources\HollywoodTitle\Text" xml:space="preserve">
-          <source>Top Hollywood Movies</source>
-          <target state="translated">トップ ハリウッド映画</target>
-        </trans-unit>
-        <trans-unit translate="yes" id="Resources\BollywoodTitle\Text" xml:space="preserve">
-          <source>Top Bollywood Movies</source>
-          <target state="translated">トップ ボリウッド映画</target>
-        </trans-unit>
-        <trans-unit translate="yes" id="Resources\AsianTitle\Text" xml:space="preserve">
-          <source>Top Asian Movies</source>
-          <target state="translated">アジアのトップ映画</target>
-        </trans-unit>
-        <trans-unit id="Resources\Asian_Movies\Header" translate="yes" xml:space="preserve">
-          <source>Top Asian Movies</source>
-          <target state="new">Top Asian Movies</target>
-        </trans-unit>
-        <trans-unit id="Resources\Bollywood_Movies\Header" translate="yes" xml:space="preserve">
+        <trans-unit translate="yes" id="Resources\Bollywood_Movies\Text" xml:space="preserve">
           <source>Top Bollywood Movies</source>
           <target state="new">Top Bollywood Movies</target>
         </trans-unit>
-        <trans-unit id="Resources\Hollywood_Movies\Header" translate="yes" xml:space="preserve">
+        <trans-unit translate="yes" id="Resources\Asian_Movies\Text" xml:space="preserve">
+          <source>Top Asian Movies</source>
+          <target state="new">Top Asian Movies</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\Hollywood_Movies\Text" xml:space="preserve">
           <source>Top Hollywood Movies</source>
           <target state="new">Top Hollywood Movies</target>
         </trans-unit>
-        <trans-unit id="Resources\International_Movies\Header" translate="yes" xml:space="preserve">
+        <trans-unit translate="yes" id="Resources\International_Movies\Text" xml:space="preserve">
           <source>Top International Movies</source>
           <target state="new">Top International Movies</target>
         </trans-unit>
@@ -157,6 +141,198 @@
         <trans-unit id="Resources\TraslateDetails\ToolTip" translate="yes" xml:space="preserve">
           <source>Translate Movie Title To Native Language</source>
           <target state="new">Translate Movie Title To Native Language</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\userVotes" xml:space="preserve">
+          <source> User Votes</source>
+          <target state="new"> User Votes</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\asianLang7" xml:space="preserve">
+          <source>Thai</source>
+          <target state="new">Thai</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\SnappedMessage\Text" xml:space="preserve">
+          <source>Movies are best viewed in  Full screen or  Filled mode , not in Snapped mode. Please change resolution .</source>
+          <target state="new">Movies are best viewed in  Full screen or  Filled mode , not in Snapped mode. Please change resolution .</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\asianLang6" xml:space="preserve">
+          <source>Korean</source>
+          <target state="new">Korean</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\asianLang5" xml:space="preserve">
+          <source>Japanese</source>
+          <target state="new">Japanese</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\asianLang4" xml:space="preserve">
+          <source>English</source>
+          <target state="new">English</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\asianLang3" xml:space="preserve">
+          <source>Chinese</source>
+          <target state="new">Chinese</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\asianLang2" xml:space="preserve">
+          <source>Cantonese</source>
+          <target state="new">Cantonese</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\asianLang1" xml:space="preserve">
+          <source>Language:All</source>
+          <target state="new">Language:All</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\Runtime" xml:space="preserve">
+          <source>Runtime</source>
+          <target state="new">Runtime</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\sorter5" xml:space="preserve">
+          <source>Rated Highest to Lowest</source>
+          <target state="new">Rated Highest to Lowest</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\sorter4" xml:space="preserve">
+          <source>Rated Lowest to Highest</source>
+          <target state="new">Rated Lowest to Highest</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\sorter3" xml:space="preserve">
+          <source>Newest to Oldest</source>
+          <target state="new">Newest to Oldest</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\sorter2" xml:space="preserve">
+          <source>Oldest to Newest</source>
+          <target state="new">Oldest to Newest</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\sorter1" xml:space="preserve">
+          <source>Sort By:Default</source>
+          <target state="new">Sort By:Default</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\Release" xml:space="preserve">
+          <source>Release Year</source>
+          <target state="new">Release Year</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\Language" xml:space="preserve">
+          <source>Language</source>
+          <target state="new">Language</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\Header5" xml:space="preserve">
+          <source>Additional Information</source>
+          <target state="new">Additional Information</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\lang1" xml:space="preserve">
+          <source>Language:All</source>
+          <target state="new">Language:All</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\lang11" xml:space="preserve">
+          <source>Swedish</source>
+          <target state="new">Swedish</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\lang10" xml:space="preserve">
+          <source>Spanish</source>
+          <target state="new">Spanish</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\lang2" xml:space="preserve">
+          <source>English</source>
+          <target state="new">English</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\lang9" xml:space="preserve">
+          <source>Russian</source>
+          <target state="new">Russian</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\lang8" xml:space="preserve">
+          <source>Portuguese</source>
+          <target state="new">Portuguese</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\lang7" xml:space="preserve">
+          <source>Polish</source>
+          <target state="new">Polish</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\lang6" xml:space="preserve">
+          <source>Japanese</source>
+          <target state="new">Japanese</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\lang5" xml:space="preserve">
+          <source>Italian</source>
+          <target state="new">Italian</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\lang4" xml:space="preserve">
+          <source>German</source>
+          <target state="new">German</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\lang3" xml:space="preserve">
+          <source>French</source>
+          <target state="new">French</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\Header4" xml:space="preserve">
+          <source>Writer</source>
+          <target state="new">Writer</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\Header3" xml:space="preserve">
+          <source>Director</source>
+          <target state="new">Director</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\Header2" xml:space="preserve">
+          <source>Actors</source>
+          <target state="new">Actors</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\Header1" xml:space="preserve">
+          <source>Plot</source>
+          <target state="new">Plot</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\Genre" xml:space="preserve">
+          <source>Genre</source>
+          <target state="new">Genre</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\genre9" xml:space="preserve">
+          <source>Fantasy</source>
+          <target state="new">Fantasy</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\genre8" xml:space="preserve">
+          <source>Family</source>
+          <target state="new">Family</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\genre7" xml:space="preserve">
+          <source>Drama</source>
+          <target state="new">Drama</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\genre6" xml:space="preserve">
+          <source>Crime</source>
+          <target state="new">Crime</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\genre5" xml:space="preserve">
+          <source>Comedy</source>
+          <target state="new">Comedy</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\genre4" xml:space="preserve">
+          <source>Animation</source>
+          <target state="new">Animation</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\genre3" xml:space="preserve">
+          <source>Adventure</source>
+          <target state="new">Adventure</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\genre2" xml:space="preserve">
+          <source>Action</source>
+          <target state="new">Action</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\genre14" xml:space="preserve">
+          <source>War</source>
+          <target state="new">War</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\genre13" xml:space="preserve">
+          <source>Thriller</source>
+          <target state="new">Thriller</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\genre12" xml:space="preserve">
+          <source>Romance</source>
+          <target state="new">Romance</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\genre11" xml:space="preserve">
+          <source>Mystery</source>
+          <target state="new">Mystery</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\genre10" xml:space="preserve">
+          <source>Horror</source>
+          <target state="new">Horror</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\genre1" xml:space="preserve">
+          <source>Genre:All</source>
+          <target state="new">Genre:All</target>
         </trans-unit>
       </group>
     </body>

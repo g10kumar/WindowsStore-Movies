@@ -10,7 +10,7 @@ using System.IO;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Text.RegularExpressions;
-
+using System.Net.NetworkInformation;
 
 namespace TopMovies
 {
@@ -28,6 +28,7 @@ namespace TopMovies
         string tomatoCount;
         string requestUrl;
         string imdbID;
+        string userLanguage;
         bool downloadSucceeded= true;
         string Omdb = @"http://www.omdbapi.com/?plot=full&r=xml&tomatoes=true&i=tt";
         string myApi = @"http://mymovieapi.com/?type=json&plot=full&episode=0&lang=en-US&aka=simple&release=simple&business=0&tech=0&id=tt";
@@ -35,12 +36,16 @@ namespace TopMovies
         Tuple<string, string, string,string> result = new Tuple<string, string, string,string>(null, null, null,null);
         Tuple<string, string, string,string> myApiresult = new Tuple<string, string, string,string>(null, null, null,null);
         string ratingInfo;
+        string tempArticle = null;
         string additionalInformation;
-
-        //string mymovieApi=
-
+        WebResponse response;
 
 
+        /// <summary>
+        /// this function gets the movie infromation from omdb api .
+        /// </summary>
+        /// <param name="movieID">imdb id of the movie . </param>
+        /// <returns></returns>
         async public Task<Tuple<string,string,string,string>> GetMovieInfo(string movieID)
         {
 
@@ -63,31 +68,33 @@ namespace TopMovies
             requestUrl = Omdb + imdbID;
             try
             {
-
+                    
                     request = (HttpWebRequest)WebRequest.Create(requestUrl);
                 
                     request.Method = "GET";
 
-
-                    var response = await request.GetResponseAsync();
-                    XDocument omdbInfo = XDocument.Load(response.GetResponseStream());
-
-                    if (omdbInfo.Root.Attribute("response").Value == "True")
+                    using (response = await request.GetResponseAsync())
                     {
-                        source = "OMDB";
-                        content = omdbInfo.Root.Element("movie").Attribute("director").Value + "|" + omdbInfo.Root.Element("movie").Attribute("writer").Value + "|" + omdbInfo.Root.Element("movie").Attribute("actors").Value + "|" + omdbInfo.Root.Element("movie").Attribute("plot").Value;
-                        imdbRating = omdbInfo.Root.Element("movie").Attribute("imdbRating").Value;
-                        imdbVotesCount = omdbInfo.Root.Element("movie").Attribute("imdbVotes").Value;
-                        tomatoRating = omdbInfo.Root.Element("movie").Attribute("tomatoUserRating").Value;
-                        tomatoCount = omdbInfo.Root.Element("movie").Attribute("tomatoUserReviews").Value;
-                        ratingInfo = imdbRating + "|" + imdbVotesCount + "|" + tomatoRating + "|" + tomatoCount;
-                        additionalInformation = omdbInfo.Root.Element("movie").Attribute("year").Value + "|" + omdbInfo.Root.Element("movie").Attribute("runtime").Value + "|" + omdbInfo.Root.Element("movie").Attribute("genre").Value;
-                        result =  new Tuple<string, string, string,string>(source, content, ratingInfo,additionalInformation);
+                        XDocument omdbInfo = XDocument.Load(response.GetResponseStream());
+
+
+                        if (omdbInfo.Root.Attribute("response").Value == "True")
+                        {
+                            source = "OMDB";
+                            content = omdbInfo.Root.Element("movie").Attribute("director").Value + "|" + omdbInfo.Root.Element("movie").Attribute("writer").Value + "|" + omdbInfo.Root.Element("movie").Attribute("actors").Value + "|" + omdbInfo.Root.Element("movie").Attribute("plot").Value;
+                            imdbRating = omdbInfo.Root.Element("movie").Attribute("imdbRating").Value;
+                            imdbVotesCount = omdbInfo.Root.Element("movie").Attribute("imdbVotes").Value;
+                            tomatoRating = omdbInfo.Root.Element("movie").Attribute("tomatoUserRating").Value;
+                            tomatoCount = omdbInfo.Root.Element("movie").Attribute("tomatoUserReviews").Value;
+                            ratingInfo = imdbRating + "|" + imdbVotesCount + "|" + tomatoRating + "|" + tomatoCount;
+                            additionalInformation = omdbInfo.Root.Element("movie").Attribute("year").Value + "|" + omdbInfo.Root.Element("movie").Attribute("runtime").Value + "|" + omdbInfo.Root.Element("movie").Attribute("genre").Value;
+                            result = new Tuple<string, string, string, string>(source, content, ratingInfo, additionalInformation);
+                        }
+                        else
+                        {   //If there was some error to getting information from omdb then get information using myapi.
+                            downloadSucceeded = false;
+                        }
                     }
-                    else
-                    {   //If there was some error to getting information from omdb then get information using myapi.
-                        downloadSucceeded = false;
-                    }             
             }
             catch(Exception ex)
             {
@@ -100,12 +107,17 @@ namespace TopMovies
                 //If there was some error to getting information from omdb then get information using myapi.
                 result = await myApiInformation(imdbID);
             }
-
+            
             return result;
         
         }
 
-        async public Task<Tuple<string, string, string,string>> myApiInformation(string movieID)
+        /// <summary>
+        /// This function is to get the movie information from myapi . 
+        /// </summary>
+        /// <param name="movieID">the imdb id of the movie</param>
+        /// <returns></returns>
+        async private Task<Tuple<string, string, string,string>> myApiInformation(string movieID)
         {
             string generes = null;
             string runtime = null;
@@ -119,61 +131,63 @@ namespace TopMovies
             {
                 requestUrl = myApi + movieID;
                 request = (HttpWebRequest)WebRequest.Create(requestUrl);
-                var response = await request.GetResponseAsync();
-            
-                using (var streamReader = new StreamReader(response.GetResponseStream()))
+                using (response = await request.GetResponseAsync())
                 {
-                    string tempContent = await streamReader.ReadToEndAsync();
-                    if (!tempContent.Contains("error"))
+                    
+                    using (var streamReader = new StreamReader(response.GetResponseStream()))
                     {
-                        source = "myApi";
-                        JObject obj = JObject.Parse(tempContent);
-                        //foreach (string actor in (JArray)obj["actors"])
-                        //{
-                        //    actors = actors + actor + ",";
-                        //}
-                        actors = Regex.Replace(obj["actors"].ToString(), @"\r|\n|[\[\]]", "").Replace("\"", "").TrimStart(' ');
-                        //foreach (string writer in (JArray)obj["writers"])
-                        //{
+                        string tempContent = await streamReader.ReadToEndAsync();
+                        if (!tempContent.Contains("error"))
+                        {
+                            source = "myApi";
+                            JObject obj = JObject.Parse(tempContent);
+                            //foreach (string actor in (JArray)obj["actors"])
+                            //{
+                            //    actors = actors + actor + ",";
+                            //}
+                            actors = Regex.Replace(obj["actors"].ToString(), @"\r|\n|[\[\]]", "").Replace("\"", "").TrimStart(' ');
+                            //foreach (string writer in (JArray)obj["writers"])
+                            //{
 
-                        //    writers = writers + writer + ",";
-                        //}
-                        writers = Regex.Replace(obj["writers"].ToString(), @"\r|\n|[\[\]]", "").Replace("\"", "").TrimStart(' ');
-                        //foreach (string director in (JArray)obj["directors"])
-                        //{
+                            //    writers = writers + writer + ",";
+                            //}
+                            writers = Regex.Replace(obj["writers"].ToString(), @"\r|\n|[\[\]]", "").Replace("\"", "").TrimStart(' ');
+                            //foreach (string director in (JArray)obj["directors"])
+                            //{
 
-                        //    directors = directors + director + ",";
-                        //}
-                        directors = Regex.Replace(obj["directors"].ToString(), @"\r|\n|[\[\]]", "").Replace("\"", "").TrimStart(' ');
-                        //foreach (string genre in (JArray)obj["genres"])
-                        //{
+                            //    directors = directors + director + ",";
+                            //}
+                            directors = Regex.Replace(obj["directors"].ToString(), @"\r|\n|[\[\]]", "").Replace("\"", "").TrimStart(' ');
+                            //foreach (string genre in (JArray)obj["genres"])
+                            //{
 
-                        //    generes = generes + genre + ",";
-                        //}
-                        generes = Regex.Replace(obj["genres"].ToString(), @"\r|\n|[\[\]]", "").Replace("\"", "").TrimStart(' ');
-                        //foreach (string time in (JArray)obj["runtime"])
-                        //{
+                            //    generes = generes + genre + ",";
+                            //}
+                            generes = Regex.Replace(obj["genres"].ToString(), @"\r|\n|[\[\]]", "").Replace("\"", "").TrimStart(' ');
+                            //foreach (string time in (JArray)obj["runtime"])
+                            //{
 
-                        //    runtime = runtime + time + ",";
-                        //}
-                        runtime = Regex.Replace(obj["runtime"].ToString(), @"\r|\n|[\[\]]", "").Replace("\"", "").TrimStart(' ');
-                        //foreach (string lang in (JArray)obj["language"])
-                        //{
+                            //    runtime = runtime + time + ",";
+                            //}
+                            runtime = Regex.Replace(obj["runtime"].ToString(), @"\r|\n|[\[\]]", "").Replace("\"", "").TrimStart(' ');
+                            //foreach (string lang in (JArray)obj["language"])
+                            //{
 
-                        //    language = language + lang;
-                        //}
-                        language = Regex.Replace(obj["language"].ToString(), @"\r|\n|[\[\]]", "").Replace("\"", "").TrimStart(' ');
+                            //    language = language + lang;
+                            //}
+                            language = Regex.Replace(obj["language"].ToString(), @"\r|\n|[\[\]]", "").Replace("\"", "").TrimStart(' ');
 
-                        content = directors + "|" + writers + "|" + actors + "|" + obj["plot"].ToString();
-                        imdbRating = obj["rating"].ToString();
-                        imdbVotesCount = obj["rating_count"].ToString();
-                        ratingInfo = imdbRating + "|" + imdbVotesCount;
-                        additionalInformation = obj["year"].ToString() + "|" + runtime + "|" + generes + "|" + language;
-                        myApiresult= new Tuple<string, string, string,string>(source, content, ratingInfo,additionalInformation);
-                    }
-                    else
-                    {
-                        downloadSucceeded = false;
+                            content = directors + "|" + writers + "|" + actors + "|" + obj["plot"].ToString();
+                            imdbRating = obj["rating"].ToString();
+                            imdbVotesCount = obj["rating_count"].ToString();
+                            ratingInfo = imdbRating + "|" + imdbVotesCount;
+                            additionalInformation = obj["year"].ToString() + "|" + runtime + "|" + generes + "|" + language;
+                            myApiresult = new Tuple<string, string, string, string>(source, content, ratingInfo, additionalInformation);
+                        }
+                        else
+                        {
+                            downloadSucceeded = false;
+                        }
                     }
                 }
             }
@@ -205,5 +219,100 @@ namespace TopMovies
            
         //}
         
+        /// <summary>
+        /// This function is to get the wikipedia article for particular movie in the user navitve language if avaliable . 
+        /// </summary>
+        /// <param name="articleName">the movie name to be found</param>
+        /// <param name="year">year of the movie release</param>
+        /// <returns></returns>
+        async public Task<string> WikiPediaArticleFinder(string articleName, int year)
+        {
+            userLanguage = new Windows.ApplicationModel.Resources.Core.ResourceContext().Languages.FirstOrDefault();
+            string firstQuery = @"http://en.wikipedia.org/w/api.php?action=query&list=search&format=json&srlimit=5&srprop=snippet&srsearch=" + articleName + "+incategory:" + year + "_films";
+            request = WebRequest.Create(firstQuery) as HttpWebRequest;
+            using (response = await request.GetResponseAsync())
+            {
+                using (StreamReader reader = new StreamReader(response.GetResponseStream()))
+                {
+                    string content = await reader.ReadToEndAsync();
+                    JObject obj = JObject.Parse(content);
+                    var firstResult = obj.Last.ElementAt(0)["search"];
+                    foreach (JToken returnResult in firstResult)
+                    {
+                        if (returnResult["title"].ToString().Contains(articleName) || returnResult["title"].ToString().Contains(articleName + " (film)") || articleName.Contains(returnResult["title"].ToString()))
+                        {
+                            tempArticle = (string)returnResult["title"];
+                            break;
+                        }
+                    }
+
+                    if (tempArticle == null)
+                    {
+
+                        string secondQuery = @"http://en.wikipedia.org/w/api.php?action=query&list=search&format=json&srlimit=5&srprop=snippet&srsearch=" + articleName;
+                        request = WebRequest.Create(secondQuery) as HttpWebRequest;
+                        using (response = await request.GetResponseAsync())
+                        {
+                            using (StreamReader secondReader = new StreamReader(response.GetResponseStream()))
+                            {
+                                obj = JObject.Parse(await secondReader.ReadToEndAsync());
+                                var secondResult = obj.Last.ElementAt(0)["search"];
+                                foreach (JToken returnResult in secondResult)
+                                {
+                                    if ((returnResult["title"].ToString().Contains(articleName) || returnResult["title"].ToString().Contains(articleName + " (film)")) && !returnResult["snippet"].ToString().Contains("may refer to"))
+                                    {
+                                        tempArticle = (string)returnResult["title"];
+                                        break;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+
+                    if (tempArticle == null)
+                    {
+                        foreach (JToken returnResult in firstResult)
+                        {
+                            if (returnResult["snippet"].ToString().Contains(articleName) || returnResult["snippet"].ToString().Contains("<span class='searchmatch'>"))
+                            {
+                                tempArticle = (string)returnResult["title"];
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+
+            if(!userLanguage.Contains("en"))
+            {
+                string langUrl = @"http://en.wikipedia.org/w/api.php?action=parse&format=xml&page="+tempArticle+"&prop=langlinks";
+                request = WebRequest.Create(langUrl) as HttpWebRequest;
+                using (response = await request.GetResponseAsync())
+                {
+                    XDocument doc = XDocument.Load(response.GetResponseStream());
+                    XElement node1 = (XElement)doc.Root.LastNode;
+                    if (userLanguage.Length > 2)
+                    {
+                        userLanguage = userLanguage.Remove(2);
+                    }
+                    try
+                    {
+                        var urlDictionary = (from ll in node1.Elements("langlinks").Elements()
+                                             where ll.Attribute("lang").Value.Contains(userLanguage)
+                                             select ll.Attribute("url").Value).FirstOrDefault();
+
+                        return urlDictionary.ToString().Replace("wikipedia.org", "m.wikipedia.org");
+                    }
+                    catch (Exception ex)
+                    {
+                        string code = ex.Message;
+                    }
+                }
+            }
+
+            return ("http://en.m.wikipedia.org/wiki/" + tempArticle);
+
+        }
     }
 }

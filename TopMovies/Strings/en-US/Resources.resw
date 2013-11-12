@@ -165,30 +165,16 @@
   <data name="region" xml:space="preserve">
     <value>Country Setting</value>
   </data>
-  
-    <data name="AsianTitle.Text" xml:space="preserve">
+  <data name="Asian_Movies.Text" xml:space="preserve">
     <value>Top Asian Movies</value>
   </data>
-  <data name="BollywoodTitle.Text" xml:space="preserve">
+  <data name="Bollywood_Movies.Text" xml:space="preserve">
     <value>Top Bollywood Movies</value>
   </data>
-  <data name="HollywoodTitle.Text" xml:space="preserve">
+  <data name="Hollywood_Movies.Text" xml:space="preserve">
     <value>Top Hollywood Movies</value>
   </data>
-  <data name="InternationalTitle.Text" xml:space="preserve">
-    <value>Top International Movies</value>
-  </data>
-
-  <data name="Asian_Movies.Header" xml:space="preserve">
-    <value>Top Asian Movies</value>
-  </data>
-  <data name="Bollywood_Movies.Header" xml:space="preserve">
-    <value>Top Bollywood Movies</value>
-  </data>
-  <data name="Hollywood_Movies.Header" xml:space="preserve">
-    <value>Top Hollywood Movies</value>
-  </data>
-  <data name="International_Movies.Header" xml:space="preserve">
+  <data name="International_Movies.Text" xml:space="preserve">
     <value>Top International Movies</value>
   </data>
   <data name="AsianTitle" xml:space="preserve">
@@ -232,5 +218,149 @@
   </data>
   <data name="TraslateDetails.ToolTip" xml:space="preserve">
     <value>Translate Movie Title To Native Language</value>
+  </data>
+  <data name="Genre" xml:space="preserve">
+    <value>Genre</value>
+  </data>
+  <data name="genre1" xml:space="preserve">
+    <value>Genre:All</value>
+  </data>
+  <data name="genre10" xml:space="preserve">
+    <value>Horror</value>
+  </data>
+  <data name="genre11" xml:space="preserve">
+    <value>Mystery</value>
+  </data>
+  <data name="genre12" xml:space="preserve">
+    <value>Romance</value>
+  </data>
+  <data name="genre13" xml:space="preserve">
+    <value>Thriller</value>
+  </data>
+  <data name="genre14" xml:space="preserve">
+    <value>War</value>
+  </data>
+  <data name="genre2" xml:space="preserve">
+    <value>Action</value>
+  </data>
+  <data name="genre3" xml:space="preserve">
+    <value>Adventure</value>
+  </data>
+  <data name="genre4" xml:space="preserve">
+    <value>Animation</value>
+  </data>
+  <data name="genre5" xml:space="preserve">
+    <value>Comedy</value>
+  </data>
+  <data name="genre6" xml:space="preserve">
+    <value>Crime</value>
+  </data>
+  <data name="genre7" xml:space="preserve">
+    <value>Drama</value>
+  </data>
+  <data name="genre8" xml:space="preserve">
+    <value>Family</value>
+  </data>
+  <data name="genre9" xml:space="preserve">
+    <value>Fantasy</value>
+  </data>
+  <data name="Header1" xml:space="preserve">
+    <value>Plot</value>
+  </data>
+  <data name="Header2" xml:space="preserve">
+    <value>Actors</value>
+  </data>
+  <data name="Header3" xml:space="preserve">
+    <value>Director</value>
+  </data>
+  <data name="Header4" xml:space="preserve">
+    <value>Writer</value>
+  </data>
+  <data name="Header5" xml:space="preserve">
+    <value>Additional Information</value>
+  </data>
+  <data name="lang1" xml:space="preserve">
+    <value>Language:All</value>
+  </data>
+  <data name="lang10" xml:space="preserve">
+    <value>Spanish</value>
+  </data>
+  <data name="lang11" xml:space="preserve">
+    <value>Swedish</value>
+  </data>
+  <data name="lang2" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="lang3" xml:space="preserve">
+    <value>French</value>
+  </data>
+  <data name="lang4" xml:space="preserve">
+    <value>German</value>
+  </data>
+  <data name="lang5" xml:space="preserve">
+    <value>Italian</value>
+  </data>
+  <data name="lang6" xml:space="preserve">
+    <value>Japanese</value>
+  </data>
+  <data name="lang7" xml:space="preserve">
+    <value>Polish</value>
+  </data>
+  <data name="lang8" xml:space="preserve">
+    <value>Portuguese</value>
+  </data>
+  <data name="lang9" xml:space="preserve">
+    <value>Russian</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="Release" xml:space="preserve">
+    <value>Release Year</value>
+  </data>
+  <data name="Runtime" xml:space="preserve">
+    <value>Runtime</value>
+  </data>
+  <data name="sorter1" xml:space="preserve">
+    <value>Sort By:Default</value>
+  </data>
+  <data name="sorter2" xml:space="preserve">
+    <value>Oldest to Newest</value>
+  </data>
+  <data name="sorter3" xml:space="preserve">
+    <value>Newest to Oldest</value>
+  </data>
+  <data name="sorter4" xml:space="preserve">
+    <value>Rated Lowest to Highest</value>
+  </data>
+  <data name="sorter5" xml:space="preserve">
+    <value>Rated Highest to Lowest</value>
+  </data>
+  <data name="userVotes" xml:space="preserve">
+    <value> User Votes</value>
+  </data>
+  <data name="asianLang1" xml:space="preserve">
+    <value>Language:All</value>
+  </data>
+  <data name="asianLang2" xml:space="preserve">
+    <value>Cantonese</value>
+  </data>
+  <data name="asianLang3" xml:space="preserve">
+    <value>Chinese</value>
+  </data>
+  <data name="asianLang4" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="asianLang5" xml:space="preserve">
+    <value>Japanese</value>
+  </data>
+  <data name="asianLang6" xml:space="preserve">
+    <value>Korean</value>
+  </data>
+  <data name="asianLang7" xml:space="preserve">
+    <value>Thai</value>
+  </data>
+  <data name="SnappedMessage.Text" xml:space="preserve">
+    <value>Movies are best viewed in  Full screen or  Filled mode , not in Snapped mode. Please change resolution .</value>
   </data>
 </root>

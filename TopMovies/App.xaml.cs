@@ -40,7 +40,7 @@ namespace TopMovies
         /// executed, and as such is the logical equivalent of main() or WinMain().
         /// </summary>
         public string countryCode = ""; // Global variable that is going to store the user selection for country .The same variable is going to be stored in the session.
- 
+        public bool youtubeReachable = false;
 
         //public bool FirstRun = true;
 
