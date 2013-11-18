@@ -146,12 +146,16 @@
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
+    <None Include="MultilingualResources\TopMovies_ar.xlf" />
     <None Include="MultilingualResources\TopMovies_de.xlf" />
     <None Include="MultilingualResources\TopMovies_es.xlf" />
     <None Include="MultilingualResources\TopMovies_fr.xlf" />
     <None Include="MultilingualResources\TopMovies_it.xlf" />
     <None Include="MultilingualResources\TopMovies_ja-JP.xlf" />
+    <None Include="MultilingualResources\TopMovies_pl-PL.xlf" />
+    <None Include="MultilingualResources\TopMovies_pt.xlf" />
     <None Include="MultilingualResources\TopMovies_ru-RU.xlf" />
+    <None Include="MultilingualResources\TopMovies_sv.xlf" />
     <None Include="MultilingualResources\TopMovies_zh-Hans.xlf" />
     <PRIResource Include="Strings\en-US\Resources.resw" />
     <None Include="packages.config" />
@@ -167,6 +171,7 @@
     <Content Include="Assets\Filter.png" />
     <Content Include="Assets\forward.png" />
     <Content Include="Assets\imdb.jpg" />
+    <Content Include="Assets\Information.png" />
     <Content Include="Assets\Pause.png" />
     <Content Include="Assets\Play.png" />
     <Content Include="Assets\Text Editor.png" />
@@ -899,6 +904,11 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <SDKReference Include="MSAdvertisingXaml, Version=6.1">
+      <Name>Microsoft Advertising SDK for Windows 8 %28Xaml%29</Name>
+    </SDKReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '11.0' ">
     <VisualStudioVersion>11.0</VisualStudioVersion>

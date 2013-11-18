@@ -53,7 +53,7 @@ namespace TopMovies
             UnhandledException += App_UnhandledException;
             TaskScheduler.UnobservedTaskException += TaskScheduler_UnobservedTaskException;
 
-            DebugSettings.EnableFrameRateCounter = true;
+            //DebugSettings.EnableFrameRateCounter = true;
 
             //DebugSettings.IsOverdrawHeatMapEnabled = true;
 
@@ -64,13 +64,13 @@ namespace TopMovies
         void TaskScheduler_UnobservedTaskException(object sender, UnobservedTaskExceptionEventArgs e)
         {
             e.SetObserved();
-            AnalyticsHelper.Track("TrackException", "TaskException");
+            AnalyticsHelper.Track("TrackException", "TaskException",e.Exception.InnerException.Message);
         }
 
         void App_UnhandledException(object sender, UnhandledExceptionEventArgs e)
         {
             e.Handled = true;
-            AnalyticsHelper.Track("TrackException", "UnhandledException", e.Message);
+            AnalyticsHelper.Track("TrackException", "UnhandledException", e.Exception.InnerException.Message);
         }
 
         /// <summary>

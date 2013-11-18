@@ -7,7 +7,9 @@ using System.Runtime.Serialization.Json;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System.Net;
 
 namespace TopMovies
 {
@@ -16,10 +18,18 @@ namespace TopMovies
 
         string[] tokens;
         string resultUrl;
+        string source;
 
-
-        public async Task<string> Translator(string text, string toCulture, string fromCulture ="en")
+        public GoogleTranslator(string source)
         {
+            this.source = source;
+        }
+
+
+        public async Task<string> Translator(string text, string toCulture, string fromCulture = "en")
+        {
+            string Url;
+            bool postRequest = false;
             fromCulture = fromCulture.ToLower();
             toCulture = toCulture.ToLower();
 
@@ -34,38 +44,59 @@ namespace TopMovies
             if (tokens.Length > 1)
                 toCulture = tokens[0];
 
-            string Url = string.Format(@"http://translate.google.com/translate_a/t?client=j&text={0}&hl=en&sl={1}&tl={2}",Uri.EscapeUriString(text),fromCulture,toCulture);
+            if (text.Length < 1200)
+            {
+                Url = string.Format(@"http://translate.google.com/translate_a/t?client=j&ie=UTF-8&oe=UTF-8&text={0}&hl=en&sl={1}&tl={2}", Uri.EscapeUriString(text), fromCulture, toCulture);
+            }
+            else
+            {
+                postRequest = true;
+                Url = string.Format(@"http://translate.google.com/translate_a/t?client=j&ie=UTF-8&oe=UTF-8&hl=en&sl={0}&tl={1}&uptl={1}&alttl={0}&ssel=0&tsel=0", fromCulture, toCulture);
+            }
 
             // Retrieve Translation with HTTP GET call
 
+            using (HttpClient web = new HttpClient())
+            {
+                try
+                {
+                    web.DefaultRequestHeaders.Add("UserAgent", "Mozilla/5.0");
+                    web.DefaultRequestHeaders.Add("AcceptCharset", "UTF-8");
+                    web.DefaultRequestHeaders.Add("Accept", "*/*");
 
-    try
-    {
-        HttpClient web = new HttpClient();
+                    if (postRequest)
+                    {
+                        StringContent textToTranslate = new StringContent("q=" + text.Replace(" ", "%20"));
+                        textToTranslate.Headers.TryAddWithoutValidation("Content-Type", "application/x-www-form-urlencoded;charset=UTF-8");
+                        var html = await web.PostAsync(Url, textToTranslate);
+                        resultUrl = await html.Content.ReadAsStringAsync();
+                    }
+                    else
+                    {
+                        var html = await web.GetStringAsync(Url);
+                        resultUrl = html.ToString();
+                    }
 
-        //   System.Net.HttpRequestHeader.UserAgent
+                }
+                catch (Exception ex)
+                {
+                    ex.Message.ToString();
+                }
+            }
+            if (source == "infoPage")
+            {
+                StringBuilder translatedText = new StringBuilder();
+                JObject obj = JObject.Parse(resultUrl);
+                foreach (JToken data in obj["sentences"])
+                {
+                    translatedText.Append(((JProperty)data.First).Value.ToString());
+                }
 
-        // web.D
+                return translatedText.ToString();
+            }
 
-        web.DefaultRequestHeaders.Add("UserAgent","Mozilla/5.0");
+            string result = Regex.Match(resultUrl, "trans\":(\".*?\"),\"", RegexOptions.IgnoreCase).Groups[1].Value;
 
-        web.DefaultRequestHeaders.Add("AcceptCharset","UTF-8");
-        
-
-        var  html = await web.GetStringAsync(Url);
-
-        resultUrl = html;
-
-
-
-     }
-      catch (Exception ex)
-        {
-           ex.Message.ToString();
-        }  
-
-
-            string result = Regex.Match(resultUrl, "trans\":(\".*?\"),\"",RegexOptions.IgnoreCase).Groups[1].Value;
 
             if (string.IsNullOrEmpty(result))
             {
@@ -75,18 +106,17 @@ namespace TopMovies
             var _Bytes = Encoding.Unicode.GetBytes(result);
 
             using (MemoryStream _Stream = new MemoryStream(_Bytes))
-               
             {
                 var _Serializer = new DataContractJsonSerializer(typeof(string));
 
-                    return (string)_Serializer.ReadObject(_Stream);
-             }
+                return (string)_Serializer.ReadObject(_Stream);
+            }
 
 
-          
-                
 
-    }
+
+
+        }
 
         //   public static T Deserialize <T>(string json)
         //{

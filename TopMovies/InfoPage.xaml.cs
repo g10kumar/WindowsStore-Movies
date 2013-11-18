@@ -17,6 +17,9 @@ using DT.GoogleAnalytics.Metro;
 using Windows.Networking.Connectivity;
 using Windows.ApplicationModel.Resources;
 using System.Net;
+using Windows.Storage.Streams;
+using System.Text.RegularExpressions;
+using System.Diagnostics;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -27,12 +30,13 @@ namespace TopMovies
     /// </summary>
     public sealed partial class InfoPage : TopMovies.Common.LayoutAwarePage
     {
-        string releaseYear;
+        string releaseYear,moviePosition;
         string title;
         Tuple<string, string, string,string> derivedContent;
         public List<MovieData> information;
         MovieInformation objMovie = new MovieInformation();
         bool wikiPediaContent = false;
+        string language;                                                                                // This is to get the language on the user system.
         public List<MovieData> Information
         {
             get { return information; }
@@ -53,20 +57,23 @@ namespace TopMovies
 
         /// <summary>
         /// Invoked when this page is about to be displayed in a Frame.
+        /// Gets information from omdb api or the myapi in case if the omdb api is not reachable . And if both the api calls fail then the wikipedia article will be diaplayed. 
         /// </summary>
         /// <param name="e">Event data that describes how this page was reached.  The Parameter
         /// property is typically used to configure the page.</param>
         async protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+            AnalyticsHelper.TrackPageView("/InfoPage");
 
-            Tuple<int, string, string> contentInfo = e.Parameter as Tuple<int, string, string>;
-
+            string[] contentInfo = ((string)e.Parameter).Split(new char[]{'|'});
             busyIndicator.IsBusy = true;
-            
-            derivedContent = await objMovie.GetMovieInfo(contentInfo.Item1.ToString());
-            imageHolder2.Source = new BitmapImage(new Uri(contentInfo.Item2));
-            infoHeader.Text = contentInfo.Item3;
-            title = contentInfo.Item3;
+            derivedContent = await objMovie.GetMovieInfo(contentInfo[0]);
+            moviePosition = contentInfo[1];
+            BitmapImage bufferImage = new BitmapImage();
+            bufferImage.UriSource = new Uri(contentInfo[1]);
+            imageHolder2.Source = bufferImage;
+            infoHeader.Text = contentInfo[2];
+            title = contentInfo[2];
             Information = new List<MovieData>();
             if (derivedContent.Item1 == "OMDB")
             {
@@ -83,7 +90,7 @@ namespace TopMovies
                     tomatoGrid.Visibility = Windows.UI.Xaml.Visibility.Visible;
                     tomatoRate.Value = Convert.ToDouble(derivedContent.Item3.Split(new char[] { '|' })[2], System.Globalization.NumberFormatInfo.InvariantInfo);
                     tomatoNumber.Text = derivedContent.Item3.Split(new char[] { '|' })[2] + "/5";
-                    tomatoVotes.Text = derivedContent.Item3.Split(new char[] { '|' })[3] + " User Votes";
+                    tomatoVotes.Text = derivedContent.Item3.Split(new char[] { '|' })[3] + loader.GetString("userVotes");
                 }
 
                 busyIndicator.IsBusy = false;
@@ -108,31 +115,65 @@ namespace TopMovies
                 releaseYear = derivedContent.Item4.Split(new char[] { '|' })[0];
             }
             else if (derivedContent.Item1 == null)
-            {
+            {                
                 accordion.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
                 WikiPediaArticle(null, null);
                 wikiCloseButton.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+            }
+
+            language = new Windows.ApplicationModel.Resources.Core.ResourceContext().Languages.FirstOrDefault();
+            if (!language.Contains("en") && derivedContent.Item1 != null)
+            {
+                TraslateDetails.IsEnabled = true;
+            }
+
+            if (derivedContent.Item1 != null)
+            {
+                AnalyticsHelper.Track(title, "Movie_Info", derivedContent.Item1);
+            }
+            else
+            {
+                AnalyticsHelper.Track(title, "Movie_Info", "WikiPedia");
             }
 
         }
 
         private void GoBack(object sender, RoutedEventArgs e)
         {
+            //imageHolder.ImageSource = null;
+            //imageHolder2.Source = null;
+            //this.mainGrid.Children.Remove(imageHolder);
             if (this.Frame != null && this.Frame.CanGoBack) this.Frame.GoBack();
         }
-
+        /// <summary>
+        /// This application gets the article from wikipedia using the movieinformation class , and hides the other information grid. 
+        /// If on navigating to the info page both the api don't return any information then the application will call this method and all other grid will be hidden. 
+        /// This function is being called by the button in the radial menu as well as the onnavigation method if both the api calls fails to return any infromation. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         async private void WikiPediaArticle(object sender, RoutedEventArgs e)
         {
             if (!wikiPediaContent)
             {
+                
                 string url;
+                if (translatedAccordion.Visibility == Windows.UI.Xaml.Visibility.Visible)
+                {
+                    translatedAccordion.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+                }
+                else
+                {
+                    accordion.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+                }
                 tomatoGrid.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-                accordion.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
                 imdbGrid.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
                 busyIndicator.IsBusy = true;
 
-                if (infoHeader.Text != null)
+                if (infoHeader.Text != null)                        // We are checking the info header because the infoheader is assigned to title which is used to get the release year
                 {
+                    Stopwatch watch = new Stopwatch();
+                    watch.Start();
                     if (releaseYear == null)
                     {
                         XDocument doc = XDocument.Load(@"D:\DaksaTech\Win8Apps\TopMovies\bin\Release\AppX\Xml\" + sessionData.selectCategory + ".xml");
@@ -148,6 +189,7 @@ namespace TopMovies
                     if (url != null)
                     {
                         wikiView.LoadCompleted += wikiView_LoadCompleted;
+                        watch.Stop();
                         wikiView.Navigate(new Uri(url));
                     }
                 }
@@ -156,7 +198,14 @@ namespace TopMovies
             {
                 imdbGrid.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
                 tomatoGrid.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-                accordion.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+                if (translatedAccordion.Visibility == Windows.UI.Xaml.Visibility.Visible)
+                {
+                    translatedAccordion.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+                }
+                else
+                {
+                    accordion.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+                }
                 selectionmenu.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
                 wikiGrid.Visibility = Windows.UI.Xaml.Visibility.Visible;
             }
@@ -175,7 +224,14 @@ namespace TopMovies
         private void btnClose_Click(object sender, RoutedEventArgs e)
         {
             wikiGrid.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-            accordion.Visibility = Windows.UI.Xaml.Visibility.Visible;
+            if (translatedAccordion.ItemsSource == Information)
+            {
+                translatedAccordion.Visibility = Windows.UI.Xaml.Visibility.Visible;
+            }
+            else
+            {
+                accordion.Visibility = Windows.UI.Xaml.Visibility.Visible;
+            }
             imdbGrid.Visibility = Windows.UI.Xaml.Visibility.Visible;
             selectionmenu.Visibility = Windows.UI.Xaml.Visibility.Visible;
             if(tomatoRate.Value != 0)
@@ -183,31 +239,15 @@ namespace TopMovies
             
         }
 
+        /// <summary>
+        /// This method is called when the buy movie button is pressed in the radial menu of the page. 
+        /// It checks for the country setting of the user and then accordingly navigates to the respective amazon page. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         async private void BuyMovie(object sender, RoutedEventArgs e)
         {
 
-
-            //var movieName = "";
-            //if (sessionData.selectCategory == "TopForeign")
-            //{
-            //    movieName = title(0, title.Text.IndexOf("/"));
-            //}
-            //else
-            //{
-            //movieName = title;
-            //}
-
-            AnalyticsHelper.Track("Buy_Button", "Button_click", title);
-
-            //string x = ((App)(App.Current)).countryCode;                                     // Variable x to store the value of country selcted by the user . 
-
-            //string buyMovieCountrycode = "";
-
-            //if (countryList.ContainsKey(x))        // If the country selected is not present in the dictionary then the value of the countrycode will be null . 
-            //{
-            //    buyMovieCountrycode = countryList[x];
-
-            //}
 
             if (!GetIntertCondition())          // Functionality to check user internet connection & prompt is connection unavaliable . 
             {
@@ -216,11 +256,14 @@ namespace TopMovies
             }
             else
             {
+                AnalyticsHelper.Track("Buy_Button", "Button_click", title);
+
                 string url = countryWiseUrl(((App)(App.Current)).countryCode, title);
 
                 await Windows.System.Launcher.LaunchUriAsync(new Uri(url));
 
             }
+
 
         }
 
@@ -292,6 +335,7 @@ namespace TopMovies
             {
                 try
                 {
+                    //Checking if youtube is reachable or not. Performed only once, then the value ((App)(App.Current)).youtubeReachable is updated to save the status.
                     if (!((App)(App.Current)).youtubeReachable)
                     {
                         HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://gdata.youtube.com/demo/index.html");
@@ -308,9 +352,9 @@ namespace TopMovies
                     if (((App)(App.Current)).youtubeReachable)
                     {
                         int position;
-                        string moviePosition = ((BitmapImage)(imageHolder2.Source)).UriSource.ToString();
-                        position = Convert.ToInt32(moviePosition.Remove(moviePosition.IndexOf('.')).Replace("ms-appx:/Assets/" + sessionData.selectCategory + "/", ""));
-                        if (sessionData.selectCategory == "TopEnglish")
+                        position = Convert.ToInt32(Regex.Match(moviePosition, @"\d{1,3}").ToString());
+                        if (sessionData.selectCategory == "TopEnglish")                     // This is done because the movies in the english section are not saved 
+                                                                                            //according to their respective rank in the youtube playlist.
                         {
                             if (position <= 13)
                             {
@@ -321,7 +365,6 @@ namespace TopMovies
                                 position = position - 13;
                             }
                         }
-
                         this.Frame.Navigate(typeof(TrailerPage), position);
 
                     }
@@ -329,6 +372,7 @@ namespace TopMovies
                     {
                         var messageDialog = new Windows.UI.Popups.MessageDialog("Unable to reach Youtube from this Device.");
                         var result = messageDialog.ShowAsync();
+                        AnalyticsHelper.Track("YNR", "Movie_Trailer");                  //Here YNR means youtube not reachable . 
                     }
                 }
                 catch (WebException)
@@ -337,6 +381,34 @@ namespace TopMovies
                 }
 
             }
+        }
+
+        private async void Translate(object sender, RoutedEventArgs e)
+        {
+            if(language.Length >2)
+            {
+                language = language.Remove(2);
+            }
+            GoogleTranslator result = new GoogleTranslator("infoPage");
+            List<string> translated = new List<string>();
+            //translated.Add(information[accordion.SelectedIndex]);
+            for (int i = 0; i <= 3; i++)
+            {
+                translated.Add(await result.Translator(information[i].MovieInfo, language));
+            }
+            translated.Add(information[4].MovieInfo);
+            Information.RemoveRange(0, 5);
+            Information.Add(new MovieData(loader.GetString("Header1"), translated[0]));
+            Information.Add(new MovieData(loader.GetString("Header2"), translated[1]));
+            Information.Add(new MovieData(loader.GetString("Header3"), translated[2]));
+            Information.Add(new MovieData(loader.GetString("Header4"), translated[3]));
+            Information.Add(new MovieData(loader.GetString("Header5"), translated[4]));
+            accordion.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+            translatedAccordion.ItemsSource = Information;
+            translatedAccordion.SelectedIndex = accordion.SelectedIndex;
+            translatedAccordion.Visibility = Windows.UI.Xaml.Visibility.Visible;
+            AnalyticsHelper.Track("TranslateMovieInfo", "Button_click", language);
+
         }
     }
 
