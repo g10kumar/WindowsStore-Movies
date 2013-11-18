@@ -68,20 +68,6 @@
     </UserControl.Resources>
 
 
-    <!--<Page.BottomAppBar>-->
-    <!--<AppBar x:Name="bottonBar" Padding="10,0,10,0" IsSticky="True">
-            <Grid>
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <Button IsEnabled="True" x:Uid="btnBuyDVD" Name="btnBuyDVD"  Style="{StaticResource ShopAppBarButtonStyle}" Click="btnBuyDVD_Click_1"  />
-                    <Button IsEnabled="True" x:Uid="btnMovieDetails" Name="btnMovieDetails"  Style="{StaticResource MoreAppBarButtonStyle}" Click="btnMovieDetails_Click_1" />-->
-    <!--<Button IsEnabled="True" x:Uid="TraslateDetails" x:Name="TraslateDetails" Click="Translate" Style="{StaticResource TranslateAppBarButtonStyle}" Visibility="Collapsed"/>-->
-    <!--<Button IsEnabled="True" x:Name="btnTextSize"  Style="{StaticResource EditAppBarButtonStyle}" Click="btnTextSize_Click" ></Button>
-                </StackPanel>
-            </Grid>
-        </AppBar>-->
-    <!--</Page.BottomAppBar>-->
-
-
     <Grid x:Name="Layout"  Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
         <Grid.ChildrenTransitions>
             <TransitionCollection>
@@ -142,23 +128,15 @@
         <Notification:SfBusyIndicator x:Name="ProgressRing" Grid.Column="1" Margin="0,120,442,0" Grid.Row="2" AnimationType="Gear" Foreground="#FF01A2A6" HorizontalAlignment="Right" Width="200" Height="149" VerticalAlignment="Top" Grid.RowSpan="3" RenderTransformOrigin="0.5,0.5" ViewboxHeight="80" ViewboxWidth="80"  >
             <Notification:SfBusyIndicator.HeaderTemplate>
                 <DataTemplate>
-                    <TextBlock Text="Loading..." FontSize="18" TextAlignment="Center" Margin="60,0,0,0"/>
+                    <TextBlock x:Uid="busyIndicator" Text="" FontSize="18" TextAlignment="Center" Margin="60,0,0,0"/>
                 </DataTemplate>
             </Notification:SfBusyIndicator.HeaderTemplate>
         </Notification:SfBusyIndicator>
         <StackPanel x:Name="mainStack" Orientation="Vertical" Grid.ColumnSpan="3" Grid.Row="2" Grid.RowSpan="5" VerticalAlignment="Top" Margin="70,10,70,0" Height="418">
 
-            <!--<syncfusion:CoverFlow x:Name="CoverFlowControl" Height="400">
-                <syncfusion:CoverFlow.ItemTemplate>
-                    <DataTemplate>
-                        <Image Source="{Binding}" Height="400" />
-                    </DataTemplate>
-                </syncfusion:CoverFlow.ItemTemplate>
-            </syncfusion:CoverFlow>-->
-
             <syncfusion:SfCarousel x:Name="CoverFlowControl" Height="400"
                                   VerticalAlignment="Top" 
-                                  Margin="10"  SelectedIndex="18"
+                                  Margin="10"
                                   HorizontalAlignment="Left" DoubleTapped="btnMoreInfo_Click" ScaleOffset="0.5" RotationAngle="30" Duration="0:0:0.4" SelectionChanged="CoverFlowControl_SelectionChanged"
                                   >
                 <syncfusion:SfCarousel.ItemTemplate>
@@ -167,59 +145,20 @@
                     </DataTemplate>
                 </syncfusion:SfCarousel.ItemTemplate>
             </syncfusion:SfCarousel>
-            <!--<StackPanel x:Name="Button_stackpanel" Height="58" HorizontalAlignment="Center" Margin="0,-10,0,0" RenderTransformOrigin="0.488,0.52" VerticalAlignment="Center" Visibility="Collapsed">
-                <Button ToolTipService.ToolTip="" x:Uid="Play_Button" x:Name="Play_Button" Margin="84,9,82,0" HorizontalAlignment="Center" Height="40"  Click="Auto_Play">
-                    <Button.Template>
-                        <ControlTemplate>
-                            <Image Source="ms-appx:///Assets/Play.png"/>
-                        </ControlTemplate>
-                    </Button.Template>
-                </Button>
-                <Button  x:Uid="Backward_Button" x:Name="Backward_Button" Margin="-125,-42,14,0" HorizontalAlignment="Center" Height="40" Click="BackWard_move"   >
-                    <Button.Template>
-                        <ControlTemplate>
-                            <Image Source="ms-appx:///Assets/Fast_Backward.png"/>
-                        </ControlTemplate>
-                    </Button.Template>
-                </Button>
-                <Button  x:Uid="Forward_Button" x:Name="Forward_Button" Margin="159,-42,14,0" HorizontalAlignment="Center" Height="40" Click="ForWard_move"   >
-                    <Button.Template>
-                        <ControlTemplate>
-                            <Image Source="ms-appx:///Assets/Fast_Forward.png"/>
-                        </ControlTemplate>
-                    </Button.Template>
-                </Button>
-
-                <Button  x:Uid="Pause_Button" x:Name="Pause_Button" Margin="84,9,82,0" HorizontalAlignment="Center" Height="40"  Visibility="Collapsed" Click="AutoStop"  >
-                    <Button.Template>
-                        <ControlTemplate>
-                            <Image Source="ms-appx:///Assets/Pause.png"/>
-                        </ControlTemplate>
-                    </Button.Template>
-                </Button>
-            </StackPanel>-->
 
 
         </StackPanel>
 
-        <!--<StackPanel x:Name="stackPopup" Background="Black" Width="650" Height="510" Grid.ColumnSpan="3" Grid.Column="1" Grid.Row="1" Grid.RowSpan="6" Orientation="Vertical" Margin="10,-100,10,10" VerticalAlignment="Center" HorizontalAlignment="Center" Visibility="Collapsed">
-            <Button x:Name="btnWVClose" Background="White" Foreground="Black" Content="Close" Width="70" Height="40" Click="btnClose_Click" Visibility="Visible"/>
-            <WebView x:Name="movieWiki" Width="640" Height="460" Margin="5,0"/>-->
 
-        <StackPanel Orientation="Vertical" VerticalAlignment="Top" x:Name="snappedStack" Grid.Row="0" Margin="2,10,3,0" HorizontalAlignment="Center" Height="750" Width="315" Grid.ColumnSpan="6" Grid.RowSpan="3" RenderTransformOrigin="0.5,0.5">
+        <StackPanel Orientation="Vertical" VerticalAlignment="Top" x:Name="snappedStack" HorizontalAlignment="Center" Width="320" RenderTransformOrigin="0.5,0.5" Height="768" Grid.RowSpan="8" Grid.ColumnSpan="3">
             <Image x:Name="image" Source="ms-appx:///Assets/BlackLogo.png" Width="150" Height="102" Margin="83,0,82,0" />
             <TextBlock x:Uid="SnappedMessage" x:Name="textBlock"  TextWrapping="Wrap" Style="{StaticResource AboutUsTextStyle}" Foreground="Black" FontSize="24"  Margin="30,40,33,10" RenderTransformOrigin="0.5,0.5" Height="233" >
             </TextBlock>
         </StackPanel>
-        <!--<ProgressRing x:Name="ProgressRing" HorizontalAlignment="Center" VerticalAlignment="Stretch" Grid.Row="3" Grid.RowSpan="2" Margin="18,70" Grid.Column="1" IsActive="True" Width="60">
-            <ProgressRing.Background>
-                <ImageBrush/>
-            </ProgressRing.Background>
-        </ProgressRing>-->
         <Navigation:SfRadialMenu
                                  NavigationButtonStyle="{StaticResource NavigationButtonStyle}"
-                                   EnableFreeRotation="True" IsOpen="False"
-                                     x:Name="selectionmenu" Padding="5" Margin="424,32,410,0" RadiusX="110" RadiusY="100" Background="#FF01A2A6" RimBackground="#FF29D9C2" Opacity="0.85" CenterRimRadiusFactor="0.2" RimRadiusFactor="0.95" Grid.Column="1" Grid.Row="5" Grid.RowSpan="3" Height="208" VerticalAlignment="Top">
+                                   EnableFreeRotation="False" IsOpen="False"
+                                     x:Name="selectionmenu" Padding="5" Margin="418,32,416,0" RadiusX="100" RadiusY="100" Background="#FF01A2A6" RimBackground="#FF29D9C2" Opacity="0.85" CenterRimRadiusFactor="0.2" Grid.Column="1" Grid.Row="5" Grid.RowSpan="3" Height="208" VerticalAlignment="Top" RimRadiusFactor="0.94">
             <Navigation:SfRadialMenu.RenderTransform>
                 <CompositeTransform x:Name="transform1"/>
             </Navigation:SfRadialMenu.RenderTransform>
@@ -228,56 +167,89 @@
                     <Image Source="ms-appx:///Assets/Tools.png" Width="20" Stretch="Uniform"/>
                 </Grid>
             </Navigation:SfRadialMenu.Icon>
-            <Navigation:SfRadialMenuItem x:Uid="Forward_Button" x:Name="Forward_Button" Click="ForWard_move" ToolTip="" ToolTipPlacement="Top" Margin="6,-1,-6,1"  >
-                <Navigation:SfRadialMenuItem.Header>
-                    <Border Background="Transparent" Padding="5">
-                        <StackPanel>
-                            <Image Source="ms-appx:///Assets/forward.png"/>
-                            <TextBlock Text="Forward" LineHeight="1" TextWrapping="Wrap"/>
-                        </StackPanel>
-                    </Border>
-                </Navigation:SfRadialMenuItem.Header>
-            </Navigation:SfRadialMenuItem>
-            <Navigation:SfRadialMenuItem x:Uid="TraslateDetails" x:Name="TraslateDetails" Click="Translate" ToolTip="" ToolTipPlacement="Top" Margin="-24,3,24,-3" Visibility="Collapsed"  >
-                <Navigation:SfRadialMenuItem.Header>
-                    <Border Background="Transparent" Padding="5">
-                        <StackPanel>
-                            <Image Source="ms-appx:///Assets/Text Editor.png"/>
-                            <TextBlock Text="Trasnslate Title"/>
-                        </StackPanel>
-                    </Border>
-                </Navigation:SfRadialMenuItem.Header>
-            </Navigation:SfRadialMenuItem>
-            <Navigation:SfRadialMenuItem x:Uid="Backward_Button" x:Name="Backward_Button" Click="BackWard_move" ToolTip="" ToolTipPlacement="Top" Margin="-22,-42,22,42"  >
-                <Navigation:SfRadialMenuItem.Header>
-                    <Border Background="Transparent" Padding="5">
-                        <StackPanel>
-                            <Image Source="ms-appx:///Assets/backward.png"/>
-                            <TextBlock Text="Backward"/>
-                        </StackPanel>
-                    </Border>
-                </Navigation:SfRadialMenuItem.Header>
-            </Navigation:SfRadialMenuItem>
-            <Navigation:SfRadialMenuItem x:Uid="Play_Button" x:Name="Play_Button" Click="Auto_Play" ToolTip="" ToolTipPlacement="Top" Margin="55,-29,-55,29" Height="49" VerticalAlignment="Bottom"  >
+            <Navigation:SfRadialMenuItem x:Uid="PlayTooltip"  x:Name="Play_Button" Click="Auto_Play" ToolTip="" ToolTipPlacement="Top"  Height="49" Margin="15,0,0,0"  >
                 <Navigation:SfRadialMenuItem.Header>
                     <Border Background="Transparent" Padding="5">
                         <StackPanel>
                             <Image Source="ms-appx:///Assets/Play.png"/>
-                            <TextBlock Text="Auto Play"/>
+                            <TextBlock x:Uid="Play_Button" Text=""/>
                         </StackPanel>
                     </Border>
                 </Navigation:SfRadialMenuItem.Header>
-            </Navigation:SfRadialMenuItem>
-            <Navigation:SfRadialMenuItem x:Uid="Pause_Button" x:Name="Pause_Button" Click="AutoStop" ToolTip="" ToolTipPlacement="Top" Margin="-24,-3,24,3" Visibility="Collapsed"   >
+                <Navigation:SfRadialMenuItem x:Uid="PlayTooltip" x:Name="Play_Button1"  Click="Auto_Play" ToolTip="" ToolTipPlacement="Top"  Height="49" >
+                    <Navigation:SfRadialMenuItem.Header>
+                        <Border Background="Transparent" Padding="5">
+                            <StackPanel>
+                                <Image Source="ms-appx:///Assets/Play.png"/>
+                                <TextBlock x:Uid="Play_Button" Text=""/>
+                            </StackPanel>
+                        </Border>
+                    </Navigation:SfRadialMenuItem.Header>
+                </Navigation:SfRadialMenuItem>
+                <Navigation:SfRadialMenuItem x:Uid="BackwardTooltip"  x:Name="Backward_Button" Click="BackWard_move"  ToolTip="" ToolTipPlacement="Top"   >
+                    <Navigation:SfRadialMenuItem.Header>
+                        <Border Background="Transparent" Padding="5">
+                            <StackPanel>
+                                <Image Source="ms-appx:///Assets/backward.png"/>
+                                <TextBlock x:Uid="Backward_Button" Text=""/>
+                            </StackPanel>
+                        </Border>
+                    </Navigation:SfRadialMenuItem.Header>
+                </Navigation:SfRadialMenuItem>
+                <Navigation:SfRadialMenuItem x:Uid="PauseToolTip"  x:Name="Pause_Button1" Click="AutoStop" ToolTip=""  ToolTipPlacement="Top" VerticalAlignment="Center" Margin="0,0,10,0" IsEnabled="False" >
                 <Navigation:SfRadialMenuItem.Header>
                     <Border Background="Transparent" Padding="5">
                         <StackPanel>
                             <Image Source="ms-appx:///Assets/Pause.png"/>
-                            <TextBlock Text="Pause"/>
+                                <TextBlock x:Uid="Pause_Button" Text=""/>
                         </StackPanel>
                     </Border>
                 </Navigation:SfRadialMenuItem.Header>
             </Navigation:SfRadialMenuItem>
+
+                <Navigation:SfRadialMenuItem  x:Uid="ForwardTooltip" x:Name="Forward_Button" Click="ForWard_move" ToolTip=""  ToolTipPlacement="Top"   >
+                    <Navigation:SfRadialMenuItem.Header>
+                        <Border Background="Transparent" Padding="5">
+                            <StackPanel>
+                                <Image Source="ms-appx:///Assets/forward.png"/>
+                                <TextBlock x:Uid="Forward_Button" Text="" />
+                            </StackPanel>
+                        </Border>
+                    </Navigation:SfRadialMenuItem.Header>
+                </Navigation:SfRadialMenuItem>
+
+            </Navigation:SfRadialMenuItem>
+            <Navigation:SfRadialMenuItem x:Uid="TraslateDetails" x:Name="TraslateDetails" Click="Translate" ToolTip=""  ToolTipPlacement="Top" IsEnabled="False"    >
+                <Navigation:SfRadialMenuItem.Header>
+                    <Border Background="Transparent" Padding="5">
+                        <StackPanel>
+                            <Image Source="ms-appx:///Assets/Text Editor.png"/>
+                            <TextBlock x:Uid="translatename" Text=""/>
+                        </StackPanel>
+                    </Border>
+                </Navigation:SfRadialMenuItem.Header>
+            </Navigation:SfRadialMenuItem>
+            <Navigation:SfRadialMenuItem x:Uid="PauseToolTip" x:Name="Pause_Button" Click="AutoStop" ToolTip=""  ToolTipPlacement="Top" IsEnabled="False"  VerticalAlignment="Center"  >
+                <Navigation:SfRadialMenuItem.Header>
+                    <Border Background="Transparent" Padding="5">
+                        <StackPanel>
+                            <Image Source="ms-appx:///Assets/Pause.png"/>
+                            <TextBlock x:Uid="Pause_Button" Text=""/>
+                        </StackPanel>
+                    </Border>
+                </Navigation:SfRadialMenuItem.Header>
+            </Navigation:SfRadialMenuItem>
+            <Navigation:SfRadialMenuItem x:Uid="InfoTooltip" x:Name="Info_Button" Click="btnMoreInfo_Click"  ToolTip="" ToolTipPlacement="Top"  Visibility="Visible"   >
+                <Navigation:SfRadialMenuItem.Header>
+                    <Border Background="Transparent" Padding="5">
+                        <StackPanel>
+                            <Image Source="ms-appx:///Assets/Information.png"/>
+                            <TextBlock x:Uid="Info_Button" Text=""/>
+                        </StackPanel>
+                    </Border>
+                </Navigation:SfRadialMenuItem.Header>
+            </Navigation:SfRadialMenuItem>
+
 
         </Navigation:SfRadialMenu>
         <!--<UI:AdControl x:Name="AddLeft" ApplicationId="6310ffab-747b-4d73-84f5-40c5fa6a8272" AdUnitId="10067099" HorizontalAlignment="Left" Height="250" Margin="30,100,0,0" Grid.Row="2" Grid.RowSpan="5" VerticalAlignment="Top" Width="250" Grid.ColumnSpan="2"/>
@@ -548,7 +520,7 @@
                                     <Thickness>0,0,10,0</Thickness>
                                 </DiscreteObjectKeyFrame.Value>
                             </DiscreteObjectKeyFrame>
-                        </ObjectAnimationUsingKeyFrames>                      
+                        </ObjectAnimationUsingKeyFrames>
                         <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="filterlang">
                             <DiscreteObjectKeyFrame KeyTime="0">
                                 <DiscreteObjectKeyFrame.Value>
@@ -556,7 +528,7 @@
                                 </DiscreteObjectKeyFrame.Value>
                             </DiscreteObjectKeyFrame>
                         </ObjectAnimationUsingKeyFrames>
-                       <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="filterlang_asian">
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="filterlang_asian">
                             <DiscreteObjectKeyFrame KeyTime="0">
                                 <DiscreteObjectKeyFrame.Value>
                                     <Thickness>0,2,364,0</Thickness>

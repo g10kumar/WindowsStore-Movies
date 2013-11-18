@@ -141,40 +141,11 @@ namespace TopMovies
                         {
                             source = "myApi";
                             JObject obj = JObject.Parse(tempContent);
-                            //foreach (string actor in (JArray)obj["actors"])
-                            //{
-                            //    actors = actors + actor + ",";
-                            //}
                             actors = Regex.Replace(obj["actors"].ToString(), @"\r|\n|[\[\]]", "").Replace("\"", "").TrimStart(' ');
-                            //foreach (string writer in (JArray)obj["writers"])
-                            //{
-
-                            //    writers = writers + writer + ",";
-                            //}
                             writers = Regex.Replace(obj["writers"].ToString(), @"\r|\n|[\[\]]", "").Replace("\"", "").TrimStart(' ');
-                            //foreach (string director in (JArray)obj["directors"])
-                            //{
-
-                            //    directors = directors + director + ",";
-                            //}
                             directors = Regex.Replace(obj["directors"].ToString(), @"\r|\n|[\[\]]", "").Replace("\"", "").TrimStart(' ');
-                            //foreach (string genre in (JArray)obj["genres"])
-                            //{
-
-                            //    generes = generes + genre + ",";
-                            //}
                             generes = Regex.Replace(obj["genres"].ToString(), @"\r|\n|[\[\]]", "").Replace("\"", "").TrimStart(' ');
-                            //foreach (string time in (JArray)obj["runtime"])
-                            //{
-
-                            //    runtime = runtime + time + ",";
-                            //}
                             runtime = Regex.Replace(obj["runtime"].ToString(), @"\r|\n|[\[\]]", "").Replace("\"", "").TrimStart(' ');
-                            //foreach (string lang in (JArray)obj["language"])
-                            //{
-
-                            //    language = language + lang;
-                            //}
                             language = Regex.Replace(obj["language"].ToString(), @"\r|\n|[\[\]]", "").Replace("\"", "").TrimStart(' ');
 
                             content = directors + "|" + writers + "|" + actors + "|" + obj["plot"].ToString();
@@ -227,8 +198,9 @@ namespace TopMovies
         /// <returns></returns>
         async public Task<string> WikiPediaArticleFinder(string articleName, int year)
         {
+            Regex title = new Regex(articleName,RegexOptions.CultureInvariant|RegexOptions.IgnoreCase);
             userLanguage = new Windows.ApplicationModel.Resources.Core.ResourceContext().Languages.FirstOrDefault();
-            string firstQuery = @"http://en.wikipedia.org/w/api.php?action=query&list=search&format=json&srlimit=5&srprop=snippet&srsearch=" + articleName + "+incategory:" + year + "_films";
+            string firstQuery = @"https://en.wikipedia.org/w/api.php?action=query&list=search&format=json&srlimit=1&srprop=snippet&srsearch=" + articleName + "+incategory:" + year + "_films";
             request = WebRequest.Create(firstQuery) as HttpWebRequest;
             using (response = await request.GetResponseAsync())
             {
@@ -239,7 +211,12 @@ namespace TopMovies
                     var firstResult = obj.Last.ElementAt(0)["search"];
                     foreach (JToken returnResult in firstResult)
                     {
-                        if (returnResult["title"].ToString().Contains(articleName) || returnResult["title"].ToString().Contains(articleName + " (film)") || articleName.Contains(returnResult["title"].ToString()))
+                        //if (returnResult["title"].ToString().Contains(articleName) || returnResult["title"].ToString().Contains(articleName + " (film)") || articleName.Contains(returnResult["title"].ToString()))
+                        //{
+                        //    tempArticle = (string)returnResult["title"];
+                        //    break;
+                        //}
+                        if (title.IsMatch(returnResult["title"].ToString())||Regex.IsMatch(returnResult["title"].ToString(),articleName))
                         {
                             tempArticle = (string)returnResult["title"];
                             break;
@@ -249,7 +226,7 @@ namespace TopMovies
                     if (tempArticle == null)
                     {
 
-                        string secondQuery = @"http://en.wikipedia.org/w/api.php?action=query&list=search&format=json&srlimit=5&srprop=snippet&srsearch=" + articleName;
+                        string secondQuery = @"https://en.wikipedia.org/w/api.php?action=query&list=search&format=json&srlimit=5&srprop=snippet&srsearch=" + articleName;
                         request = WebRequest.Create(secondQuery) as HttpWebRequest;
                         using (response = await request.GetResponseAsync())
                         {
@@ -259,7 +236,7 @@ namespace TopMovies
                                 var secondResult = obj.Last.ElementAt(0)["search"];
                                 foreach (JToken returnResult in secondResult)
                                 {
-                                    if ((returnResult["title"].ToString().Contains(articleName) || returnResult["title"].ToString().Contains(articleName + " (film)")) && !returnResult["snippet"].ToString().Contains("may refer to"))
+                                    if ((Regex.IsMatch(returnResult["title"].ToString(),articleName) || returnResult["title"].ToString().Contains(articleName + " (film)")) && !returnResult["snippet"].ToString().Contains("may refer to"))
                                     {
                                         tempArticle = (string)returnResult["title"];
                                         break;
@@ -274,7 +251,7 @@ namespace TopMovies
                     {
                         foreach (JToken returnResult in firstResult)
                         {
-                            if (returnResult["snippet"].ToString().Contains(articleName) || returnResult["snippet"].ToString().Contains("<span class='searchmatch'>"))
+                            if (title.IsMatch(returnResult["snippet"].ToString()) || Regex.IsMatch(returnResult["snippet"].ToString(),"<span class='searchmatch'>"))
                             {
                                 tempArticle = (string)returnResult["title"];
                                 break;
@@ -286,7 +263,7 @@ namespace TopMovies
 
             if(!userLanguage.Contains("en"))
             {
-                string langUrl = @"http://en.wikipedia.org/w/api.php?action=parse&format=xml&page="+tempArticle+"&prop=langlinks";
+                string langUrl = @"https://en.wikipedia.org/w/api.php?action=parse&format=xml&page="+tempArticle+"&prop=langlinks";
                 request = WebRequest.Create(langUrl) as HttpWebRequest;
                 using (response = await request.GetResponseAsync())
                 {
@@ -311,7 +288,7 @@ namespace TopMovies
                 }
             }
 
-            return ("http://en.m.wikipedia.org/wiki/" + tempArticle);
+            return ("https://en.m.wikipedia.org/wiki/" + tempArticle);
 
         }
     }

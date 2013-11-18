@@ -13,6 +13,8 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using System.Text;
 using Windows.UI.ViewManagement;
+using Microsoft.Advertising.WinRT.UI;
+using DT.GoogleAnalytics.Metro;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -28,8 +30,12 @@ namespace TopMovies
             this.InitializeComponent();
         }
 
-        public TrailerPage(string page)
-        { }
+        void trailerHolder_LoadCompleted(object sender, NavigationEventArgs e)
+        {
+            ProgressRing.IsBusy = false;
+            trailerHolder.Visibility = Windows.UI.Xaml.Visibility.Visible;
+            AnalyticsHelper.Track(trailerHeader.Text, "Movie_Trailer");
+        }
 
         /// <summary>
         /// Invoked when this page is about to be displayed in a Frame.
@@ -38,6 +44,27 @@ namespace TopMovies
         /// property is typically used to configure the page.</param>
         protected async override void OnNavigatedTo(NavigationEventArgs e)
         {
+
+            AnalyticsHelper.TrackPageView("/Trailer");
+
+            ProgressRing.IsBusy = true;
+            if (sessionData.selectCategory == "TopEnglish")
+            {
+                trailerHeader.Text = "You are watching : " + sessionData.lastEnglishMovie;
+            }
+            else if (sessionData.selectCategory == "TopForeign")
+            {
+                trailerHeader.Text = "You are watching : " + sessionData.lastForeignMovie;
+            }
+            else if (sessionData.selectCategory == "TopBollywood")
+            {
+                trailerHeader.Text = "You are watching : " + sessionData.lastBollywoodMovie;
+            }
+            else if (sessionData.selectCategory == "TopAsian")
+            {
+                trailerHeader.Text = "You are watching : " + sessionData.lastAsianMovie;
+            }
+
             YouTubeVideoId obj = new YouTubeVideoId();
             int position = (int)e.Parameter;
             string videoWidth = "853";
@@ -50,7 +77,6 @@ namespace TopMovies
             //html.Append(@"<iframe frameborder=""0"" scrolling=""no"" style=""padding:auto; margin:auto"" width=""" + videoWidth + @""" height=""" + videoHeight + @""" src=" + videoSrc + " allowfullscreen=" + @"""1" + @"""></iframe>");
             html.Append(@"<iframe type=""text/html"" frameborder=""0"" scrolling=""no"" style=""padding:0; margin:0"" width=""" + videoWidth + @""" height=""" + videoHeight + @""" src=" + videoSrc + "></iframe>");
             html.Append(@"</body></html>");
-            //trailerHolder.Source = 
             trailerHolder.NavigateToString(html.ToString());
         }
 
@@ -58,13 +84,22 @@ namespace TopMovies
 
 
         private void GoBack(object sender, RoutedEventArgs e)
-        { 
+        {
+            trailerHolder.LoadCompleted -= trailerHolder_LoadCompleted;
+            trailerHolder.NavigateToString(@"<html><head></head><body></body></html>");
             this.Frame.GoBack();
         }
 
-        private void stopvideo(object sender, RoutedEventArgs e)
+        private void OnAdError(object sender, Microsoft.Advertising.WinRT.UI.AdErrorEventArgs e)
         {
-            
+            //Always add an adcontroler inside a grid or stackpanel.
+
+            string code = e.ErrorCode.ToString();
+            //adGrid.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+            ((AdControl)sender).Suspend();
+            ((AdControl)sender).Visibility = Windows.UI.Xaml.Visibility.Collapsed;
         }
+
+        
     }
 }

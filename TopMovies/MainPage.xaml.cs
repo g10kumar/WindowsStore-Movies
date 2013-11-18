@@ -36,36 +36,6 @@ namespace TopMovies
             //Window.Current.SizeChanged += this.WindowSizeChanged;
         }
 
-
-        //private void manageViewState()
-        //{
-         //  string visualState = DetermineVisualState(ApplicationView.Value);
-
-        //    if (visualState == "Snapped")
-        //    {
-        //        mainStack.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-        //        snappedStack.Visibility = Windows.UI.Xaml.Visibility.Visible;
-        //        //backButton.Style = App.Current.Resources["BackButtonStyle"] as Style;
-        //        //backButton.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-        //        //pageTitle.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-        //        //pageTitle.Style = App.Current.Resources["SnappedPageHeaderTextStyle"] as Style;
-        //    }
-        //    else
-        //    {
-        //        mainStack.Visibility = Windows.UI.Xaml.Visibility.Visible;
-        //        snappedStack.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-        //        backButton.Style = App.Current.Resources["BackButtonStyle"] as Style;
-        //        pageTitle.Style = App.Current.Resources["PageHeaderTextStyle"] as Style;
-
-        //    }
-        //}
-
-        //void Current_SizeChanged(object sender, WindowSizeChangedEventArgs e)
-        //{
-        //    manageViewState();
-        //}
-
-
         /// <summary>
         /// Invoked when this page is about to be displayed in a Frame.
         /// </summary>
@@ -178,8 +148,6 @@ namespace TopMovies
             }
 
             return list;
-
-            
         }
         
     }
