@@ -8,7 +8,8 @@
       <group id="Resources">
         <trans-unit id="Resources\aboutus" translate="yes" xml:space="preserve">
           <source>About Us</source>
-          <target state="translated" state-qualifier="tm-suggestion">Informacje o nas</target>
+          <target state="translated">Najlepsze Filmy 
+</target>
         </trans-unit>
         <trans-unit id="Resources\AboutUs1\Text" translate="yes" xml:space="preserve">
           <source>This app presents the best movies ever made in the world in a visual format. Browse through the top movies made in Hollywood or internationally. Movies are categorized by Hollywood, Bollywood or International. Bollywood is the term used for the Hindi-language film industry based in Mumbai, India. The 'International' films category includes movies made all over the world except Hollywood and Bollywood.</source>
@@ -44,7 +45,7 @@
         </trans-unit>
         <trans-unit id="Resources\pageTitle\Text" translate="yes" xml:space="preserve">
           <source>The Best Movies Ever Made!</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Najlepsze filmy w historii!</target>
+          <target state="translated">Najlepsze filmy!</target>
         </trans-unit>
         <trans-unit id="Resources\privacypolicy" translate="yes" xml:space="preserve">
           <source>Privacy Policy</source>
@@ -104,7 +105,7 @@
         </trans-unit>
         <trans-unit id="Resources\AppName" translate="yes" xml:space="preserve">
           <source>The Best Movies Ever Made!</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Najlepsze filmy w historii!</target>
+          <target state="translated">Najlepsze Filmy!</target>
         </trans-unit>
         <trans-unit id="Resources\NoInternet" translate="yes" xml:space="preserve">
           <source>No active Internet connection avaliable . Please check the connection %%amp; try again.</source>
