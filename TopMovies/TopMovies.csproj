@@ -12,9 +12,9 @@
     <DefaultLanguage>en-US</DefaultLanguage>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{BC8A1FFA-BEE3-4634-8014-F334798102B3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <PackageCertificateKeyFile>TopMovies_StoreKey.pfx</PackageCertificateKeyFile>
+    <PackageCertificateKeyFile>TopMovies_TemporaryKey.pfx</PackageCertificateKeyFile>
     <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
-    <PackageCertificateThumbprint>E365FCAC175A8B218CD338E611599B89A6FEACF4</PackageCertificateThumbprint>
+    <PackageCertificateThumbprint>1200A4E197B0C120B6B938A7940053F82C1C3B4F</PackageCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -114,17 +114,18 @@
     <Compile Include="Common\BooleanToVisibilityConverter.cs" />
     <Compile Include="Common\LayoutAwarePage.cs" />
     <Compile Include="Common\RichTextColumns.cs" />
+    <Compile Include="Common\SuspensionManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="GoogleTranslator.cs" />
     <Compile Include="Common\NotificationObject.cs" />
     <Compile Include="Common\SettingsFlyout.cs" />
-    <Compile Include="Common\SuspensionManager.cs" />
     <Compile Include="InfoPage.xaml.cs">
       <DependentUpon>InfoPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MoreAppsUserControl.xaml.cs" />
     <Compile Include="MovieInformation.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -136,7 +137,9 @@
     <Compile Include="TrailerPage.xaml.cs">
       <DependentUpon>TrailerPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\CoverFlowProperties.cs" />
+    <Compile Include="Views\CoverFlowProperties.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Views\Movies.xaml.cs">
       <DependentUpon>Movies.xaml</DependentUpon>
     </Compile>
@@ -146,7 +149,9 @@
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
-    <None Include="MultilingualResources\TopMovies_ar.xlf" />
+    <None Include="MultilingualResources\TopMovies_ar.xlf">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="MultilingualResources\TopMovies_de.xlf" />
     <None Include="MultilingualResources\TopMovies_es.xlf" />
     <None Include="MultilingualResources\TopMovies_fr.xlf" />
@@ -820,7 +825,6 @@
     <Content Include="Assets\wiki.png" />
     <Content Include="blank.html" />
     <Content Include="Common\ReadMe.txt" />
-    <Content Include="defaultAdSettings.xml" />
     <Page Include="InfoPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -841,10 +845,6 @@
     <Content Include="Assets\SmallLogo.png" />
     <Content Include="Assets\SplashScreen.png" />
     <Content Include="Assets\StoreLogo.png" />
-    <Page Include="MoreAppsUserControl.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="PrivacyPolicyUserControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -880,33 +880,33 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>packages\Newtonsoft.Json.5.0.8\lib\netcore45\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.SfAccordion.WinRT, Version=11.104.0.21, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+    <Reference Include="Syncfusion.SfAccordion.WinRT, Version=11.3010.0.32, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Program Files (x86)\Syncfusion\Essential Studio\11.3.0.30\Assemblies for WinRT\Syncfusion.SfAccordion.WinRT.dll</HintPath>
+      <HintPath>C:\Program Files\Syncfusion\Essential Studio\11.3.0.33\Assemblies for WinRT\8.0\Syncfusion.SfAccordion.WinRT.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.SfBusyIndicator.WinRT, Version=11.104.0.21, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+    <Reference Include="Syncfusion.SfBusyIndicator.WinRT, Version=11.3010.0.32, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Program Files (x86)\Syncfusion\Essential Studio\11.3.0.30\Assemblies for WinRT\Syncfusion.SfBusyIndicator.WinRT.dll</HintPath>
+      <HintPath>C:\Program Files\Syncfusion\Essential Studio\11.3.0.33\Assemblies for WinRT\8.0\Syncfusion.SfBusyIndicator.WinRT.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.SfCarousel.WinRT, Version=11.104.0.21, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+    <Reference Include="Syncfusion.SfCarousel.WinRT, Version=11.30800.0.33, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Program Files (x86)\Syncfusion\Essential Studio\11.3.0.30\Assemblies for WinRT\Syncfusion.SfCarousel.WinRT.dll</HintPath>
+      <HintPath>C:\Program Files\Syncfusion\Essential Studio\11.3.0.33\Assemblies for WinRT\8.0\Syncfusion.SfCarousel.WinRT.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.SfHubTile.WinRT, Version=11.104.0.21, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+    <Reference Include="Syncfusion.SfHubTile.WinRT, Version=11.3010.0.32, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Program Files (x86)\Syncfusion\Essential Studio\11.3.0.30\Assemblies for WinRT\Syncfusion.SfHubTile.WinRT.dll</HintPath>
+      <HintPath>C:\Program Files\Syncfusion\Essential Studio\11.3.0.33\Assemblies for WinRT\8.0\Syncfusion.SfHubTile.WinRT.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.SfInput.WinRT, Version=11.104.0.21, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+    <Reference Include="Syncfusion.SfInput.WinRT, Version=11.30800.0.33, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Program Files (x86)\Syncfusion\Essential Studio\11.3.0.30\Assemblies for WinRT\Syncfusion.SfInput.WinRT.dll</HintPath>
+      <HintPath>C:\Program Files\Syncfusion\Essential Studio\11.3.0.33\Assemblies for WinRT\8.0\Syncfusion.SfInput.WinRT.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.SfRadialMenu.WinRT, Version=11.104.0.21, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+    <Reference Include="Syncfusion.SfRadialMenu.WinRT, Version=11.3010.0.32, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Program Files (x86)\Syncfusion\Essential Studio\11.3.0.30\Assemblies for WinRT\Syncfusion.SfRadialMenu.WinRT.dll</HintPath>
+      <HintPath>C:\Program Files\Syncfusion\Essential Studio\11.3.0.33\Assemblies for WinRT\8.0\Syncfusion.SfRadialMenu.WinRT.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.SfShared.WinRT, Version=11.104.0.21, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+    <Reference Include="Syncfusion.SfShared.WinRT, Version=11.30800.0.33, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Program Files (x86)\Syncfusion\Essential Studio\11.3.0.30\Assemblies for WinRT\Syncfusion.SfShared.WinRT.dll</HintPath>
+      <HintPath>C:\Program Files\Syncfusion\Essential Studio\11.3.0.33\Assemblies for WinRT\8.0\Syncfusion.SfShared.WinRT.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

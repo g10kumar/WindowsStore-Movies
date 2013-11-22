@@ -16,11 +16,11 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Navigation;
-using System.Threading;
 using DT.GoogleAnalytics.Metro;
 using System.Diagnostics;
 using Windows.UI.Xaml.Media.Animation;
-using System.Threading.Tasks;
+using System.Threading;
+using System.Text.RegularExpressions;
 
 namespace TopMovies.Views
 {
@@ -51,10 +51,8 @@ namespace TopMovies.Views
 
         public Movies() 
         {
-            
-            this.InitializeComponent();
-            ShareSourceLoad();
 
+            this.InitializeComponent();
             //Firstly populate the combo box then set it to the selected item
             for(int i=1;i<=5;i++)
             {
@@ -143,7 +141,6 @@ namespace TopMovies.Views
                 }
 
                 CarouselImagePopulator obj1 = new CarouselImagePopulator();
-
                 returened = await obj1.LoadMovieData();
             
 
@@ -354,7 +351,7 @@ namespace TopMovies.Views
 
         void DataRequested(DataTransferManager sender, DataRequestedEventArgs e)
         {
-            string movieName = ((Person)(CoverFlowControl.Items[CoverFlowControl.SelectedIndex])).Name.Split('#')[0].ToString();
+            string movieName = ((Person)(CoverFlowControl.Items[CoverFlowControl.SelectedIndex])).Name.ToString();
             string movieImage = ((Person)(CoverFlowControl.Items[CoverFlowControl.SelectedIndex])).Image.ToString();
             string categoryDesc = "One of the Best Movies Ever";
 
@@ -381,10 +378,10 @@ namespace TopMovies.Views
             if (movieName != null && this.Frame != null)
             {
 
-                if (sessionData.selectCategory == "TopForeign" && movieName.IndexOf("/") > 5)
-                {
-                    movieName = movieName.Substring(0, movieName.IndexOf("/"));
-                }
+                //if (sessionData.selectCategory == "TopForeign" && movieName.IndexOf("/") > 5)
+                //{
+                //    movieName = movieName.Substring(0, movieName.IndexOf("/"));
+                //}
 
 
                 string url = countryWiseUrl(((App)(App.Current)).countryCode, movieName);
@@ -415,16 +412,8 @@ namespace TopMovies.Views
         /// property is typically used to configure the page.</param>
         /// Firstly we are getting the language information of the system , and then we are making changes accordingly.
         protected async override void OnNavigatedTo(NavigationEventArgs e)
-        {   
+        {
             AnalyticsHelper.TrackPageView("/Movies");
-
-            language = new Windows.ApplicationModel.Resources.Core.ResourceContext().Languages.FirstOrDefault();
-
-            if(!language.Contains("en"))
-            {
-                TraslateDetails.IsEnabled = true;
-            }
-
             if (sessionData.selectCategory == "TopBollywood")
             {
                 pageTitle.Text = loader.GetString("BollywoodTitle");
@@ -447,24 +436,22 @@ namespace TopMovies.Views
             if (sessionData.selectCategory == "TopForeign")
             {
                 filterlang.Visibility = Windows.UI.Xaml.Visibility.Visible;
-                filterlang.SelectedIndex = 0;
             }
             else if (sessionData.selectCategory == "TopAsian")
             {
-                filterlang_asian.Visibility = Windows.UI.Xaml.Visibility.Visible;
-               
+                filterlang_asian.Visibility = Windows.UI.Xaml.Visibility.Visible;               
             }
 
             CarouselImagePopulator obj1 = new CarouselImagePopulator();
             returened = await obj1.LoadMovieData();
-
             if (returened.Item2 != 0)
             {
                 CoverFlowControl.ItemsSource = returened.Item1;                     //Getting the images from the class
-                countofMovies = returened.Item2;                                    //Getting the count of the movies 
                 CoverFlowControl.SelectedIndex = returened.Item3;                   // Gettig the carousel selcted item . 
+                countofMovies = returened.Item2;                                    //Getting the count of the movies 
                 ProgressRing.IsBusy = false;
             }
+
             if (sessionData.filterGenere != null || sessionData.filterLang != null || sessionData.sortOrder != 0)
             {
                 if (sessionData.filterGenere != null)
@@ -494,12 +481,19 @@ namespace TopMovies.Views
             {
                 filterlang.SelectionChanged += filterlang_SelectionChanged;
             }
+            language = new Windows.ApplicationModel.Resources.Core.ResourceContext().Languages.FirstOrDefault();
+
+            if (!language.Contains("en"))
+            {
+                TraslateDetails.IsEnabled = true;
+            }
+
 
             //if (this.Frame.CanGoForward)
                 //CoverFlowControl.InvalidateArrange();
 
-            //CoverFlowControl.Refresh();
 
+            ShareSourceLoad();
             AnalyticsHelper.Track(sessionData.selectCategory, "Movie_Cat_selection");
         }
 
@@ -553,9 +547,8 @@ namespace TopMovies.Views
             AutoStop();
 
             datatransferManager.DataRequested -= new TypedEventHandler<DataTransferManager, DataRequestedEventArgs>(this.DataRequested);
-
-            // Use the navigation frame to return to the previous page
-            if (this.Frame != null && this.Frame.CanGoBack) this.Frame.GoBack();
+            ts.Dispose();
+            base.GoBack(sender, e);
 
         }
 
@@ -612,45 +605,49 @@ namespace TopMovies.Views
                     filterlang.SelectionChanged -= filterlang_SelectionChanged;
                 }
 
+                //Person selectedItem = (Person)CoverFlowControl.SelectedItem;
+                //this.Frame.Navigate(typeof(InfoPage), (selectedItem.imdbID + "|" + selectedItem.Image + "|" + selectedItem.Name) as string);
 
-                this.Frame.Navigate(typeof(InfoPage), ((Person)CoverFlowControl.Items[CoverFlowControl.SelectedIndex]).imdbID+"|"+ ((Person)CoverFlowControl.Items[CoverFlowControl.SelectedIndex]).Image+"|"+ ((Person)CoverFlowControl.Items[CoverFlowControl.SelectedIndex]).Name);
+                ts.Dispose();
+                //Below way of sending data is working properly. 
+                this.Frame.Navigate(typeof(InfoPage), ((Person)CoverFlowControl.Items[CoverFlowControl.SelectedIndex]).imdbID + "|" + Regex.Match(((Person)CoverFlowControl.Items[CoverFlowControl.SelectedIndex]).Image, @"\d{1,3}") + "|" + ((Person)CoverFlowControl.Items[CoverFlowControl.SelectedIndex]).Name);
             }
 
 
         }
 
 
-        private void btnMovieDetails_Click_1(object sender, RoutedEventArgs e)
-        {
-            if (autoPlayOn)
-                AutoStop();
+        //private void btnMovieDetails_Click_1(object sender, RoutedEventArgs e)
+        //{
+        //    if (autoPlayOn)
+        //        AutoStop();
 
 
-            if (!GetIntertCondition())          // Functionality to check user internet connection & prompt is connection unavaliable . 
-            {
-                var messageDialog = new Windows.UI.Popups.MessageDialog(loader.GetString("NoInternet"));
-                var result = messageDialog.ShowAsync();
-            }
-            else
-            {
-                //Deregestring all the events that are attached to different combobox and the button on the page. 
-                datatransferManager.DataRequested -= new TypedEventHandler<DataTransferManager, DataRequestedEventArgs>(this.DataRequested);
-                sorter.SelectionChanged -= sorter_SelectionChanged;
-                genere.SelectionChanged -= genere_SelectionChanged;
-                if (sessionData.selectCategory == "TopAsian")
-                {
-                    filterlang_asian.SelectionChanged -= filterlang_asian_SelectionChanged;
-                }
-                else if (sessionData.selectCategory == "TopForeign")
-                {
-                    filterlang.SelectionChanged -= filterlang_SelectionChanged;
-                }
+        //    if (!GetIntertCondition())          // Functionality to check user internet connection & prompt is connection unavaliable . 
+        //    {
+        //        var messageDialog = new Windows.UI.Popups.MessageDialog(loader.GetString("NoInternet"));
+        //        var result = messageDialog.ShowAsync();
+        //    }
+        //    else
+        //    {
+        //        //Deregestring all the events that are attached to different combobox and the button on the page. 
+        //        datatransferManager.DataRequested -= new TypedEventHandler<DataTransferManager, DataRequestedEventArgs>(this.DataRequested);
+        //        sorter.SelectionChanged -= sorter_SelectionChanged;
+        //        genere.SelectionChanged -= genere_SelectionChanged;
+        //        if (sessionData.selectCategory == "TopAsian")
+        //        {
+        //            filterlang_asian.SelectionChanged -= filterlang_asian_SelectionChanged;
+        //        }
+        //        else if (sessionData.selectCategory == "TopForeign")
+        //        {
+        //            filterlang.SelectionChanged -= filterlang_SelectionChanged;
+        //        }
 
 
-                this.Frame.Navigate(typeof(InfoPage), new Tuple<int, string, string>(((Person)CoverFlowControl.Items[CoverFlowControl.SelectedIndex]).imdbID, ((Person)CoverFlowControl.Items[CoverFlowControl.SelectedIndex]).Image, ((Person)CoverFlowControl.Items[CoverFlowControl.SelectedIndex]).Name));
-            }
+        //        this.Frame.Navigate(typeof(InfoPage), new Tuple<int, string, string>(((Person)CoverFlowControl.Items[CoverFlowControl.SelectedIndex]).imdbID, ((Person)CoverFlowControl.Items[CoverFlowControl.SelectedIndex]).Image, ((Person)CoverFlowControl.Items[CoverFlowControl.SelectedIndex]).Name));
+        //    }
 
-        }
+        //}
 
 
 
@@ -700,56 +697,53 @@ namespace TopMovies.Views
 
         private async void Auto_Play(object sender, RoutedEventArgs e)
         {
-            autoPlayOn = true;
-            CancellationTokenSource reset = new CancellationTokenSource();
-            ts = reset;
+                autoPlayOn = true;
+                ts = new CancellationTokenSource();
+                CancellationToken ct = ts.Token;
+                if (!((CoverFlowControl.SelectedIndex + 1) >= countofMovies))
+                {
+                    Play_Button.IsEnabled = false;
+                    Play_Button1.IsEnabled = false;
+                    Pause_Button.IsEnabled = true;
+                    Pause_Button1.IsEnabled = true;
+                    Forward_Button.IsEnabled = false;
+                    Backward_Button.IsEnabled = false;
+                    var pos = CoverFlowControl.SelectedIndex;
 
-            
-            CancellationToken ct = ts.Token;
-            if (!((CoverFlowControl.SelectedIndex + 1) >= countofMovies))
-            {
-                Play_Button.IsEnabled = false;
-                Play_Button1.IsEnabled = false;
-                Pause_Button.IsEnabled = true;
-                Pause_Button1.IsEnabled = true;
-                Forward_Button.IsEnabled = false;
-                Backward_Button.IsEnabled = false;
-                var pos = CoverFlowControl.SelectedIndex;
+                    await Task.Factory.StartNew(async () =>
+                       {
 
-                 await Task.Factory.StartNew( async () =>
-                    {
+                           while (true)
+                           {
 
-                        while (true)
-                        {
-                            
-                            await Task.Delay(2000);
-                            if (pos + 1 == countofMovies)
-                            {
-                                //await Dispatcher.RunAsync(CoreDispatcherPriority.High, delegate { Play_Button.Visibility = Windows.UI.Xaml.Visibility.Visible; Pause_Button.Visibility = Windows.UI.Xaml.Visibility.Collapsed; Backward_Button.Visibility = Windows.UI.Xaml.Visibility.Visible; Forward_Button.Visibility = Windows.UI.Xaml.Visibility.Visible; });
-                                await Dispatcher.RunAsync(CoreDispatcherPriority.High, delegate
-                                {
-                                    Play_Button.IsEnabled = true; Play_Button1.IsEnabled = true ;
-                                    Pause_Button.IsEnabled = false; Pause_Button1.IsEnabled = false; Backward_Button.IsEnabled = true;  Forward_Button.IsEnabled = true ;
-                                });
-                                break;
-                            }
+                               await Task.Delay(2000);
+                               if (pos + 1 == countofMovies)
+                               {
+                                   //await Dispatcher.RunAsync(CoreDispatcherPriority.High, delegate { Play_Button.Visibility = Windows.UI.Xaml.Visibility.Visible; Pause_Button.Visibility = Windows.UI.Xaml.Visibility.Collapsed; Backward_Button.Visibility = Windows.UI.Xaml.Visibility.Visible; Forward_Button.Visibility = Windows.UI.Xaml.Visibility.Visible; });
+                                   await Dispatcher.RunAsync(CoreDispatcherPriority.High, delegate
+                                   {
+                                       Play_Button.IsEnabled = true; Play_Button1.IsEnabled = true;
+                                       Pause_Button.IsEnabled = false; Pause_Button1.IsEnabled = false; Backward_Button.IsEnabled = true; Forward_Button.IsEnabled = true;
+                                   });
+                                   break;
+                               }
 
-                            if (ct.IsCancellationRequested)
-                            {
-                                
-                                break;
-                            }
-                            else
-                            {
-                                await CoverFlowControl.Dispatcher.RunAsync(CoreDispatcherPriority.High, delegate { CoverFlowControl.SelectedIndex = CoverFlowControl.SelectedIndex + 1; pos = CoverFlowControl.SelectedIndex; });
-                            }
+                               if (ct.IsCancellationRequested)
+                               {
+
+                                   break;
+                               }
+                               else
+                               {
+                                   await CoverFlowControl.Dispatcher.RunAsync(CoreDispatcherPriority.High, delegate { CoverFlowControl.SelectedIndex = CoverFlowControl.SelectedIndex + 1; pos = CoverFlowControl.SelectedIndex; });
+                               }
 
 
-                        } 
-                    },ct);
+                           }
+                       }, ct);
 
-                 
-            }
+
+                }
 
         }
 
@@ -829,10 +823,14 @@ namespace TopMovies.Views
             {
                 Edge = Windows.UI.Xaml.Controls.Primitives.EdgeTransitionLocation.Top
             });
-            //filterPopUp.SetValue(Canvas.LeftProperty,(Window.Current.Bounds.Width - filterPopUp.Width));
-            //filterPopUp.SetValue(Canvas.TopProperty,10);
             filterPopUp.IsOpen = true;
         }
+
+        private void carousel_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            CoverFlowControl.Refresh();
+        }
+
 
 
 

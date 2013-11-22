@@ -19,7 +19,6 @@ using Windows.ApplicationModel.Resources;
 using System.Net;
 using Windows.Storage.Streams;
 using System.Text.RegularExpressions;
-using System.Diagnostics;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -30,7 +29,8 @@ namespace TopMovies
     /// </summary>
     public sealed partial class InfoPage : TopMovies.Common.LayoutAwarePage
     {
-        string releaseYear,moviePosition;
+        string releaseYear;
+        int moviePosition;
         string title;
         Tuple<string, string, string,string> derivedContent;
         public List<MovieData> information;
@@ -42,15 +42,21 @@ namespace TopMovies
             get { return information; }
             set { information = value; }
         }
-
         ConnectionProfile InternetconnectionProfile;
         ResourceLoader loader = new Windows.ApplicationModel.Resources.ResourceLoader();                // This is to get the resources defined in the resource.resw file . 
-        
+
+        private string _source;
+        public string ImageSource
+        {
+            get { return _source; }
+            set { _source = value; }
+        }
 
 
         public InfoPage()
         {
             this.InitializeComponent();
+            this.DataContext = this;
         }
 
 
@@ -66,12 +72,10 @@ namespace TopMovies
             AnalyticsHelper.TrackPageView("/InfoPage");
 
             string[] contentInfo = ((string)e.Parameter).Split(new char[]{'|'});
+            moviePosition = Convert.ToInt32(contentInfo[1]);
+            ImageSource = "Assets/" + sessionData.selectCategory + "/" + moviePosition + ".jpg";
             busyIndicator.IsBusy = true;
             derivedContent = await objMovie.GetMovieInfo(contentInfo[0]);
-            moviePosition = contentInfo[1];
-            BitmapImage bufferImage = new BitmapImage();
-            bufferImage.UriSource = new Uri(contentInfo[1]);
-            imageHolder2.Source = bufferImage;
             infoHeader.Text = contentInfo[2];
             title = contentInfo[2];
             Information = new List<MovieData>();
@@ -135,15 +139,15 @@ namespace TopMovies
             {
                 AnalyticsHelper.Track(title, "Movie_Info", "WikiPedia");
             }
-
         }
 
         private void GoBack(object sender, RoutedEventArgs e)
         {
-            //imageHolder.ImageSource = null;
+            if(!wikiPediaContent)
+                wikiView.NavigateToString(@"<html><head></head><body></body></html>");
             //imageHolder2.Source = null;
-            //this.mainGrid.Children.Remove(imageHolder);
-            if (this.Frame != null && this.Frame.CanGoBack) this.Frame.GoBack();
+            //imageHolder2.Background = null;
+            base.GoBack(sender, e);
         }
         /// <summary>
         /// This application gets the article from wikipedia using the movieinformation class , and hides the other information grid. 
@@ -155,8 +159,7 @@ namespace TopMovies
         async private void WikiPediaArticle(object sender, RoutedEventArgs e)
         {
             if (!wikiPediaContent)
-            {
-                
+            {                
                 string url;
                 if (translatedAccordion.Visibility == Windows.UI.Xaml.Visibility.Visible)
                 {
@@ -172,8 +175,6 @@ namespace TopMovies
 
                 if (infoHeader.Text != null)                        // We are checking the info header because the infoheader is assigned to title which is used to get the release year
                 {
-                    Stopwatch watch = new Stopwatch();
-                    watch.Start();
                     if (releaseYear == null)
                     {
                         XDocument doc = XDocument.Load(@"D:\DaksaTech\Win8Apps\TopMovies\bin\Release\AppX\Xml\" + sessionData.selectCategory + ".xml");
@@ -189,7 +190,6 @@ namespace TopMovies
                     if (url != null)
                     {
                         wikiView.LoadCompleted += wikiView_LoadCompleted;
-                        watch.Stop();
                         wikiView.Navigate(new Uri(url));
                     }
                 }
@@ -297,9 +297,9 @@ namespace TopMovies
                 //case "AU":
                 //    url = "http://www.amazon.com";
                 //    break;
-                //case "CN":
-                //    url = "http://www.amazon.com";
-                //    break;
+                case "China":
+                    url = "http://www.amazon.cn/s/?_encoding=UTF8&field-keywords=" + movieName + "&linkCode=ur2&tag=daksatech-23&url=search-alias%3Dvideo";
+                    break;
                 case "Germany":
                     url = "http://www.amazon.de/s/?url=search-alias%3Ddvd&field-keywords=" + movieName + "&tag=daksatech02-21";
                     break;
@@ -351,26 +351,26 @@ namespace TopMovies
                     }
                     if (((App)(App.Current)).youtubeReachable)
                     {
-                        int position;
-                        position = Convert.ToInt32(Regex.Match(moviePosition, @"\d{1,3}").ToString());
+                        //int position;
+                        //position = Convert.ToInt32(Regex.Match(moviePosition, @"\d{1,3}").ToString());
                         if (sessionData.selectCategory == "TopEnglish")                     // This is done because the movies in the english section are not saved 
                                                                                             //according to their respective rank in the youtube playlist.
                         {
-                            if (position <= 13)
+                            if (moviePosition <= 13)
                             {
-                                position = position + 20;
+                                moviePosition = moviePosition + 20;
                             }
-                            else if (position > 13 && position <= 33)
+                            else if (moviePosition > 13 && moviePosition <= 33)
                             {
-                                position = position - 13;
+                                moviePosition = moviePosition - 13;
                             }
                         }
-                        this.Frame.Navigate(typeof(TrailerPage), position);
+                        this.Frame.Navigate(typeof(TrailerPage), moviePosition);
 
                     }
                     else
                     {
-                        var messageDialog = new Windows.UI.Popups.MessageDialog("Unable to reach Youtube from this Device.");
+                        var messageDialog = new Windows.UI.Popups.MessageDialog(loader.GetString("Notrailer"));
                         var result = messageDialog.ShowAsync();
                         AnalyticsHelper.Track("YNR", "Movie_Trailer");                  //Here YNR means youtube not reachable . 
                     }

@@ -396,4 +396,13 @@
   <data name="wikiArticle_button.Text" xml:space="preserve">
     <value>Wikipedia</value>
   </data>
+  <data name="Notrailer" xml:space="preserve">
+    <value>Unable to connect to Youtube from this Device.</value>
+  </data>
+  <data name="trailerHeader" xml:space="preserve">
+    <value>You are watching</value>
+  </data>
+  <data name="infoPageIndicator.Text" xml:space="preserve">
+    <value>Processing Resquest.Please wait...</value>
+  </data>
 </root>

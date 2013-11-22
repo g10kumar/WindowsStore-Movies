@@ -25,35 +25,6 @@ namespace TopMovies
             set { images = value; }
         }
 
-        //This constructor takes in sortorder , language to filter, genere, catetory
-        //public CarouselImagePopulator(string filter, int filterType)
-        //{
-
-        //    if (filterType == 0)
-        //    {
-        //        filterLanguage = filter;
-        //    }
-        //    else
-        //    {
-        //        filterGenere = filter;
-        //    }
-
-        // }
-
-        ////This constructor takes in sort order, genere and category. This is to be used in the English and the bollywood section . 
-        //public CarouselImagePopulator(string genere, string category)
-        //{
-        //    filterGenere = genere;
-        //    cate = category;
-        //}
-
-
-        //This constructor takes in sortorder , language to filter, genere, catetory
-        //public CarouselImagePopulator(int sortOrder)
-        //{
-        //    sort = sortOrder;
-        //}
-
         public async Task<Tuple<ObservableCollection<Person>,int,int>> LoadMovieData()
         {   
             Images = new ObservableCollection<Person>();
