@@ -38,7 +38,7 @@ namespace TopMovies
 
             //list.Add("Australia");
             list.Add("Canada");
-            //list.Add("China");
+            list.Add("China");
             list.Add("France");
             list.Add("Germany");
             list.Add("India");

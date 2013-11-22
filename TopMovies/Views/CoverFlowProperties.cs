@@ -15,12 +15,6 @@ namespace TopMovies.Views
 {
     public class CoverFlowProperties:NotificationObject
     {
-        private double offset = 60;
-        private double selecteditemoffset = 120;       
-        private double zoffset = 0;
-        private double scaleoffset = 0.7;
-        private double rotationangle = 45;
-        private ObservableCollection<Person> images;
 
         public CoverFlowProperties()
         {
@@ -36,41 +30,41 @@ namespace TopMovies.Views
 
         
 
-        public ObservableCollection<Person> Images
-        {
-            get { return images; }
-            set { images = value; }
-        }
+        //public ObservableCollection<Person> Images
+        //{
+        //    get { return images; }
+        //    set { images = value; }
+        //}
 
-        public double Offset
-        {
-            get { return offset; }
-            set { offset = value; RaisePropertyChanged("Offset"); }
-        }
+        //public double Offset
+        //{
+        //    get { return offset; }
+        //    set { offset = value; RaisePropertyChanged("Offset"); }
+        //}
 
-        public double SelectedItemOffset
-        {
-            get { return selecteditemoffset; }
-            set { selecteditemoffset = value; RaisePropertyChanged("SelectedItemOffset"); }
-        }
+        //public double SelectedItemOffset
+        //{
+        //    get { return selecteditemoffset; }
+        //    set { selecteditemoffset = value; RaisePropertyChanged("SelectedItemOffset"); }
+        //}
 
-        public double RotationAngle
-        {
-            get { return rotationangle; }
-            set { rotationangle = value; RaisePropertyChanged("RotationAngle"); }
-        }
+        //public double RotationAngle
+        //{
+        //    get { return rotationangle; }
+        //    set { rotationangle = value; RaisePropertyChanged("RotationAngle"); }
+        //}
 
-        public double ZOffset
-        {
-            get { return zoffset; }
-            set { zoffset = value; RaisePropertyChanged("ZOffset"); }
-        }
+        //public double ZOffset
+        //{
+        //    get { return zoffset; }
+        //    set { zoffset = value; RaisePropertyChanged("ZOffset"); }
+        //}
 
-        public double ScaleOffset
-        {
-            get { return scaleoffset; }
-            set { scaleoffset = value; RaisePropertyChanged("ScaleOffset"); }
-        }
+        //public double ScaleOffset
+        //{
+        //    get { return scaleoffset; }
+        //    set { scaleoffset = value; RaisePropertyChanged("ScaleOffset"); }
+        //}
     }
 
 

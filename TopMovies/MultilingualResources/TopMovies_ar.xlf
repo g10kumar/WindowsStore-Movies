@@ -24,19 +24,19 @@
         </trans-unit>
         <trans-unit id="Resources\AboutUs4\Text" translate="yes" xml:space="preserve">
           <source>Share a movie: From the movies page, bring up the 'Share' charm. Select the application to use for sharing.</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">مشاركة فيلم: من صفحة الأفلام، إحضار سحر 'حصة'. حدد التطبيق لاستخدام لتقاسم.</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">شارك: فيلم من صفحة أفلام، إحضار عن 'مشاركة' سحر. حدد التطبيق لتقاسم.</target>
         </trans-unit>
         <trans-unit id="Resources\AboutUs5\Text" translate="yes" xml:space="preserve">
           <source>See details of movie: Click on the 'Movie Details' button OR double tap/click on the movie poster.</source>
-          <target state="new" state-qualifier="mt-suggestion">See details of movie: Click on the 'Movie Details' button OR double tap/click on the movie poster.</target>
+          <target state="new" state-qualifier="mt-suggestion">انظر تفاصيل الفيلم: انقر على زر "تفاصيل الأفلام 'أو مزدوجة استفادة / انقر على ملصق الفيلم.</target>
         </trans-unit>
         <trans-unit id="Resources\AboutUs6\Text" translate="yes" xml:space="preserve">
           <source>Buy movie: Click on the 'Buy Movie' button .</source>
-          <target state="new" state-qualifier="mt-suggestion">Buy movie: Click on the 'Buy Movie' button .</target>
+          <target state="new" state-qualifier="mt-suggestion">شراء الفيلم: انقر فوق الزر '"شراء فيلم"'.</target>
         </trans-unit>
         <trans-unit translate="yes" id="Resources\btnBuyDVD\Text" xml:space="preserve">
           <source>Buy Movie</source>
-          <target state="new">Buy Movie</target>
+          <target state="new">شراء الأفلام</target>
         </trans-unit>
         <trans-unit id="Resources\How_To\Text" translate="yes" xml:space="preserve">
           <source>How To:</source>
@@ -112,19 +112,19 @@
         </trans-unit>
         <trans-unit translate="yes" id="Resources\Backward_Button\Text" xml:space="preserve">
           <source>Backward</source>
-          <target state="new">Backward</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">إلى الخلف</target>
         </trans-unit>
         <trans-unit translate="yes" id="Resources\Forward_Button\Text" xml:space="preserve">
           <source>Forward</source>
-          <target state="new">Forward</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">إلى الأمام</target>
         </trans-unit>
         <trans-unit translate="yes" id="Resources\PlayTooltip\ToolTip" xml:space="preserve">
           <source>Start Slideshow</source>
-          <target state="new">Start Slideshow</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">بدء تشغيل عرض الشرائح</target>
         </trans-unit>
         <trans-unit translate="yes" id="Resources\btnBuy\ToolTip" xml:space="preserve">
           <source>Buy Movie Online</source>
-          <target state="new">Buy Movie Online</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">شراء الفيلم على الإنترنت</target>
         </trans-unit>
         <trans-unit id="Resources\TraslateDetails\ToolTip" translate="yes" xml:space="preserve">
           <source>Translate Movie Title To Native Language</source>
@@ -328,55 +328,67 @@
         </trans-unit>
         <trans-unit translate="yes" id="Resources\BackwardTooltip\ToolTip" xml:space="preserve">
           <source>Jump Backward</source>
-          <target state="new">Jump Backward</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">الانتقال إلى الخلف</target>
         </trans-unit>
         <trans-unit translate="yes" id="Resources\Pause_Button\Text" xml:space="preserve">
           <source>Pause</source>
-          <target state="new">Pause</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">إيقاف مؤقت</target>
         </trans-unit>
         <trans-unit translate="yes" id="Resources\PauseToolTip\ToolTip" xml:space="preserve">
           <source>Stop Slideshow</source>
-          <target state="new">Stop Slideshow</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">إيقاف عرض الشرائح</target>
         </trans-unit>
         <trans-unit translate="yes" id="Resources\ForwardTooltip\ToolTip" xml:space="preserve">
           <source>Jump Forward</source>
-          <target state="new">Jump Forward</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">القفز إلى الأمام</target>
         </trans-unit>
         <trans-unit translate="yes" id="Resources\Info_Button\Text" xml:space="preserve">
           <source>Movie Detail</source>
-          <target state="new">Movie Detail</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">تفاصيل الفيلم</target>
         </trans-unit>
         <trans-unit translate="yes" id="Resources\InfoTooltip\ToolTip" xml:space="preserve">
           <source>Movie Infomation</source>
-          <target state="new">Movie Infomation</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">معلومات الفيلم</target>
         </trans-unit>
         <trans-unit translate="yes" id="Resources\Play_Button\Text" xml:space="preserve">
           <source>Play</source>
-          <target state="new">Play</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">اللعب</target>
         </trans-unit>
         <trans-unit translate="yes" id="Resources\trailerButton\Text" xml:space="preserve">
           <source>Trailer</source>
-          <target state="new">Trailer</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">مقطورة</target>
         </trans-unit>
         <trans-unit translate="yes" id="Resources\trailerTooltip\ToolTip" xml:space="preserve">
           <source>Show Youtube Trailer</source>
-          <target state="new">Show Youtube Trailer</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">عرض يوتيوب مقطورة</target>
         </trans-unit>
         <trans-unit translate="yes" id="Resources\translatename\Text" xml:space="preserve">
           <source>Trasnslate</source>
-          <target state="new">Trasnslate</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">تراسنسلاتي</target>
         </trans-unit>
         <trans-unit translate="yes" id="Resources\wikiArticle_button\Text" xml:space="preserve">
           <source>Wikipedia</source>
-          <target state="new">Wikipedia</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">ويكيبيديا</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\trailerHeader" xml:space="preserve">
+          <source>You are watching</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">كنت تراقب</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\infoPageIndicator\Text" xml:space="preserve">
+          <source>Processing Resquest.Please wait...</source>
+          <target state="new">Processing Resquest.Please wait...</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\Notrailer" xml:space="preserve">
+          <source>Unable to connect to Youtube from this Device.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">غير قادر على الاتصال بموقع يوتيوب من هذا الجهاز.</target>
         </trans-unit>
         <trans-unit translate="yes" id="Resources\wikiArticleTooltip\ToolTip" xml:space="preserve">
           <source>Wikipedia article of movie</source>
-          <target state="new">Wikipedia article of movie</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">ويكيبيديا المادة للفيلم</target>
         </trans-unit>
         <trans-unit translate="yes" id="Resources\TraslateInfo\ToolTip" xml:space="preserve">
           <source>Display details in native language</source>
-          <target state="new">Display details in native language</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">عرض التفاصيل باللغة الأصلية</target>
         </trans-unit>
       </group>
     </body>

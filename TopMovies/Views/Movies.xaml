@@ -69,11 +69,11 @@
 
 
     <Grid x:Name="Layout"  Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
-        <Grid.ChildrenTransitions>
+        <!--<Grid.ChildrenTransitions>
             <TransitionCollection>
                 <PopupThemeTransition />
             </TransitionCollection>
-        </Grid.ChildrenTransitions>
+        </Grid.ChildrenTransitions>-->
         <Grid.RowDefinitions>
             <RowDefinition Height="140"/>
             <RowDefinition Height="50"/>
@@ -92,11 +92,11 @@
         </Grid.ColumnDefinitions>
         <Grid x:Name="grid1" Grid.ColumnSpan="3" Grid.Row="0">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto" MinWidth="101"/>
+                <ColumnDefinition/>
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
-            <Button x:Name="backButton" Click="GoBack" IsEnabled="{Binding Frame.CanGoBack, ElementName=pageRoot}" Style="{StaticResource BackButtonStyle}" BorderBrush="#FF1FAEFF" Foreground="#FF1FAEFF" >
+            <Button x:Name="backButton" Click="GoBack" IsEnabled="{Binding Frame.CanGoBack, ElementName=pageRoot}" Style="{StaticResource BackButtonStyle}" BorderBrush="#FF1FAEFF" Foreground="#FF1FAEFF" Margin="36,0,0,40" >
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="#FF1FAEFF"/>
@@ -104,9 +104,9 @@
                     </LinearGradientBrush>
                 </Button.Background>
             </Button>
-            <TextBlock x:Name="pageTitle"  Style="{StaticResource PageHeaderTextStyle}" Grid.ColumnSpan="2" Margin="117,0,33,40" Foreground="#FF01A2A6"   />
-            <Button x:Name="button" Click="ShowFilters" Style="{StaticResource CircularButton}" Grid.Column="1" HorizontalAlignment="Right" Margin="0,59,44,31" VerticalAlignment="Stretch"/>
-            <Popup x:Name="filterPopUp" Margin="682,108,10,0" Grid.Column="1" >
+            <TextBlock x:Name="pageTitle"  Style="{StaticResource PageHeaderTextStyle}" Margin="0,0,100,46" Foreground="#FF01A2A6" Grid.Column="1" Height="40"   />
+            <Button x:Name="button" Click="ShowFilters" Style="{StaticResource CircularButton}" Grid.Column="1" HorizontalAlignment="Right" Margin="0,51,44,39" VerticalAlignment="Stretch" Width="45"/>
+            <Popup x:Name="filterPopUp" Grid.Column="1" VerticalAlignment="Bottom" Height="35" HorizontalAlignment="Right" Margin="0" Width="563" Grid.ColumnSpan="2" >
                 <Grid x:Name="grid2" Background="Transparent" Height="34" Width="554">
                     <ComboBox x:Name="filterlang_asian" HorizontalAlignment="Left" VerticalAlignment="Top" Width="126" BorderBrush="#FF01A2A6" Foreground="#FF01A2A6" Margin="39,2,0,0" Visibility="Collapsed"/>
                     <ComboBox x:Name="filterlang" HorizontalAlignment="Left" VerticalAlignment="Top" Width="126" BorderBrush="#FF01A2A6" Foreground="#FF01A2A6" Margin="39,2,0,0" Visibility="Collapsed"/>
@@ -117,15 +117,13 @@
             <!--<Button Style="{StaticResource SettingsAppBarButtonStyle}" x:Name="options"
                     VerticalAlignment="Center" Grid.Column="2" AutomationProperties.Name="Options" Click="Options_Click"/>-->
         </Grid>
-        <Grid x:Name="grid" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,5,0,123" Width="1086" Height="50" Grid.Row="1" Grid.RowSpan="2">
-            <TextBlock x:Name="txtName" Style="{StaticResource SubheaderTextStyle}" TextAlignment="Center" Width="1088" Margin="0,-4" Foreground="#FF01A2A6">
-            </TextBlock>
-            <TextBlock x:Name="convertedName" Style="{StaticResource SubheaderTextStyle}" TextAlignment="Center" Width="1088" Margin="0,-4" Foreground="#FF01A2A6">
-            </TextBlock>
+        <Grid x:Name="grid" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,5,0,123" Width="1026" Height="50" Grid.Row="1" Grid.RowSpan="2">
+            <TextBlock x:Name="txtName" Style="{StaticResource SubheaderTextStyle}" TextAlignment="Center" Foreground="#FF01A2A6"/>
+            <TextBlock x:Name="convertedName" Style="{StaticResource SubheaderTextStyle}" TextAlignment="Center" Foreground="#FF01A2A6"/>
             <!--<TextBlock x:Name="convertedName" Style="{StaticResource SubheaderTextStyle}"  TextAlignment="Center"  Foreground="#FF01A2A6" Margin="0,10" RenderTransformOrigin="0.5,0.5" Width="48">
              </TextBlock>-->
         </Grid>
-        <Notification:SfBusyIndicator x:Name="ProgressRing" Grid.Column="1" Margin="0,120,442,0" Grid.Row="2" AnimationType="Gear" Foreground="#FF01A2A6" HorizontalAlignment="Right" Width="200" Height="149" VerticalAlignment="Top" Grid.RowSpan="3" RenderTransformOrigin="0.5,0.5" ViewboxHeight="80" ViewboxWidth="80"  >
+        <Notification:SfBusyIndicator x:Name="ProgressRing" Grid.Column="1" Margin="0,120,442,0" Grid.Row="2" AnimationType="Gear" Foreground="#FF01A2A6" HorizontalAlignment="Right" Width="200" Height="150" VerticalAlignment="Top" Grid.RowSpan="3" RenderTransformOrigin="0.5,0.5" ViewboxHeight="80" ViewboxWidth="80"  >
             <Notification:SfBusyIndicator.HeaderTemplate>
                 <DataTemplate>
                     <TextBlock x:Uid="busyIndicator" Text="" FontSize="18" TextAlignment="Center" Margin="60,0,0,0"/>
@@ -135,13 +133,12 @@
         <StackPanel x:Name="mainStack" Orientation="Vertical" Grid.ColumnSpan="3" Grid.Row="2" Grid.RowSpan="5" VerticalAlignment="Top" Margin="70,10,70,0" Height="418">
 
             <syncfusion:SfCarousel x:Name="CoverFlowControl" Height="400"
-                                  VerticalAlignment="Top" 
-                                  Margin="10"
-                                  HorizontalAlignment="Left" DoubleTapped="btnMoreInfo_Click" ScaleOffset="0.5" RotationAngle="30" Duration="0:0:0.4" SelectionChanged="CoverFlowControl_SelectionChanged"
+                                  VerticalAlignment="Center"
+                                  HorizontalAlignment="Center" DoubleTapped="btnMoreInfo_Click" ScaleOffset="0.5" RotationAngle="30" Duration="0:0:0.4" SelectionChanged="CoverFlowControl_SelectionChanged" ScrollViewer.VerticalScrollBarVisibility="Disabled" Margin="0,5" SizeChanged="carousel_SizeChanged"
                                   >
                 <syncfusion:SfCarousel.ItemTemplate>
                     <DataTemplate>
-                        <Image Source="{Binding Image}" Tag="{Binding Name}"  Stretch="Uniform" />
+                        <Image x:Name="casrouseImage" Source="{Binding Image}"  Stretch="Uniform" />
                     </DataTemplate>
                 </syncfusion:SfCarousel.ItemTemplate>
             </syncfusion:SfCarousel>
@@ -150,7 +147,7 @@
         </StackPanel>
 
 
-        <StackPanel Orientation="Vertical" VerticalAlignment="Top" x:Name="snappedStack" HorizontalAlignment="Center" Width="320" RenderTransformOrigin="0.5,0.5" Height="768" Grid.RowSpan="8" Grid.ColumnSpan="3">
+        <StackPanel Orientation="Vertical" VerticalAlignment="Top" x:Name="snappedStack" HorizontalAlignment="Center" Width="320" RenderTransformOrigin="0.5,0.5" Height="768" Grid.RowSpan="8" Grid.ColumnSpan="3" Visibility="Collapsed">
             <Image x:Name="image" Source="ms-appx:///Assets/BlackLogo.png" Width="150" Height="102" Margin="83,0,82,0" />
             <TextBlock x:Uid="SnappedMessage" x:Name="textBlock"  TextWrapping="Wrap" Style="{StaticResource AboutUsTextStyle}" Foreground="Black" FontSize="24"  Margin="30,40,33,10" RenderTransformOrigin="0.5,0.5" Height="233" >
             </TextBlock>
@@ -158,7 +155,7 @@
         <Navigation:SfRadialMenu
                                  NavigationButtonStyle="{StaticResource NavigationButtonStyle}"
                                    EnableFreeRotation="False" IsOpen="False"
-                                     x:Name="selectionmenu" Padding="5" Margin="418,32,416,0" RadiusX="100" RadiusY="100" Background="#FF01A2A6" RimBackground="#FF29D9C2" Opacity="0.85" CenterRimRadiusFactor="0.2" Grid.Column="1" Grid.Row="5" Grid.RowSpan="3" Height="208" VerticalAlignment="Top" RimRadiusFactor="0.94">
+                                     x:Name="selectionmenu" Padding="5" Margin="418,32,416,0" RadiusX="100" RadiusY="100" Background="#FF01A2A6" RimBackground="#FF29D9C2" Opacity="0.85" CenterRimRadiusFactor="0.2" Grid.Column="1" Grid.Row="5" Grid.RowSpan="3" Height="208" RimRadiusFactor="0.94">
             <Navigation:SfRadialMenu.RenderTransform>
                 <CompositeTransform x:Name="transform1"/>
             </Navigation:SfRadialMenu.RenderTransform>
@@ -197,15 +194,15 @@
                     </Navigation:SfRadialMenuItem.Header>
                 </Navigation:SfRadialMenuItem>
                 <Navigation:SfRadialMenuItem x:Uid="PauseToolTip"  x:Name="Pause_Button1" Click="AutoStop" ToolTip=""  ToolTipPlacement="Top" VerticalAlignment="Center" Margin="0,0,10,0" IsEnabled="False" >
-                <Navigation:SfRadialMenuItem.Header>
-                    <Border Background="Transparent" Padding="5">
-                        <StackPanel>
-                            <Image Source="ms-appx:///Assets/Pause.png"/>
+                    <Navigation:SfRadialMenuItem.Header>
+                        <Border Background="Transparent" Padding="5">
+                            <StackPanel>
+                                <Image Source="ms-appx:///Assets/Pause.png"/>
                                 <TextBlock x:Uid="Pause_Button" Text=""/>
-                        </StackPanel>
-                    </Border>
-                </Navigation:SfRadialMenuItem.Header>
-            </Navigation:SfRadialMenuItem>
+                            </StackPanel>
+                        </Border>
+                    </Navigation:SfRadialMenuItem.Header>
+                </Navigation:SfRadialMenuItem>
 
                 <Navigation:SfRadialMenuItem  x:Uid="ForwardTooltip" x:Name="Forward_Button" Click="ForWard_move" ToolTip=""  ToolTipPlacement="Top"   >
                     <Navigation:SfRadialMenuItem.Header>
@@ -252,81 +249,12 @@
 
 
         </Navigation:SfRadialMenu>
-        <!--<UI:AdControl x:Name="AddLeft" ApplicationId="6310ffab-747b-4d73-84f5-40c5fa6a8272" AdUnitId="10067099" HorizontalAlignment="Left" Height="250" Margin="30,100,0,0" Grid.Row="2" Grid.RowSpan="5" VerticalAlignment="Top" Width="250" Grid.ColumnSpan="2"/>
-        <UI:AdControl x:Name="AddRight" ApplicationId="6310ffab-747b-4d73-84f5-40c5fa6a8272"  AdUnitId="10067099" HorizontalAlignment="Right" Height="250" Margin="0,100,30,0" Grid.Row="2" Grid.RowSpan="5" VerticalAlignment="Top" Grid.ColumnSpan="2" Grid.Column="1" Width="250"/>-->
-
-
-        <!--<UI:AdControl x:Name="AddLeft" ApplicationId="d25517cb-12d4-4699-8bdc-52040c712cab" AdUnitId="10043104" HorizontalAlignment="Left" Height="250" Margin="30,100,0,0" Grid.Row="2" Grid.RowSpan="5" VerticalAlignment="Top" Width="250" Grid.ColumnSpan="2" Visibility="Collapsed"/>
-        <UI:AdControl x:Name="AddRight" ApplicationId="d25517cb-12d4-4699-8bdc-52040c712cab"  AdUnitId="10043104" HorizontalAlignment="Right" Height="250" Margin="0,100,30,0" Grid.Row="2" Grid.RowSpan="5" VerticalAlignment="Top" Grid.ColumnSpan="2" Grid.Column="1" Width="250" Visibility="Collapsed"/>-->
-
-
-        <!--<Grid>
-            <ContentControl x:Name="SampleContent"
-                                HorizontalContentAlignment="Stretch"
-                                VerticalContentAlignment="Stretch"/>
-        </Grid>-->
-        <!--<StackPanel Grid.Row="1" Grid.Column="2" Background="Red" Grid.RowSpan="3" Width="270" Height="550" x:Name="stackpop" Visibility="Collapsed">
-            <Grid Background="Transparent">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                </Grid.RowDefinitions>
-                <TextBlock Text="Offest" Margin="10"/>
-                <Input:NumericUpDown Margin="10 5" Minimum="30" Maximum="50" FormatString="0" Grid.Row="1" Value="{Binding Offset,Mode=TwoWay}" />
-
-                <TextBlock Text="SelectedItem Offest" Margin="10" Grid.Row="2"/>
-                <Input:NumericUpDown Margin="10 5" Minimum="70" Maximum="180" FormatString="0" Grid.Row="3" Value="{Binding SelectedItemOffset,Mode=TwoWay}"/>
-
-                <TextBlock Text="ZOffest" Margin="10" Grid.Row="4"/>
-                <Input:NumericUpDown Margin="10 5" Minimum="30" Maximum="120" Grid.Row="5" Value="{Binding ZOffset,Mode=TwoWay}"/>
-
-                <TextBlock Text="Scale Offset" Margin="10" Grid.Row="6"/>
-                <Input:NumericUpDown Margin="10 5" Minimum="0" Maximum="1" Grid.Row="7" SmallChange="0.1" LargeChange="0.1"  Value="{Binding ScaleOffset,Mode=TwoWay}"/>
-
-                <TextBlock Text="Rotation Angle" Margin="10" Grid.Row="8"/>
-                <Input:NumericUpDown Margin="10 5" Minimum="0" Maximum="360" FormatString="0 Degree" Grid.Row="9" Value="{Binding RotationAngle,Mode=TwoWay}"/>
-
-                <StackPanel Orientation="Horizontal" Grid.Row="10" Margin="-1 5" Grid.RowSpan="2">
-                    <RepeatButton x:Name="previous" Content="Move Previous" Margin="10 5"  Click="previous_Click_1" />
-                    <RepeatButton x:Name="next" Content="Move Next" Margin="10 5" Click="next_Click_1"/>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal" Grid.Row="11">
-                    
-                </StackPanel>
-            </Grid>
-        </StackPanel>-->
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup x:Name="ApplicationViewStates">
                 <VisualState x:Name="FullScreenLandscape">
-                    <Storyboard>
-                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="snappedStack">
-                            <DiscreteObjectKeyFrame KeyTime="0">
-                                <DiscreteObjectKeyFrame.Value>
-                                    <Visibility>Collapsed</Visibility>
-                                </DiscreteObjectKeyFrame.Value>
-                            </DiscreteObjectKeyFrame>
-                        </ObjectAnimationUsingKeyFrames>
-                    </Storyboard>
                 </VisualState>
                 <VisualState x:Name="Filled" >
                     <Storyboard>
-                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="snappedStack">
-                            <DiscreteObjectKeyFrame KeyTime="0">
-                                <DiscreteObjectKeyFrame.Value>
-                                    <Visibility>Collapsed</Visibility>
-                                </DiscreteObjectKeyFrame.Value>
-                            </DiscreteObjectKeyFrame>
-                        </ObjectAnimationUsingKeyFrames>
                         <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="selectionmenu">
                             <DiscreteObjectKeyFrame KeyTime="0">
                                 <DiscreteObjectKeyFrame.Value>
@@ -356,10 +284,10 @@
                             </DiscreteObjectKeyFrame>
                         </ObjectAnimationUsingKeyFrames>
 
-                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="filterPopUp">
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="mainStack">
                             <DiscreteObjectKeyFrame KeyTime="0">
                                 <DiscreteObjectKeyFrame.Value>
-                                    <Thickness>337,108,355,0</Thickness>
+                                    <Thickness>25,10,25,0</Thickness>
                                 </DiscreteObjectKeyFrame.Value>
                             </DiscreteObjectKeyFrame>
                         </ObjectAnimationUsingKeyFrames>
@@ -367,13 +295,6 @@
                 </VisualState>
                 <VisualState x:Name="FullScreenPortrait">
                     <Storyboard>
-                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="snappedStack">
-                            <DiscreteObjectKeyFrame KeyTime="0">
-                                <DiscreteObjectKeyFrame.Value>
-                                    <Visibility>Collapsed</Visibility>
-                                </DiscreteObjectKeyFrame.Value>
-                            </DiscreteObjectKeyFrame>
-                        </ObjectAnimationUsingKeyFrames>
                         <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="button">
                             <DiscreteObjectKeyFrame KeyTime="0">
                                 <DiscreteObjectKeyFrame.Value>
@@ -385,20 +306,6 @@
                             <DiscreteObjectKeyFrame KeyTime="0">
                                 <DiscreteObjectKeyFrame.Value>
                                     <x:Double>758</x:Double>
-                                </DiscreteObjectKeyFrame.Value>
-                            </DiscreteObjectKeyFrame>
-                        </ObjectAnimationUsingKeyFrames>
-                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="txtName">
-                            <DiscreteObjectKeyFrame KeyTime="0">
-                                <DiscreteObjectKeyFrame.Value>
-                                    <x:Double>NaN</x:Double>
-                                </DiscreteObjectKeyFrame.Value>
-                            </DiscreteObjectKeyFrame>
-                        </ObjectAnimationUsingKeyFrames>
-                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="txtName">
-                            <DiscreteObjectKeyFrame KeyTime="0">
-                                <DiscreteObjectKeyFrame.Value>
-                                    <Thickness>0,-4,6,-4</Thickness>
                                 </DiscreteObjectKeyFrame.Value>
                             </DiscreteObjectKeyFrame>
                         </ObjectAnimationUsingKeyFrames>
@@ -440,21 +347,7 @@
                         <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="grid">
                             <DiscreteObjectKeyFrame KeyTime="0">
                                 <DiscreteObjectKeyFrame.Value>
-                                    <Thickness>0,5,10,721</Thickness>
-                                </DiscreteObjectKeyFrame.Value>
-                            </DiscreteObjectKeyFrame>
-                        </ObjectAnimationUsingKeyFrames>
-                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="convertedName">
-                            <DiscreteObjectKeyFrame KeyTime="0">
-                                <DiscreteObjectKeyFrame.Value>
-                                    <x:Double>NaN</x:Double>
-                                </DiscreteObjectKeyFrame.Value>
-                            </DiscreteObjectKeyFrame>
-                        </ObjectAnimationUsingKeyFrames>
-                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="convertedName">
-                            <DiscreteObjectKeyFrame KeyTime="0">
-                                <DiscreteObjectKeyFrame.Value>
-                                    <Thickness>0,-4,1,-4</Thickness>
+                                    <Thickness>0,49,0,677</Thickness>
                                 </DiscreteObjectKeyFrame.Value>
                             </DiscreteObjectKeyFrame>
                         </ObjectAnimationUsingKeyFrames>
@@ -489,14 +382,7 @@
                         <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Grid.ColumnSpan)" Storyboard.TargetName="filterPopUp">
                             <DiscreteObjectKeyFrame KeyTime="0">
                                 <DiscreteObjectKeyFrame.Value>
-                                    <x:Int32>2</x:Int32>
-                                </DiscreteObjectKeyFrame.Value>
-                            </DiscreteObjectKeyFrame>
-                        </ObjectAnimationUsingKeyFrames>
-                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="filterPopUp">
-                            <DiscreteObjectKeyFrame KeyTime="0">
-                                <DiscreteObjectKeyFrame.Value>
-                                    <Thickness>1,143,6,-35</Thickness>
+                                    <x:Int32>3</x:Int32>
                                 </DiscreteObjectKeyFrame.Value>
                             </DiscreteObjectKeyFrame>
                         </ObjectAnimationUsingKeyFrames>
@@ -538,7 +424,7 @@
                         <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="pageTitle">
                             <DiscreteObjectKeyFrame KeyTime="0">
                                 <DiscreteObjectKeyFrame.Value>
-                                    <Thickness>117,0,58,40</Thickness>
+                                    <Thickness>0,0,58,40</Thickness>
                                 </DiscreteObjectKeyFrame.Value>
                             </DiscreteObjectKeyFrame>
                         </ObjectAnimationUsingKeyFrames>
@@ -567,7 +453,7 @@
                         <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="selectionmenu">
                             <DiscreteObjectKeyFrame KeyTime="0">
                                 <DiscreteObjectKeyFrame.Value>
-                                    <Thickness>158,575,156,0</Thickness>
+                                    <Thickness>115,575,115,0</Thickness>
                                 </DiscreteObjectKeyFrame.Value>
                             </DiscreteObjectKeyFrame>
                         </ObjectAnimationUsingKeyFrames>
@@ -581,7 +467,7 @@
                         <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Grid.RowSpan)" Storyboard.TargetName="selectionmenu">
                             <DiscreteObjectKeyFrame KeyTime="0">
                                 <DiscreteObjectKeyFrame.Value>
-                                    <x:Int32>1</x:Int32>
+                                    <x:Int32>2</x:Int32>
                                 </DiscreteObjectKeyFrame.Value>
                             </DiscreteObjectKeyFrame>
                         </ObjectAnimationUsingKeyFrames>
@@ -631,6 +517,13 @@
                             <DiscreteObjectKeyFrame KeyTime="0">
                                 <DiscreteObjectKeyFrame.Value>
                                     <x:Double>126</x:Double>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="filterPopUp">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <x:Double>764</x:Double>
                                 </DiscreteObjectKeyFrame.Value>
                             </DiscreteObjectKeyFrame>
                         </ObjectAnimationUsingKeyFrames>
@@ -684,42 +577,4 @@
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
     </Grid>
-
-
-    <!--<common:SampleView.SettingsContent>
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                </Grid.RowDefinitions>
-                <TextBlock Text="Offest" Margin="10"/>
-                <Input:NumericUpDown Margin="10 5" Minimum="30" Maximum="50" FormatString="0" Grid.Row="1" Value="{Binding Offset,Mode=TwoWay}" />
-
-                <TextBlock Text="SelectedItem Offest" Margin="10" Grid.Row="2"/>
-                <Input:NumericUpDown Margin="10 5" Minimum="70" Maximum="180" FormatString="0" Grid.Row="3" Value="{Binding SelectedItemOffset,Mode=TwoWay}"/>
-
-                <TextBlock Text="ZOffest" Margin="10" Grid.Row="4"/>
-                <Input:NumericUpDown Margin="10 5" Minimum="30" Maximum="120" Grid.Row="5" Value="{Binding ZOffset,Mode=TwoWay}"/>
-
-                <TextBlock Text="Scale Offset" Margin="10" Grid.Row="6"/>
-                <Input:NumericUpDown Margin="10 5" Minimum="0" Maximum="1" Grid.Row="7" SmallChange="0.1" LargeChange="0.1"  Value="{Binding ScaleOffset,Mode=TwoWay}"/>
-
-                <TextBlock Text="Rotation Angle" Margin="10" Grid.Row="8"/>
-                <Input:NumericUpDown Margin="10 5" Minimum="0" Maximum="360" FormatString="0 Degree" Grid.Row="9" Value="{Binding RotationAngle,Mode=TwoWay}"/>
-
-                <StackPanel Orientation="Horizontal" Grid.Row="10" Margin="-1 5">
-                    <RepeatButton x:Name="previous" Content="Move Previous" Margin="10 5"   />
-                    <RepeatButton x:Name="next" Content="Move Next" Margin="10 5" />
-                </StackPanel>
-            </Grid>
-    </common:SampleView.SettingsContent>-->
 </common:LayoutAwarePage>

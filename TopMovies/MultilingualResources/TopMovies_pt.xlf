@@ -370,6 +370,18 @@
           <source>Wikipedia</source>
           <target state="new">Wikipedia</target>
         </trans-unit>
+        <trans-unit translate="yes" id="Resources\trailerHeader" xml:space="preserve">
+          <source>You are watching</source>
+          <target state="new">You are watching</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\infoPageIndicator\Text" xml:space="preserve">
+          <source>Processing Resquest.Please wait...</source>
+          <target state="new">Processing Resquest.Please wait...</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\Notrailer" xml:space="preserve">
+          <source>Unable to connect to Youtube from this Device.</source>
+          <target state="new">Unable to connect to Youtube from this Device.</target>
+        </trans-unit>
         <trans-unit translate="yes" id="Resources\wikiArticleTooltip\ToolTip" xml:space="preserve">
           <source>Wikipedia article of movie</source>
           <target state="new">Wikipedia article of movie</target>

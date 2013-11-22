@@ -42,8 +42,6 @@ namespace TopMovies
         public string countryCode = ""; // Global variable that is going to store the user selection for country .The same variable is going to be stored in the session.
         public bool youtubeReachable = false;
 
-        //public bool FirstRun = true;
-
         public App()
         {
             this.InitializeComponent();
@@ -145,9 +143,6 @@ namespace TopMovies
             // Ensure the current window is active
 
 
-            //Nascent.GoogleAnalytics.AnalyticsTracker.GetInstance("UA-38070832-3");
-            //AnalyticsTracker tracker;
-            //tracker.
             AnalyticsHelper.Setup();
             AnalyticsHelper.Track("ApplicationLifecycle", "Start");
             Window.Current.Activate();
@@ -232,7 +227,8 @@ namespace TopMovies
         public static int sortOrder { get; set; }
         public static string filterLang { get; set; }
         public static string filterGenere { get; set; }
-        
+        public static ImageBrush imageSource { get; set; }
+
 public static void resetValues()
         {
             sessionData.selectCategory = "";
