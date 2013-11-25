@@ -76,6 +76,10 @@ namespace TopMovies
                         var html = await web.GetStringAsync(Url);
                         resultUrl = html.ToString();
                     }
+                    if (resultUrl == null)
+                    {
+                        return null;
+                    }
 
                 }
                 catch (Exception ex)

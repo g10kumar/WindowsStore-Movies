@@ -53,6 +53,9 @@ namespace TopMovies
             sessionData.sortOrder = 0;
             sessionData.filterGenere = null;
             sessionData.filterLang = null;
+            sessionData.genreIndex = 0;
+            sessionData.asianLangIndex = 0;
+            sessionData.langIndex = 0;
 
             AnalyticsHelper.TrackPageView("/MainPage");
             if (((App)(App.Current)).countryCode == "")

@@ -368,7 +368,7 @@
         </Notification:SfBusyIndicator>
         <StackPanel Orientation="Vertical" VerticalAlignment="Top" x:Name="snappedStack" Grid.Row="0" Margin="2,10,3,0" HorizontalAlignment="Center" Height="750" Width="315" Grid.ColumnSpan="6" Grid.RowSpan="3" RenderTransformOrigin="0.5,0.5" Visibility="Collapsed">
             <Image x:Name="image" Source="Assets/BlackLogo.png" Width="150" />
-            <TextBlock x:Uid="SnappedMessage" x:Name="textBlock"  TextWrapping="Wrap" Style="{StaticResource AboutUsTextStyle}" Foreground="Black" FontSize="24"  Margin="30,40,33,10" RenderTransformOrigin="0.5,0.5" Height="242" />
+            <TextBlock x:Uid="SnappedMessage" x:Name="textBlock"  TextWrapping="Wrap" Style="{StaticResource AboutUsTextStyle}" Foreground="#FF01A2A6" FontSize="24"  Margin="30,40,33,10" RenderTransformOrigin="0.5,0.5" Height="Auto" />
 
         </StackPanel>
         <TextBlock x:Name="trailerHeader" Grid.Column="1" Margin="10,56,150,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="40" Foreground="#FF01A2A6" TextAlignment="Center" FontSize="36"/>

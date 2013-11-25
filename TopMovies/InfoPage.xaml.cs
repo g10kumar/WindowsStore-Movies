@@ -397,17 +397,20 @@ namespace TopMovies
                 translated.Add(await result.Translator(information[i].MovieInfo, language));
             }
             translated.Add(information[4].MovieInfo);
-            Information.RemoveRange(0, 5);
-            Information.Add(new MovieData(loader.GetString("Header1"), translated[0]));
-            Information.Add(new MovieData(loader.GetString("Header2"), translated[1]));
-            Information.Add(new MovieData(loader.GetString("Header3"), translated[2]));
-            Information.Add(new MovieData(loader.GetString("Header4"), translated[3]));
-            Information.Add(new MovieData(loader.GetString("Header5"), translated[4]));
-            accordion.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-            translatedAccordion.ItemsSource = Information;
-            translatedAccordion.SelectedIndex = accordion.SelectedIndex;
-            translatedAccordion.Visibility = Windows.UI.Xaml.Visibility.Visible;
-            AnalyticsHelper.Track("TranslateMovieInfo", "Button_click", language);
+            if (!translated.Exists(x => x.Equals(null)))
+            {
+                Information.RemoveRange(0, 5);
+                Information.Add(new MovieData(loader.GetString("Header1"), translated[0]));
+                Information.Add(new MovieData(loader.GetString("Header2"), translated[1]));
+                Information.Add(new MovieData(loader.GetString("Header3"), translated[2]));
+                Information.Add(new MovieData(loader.GetString("Header4"), translated[3]));
+                Information.Add(new MovieData(loader.GetString("Header5"), translated[4]));
+                accordion.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+                translatedAccordion.ItemsSource = Information;
+                translatedAccordion.SelectedIndex = accordion.SelectedIndex;
+                translatedAccordion.Visibility = Windows.UI.Xaml.Visibility.Visible;
+                AnalyticsHelper.Track("TranslateMovieInfo", "Button_click", language);
+            }
 
         }
     }
