@@ -227,7 +227,9 @@ namespace TopMovies
         public static int sortOrder { get; set; }
         public static string filterLang { get; set; }
         public static string filterGenere { get; set; }
-        public static ImageBrush imageSource { get; set; }
+        public static int genreIndex { get; set; }
+        public static int asianLangIndex{get;set;}
+        public static int langIndex { get; set; }
 
 public static void resetValues()
         {

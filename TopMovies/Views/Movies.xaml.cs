@@ -91,6 +91,8 @@ namespace TopMovies.Views
         /// <param name="e"></param>
         async void genere_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            if (autoPlayOn)
+                AutoStop();
             
             ProgressRing.IsBusy = true;
 
@@ -159,20 +161,81 @@ namespace TopMovies.Views
                     CoverFlowControlSpecialCase();
                     updateName = false;
                 }
-
+                sessionData.genreIndex = genere.SelectedIndex;
             }
             else
             {
                 //This will execute in case the user selection doesn't generates any movie.
                 ProgressRing.IsBusy = false;
                 if (sessionData.selectCategory != "TopBollywood" && sessionData.selectCategory != "TopEnglish")
-                    txtName.Text = "There are no " + sessionData.filterGenere + " Movies in " + sessionData.filterLang + " Language";
+                {
+                    if (sessionData.selectCategory == "TopForeign")
+                    {
+                        txtName.Text = loader.GetString("NoMoviesMessage1") + genere.SelectedValue + loader.GetString("NoMoviesMessage2") + filterlang.SelectedValue + loader.GetString("NoMoviesMessage3");
+                    }
+                    else if (sessionData.selectCategory == "TopAsian")
+                    {
+                        txtName.Text = loader.GetString("NoMoviesMessage1") + genere.SelectedValue + loader.GetString("NoMoviesMessage2") + filterlang_asian.SelectedValue + loader.GetString("NoMoviesMessage3");
+                    }
+                }
                 else
-                    txtName.Text = "There are no " + sessionData.filterGenere + " Movies in " + sessionData.selectCategory.Remove(0,3) + " Category";
+                {
+                    txtName.Text = loader.GetString("NoMoviesMessage1") + genere.SelectedValue + loader.GetString("NoMoviesMessage2") + loader.GetString(sessionData.selectCategory);
+                }
                 updateName = true;
-            }
 
-            
+                //This will keep the genre filter and the selected index the same if the operation returns zero movies . Do not remove this portion. 
+                switch (sessionData.genreIndex)
+                {
+                    case 0:
+                        sessionData.filterGenere = null;
+                        break;
+                    case 1:
+                        sessionData.filterGenere = "Action";
+                        break;
+                    case 2:
+                        sessionData.filterGenere = "Adventure";
+                        break;
+                    case 3:
+                        sessionData.filterGenere = "Animation";
+                        break;
+                    case 4:
+                        sessionData.filterGenere = "Comedy";
+                        break;
+                    case 5:
+                        sessionData.filterGenere = "Crime";
+                        break;
+                    case 6:
+                        sessionData.filterGenere = "Drama";
+                        break;
+                    case 7:
+                        sessionData.filterGenere = "Family";
+                        break;
+                    case 8:
+                        sessionData.filterGenere = "Fantasy";
+                        break;
+                    case 9:
+                        sessionData.filterGenere = "Horror";
+                        break;
+                    case 10:
+                        sessionData.filterGenere = "Mystery";
+                        break;
+                    case 11:
+                        sessionData.filterGenere = "Romance";
+                        break;
+                    case 12:
+                        sessionData.filterGenere = "Thriller";
+                        break;
+                    case 13:
+                        sessionData.filterGenere = "War";
+                        break;
+                }
+                genere.SelectionChanged -= genere_SelectionChanged;
+                genere.SelectedIndex = sessionData.genreIndex;
+                genere.SelectionChanged += genere_SelectionChanged;
+
+
+            }
         }
 
         /// <summary>
@@ -182,6 +245,9 @@ namespace TopMovies.Views
         /// <param name="e"></param>
         async void filterlang_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            if (autoPlayOn)
+                AutoStop();
+
             ProgressRing.IsBusy = true;
 
                 switch (filterlang.SelectedIndex)
@@ -240,17 +306,71 @@ namespace TopMovies.Views
                     CoverFlowControlSpecialCase();
                     updateName = false;
                 }
-
+                sessionData.langIndex = filterlang.SelectedIndex;
             }
             else
             {
                 ProgressRing.IsBusy = false;
                 if (sessionData.selectCategory != "TopBollywood" && sessionData.selectCategory != "TopEnglish")
-                    txtName.Text = "There are no " + sessionData.filterGenere + " Movies in " + sessionData.filterLang + " Language";
+                {
+                    if (sessionData.selectCategory == "TopForeign")
+                    {
+                        txtName.Text = loader.GetString("NoMoviesMessage1") + genere.SelectedValue + loader.GetString("NoMoviesMessage2") + filterlang.SelectedValue + loader.GetString("NoMoviesMessage3");
+                    }
+                    else if (sessionData.selectCategory == "TopAsian")
+                    {
+                        txtName.Text = loader.GetString("NoMoviesMessage1") + genere.SelectedValue + loader.GetString("NoMoviesMessage") + filterlang_asian.SelectedValue + loader.GetString("NoMoviesMessage3");
+                    }
+                }
                 else
-                    txtName.Text = "There are no " + sessionData.filterGenere + " Movies in " + sessionData.selectCategory.Remove(0, 3) + " Category";
+                {
+                    txtName.Text = loader.GetString("NoMoviesMessage1") + genere.SelectedValue + loader.GetString("NoMoviesMessage") + loader.GetString(sessionData.selectCategory);
+                }
                 updateName = true;
+
+                //This will keep the language filter and the selected index the same if the operation returns zero movies . Do not remove this portion. 
+                switch (sessionData.langIndex)
+                {
+                    case 0:
+                        sessionData.filterLang = null;
+                        break;
+                    case 1:
+                        sessionData.filterLang = "English";
+                        break;
+                    case 2:
+                        sessionData.filterLang = "French";
+                        break;
+                    case 3:
+                        sessionData.filterLang = "German";
+                        break;
+                    case 4:
+                        sessionData.filterLang = "Italian";
+                        break;
+                    case 5:
+                        sessionData.filterLang = "Japanese";
+                        break;
+                    case 6:
+                        sessionData.filterLang = "Polish";
+                        break;
+                    case 7:
+                        sessionData.filterLang = "Portuguese";
+                        break;
+                    case 8:
+                        sessionData.filterLang = "Russian";
+                        break;
+                    case 9:
+                        sessionData.filterLang = "Spanish";
+                        break;
+                    case 10:
+                        sessionData.filterLang = "Swedish";
+                        break;
+                }
+                filterlang.SelectionChanged -= filterlang_SelectionChanged;
+                filterlang.SelectedIndex = sessionData.langIndex;
+                filterlang.SelectionChanged += filterlang_SelectionChanged;
+
             }
+
         }
 
         /// <summary>
@@ -260,6 +380,8 @@ namespace TopMovies.Views
         /// <param name="e"></param>
         async void filterlang_asian_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            if (autoPlayOn)
+                AutoStop();
 
             ProgressRing.IsBusy = true;
             switch (filterlang_asian.SelectedIndex)
@@ -307,16 +429,59 @@ namespace TopMovies.Views
                     CoverFlowControlSpecialCase();
                     updateName = false;
                 }
-
+                sessionData.asianLangIndex = filterlang_asian.SelectedIndex;
             }
             else
             {
                 ProgressRing.IsBusy = false;
                 if (sessionData.selectCategory != "TopBollywood" && sessionData.selectCategory != "TopEnglish")
-                    txtName.Text = "There are no " + sessionData.filterGenere + " Movies in " + sessionData.filterLang + " Language";
+                {
+                    if (sessionData.selectCategory == "TopForeign")
+                    {
+                        txtName.Text = loader.GetString("NoMoviesMessage1") + genere.SelectedValue + loader.GetString("NoMoviesMessage2") + filterlang.SelectedValue + loader.GetString("NoMoviesMessage3");
+                    }
+                    else if (sessionData.selectCategory == "TopAsian")
+                    {
+                        txtName.Text = loader.GetString("NoMoviesMessage1") + genere.SelectedValue + loader.GetString("NoMoviesMessage") + filterlang_asian.SelectedValue + loader.GetString("NoMoviesMessage3");
+                    }
+                }
                 else
-                    txtName.Text = "There are no " + sessionData.filterGenere + " Movies in " + sessionData.selectCategory.Remove(0, 3) + " Category";
+                {
+                    txtName.Text = loader.GetString("NoMoviesMessage1") + genere.SelectedValue + loader.GetString("NoMoviesMessage") + loader.GetString(sessionData.selectCategory) ;
+                }
                 updateName = true;
+
+                //This will keep the language filter and the selected index the same if the operation returns zero movies . Do not remove this portion. 
+                switch (sessionData.asianLangIndex)
+                {
+                    case 0:
+                        sessionData.filterLang = null;
+                        break;
+                    case 1:
+                        sessionData.filterLang = "Cantonese";
+                        break;
+                    case 2:
+                        sessionData.filterLang = "Chinese";
+                        break;
+                    case 3:
+                        sessionData.filterLang = "English";
+                        break;
+                    case 4:
+                        sessionData.filterLang = "Japanese";
+                        break;
+                    case 5:
+                        sessionData.filterLang = "Korean";
+                        break;
+                    case 6:
+                        sessionData.filterLang = "Thai";
+                        break;
+                }
+                filterlang_asian.SelectionChanged -= filterlang_asian_SelectionChanged;
+                filterlang_asian.SelectedIndex = sessionData.asianLangIndex;
+                filterlang_asian.SelectionChanged += filterlang_asian_SelectionChanged;
+
+
+
             }
 
 
@@ -324,6 +489,9 @@ namespace TopMovies.Views
 
         async void sorter_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            if (autoPlayOn)
+                AutoStop();
+
             ProgressRing.IsBusy = true;
 
             sessionData.sortOrder = sorter.SelectedIndex;
@@ -455,18 +623,18 @@ namespace TopMovies.Views
             if (sessionData.filterGenere != null || sessionData.filterLang != null || sessionData.sortOrder != 0)
             {
                 if (sessionData.filterGenere != null)
-                    genere.SelectedItem = sessionData.filterGenere;
+                    genere.SelectedIndex = sessionData.genreIndex;
                 if (sessionData.sortOrder != 0)
                     sorter.SelectedIndex = sessionData.sortOrder;
                 if (sessionData.filterLang != null)
                 {
                     if (sessionData.selectCategory == "TopAsian")
                     {
-                        filterlang_asian.SelectedItem = sessionData.filterLang;
+                        filterlang_asian.SelectedIndex = sessionData.asianLangIndex;
                     }
                     else if (sessionData.selectCategory == "TopForeign")
                     {
-                        filterlang.SelectedItem = sessionData.filterLang;
+                        filterlang.SelectedIndex = sessionData.langIndex;
                     }
                 }
             }
@@ -669,10 +837,13 @@ namespace TopMovies.Views
 
                 string res = await result.Translator(txtName.Text, language);
 
-                convertedName.Text = res;
+                if (res != null)
+                {
+                    convertedName.Text = res;
 
-                txtName.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-                convertedName.Visibility = Windows.UI.Xaml.Visibility.Visible;
+                    txtName.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+                    convertedName.Visibility = Windows.UI.Xaml.Visibility.Visible;
+                }
             }
 
             AnalyticsHelper.Track("Translate", "Button_click", language);
@@ -698,6 +869,7 @@ namespace TopMovies.Views
         private async void Auto_Play(object sender, RoutedEventArgs e)
         {
                 autoPlayOn = true;
+                ts.Dispose();
                 ts = new CancellationTokenSource();
                 CancellationToken ct = ts.Token;
                 if (!((CoverFlowControl.SelectedIndex + 1) >= countofMovies))
@@ -789,9 +961,9 @@ namespace TopMovies.Views
                 //case "AU":
                 //    url = "http://www.amazon.com";
                 //    break;
-                //case "CN":
-                //    url = "http://www.amazon.com";
-                //    break;
+                case "China":
+                    url = "http://www.amazon.cn/s/?_encoding=UTF8&field-keywords=" + movieName + "&linkCode=ur2&tag=daksatech-23&url=search-alias%3Dvideo";
+                    break;
                 case "Germany":
                     url = "http://www.amazon.de/s/?url=search-alias%3Ddvd&field-keywords=" + movieName + "&tag=daksatech02-21";
                     break;
@@ -828,8 +1000,14 @@ namespace TopMovies.Views
 
         private void carousel_SizeChanged(object sender, SizeChangedEventArgs e)
         {
+            carousel_ImageCorrector();
+        }
+
+        private void carousel_ImageCorrector()
+        {
             CoverFlowControl.Refresh();
         }
+
 
 
 

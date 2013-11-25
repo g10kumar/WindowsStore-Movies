@@ -136,7 +136,7 @@
     <value>See details of movie: Click on the 'Movie Details' button OR double tap/click on the movie poster.</value>
   </data>
   <data name="AboutUs6.Text" xml:space="preserve">
-    <value>Buy movie: Click on the 'Buy Movie' button .</value>
+    <value>Buy movie: Click on the 'Buy Movie' button.</value>
   </data>
   <data name="btnBuyDVD.Text" xml:space="preserve">
     <value>Buy Movie</value>
@@ -151,10 +151,10 @@
     <value>Privacy Policy</value>
   </data>
   <data name="PrivacyPolicy1.Text" xml:space="preserve">
-    <value>This Privacy Policy covers your use of this application. The app does not collect, store, or share any personal information, or anything related to your device. We do not collect any statistics, trends, neither do we track user movements. The site does allow you to visit external websites - specifically Amazon.com and Wikipedia.com and their affiliated sites. These websites may collect information related to your IP address, device, etc. Please check the privacy policy of these websites for details on information collected by them.</value>
+    <value>This Privacy Policy covers your use of this application. The app does not collect, store, or share any personal information, or anything related to your device. We do not collect any statistics, trends; neither do we track user movements. The site does allow you to visit external websites - specifically Amazon.com and Wikipedia.com and their affiliated sites. These websites may collect information related to your IP address, device, etc. Please check the privacy policy of these websites for details on information collected by them.</value>
   </data>
   <data name="PrivacyPolicy2.Text" xml:space="preserve">
-    <value>The app allows you to share the articles using the Share charm. The application you use to share the articles are not related to this app. Please check the privacy policy of those apps for how they use your data. The app also collects usage data. This information is stored on Google Analytics servers. No personally identifiable information is sent or stored.</value>
+    <value>The app allows you to share the articles using the Share charm. The applications you use to share the articles are not related to this app. Please check the privacy policy of those apps for how they use your data. The app also collects usage data. This information is stored on Google Analytics servers. No personally identifiable information is sent or stored.</value>
   </data>
   <data name="PrivacyPolicy3.Text" xml:space="preserve">
     <value>The country setting is only used to direct you to a site in your country when you click the 'Buy Movie' button.</value>
@@ -187,13 +187,13 @@
     <value>Top International Movies</value>
   </data>
   <data name="regiontext.Text" xml:space="preserve">
-    <value>Your country information is only used to direct you to the appropriate site when you click the "Buy Movie" button.</value>
+    <value>Your country information is only used to direct you to the appropriate site when you click the "Buy Movie" button</value>
   </data>
   <data name="AppName" xml:space="preserve">
     <value>The Best Movies Ever Made!</value>
   </data>
   <data name="NoInternet" xml:space="preserve">
-    <value>No active Internet connection avaliable . Please check the connection &amp; try again.</value>
+    <value>No active Internet connection available. Please check the connection &amp; try again.</value>
   </data>
   <data name="Backward_Button.Text" xml:space="preserve">
     <value>Backward</value>
@@ -208,13 +208,13 @@
     <value>Buy Movie Online</value>
   </data>
   <data name="TraslateDetails.ToolTip" xml:space="preserve">
-    <value>Translate Movie Title To Native Language</value>
+    <value>Translate Movie Title to Native Language</value>
   </data>
   <data name="Genre" xml:space="preserve">
     <value>Genre</value>
   </data>
   <data name="genre1" xml:space="preserve">
-    <value>Genre:All</value>
+    <value>Genre: All</value>
   </data>
   <data name="genre10" xml:space="preserve">
     <value>Horror</value>
@@ -271,7 +271,7 @@
     <value>Additional Information</value>
   </data>
   <data name="lang1" xml:space="preserve">
-    <value>Language:All</value>
+    <value>Language: All</value>
   </data>
   <data name="lang10" xml:space="preserve">
     <value>Spanish</value>
@@ -313,7 +313,7 @@
     <value>Runtime</value>
   </data>
   <data name="sorter1" xml:space="preserve">
-    <value>Sort By:Default</value>
+    <value>Sort By: Default</value>
   </data>
   <data name="sorter2" xml:space="preserve">
     <value>Oldest to Newest</value>
@@ -331,7 +331,7 @@
     <value> User Votes</value>
   </data>
   <data name="asianLang1" xml:space="preserve">
-    <value>Language:All</value>
+    <value>Language: All</value>
   </data>
   <data name="asianLang2" xml:space="preserve">
     <value>Cantonese</value>
@@ -352,7 +352,7 @@
     <value>Thai</value>
   </data>
   <data name="SnappedMessage.Text" xml:space="preserve">
-    <value>Movies are best viewed in  Full screen or  Filled mode , not in Snapped mode. Please change resolution .</value>
+    <value>Movies are best viewed in Full screen or Filled mode, not in Snapped mode. Please change app. view.</value>
   </data>
   <data name="busyIndicator.Text" xml:space="preserve">
     <value>Loading...</value>
@@ -364,7 +364,7 @@
     <value>Jump Forward</value>
   </data>
   <data name="InfoTooltip.ToolTip" xml:space="preserve">
-    <value>Movie Infomation</value>
+    <value>Movie Information</value>
   </data>
   <data name="Info_Button.Text" xml:space="preserve">
     <value>Movie Detail</value>
@@ -382,10 +382,10 @@
     <value>Trailer</value>
   </data>
   <data name="trailerTooltip.ToolTip" xml:space="preserve">
-    <value>Show Youtube Trailer</value>
+    <value>Show YouTube Trailer</value>
   </data>
   <data name="translatename.Text" xml:space="preserve">
-    <value>Trasnslate</value>
+    <value>Translate</value>
   </data>
   <data name="TraslateInfo.ToolTip" xml:space="preserve">
     <value>Display details in native language</value>
@@ -397,12 +397,57 @@
     <value>Wikipedia</value>
   </data>
   <data name="Notrailer" xml:space="preserve">
-    <value>Unable to connect to Youtube from this Device.</value>
+    <value>Unable to connect to YouTube from this Device.</value>
   </data>
   <data name="trailerHeader" xml:space="preserve">
     <value>You are watching</value>
   </data>
   <data name="infoPageIndicator.Text" xml:space="preserve">
-    <value>Processing Resquest.Please wait...</value>
+    <value>Processing Request. Please wait...</value>
+  </data>
+  <data name="btnBuyDVD.FontSize" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="trailerButton.FontSize" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="translatename.FontSize" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="wikiArticle_button.FontSize" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="Backward_Button.FontSize" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="Forward_Button.FontSize" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="Info_Button.FontSize" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="Pause_Button.FontSize" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="Play_Button.FontSize" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="NoMoviesMessage1" xml:space="preserve">
+    <value>There are no </value>
+  </data>
+  <data name="NoMoviesMessage2" xml:space="preserve">
+    <value> Movies in </value>
+  </data>
+  <data name="NoMoviesMessage3" xml:space="preserve">
+    <value> Language</value>
+  </data>
+  <data name="TopBollywood" xml:space="preserve">
+    <value> Bollywood Category</value>
+  </data>
+  <data name="TopEnglish" xml:space="preserve">
+    <value> Hollywood Category</value>
+  </data>
+  <data name="PrivacyPolicy4.Text" xml:space="preserve">
+    <value>This app is supported by ads from Microsoft Advertising. Learn more about Microsoft’s privacy practices and your choices. Learn more link:</value>
   </data>
 </root>

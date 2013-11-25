@@ -880,33 +880,33 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>packages\Newtonsoft.Json.5.0.8\lib\netcore45\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.SfAccordion.WinRT, Version=11.3010.0.32, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+    <Reference Include="Syncfusion.SfAccordion.WinRT, Version=11.30800.0.33, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files\Syncfusion\Essential Studio\11.3.0.33\Assemblies for WinRT\8.0\Syncfusion.SfAccordion.WinRT.dll</HintPath>
+      <HintPath>C:\Program Files\Syncfusion\Essential Studio\11.3.0.30\Assemblies for WinRT\Syncfusion.SfAccordion.WinRT.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.SfBusyIndicator.WinRT, Version=11.3010.0.32, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+    <Reference Include="Syncfusion.SfBusyIndicator.WinRT, Version=11.30800.0.33, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files\Syncfusion\Essential Studio\11.3.0.33\Assemblies for WinRT\8.0\Syncfusion.SfBusyIndicator.WinRT.dll</HintPath>
+      <HintPath>C:\Program Files\Syncfusion\Essential Studio\11.3.0.30\Assemblies for WinRT\Syncfusion.SfBusyIndicator.WinRT.dll</HintPath>
     </Reference>
     <Reference Include="Syncfusion.SfCarousel.WinRT, Version=11.30800.0.33, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files\Syncfusion\Essential Studio\11.3.0.33\Assemblies for WinRT\8.0\Syncfusion.SfCarousel.WinRT.dll</HintPath>
+      <HintPath>C:\Program Files\Syncfusion\Essential Studio\11.3.0.30\Assemblies for WinRT\Syncfusion.SfCarousel.WinRT.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.SfHubTile.WinRT, Version=11.3010.0.32, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+    <Reference Include="Syncfusion.SfHubTile.WinRT, Version=11.30800.0.33, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files\Syncfusion\Essential Studio\11.3.0.33\Assemblies for WinRT\8.0\Syncfusion.SfHubTile.WinRT.dll</HintPath>
+      <HintPath>C:\Program Files\Syncfusion\Essential Studio\11.3.0.30\Assemblies for WinRT\Syncfusion.SfHubTile.WinRT.dll</HintPath>
     </Reference>
     <Reference Include="Syncfusion.SfInput.WinRT, Version=11.30800.0.33, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files\Syncfusion\Essential Studio\11.3.0.33\Assemblies for WinRT\8.0\Syncfusion.SfInput.WinRT.dll</HintPath>
+      <HintPath>C:\Program Files\Syncfusion\Essential Studio\11.3.0.30\Assemblies for WinRT\Syncfusion.SfInput.WinRT.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.SfRadialMenu.WinRT, Version=11.3010.0.32, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+    <Reference Include="Syncfusion.SfRadialMenu.WinRT, Version=11.30800.0.33, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files\Syncfusion\Essential Studio\11.3.0.33\Assemblies for WinRT\8.0\Syncfusion.SfRadialMenu.WinRT.dll</HintPath>
+      <HintPath>C:\Program Files\Syncfusion\Essential Studio\11.3.0.30\Assemblies for WinRT\Syncfusion.SfRadialMenu.WinRT.dll</HintPath>
     </Reference>
     <Reference Include="Syncfusion.SfShared.WinRT, Version=11.30800.0.33, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files\Syncfusion\Essential Studio\11.3.0.33\Assemblies for WinRT\8.0\Syncfusion.SfShared.WinRT.dll</HintPath>
+      <HintPath>C:\Program Files\Syncfusion\Essential Studio\11.3.0.30\Assemblies for WinRT\Syncfusion.SfShared.WinRT.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
