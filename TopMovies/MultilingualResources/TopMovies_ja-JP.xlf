@@ -44,7 +44,7 @@
         </trans-unit>
         <trans-unit id="Resources\pageTitle\Text" translate="yes" xml:space="preserve">
           <source>The Best Movies Ever Made!</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">これまでに作った最高の映画 ！</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">これまでに製作される最高の映画 ！</target>
         </trans-unit>
         <trans-unit id="Resources\privacypolicy" translate="yes" xml:space="preserve">
           <source>Privacy Policy</source>
@@ -104,11 +104,11 @@
         </trans-unit>
         <trans-unit id="Resources\AppName" translate="yes" xml:space="preserve">
           <source>The Best Movies Ever Made!</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">これまでに作った最高の映画 ！</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">これまでに製作される最高の映画 ！</target>
         </trans-unit>
         <trans-unit id="Resources\NoInternet" translate="yes" xml:space="preserve">
           <source>No active Internet connection available. Please check the connection %%amp; try again.</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">アクティブなインターネット接続を使用できません。%%amp;接続をチェックしてください。</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">利用可能なアクティブなインターネット接続はなしです。接続を確認してくださいもう一度やり直してください。</target>
         </trans-unit>
         <trans-unit translate="yes" id="Resources\Backward_Button\Text" xml:space="preserve">
           <source>Backward</source>
@@ -132,7 +132,7 @@
         </trans-unit>
         <trans-unit translate="yes" id="Resources\userVotes" xml:space="preserve">
           <source> User Votes</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">ユーザーの投票</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">ユーザー票</target>
         </trans-unit>
         <trans-unit translate="yes" id="Resources\asianLang7" xml:space="preserve">
           <source>Thai</source>
@@ -196,7 +196,7 @@
         </trans-unit>
         <trans-unit translate="yes" id="Resources\infoPageIndicator\Text" xml:space="preserve">
           <source>Processing Request. Please wait...</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">要求を処理します。お待ちください。。。</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">処理要請。待ってください...</target>
         </trans-unit>
         <trans-unit translate="yes" id="Resources\wikiArticle_button\FontSize" xml:space="preserve">
           <source>11</source>
@@ -300,11 +300,11 @@
         </trans-unit>
         <trans-unit translate="yes" id="Resources\sorter5" xml:space="preserve">
           <source>Rated Highest to Lowest</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">最下位に最高</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">から最低まで最高の定格</target>
         </trans-unit>
         <trans-unit translate="yes" id="Resources\sorter4" xml:space="preserve">
           <source>Rated Lowest to Highest</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">最低から最高者:。</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">最高のものに最も低く評価されます</target>
         </trans-unit>
         <trans-unit translate="yes" id="Resources\sorter3" xml:space="preserve">
           <source>Newest to Oldest</source>
@@ -384,7 +384,7 @@
         </trans-unit>
         <trans-unit translate="yes" id="Resources\Header2" xml:space="preserve">
           <source>Actors</source>
-          <target state="translated" state-qualifier="tm-suggestion">Actors</target>
+          <target state="translated" state-qualifier="tm-suggestion">男優</target>
         </trans-unit>
         <trans-unit translate="yes" id="Resources\Header1" xml:space="preserve">
           <source>Plot</source>
@@ -396,7 +396,7 @@
         </trans-unit>
         <trans-unit translate="yes" id="Resources\genre9" xml:space="preserve">
           <source>Fantasy</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">fantasy</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">空想</target>
         </trans-unit>
         <trans-unit translate="yes" id="Resources\genre8" xml:space="preserve">
           <source>Family</source>

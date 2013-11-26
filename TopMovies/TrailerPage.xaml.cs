@@ -140,6 +140,15 @@ namespace TopMovies
             }
         }
 
+        private void GoHome(object sender, RoutedEventArgs e)
+        {
+            trailerHolder.NavigateToString(@"<html><head></head><body></body></html>");
+            for (int i = 0; i <= 1; i++)
+            {
+                base.GoBack(sender, e);
+            }
+        }
+
         
     }
 }
