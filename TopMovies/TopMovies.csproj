@@ -175,6 +175,7 @@
     <Content Include="Assets\Film.png" />
     <Content Include="Assets\Filter.png" />
     <Content Include="Assets\forward.png" />
+    <Content Include="Assets\Home.png" />
     <Content Include="Assets\imdb.jpg" />
     <Content Include="Assets\Information.png" />
     <Content Include="Assets\Pause.png" />

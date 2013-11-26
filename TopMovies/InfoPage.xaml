@@ -83,7 +83,7 @@
         </Button>
         <TextBlock x:Name="infoHeader" Grid.Column="1" Margin="12,37,149,0" TextWrapping="Wrap"  VerticalAlignment="Top" Height="93" Foreground="#FF01A2A6" FontSize="40" FontFamily="Segoe UI" TextAlignment="Center" LineHeight="2" Grid.ColumnSpan="2"/>
         <Grid x:Name="imageGrid" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top" Margin="70,0,0,0" Width="357" Height="521" Grid.ColumnSpan="2">
-            <Notification:SfPulsingTile Width="Auto" RadiusX="0" RadiusY="0" PulseDuration="00:00:10" PulseScale="2">
+            <Notification:SfPulsingTile x:Name="sfPulsingTile" Width="Auto" RadiusX="0" RadiusY="0" PulseDuration="00:00:10" PulseScale="2">
                 <Image Source="{Binding ImageSource}" Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center" Width="Auto"  ></Image>
             </Notification:SfPulsingTile>
         </Grid>
@@ -425,6 +425,7 @@
                                 </DiscreteObjectKeyFrame.Value>
                             </DiscreteObjectKeyFrame>
                         </ObjectAnimationUsingKeyFrames>
+                        <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(SfPulsingTile.PulseScale)" Storyboard.TargetName="sfPulsingTile" d:IsOptimized="True"/>
                     </Storyboard>
                 </VisualState>
                 <VisualState x:Name="FullScreenPortrait">
@@ -667,6 +668,7 @@
                                 </DiscreteObjectKeyFrame.Value>
                             </DiscreteObjectKeyFrame>
                         </ObjectAnimationUsingKeyFrames>
+                        <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(SfPulsingTile.PulseScale)" Storyboard.TargetName="sfPulsingTile" d:IsOptimized="True"/>
                     </Storyboard>
                 </VisualState>
                 <VisualState x:Name="Snapped">
