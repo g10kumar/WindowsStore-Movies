@@ -357,13 +357,14 @@
       <ReservedName>Les Meilleurs Films Jamais Faits!</ReservedName>
       <ReservedName>Il Miglior Film Mai Realizzato!</ReservedName>
       <ReservedName>Лучших фильмов когда-либо сделал!</ReservedName>
-      <ReservedName>最佳电影做过！</ReservedName>
       <ReservedName>これまでに作った最高の映画 ！</ReservedName>
       <ReservedName>最佳电影做过!</ReservedName>
       <ReservedName>Najlepsze Filmy!</ReservedName>
       <ReservedName>أفضل الأفلام!</ReservedName>
       <ReservedName>Bästa Filmer!</ReservedName>
       <ReservedName>Melhores Filmes Já Feitos!</ReservedName>
+      <ReservedName>Il miglior film mai fatto!</ReservedName>
+      <ReservedName>最好的电影!</ReservedName>
     </ReservedNames>
   </ProductReservedInfo>
   <AccountPackageIdentityNames>
@@ -385,7 +386,7 @@
   <PackageInfoList LandingUrl="https://appdev.microsoft.com:443/StorePortals/Developer/Catalog/ReleaseAnchor/1b69f851-fce5-4238-944f-9bbca75300df">
     <PackageInfo>
       <PackageArchitecture>neutral</PackageArchitecture>
-      <PackageMaxArchitectureVersion>1.0.0.23</PackageMaxArchitectureVersion>
+      <PackageMaxArchitectureVersion>2.0.0.24</PackageMaxArchitectureVersion>
     </PackageInfo>
     <PackageInfo>
       <PackageArchitecture />
