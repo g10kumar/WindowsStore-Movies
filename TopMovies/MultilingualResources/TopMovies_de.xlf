@@ -44,7 +44,7 @@
         </trans-unit>
         <trans-unit id="Resources\pageTitle\Text" translate="yes" xml:space="preserve">
           <source>The Best Movies Ever Made!</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Die besten Filme aller Zeiten!</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Die Besten Filme Aller Zeiten!</target>
         </trans-unit>
         <trans-unit id="Resources\privacypolicy" translate="yes" xml:space="preserve">
           <source>Privacy Policy</source>

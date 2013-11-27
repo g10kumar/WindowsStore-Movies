@@ -81,13 +81,13 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <TextBlock x:Name="infoHeader" Grid.Column="1" Margin="12,37,149,0" TextWrapping="Wrap"  VerticalAlignment="Top" Height="93" Foreground="#FF01A2A6" FontSize="40" FontFamily="Segoe UI" TextAlignment="Center" LineHeight="2" Grid.ColumnSpan="2"/>
+        <TextBlock x:Name="infoHeader" Grid.Column="1" Margin="12,37,149,0" TextWrapping="Wrap"  VerticalAlignment="Top" Height="93" Foreground="{StaticResource HeadingColor}" FontSize="40" FontFamily="Segoe UI" TextAlignment="Center" LineHeight="2" Grid.ColumnSpan="2"/>
         <Grid x:Name="imageGrid" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top" Margin="70,0,0,0" Width="357" Height="521" Grid.ColumnSpan="2">
             <Notification:SfPulsingTile x:Name="sfPulsingTile" Width="Auto" RadiusX="0" RadiusY="0" PulseDuration="00:00:10" PulseScale="2">
                 <Image Source="{Binding ImageSource}" Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center" Width="Auto"  ></Image>
             </Notification:SfPulsingTile>
         </Grid>
-        <Notification:SfBusyIndicator x:Name="busyIndicator" Grid.Column="2" Grid.Row="1" AnimationType="Gear" Foreground="#FF01A2A6" HorizontalAlignment="Right" Width="200" Height="150" VerticalAlignment="Top" ViewboxHeight="80" ViewboxWidth="80" RenderTransformOrigin="0.5,0.5" Margin="0,151,587,0">
+        <Notification:SfBusyIndicator x:Name="busyIndicator" Grid.Column="2" Grid.Row="1" AnimationType="Gear" Foreground="{StaticResource HeadingColor}" HorizontalAlignment="Right" Width="200" Height="150" VerticalAlignment="Top" ViewboxHeight="80" ViewboxWidth="80" RenderTransformOrigin="0.5,0.5" Margin="0,151,587,0">
             <Notification:SfBusyIndicator.HeaderTemplate>
                 <DataTemplate>
                     <TextBlock x:Uid="infoPageIndicator" Text="" FontSize="18" TextAlignment="Center" Margin="0" Width="202" TextWrapping="Wrap"  />
@@ -99,26 +99,26 @@
             <Input:SfRating x:Name="imdbRate" HorizontalAlignment="Left" Height="30" Margin="10,65,0,0" VerticalAlignment="Top" Width="311" ItemsCount="10" Precision="Exact" RenderTransformOrigin="0.529,2.083">
                 <Input:SfRating.ItemContainerStyle>
                     <Style TargetType="Input:SfRatingItem">
-                        <Setter Property="RatedFill" Value="#FF01A2A6"/>
+                        <Setter Property="RatedFill" Value="{StaticResource HeadingColor}"/>
                     </Style>
                 </Input:SfRating.ItemContainerStyle>
             </Input:SfRating>
-            <TextBlock x:Name="imdbNumber" Margin="163,13,15,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="47" Foreground="#FF01A2A6" FontSize="50"/>
-            <TextBlock x:Name="imdbVotes" Margin="22,95,23,0" TextWrapping="Wrap"  VerticalAlignment="Top" Height="25" FontSize="18" Foreground="#FF01A2A6" TextAlignment="Center"/>
+            <TextBlock x:Name="imdbNumber" Margin="163,13,15,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="47" Foreground="{StaticResource HeadingColor}" FontSize="50"/>
+            <TextBlock x:Name="imdbVotes" Margin="22,95,23,0" TextWrapping="Wrap"  VerticalAlignment="Top" Height="25" FontSize="18" Foreground="{StaticResource HeadingColor}" TextAlignment="Center"/>
         </Grid>
         <Grid x:Name="tomatoGrid" HorizontalAlignment="Left" Height="125" Margin="50.5,194,0,0" Grid.Row="1" VerticalAlignment="Top" Width="336" Grid.Column="2" Grid.RowSpan="2" Visibility="Collapsed">
             <Image x:Name="image1" Source="Assets/tomato.jpg" Height="51" Margin="10,10,0,64" HorizontalAlignment="Left" Width="68"/>
             <Input:SfRating x:Name="tomatoRate" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="173" ItemsCount="5" Precision="Exact" Margin="10,65,0,0">
                 <Input:SfRating.ItemContainerStyle>
                     <Style TargetType="Input:SfRatingItem">
-                        <Setter Property="RatedFill" Value="#FF01A2A6"/>
+                        <Setter Property="RatedFill" Value="{StaticResource HeadingColor}"/>
                     </Style>
                 </Input:SfRating.ItemContainerStyle>
             </Input:SfRating>
-            <TextBlock x:Name="tomatoVotes" TextWrapping="Wrap" Height="25" FontSize="18" Foreground="#FF01A2A6" Margin="22,94,23,6" TextAlignment="Center"/>
-            <TextBlock x:Name="tomatoNumber" TextWrapping="Wrap" VerticalAlignment="Top" Height="47" Foreground="#FF01A2A6" FontSize="50" Margin="163,14,15,0"/>
+            <TextBlock x:Name="tomatoVotes" TextWrapping="Wrap" Height="25" FontSize="18" Foreground="{StaticResource HeadingColor}" Margin="22,94,23,6" TextAlignment="Center"/>
+            <TextBlock x:Name="tomatoNumber" TextWrapping="Wrap" VerticalAlignment="Top" Height="47" Foreground="{StaticResource HeadingColor}" FontSize="50" Margin="163,14,15,0"/>
         </Grid>
-        <Layout:SfAccordion x:Name="accordion" AccentBrush="#FF01A2A6" Grid.Column="2" Margin="0,26,50,0" Grid.Row="1" VerticalAlignment="Top" Width="450" DisplayMemberPath="Header" SelectionMode="One" HorizontalAlignment="Right">
+        <Layout:SfAccordion x:Name="accordion" AccentBrush="{StaticResource HeadingColor}" Grid.Column="2" Margin="0,26,50,0" Grid.Row="1" VerticalAlignment="Top" Width="450" DisplayMemberPath="Header" SelectionMode="One" HorizontalAlignment="Right">
             <Layout:SfAccordion.ContentTemplate>
                 <DataTemplate>
                     <Border Height="Auto" Width="450">
@@ -141,7 +141,7 @@
             </Layout:SfAccordion.HeaderTemplate>
             <StackPanel Height="100" Width="100"/>
         </Layout:SfAccordion>
-        <Layout:SfAccordion x:Name="translatedAccordion" AccentBrush="#FF01A2A6" Grid.Column="2" HorizontalAlignment="Right" Margin="0,26,50,0" Grid.Row="1" VerticalAlignment="Top" Width="450" DisplayMemberPath="Header" SelectionMode="One" Visibility="Collapsed">
+        <Layout:SfAccordion x:Name="translatedAccordion" AccentBrush="{StaticResource HeadingColor}" Grid.Column="2" HorizontalAlignment="Right" Margin="0,26,50,0" Grid.Row="1" VerticalAlignment="Top" Width="450" DisplayMemberPath="Header" SelectionMode="One" Visibility="Collapsed">
             <Layout:SfAccordion.ContentTemplate>
                 <DataTemplate>
                     <Border Height="Auto" Width="450">
@@ -167,7 +167,7 @@
         <Navigation:SfRadialMenu
                                  NavigationButtonStyle="{StaticResource NavigationButtonStyle}"
                                    EnableFreeRotation="False" IsOpen="False"
-                                     x:Name="selectionmenu" Padding="5" Margin="130.5,410,558,0" Background="#FF01A2A6" RimBackground="#FF29D9C2" CenterRimRadiusFactor="0.2" RimRadiusFactor="0.95" Grid.Column="2" Grid.Row="1" Height="208" VerticalAlignment="Top" RadiusX="100" RadiusY="100" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="2" HorizontalAlignment="Left" Width="250">
+                                     x:Name="selectionmenu" Padding="5" Margin="130.5,410,558,0" Background="{StaticResource HeadingColor}" RimBackground="#FF29D9C2" CenterRimRadiusFactor="0.2" RimRadiusFactor="0.95" Grid.Column="2" Grid.Row="1" Height="208" VerticalAlignment="Top" RadiusX="100" RadiusY="100" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="2" HorizontalAlignment="Left" Width="250">
             <Navigation:SfRadialMenu.Icon>
                 <Grid Background="Transparent">
                     <Image Source="ms-appx:///Assets/Tools.png" Width="20" Stretch="Uniform"/>
@@ -225,7 +225,7 @@
         </Grid>
         <StackPanel Orientation="Vertical" VerticalAlignment="Top" x:Name="snappedStack" Grid.Row="0" Margin="4,9,1,0" HorizontalAlignment="Center" Height="750" Width="315" Grid.RowSpan="3" RenderTransformOrigin="0.5,0.5" Visibility="Collapsed" Grid.ColumnSpan="3">
             <Image x:Name="image" Source="ms-appx:///Assets/BlackLogo.png" Width="150" Height="102" Margin="83,0,82,0" />
-            <TextBlock x:Uid="SnappedMessage" x:Name="textBlock"  TextWrapping="Wrap" Style="{StaticResource AboutUsTextStyle}" Foreground="#FF01A2A6" FontSize="24"  Margin="30,40,33,10" RenderTransformOrigin="0.5,0.5" Height="Auto" >
+            <TextBlock x:Uid="SnappedMessage" x:Name="textBlock"  TextWrapping="Wrap" Style="{StaticResource AboutUsTextStyle}" Foreground="{StaticResource HeadingColor}" FontSize="24"  Margin="30,40,33,10" RenderTransformOrigin="0.5,0.5" Height="Auto" >
             </TextBlock>
         </StackPanel>
 

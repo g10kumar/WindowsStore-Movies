@@ -388,7 +388,7 @@
                 </Button.Background>
             </Button>
         </Grid>
-        <Notification:SfBusyIndicator x:Name="ProgressRing" Grid.Column="1" Margin="0,169,592,310" Grid.Row="1" AnimationType="Gear" Foreground="#FF01A2A6" HorizontalAlignment="Right" Width="200" RenderTransformOrigin="0.5,0.5" ViewboxHeight="80" ViewboxWidth="80"  >
+        <Notification:SfBusyIndicator x:Name="ProgressRing" Grid.Column="1" Margin="0,169,592,310" Grid.Row="1" AnimationType="Gear" Foreground="{StaticResource HeadingColor}" HorizontalAlignment="Right" Width="200" RenderTransformOrigin="0.5,0.5" ViewboxHeight="80" ViewboxWidth="80"  >
             <Notification:SfBusyIndicator.HeaderTemplate>
                 <DataTemplate>
                     <TextBlock x:Uid="busyIndicator" Text="" FontSize="18" TextAlignment="Center" Margin="50,0,0,0"/>
@@ -397,10 +397,10 @@
         </Notification:SfBusyIndicator>
         <StackPanel Orientation="Vertical" VerticalAlignment="Top" x:Name="snappedStack" Grid.Row="0" Margin="2,10,3,0" HorizontalAlignment="Center" Height="750" Width="315" Grid.ColumnSpan="6" Grid.RowSpan="3" RenderTransformOrigin="0.5,0.5" Visibility="Collapsed">
             <Image x:Name="image" Source="Assets/BlackLogo.png" Width="150" />
-            <TextBlock x:Uid="SnappedMessage" x:Name="textBlock"  TextWrapping="Wrap" Style="{StaticResource AboutUsTextStyle}" Foreground="#FF01A2A6" FontSize="24"  Margin="30,40,33,10" RenderTransformOrigin="0.5,0.5" Height="Auto" />
+            <TextBlock x:Uid="SnappedMessage" x:Name="textBlock"  TextWrapping="Wrap" Style="{StaticResource AboutUsTextStyle}" Foreground="{StaticResource HeadingColor}" FontSize="24"  Margin="30,40,33,10" RenderTransformOrigin="0.5,0.5" Height="Auto" />
 
         </StackPanel>
-        <TextBlock x:Name="trailerHeader" Grid.Column="1" Margin="10,57,150,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="40" Foreground="#FF01A2A6" TextAlignment="Center" FontSize="36"/>
+        <TextBlock x:Name="trailerHeader" Grid.Column="1" Margin="10,57,150,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="40" Foreground="{StaticResource HeadingColor}" TextAlignment="Center" FontSize="36"/>
         <Grid x:Name="horizontalTrailer" Grid.Column="1" HorizontalAlignment="Left" Height="103" Margin="191,517,0,0" Grid.Row="1" VerticalAlignment="Top" Width="731">
             <UI:AdControl x:Name="horizontalAd" ApplicationId="6310ffab-747b-4d73-84f5-40c5fa6a8272" AdUnitId="10326542" Height="90" Margin="0,10,0,0" VerticalAlignment="Top" IsPerformanceScrollingEnabled="True" Width="728" HorizontalAlignment="Left"  ErrorOccurred="OnAdError" UseStaticAnchor="True" Visibility="Collapsed" AdRefreshed="AdRefresh"/>
         </Grid>
