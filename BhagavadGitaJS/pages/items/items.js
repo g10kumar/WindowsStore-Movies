@@ -15,6 +15,7 @@
 
             document.getElementById("btnRecent").addEventListener("click", recentSloka, false);
             document.getElementById("btnBookmark").addEventListener("click", showBookmark, false);
+            document.getElementById("btnVideo").addEventListener("click", showVideo, false);
 
             this._initializeLayout(listView, Windows.UI.ViewManagement.ApplicationView.value);
             listView.element.focus();
@@ -73,5 +74,10 @@
     function showBookmark() {
 
         WinJS.Navigation.navigate("/pages/bookmarks/bookmarks.html");
+    }
+
+    function showVideo() {
+
+        WinJS.Navigation.navigate("/pages/video/video.html");
     }
 })();

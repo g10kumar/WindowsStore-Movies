@@ -85,6 +85,7 @@
     <Content Include="js\data.js" />
     <Content Include="js\default.js" />
     <Content Include="js\navigator.js" />
+    <Content Include="pages\video\video.html" />
     <Content Include="xml\SlokaMeaning.xml" />
     <Content Include="xml\slokaPurport.json" />
     <Content Include="xml\slokaPurport.xml" />
