@@ -64,7 +64,7 @@
                 }
                 
             },
-        function (error) {
+            function (error) {
             // Create the message dialog and set its content
             var msg = new Windows.UI.Popups.MessageDialog(WinJS.Resources.getString('Unable to display the Videos list.').value);
 

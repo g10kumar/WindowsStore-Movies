@@ -16,6 +16,7 @@
             document.getElementById("btnRecent").addEventListener("click", recentSloka, false);
             document.getElementById("btnBookmark").addEventListener("click", showBookmark, false);
             document.getElementById("btnVideo").addEventListener("click", showVideo, false);
+            document.getElementById("btnGitaBook").addEventListener("click", showGitaBooks, false);
 
             this._initializeLayout(listView, Windows.UI.ViewManagement.ApplicationView.value);
             listView.element.focus();
@@ -79,5 +80,9 @@
     function showVideo() {
 
         WinJS.Navigation.navigate("/pages/playlist/playlist.html");
+    }
+
+    function showGitaBooks() {
+        WinJS.Navigation.navigate("/pages/gitabooks/gitabooks.html");
     }
 })();
