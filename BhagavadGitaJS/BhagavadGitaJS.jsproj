@@ -85,7 +85,15 @@
     <Content Include="js\data.js" />
     <Content Include="js\default.js" />
     <Content Include="js\navigator.js" />
+    <Content Include="pages\playlist\playlist.css" />
+    <Content Include="pages\playlist\playlist.html" />
+    <Content Include="pages\playlist\playlist.js" />
+    <Content Include="pages\video\video.css" />
     <Content Include="pages\video\video.html" />
+    <Content Include="pages\video\video.js" />
+    <Content Include="pages\video\videolist.css" />
+    <Content Include="pages\video\videolist.html" />
+    <Content Include="pages\video\videolist.js" />
     <Content Include="xml\SlokaMeaning.xml" />
     <Content Include="xml\slokaPurport.json" />
     <Content Include="xml\slokaPurport.xml" />
