@@ -1,0 +1,28 @@
+<books>
+<book>
+<author>Paramahamsa Nithyananda</author>
+<volume id="1">
+<title>Bhagavad Gita Volume 1 3rd Edition</title>
+<url>https://archive.org/download/BhagavadGitaVolume13rdEdition/Bhagavad%20Gita%20Volume%201%203rd%20Edition.pdf</url>
+</volume>
+<volume id="2">
+<title>Bhagavad Gita Volume 2 3rd Edition</title>
+<url>https://archive.org/download/BhagavadGitaVolume23rdEdition/Bhagavad%20Gita%20Volume%202%203rd%20Edition.pdf</url>
+</volume>
+<volume id="3">
+<title>Bhagavad Gita Volume 3 3rd Edition</title>
+<url>https://archive.org/download/BhagavadGitaVolume33rdEdition/Bhagavad%20Gita%20Volume%203%203rd%20Edition.pdf</url>
+</volume>
+</book>
+<book>
+<author>BG Tilak</author>
+<volume id="1">
+<title>Srimad Bhagavad Gita Rahasya - Volumes 1</title>
+<url>https://archive.org/download/SrimadBhagavadGitaRahasya-BgTilak-Volumes1And2/SrimadBhagavadGitaRahasya-BgTilak-Vol1.pdf</url>
+</volume>
+<volume id="2">
+<title>Srimad Bhagavad Gita Rahasya - Volumes 2</title>
+<url>https://archive.org/download/SrimadBhagavadGitaRahasya-BgTilak-Volumes1And2/SrimadBhagavadGitaRahasya-BgTilak-Vol2.pdf</url>
+</volume>
+</book>
+<books>
