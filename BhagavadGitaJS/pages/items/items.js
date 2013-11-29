@@ -78,6 +78,6 @@
 
     function showVideo() {
 
-        WinJS.Navigation.navigate("/pages/video/video.html");
+        WinJS.Navigation.navigate("/pages/playlist/playlist.html");
     }
 })();
