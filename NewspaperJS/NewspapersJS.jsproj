@@ -44,9 +44,9 @@
     <TargetPlatformIdentifier>Windows</TargetPlatformIdentifier>
     <TargetPlatformVersion>8.0</TargetPlatformVersion>
     <DefaultLanguage>en-US</DefaultLanguage>
-    <PackageCertificateKeyFile>NewspapersJS_StoreKey.pfx</PackageCertificateKeyFile>
+    <PackageCertificateKeyFile>NewspapersJS_TemporaryKey.pfx</PackageCertificateKeyFile>
     <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
-    <PackageCertificateThumbprint>E96EBDB899FC422A534AD4B20287398F6C91AB7C</PackageCertificateThumbprint>
+    <PackageCertificateThumbprint>F9C720FF77FA4CAEC99E00A09FDC01B7090D8BB4</PackageCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup Label="MultilingualAppToolkit">
     <MakePriLog>$(Temp)\$(MSBuildProjectName)_Multilingual.prilog.xml</MakePriLog>
@@ -960,6 +960,9 @@
     <Content Include="images\Country\Finland_Helsingin Sanomat International Edition.jpg" />
     <Content Include="images\Country\Finland_HS.fi.jpg" />
     <Content Include="images\Country\Finland_HVB.jpg" />
+    <Content Include="images\Country\Finland_Iltalehti.jpg" />
+    <Content Include="images\Country\Finland_Iltasanomat.jpg" />
+    <Content Include="images\Country\Finland_Kaleva.jpg" />
     <Content Include="images\Country\Finland_Kaleva.plus.jpg" />
     <Content Include="images\Country\Finland_Kauppalehti.fi.jpg" />
     <Content Include="images\Country\Finland_Keskisuomalainen.jpg" />
@@ -1365,27 +1368,36 @@
     <Content Include="images\Country\Indiana_Today in Batesville &amp; Oldenburg.jpg" />
     <Content Include="images\Country\Indiana_Tribune Star.jpg" />
     <Content Include="images\Country\Indiana_Wabash Plain Dealer.jpg" />
+    <Content Include="images\Country\India_Aaj Tak %28Hindi%29.jpg" />
     <Content Include="images\Country\India_Amar Ujala.jpg" />
     <Content Include="images\Country\India_Ananda Bazar Patrika.jpg" />
     <Content Include="images\Country\India_Asian Age, The.jpg" />
+    <Content Include="images\Country\India_Business Bhaskar.jpg" />
     <Content Include="images\Country\India_Business Standard.jpg" />
     <Content Include="images\Country\India_Daily Indian, The.jpg" />
     <Content Include="images\Country\India_Dainik Jagran.jpg" />
     <Content Include="images\Country\India_Deccan Chronicle.jpg" />
     <Content Include="images\Country\India_Deccan Herald.jpg" />
     <Content Include="images\Country\India_Dinakaran.jpg" />
+    <Content Include="images\Country\India_Dinamani.jpg" />
     <Content Include="images\Country\India_Economic Times, The.jpg" />
     <Content Include="images\Country\India_Eenadu.jpg" />
-    <Content Include="images\Country\India_Express India.jpg" />
     <Content Include="images\Country\India_Gujarat Samachar.jpg" />
     <Content Include="images\Country\India_Hindu, The.jpg" />
-    <Content Include="images\Country\India_Hindustan Times , The.jpg" />
+    <Content Include="images\Country\India_Hindustan Times, The.jpg" />
     <Content Include="images\Country\India_India Business News.jpg" />
     <Content Include="images\Country\India_India Daily.jpg" />
+    <Content Include="images\Country\India_Kannada Prabha.jpg" />
     <Content Include="images\Country\India_Kaumudi.jpg" />
+    <Content Include="images\Country\India_Lokmat.jpg" />
     <Content Include="images\Country\India_Malayala Manorama.jpg" />
-    <Content Include="images\Country\India_News India-Times On the Web.jpg" />
+    <Content Include="images\Country\India_New Indian Express, The.jpg" />
+    <Content Include="images\Country\India_One India.jpg" />
     <Content Include="images\Country\India_Pioneer, The.jpg" />
+    <Content Include="images\Country\India_Punjab Kesari.jpg" />
+    <Content Include="images\Country\India_Rajasthan Patrika.jpg" />
+    <Content Include="images\Country\India_Sakshi.jpg" />
+    <Content Include="images\Country\India_Sentinel Assam.jpg" />
     <Content Include="images\Country\India_Statesman, The.jpg" />
     <Content Include="images\Country\India_Telegraph, The.jpg" />
     <Content Include="images\Country\India_Times of India, The.jpg" />
@@ -2233,8 +2245,16 @@
     <Content Include="images\Country\Nebraska_West Point News.jpg" />
     <Content Include="images\Country\Nebraska_Western Nebraska Observer.jpg" />
     <Content Include="images\Country\Nebraska_York News Times.jpg" />
-    <Content Include="images\Country\Nepal_Kantipur National Daily.jpg" />
-    <Content Include="images\Country\Nepal_Nepalnews.com.jpg" />
+    <Content Include="images\Country\Nepal_Aarthik Abhiyan Daily.jpg" />
+    <Content Include="images\Country\Nepal_Arghakhanchi Times.jpg" />
+    <Content Include="images\Country\Nepal_Chitawan Online News Service.jpg" />
+    <Content Include="images\Country\Nepal_Dhaulashree.jpg" />
+    <Content Include="images\Country\Nepal_Hamro Khotang.jpg" />
+    <Content Include="images\Country\Nepal_Nepal News.jpg" />
+    <Content Include="images\Country\Nepal_Nepal Samacharpatra.jpg" />
+    <Content Include="images\Country\Nepal_Nepal Times.jpg" />
+    <Content Include="images\Country\Nepal_Sahara Sansar.jpg" />
+    <Content Include="images\Country\Nepal_The Himalayan Times.jpg" />
     <Content Include="images\Country\Netherlands Antilles_Amigoe.jpg" />
     <Content Include="images\Country\Netherlands Antilles_Daily Herald, The.jpg" />
     <Content Include="images\Country\Netherlands Antilles_Extra.jpg" />
@@ -2981,6 +3001,7 @@
     <Content Include="images\Country\South Africa_Herald Online.jpg" />
     <Content Include="images\Country\South Africa_Independent Online.jpg" />
     <Content Include="images\Country\South Africa_Mail &amp; Guardian, The.jpg" />
+    <Content Include="images\Country\South Africa_Mercury, The.jpg" />
     <Content Include="images\Country\South Africa_Pretoria News.jpg" />
     <Content Include="images\Country\South Africa_Star, The.jpg" />
     <Content Include="images\Country\South Africa_Witness, The.jpg" />
@@ -3645,6 +3666,7 @@
     <None Include="Package.StoreAssociation.xml" />
     <None Include="MultilingualResources\NewspapersJS_ru-RU.xlf" />
     <None Include="MultilingualResources\NewspapersJS_es.xlf" />
+    <None Include="NewspapersJS_StoreKey.pfx" />
     <Content Include="pages\about\about.html" />
     <Content Include="pages\about\about.js" />
     <Content Include="pages\favorites\favorites.css" />
