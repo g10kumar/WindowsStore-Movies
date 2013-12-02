@@ -24,10 +24,10 @@
 
             // Store information about the group and selection that this page will
             // display.
-            //DisplayGitaBooks(element, options);
+            DisplayGitaBooks(element, options);
 
             //makeXhrCall(GetAuthorList);
-            DisplayGitaBooks1(element, options);
+            //DisplayGitaBooks1(element, options);
         },
 
         unload: function () {

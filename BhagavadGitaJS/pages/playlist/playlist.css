@@ -1,10 +1,311 @@
-﻿.videolistspage section[role=main] {
-    -ms-grid-row: 1;
+﻿.playlistspage {
+    -ms-grid-columns: 106px 200px 1fr;
+    display: -ms-grid;
+    height: 100%;
+    width: 100%;
+}
+
+    .playlistspage header[role=banner] {
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 3;
+        width: 500px;
+    }
+
+        .playlistspage header[role=banner] .pagetitle {
+            overflow: hidden;
+            /*width: calc(100% - 20px);*/
+            width: 200px;
+        }
+
+    .playlistspage .itemlistsection {
+        -ms-grid-row: 2;
+        -ms-grid-column: 2;
+    }
+
+        .playlistspage .itemlistsection .playlist {
+            height: 100%;
+            position: relative;
+            width: 100%;
+            z-index: 0;
+        }
+
+            .playlistspage .itemlistsection .playlist .win-vertical.win-viewport .win-surface {
+                margin-bottom: 60px;
+            }
+
+            .playlistspage .itemlistsection .playlist .win-container {
+                margin-bottom: 15px;
+                margin-left: 10px;
+                margin-right: 34px;
+                padding: 7px;
+            }
+
+            .playlistspage .itemlistsection .playlist.win-rtl .win-container {
+                margin-left: 19px;
+                margin-right: 21px;
+            }
+
+            .playlistspage .itemlistsection .playlist .win-container .win-selectioncheckmark, .playlistspage .itemlistsection .playlist .win-container .win-selectioncheckmarkbackground {
+                display: none;
+            }
+
+            .playlistspage .itemlistsection .playlist .item {
+                -ms-grid-columns: 200px 1fr;
+                -ms-grid-rows: 1fr;
+                display: -ms-grid;
+                height: 30px;
+                width: 500px;
+            }
+
+                .playlistspage .itemlistsection .playlist .item .item-info {
+                    -ms-grid-column: 2;
+                    margin-left: 106px;
+                    margin-right: 10px;
+                    overflow: hidden;
+                }
+
+                    .playlistspage .itemlistsection .playlist .item .item-info .item-title {
+                        margin-top: 4px;
+                    }
+
+                    .playlistspage .itemlistsection .playlist .item .item-info .item-subtitle {
+                        opacity: 0.6;
+                    }
+
+                    .playlistspage .itemlistsection .playlist .item .item-info .item-description {
+                        max-height: 60px;
+                        overflow: hidden;
+                    }
+
+    .playlistspage .videosection {
+        -ms-grid-column: 3;
+        -ms-grid-row: 2;        
+        -ms-grid-row-span: 2;
+        /*overflow-y: auto;
+        position: relative;
+        z-index: 0;*/        
+        padding-left: 20px;
+        padding-right: 20px;    
+        padding-bottom: 20px;
+        height:100%;
+    }
+
+
+    .playlistspage .itemlistsection .videolist {
+        height: 100%;
+        position: relative;
+        width: 100%;
+        z-index: 0;
+       
+    }
+    
+        .playlistspage .itemlistsection .videolist .win-vertical.win-viewport .win-surface {
+            margin-bottom: 60px;
+        }
+        
+        .playlistspage .itemlistsection .videolist .win-container {
+            margin-bottom: 15px;
+            margin-left: 10px;
+            margin-right: 34px;
+            padding: 7px;
+        }
+        
+        .playlistspage .itemlistsection .videolist.win-rtl .win-container {
+            margin-left: 19px;
+            margin-right: 21px;
+            margin-bottom:15px;
+        }
+
+        .playlistspage .itemlistsection .videolist .win-container .win-selectioncheckmark, .playlistspage .itemlistsection .videolist .win-container .win-selectioncheckmarkbackground {
+            display: none;
+        }
+
+        .playlistspage .itemlistsection .videolist .videoitem {
+            -ms-grid-columns: 1fr;
+            -ms-grid-rows: 70px;
+            display: -ms-grid;
+            height: 70px;
+            width: 250px;
+        }
+
+        .playlistspage .videolist .videoitem .videoitem-overlay {
+            -ms-grid-row: 2;
+            -ms-grid-rows: 1fr 21px;
+            display: -ms-grid;
+            height: 100%;
+            width: 250px;
+            padding: 6px 15px 2px 15px;
+        }
+        
+            .playlistspage .itemlistsection .videolist .videoitem .item-info {
+                -ms-grid-column: 3;
+                margin-left: 106px;
+                margin-right: 10px;
+                overflow: hidden;
+            }
+
+                .playlistspage .itemlistsection .videolist .videoitem .videoitem-info .videoitem-title {
+                    margin-top: 4px;                    
+                    width: 250px;
+                }
+
+
+@media screen and (-ms-view-state: filled) {
+    .playlistspage {
+        -ms-grid-columns: 86px 334px 40px 1fr;
+    }
+
+        .playlistspage header[role=banner] {
+            -ms-grid-columns: 29px 71px 1fr;
+        }
+
+        .playlistspage .itemlistsection .playlist .item {
+            -ms-grid-columns: 60px 1fr;
+            height: 60px;
+            margin-bottom: 0;
+            width: 282px;
+        }
+
+            /*.playlistspage .itemlistsection .playlist .item .item-image {
+                height: 60px;
+                width: 60px;
+            }*/
+
+            .playlistspage .itemlistsection .playlist .item .item-info .item-title {
+                margin-top: 4px;
+                max-height: 40px;
+                overflow: hidden;
+            }
+
+            /*.playlistspage .itemlistsection .playlist .item .item-info .item-description {
+                display: none;
+            }*/
+
+        .playlistspage .videosection {
+            padding-left: 60px;
+            padding-right: 60px;
+        }
+}
+
+@media screen and (-ms-view-state: snapped) {
+    .playlistspage {
+        -ms-grid-columns: 320px 0px;
+    }
+
+        .playlistspage .itemlistsection {
+            margin-left: 6px;
+            margin-right: 6px;
+        }
+
+            .playlistspage .itemlistsection .playlist .item {
+                -ms-grid-columns: 60px 1fr;
+                height: 60px;
+                width: 282px;
+            }
+
+                .playlistspage .itemlistsection .playlist .item .item-image {
+                    height: 60px;
+                    width: 60px;
+                }
+
+                .playlistspage .itemlistsection .playlist .item .item-info .item-title {
+                    margin-top: 4px;
+                    max-height: 30px;
+                    overflow: hidden;
+                }
+
+                /*.playlistspage .itemlistsection .playlist .item .item-info .item-description {
+                    visibility: hidden;
+                }*/
+
+    [dir] .playlistspage .videosection {
+        -ms-grid-row-span: 1;
+        -ms-grid-row: 2;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .playlistspage .videosection header {
+        display: block;
+        margin-top: 0;
+    }
+
+        .playlistspage .videosection header .text {
+            -ms-grid-column: 1;
+            margin-top: 6px;
+        }
+
+            /*.playlistspage .videosection header .text .article-subtitle {
+                margin-bottom: 16px;
+                margin-top: 10px;
+                overflow: hidden;
+            }
+
+        .playlistspage .videosection header .article-image {
+            height: 160px;
+            width: 242px;
+        }*/
+
+    .playlistspage .itemlistsection, .playlistspage .videosection {
+        -ms-grid-column: 2;
+        visibility: hidden;
+    }
+
+    .playlistspage .primarycolumn {
+        -ms-grid-column: 1;
+        visibility: visible;
+    }
+}
+
+@media screen and (-ms-view-state: fullscreen-portrait) {
+    .playlistspage {
+        -ms-grid-columns: 1fr;
+    }
+
+        .playlistspage .itemlistsection {
+            padding-left: 86px;
+            padding-right: 86px;
+        }
+
+            .playlistspage .itemlistsection .playlist .win-vertical.win-viewport .win-container {
+                margin-left: 7px;
+                margin-right: calc(100% - 510px);
+            }
+
+            .playlistspage .itemlistsection .playlist.win-rtl .win-vertical.win-viewport .win-container {
+                margin-left: calc(100% - 510px);
+                margin-right: 22px;
+            }
+
+    [dir] .playlistspage .videosection {
+        -ms-grid-row: 2;
+        -ms-grid-row-span: 1;
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+
+    .playlistspage .videosection .header {
+        margin-top: 0;
+    }
+
+    .playlistspage .itemlistsection, .playlistspage .videosection {
+        -ms-grid-column: 1;
+        visibility: hidden;
+    }
+
+    .playlistspage .primarycolumn {
+        -ms-grid-column: 1;
+        visibility: visible;
+    }
+}
+
+/*.playlistspage section[role=main] {
+    -ms-grid-row: 0;
     -ms-grid-row-span: 2;
 }
 
-/* This selector is used to prevent ui-dark/light.css from overwriting changes
-   to .win-surface. */
+/  * This selector is used to prevent ui-dark/light.css from overwriting changes
+   to .win-surface. *  /
 .playlistspage .playlist .win-horizontal.win-viewport .win-surface {
     margin-bottom: 60px;
     margin-left: 115px;
@@ -27,9 +328,9 @@
         width: 250px;
     }
 
-        /*.playlistspage .playlist .item .item-image {
+        /  *.playlistspage .playlist .item .item-image {
             -ms-grid-row-span: 2;
-        }*/
+        }*  /
 
         .playlistspage .playlist .item .item-overlay {
             -ms-grid-row: 2;
@@ -98,12 +399,12 @@
             width: 272px;
         }
 
-            /*.playlistspage .playlist .item .item-image, .playlistspage .playlist .item:hover .item-image {
+            /  *.playlistspage .playlist .item .item-image, .playlistspage .playlist .item:hover .item-image {
                 -ms-grid-column: 1;
                 -ms-grid-row-span: 1;
                 height: 60px;
                 width: 60px;
-            }*/
+            }*  /
 
             .playlistspage .playlist .item .item-overlay {
                 -ms-grid-column: 2;
@@ -131,4 +432,4 @@
     .playlistspage .playlist .win-horizontal.win-viewport .win-surface {
         margin-left: 100px;
     }
-}
+}*/

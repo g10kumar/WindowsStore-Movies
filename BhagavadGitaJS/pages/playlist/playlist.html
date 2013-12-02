@@ -19,7 +19,16 @@
         <div class="item">
             <div class="item-overlay">
                 <h4 class="item-title" data-win-bind="textContent: title"></h4>
-                <h1 class="item-title" data-win-bind="textContent: playtitle" style="visibility:hidden"></h1>
+                <h1 class="item-subtitle" data-win-bind="textContent: playtitle" style="visibility: hidden"></h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="videoitemtemplate" data-win-control="WinJS.Binding.Template">
+        <div class="videoitem">
+            <div class="videoitem-overlay">
+                <h4 class="videoitem-title" data-win-bind="textContent: title"></h4>
+                <h1 class="videoitem-videoid" data-win-bind="textContent: videoid" style="visibility: hidden"></h1>
             </div>
         </div>
     </div>
@@ -32,9 +41,12 @@
                 <span class="pagetitle">Play List</span>
             </h1>
         </header>
-        <section aria-label="Main content" role="main">
-            <div class="playlist win-selectionstylefilled" aria-label="List of groups" data-win-control="WinJS.UI.ListView"></div>
-        </section>        
-    </div>   
+        <div class="itemlistsection" aria-label="List column">
+            <div class="playlist win-selectionstylefilled" aria-label="List of groups" data-win-control="WinJS.UI.ListView" data-win-options="{ selectionMode: 'single'}"></div>
+        </div>
+        <div class="videosection" aria-label="List column">
+            <div class="videolist win-selectionstylefilled" aria-label="List of groups" data-win-control="WinJS.UI.ListView" data-win-options="{ selectionMode: 'single'}"></div>
+        </div>
+    </div>
 </body>
 </html>
