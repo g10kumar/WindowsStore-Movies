@@ -1950,4 +1950,6 @@
             </Setter.Value>
         </Setter>
     </Style>
+    <SolidColorBrush Color="#FF01A2A6" x:Key="HeadingColor"/>
+    
 </ResourceDictionary>

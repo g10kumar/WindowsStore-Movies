@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>w8ga</id>
+    <version>2.5</version>
+    <title>Google Analytics for WinRT (Windows 8 and 8.1) apps</title>
+    <authors>Alex Sorokoletov</authors>
+    <owners>Alex Sorokoletov</owners>
+    <projectUrl>http://w8ga.codeplex.com/</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Google Analytics for Windows 8 Metro style apps (WinRT)
+
+HOW TO USE  http://w8ga.codeplex.com/wikipage?title=Howto&amp;referringTitle=Home</description>
+    <summary>Google Analytics for Windows 8 Metro style apps (WinRT)
+Google Analytics for WinRT supports:
+1. Pageviews tracking + realtime support
+2. Event tracking
+3. Custom variables tracking
+4. D..
+Req...</summary>
+    <releaseNotes>Improved device tracking,
+New ga.js core,
+Device model and manufacturer tracking
+Custom variables support
+Clearer description
+Fixed generic.xaml issue</releaseNotes>
+    <tags>winrt windows8 metro google analytics ga.js win8 msaf</tags>
+  </metadata>
+</package>

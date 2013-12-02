@@ -45,15 +45,15 @@
                             <EntranceThemeTransition FromHorizontalOffset="120" />
                         </TransitionCollection>
                     </Grid.Transitions>
-                    <StackPanel Orientation="Vertical">
-                        <StackPanel Orientation="Vertical">
+                    <StackPanel Orientation="Vertical" ScrollViewer.VerticalScrollBarVisibility="Auto" >
+                        <StackPanel Orientation="Vertical" ScrollViewer.VerticalScrollBarVisibility="Auto">
                             <TextBlock x:Uid="AboutUs1" Text=""  Style="{StaticResource AboutUsTextStyle}" />
                             <!--<TextBlock Text="The app was developed by Daksa Technologies. We develop apps for Windows Phone &amp; Windows 8, web applications, websites and custom Windows software."  Style="{StaticResource AboutUsTextStyle}" />
                             <TextBlock Text="Contact us for your next web or mobile project at info@daksatech.com"   Style="{StaticResource AboutUsTextStyle}" />-->
                             <TextBlock x:Uid="AboutUs2" Text=""   Style="{StaticResource AboutUsTextStyle}" />
                             <TextBlock x:Uid="AboutUs3" Text="" Style="{StaticResource AboutUsTextStyle}"></TextBlock>
                         </StackPanel>
-                        <StackPanel Orientation="Vertical" Margin="0,20,0,0">
+                        <StackPanel Orientation="Vertical" Margin="0,20,0,0" ScrollViewer.VerticalScrollBarVisibility="Auto">
                             <TextBlock x:Uid="How_To" Text=""  Style="{StaticResource AboutUsTextStyle}" FontSize="16" FontWeight="Bold" />
                             <TextBlock x:Uid="AboutUs4" Text=""  Style="{StaticResource AboutUsTextStyle}" />
                             <TextBlock x:Uid="AboutUs5" Text=""  Style="{StaticResource AboutUsTextStyle}" />

@@ -1,272 +1,1178 @@
-<?xml version="1.0" encoding="utf-8" ?><root>
-<movie><rank>1</rank>
-    <name> L'Age d'Or/Un Chien Andalou /The Age of Gold or The Golden Age</name>
-    <desc></desc>
-	</movie><movie><rank>2</rank>
-    <name> Aguirre, the Wrath of God /Aguirre</name>
-    <desc></desc>
-	</movie><movie><rank>3</rank>
-    <name> The American Friend /Der Amerikanische Freund</name>
-    <desc></desc>
-	</movie><movie><rank>4</rank>
-    <name> A Nous la Liberte /Freedom for Us</name>
-    <desc></desc>
-	</movie><movie><rank>5</rank>
-    <name> Ashes and Diamonds /Popiol i Diament</name>
-    <desc></desc>
-	</movie><movie><rank>6</rank>
-    <name> L'Avventura /The Adventure</name>
-    <desc></desc>
-	</movie><movie><rank>7</rank>
-    <name> L'Atalante /Le Chaland Qui Passe</name>
-    <desc></desc>
-	</movie><movie><rank>8</rank>
-    <name> Belle de Jour /Beauty of the Day</name>
-    <desc></desc>
-	</movie><movie><rank>9</rank>
-    <name> La Belle et la Bete /Beauty and the Beast</name>
-    <desc></desc>
-	</movie><movie><rank>10</rank>
-    <name> The Bicycle Thief /Ladri di Biciclette</name>
-    <desc></desc>
-	</movie><movie><rank>11</rank>
-    <name> The Bitter Tears of Petra von Kant /Die Bitteren Traenen der Petra von Kant</name>
-    <desc></desc>
-	</movie><movie><rank>12</rank>
-    <name> The Blue Angel /Der Blaue Engel</name>
-    <desc></desc>
-	</movie><movie><rank>13</rank>
-    <name> Le Boucher /The Butcher</name>
-    <desc></desc>
-	</movie><movie><rank>14</rank>
-    <name> Boudu Saved From Drowning /Boudu Sauve des Eaux</name>
-    <desc></desc>
-	</movie><movie><rank>15</rank>
-    <name> Breathless /A Bout de Souffle</name>
-    <desc></desc>
-	</movie><movie><rank>16</rank>
-    <name> The Burmese Harp /Harp of Burma or Birumano Tategoto</name>
-    <desc></desc>
-	</movie><movie><rank>18</rank>
-    <name> La Chienne /The Bitch or Isn't Life a Bitch?</name>
-    <desc></desc>
-	</movie><movie><rank>19</rank>
-    <name> The Children of Paradise /Les Enfants du Paradis</name>
-    <desc></desc>
-	</movie><movie><rank>20</rank>
-    <name> The Conformist /Il Conformista</name>
-    <desc></desc>
-	</movie><movie><rank>21</rank>
-    <name> Contempt /Le Mepris or Il Disprezzo</name>
-    <desc></desc>
-	</movie><movie><rank>22</rank>
-    <name> Cria! /Cria Cuervos or Raise Ravens</name>
-    <desc></desc>
-	</movie><movie><rank>23</rank>
-    <name> The Decalogue /Dekalog</name>
-    <desc></desc>
-	</movie><movie><rank>24</rank>
-    <name> Les Diabolique /Diabolique</name>
-    <desc></desc>
-	</movie><movie><rank>25</rank>
-    <name> Diary of a Country Priest /Le Journal d'un Cure de Campagne</name>
-    <desc></desc>
-	</movie><movie><rank>26</rank>
-    <name> The Discreet Charm of the Bourgeoisie /Le Charme Discret de la Bourgeoisie</name>
-    <desc></desc>
-	</movie><movie><rank>27</rank>
-    <name> Dr. Mabuse, Parts 1 and 2 /Doktor Mabuse der Spieler</name>
-    <desc></desc>
-	</movie><movie><rank>28</rank>
-    <name> La Dolce Vita /The Sweet Life</name>
-    <desc></desc>
-	</movie><movie><rank>29</rank>
-    <name> The Double Life of Veronique /La Double Vie de Veronique</name>
-    <desc></desc>
-	</movie><movie><rank>30</rank>
-    <name> The Earrings of Madame de. . . /Diamond Earrings or Madame de...</name>
-    <desc></desc>
-	</movie><movie><rank>31</rank>
-    <name> Earth /Soil or Zemlya</name>
-    <desc></desc>
-	</movie><movie><rank>32</rank>
-    <name> L'Eclisse /The Eclipse</name>
-    <desc></desc>
-	</movie><movie><rank>33</rank>
-    <name> 8 1/2 /Eight and a Half</name>
-    <desc></desc>
-	</movie><movie><rank>34</rank>
-    <name> Europa '51 /Greatest Love</name>
-    <desc></desc>
-	</movie><movie><rank>35</rank>
-    <name> The Eyes Without a Face /Les Yeux Sans Visage or The Horror Chamber of Dr. Faustus or Occhi Senza Volto</name>
-    <desc></desc>
-	</movie><movie><rank>36</rank>
-    <name> Fanny and Alexander /Fanny och Alexander</name>
-    <desc></desc>
-	</movie><movie><rank>37</rank>
-    <name> Floating Weeds /Ukigusa or Drifting Weeds</name>
-    <desc></desc>
-	</movie><movie><rank>38</rank>
-    <name> Forbidden Games /Les Jeux Interdits or The Secret Game</name>
-    <desc></desc>
-	</movie><movie><rank>39</rank>
-    <name> The 400 Blows /Les Quatre Cents Coups</name>
-    <desc></desc>
-	</movie><movie><rank>41</rank>
-    <name> The Golden Coach /Le Carrosse d'Or</name>
-    <desc></desc>
-	</movie><movie><rank>42</rank>
-    <name> The Gospel According to St. Matthew /Il Vangelo Secondo Matteo or L'Evangile Selon Saint-Matthieu</name>
-    <desc></desc>
-	</movie><movie><rank>43</rank>
-    <name> Ikiru /Doomed or To Live or Living</name>
-    <desc></desc>
-	</movie><movie><rank>44</rank>
-    <name> Le Jour Se Leve /Daybreak</name>
-    <desc></desc>
-	</movie><movie><rank>45</rank>
-    <name> Jules and Jim /Jules et Jim</name>
-    <desc></desc>
-	</movie><movie><rank>46</rank>
-    <name> The Kingdom /Riget</name>
-    <desc></desc>
-	</movie><movie><rank>48</rank>
-    <name> Landscape in the Mist /Topio Stin Omichli or Paysage Dans Le Brouillard</name>
-    <desc></desc>
-	</movie><movie><rank>49</rank>
-    <name> Last Year at Marienbad /L'Anee Derniere a Marienbad</name>
-    <desc></desc>
-	</movie><movie><rank>50</rank>
-    <name> Lola /Donna di Vita</name>
-    <desc></desc>
-	</movie><movie><rank>51</rank>
-    <name> Lola Montes /The Sins of Lola Montes</name>
-    <desc></desc>
-	</movie><movie><rank>53</rank>
-    <name> Masculin Feminin /Masculine Feminine</name>
-    <desc></desc>
-	</movie><movie><rank>56</rank>
-    <name> Murmur of the Heart /Le Souffle au Coeur or Dearest Love</name>
-    <desc></desc>
-	</movie><movie><rank>58</rank>
-    <name> Night and Fog /Nuit et Brouillard</name>
-    <desc></desc>
-	</movie><movie><rank>59</rank>
-    <name> The Night of the Shooting Stars /La Notte di San Lorenzo or The Night of San Lorenzo</name>
-    <desc></desc>
-	</movie><movie><rank>60</rank>
-    <name> 1900 /Novecento</name>
-    <desc></desc>
-	</movie><movie><rank>61</rank>
-    <name> Nosferatu /Nosferatu - Eine Symphonie des Grauens or Nosferatu</name>
-    <desc></desc>
-	</movie><movie><rank>62</rank>
-    <name> La Notte /The Night or La Nuit</name>
-    <desc></desc>
-	</movie><movie><rank>63</rank>
-    <name> Pandora's Box /Lulu or Die Buechse der Pandora</name>
-    <desc></desc>
-	</movie><movie><rank>65</rank>
-    <name> Persona /Masks</name>
-    <desc></desc>
-	</movie><movie><rank>66</rank>
-    <name> Pierrot le Fou /Crazy Pete</name>
-    <desc></desc>
-	</movie><movie><rank>70</rank>
-    <name> Rashomon /In the Woods</name>
-    <desc></desc>
-	</movie><movie><rank>71</rank>
-    <name> The Red and the White /Csillagosok</name>
-    <desc></desc>
-	</movie><movie><rank>72</rank>
-    <name> The Red Desert /Il Deserto Rosso</name>
-    <desc></desc>
-	</movie><movie><rank>74</rank>
-    <name> Rocco and His Brothers /Rocco e I Suoi Fratelli or Rocco et Ses Freres</name>
-    <desc></desc>
-	</movie><movie><rank>76</rank>
-    <name> The Rules of the Game /La Regle du Jeu</name>
-    <desc></desc>
-	</movie><movie><rank>77</rank>
-    <name> Sansho Dayu /Sansho The Bailiff</name>
-    <desc></desc>
-	</movie><movie><rank>78</rank>
-    <name> Senso /The Wanton Contessa</name>
-    <desc></desc>
-	</movie><movie><rank>79</rank>
-    <name> The Seven Samurai /Shichinin No Samurai or The Magnificent Seven</name>
-    <desc></desc>
-	</movie><movie><rank>80</rank>
-    <name> Shadows of Forgotten Ancestors /Tini Zabutykh Predkiv or Shadows of Our Ancestors</name>
-    <desc></desc>
-	</movie><movie><rank>81</rank>
-    <name> Shame /Skammen</name>
-    <desc></desc>
-	</movie><movie><rank>83</rank>
-    <name> Smiles of a Summer Night /Sommarnattens Leende</name>
-    <desc></desc>
-	</movie><movie><rank>84</rank>
-    <name> Solaris /Solyaris</name>
-    <desc></desc>
-	</movie><movie><rank>85</rank>
-    <name> The Spider's Stratagem /La Strategia del Ragno</name>
-    <desc></desc>
-	</movie><movie><rank>86</rank>
-    <name> Spirit of the Beehive /El Espiritu de la Colmena</name>
-    <desc></desc>
-	</movie><movie><rank>87</rank>
-    <name> Strike /Stachka</name>
-    <desc></desc>
-	</movie><movie><rank>88</rank>
-    <name> Throne of Blood /Kumonosu-jo or The Castle of the Spider's Web or Cobweb Castle</name>
-    <desc></desc>
-	</movie><movie><rank>89</rank>
-    <name> Through a Glass Darkly /Sasom I En Spegel</name>
-    <desc></desc>
-	</movie><movie><rank>90</rank>
-    <name> Tokyo Story /Tokyo Monogatari</name>
-    <desc></desc>
-	</movie><movie><rank>92</rank>
-    <name> Two English Girls /Les Deux Anglaises et le Continent or Anne and Muriel</name>
-    <desc></desc>
-	</movie><movie><rank>93</rank>
-    <name> Ugetsu /Ugetsu Monogatari or Tales of a Pale Moon After the Rain</name>
-    <desc></desc>
-	</movie><movie><rank>94</rank>
-    <name> The Umbrellas of Cherbourg /Les Parapluies de Cherbourg or Die Regenschirme von Cherbourg</name>
-    <desc></desc>
-	</movie><movie><rank>95</rank>
-    <name> Vampyr /The Vampire or Vampyr</name>
-    <desc></desc>
-	</movie><movie><rank>98</rank>
-    <name> Wings of Desire /Der Himmel Uber Berlin</name>
-    <desc></desc>
-	</movie><movie><rank>99</rank>
-    <name> The World of Apu /Apur Sansar or Apu Sansat</name>
-    <desc></desc>
-	</movie><movie><rank>100</rank>
-    <name> Zero de Conduit /Zero for Conduct</name>
-    <desc></desc>
-	</movie><movie>
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <movie release="1930" rating="0.77" genere="Comedy, Drama" language="French">
+    <rank>1</rank>
+    <name>L'Age d'Or</name>
+    <imdbid>21577</imdbid>
+  </movie>
+  <movie release="1972" rating="0.81" genere="Adventure, Drama, History" language="GermanQuechua">
+    <rank>2</rank>
+    <name>Aguirre, the Wrath of God</name>
+    <imdbid>68182</imdbid>
+  </movie>
+  <movie release="1963" rating="0.83" genere="Drama,Fantasy" language="ItalianEnglishFrenchGerman">
+    <rank>3</rank>
+    <name>8½</name>
+    <imdbid>56801</imdbid>
+  </movie>
+  <movie release="1931" rating="0.76" genere="Comedy,Musical" language="French">
+    <rank>4</rank>
+    <name>A Nous la Liberté</name>
+    <imdbid>22599</imdbid>
+  </movie>
+  <movie release="1958" rating="0.79" genere="Drama, War" language="Polish">
+    <rank>5</rank>
+    <name>Ashes and Diamonds</name>
+    <imdbid>52080</imdbid>
+  </movie>
+  <movie release="1960" rating="0.81" genere="Drama, Mystery" language="ItalianEnglish">
+    <rank>6</rank>
+    <name>L'Avventura</name>
+    <imdbid>53619</imdbid>
+  </movie>
+  <movie release="1934" rating="0.8" genere="Drama, Romance" language="FrenchRussian">
+    <rank>7</rank>
+    <name>L'Atalante</name>
+    <imdbid>24844</imdbid>
+  </movie>
+  <movie release="1967" rating="0.79" genere="Drama" language="FrenchSpanishMongolian">
+    <rank>8</rank>
+    <name>Belle de Jour</name>
+    <imdbid>61395</imdbid>
+  </movie>
+  <movie release="1948" rating="0.85" genere="Crime, Drama" language="Italian">
+    <rank>9</rank>
+    <name>Bicycle Thieves</name>
+    <imdbid>40522</imdbid>
+  </movie>
+  <movie release="1972" rating="0.75" genere="Drama" language="German">
+    <rank>10</rank>
+    <name>The Bitter Tears of Petra von Kant</name>
+    <imdbid>68278</imdbid>
+  </movie>
+  <movie release="1930" rating="0.79" genere="Drama, Music" language="GermanEnglish">
+    <rank>11</rank>
+    <name>The Blue Angel</name>
+    <imdbid>20697</imdbid>
+  </movie>
+  <movie release="1970" rating="0.76" genere="Thriller" language="French">
+    <rank>12</rank>
+    <name>Le Boucher</name>
+    <imdbid>64106</imdbid>
+  </movie>
+  <movie release="1963" rating="0.81" genere="Drama" language="Swedish">
+    <rank>13</rank>
+    <name>Winter Light</name>
+    <imdbid>57358</imdbid>
+  </movie>
+  <movie release="1960" rating="0.8" genere="Crime, Drama" language="FrenchEnglish">
+    <rank>14</rank>
+    <name>Breathless</name>
+    <imdbid>53472</imdbid>
+  </movie>
+  <movie release="1956" rating="0.81" genere="Drama, Music, War" language="JapaneseEnglish">
+    <rank>15</rank>
+    <name>The Burmese Harp</name>
+    <imdbid>49012</imdbid>
+  </movie>
+  <movie release="1931" rating="0.79" genere="Drama" language="French">
+    <rank>16</rank>
+    <name>La Chienne</name>
+    <imdbid>21739</imdbid>
+  </movie>
+  <movie release="1970" rating="0.81" genere="Drama" language="ItalianFrenchLatin">
+    <rank>17</rank>
+    <name>The Conformist</name>
+    <imdbid>65571</imdbid>
+  </movie>
+  <movie release="1963" rating="0.79" genere="Drama" language="FrenchEnglishGermanItalian">
+    <rank>18</rank>
+    <name>Contempt</name>
+    <imdbid>57345</imdbid>
+  </movie>
+  <movie release="1951" rating="0.79" genere="Drama" language="French">
+    <rank>19</rank>
+    <name>Diary of a Country Priest</name>
+    <imdbid>42619</imdbid>
+  </movie>
+  <movie release="1972" rating="0.8" genere="Comedy, Drama, Fantasy" language="FrenchSpanish">
+    <rank>20</rank>
+    <name>The Discreet Charm of the Bourgeoisie</name>
+    <imdbid>68361</imdbid>
+  </movie>
+  <movie release="1960" rating="0.81" genere="Comedy, Drama" language="ItalianEnglishFrenchGerman">
+    <rank>21</rank>
+    <name>La Dolce Vita</name>
+    <imdbid>53779</imdbid>
+  </movie>
+  <movie release="1991" rating="0.79" genere="Drama, Fantasy, Music, Romance" language="FrenchPolishItalian">
+    <rank>22</rank>
+    <name>The Double Life of Véronique</name>
+    <imdbid>101765</imdbid>
+  </movie>
+  <movie release="2007" rating="0.78" genere="Documentary" language="English">
+    <rank>23</rank>
+    <name>Earth</name>
+    <imdbid>393597</imdbid>
+  </movie>
+  <movie release="1962" rating="0.8" genere="Drama, Romance" language="ItalianEnglish">
+    <rank>24</rank>
+    <name>L'Eclisse</name>
+    <imdbid>56736</imdbid>
+  </movie>
+  <movie release="1982" rating="0.83" genere="Drama" language="SwedishGermanYiddishEnglish">
+    <rank>25</rank>
+    <name>Fanny and Alexander</name>
+    <imdbid>83922</imdbid>
+  </movie>
+  <movie release="1959" rating="0.8" genere="Drama" language="Japanese">
+    <rank>26</rank>
+    <name>Floating Weeds</name>
+    <imdbid>53390</imdbid>
+  </movie>
+  <movie release="1952" rating="0.81" genere="Drama, War" language="French">
+    <rank>27</rank>
+    <name>Forbidden Games</name>
+    <imdbid>43686</imdbid>
+  </movie>
+  <movie release="1959" rating="0.83" genere="Crime, Drama" language="FrenchEnglish">
+    <rank>28</rank>
+    <name>The 400 Blows</name>
+    <imdbid>53198</imdbid>
+  </movie>
+  <movie release="2003" rating="0.85" genere="Drama, Romance" language="ItalianEnglishNorwegian">
+    <rank>29</rank>
+    <name>The Best of Youth</name>
+    <imdbid>346336</imdbid>
+  </movie>
+  <movie release="1964" rating="0.78" genere="Biography, Drama, History" language="Italian">
+    <rank>30</rank>
+    <name>The Gospel According to St. Matthew</name>
+    <imdbid>58715</imdbid>
+  </movie>
+  <movie release="1952" rating="0.85" genere="Drama" language="Japanese">
+    <rank>31</rank>
+    <name>Ikiru</name>
+    <imdbid>44741</imdbid>
+  </movie>
+  <movie release="1962" rating="0.8" genere="Drama, Romance" language="FrenchGermanEnglish">
+    <rank>32</rank>
+    <name>Jules and Jim</name>
+    <imdbid>55032</imdbid>
+  </movie>
+  <movie release="1966" rating="0.83" genere="Crime, Drama, History, War" language="FrenchItalianEnglishArabic">
+    <rank>33</rank>
+    <name>The Battle of Algiers</name>
+    <imdbid>58946</imdbid>
+  </movie>
+  <movie release="1988" rating="0.8" genere="Drama" language="Greek">
+    <rank>34</rank>
+    <name>Landscape in the Mist</name>
+    <imdbid>96288</imdbid>
+  </movie>
+  <movie release="1961" rating="0.79" genere="Drama, Mystery, Romance" language="French">
+    <rank>35</rank>
+    <name>Last Year at Marienbad</name>
+    <imdbid>54632</imdbid>
+  </movie>
+  <movie release="1981" rating="0.75" genere="Comedy, Drama" language="GermanEnglish">
+    <rank>36</rank>
+    <name>Lola</name>
+    <imdbid>82671</imdbid>
+  </movie>
+  <movie release="1966" rating="0.77" genere="Drama, Romance" language="FrenchSwedishEnglish">
+    <rank>37</rank>
+    <name>Masculin Féminin</name>
+    <imdbid>60675</imdbid>
+  </movie>
+  <movie release="1971" rating="0.77" genere="Drama" language="French">
+    <rank>38</rank>
+    <name>Murmur of the Heart</name>
+    <imdbid>67778</imdbid>
+  </movie>
+  <movie release="1955" rating="0.86" genere="Documentary, Short, History, War" language="French">
+    <rank>39</rank>
+    <name>Night and Fog</name>
+    <imdbid>48434</imdbid>
+  </movie>
+  <movie release="1982" rating="0.75" genere="Drama, History, War" language="Italian">
+    <rank>40</rank>
+    <name>The Night of the Shooting Stars</name>
+    <imdbid>84422</imdbid>
+  </movie>
+  <movie release="1976" rating="0.78" genere="Drama, History" language="Italian">
+    <rank>41</rank>
+    <name>1900</name>
+    <imdbid>74084</imdbid>
+  </movie>
+  <movie release="1922" rating="0.79" genere="Horror" language="German">
+    <rank>42</rank>
+    <name>Nosferatu</name>
+    <imdbid>13442</imdbid>
+  </movie>
+  <movie release="1961" rating="0.8" genere="Drama" language="Italian">
+    <rank>43</rank>
+    <name>La Notte</name>
+    <imdbid>54130</imdbid>
+  </movie>
+  <movie release="1929" rating="0.79" genere="Crime, Drama, Romance" language="German">
+    <rank>44</rank>
+    <name>Pandora's Box</name>
+    <imdbid>18737</imdbid>
+  </movie>
+  <movie release="1966" rating="0.83" genere="Drama, Mystery, Thriller" language="SwedishEnglish">
+    <rank>45</rank>
+    <name>Persona</name>
+    <imdbid>60827</imdbid>
+  </movie>
+  <movie release="1965" rating="0.78" genere="Comedy, Crime, Drama, Musical, Romance" language="FrenchEnglish">
+    <rank>46</rank>
+    <name>Pierrot le Fou</name>
+    <imdbid>59592</imdbid>
+  </movie>
+  <movie release="1950" rating="0.85" genere="Crime, Drama" language="Japanese">
+    <rank>47</rank>
+    <name>Rashomon</name>
+    <imdbid>42876</imdbid>
+  </movie>
+  <movie release="1967" rating="0.77" genere="Drama, War" language="HungarianRussian">
+    <rank>48</rank>
+    <name>The Red and the White</name>
+    <imdbid>61537</imdbid>
+  </movie>
+  <movie release="1960" rating="0.82" genere="Crime, Drama, Sport" language="Italian">
+    <rank>49</rank>
+    <name>Rocco and His Brothers</name>
+    <imdbid>54248</imdbid>
+  </movie>
+  <movie release="1939" rating="0.82" genere="Comedy, Drama" language="French">
+    <rank>50</rank>
+    <name>The Rules of the Game</name>
+    <imdbid>31885</imdbid>
+  </movie>
+  <movie release="1954" rating="0.75" genere="Drama, History, Romance, War" language="ItalianGerman">
+    <rank>51</rank>
+    <name>Senso</name>
+    <imdbid>47469</imdbid>
+  </movie>
+  <movie release="1965" rating="0.81" genere="Drama, History, Romance" language="Ukrainian">
+    <rank>52</rank>
+    <name>Shadows of Forgotten Ancestors</name>
+    <imdbid>58642</imdbid>
+  </movie>
+  <movie release="1988" rating="0.85" genere="Drama" language="ItalianEnglishPortuguese">
+    <rank>53</rank>
+    <name>Cinema Paradiso</name>
+    <imdbid>95765</imdbid>
+  </movie>
+  <movie release="1955" rating="0.79" genere="Comedy, Romance" language="Swedish">
+    <rank>54</rank>
+    <name>Smiles of a Summer Night</name>
+    <imdbid>48641</imdbid>
+  </movie>
+  <movie release="1970" rating="0.72" genere="Drama, Mystery" language="Italian">
+    <rank>55</rank>
+    <name>The Spider's Stratagem</name>
+    <imdbid>66413</imdbid>
+  </movie>
+  <movie release="1973" rating="0.81" genere="Drama, Fantasy" language="Spanish">
+    <rank>56</rank>
+    <name>Spirit of the Beehive</name>
+    <imdbid>70040</imdbid>
+  </movie>
+  <movie release="1925" rating="0.77" genere="Drama" language="0">
+    <rank>57</rank>
+    <name>Strike</name>
+    <imdbid>15361</imdbid>
+  </movie>
+  <movie release="1957" rating="0.83" genere="Drama" language="Japanese">
+    <rank>58</rank>
+    <name>Throne of Blood</name>
+    <imdbid>50613</imdbid>
+  </movie>
+  <movie release="1961" rating="0.81" genere="Drama" language="Swedish">
+    <rank>59</rank>
+    <name>Through a Glass Darkly</name>
+    <imdbid>55499</imdbid>
+  </movie>
+  <movie release="1953" rating="0.84" genere="Drama" language="Japanese,English">
+    <rank>60</rank>
+    <name>Tokyo Story</name>
+    <imdbid>46438</imdbid>
+  </movie>
+  <movie release="1971" rating="0.73" genere="Romance, Drama" language="FrenchEnglish">
+    <rank>61</rank>
+    <name>Two English Girls</name>
+    <imdbid>66989</imdbid>
+  </movie>
+  <movie release="1953" rating="0.83" genere="Drama, Fantasy, Mystery" language="Japanese">
+    <rank>62</rank>
+    <name>Ugetsu</name>
+    <imdbid>46478</imdbid>
+  </movie>
+  <movie release="1964" rating="0.79" genere="Drama, Musical, Romance" language="French">
+    <rank>63</rank>
+    <name>The Umbrellas of Cherbourg</name>
+    <imdbid>58450</imdbid>
+  </movie>
+  <movie release="1932" rating="0.77" genere="Horror" language="German">
+    <rank>64</rank>
+    <name>Vampyr</name>
+    <imdbid>23649</imdbid>
+  </movie>
+  <movie release="1987" rating="0.83" genere="Fantasy, Drama, Romance" language="GermanEnglishFrenchTurkishHebrewSpanishJapanese">
+    <rank>65</rank>
+    <name>Wings of Desire</name>
+    <imdbid>93191</imdbid>
+  </movie>
+  <movie release="1959" rating="0.82" genere="Drama" language="Bengali">
+    <rank>66</rank>
+    <name>The World of Apu</name>
+    <imdbid>52572</imdbid>
+  </movie>
+  <movie release="1945" rating="0.83" genere="Drama, Romance" language="French">
+    <rank>67</rank>
+    <name>Children of Paradise</name>
+    <imdbid>37674</imdbid>
+  </movie>
+  <movie release="1976" rating="0.81" genere="Drama" language="Spanish">
+    <rank>68</rank>
+    <name>Cria Cuervos</name>
+    <imdbid>74360</imdbid>
+  </movie>
+  <movie release="1955" rating="0.83" genere="Horror, Mystery, Thriller" language="French,English">
+    <rank>69</rank>
+    <name>Diabolique</name>
+    <imdbid>46911</imdbid>
+  </movie>
+  <movie release="1922" rating="0.79" genere="Crime, Mystery, Thriller" language="German">
+    <rank>70</rank>
+    <name>Dr. Mabuse: The Gambler</name>
+    <imdbid>13086</imdbid>
+  </movie>
+  <movie release="1953" rating="0.81" genere="Drama, Romance" language="French">
+    <rank>71</rank>
+    <name>The Earrings of Madame de...</name>
+    <imdbid>46022</imdbid>
+  </movie>
+  <movie release="2002" rating="0.87" genere="Crime, Drama" language="Portuguese">
+    <rank>72</rank>
+    <name>City of God</name>
+    <imdbid>317248</imdbid>
+  </movie>
+  <movie release="1960" rating="0.79" genere="Horror" language="French">
+    <rank>73</rank>
+    <name>Eyes Without a Face</name>
+    <imdbid>53459</imdbid>
+  </movie>
+  <movie release="1939" rating="0.79" genere="Crime, Drama, Romance, Thriller" language="French">
+    <rank>74</rank>
+    <name>Daybreak</name>
+    <imdbid>31514</imdbid>
+  </movie>
+  <movie release="1964" rating="0.77" genere="Drama" language="Italian,Turkish">
+    <rank>75</rank>
+    <name>Red Desert</name>
+    <imdbid>58003</imdbid>
+  </movie>
+  <movie release="1946" rating="0.79" genere="Drama, Romance,Fantasy" language="French">
+    <rank>76</rank>
+    <name>Beauty and the Beast/La belle et la bête</name>
+    <imdbid>38348</imdbid>
+  </movie>
+  <movie release="2007" rating="0.75" genere="Horror, Mystery" language="SpanishJapanese">
+    <rank>77</rank>
+    <name>[Rec]</name>
+    <imdbid>1038988</imdbid>
+  </movie>
+  <movie release="2000" rating="0.8" genere="Adventure, Comedy" language="Portuguese">
+    <rank>78</rank>
+    <name>A Dog's Will</name>
+    <imdbid>271383</imdbid>
+  </movie>
+  <movie release="1964" rating="0.79" genere="Western" language="ItalianSpanish">
+    <rank>79</rank>
+    <name>A Fistful of Dollars</name>
+    <imdbid>58461</imdbid>
+  </movie>
+  <movie release="2009" rating="0.8" genere="Crime, Drama" language="FrenchArabicCorsican">
+    <rank>80</rank>
+    <name>A Prophet</name>
+    <imdbid>1235166</imdbid>
+  </movie>
+  <movie release="1988" rating="0.82" genere="Drama, Romance" language="PortuguesePolish">
+    <rank>81</rank>
+    <name>A Short Film About Love</name>
+    <imdbid>95467</imdbid>
+  </movie>
+  <movie release="2004" rating="0.77" genere="Drama, Mystery, Romance, War" language="FrenchGermanCorsican">
+    <rank>82</rank>
+    <name>A Very Long Engagement</name>
+    <imdbid>344510</imdbid>
+  </movie>
+  <movie release="1999" rating="0.8" genere="Drama" language="Spanish,Catalan">
+    <rank>83</rank>
+    <name>All About My Mother</name>
+    <imdbid>185125</imdbid>
+  </movie>
+  <movie release="1973" rating="0.8" genere="Comedy, Drama" language="ItalianGreek, Ancient (to 1453)">
+    <rank>84</rank>
+    <name>Amarcord</name>
+    <imdbid>71129</imdbid>
+  </movie>
+  <movie release="2001" rating="0.84" genere="Comedy, Romance" language="FrenchRussian">
+    <rank>85</rank>
+    <name>Amélie</name>
+    <imdbid>211915</imdbid>
+  </movie>
+  <movie release="2000" rating="0.82" genere="Drama, Thriller" language="Spanish">
+    <rank>86</rank>
+    <name>Amores Perros</name>
+    <imdbid>245712</imdbid>
+  </movie>
+  <movie release="2012" rating="0.79" genere="Drama, Romance" language="FrenchEnglish">
+    <rank>87</rank>
+    <name>Amour</name>
+    <imdbid>1602620</imdbid>
+  </movie>
+  <movie release="1966" rating="0.83" genere="Biography, Drama, History" language="RussianItalianTatar">
+    <rank>88</rank>
+    <name>Andrei Rublev</name>
+    <imdbid>60107</imdbid>
+  </movie>
+  <movie release="2004" rating="0.77" genere="Comedy, Drama, Music, Romance" language="Swedish,English,Italian">
+    <rank>89</rank>
+    <name>As It Is in Heaven</name>
+    <imdbid>382330</imdbid>
+  </movie>
+  <movie release="1978" rating="0.81" genere="Drama, Music" language="Swedish,English">
+    <rank>90</rank>
+    <name>Autumn Sonata</name>
+    <imdbid>77711</imdbid>
+  </movie>
+  <movie release="2004" rating="0.75" genere="Drama, Mystery" language="SpanishLatin">
+    <rank>91</rank>
+    <name>Bad Education</name>
+    <imdbid>275491</imdbid>
+  </movie>
+  <movie release="1925" rating="0.8" genere="Drama, History" language="Russian">
+    <rank>92</rank>
+    <name>Battleship Potemkin</name>
+    <imdbid>15648</imdbid>
+  </movie>
+  <movie release="2001" rating="0.76" genere="Drama" language="Portuguese">
+    <rank>93</rank>
+    <name>Behind the Sun</name>
+    <imdbid>291003</imdbid>
+  </movie>
+  <movie release="2010" rating="0.74" genere="Drama" language="SpanishChineseWolof">
+    <rank>94</rank>
+    <name>Biutiful</name>
+    <imdbid>1164999</imdbid>
+  </movie>
+  <movie release="1959" rating="0.76" genere="Comedy, Drama, Music, Romance" language="Portuguese">
+    <rank>95</rank>
+    <name>Black Orpheus</name>
+    <imdbid>53146</imdbid>
+  </movie>
+  <movie release="2009" rating="0.73" genere="Drama, Romance, Thriller" language="SpanishEnglish">
+    <rank>96</rank>
+    <name>Broken Embraces</name>
+    <imdbid>913425</imdbid>
+  </movie>
+  <movie release="2001" rating="0.7" genere="Action, History, Horror" language="FrenchGermanItalian">
+    <rank>97</rank>
+    <name>Brotherhood of the Wolf</name>
+    <imdbid>237534</imdbid>
+  </movie>
+  <movie release="2002" rating="0.79" genere="Documentary, Crime" language="PortugueseSpanish">
+    <rank>98</rank>
+    <name>Bus 174</name>
+    <imdbid>340468</imdbid>
+  </movie>
+  <movie release="2005" rating="0.79" genere="Drama" language="French">
+    <rank>99</rank>
+    <name>C.R.A.Z.Y.</name>
+    <imdbid>401085</imdbid>
+  </movie>
+  <movie release="1952" rating="0.83" genere="Drama" language="Italian">
+    <rank>100</rank>
+    <name>Umberto D.</name>
+    <imdbid>45274</imdbid>
+  </movie>
+  <movie release="2003" rating="0.76" genere="Drama, Crime" language="Portuguese">
     <rank>101</rank>
-    <name> Incendies</name>
-    <desc></desc>
-  </movie><movie>
+    <name>Carandiru</name>
+    <imdbid>293007</imdbid>
+  </movie>
+  <movie release="2009" rating="0.77" genere="Action, Drama, Thriller" language="SpanishBasqueEnglish">
     <rank>102</rank>
-    <name> Senna (film)</name>
-    <desc></desc>
-  </movie><movie>
+    <name>Cell 211</name>
+    <imdbid>1242422</imdbid>
+  </movie>
+  <movie release="1994" rating="0.73" genere="Comedy, Horror" language="Italian">
     <rank>103</rank>
-    <name> Atonement (film)</name>
-    <desc></desc>
-  </movie><movie>
+    <name>Cemetery Man</name>
+    <imdbid>109592</imdbid>
+  </movie>
+  <movie release="1998" rating="0.81" genere="Drama" language="Portuguese,German">
     <rank>104</rank>
-    <name> The Impossible (2012 film)</name>
-    <desc></desc>
-  </movie><movie>
+    <name>Central Station</name>
+    <imdbid>140888</imdbid>
+  </movie>
+  <movie release="2008" rating="0.72" genere="Biography, Drama, History, War" language="SpanishEnglish">
     <rank>105</rank>
-    <name> The Hunt (2012 film)</name>
-    <desc></desc>
+    <name>Che: Part One</name>
+    <imdbid>892255</imdbid>
+  </movie>
+  <movie release="1981" rating="0.76" genere="Biography, Drama" language="German">
+    <rank>106</rank>
+    <name>Christiane F.</name>
+    <imdbid>82176</imdbid>
+  </movie>
+  <movie release="2011" rating="0.73" genere="Drama" language="English">
+    <rank>107</rank>
+    <name>Shame</name>
+    <imdbid>1723811</imdbid>
+  </movie>
+  <movie release="1952" rating="0.75" genere="Drama" language="Italian">
+    <rank>108</rank>
+    <name>Europe '51</name>
+    <imdbid>43511</imdbid>
+  </movie>
+  <movie release="2007" rating="0.73" genere="Crime, Drama" language="Portuguese">
+    <rank>109</rank>
+    <name>City of Men</name>
+    <imdbid>870090</imdbid>
+  </movie>
+  <movie release="1972" rating="0.81" genere="Drama, Romance" language="SwedishGermanDanish">
+    <rank>110</rank>
+    <name>Cries &amp; Whispers</name>
+    <imdbid>69467</imdbid>
+  </movie>
+  <movie release="1981" rating="0.83" genere="Action, Adventure, Drama, History, War" language="GermanEnglishFrench">
+    <rank>111</rank>
+    <name>Das Boot</name>
+    <imdbid>82096</imdbid>
+  </movie>
+  <movie release="1975" rating="0.77" genere="Horror, Mystery, Thriller" language="Italian">
+    <rank>112</rank>
+    <name>Deep Red</name>
+    <imdbid>73582</imdbid>
+  </movie>
+  <movie release="1991" rating="0.79" genere="Comedy, Fantasy, Sci-Fi" language="French">
+    <rank>113</rank>
+    <name>Delicatessen</name>
+    <imdbid>101700</imdbid>
+  </movie>
+  <movie release="2004" rating="0.81" genere="Biography, Drama, History, War" language="German,Russian,Hungarian">
+    <rank>114</rank>
+    <name>Downfall</name>
+    <imdbid>363163</imdbid>
+  </movie>
+  <movie release="1971" rating="0.76" genere="Adventure, Western" language="ItalianSpanish">
+    <rank>115</rank>
+    <name>Duck, You Sucker</name>
+    <imdbid>67140</imdbid>
+  </movie>
+  <movie release="2007" rating="0.81" genere="Action, Crime, Drama, Thriller" language="Portuguese">
+    <rank>116</rank>
+    <name>Elite Squad</name>
+    <imdbid>861739</imdbid>
+  </movie>
+  <movie release="2010" rating="0.81" genere="Action, Crime, Drama, Thriller" language="Portuguese">
+    <rank>117</rank>
+    <name>Elite Squad: The Enemy Within</name>
+    <imdbid>1555149</imdbid>
+  </movie>
+  <movie release="1990" rating="0.77" genere="Drama, History, War" language="GermanRussianPolishHebrew">
+    <rank>118</rank>
+    <name>Europa Europa</name>
+    <imdbid>99776</imdbid>
+  </movie>
+  <movie release="2003" rating="0.77" genere="Drama" language="SwedishFinnish">
+    <rank>119</rank>
+    <name>Evil</name>
+    <imdbid>338309</imdbid>
+  </movie>
+  <movie release="1982" rating="0.81" genere="Adventure, Biography, Drama, Music" language="GermanSpanishItalian">
+    <rank>120</rank>
+    <name>Fitzcarraldo</name>
+    <imdbid>83946</imdbid>
+  </movie>
+  <movie release="1965" rating="0.82" genere="Western" language="Italian">
+    <rank>121</rank>
+    <name>For a Few Dollars More</name>
+    <imdbid>59578</imdbid>
+  </movie>
+  <movie release="2003" rating="0.78" genere="Comedy, Drama, Romance" language="GermanEnglishRussian">
+    <rank>122</rank>
+    <name>Good Bye Lenin!</name>
+    <imdbid>301357</imdbid>
+  </movie>
+  <movie release="1922" rating="0.77" genere="Horror, Thriller" language="SwedishDanish">
+    <rank>123</rank>
+    <name>Häxan: Witchcraft Through the Ages</name>
+    <imdbid>13257</imdbid>
+  </movie>
+  <movie release="2004" rating="0.8" genere="Drama, Romance" language="GermanTurkishEnglish">
+    <rank>124</rank>
+    <name>Head-On</name>
+    <imdbid>347048</imdbid>
+  </movie>
+  <movie release="2002" rating="0.71" genere="Crime, Drama, Romance, Thriller" language="ItalianEnglish">
+    <rank>125</rank>
+    <name>Heaven</name>
+    <imdbid>246677</imdbid>
+  </movie>
+  <movie release="1968" rating="0.77" genere="Drama, Horror" language="Swedish,Norwegian">
+    <rank>126</rank>
+    <name>Hour of the Wolf</name>
+    <imdbid>63759</imdbid>
+  </movie>
+  <movie release="2005" rating="0.72" genere="Drama" language="Portuguese">
+    <rank>127</rank>
+    <name>House of Sand</name>
+    <imdbid>373747</imdbid>
+  </movie>
+  <movie release="1994" rating="0.78" genere="Biography, Comedy, Drama, Romance" language="Italian,Spanish">
+    <rank>128</rank>
+    <name>Il Postino: The Postman</name>
+    <imdbid>110877</imdbid>
+  </movie>
+  <movie release="2000" rating="0.79" genere="Adventure, Comedy, Romance" language="GermanEnglishTurkishBulgarianSerbo-Croatian">
+    <rank>129</rank>
+    <name>In July</name>
+    <imdbid>177858</imdbid>
+  </movie>
+  <movie release="2010" rating="0.83" genere="Drama, Mystery, War" language="FrenchArabicEnglish">
+    <rank>130</rank>
+    <name>Incendies</name>
+    <imdbid>1255953</imdbid>
+  </movie>
+  <movie release="2002" rating="0.74" genere="Crime, Drama, Mystery, Thriller" language="FrenchSpanishItalianEnglish">
+    <rank>131</rank>
+    <name>Irreversible</name>
+    <imdbid>290673</imdbid>
+  </movie>
+  <movie release="1962" rating="0.81" genere="Drama, War" language="Russian,German">
+    <rank>132</rank>
+    <name>Ivan's Childhood</name>
+    <imdbid>56111</imdbid>
+  </movie>
+  <movie release="1997" rating="0.8" genere="Action, Crime, Comedy, Drama" language="GermanEnglish">
+    <rank>133</rank>
+    <name>Knockin' on Heaven's Door</name>
+    <imdbid>119472</imdbid>
+  </movie>
+  <movie release="1990" rating="0.73" genere="Action, Drama, Thriller" language="French,Italian,English">
+    <rank>134</rank>
+    <name>La Femme Nikita</name>
+    <imdbid>100263</imdbid>
+  </movie>
+  <movie release="1937" rating="0.82" genere="Drama, War" language="FrenchGermanEnglishRussian">
+    <rank>135</rank>
+    <name>La Grande Illusion</name>
+    <imdbid>28950</imdbid>
+  </movie>
+  <movie release="1995" rating="0.82" genere="Drama" language="French">
+    <rank>136</rank>
+    <name>La Haine</name>
+    <imdbid>113247</imdbid>
+  </movie>
+  <movie release="1954" rating="0.83" genere="Drama" language="Italian">
+    <rank>137</rank>
+    <name>La Strada</name>
+    <imdbid>47528</imdbid>
+  </movie>
+  <movie release="2007" rating="0.77" genere="Biography, Drama, Music" language="FrenchEnglish">
+    <rank>138</rank>
+    <name>La Vie en Rose</name>
+    <imdbid>450188</imdbid>
+  </movie>
+  <movie release="2002" rating="0.74" genere="Comedy, Drama" language="FrenchSpanishEnglishCatalanDanishGermanItalian">
+    <rank>139</rank>
+    <name>L'Auberge Espagnole</name>
+    <imdbid>283900</imdbid>
+  </movie>
+  <movie release="1967" rating="0.83" genere="Crime, Drama, Mystery, Thriller" language="French">
+    <rank>140</rank>
+    <name>Le Samouraï</name>
+    <imdbid>62229</imdbid>
+  </movie>
+  <movie release="2008" rating="0.81" genere="Drama, Horror" language="Swedish,Spanish">
+    <rank>141</rank>
+    <name>Let the Right One In</name>
+    <imdbid>1139797</imdbid>
+  </movie>
+  <movie release="1997" rating="0.85" genere="Comedy, Drama, Romance, War" language="ItalianGermanEnglish">
+    <rank>142</rank>
+    <name>Life Is Beautiful</name>
+    <imdbid>118799</imdbid>
+  </movie>
+  <movie release="2002" rating="0.79" genere="Crime, Drama" language="RussianSwedishEnglishPolish">
+    <rank>143</rank>
+    <name>Lilya 4-Ever</name>
+    <imdbid>300140</imdbid>
+  </movie>
+  <movie release="1950" rating="0.83" genere="Crime, Drama" language="Spanish">
+    <rank>144</rank>
+    <name>Los Olvidados</name>
+    <imdbid>42804</imdbid>
+  </movie>
+  <movie release="2003" rating="0.79" genere="Comedy, Drama, Romance" language="French">
+    <rank>145</rank>
+    <name>Love Me If You Dare</name>
+    <imdbid>364517</imdbid>
+  </movie>
+  <movie release="1998" rating="0.79" genere="Drama, Mystery, Romance" language="SpanishEnglish">
+    <rank>146</rank>
+    <name>Lovers of the Arctic Circle</name>
+    <imdbid>133363</imdbid>
+  </movie>
+  <movie release="1931" rating="0.86" genere="Crime, Drama, Thriller" language="German">
+    <rank>147</rank>
+    <name>M</name>
+    <imdbid>22100</imdbid>
+  </movie>
+  <movie release="2000" rating="0.75" genere="Comedy, Drama, Romance, War" language="ItalianEnglishLatinGreek, Ancient (to 1453)">
+    <rank>148</rank>
+    <name>Malèna</name>
+    <imdbid>213847</imdbid>
+  </movie>
+  <movie release="1992" rating="0.77" genere="Comedy, Crime, Drama, Horror" language="French">
+    <rank>149</rank>
+    <name>Man Bites Dog</name>
+    <imdbid>103905</imdbid>
+  </movie>
+  <movie release="2004" rating="0.75" genere="Crime, Drama" language="SpanishEnglish">
+    <rank>150</rank>
+    <name>Maria Full of Grace</name>
+    <imdbid>390221</imdbid>
+  </movie>
+  <movie release="1927" rating="0.83" genere="Drama, Sci-Fi" language="German">
+    <rank>151</rank>
+    <name>Metropolis</name>
+    <imdbid>17136</imdbid>
+  </movie>
+  <movie release="1985" rating="0.78" genere="Drama, Comedy" language="Swedish">
+    <rank>152</rank>
+    <name>My Life as a Dog</name>
+    <imdbid>89606</imdbid>
+  </movie>
+  <movie release="1973" rating="0.74" genere="Western, Comedy" language="Italian">
+    <rank>153</rank>
+    <name>My Name Is Nobody</name>
+    <imdbid>70215</imdbid>
+  </movie>
+  <movie release="1957" rating="0.83" genere="Drama" language="Italian">
+    <rank>154</rank>
+    <name>Nights of Cabiria</name>
+    <imdbid>50783</imdbid>
+  </movie>
+  <movie release="2000" rating="0.8" genere="Crime, Drama, Thriller" language="Spanish">
+    <rank>155</rank>
+    <name>Nine Queens</name>
+    <imdbid>247586</imdbid>
+  </movie>
+  <movie release="1997" rating="0.77" genere="Drama, Mystery, Romance, Sci-Fi" language="Spanish">
+    <rank>156</rank>
+    <name>Open Your Eyes</name>
+    <imdbid>125659</imdbid>
+  </movie>
+  <movie release="2006" rating="0.83" genere="Drama, Fantasy, War" language="Spanish">
+    <rank>157</rank>
+    <name>Pan's Labyrinth</name>
+    <imdbid>457430</imdbid>
+  </movie>
+  <movie release="2006" rating="0.74" genere="Comedy, Drama, Romance" language="FrenchEnglishSpanishMandarinArabic">
+    <rank>158</rank>
+    <name>Paris, je t'aime</name>
+    <imdbid>401711</imdbid>
+  </movie>
+  <movie release="2007" rating="0.81" genere="Animation, Biography, Drama, War" language="FrenchEnglishPersianGerman">
+    <rank>159</rank>
+    <name>Persepolis</name>
+    <imdbid>808417</imdbid>
+  </movie>
+  <movie release="1981" rating="0.79" genere="Crime, Drama" language="Portuguese">
+    <rank>160</rank>
+    <name>Pixote</name>
+    <imdbid>82912</imdbid>
+  </movie>
+  <movie release="2007" rating="0.71" genere="Comedy, Romance" language="German">
+    <rank>161</rank>
+    <name>Rabbit Without Ears</name>
+    <imdbid>960790</imdbid>
+  </movie>
+  <movie release="1945" rating="0.82" genere="Drama, War" language="ItalianGerman">
+    <rank>162</rank>
+    <name>Rome, Open City</name>
+    <imdbid>38890</imdbid>
+  </movie>
+  <movie release="1998" rating="0.77" genere="Action, Sci-Fi, Thriller" language="GermanEnglishJapanese">
+    <rank>163</rank>
+    <name>Run Lola Run</name>
+    <imdbid>130827</imdbid>
+  </movie>
+  <movie release="2012" rating="0.75" genere="Drama, Romance" language="FrenchEnglish">
+    <rank>164</rank>
+    <name>Rust and Bone</name>
+    <imdbid>2053425</imdbid>
+  </movie>
+  <movie release="2010" rating="0.86" genere="Documentary, Biography, Sport" language="EnglishPortugueseFrenchJapanese">
+    <rank>165</rank>
+    <name>Senna</name>
+    <imdbid>1424432</imdbid>
+  </movie>
+  <movie release="1973" rating="0.77" genere="Biography, Crime, Drama" language="EnglishItalianSpanish">
+    <rank>166</rank>
+    <name>Serpico</name>
+    <imdbid>70666</imdbid>
+  </movie>
+  <movie release="2001" rating="0.73" genere="Drama, Romance" language="SpanishEnglish">
+    <rank>167</rank>
+    <name>Sex and Lucia</name>
+    <imdbid>254455</imdbid>
+  </movie>
+  <movie release="1998" rating="0.77" genere="Comedy, Drama, Romance" language="Swedish">
+    <rank>168</rank>
+    <name>Show Me Love</name>
+    <imdbid>150662</imdbid>
+  </movie>
+  <movie release="2009" rating="0.77" genere="Adventure, Crime, Drama, Thriller" language="Spanish">
+    <rank>169</rank>
+    <name>Sin Nombre</name>
+    <imdbid>1127715</imdbid>
+  </movie>
+  <movie release="2000" rating="0.77" genere="Comedy, Drama" language="SwedishRussian">
+    <rank>170</rank>
+    <name>Songs from the Second Floor</name>
+    <imdbid>120263</imdbid>
+  </movie>
+  <movie release="2005" rating="0.77" genere="Biography, Crime, Drama, History, Thriller, War" language="German">
+    <rank>171</rank>
+    <name>Sophie Scholl: The Final Days</name>
+    <imdbid>426578</imdbid>
+  </movie>
+  <movie release="2009" rating="0.73" genere="Comedy, Drama" language="GermanGreek">
+    <rank>172</rank>
+    <name>Soul Kitchen</name>
+    <imdbid>1244668</imdbid>
+  </movie>
+  <movie release="1993" rating="0.76" genere="Drama, War" language="GermanRussian">
+    <rank>173</rank>
+    <name>Stalingrad</name>
+    <imdbid>108211</imdbid>
+  </movie>
+  <movie release="1979" rating="0.83" genere="Drama, Sci-Fi" language="Russian">
+    <rank>174</rank>
+    <name>Stalker</name>
+    <imdbid>79944</imdbid>
+  </movie>
+  <movie release="1977" rating="0.75" genere="Horror" language="ItalianRussianEnglishGermanLatin">
+    <rank>175</rank>
+    <name>Suspiria</name>
+    <imdbid>76786</imdbid>
+  </movie>
+  <movie release="2002" rating="0.77" genere="Comedy, Drama, Romance" language="Spanish">
+    <rank>176</rank>
+    <name>Talk to Her</name>
+    <imdbid>287467</imdbid>
+  </movie>
+  <movie release="2006" rating="0.76" genere="Crime, Drama, Mystery, Thriller" language="French">
+    <rank>177</rank>
+    <name>Tell No One</name>
+    <imdbid>362225</imdbid>
+  </movie>
+  <movie release="1996" rating="0.77" genere="Horror, Mystery, Thriller" language="Spanish">
+    <rank>178</rank>
+    <name>Tesis</name>
+    <imdbid>117883</imdbid>
+  </movie>
+  <movie release="1977" rating="0.79" genere="Comedy, Drama, Romance" language="FrenchSpanish">
+    <rank>179</rank>
+    <name>That Obscure Object of Desire</name>
+    <imdbid>75824</imdbid>
+  </movie>
+  <movie release="2008" rating="0.73" genere="Action, Biography, Crime, Drama, History" language="German,English,French,Swedish">
+    <rank>180</rank>
+    <name>The Baader Meinhof Complex</name>
+    <imdbid>765432</imdbid>
+  </movie>
+  <movie release="2003" rating="0.77" genere="Comedy, Crime, Drama, Mystery, Romance" language="French,English">
+    <rank>181</rank>
+    <name>The Barbarian Invasions</name>
+    <imdbid>338135</imdbid>
+  </movie>
+  <movie release="2007" rating="0.71" genere="Action, Drama, Thriller" language="EnglishArabic">
+    <rank>182</rank>
+    <name>The Kingdom</name>
+    <imdbid>431197</imdbid>
+  </movie>
+  <movie release="1952" rating="0.73" genere="Comedy, Drama, Romance" language="English">
+    <rank>183</rank>
+    <name>The Golden Coach</name>
+    <imdbid>44487</imdbid>
+  </movie>
+  <movie release="2004" rating="0.79" genere="Drama, Music" language="French">
+    <rank>184</rank>
+    <name>The Chorus</name>
+    <imdbid>372824</imdbid>
+  </movie>
+  <movie release="1995" rating="0.77" genere="Adventure, Fantasy, Sci-Fi" language="FrenchCantonese">
+    <rank>185</rank>
+    <name>The City of Lost Children</name>
+    <imdbid>112682</imdbid>
+  </movie>
+  <movie release="2008" rating="0.75" genere="Drama" language="French,Bambara,Spanish">
+    <rank>186</rank>
+    <name>The Class</name>
+    <imdbid>1068646</imdbid>
+  </movie>
+  <movie release="2003" rating="0.8" genere="Documentary, History" language="EnglishSpanish">
+    <rank>187</rank>
+    <name>The Corporation</name>
+    <imdbid>379225</imdbid>
+  </movie>
+  <movie release="2007" rating="0.77" genere="Crime, Drama, War" language="German,Russian,English">
+    <rank>188</rank>
+    <name>The Counterfeiters</name>
+    <imdbid>813547</imdbid>
+  </movie>
+  <movie release="2001" rating="0.76" genere="Drama, Horror" language="Spanish">
+    <rank>189</rank>
+    <name>The Devil's Backbone</name>
+    <imdbid>256009</imdbid>
+  </movie>
+  <movie release="1998" rating="0.78" genere="Comedy" language="French">
+    <rank>190</rank>
+    <name>The Dinner Game</name>
+    <imdbid>119038</imdbid>
+  </movie>
+  <movie release="2007" rating="0.8" genere="Biography, Drama" language="French">
+    <rank>191</rank>
+    <name>The Diving Bell and the Butterfly</name>
+    <imdbid>401383</imdbid>
+  </movie>
+  <movie release="2007" rating="0.79" genere="Drama" language="GermanTurkishEnglish">
+    <rank>192</rank>
+    <name>The Edge of Heaven</name>
+    <imdbid>880502</imdbid>
+  </movie>
+  <movie release="2004" rating="0.77" genere="Action, Comedy, Crime, Drama, Romance" language="German">
+    <rank>193</rank>
+    <name>The Edukators</name>
+    <imdbid>408777</imdbid>
+  </movie>
+  <movie release="2001" rating="0.77" genere="Drama, Thriller" language="German">
+    <rank>194</rank>
+    <name>The Experiment</name>
+    <imdbid>250258</imdbid>
+  </movie>
+  <movie release="1962" rating="0.82" genere="Comedy, Drama, Fantasy, Mystery" language="Spanish">
+    <rank>195</rank>
+    <name>The Exterminating Angel</name>
+    <imdbid>56732</imdbid>
+  </movie>
+  <movie release="2009" rating="0.71" genere="Crime, Drama, Thriller" language="Swedish">
+    <rank>196</rank>
+    <name>The Girl Who Kicked the Hornet's Nest</name>
+    <imdbid>1343097</imdbid>
+  </movie>
+  <movie release="2009" rating="0.71" genere="Crime, Drama, Mystery, Thriller" language="SwedishItalianFrench">
+    <rank>197</rank>
+    <name>The Girl Who Played with Fire</name>
+    <imdbid>1216487</imdbid>
+  </movie>
+  <movie release="2011" rating="0.8" genere="Crime, Drama, Mystery, Thriller" language="English">
+    <rank>198</rank>
+    <name>The Girl with the Dragon Tattoo</name>
+    <imdbid>1568346</imdbid>
+  </movie>
+  <movie release="1966" rating="0.87" genere="Adventure, Western" language="ItalianEnglish">
+    <rank>199</rank>
+    <name>The Good, the Bad and the Ugly</name>
+    <imdbid>60196</imdbid>
+  </movie>
+  <movie release="2011" rating="0.85" genere="Biography, Comedy, Drama" language="FrenchEnglish">
+    <rank>200</rank>
+    <name>The Intouchables</name>
+    <imdbid>1675434</imdbid>
+  </movie>
+  <movie release="1963" rating="0.81" genere="Drama, History" language="Italian,Latin,French">
+    <rank>201</rank>
+    <name>The Leopard</name>
+    <imdbid>57091</imdbid>
+  </movie>
+  <movie release="2006" rating="0.86" genere="Drama, Thriller" language="German">
+    <rank>202</rank>
+    <name>The Lives of Others</name>
+    <imdbid>405094</imdbid>
+  </movie>
+  <movie release="2003" rating="0.77" genere="Comedy, Crime, Drama, Romance" language="Portuguese">
+    <rank>203</rank>
+    <name>The Man Who Copied</name>
+    <imdbid>367859</imdbid>
+  </movie>
+  <movie release="1975" rating="0.82" genere="Biography, Drama" language="Russian,Spanish">
+    <rank>204</rank>
+    <name>The Mirror</name>
+    <imdbid>72443</imdbid>
+  </movie>
+  <movie release="2004" rating="0.78" genere="Biography, Drama" language="Spanish">
+    <rank>205</rank>
+    <name>The Motorcycle Diaries</name>
+    <imdbid>318462</imdbid>
+  </movie>
+  <movie release="2007" rating="0.77" genere="Drama, Mystery, Thriller" language="Spanish">
+    <rank>206</rank>
+    <name>The Orphanage</name>
+    <imdbid>464141</imdbid>
+  </movie>
+  <movie release="2001" rating="0.74" genere="Drama, Music, Thriller" language="FrenchGerman">
+    <rank>207</rank>
+    <name>The Piano Teacher</name>
+    <imdbid>254686</imdbid>
+  </movie>
+  <movie release="2000" rating="0.79" genere="Drama, Mystery, Romance" language="German">
+    <rank>208</rank>
+    <name>The Princess and the Warrior</name>
+    <imdbid>203632</imdbid>
+  </movie>
+  <movie release="1998" rating="0.77" genere="Drama, Romance, Mystery, Music" language="FrenchEnglishMandarinItalianGerman">
+    <rank>209</rank>
+    <name>The Red Violin</name>
+    <imdbid>120802</imdbid>
+  </movie>
+  <movie release="2003" rating="0.78" genere="Drama, Mystery, Thriller" language="Russian">
+    <rank>210</rank>
+    <name>The Return</name>
+    <imdbid>376968</imdbid>
+  </movie>
+  <movie release="1986" rating="0.81" genere="Drama" language="SwedishFrenchEnglish">
+    <rank>211</rank>
+    <name>The Sacrifice</name>
+    <imdbid>91670</imdbid>
+  </movie>
+  <movie release="2006" rating="0.73" genere="Comedy, Drama, Fantasy, Romance" language="FrenchEnglishSpanish">
+    <rank>212</rank>
+    <name>The Science of Sleep</name>
+    <imdbid>354899</imdbid>
+  </movie>
+  <movie release="2004" rating="0.81" genere="Biography, Drama" language="Spanish">
+    <rank>213</rank>
+    <name>The Sea Inside</name>
+    <imdbid>369702</imdbid>
+  </movie>
+  <movie release="2009" rating="0.83" genere="Drama, Mystery, Thriller" language="Spanish">
+    <rank>214</rank>
+    <name>The Secret in Their Eyes</name>
+    <imdbid>1305806</imdbid>
+  </movie>
+  <movie release="1957" rating="0.84" genere="Drama, Fantasy" language="Swedish">
+    <rank>215</rank>
+    <name>The Seventh Seal</name>
+    <imdbid>50976</imdbid>
+  </movie>
+  <movie release="1963" rating="0.8" genere="Drama" language="Swedish,English,German,French,Spanish">
+    <rank>216</rank>
+    <name>The Silence</name>
+    <imdbid>57611</imdbid>
+  </movie>
+  <movie release="2011" rating="0.77" genere="Drama, Horror, Thriller" language="Spanish">
+    <rank>217</rank>
+    <name>The Skin I Live In</name>
+    <imdbid>1189073</imdbid>
+  </movie>
+  <movie release="2001" rating="0.74" genere="Drama" language="ItalianLatin">
+    <rank>218</rank>
+    <name>The Son's Room</name>
+    <imdbid>208990</imdbid>
+  </movie>
+  <movie release="1979" rating="0.76" genere="Drama, War" language="HebrewItalianGermanPolishRussian">
+    <rank>219</rank>
+    <name>The Tin Drum</name>
+    <imdbid>78875</imdbid>
+  </movie>
+  <movie release="2003" rating="0.81" genere="Animation, Comedy" language="FrenchPortuguese">
+    <rank>220</rank>
+    <name>The Triplets of Belleville</name>
+    <imdbid>286244</imdbid>
+  </movie>
+  <movie release="1960" rating="0.81" genere="Drama" language="SwedishGerman">
+    <rank>221</rank>
+    <name>The Virgin Spring</name>
+    <imdbid>53976</imdbid>
+  </movie>
+  <movie release="1953" rating="0.85" genere="Adventure, Drama, Thriller" language="FrenchEnglishSpanishGermanItalianRussian">
+    <rank>222</rank>
+    <name>The Wages of Fear</name>
+    <imdbid>46268</imdbid>
+  </movie>
+  <movie release="2008" rating="0.76" genere="Drama, Thriller" language="German">
+    <rank>223</rank>
+    <name>The Wave</name>
+    <imdbid>1063669</imdbid>
+  </movie>
+  <movie release="2009" rating="0.75" genere="Drama, Mystery" language="GermanItalianPolish">
+    <rank>224</rank>
+    <name>The White Ribbon</name>
+    <imdbid>1149362</imdbid>
+  </movie>
+  <movie release="1993" rating="0.81" genere="Drama, Music, Mystery, Romance" language="French,Romanian,Polish">
+    <rank>225</rank>
+    <name>Three Colors: Blue</name>
+    <imdbid>108394</imdbid>
+  </movie>
+  <movie release="1994" rating="0.81" genere="Drama, Mystery, Romance" language="French">
+    <rank>226</rank>
+    <name>Three Colors: Red</name>
+    <imdbid>111495</imdbid>
+  </movie>
+  <movie release="2007" rating="0.73" genere="Sci-Fi, Thriller" language="Spanish">
+    <rank>227</rank>
+    <name>Timecrimes</name>
+    <imdbid>480669</imdbid>
+  </movie>
+  <movie release="2000" rating="0.75" genere="Comedy, Drama, Romance" language="Swedish">
+    <rank>228</rank>
+    <name>Together</name>
+    <imdbid>203166</imdbid>
+  </movie>
+  <movie release="2005" rating="0.72" genere="Drama, Mystery, Thriller" language="French">
+    <rank>229</rank>
+    <name>Caché</name>
+    <imdbid>387898</imdbid>
+  </movie>
+  <movie release="1961" rating="0.82" genere="Drama" language="Spanish">
+    <rank>230</rank>
+    <name>Viridiana</name>
+    <imdbid>55601</imdbid>
+  </movie>
+  <movie release="2006" rating="0.77" genere="Comedy, Crime, Drama, Mystery" language="Spanish">
+    <rank>231</rank>
+    <name>Volver</name>
+    <imdbid>441909</imdbid>
+  </movie>
+  <movie release="1957" rating="0.84" genere="Drama" language="Swedish">
+    <rank>232</rank>
+    <name>Wild Strawberries</name>
+    <imdbid>50986</imdbid>
+  </movie>
+  <movie release="1932" rating="0.74" genere="Comedy" language="French">
+    <rank>233</rank>
+    <name>Boudu Saved From Drowning</name>
+    <imdbid>22718</imdbid>
+  </movie>
+  <movie release="2001" rating="0.77" genere="Drama" language="Spanish">
+    <rank>234</rank>
+    <name>Y Tu Mamá También</name>
+    <imdbid>245574</imdbid>
+  </movie>
+  <movie release="1977" rating="0.74" genere="Crime, Mystery, Thriller, Drama" language="German,English,French">
+    <rank>235</rank>
+    <name>The American Friend</name>
+    <imdbid>75675</imdbid>
   </movie>
 </root>

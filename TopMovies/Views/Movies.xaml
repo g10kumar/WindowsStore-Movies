@@ -1,4 +1,4 @@
-﻿<Page
+﻿<common:LayoutAwarePage
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:TopMovies.Views"
@@ -10,24 +10,70 @@
     xmlns:UI="using:Microsoft.Advertising.WinRT.UI"
     x:Name="pageRoot"
     x:Class="TopMovies.Views.Movies"
+    xmlns:Navigation="using:Syncfusion.UI.Xaml.Controls.Navigation" 
+    xmlns:Notification="using:Syncfusion.UI.Xaml.Controls.Notification"
     mc:Ignorable="d">
+    <UserControl.Resources>
+        <Style TargetType="Image">
+            <Setter Property="Width" Value="18"/>
+            <Setter Property="Stretch" Value="Uniform"/>
+        </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="Margin" Value="3"/>
+        </Style>
+        <Style x:Key="NavigationButtonStyle" TargetType="Button">
+            <Setter Property="FontFamily" Value="Segoe UI Symbol"/>
+            <Setter Property="BorderBrush" Value="#FF464646"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid Background="Transparent" Margin="-5">
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal"/>
+                                    <VisualState x:Name="PointerOver">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Fill" Storyboard.TargetName="BackgroundEllipse">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="#FF1FAEFF"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
 
-
-    <Page.BottomAppBar>
-        <AppBar x:Name="bottonBar" Padding="10,0,10,0" IsSticky="True">
-            <Grid>
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <Button IsEnabled="True" x:Uid="btnBuyDVD" Name="btnBuyDVD"  Style="{StaticResource ShopAppBarButtonStyle}" Click="btnBuyDVD_Click_1"  />
-                    <Button IsEnabled="True" x:Uid="btnMovieDetails" Name="btnMovieDetails"  Style="{StaticResource MoreAppBarButtonStyle}" Click="btnMovieDetails_Click_1" />
-                    <Button IsEnabled="True" x:Uid="TraslateDetails" x:Name="TraslateDetails" Click="Translate" Style="{StaticResource TranslateAppBarButtonStyle}" Visibility="Collapsed"/>
-                    <!--<Button IsEnabled="True" x:Name="btnTextSize"  Style="{StaticResource EditAppBarButtonStyle}" Click="btnTextSize_Click" ></Button>-->
-                </StackPanel>
-            </Grid>
-        </AppBar>
-    </Page.BottomAppBar>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <Ellipse Fill="#FF1FAEFF" x:Name="BackgroundEllipse" />
+                            <Ellipse Stroke="{TemplateBinding BorderBrush}" StrokeThickness="2"  Fill="Transparent"/>
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Name="headerText" TargetType="Notification:SfBusyIndicator" >
+            <Setter Property="FontSize" Value="20"/>
+        </Style>
+        <Style x:Key="CircularButton" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <Ellipse Stroke="Black" Width="10" Height="10"/>
+                            <Image Source="ms-appx:///Assets/Filter.png" Width="45"  />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
 
 
     <Grid x:Name="Layout"  Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
+        <!--<Grid.ChildrenTransitions>
+            <TransitionCollection>
+                <PopupThemeTransition />
+            </TransitionCollection>
+        </Grid.ChildrenTransitions>-->
         <Grid.RowDefinitions>
             <RowDefinition Height="140"/>
             <RowDefinition Height="50"/>
@@ -44,156 +90,444 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="140"/>
         </Grid.ColumnDefinitions>
-        <Grid Grid.ColumnSpan="3" Grid.Row="0">
+        <Grid x:Name="grid1" Grid.ColumnSpan="3" Grid.Row="0">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto" MinWidth="101"/>
+                <ColumnDefinition/>
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
-            <Button x:Name="backButton" Click="GoBack" IsEnabled="{Binding Frame.CanGoBack, ElementName=pageRoot}" Style="{StaticResource BackButtonStyle}" >
+            <Button x:Name="backButton" Click="GoBack" IsEnabled="{Binding Frame.CanGoBack, ElementName=pageRoot}" Style="{StaticResource BackButtonStyle}" BorderBrush="#FF1FAEFF" Foreground="#FF1FAEFF" Margin="36,0,0,40" >
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="Black"/>
-                        <GradientStop Color="White" Offset="1"/>
+                        <GradientStop Color="#FF1FAEFF"/>
+                        <GradientStop Color="#FF1FAEFF" Offset="1"/>
                     </LinearGradientBrush>
                 </Button.Background>
             </Button>
-            <TextBlock x:Name="pageTitle" Grid.Column="1" Text="{StaticResource AppName}" Style="{StaticResource PageHeaderTextStyle}"   />
+            <TextBlock x:Name="pageTitle"  Style="{StaticResource PageHeaderTextStyle}" Margin="0,0,100,46" Foreground="{StaticResource HeadingColor}" Grid.Column="1" Height="40"   />
+            <Button x:Name="button" Click="ShowFilters" Style="{StaticResource CircularButton}" Grid.Column="1" HorizontalAlignment="Right" Margin="0,51,44,39" VerticalAlignment="Stretch" Width="45"/>
+            <Popup x:Name="filterPopUp" Grid.Column="1" VerticalAlignment="Bottom" Height="35" HorizontalAlignment="Right" Margin="0" Width="563" Grid.ColumnSpan="2" >
+                <Grid x:Name="grid2" Background="Transparent" Height="34" Width="554">
+                    <ComboBox x:Name="filterlang_asian" HorizontalAlignment="Left" VerticalAlignment="Top" Width="126" BorderBrush="{StaticResource HeadingColor}" Foreground="{StaticResource HeadingColor}" Margin="39,2,0,0" Visibility="Collapsed"/>
+                    <ComboBox x:Name="filterlang" HorizontalAlignment="Left" VerticalAlignment="Top" Width="126" BorderBrush="{StaticResource HeadingColor}" Foreground="{StaticResource HeadingColor}" Margin="39,2,0,0" Visibility="Collapsed"/>
+                    <ComboBox x:Name="sorter" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="{StaticResource HeadingColor}" Foreground="{StaticResource HeadingColor}" Width="143" Margin="401,2,0,0"/>
+                    <ComboBox x:Name="genere" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="{StaticResource HeadingColor}" Foreground="{StaticResource HeadingColor}" RenderTransformOrigin="0.031,0.516" Width="125" Margin="224,0,0,0"/>
+                </Grid>
+            </Popup>
             <!--<Button Style="{StaticResource SettingsAppBarButtonStyle}" x:Name="options"
                     VerticalAlignment="Center" Grid.Column="2" AutomationProperties.Name="Options" Click="Options_Click"/>-->
         </Grid>
-        <StackPanel Orientation="Horizontal" Grid.ColumnSpan="3" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center">
-            <TextBlock x:Name="txtName" Style="{StaticResource SubheaderTextStyle}" VerticalAlignment="Center"/>
-            <TextBlock x:Name="convertedName" Style="{StaticResource SubheaderTextStyle}" VerticalAlignment="Center"/>
-        </StackPanel>
-        <StackPanel x:Name="mainStack" Orientation="Vertical" Grid.ColumnSpan="3" Background="White" Grid.Row="2" Grid.RowSpan="5" VerticalAlignment="Top" Margin="70,10,70,0" Height="475" PointerEntered="Button_visible" PointerExited="Button_collapsed">
-
-            <!--<syncfusion:CoverFlow x:Name="CoverFlowControl" Height="400">
-                <syncfusion:CoverFlow.ItemTemplate>
-                    <DataTemplate>
-                        <Image Source="{Binding}" Height="400" />
-                    </DataTemplate>
-                </syncfusion:CoverFlow.ItemTemplate>
-            </syncfusion:CoverFlow>-->
+        <Grid x:Name="grid" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,5,0,123" Width="1026" Height="50" Grid.Row="1" Grid.RowSpan="2">
+            <TextBlock x:Name="txtName" Style="{StaticResource SubheaderTextStyle}" TextAlignment="Center" Foreground="{StaticResource HeadingColor}"/>
+            <TextBlock x:Name="convertedName" Style="{StaticResource SubheaderTextStyle}" TextAlignment="Center" Foreground="{StaticResource HeadingColor}"/>
+            <!--<TextBlock x:Name="convertedName" Style="{StaticResource SubheaderTextStyle}"  TextAlignment="Center"  Foreground="#FF01A2A6" Margin="0,10" RenderTransformOrigin="0.5,0.5" Width="48">
+             </TextBlock>-->
+        </Grid>
+        <Notification:SfBusyIndicator x:Name="ProgressRing" Grid.Column="1" Margin="0,120,442,0" Grid.Row="2" AnimationType="Gear" Foreground="{StaticResource HeadingColor}" HorizontalAlignment="Right" Width="200" Height="150" VerticalAlignment="Top" Grid.RowSpan="3" RenderTransformOrigin="0.5,0.5" ViewboxHeight="80" ViewboxWidth="80"  >
+            <Notification:SfBusyIndicator.HeaderTemplate>
+                <DataTemplate>
+                    <TextBlock x:Uid="busyIndicator" Text="" FontSize="18" TextAlignment="Center" Margin="60,0,0,0"/>
+                </DataTemplate>
+            </Notification:SfBusyIndicator.HeaderTemplate>
+        </Notification:SfBusyIndicator>
+        <StackPanel x:Name="mainStack" Orientation="Vertical" Grid.ColumnSpan="3" Grid.Row="2" Grid.RowSpan="5" VerticalAlignment="Top" Margin="70,10,70,0" Height="418">
 
             <syncfusion:SfCarousel x:Name="CoverFlowControl" Height="400"
-                                  VerticalAlignment="Top" 
-                                  Margin="10"  SelectedIndex="20"
-                                  HorizontalAlignment="Left" SelectionChanged="CoverFlowControl_SelectionChanged" DoubleTapped="btnMoreInfo_Click"
+                                  VerticalAlignment="Center"
+                                  HorizontalAlignment="Center" DoubleTapped="btnMoreInfo_Click" ScaleOffset="0.5" RotationAngle="30" Duration="0:0:0.4" SelectionChanged="CoverFlowControl_SelectionChanged" ScrollViewer.VerticalScrollBarVisibility="Disabled" Margin="0,5" SizeChanged="carousel_SizeChanged"
                                   >
                 <syncfusion:SfCarousel.ItemTemplate>
                     <DataTemplate>
-                        <Image Source="{Binding Image}" Tag="{Binding Name}" Stretch="Uniform" />
+                        <Image x:Name="casrouseImage" Source="{Binding Image}"  Stretch="Uniform" />
                     </DataTemplate>
                 </syncfusion:SfCarousel.ItemTemplate>
             </syncfusion:SfCarousel>
-            <StackPanel x:Name="Button_stackpanel" Height="58" HorizontalAlignment="Center" Margin="0,-10,0,0" RenderTransformOrigin="0.488,0.52" VerticalAlignment="Center" Visibility="Collapsed">
-                <Button ToolTipService.ToolTip="" x:Uid="Play_Button" x:Name="Play_Button" Margin="84,9,82,0" HorizontalAlignment="Center" Height="40"  Click="Auto_Play">
-                    <Button.Template>
-                        <ControlTemplate>
+
+
+        </StackPanel>
+
+
+        <StackPanel Orientation="Vertical" VerticalAlignment="Top" x:Name="snappedStack" HorizontalAlignment="Center" Width="320" RenderTransformOrigin="0.5,0.5" Height="768" Grid.RowSpan="8" Grid.ColumnSpan="3" Visibility="Collapsed">
+            <Image x:Name="image" Source="ms-appx:///Assets/BlackLogo.png" Width="150" Height="102" Margin="83,0,82,0" />
+            <TextBlock x:Uid="SnappedMessage" x:Name="textBlock"  TextWrapping="Wrap" Style="{StaticResource AboutUsTextStyle}" Foreground="{StaticResource HeadingColor}" FontSize="24"  Margin="30,40,33,10" RenderTransformOrigin="0.5,0.5" Height="Auto" >
+            </TextBlock>
+        </StackPanel>
+        <Navigation:SfRadialMenu
+                                 NavigationButtonStyle="{StaticResource NavigationButtonStyle}"
+                                   EnableFreeRotation="False" IsOpen="False"
+                                     x:Name="selectionmenu" Padding="5" Margin="418,32,416,0" RadiusX="100" RadiusY="100" Background="{StaticResource HeadingColor}" RimBackground="#FF29D9C2" Opacity="0.85" CenterRimRadiusFactor="0.2" Grid.Column="1" Grid.Row="5" Grid.RowSpan="3" Height="208" RimRadiusFactor="0.94">
+            <Navigation:SfRadialMenu.RenderTransform>
+                <CompositeTransform x:Name="transform1"/>
+            </Navigation:SfRadialMenu.RenderTransform>
+            <Navigation:SfRadialMenu.Icon>
+                <Grid Background="Transparent">
+                    <Image Source="ms-appx:///Assets/Tools.png" Width="20" Stretch="Uniform"/>
+                </Grid>
+            </Navigation:SfRadialMenu.Icon>
+            <Navigation:SfRadialMenuItem x:Uid="PlayTooltip"  x:Name="Play_Button" Click="Auto_Play" ToolTip="" ToolTipPlacement="Top"  Height="49" Margin="15,0,0,0"  >
+                <Navigation:SfRadialMenuItem.Header>
+                    <Border Background="Transparent" Padding="5">
+                        <StackPanel>
                             <Image Source="ms-appx:///Assets/Play.png"/>
-                        </ControlTemplate>
-                    </Button.Template>
-                </Button>
-                <Button  x:Uid="Backward_Button" x:Name="Backward_Button" Margin="-125,-42,14,0" HorizontalAlignment="Center" Height="40" Click="BackWard_move"   >
-                    <Button.Template>
-                        <ControlTemplate>
-                            <Image Source="ms-appx:///Assets/Fast_Backward.png"/>
-                        </ControlTemplate>
-                    </Button.Template>
-                </Button>
-                <Button  x:Uid="Forward_Button" x:Name="Forward_Button" Margin="159,-42,14,0" HorizontalAlignment="Center" Height="40" Click="ForWard_move"   >
-                    <Button.Template>
-                        <ControlTemplate>
-                            <Image Source="ms-appx:///Assets/Fast_Forward.png"/>
-                        </ControlTemplate>
-                    </Button.Template>
-                </Button>
+                            <TextBlock x:Uid="Play_Button" Text=""/>
+                        </StackPanel>
+                    </Border>
+                </Navigation:SfRadialMenuItem.Header>
+                <Navigation:SfRadialMenuItem x:Uid="PlayTooltip" x:Name="Play_Button1"  Click="Auto_Play" ToolTip="" ToolTipPlacement="Top"  Height="49" >
+                    <Navigation:SfRadialMenuItem.Header>
+                        <Border Background="Transparent" Padding="5">
+                            <StackPanel>
+                                <Image Source="ms-appx:///Assets/Play.png"/>
+                                <TextBlock x:Uid="Play_Button" Text=""/>
+                            </StackPanel>
+                        </Border>
+                    </Navigation:SfRadialMenuItem.Header>
+                </Navigation:SfRadialMenuItem>
+                <Navigation:SfRadialMenuItem x:Uid="BackwardTooltip"  x:Name="Backward_Button" Click="BackWard_move"  ToolTip="" ToolTipPlacement="Top"   >
+                    <Navigation:SfRadialMenuItem.Header>
+                        <Border Background="Transparent" Padding="5">
+                            <StackPanel>
+                                <Image Source="ms-appx:///Assets/backward.png"/>
+                                <TextBlock x:Uid="Backward_Button" Text=""/>
+                            </StackPanel>
+                        </Border>
+                    </Navigation:SfRadialMenuItem.Header>
+                </Navigation:SfRadialMenuItem>
+                <Navigation:SfRadialMenuItem x:Uid="PauseToolTip"  x:Name="Pause_Button1" Click="AutoStop" ToolTip=""  ToolTipPlacement="Top" VerticalAlignment="Center" Margin="0,0,10,0" IsEnabled="False" >
+                    <Navigation:SfRadialMenuItem.Header>
+                        <Border Background="Transparent" Padding="5">
+                            <StackPanel>
+                                <Image Source="ms-appx:///Assets/Pause.png"/>
+                                <TextBlock x:Uid="Pause_Button" Text=""/>
+                            </StackPanel>
+                        </Border>
+                    </Navigation:SfRadialMenuItem.Header>
+                </Navigation:SfRadialMenuItem>
 
-                <Button  x:Uid="Pause_Button" x:Name="Pause_Button" Margin="84,9,82,0" HorizontalAlignment="Center" Height="40"  Visibility="Collapsed" Click="AutoStop"  >
-                    <Button.Template>
-                        <ControlTemplate>
+                <Navigation:SfRadialMenuItem  x:Uid="ForwardTooltip" x:Name="Forward_Button" Click="ForWard_move" ToolTip=""  ToolTipPlacement="Top"   >
+                    <Navigation:SfRadialMenuItem.Header>
+                        <Border Background="Transparent" Padding="5">
+                            <StackPanel>
+                                <Image Source="ms-appx:///Assets/forward.png"/>
+                                <TextBlock x:Uid="Forward_Button" Text="" />
+                            </StackPanel>
+                        </Border>
+                    </Navigation:SfRadialMenuItem.Header>
+                </Navigation:SfRadialMenuItem>
+
+            </Navigation:SfRadialMenuItem>
+            <Navigation:SfRadialMenuItem x:Uid="TraslateDetails" x:Name="TraslateDetails" Click="Translate" ToolTip=""  ToolTipPlacement="Top" IsEnabled="False"    >
+                <Navigation:SfRadialMenuItem.Header>
+                    <Border Background="Transparent" Padding="5">
+                        <StackPanel>
+                            <Image Source="ms-appx:///Assets/Text Editor.png"/>
+                            <TextBlock x:Uid="translatename" Text=""/>
+                        </StackPanel>
+                    </Border>
+                </Navigation:SfRadialMenuItem.Header>
+            </Navigation:SfRadialMenuItem>
+            <Navigation:SfRadialMenuItem x:Uid="PauseToolTip" x:Name="Pause_Button" Click="AutoStop" ToolTip=""  ToolTipPlacement="Top" IsEnabled="False"  VerticalAlignment="Center"  >
+                <Navigation:SfRadialMenuItem.Header>
+                    <Border Background="Transparent" Padding="5">
+                        <StackPanel>
                             <Image Source="ms-appx:///Assets/Pause.png"/>
-                        </ControlTemplate>
-                    </Button.Template>
-                </Button>
-            </StackPanel>
+                            <TextBlock x:Uid="Pause_Button" Text=""/>
+                        </StackPanel>
+                    </Border>
+                </Navigation:SfRadialMenuItem.Header>
+            </Navigation:SfRadialMenuItem>
+            <Navigation:SfRadialMenuItem x:Uid="InfoTooltip" x:Name="Info_Button" Click="btnMoreInfo_Click"  ToolTip="" ToolTipPlacement="Top"  Visibility="Visible"   >
+                <Navigation:SfRadialMenuItem.Header>
+                    <Border Background="Transparent" Padding="5">
+                        <StackPanel>
+                            <Image Source="ms-appx:///Assets/Information.png"/>
+                            <TextBlock x:Uid="Info_Button" Text=""/>
+                        </StackPanel>
+                    </Border>
+                </Navigation:SfRadialMenuItem.Header>
+            </Navigation:SfRadialMenuItem>
 
 
-        </StackPanel>
-
-        <StackPanel x:Name="stackPopup" Background="Black" Width="650" Height="510" Grid.ColumnSpan="3" Grid.Column="1" Grid.Row="1" Grid.RowSpan="6"  Visibility="Collapsed" Orientation="Vertical" Margin="10,-100,10,10" VerticalAlignment="Center" HorizontalAlignment="Center">
-            <Button x:Name="btnWVClose" Background="White" Foreground="Black" Content="Close" Width="70" Height="40" Click="btnClose_Click" Visibility="Visible"/>
-            <WebView x:Name="movieWiki" Width="640" Height="460" Margin="0,0,0,0"/>
-
-        </StackPanel>
-        <StackPanel x:Name="snappedStack" Orientation="Vertical" VerticalAlignment="Top" Visibility="Collapsed" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="0" Grid.RowSpan="7" Margin="10,10,10,10" HorizontalAlignment="Center">
-            <Image Source="/Assets/BlackLogo.png" Width="150" />
-            <TextBlock Text="The movies cannot be browsed in snapped view." TextWrapping="Wrap" Style="{StaticResource AboutUsTextStyle}" Foreground="Black" FontSize="24" Margin="10,40,10,10" />
-        </StackPanel>
-        <ProgressRing x:Name="ProgressRing" HorizontalAlignment="Center" VerticalAlignment="Stretch" Grid.Row="3" Grid.RowSpan="2" Margin="18,70" Grid.Column="1" IsActive="True" Width="60">
-            <ProgressRing.Background>
-                <ImageBrush/>
-            </ProgressRing.Background>
-        </ProgressRing>
-        <!--<UI:AdControl x:Name="AddLeft" ApplicationId="6310ffab-747b-4d73-84f5-40c5fa6a8272" AdUnitId="10067099" HorizontalAlignment="Left" Height="250" Margin="30,100,0,0" Grid.Row="2" Grid.RowSpan="5" VerticalAlignment="Top" Width="250" Grid.ColumnSpan="2"/>
-        <UI:AdControl x:Name="AddRight" ApplicationId="6310ffab-747b-4d73-84f5-40c5fa6a8272"  AdUnitId="10067099" HorizontalAlignment="Right" Height="250" Margin="0,100,30,0" Grid.Row="2" Grid.RowSpan="5" VerticalAlignment="Top" Grid.ColumnSpan="2" Grid.Column="1" Width="250"/>-->
-
-
-        <!--<UI:AdControl x:Name="AddLeft" ApplicationId="d25517cb-12d4-4699-8bdc-52040c712cab" AdUnitId="10043104" HorizontalAlignment="Left" Height="250" Margin="30,100,0,0" Grid.Row="2" Grid.RowSpan="5" VerticalAlignment="Top" Width="250" Grid.ColumnSpan="2" Visibility="Collapsed"/>
-        <UI:AdControl x:Name="AddRight" ApplicationId="d25517cb-12d4-4699-8bdc-52040c712cab"  AdUnitId="10043104" HorizontalAlignment="Right" Height="250" Margin="0,100,30,0" Grid.Row="2" Grid.RowSpan="5" VerticalAlignment="Top" Grid.ColumnSpan="2" Grid.Column="1" Width="250" Visibility="Collapsed"/>-->
-
-
-          <!--<Grid>
-            <ContentControl x:Name="SampleContent"
-                                HorizontalContentAlignment="Stretch"
-                                VerticalContentAlignment="Stretch"/>
-        </Grid>-->
-        <!--<StackPanel Grid.Row="1" Grid.Column="2" Background="Red" Grid.RowSpan="3" Width="270" Height="550" x:Name="stackpop" Visibility="Collapsed">
-            <Grid Background="Transparent">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                </Grid.RowDefinitions>
-                <TextBlock Text="Offest" Margin="10"/>
-                <Input:NumericUpDown Margin="10 5" Minimum="30" Maximum="50" FormatString="0" Grid.Row="1" Value="{Binding Offset,Mode=TwoWay}" />
-
-                <TextBlock Text="SelectedItem Offest" Margin="10" Grid.Row="2"/>
-                <Input:NumericUpDown Margin="10 5" Minimum="70" Maximum="180" FormatString="0" Grid.Row="3" Value="{Binding SelectedItemOffset,Mode=TwoWay}"/>
-
-                <TextBlock Text="ZOffest" Margin="10" Grid.Row="4"/>
-                <Input:NumericUpDown Margin="10 5" Minimum="30" Maximum="120" Grid.Row="5" Value="{Binding ZOffset,Mode=TwoWay}"/>
-
-                <TextBlock Text="Scale Offset" Margin="10" Grid.Row="6"/>
-                <Input:NumericUpDown Margin="10 5" Minimum="0" Maximum="1" Grid.Row="7" SmallChange="0.1" LargeChange="0.1"  Value="{Binding ScaleOffset,Mode=TwoWay}"/>
-
-                <TextBlock Text="Rotation Angle" Margin="10" Grid.Row="8"/>
-                <Input:NumericUpDown Margin="10 5" Minimum="0" Maximum="360" FormatString="0 Degree" Grid.Row="9" Value="{Binding RotationAngle,Mode=TwoWay}"/>
-
-                <StackPanel Orientation="Horizontal" Grid.Row="10" Margin="-1 5" Grid.RowSpan="2">
-                    <RepeatButton x:Name="previous" Content="Move Previous" Margin="10 5"  Click="previous_Click_1" />
-                    <RepeatButton x:Name="next" Content="Move Next" Margin="10 5" Click="next_Click_1"/>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal" Grid.Row="11">
-                    
-                </StackPanel>
-            </Grid>
-        </StackPanel>-->
-        <!--<VisualStateManager.VisualStateGroups>
+        </Navigation:SfRadialMenu>
+        <VisualStateManager.VisualStateGroups>
             <VisualStateGroup x:Name="ApplicationViewStates">
-                <VisualState x:Name="FullScreenLandscapeOrWide"/>
-                <VisualState x:Name="FilledOrNarrow" />
+                <VisualState x:Name="FullScreenLandscape">
+                </VisualState>
+                <VisualState x:Name="Filled" >
+                    <Storyboard>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="selectionmenu">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <Thickness>247,34,247,0</Thickness>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="ProgressRing">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <Thickness>0,0,269,0</Thickness>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Grid.Row)" Storyboard.TargetName="ProgressRing">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <x:Int32>3</x:Int32>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Grid.RowSpan)" Storyboard.TargetName="ProgressRing">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <x:Int32>2</x:Int32>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="mainStack">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <Thickness>25,10,25,0</Thickness>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                    </Storyboard>
+                </VisualState>
                 <VisualState x:Name="FullScreenPortrait">
+                    <Storyboard>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="button">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <Thickness>0,56,10,34</Thickness>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="grid2">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <x:Double>758</x:Double>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Grid.Column)" Storyboard.TargetName="grid">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <x:Int32>0</x:Int32>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Grid.ColumnSpan)" Storyboard.TargetName="grid">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <x:Int32>3</x:Int32>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Grid.Row)" Storyboard.TargetName="grid">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <x:Int32>1</x:Int32>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Grid.RowSpan)" Storyboard.TargetName="grid">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <x:Int32>2</x:Int32>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="grid">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <x:Double>758</x:Double>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="grid">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <Thickness>0,49,0,677</Thickness>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="ProgressRing">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <Thickness>0,155,158,0</Thickness>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Grid.Column)" Storyboard.TargetName="ProgressRing">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <x:Int32>1</x:Int32>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Grid.ColumnSpan)" Storyboard.TargetName="ProgressRing">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <x:Int32>1</x:Int32>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Grid.RowSpan)" Storyboard.TargetName="ProgressRing">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <x:Int32>1</x:Int32>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Grid.ColumnSpan)" Storyboard.TargetName="filterPopUp">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <x:Int32>3</x:Int32>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Grid.Column)" Storyboard.TargetName="filterPopUp">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <x:Int32>0</x:Int32>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="genere">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <Thickness>0,2,199,0</Thickness>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="sorter">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <Thickness>0,0,10,0</Thickness>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="filterlang">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <Thickness>0,2,364,0</Thickness>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="filterlang_asian">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <Thickness>0,2,364,0</Thickness>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="pageTitle">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <Thickness>0,0,58,40</Thickness>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <DoubleAnimation Duration="0" To="48" Storyboard.TargetProperty="(TextBlock.FontSize)" Storyboard.TargetName="pageTitle" d:IsOptimized="True"/>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Grid.RowSpan)" Storyboard.TargetName="mainStack">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <x:Int32>1</x:Int32>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="mainStack">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <Thickness>10,67,10,0</Thickness>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Grid.ColumnSpan)" Storyboard.TargetName="selectionmenu">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <x:Int32>1</x:Int32>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="selectionmenu">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <Thickness>115,575,115,0</Thickness>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Grid.Row)" Storyboard.TargetName="selectionmenu">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <x:Int32>2</x:Int32>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Grid.RowSpan)" Storyboard.TargetName="selectionmenu">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <x:Int32>2</x:Int32>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.HorizontalAlignment)" Storyboard.TargetName="sorter">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <HorizontalAlignment>Right</HorizontalAlignment>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="sorter">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <x:Double>143</x:Double>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.HorizontalAlignment)" Storyboard.TargetName="genere">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <HorizontalAlignment>Right</HorizontalAlignment>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="genere">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <x:Double>125</x:Double>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.HorizontalAlignment)" Storyboard.TargetName="filterlang_asian">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <HorizontalAlignment>Right</HorizontalAlignment>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.HorizontalAlignment)" Storyboard.TargetName="filterlang">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <HorizontalAlignment>Right</HorizontalAlignment>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="filterlang">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <x:Double>126</x:Double>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="filterPopUp">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <x:Double>764</x:Double>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                    </Storyboard>
                 </VisualState>
                 <VisualState x:Name="Snapped">
                     <Storyboard>
@@ -209,48 +543,38 @@
                         <ObjectAnimationUsingKeyFrames Storyboard.TargetName="mainStack" Storyboard.TargetProperty="Visibility">
                             <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed"/>
                         </ObjectAnimationUsingKeyFrames>
-                        
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="grid">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <Visibility>Collapsed</Visibility>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="grid1">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <Visibility>Collapsed</Visibility>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="ProgressRing">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <Visibility>Collapsed</Visibility>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="selectionmenu">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <Visibility>Collapsed</Visibility>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+
                     </Storyboard>
                 </VisualState>
             </VisualStateGroup>
-        </VisualStateManager.VisualStateGroups>-->
+        </VisualStateManager.VisualStateGroups>
     </Grid>
-
-
-    <!--<common:SampleView.SettingsContent>
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                </Grid.RowDefinitions>
-                <TextBlock Text="Offest" Margin="10"/>
-                <Input:NumericUpDown Margin="10 5" Minimum="30" Maximum="50" FormatString="0" Grid.Row="1" Value="{Binding Offset,Mode=TwoWay}" />
-
-                <TextBlock Text="SelectedItem Offest" Margin="10" Grid.Row="2"/>
-                <Input:NumericUpDown Margin="10 5" Minimum="70" Maximum="180" FormatString="0" Grid.Row="3" Value="{Binding SelectedItemOffset,Mode=TwoWay}"/>
-
-                <TextBlock Text="ZOffest" Margin="10" Grid.Row="4"/>
-                <Input:NumericUpDown Margin="10 5" Minimum="30" Maximum="120" Grid.Row="5" Value="{Binding ZOffset,Mode=TwoWay}"/>
-
-                <TextBlock Text="Scale Offset" Margin="10" Grid.Row="6"/>
-                <Input:NumericUpDown Margin="10 5" Minimum="0" Maximum="1" Grid.Row="7" SmallChange="0.1" LargeChange="0.1"  Value="{Binding ScaleOffset,Mode=TwoWay}"/>
-
-                <TextBlock Text="Rotation Angle" Margin="10" Grid.Row="8"/>
-                <Input:NumericUpDown Margin="10 5" Minimum="0" Maximum="360" FormatString="0 Degree" Grid.Row="9" Value="{Binding RotationAngle,Mode=TwoWay}"/>
-
-                <StackPanel Orientation="Horizontal" Grid.Row="10" Margin="-1 5">
-                    <RepeatButton x:Name="previous" Content="Move Previous" Margin="10 5"   />
-                    <RepeatButton x:Name="next" Content="Move Next" Margin="10 5" />
-                </StackPanel>
-            </Grid>
-    </common:SampleView.SettingsContent>-->
-</Page>
+</common:LayoutAwarePage>

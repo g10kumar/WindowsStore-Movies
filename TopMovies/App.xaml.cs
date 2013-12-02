@@ -40,9 +40,7 @@ namespace TopMovies
         /// executed, and as such is the logical equivalent of main() or WinMain().
         /// </summary>
         public string countryCode = ""; // Global variable that is going to store the user selection for country .The same variable is going to be stored in the session.
- 
-
-        //public bool FirstRun = true;
+        public bool youtubeReachable = false;
 
         public App()
         {
@@ -53,7 +51,7 @@ namespace TopMovies
             UnhandledException += App_UnhandledException;
             TaskScheduler.UnobservedTaskException += TaskScheduler_UnobservedTaskException;
 
-         //   DebugSettings.EnableFrameRateCounter = true;
+            //DebugSettings.EnableFrameRateCounter = true;
 
             //DebugSettings.IsOverdrawHeatMapEnabled = true;
 
@@ -64,13 +62,13 @@ namespace TopMovies
         void TaskScheduler_UnobservedTaskException(object sender, UnobservedTaskExceptionEventArgs e)
         {
             e.SetObserved();
-            AnalyticsHelper.Track("TrackException", "TaskException");
+            AnalyticsHelper.Track("TrackException", "TaskException",e.Exception.InnerException.Message);
         }
 
         void App_UnhandledException(object sender, UnhandledExceptionEventArgs e)
         {
             e.Handled = true;
-            AnalyticsHelper.Track("TrackException", "UnhandledException", e.Message);
+            AnalyticsHelper.Track("TrackException", "UnhandledException", e.Exception.InnerException.Message);
         }
 
         /// <summary>
@@ -101,21 +99,21 @@ namespace TopMovies
                 }
 
                 Windows.Storage.ApplicationDataContainer roamingSettings = Windows.Storage.ApplicationData.Current.RoamingSettings;
-                if (roamingSettings.Values.ContainsKey("lastEnglishMovieIndex"))
+                if (roamingSettings.Values.ContainsKey("lastEnglishMovie"))
                 {
-                    sessionData.lastEnglishMovieIndex = roamingSettings.Values["lastEnglishMovieIndex"].ToString();
+                    sessionData.lastEnglishMovie = roamingSettings.Values["lastEnglishMovie"].ToString();
                 }
-                if (roamingSettings.Values.ContainsKey("lastBollywoodMovieIndex"))
+                if (roamingSettings.Values.ContainsKey("lastBollywoodMovie"))
                 {
-                    sessionData.lastBollywoodMovieIndex = roamingSettings.Values["lastBollywoodMovieIndex"].ToString();
+                    sessionData.lastBollywoodMovie = roamingSettings.Values["lastBollywoodMovie"].ToString();
                 }
-                if (roamingSettings.Values.ContainsKey("lastForeignMovieIndex"))
+                if (roamingSettings.Values.ContainsKey("lastForeignMovie"))
                 {
-                    sessionData.lastForeignMovieIndex = roamingSettings.Values["lastForeignMovieIndex"].ToString();
+                    sessionData.lastForeignMovie = roamingSettings.Values["lastForeignMovie"].ToString();
                 }
-                if (roamingSettings.Values.ContainsKey("lastAsianMovieIndex"))
+                if (roamingSettings.Values.ContainsKey("lastAsianMovie"))
                 {
-                    sessionData.lastAsianMovieIndex = roamingSettings.Values["lastAsianMovieIndex"].ToString();
+                    sessionData.lastAsianMovie = roamingSettings.Values["lastAsianMovie"].ToString();
                 }
                 if (roamingSettings.Values["userCountrySetting"] != null)
                 {
@@ -145,14 +143,9 @@ namespace TopMovies
             // Ensure the current window is active
 
 
-            //Nascent.GoogleAnalytics.AnalyticsTracker.GetInstance("UA-38070832-3");
-            //AnalyticsTracker tracker;
-            //tracker.
             AnalyticsHelper.Setup();
             AnalyticsHelper.Track("ApplicationLifecycle", "Start");
-
             Window.Current.Activate();
-
 
             // Register handler for CommandsRequested events from the settings pane
             SettingsPane.GetForCurrentView().CommandsRequested += OnCommandsRequested;
@@ -194,16 +187,6 @@ namespace TopMovies
                 settings.ShowFlyout(new PrivacyPolicyUserControl());
             });
             args.Request.ApplicationCommands.Add(privacypolicy);
-
-            // Add a More Apps command
-            //var moreapps = new SettingsCommand("moreapps", "More Apps", (handler) =>
-            //{
-            //    var settings = new SettingsFlyout();
-            //    settings.ShowFlyout(new MoreAppsUserControl());
-            //});
-
-            //args.Request.ApplicationCommands.Add(moreapps);
-
             
         }
 
@@ -216,6 +199,7 @@ namespace TopMovies
         /// <param name="e">Details about the suspend request.</param>
         private void OnSuspending(object sender, SuspendingEventArgs e)
         {
+            //sessionData.resetValues();
             var deferral = e.SuspendingOperation.GetDeferral();
             //TODO: Save application state and stop any background activity
             
@@ -235,22 +219,26 @@ namespace TopMovies
     {
         public static string selectCategory { get; set; }
         //public static string lastMovieIndex { get; set; }
-        public static string lastEnglishMovieIndex { get; set; }
-        public static string lastForeignMovieIndex { get; set; }
-        public static string lastBollywoodMovieIndex { get; set; }
-        public static string lastAsianMovieIndex { get; set; }
-        public static string userCountrySetting { get; set; }  
+        public static string lastEnglishMovie { get; set; }
+        public static string lastForeignMovie { get; set; }
+        public static string lastBollywoodMovie { get; set; }
+        public static string lastAsianMovie { get; set; }
+        public static string userCountrySetting { get; set; }
+        public static int sortOrder { get; set; }
+        public static string filterLang { get; set; }
+        public static string filterGenere { get; set; }
+        public static int genreIndex { get; set; }
+        public static int asianLangIndex{get;set;}
+        public static int langIndex { get; set; }
 
-               
-        
 public static void resetValues()
         {
             sessionData.selectCategory = "";
             //sessionData.lastMovieIndex = "";
-            sessionData.lastEnglishMovieIndex = "";
-            sessionData.lastForeignMovieIndex = "";
-            sessionData.lastBollywoodMovieIndex = "";
-            sessionData.lastAsianMovieIndex = "";
+            sessionData.lastEnglishMovie = "";
+            sessionData.lastForeignMovie = "";
+            sessionData.lastBollywoodMovie = "";
+            sessionData.lastAsianMovie = "";
             sessionData.userCountrySetting = "";
         }
     }

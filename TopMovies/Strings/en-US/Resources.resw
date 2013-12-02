@@ -133,16 +133,13 @@
     <value>Share a movie: From the movies page, bring up the 'Share' charm. Select the application to use for sharing.</value>
   </data>
   <data name="AboutUs5.Text" xml:space="preserve">
-    <value>See details of movie: Click on the 'Movie Details' button in app bar OR double tap/click on the movie poster.</value>
+    <value>See details of movie: Click on the 'Movie Details' button OR double tap/click on the movie poster.</value>
   </data>
   <data name="AboutUs6.Text" xml:space="preserve">
-    <value>Buy movie: Click on the 'Buy Movie' button in app bar.</value>
+    <value>Buy movie: Click on the 'Buy Movie' button.</value>
   </data>
-  <data name="btnBuyDVD.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
+  <data name="btnBuyDVD.Text" xml:space="preserve">
     <value>Buy Movie</value>
-  </data>
-  <data name="btnMovieDetails.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
-    <value>Movie Details</value>
   </data>
   <data name="How_To.Text" xml:space="preserve">
     <value>How To:</value>
@@ -154,10 +151,10 @@
     <value>Privacy Policy</value>
   </data>
   <data name="PrivacyPolicy1.Text" xml:space="preserve">
-    <value>This Privacy Policy covers your use of this application. The app does not collect, store, or share any personal information, or anything related to your device. We do not collect any statistics, trends, neither do we track user movements. The site does allow you to visit external websites - specifically Amazon.com and Wikipedia.com and their affiliated sites. These websites may collect information related to your IP address, device, etc. Please check the privacy policy of these websites for details on information collected by them.</value>
+    <value>This Privacy Policy covers your use of this application. The app does not collect, store, or share any personal information, or anything related to your device. We do not collect any statistics, trends; neither do we track user movements. The site does allow you to visit external websites - specifically Amazon.com and Wikipedia.com and their affiliated sites. These websites may collect information related to your IP address, device, etc. Please check the privacy policy of these websites for details on information collected by them.</value>
   </data>
   <data name="PrivacyPolicy2.Text" xml:space="preserve">
-    <value>The app allows you to share the articles using the Share charm. The application you use to share the articles are not related to this app. Please check the privacy policy of those apps for how they use your data. The app also collects usage data. This information is stored on Google Analytics servers. No personally identifiable information is sent or stored.</value>
+    <value>The app allows you to share the articles using the Share charm. The applications you use to share the articles are not related to this app. Please check the privacy policy of those apps for how they use your data. The app also collects usage data. This information is stored on Google Analytics servers. No personally identifiable information is sent or stored.</value>
   </data>
   <data name="PrivacyPolicy3.Text" xml:space="preserve">
     <value>The country setting is only used to direct you to a site in your country when you click the 'Buy Movie' button.</value>
@@ -190,33 +187,267 @@
     <value>Top International Movies</value>
   </data>
   <data name="regiontext.Text" xml:space="preserve">
-    <value>Your country information is only used to direct you to the appropriate site when you click the "Buy Movie" button.</value>
+    <value>Your country information is only used to direct you to the appropriate site when you click the "Buy Movie" button</value>
   </data>
   <data name="AppName" xml:space="preserve">
     <value>The Best Movies Ever Made!</value>
   </data>
   <data name="NoInternet" xml:space="preserve">
-    <value>No active Internet connection avaliable . Please check the connection &amp; try again.</value>
+    <value>No active Internet connection available. Please check the connection &amp; try again.</value>
   </data>
-  <data name="TraslateDetails.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
-    <value>Convert Movie Title</value>
+  <data name="Backward_Button.Text" xml:space="preserve">
+    <value>Backward</value>
   </data>
-  <data name="Backward_Button.[using:Windows.UI.Xaml.Controls]ToolTipService.ToolTip" xml:space="preserve">
-    <value>Quick Backward</value>
+  <data name="Forward_Button.Text" xml:space="preserve">
+    <value>Forward</value>
   </data>
-  <data name="Forward_Button.[using:Windows.UI.Xaml.Controls]ToolTipService.ToolTip" xml:space="preserve">
-    <value>Quick Forward</value>
+  <data name="PlayTooltip.ToolTip" xml:space="preserve">
+    <value>Start Slideshow</value>
   </data>
-  <data name="Play_Button.[using:Windows.UI.Xaml.Controls]ToolTipService.ToolTip" xml:space="preserve">
-    <value>Auto Play Titles</value>
-  </data>
-  <data name="btnBuyDVD.[using:Windows.UI.Xaml.Controls]ToolTipService.ToolTip" xml:space="preserve">
+  <data name="btnBuy.ToolTip" xml:space="preserve">
     <value>Buy Movie Online</value>
   </data>
-  <data name="btnMovieDetails.[using:Windows.UI.Xaml.Controls]ToolTipService.ToolTip" xml:space="preserve">
-    <value>Get Movie Details</value>
+  <data name="TraslateDetails.ToolTip" xml:space="preserve">
+    <value>Translate Movie Title to Native Language</value>
   </data>
-  <data name="TraslateDetails.[using:Windows.UI.Xaml.Controls]ToolTipService.ToolTip" xml:space="preserve">
-    <value>Translate Movie Title To Native Language</value>
+  <data name="Genre" xml:space="preserve">
+    <value>Genre</value>
+  </data>
+  <data name="genre1" xml:space="preserve">
+    <value>Genre: All</value>
+  </data>
+  <data name="genre10" xml:space="preserve">
+    <value>Horror</value>
+  </data>
+  <data name="genre11" xml:space="preserve">
+    <value>Mystery</value>
+  </data>
+  <data name="genre12" xml:space="preserve">
+    <value>Romance</value>
+  </data>
+  <data name="genre13" xml:space="preserve">
+    <value>Thriller</value>
+  </data>
+  <data name="genre14" xml:space="preserve">
+    <value>War</value>
+  </data>
+  <data name="genre2" xml:space="preserve">
+    <value>Action</value>
+  </data>
+  <data name="genre3" xml:space="preserve">
+    <value>Adventure</value>
+  </data>
+  <data name="genre4" xml:space="preserve">
+    <value>Animation</value>
+  </data>
+  <data name="genre5" xml:space="preserve">
+    <value>Comedy</value>
+  </data>
+  <data name="genre6" xml:space="preserve">
+    <value>Crime</value>
+  </data>
+  <data name="genre7" xml:space="preserve">
+    <value>Drama</value>
+  </data>
+  <data name="genre8" xml:space="preserve">
+    <value>Family</value>
+  </data>
+  <data name="genre9" xml:space="preserve">
+    <value>Fantasy</value>
+  </data>
+  <data name="Header1" xml:space="preserve">
+    <value>Plot</value>
+  </data>
+  <data name="Header2" xml:space="preserve">
+    <value>Actors</value>
+  </data>
+  <data name="Header3" xml:space="preserve">
+    <value>Director</value>
+  </data>
+  <data name="Header4" xml:space="preserve">
+    <value>Writer</value>
+  </data>
+  <data name="Header5" xml:space="preserve">
+    <value>Additional Information</value>
+  </data>
+  <data name="lang1" xml:space="preserve">
+    <value>Language: All</value>
+  </data>
+  <data name="lang10" xml:space="preserve">
+    <value>Spanish</value>
+  </data>
+  <data name="lang11" xml:space="preserve">
+    <value>Swedish</value>
+  </data>
+  <data name="lang2" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="lang3" xml:space="preserve">
+    <value>French</value>
+  </data>
+  <data name="lang4" xml:space="preserve">
+    <value>German</value>
+  </data>
+  <data name="lang5" xml:space="preserve">
+    <value>Italian</value>
+  </data>
+  <data name="lang6" xml:space="preserve">
+    <value>Japanese</value>
+  </data>
+  <data name="lang7" xml:space="preserve">
+    <value>Polish</value>
+  </data>
+  <data name="lang8" xml:space="preserve">
+    <value>Portuguese</value>
+  </data>
+  <data name="lang9" xml:space="preserve">
+    <value>Russian</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="Release" xml:space="preserve">
+    <value>Release Year</value>
+  </data>
+  <data name="Runtime" xml:space="preserve">
+    <value>Runtime</value>
+  </data>
+  <data name="sorter1" xml:space="preserve">
+    <value>Sort By: Default</value>
+  </data>
+  <data name="sorter2" xml:space="preserve">
+    <value>Oldest to Newest</value>
+  </data>
+  <data name="sorter3" xml:space="preserve">
+    <value>Newest to Oldest</value>
+  </data>
+  <data name="sorter4" xml:space="preserve">
+    <value>Rated Lowest to Highest</value>
+  </data>
+  <data name="sorter5" xml:space="preserve">
+    <value>Rated Highest to Lowest</value>
+  </data>
+  <data name="userVotes" xml:space="preserve">
+    <value> User Votes</value>
+  </data>
+  <data name="asianLang1" xml:space="preserve">
+    <value>Language: All</value>
+  </data>
+  <data name="asianLang2" xml:space="preserve">
+    <value>Cantonese</value>
+  </data>
+  <data name="asianLang3" xml:space="preserve">
+    <value>Chinese</value>
+  </data>
+  <data name="asianLang4" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="asianLang5" xml:space="preserve">
+    <value>Japanese</value>
+  </data>
+  <data name="asianLang6" xml:space="preserve">
+    <value>Korean</value>
+  </data>
+  <data name="asianLang7" xml:space="preserve">
+    <value>Thai</value>
+  </data>
+  <data name="SnappedMessage.Text" xml:space="preserve">
+    <value>Movies are best viewed in Full screen or Filled mode, not in Snapped mode. Please change app. view.</value>
+  </data>
+  <data name="busyIndicator.Text" xml:space="preserve">
+    <value>Loading...</value>
+  </data>
+  <data name="BackwardTooltip.ToolTip" xml:space="preserve">
+    <value>Jump Backward</value>
+  </data>
+  <data name="ForwardTooltip.ToolTip" xml:space="preserve">
+    <value>Jump Forward</value>
+  </data>
+  <data name="InfoTooltip.ToolTip" xml:space="preserve">
+    <value>Movie Information</value>
+  </data>
+  <data name="Info_Button.Text" xml:space="preserve">
+    <value>Movie Detail</value>
+  </data>
+  <data name="PauseToolTip.ToolTip" xml:space="preserve">
+    <value>Stop Slideshow</value>
+  </data>
+  <data name="Pause_Button.Text" xml:space="preserve">
+    <value>Pause</value>
+  </data>
+  <data name="Play_Button.Text" xml:space="preserve">
+    <value>Play</value>
+  </data>
+  <data name="trailerButton.Text" xml:space="preserve">
+    <value>Trailer</value>
+  </data>
+  <data name="trailerTooltip.ToolTip" xml:space="preserve">
+    <value>Show YouTube Trailer</value>
+  </data>
+  <data name="translatename.Text" xml:space="preserve">
+    <value>Translate</value>
+  </data>
+  <data name="TraslateInfo.ToolTip" xml:space="preserve">
+    <value>Display details in native language</value>
+  </data>
+  <data name="wikiArticleTooltip.ToolTip" xml:space="preserve">
+    <value>Wikipedia article of movie</value>
+  </data>
+  <data name="wikiArticle_button.Text" xml:space="preserve">
+    <value>Wikipedia</value>
+  </data>
+  <data name="Notrailer" xml:space="preserve">
+    <value>Unable to connect to YouTube from this Device.</value>
+  </data>
+  <data name="trailerHeader" xml:space="preserve">
+    <value>You are watching</value>
+  </data>
+  <data name="infoPageIndicator.Text" xml:space="preserve">
+    <value>Processing Request. Please wait...</value>
+  </data>
+  <data name="btnBuyDVD.FontSize" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="trailerButton.FontSize" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="translatename.FontSize" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="wikiArticle_button.FontSize" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="Backward_Button.FontSize" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="Forward_Button.FontSize" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="Info_Button.FontSize" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="Pause_Button.FontSize" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="Play_Button.FontSize" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="NoMoviesMessage1" xml:space="preserve">
+    <value>There are no </value>
+  </data>
+  <data name="NoMoviesMessage2" xml:space="preserve">
+    <value> Movies in </value>
+  </data>
+  <data name="NoMoviesMessage3" xml:space="preserve">
+    <value> Language</value>
+  </data>
+  <data name="TopBollywood" xml:space="preserve">
+    <value> Bollywood Category</value>
+  </data>
+  <data name="TopEnglish" xml:space="preserve">
+    <value> Hollywood Category</value>
+  </data>
+  <data name="PrivacyPolicy4.Text" xml:space="preserve">
+    <value>This app is supported by ads from Microsoft Advertising. Learn more about Microsoft’s privacy practices and your choices. Learn more link:</value>
   </data>
 </root>

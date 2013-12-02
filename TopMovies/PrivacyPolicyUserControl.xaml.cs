@@ -36,5 +36,10 @@ namespace TopMovies
             }
             SettingsPane.Show();
         }
+
+        async private void ExamplesLink_Click(object sender, RoutedEventArgs e)
+        {
+            await Windows.System.Launcher.LaunchUriAsync(new Uri("https://choice.microsoft.com/AdvertisementChoice/"));
+        }
     }
 }

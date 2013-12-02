@@ -16,6 +16,9 @@ using Windows.UI.Core;
 using Windows.UI.ViewManagement;
 using TopMovies.Common;
 using DT.GoogleAnalytics.Metro;
+using Syncfusion.UI.Xaml.Controls.Notification;
+using Syncfusion.UI.Xaml.Controls;
+using Windows.Devices.Sensors;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -26,51 +29,12 @@ namespace TopMovies
     /// </summary>
     public sealed partial class MainPage : TopMovies.Common.LayoutAwarePage
     {
+
         public MainPage()
         {
             this.InitializeComponent();
-            Window.Current.SizeChanged += Current_SizeChanged;
+            //Window.Current.SizeChanged += this.WindowSizeChanged;
         }
-
-
-        private void manageViewState()
-        {
-            string visualState = DetermineVisualState(ApplicationView.Value);
-
-            if (visualState == "Snapped")
-            {
-                mainStack.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-                snappedStack.Visibility = Windows.UI.Xaml.Visibility.Visible;
-                backButton.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-                pageTitle.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-            }
-            else
-            {
-                mainStack.Visibility = Windows.UI.Xaml.Visibility.Visible;
-                snappedStack.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-                backButton.Style = App.Current.Resources["BackButtonStyle"] as Style;
-                pageTitle.Style = App.Current.Resources["PageHeaderTextStyle"] as Style;
-
-            }
-        }
-
-        void Current_SizeChanged(object sender, WindowSizeChangedEventArgs e)
-        {
-            manageViewState();
-        }
-
-        protected override string DetermineVisualState(ApplicationViewState viewState)
-        {
-            if (viewState == ApplicationViewState.Filled || viewState == ApplicationViewState.FullScreenLandscape)
-            {
-                // Allow pages to request that the Filled state be used only for landscape layouts narrower
-                // than 1366 virtual pixels
-                var windowWidth = Window.Current.Bounds.Width;
-                viewState = windowWidth >= 1366 ? ApplicationViewState.FullScreenLandscape : ApplicationViewState.Filled;
-            }
-            return viewState.ToString();
-        }
-
 
         /// <summary>
         /// Invoked when this page is about to be displayed in a Frame.
@@ -79,6 +43,20 @@ namespace TopMovies
         /// property is typically used to configure the page.</param>
         protected  override void OnNavigatedTo(NavigationEventArgs e)
         {
+
+            //Passin the asset folder name with the number of image files inside the folder to populate the hub tile with the images . 
+            TopEnglish.ImageList = GetImages("TopEnglish",185);
+            TopForeign.ImageList = GetImages("TopForeign",235);
+            TopBollywood.ImageList = GetImages("TopBollywood",102);
+            TopAsian.ImageList = GetImages("TopAsian",112);
+
+            sessionData.sortOrder = 0;
+            sessionData.filterGenere = null;
+            sessionData.filterLang = null;
+            sessionData.genreIndex = 0;
+            sessionData.asianLangIndex = 0;
+            sessionData.langIndex = 0;
+
             AnalyticsHelper.TrackPageView("/MainPage");
             if (((App)(App.Current)).countryCode == "")
             {
@@ -86,7 +64,8 @@ namespace TopMovies
                 ((App)(App.Current)).countryCode = new Windows.Globalization.GeographicRegion().DisplayName;             
                 
             }
-            //this.LoadState(e.Parameter, null);
+
+           // this.LoadState(e.Parameter, null);
         }
 
 
@@ -102,36 +81,37 @@ namespace TopMovies
 
         protected override void LoadState(Object navigationParameter, Dictionary<String, Object> pageState)
         {
-            // Restore values stored in session state.
-            //if (pageState != null && pageState.ContainsKey("greetingOutputText"))
-            //{
-            //    greetingOutput.Text = pageState["greetingOutputText"].ToString();
-            //}
+        // Restore values stored in session state.
+        //if (pageState != null && pageState.ContainsKey("greetingOutputText"))
+        //{
+        //    greetingOutput.Text = pageState["greetingOutputText"].ToString();
+        //}
 
-            // Restore values stored in app data.
-            Windows.Storage.ApplicationDataContainer roamingSettings = Windows.Storage.ApplicationData.Current.RoamingSettings;
-            if (roamingSettings.Values.ContainsKey("lastEnglishMovieIndex"))
-            {
-                sessionData.lastEnglishMovieIndex = roamingSettings.Values["lastEnglishMovieIndex"].ToString();
-            }
-            if (roamingSettings.Values.ContainsKey("lastBollywoodMovieIndex"))
-            {
-                sessionData.lastEnglishMovieIndex = roamingSettings.Values["lastBollywoodMovieIndex"].ToString();
-            }
-            if (roamingSettings.Values.ContainsKey("lastForeignMovieIndex"))
-            {
-                sessionData.lastEnglishMovieIndex = roamingSettings.Values["lastForeignMovieIndex"].ToString();
-            }
+        //    // Restore values stored in app data.
+        //    Windows.Storage.ApplicationDataContainer roamingSettings = Windows.Storage.ApplicationData.Current.RoamingSettings;
+        //    if (roamingSettings.Values.ContainsKey("lastEnglishMovieIndex"))
+        //    {
+        //        sessionData.lastEnglishMovieIndex = roamingSettings.Values["lastEnglishMovieIndex"].ToString();
+        //    }
+        //    if (roamingSettings.Values.ContainsKey("lastBollywoodMovieIndex"))
+        //    {
+        //        sessionData.lastEnglishMovieIndex = roamingSettings.Values["lastBollywoodMovieIndex"].ToString();
+        //    }
+        //    if (roamingSettings.Values.ContainsKey("lastForeignMovieIndex"))
+        //    {
+        //        sessionData.lastEnglishMovieIndex = roamingSettings.Values["lastForeignMovieIndex"].ToString();
+        //    }
         }
 
+        //<summary>This function is executed on clicking the English Section </summary>
         private void btnTopEnglishMovies_Click(object sender, RoutedEventArgs e)
-        {                   
-
+        {               
             sessionData.selectCategory = "TopEnglish";
             // Navigates to Movies page
             this.Frame.Navigate(typeof(Movies));
         }
 
+        //<summary>This function is executed on clicking the International Section </summary>
         private void btnTopForeignMovies_Click(object sender, RoutedEventArgs e)
         {           
 
@@ -140,6 +120,7 @@ namespace TopMovies
             this.Frame.Navigate(typeof(Movies));
         }
 
+        //<summary>This function is executed on clicking the Bollywood Section </summary>
         private void btnTopBollywoodmovies_Click(object sender, RoutedEventArgs e)
         {            
 
@@ -148,7 +129,7 @@ namespace TopMovies
             this.Frame.Navigate(typeof(Movies));
         }
 
-
+        //<summary>This function is executed on clicking the Asian Section </summary>
         private void btnTopAsianmovies_Click(object sender, RoutedEventArgs e)
         {           
 
@@ -156,6 +137,20 @@ namespace TopMovies
             // Navigates to Movies page
             this.Frame.Navigate(typeof(Movies));
 
+        }
+
+        //<summary>This function populates the Hubtile element on the Main page </summary>
+        private ImageList GetImages(string category,int lenght)
+        {
+            ImageList list = new ImageList();
+            Random r = new Random();
+            for (int i = 1; i < 20; i++)
+            {
+                int pic = r.Next(1, lenght);
+                list.Add("Assets/" + category + "/" + pic + ".jpg");
+            }
+
+            return list;
         }
         
     }
