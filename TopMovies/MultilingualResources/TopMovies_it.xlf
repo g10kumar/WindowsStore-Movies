@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
-  <file datatype="xml" source-language="en-US" target-language="it" original="TopMovies_Multilingual.prilog.xml" tool-id="MultilingualAppToolkit" product-name="TopMovies" product-version="1.0.0.0" build-num="0001">
+  <file datatype="xml" source-language="en-US" target-language="it" original="TopMovies_Multilingual.prilog.xml" tool-id="MultilingualAppToolkit" product-name="TopMovies" product-version="1.0.0.0" build-num="0">
     <header>
-      <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="1.2.2017.0" tool-company="Microsoft" />
+      <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="2.1.1100.0" tool-company="Microsoft" />
     </header>
     <body>
       <group id="Resources">
@@ -27,20 +27,16 @@
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Condividere un film: dalla pagina film, portare il fascino 'Share'. Selezionare l'applicazione da utilizzare per la condivisione.</target>
         </trans-unit>
         <trans-unit id="Resources\AboutUs5\Text" translate="yes" xml:space="preserve">
-          <source>See details of movie: Click on the 'Movie Details' button in app bar OR double tap/click on the movie poster.</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Vedere dettagli del film: Clicca sul pulsante 'Dettagli film' in app bar OR double tap/clic su movie poster.</target>
+          <source>See details of movie: Click on the 'Movie Details' button OR double tap/click on the movie poster.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Vedi i dettagli del film: clicca su 'Dettagli di film' pulsante OR doppio rubinetto/Clicca sulla locandina film.</target>
         </trans-unit>
         <trans-unit id="Resources\AboutUs6\Text" translate="yes" xml:space="preserve">
-          <source>Buy movie: Click on the 'Buy Movie' button in app bar.</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Acquistare film: Clicca sul pulsante 'Acquista film' nella barra app.</target>
+          <source>Buy movie: Click on the 'Buy Movie' button.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Acquistare film: Clicca sul pulsante 'Acquista Movie'.</target>
         </trans-unit>
-        <trans-unit id="Resources\btnBuyDVD\[using:Windows.UI.Xaml.Automation]AutomationProperties\Name" translate="yes" xml:space="preserve">
+        <trans-unit translate="yes" id="Resources\btnBuyDVD\Text" xml:space="preserve">
           <source>Buy Movie</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Acquistare film</target>
-        </trans-unit>
-        <trans-unit id="Resources\btnMovieDetails\[using:Windows.UI.Xaml.Automation]AutomationProperties\Name" translate="yes" xml:space="preserve">
-          <source>Movie Details</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Film particolari</target>
         </trans-unit>
         <trans-unit id="Resources\How_To\Text" translate="yes" xml:space="preserve">
           <source>How To:</source>
@@ -48,19 +44,19 @@
         </trans-unit>
         <trans-unit id="Resources\pageTitle\Text" translate="yes" xml:space="preserve">
           <source>The Best Movies Ever Made!</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Il miglior film mai realizzato!</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Il miglior film mai fatto!</target>
         </trans-unit>
         <trans-unit id="Resources\privacypolicy" translate="yes" xml:space="preserve">
           <source>Privacy Policy</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Informativa sulla privacy</target>
         </trans-unit>
         <trans-unit id="Resources\PrivacyPolicy1\Text" translate="yes" xml:space="preserve">
-          <source>This Privacy Policy covers your use of this application. The app does not collect, store, or share any personal information, or anything related to your device. We do not collect any statistics, trends, neither do we track user movements. The site does allow you to visit external websites - specifically Amazon.com and Wikipedia.com and their affiliated sites. These websites may collect information related to your IP address, device, etc. Please check the privacy policy of these websites for details on information collected by them.</source>
-          <target state="translated">Questa informativa sulla privacy copre l'uso di questa applicazione. L'app non raccogliere, memorizzare o condividere informazioni personali, o qualsiasi cosa che riguarda il vostro dispositivo. Non raccogliamo statistiche, tendenze, né abbiamo traccia movimenti utente. Il applicazione consente di visitare siti esterni - specificamente Amazon.com e Wikipedia.com e sui loro siti affiliati. Questi siti possono raccogliere informazioni relative al vostro indirizzo IP, dispositivo, ecc. Si prega di consultare l'informativa sulla privacy di questi siti Web per i dettagli sulle informazioni raccolte da loro.</target>
+          <source>This Privacy Policy covers your use of this application. The app does not collect, store, or share any personal information, or anything related to your device. We do not collect any statistics, trends; neither do we track user movements. The site does allow you to visit external websites - specifically Amazon.com and Wikipedia.com and their affiliated sites. These websites may collect information related to your IP address, device, etc. Please check the privacy policy of these websites for details on information collected by them.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Questa informativa sulla privacy copre l'uso di questa applicazione. L'app non raccogliere, memorizzare o condividere informazioni personali, o tutto ciò che riguarda il dispositivo. Non raccogliamo statistiche, tendenze; né noi a monitorare i movimenti dell'utente. Il sito permetterà di visitare siti esterni - in particolare Amazon.com e Wikipedia.com e loro siti affiliati. Questi siti possono raccogliere informazioni relative al vostro indirizzo IP, dispositivo, ecc. Si prega di consultare l'informativa sulla privacy di questi siti Web per i dettagli sulle informazioni raccolte da loro.</target>
         </trans-unit>
         <trans-unit id="Resources\PrivacyPolicy2\Text" translate="yes" xml:space="preserve">
-          <source>The app allows you to share the articles using the Share charm. The application you use to share the articles are not related to this app. Please check the privacy policy of those apps for how they use your data. The app also collects usage data. This information is stored on Google Analytics servers. No personally identifiable information is sent or stored.</source>
-          <target state="translated">L'app consente di condividere gli articoli usando il fascino Share . L'applicazione utilizzata di condividere gli articoli non sono legati a questa applicazione . Si prega di consultare l'informativa sulla privacy di tali applicazioni per il modo in cui utilizzare i tuoi dati. L'applicazione raccoglie anche dati di utilizzo. Queste informazioni vengono memorizzate sui server di Google Analytics. No informazioni personalmente identificabili inviate o salvate.</target>
+          <source>The app allows you to share the articles using the Share charm. The applications you use to share the articles are not related to this app. Please check the privacy policy of those apps for how they use your data. The app also collects usage data. This information is stored on Google Analytics servers. No personally identifiable information is sent or stored.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">L'app consente di condividere gli articoli utilizzando l'accesso alla condivisione. Le applicazioni che si utilizza per condividere gli articoli non sono legate a questa app. Si prega di consultare l'informativa sulla privacy di quelle applicazioni per come utilizzare i vostri dati. L'applicazione raccoglie anche dati di utilizzo. Questa informazione viene memorizzata sui server di Google Analytics. Alcuna informazione personalmente identificabile viene inviata o archiviate.</target>
         </trans-unit>
         <trans-unit id="Resources\PrivacyPolicy3\Text" translate="yes" xml:space="preserve">
           <source>The country setting is only used to direct you to a site in your country when you click the 'Buy Movie' button.</source>
@@ -70,19 +66,19 @@
           <source>Country Setting</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Impostazione del paese</target>
         </trans-unit>
-        <trans-unit id="Resources\Asian_Movies\Text" translate="yes" xml:space="preserve">
+        <trans-unit translate="yes" id="Resources\Bollywood_Movies\Text" xml:space="preserve">
+          <source>Top Bollywood Movies</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Top Bollywood Film</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\Asian_Movies\Text" xml:space="preserve">
           <source>Top Asian Movies</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Top film asiatici</target>
         </trans-unit>
-        <trans-unit id="Resources\Bollywood_Movies\Text" translate="yes" xml:space="preserve">
-          <source>Top Bollywood Movies</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Top Bollywood Movies</target>
-        </trans-unit>
-        <trans-unit id="Resources\Hollywood_Movies\Text" translate="yes" xml:space="preserve">
+        <trans-unit translate="yes" id="Resources\Hollywood_Movies\Text" xml:space="preserve">
           <source>Top Hollywood Movies</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Top film di Hollywood</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Top Hollywood film</target>
         </trans-unit>
-        <trans-unit id="Resources\International_Movies\Text" translate="yes" xml:space="preserve">
+        <trans-unit translate="yes" id="Resources\International_Movies\Text" xml:space="preserve">
           <source>Top International Movies</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Top film internazionali</target>
         </trans-unit>
@@ -92,55 +88,367 @@
         </trans-unit>
         <trans-unit id="Resources\BollywoodTitle" translate="yes" xml:space="preserve">
           <source>Top Bollywood Movies</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Top Bollywood Movies</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Top Bollywood Film</target>
         </trans-unit>
         <trans-unit id="Resources\HollywoodTitle" translate="yes" xml:space="preserve">
           <source>Top Hollywood Movies</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Top film di Hollywood</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Top Hollywood film</target>
         </trans-unit>
         <trans-unit id="Resources\InternationalTitle" translate="yes" xml:space="preserve">
           <source>Top International Movies</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Top film internazionali</target>
         </trans-unit>
         <trans-unit id="Resources\regiontext\Text" translate="yes" xml:space="preserve">
-          <source>Your country information is only used to direct you to the appropriate site when you click the "Buy Movie" button.</source>
-          <target state="translated">Informazioni sul tuo paese è utilizzati solo per indirizzarvi al sito appropriato quando si fa clic sul pulsante "Acquista film".</target>
+          <source>Your country information is only used to direct you to the appropriate site when you click the "Buy Movie" button</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Le informazioni del paese viene utilizzate solo per indirizzarvi al sito appropriato quando si fa clic sul pulsante "Acquista il film"</target>
         </trans-unit>
         <trans-unit id="Resources\AppName" translate="yes" xml:space="preserve">
           <source>The Best Movies Ever Made!</source>
-          <target state="translated">Il Miglior Film Mai Realizzato!</target>
+          <target state="translated">Il miglior film mai fatto!</target>
         </trans-unit>
         <trans-unit id="Resources\NoInternet" translate="yes" xml:space="preserve">
-          <source>No active Internet connection avaliable . Please check the connection %%amp; try again.</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">No già disponibile connessione Internet attiva. Si prega di controllare la connessione %%amp;riprovare.</target>
+          <source>No active Internet connection available. Please check the connection %%amp; try again.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Nessuna connessione Internet disponibile. Si prega di controllare la connessione e riprovare.</target>
         </trans-unit>
-        <trans-unit id="Resources\TraslateDetails\[using:Windows.UI.Xaml.Automation]AutomationProperties\Name" translate="yes" xml:space="preserve">
-          <source>Convert Movie Title</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Convertire film titolo</target>
+        <trans-unit translate="yes" id="Resources\Backward_Button\Text" xml:space="preserve">
+          <source>Backward</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">indietro</target>
         </trans-unit>
-        <trans-unit id="Resources\Backward_Button\[using:Windows.UI.Xaml.Controls]ToolTipService\ToolTip" translate="yes" xml:space="preserve">
-          <source>Quick Backward</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Indietro veloce</target>
+        <trans-unit translate="yes" id="Resources\Forward_Button\Text" xml:space="preserve">
+          <source>Forward</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Avanti</target>
         </trans-unit>
-        <trans-unit id="Resources\Forward_Button\[using:Windows.UI.Xaml.Controls]ToolTipService\ToolTip" translate="yes" xml:space="preserve">
-          <source>Quick Forward</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Avanti veloce</target>
+        <trans-unit translate="yes" id="Resources\PlayTooltip\ToolTip" xml:space="preserve">
+          <source>Start Slideshow</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Iniziare a Slideshow</target>
         </trans-unit>
-        <trans-unit id="Resources\Play_Button\[using:Windows.UI.Xaml.Controls]ToolTipService\ToolTip" translate="yes" xml:space="preserve">
-          <source>Auto Play Titles</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Auto Play titoli</target>
-        </trans-unit>
-        <trans-unit id="Resources\btnBuyDVD\[using:Windows.UI.Xaml.Controls]ToolTipService\ToolTip" translate="yes" xml:space="preserve">
+        <trans-unit translate="yes" id="Resources\btnBuy\ToolTip" xml:space="preserve">
           <source>Buy Movie Online</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Acquista Online Film</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Acquista Online Movie</target>
         </trans-unit>
-        <trans-unit id="Resources\btnMovieDetails\[using:Windows.UI.Xaml.Controls]ToolTipService\ToolTip" translate="yes" xml:space="preserve">
-          <source>Get Movie Details</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Ottenere film particolari</target>
+        <trans-unit id="Resources\TraslateDetails\ToolTip" translate="yes" xml:space="preserve">
+          <source>Translate Movie Title to Native Language</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Tradurre il titolo di film di lingua madre</target>
         </trans-unit>
-        <trans-unit id="Resources\TraslateDetails\[using:Windows.UI.Xaml.Controls]ToolTipService\ToolTip" translate="yes" xml:space="preserve">
-          <source>Translate Movie Title To Native Language</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Tradurre il titolo di film in lingua madre</target>
+        <trans-unit translate="yes" id="Resources\userVotes" xml:space="preserve">
+          <source> User Votes</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion"> Utente voti</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\asianLang7" xml:space="preserve">
+          <source>Thai</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Tailandese</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\SnappedMessage\Text" xml:space="preserve">
+          <source>Movies are best viewed in Full screen or Filled mode, not in Snapped mode. Please change app. view.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Film sono meglio visualizzato a schermo intero o in modalità Filled, non in modalità Snapped. Si prega di cambiare applicazione vista.</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\busyIndicator\Text" xml:space="preserve">
+          <source>Loading...</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Caricamento...</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\BackwardTooltip\ToolTip" xml:space="preserve">
+          <source>Jump Backward</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Salto all'indietro</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\Pause_Button\Text" xml:space="preserve">
+          <source>Pause</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Pausa</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\PauseToolTip\ToolTip" xml:space="preserve">
+          <source>Stop Slideshow</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Stop Slideshow</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\ForwardTooltip\ToolTip" xml:space="preserve">
+          <source>Jump Forward</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Salta avanti</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\Info_Button\Text" xml:space="preserve">
+          <source>Movie Detail</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Dettaglio film</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\InfoTooltip\ToolTip" xml:space="preserve">
+          <source>Movie Information</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Informazioni film</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\Play_Button\Text" xml:space="preserve">
+          <source>Play</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Giocare</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\trailerButton\Text" xml:space="preserve">
+          <source>Trailer</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Trailer</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\trailerTooltip\ToolTip" xml:space="preserve">
+          <source>Show YouTube Trailer</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Visualizza YouTube Trailer</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\translatename\Text" xml:space="preserve">
+          <source>Translate</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Traduci</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\wikiArticle_button\Text" xml:space="preserve">
+          <source>Wikipedia</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Wikipedia</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\trailerHeader" xml:space="preserve">
+          <source>You are watching</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Si sta guardando</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\infoPageIndicator\Text" xml:space="preserve">
+          <source>Processing Request. Please wait...</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Elaborazione richiesta. Attendere prego...</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\wikiArticle_button\FontSize" xml:space="preserve">
+          <source>11</source>
+          <target state="new">11</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\Play_Button\FontSize" xml:space="preserve">
+          <source>11</source>
+          <target state="new">11</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\TopEnglish" xml:space="preserve">
+          <source> Hollywood Category</source>
+          <target state="translated"> Categoria di  Hollywood</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\PrivacyPolicy4\Text" xml:space="preserve">
+          <source>This app is supported by ads from Microsoft Advertising. Learn more about Microsoft’s privacy practices and your choices. Learn more link:</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Questo app è supportato da annunci da Microsoft Advertising. Ulteriori informazioni pratiche sulla privacy di Microsoft e le scelte. Imparare ulteriori link:</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\TopBollywood" xml:space="preserve">
+          <source> Bollywood Category</source>
+          <target state="translated"> Categoria di Bollywood</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\NoMoviesMessage3" xml:space="preserve">
+          <source> Language</source>
+          <target state="translated"> Lingua</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\NoMoviesMessage2" xml:space="preserve">
+          <source> Movies in </source>
+          <target state="translated"> in </target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\NoMoviesMessage1" xml:space="preserve">
+          <source>There are no </source>
+          <target state="translated">non ci sono nessun film di </target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\Pause_Button\FontSize" xml:space="preserve">
+          <source>11</source>
+          <target state="translated">11</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\Info_Button\FontSize" xml:space="preserve">
+          <source>11</source>
+          <target state="translated">11</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\Forward_Button\FontSize" xml:space="preserve">
+          <source>11</source>
+          <target state="translated">11</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\Backward_Button\FontSize" xml:space="preserve">
+          <source>11</source>
+          <target state="translated">11</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\translatename\FontSize" xml:space="preserve">
+          <source>11</source>
+          <target state="translated">11</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\trailerButton\FontSize" xml:space="preserve">
+          <source>11</source>
+          <target state="translated">11</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\btnBuyDVD\FontSize" xml:space="preserve">
+          <source>11</source>
+          <target state="translated" state-qualifier="mt-suggestion">9</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\Notrailer" xml:space="preserve">
+          <source>Unable to connect to YouTube from this Device.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Impossibile connettersi a YouTube da questo dispositivo.</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\wikiArticleTooltip\ToolTip" xml:space="preserve">
+          <source>Wikipedia article of movie</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Articolo di wikipedia del film</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\TraslateInfo\ToolTip" xml:space="preserve">
+          <source>Display details in native language</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Visualizzare dettagli nella lingua nativa</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\asianLang6" xml:space="preserve">
+          <source>Korean</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Coreano</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\asianLang5" xml:space="preserve">
+          <source>Japanese</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Giapponese</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\asianLang4" xml:space="preserve">
+          <source>English</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Inglese</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\asianLang3" xml:space="preserve">
+          <source>Chinese</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Cinese</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\asianLang2" xml:space="preserve">
+          <source>Cantonese</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Cantonese</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\asianLang1" xml:space="preserve">
+          <source>Language: All</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Lingua: tutti</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\Runtime" xml:space="preserve">
+          <source>Runtime</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Runtime</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\sorter5" xml:space="preserve">
+          <source>Rated Highest to Lowest</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Voto più alto al più basso</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\sorter4" xml:space="preserve">
+          <source>Rated Lowest to Highest</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Voto più basso al più alto</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\sorter3" xml:space="preserve">
+          <source>Newest to Oldest</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Recente al più vecchio</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\sorter2" xml:space="preserve">
+          <source>Oldest to Newest</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Vecchio al più recente</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\sorter1" xml:space="preserve">
+          <source>Sort By: Default</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Ordina per: Default</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\Release" xml:space="preserve">
+          <source>Release Year</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Anno di pubblicazione</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\Language" xml:space="preserve">
+          <source>Language</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Lingua</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\Header5" xml:space="preserve">
+          <source>Additional Information</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Informazioni aggiuntive</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\lang1" xml:space="preserve">
+          <source>Language: All</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Lingua: tutti</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\lang11" xml:space="preserve">
+          <source>Swedish</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Svedese</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\lang10" xml:space="preserve">
+          <source>Spanish</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Spagnolo</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\lang2" xml:space="preserve">
+          <source>English</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Inglese</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\lang9" xml:space="preserve">
+          <source>Russian</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Russo</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\lang8" xml:space="preserve">
+          <source>Portuguese</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Portoghese</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\lang7" xml:space="preserve">
+          <source>Polish</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Polacco</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\lang6" xml:space="preserve">
+          <source>Japanese</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Giapponese</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\lang5" xml:space="preserve">
+          <source>Italian</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Italiano</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\lang4" xml:space="preserve">
+          <source>German</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Tedesco</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\lang3" xml:space="preserve">
+          <source>French</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Francese</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\Header4" xml:space="preserve">
+          <source>Writer</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Scrittore</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\Header3" xml:space="preserve">
+          <source>Director</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Direttore</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\Header2" xml:space="preserve">
+          <source>Actors</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Attori</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\Header1" xml:space="preserve">
+          <source>Plot</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Trama</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\Genre" xml:space="preserve">
+          <source>Genre</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Genere</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\genre9" xml:space="preserve">
+          <source>Fantasy</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Fantasia</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\genre8" xml:space="preserve">
+          <source>Family</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Famiglia</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\genre7" xml:space="preserve">
+          <source>Drama</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Dramma</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\genre6" xml:space="preserve">
+          <source>Crime</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Crimine</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\genre5" xml:space="preserve">
+          <source>Comedy</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Commedia</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\genre4" xml:space="preserve">
+          <source>Animation</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Animazione</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\genre3" xml:space="preserve">
+          <source>Adventure</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Avventura</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\genre2" xml:space="preserve">
+          <source>Action</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Azione</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\genre14" xml:space="preserve">
+          <source>War</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Guerra</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\genre13" xml:space="preserve">
+          <source>Thriller</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Thriller</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\genre12" xml:space="preserve">
+          <source>Romance</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Romance</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\genre11" xml:space="preserve">
+          <source>Mystery</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Mistero</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\genre10" xml:space="preserve">
+          <source>Horror</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Horror</target>
+        </trans-unit>
+        <trans-unit translate="yes" id="Resources\genre1" xml:space="preserve">
+          <source>Genre: All</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Genere: tutti</target>
         </trans-unit>
       </group>
     </body>
