@@ -10,7 +10,7 @@
     var dtm = Windows.ApplicationModel.DataTransfer.DataTransferManager;
     var tmpplayListArray = new Array("Gita in Hindi#http://www.youtube.com/playlist?list=PLhtmKWc6vRTAbgzzXxDaaC5nLmGsSiybE", "Gita in Tamil#http://www.youtube.com/playlist?list=PLEE6703B259EF5E0F");
     var playListNodes = [];
-
+    var videoListsNodes = [];
     ui.Pages.define("/pages/playlist/playlist.html", {
 
 
@@ -22,6 +22,7 @@
             // display.
 
             GetPlayLists();
+            GetVideoLists(element, "PLhtmKWc6vRTAbgzzXxDaaC5nLmGsSiybE", "1");
         },
 
         unload: function () {
@@ -94,6 +95,98 @@
             var playlist = invokedItem.data.playtitle.split("=");
             WinJS.Navigation.navigate("/pages/video/videolist.html", { playlist: playlist[1]});
         });
+    }
+
+    function GetVideoLists(element, objValue, startIndex) {
+
+        try {
+
+            var playlistURL = objValue;
+            var URL = "";
+            URL = "http://gdata.youtube.com/feeds/api/playlists/" + playlistURL + "?v=2&start-index=" + parseInt(startIndex) + "&next=25";
+            WinJS.xhr({ url: URL }).then(function (result) {
+                var videosListResponse = result.responseXML;
+                var videoCount = videosListResponse.querySelector("totalResults").textContent;
+
+                // Get the info for videos list 
+                var videos = videosListResponse.querySelectorAll("entry");
+
+                for (var videoIndex = 0; videoIndex < videos.length; videoIndex++) {
+                    var videoLists = {
+                        title: videos[videoIndex].querySelector("title").textContent,
+                        videoId: videos[videoIndex].querySelector("videoid").textContent,
+                        playtitle: playlistURL
+                    };
+                    videoListsNodes.push(videoLists);
+                }
+
+                if (parseInt(videoCount) == videoListsNodes.length) {
+                    DisplayVideoList(element, objValue);
+                }
+                else {
+                    var sindex = videoListsNodes.length + 1;
+                    GetVideoLists(element, playlistURL, sindex);
+                }
+
+            },
+            function (error) {
+                // Create the message dialog and set its content
+                var msg = new Windows.UI.Popups.MessageDialog(WinJS.Resources.getString('Unable to display the Videos list.').value);
+
+                // Add commands and set their command handlers
+                msg.commands.append(new Windows.UI.Popups.UICommand(WinJS.Resources.getString('Close').value));
+
+                // Set the command that will be invoked by default
+                msg.defaultCommandIndex = 0;
+
+                // Show the message dialog
+                msg.showAsync().done(function (command) {
+                    if (command.id == 1) {
+
+                    }
+                    else {
+
+                    }
+                });
+            });
+
+        } catch (e) {
+
+        }
+    }
+
+    function DisplayVideoList(element, objValue) {
+
+        if (videoListsNodes.length != 0) {
+            var dataList = new WinJS.Binding.List(videoListsNodes);
+            var listView = element.querySelector(".videolist").winControl;
+            listView.itemDataSource = dataList.dataSource;
+            listView.groupHeaderTemplate = element.querySelector(".headerTemplate");            
+            listView.itemTemplate = element.querySelector(".videoitemtemplate");
+            initializeLayout(listView, appView.value);
+            listView.element.focus();
+        }
+        else {
+
+            // Create the message dialog and set its content
+            var msg = new Windows.UI.Popups.MessageDialog(WinJS.Resources.getString('Unable to display the Videos list.').value);
+
+            // Add commands and set their command handlers
+            msg.commands.append(new Windows.UI.Popups.UICommand(WinJS.Resources.getString('Close').value));
+
+            // Set the command that will be invoked by default
+            msg.defaultCommandIndex = 0;
+
+            // Show the message dialog
+            msg.showAsync().done(function (command) {
+                if (command.id == 1) {
+
+                }
+                else {
+
+                }
+            });
+        }
     }
 
     // This function updates the ListView with new layouts
