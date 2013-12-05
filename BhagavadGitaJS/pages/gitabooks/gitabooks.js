@@ -15,6 +15,17 @@
     var gitaBooks = new WinJS.Binding.List();
     var authorsGroupslist = [];
     var dataPromises = [];
+    var pdfLib = Windows.Data.Pdf;
+    var PDF_PAGE_INDEX = 0; // First Page
+    var ZOOM_FACTOR = 2; // 200% Zoom
+    var PDF_PORTION_RECT = { height: 400, width: 300, x: 100, y: 200 }; // Portion of a page
+    var PDFFILENAME = "Assets\\Windows_7_Product_Guide.pdf";
+
+    var RENDEROPTIONS = {
+        NORMAL: 0,
+        ZOOM: 1,
+        PORTION: 2
+    };
     ui.Pages.define("/pages/gitabooks/gitabooks.html", {
 
 
@@ -24,8 +35,9 @@
 
             // Store information about the group and selection that this page will
             // display.
-            DisplayGitaBooks(element, options);
-
+            bookListsNodes.length = 0;
+            DisplayGitaBooksAuthors(options);
+            DisplayGitaBooks("Paramahamsa Nithyananda");
             //makeXhrCall(GetAuthorList);
             //DisplayGitaBooks1(element, options);
         },
@@ -41,30 +53,31 @@
 
     });
 
-    function DisplayGitaBooks(element, options) {
-        bookListsNodes.length = 0;
+    function DisplayGitaBooksAuthors(options) {
+        authorListsNodes.length = 0;
         try {
 
             var URL = "";
             URL = "xml/books.xml";
             WinJS.xhr({ url: URL }).then(function (result) {
-                var bookListResponse = result.responseXML;
+                var authorListResponse = result.responseXML;
 
                 // Get the info for books list 
-                var booksList = bookListResponse.querySelectorAll("book");
+                var authorsList = authorListResponse.querySelectorAll("book");
 
-                for (var bookIndex = 0; bookIndex < booksList.length; bookIndex++) {
-                    var bookLists = {
-                        author: booksList[bookIndex].querySelector("author").textContent
+                for (var authorIndex = 0; authorIndex < authorsList.length; authorIndex++) {
+                    var authorLists = {
+                        author: authorsList[authorIndex].querySelector("author").textContent
                     };
-                    bookListsNodes.push(bookLists);
+                    authorListsNodes.push(authorLists);
                 }
 
-                var listView = element.querySelector(".playlist").winControl;
-                var dataList = new WinJS.Binding.List(bookListsNodes);
+                var listView = document.querySelector(".authorlist").winControl;
+                var dataList = new WinJS.Binding.List(authorListsNodes);
                 listView.itemDataSource = dataList.dataSource;
-                listView.groupHeaderTemplate = element.querySelector(".headerTemplate");
-                listView.itemTemplate = element.querySelector(".itemtemplate");
+                listView.addEventListener("iteminvoked", itemInvokedHandler, false);
+                listView.groupHeaderTemplate = document.querySelector(".headerTemplate");
+                listView.itemTemplate = document.querySelector(".itemtemplate");
                 initializeLayout(listView, appView.value);
                 listView.element.focus();
 
@@ -94,6 +107,155 @@
         } catch (e) {
 
         }
+    }
+    
+    function itemInvokedHandler(eventObject) {
+        eventObject.detail.itemPromise.done(function (invokedItem) {
+            bookListsNodes.length = 0;
+            var author = invokedItem.data.author;
+            DisplayGitaBooks(author);
+        });
+    }
+
+    function itembookInvokedHandler(eventObject) {
+        eventObject.detail.itemPromise.done(function (invokedItem) {
+            //renderpage("https://archive.org/download/BhagavadGitaVolume13rdEdition/Bhagavad%20Gita%20Volume%201%203rd%20Edition.pdf");
+            //Launcher.LaunchFileAsync("https://archive.org/download/BhagavadGitaVolume13rdEdition/Bhagavad%20Gita%20Volume%201%203rd%20Edition.pdf");
+        });
+    }
+    
+    function DisplayGitaBooks(author)
+    {
+        try {
+
+            var URL = "";
+            URL = "xml/books.xml";
+            WinJS.xhr({ url: URL }).then(function (result) {
+                var bookListResponse = result.responseXML;
+
+                // Get the info for books list 
+                var booksList = bookListResponse.querySelectorAll("book");
+
+                for (var bookIndex = 0; bookIndex < booksList.length; bookIndex++) {
+
+                    if (booksList[bookIndex].querySelector("author").textContent == author) {
+
+                        var volumelist = booksList[bookIndex].querySelectorAll("volume");
+
+                        for (var volumeIndex = 0; volumeIndex < volumelist.length; volumeIndex++)
+                        {
+                        var volumeLists = {
+                            title: volumelist[volumeIndex].querySelector("title").textContent,
+                            url: volumelist[volumeIndex].querySelector("url").textContent,
+                            download: "Download",
+                            read: "Read"
+
+                        };
+                        bookListsNodes.push(volumeLists);
+                        }
+                    }
+                }
+
+                var listView = document.querySelector(".booklist").winControl;
+                var dataList = new WinJS.Binding.List(bookListsNodes);
+                listView.itemDataSource = dataList.dataSource;
+                listView.addEventListener("iteminvoked", itembookInvokedHandler, false);
+                listView.groupHeaderTemplate = document.querySelector(".headertemplate");
+                listView.itemTemplate = document.querySelector(".bookitemtemplate");
+                initializeLayout(listView, appView.value);
+                listView.element.focus();
+
+
+            },
+            function (error) {
+                // Create the message dialog and set its content
+                var msg = new Windows.UI.Popups.MessageDialog(WinJS.Resources.getString('Unable to display the Gita Books.').value);
+
+                // Add commands and set their command handlers
+                msg.commands.append(new Windows.UI.Popups.UICommand(WinJS.Resources.getString('Close').value));
+
+                // Set the command that will be invoked by default
+                msg.defaultCommandIndex = 0;
+
+                // Show the message dialog
+                msg.showAsync().done(function (command) {
+                    if (command.id == 1) {
+
+                    }
+                    else {
+
+                    }
+                });
+            });
+
+        } catch (e) {
+
+        }
+    }
+
+    function renderpage(url)
+    {
+        renderPDFPage("Bhagavad%20Gita%20Volume%201%203rd%20Edition.pdf", PDF_PAGE_INDEX, RENDEROPTIONS.NORMAL);
+    }
+
+
+    function renderPDFPage(pdfFileName, pageIndex, renderOptions) {
+        "use strict";
+        Windows.ApplicationModel.Package.current.installedLocation.getFileAsync(pdfFileName).then(function loadDocument(file) {
+            // Call pdfDocument.'loadfromFileAsync' to load pdf file
+            return pdfLib.PdfDocument.loadFromFileAsync(file);
+        }).then(function setPDFDoc(doc) {
+            renderPage(doc, pageIndex, renderOptions);
+        });
+    };
+
+    function renderPage(pdfDocument, pageIndex, renderOptions) {
+        "use strict";
+        var pageRenderOutputStream = new Windows.Storage.Streams.InMemoryRandomAccessStream();
+
+
+        // Get PDF Page
+        var pdfPage = pdfDocument.getPage(pageIndex);
+
+        var pdfPageRenderOptions = new Windows.Data.Pdf.PdfPageRenderOptions();
+        var renderToStreamPromise;
+        var pagesize = pdfPage.size;
+
+        // Call pdfPage.renderToStreamAsync
+        switch (renderOptions) {
+            case RENDEROPTIONS.NORMAL:
+                renderToStreamPromise = pdfPage.renderToStreamAsync(pageRenderOutputStream);
+                break;
+            case RENDEROPTIONS.ZOOM:
+                // Set pdfPageRenderOptions.'destinationwidth' or 'destinationHeight' to take into effect zoom factor
+                pdfPageRenderOptions.destinationHeight = pagesize.height * ZOOM_FACTOR;
+                renderToStreamPromise = pdfPage.renderToStreamAsync(pageRenderOutputStream, pdfPageRenderOptions);
+                break;
+            case RENDEROPTIONS.PORTION:
+                // Set pdfPageRenderOptions.'sourceRect' to the rectangle containing portion to show
+                pdfPageRenderOptions.sourceRect = PDF_PORTION_RECT;
+                renderToStreamPromise = pdfPage.renderToStreamAsync(pageRenderOutputStream, pdfPageRenderOptions);
+                break;
+        };
+
+        renderToStreamPromise.then(function Flush() {
+            return pageRenderOutputStream.flushAsync();
+        }).then(function DisplayImage() {
+            if (pageRenderOutputStream !== null) {
+                // Get Stream pointer
+                var blob = MSApp.createBlobFromRandomAccessStream("image/png", pageRenderOutputStream);
+                var picURL = URL.createObjectURL(blob, { oneTimeOnly: true });
+                scenario1ImageHolder1.src = picURL;
+                pageRenderOutputStream.close();
+                blob.msClose();
+            };
+        },
+           function error() {
+               if (pageRenderOutputStream !== null) {
+                   pageRenderOutputStream.close();
+
+               }
+           });
     }
 
     function DisplayGitaBooks1(element, options) {

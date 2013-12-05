@@ -9,13 +9,12 @@
     <script src="//Microsoft.WinJS.1.0/js/base.js"></script>
     <script src="//Microsoft.WinJS.1.0/js/ui.js"></script>
     <link href="/css/default.css" rel="stylesheet" />
-    <link href="/pages/playlist/playlist.css" rel="stylesheet" />
+    <link href="/pages/gitabooks/gitabooks.css" rel="stylesheet" />
     <script src="/js/data.js"></script>
     <script src="/pages/gitabooks/gitabooks.js"></script>
 </head>
 <body>
-
-    <!-- This template is used to display each item in the ListView declared below. -->
+     <!-- This template is used to display each item in the ListView declared below. -->
     <div class="itemtemplate" data-win-control="WinJS.Binding.Template">
         <div class="item">
             <div class="item-overlay">
@@ -24,8 +23,18 @@
         </div>
     </div>   
 
+    <div class="bookitemtemplate" data-win-control="WinJS.Binding.Template">
+        <div class="bookitem">
+            <div class="bookitem-overlay">
+                <h4 class="bookitem-title" data-win-bind="textContent: title"></h4>
+                <h1 class="bookitem-url" data-win-bind="textContent: url" style="visibility: hidden"></h1>                
+            </div>
+            <div style="-ms-grid-row-align:center;"><button style="margin-bottom:5px;height:50px;width:100px" data-win-bind="textContent: download" type="button"></button> <button style="margin-bottom:5px;height:50px;width:100px" data-win-bind="textContent: read" type="button"></button></div>
+        </div>
+    </div>
+
     <!-- The content that will be loaded and displayed. -->
-    <div class="playlistspage fragment">
+    <div class="gitabookspage fragment">
         <header aria-label="Header content" role="banner">
             <button class="win-backbutton" aria-label="Back" disabled type="button"></button>
             <h1 class="titlearea win-type-ellipsis">
@@ -36,7 +45,10 @@
             <div class="playlist win-selectionstylefilled" aria-label="List of groups" data-win-control="WinJS.UI.ListView"></div>
         </section> -->      
         <div class="itemlistsection" aria-label="List column">
-            <div class="playlist win-selectionstylefilled" aria-label="List of groups" data-win-control="WinJS.UI.ListView" data-win-options="{ selectionMode: 'single'}"></div>
+            <div class="authorlist win-selectionstylefilled" aria-label="List of groups" data-win-control="WinJS.UI.ListView" data-win-options="{ selectionMode: 'single'}"></div>
+        </div>
+        <div class="booksection" aria-label="List column">
+            <div class="booklist win-selectionstylefilled" aria-label="List of groups" data-win-control="WinJS.UI.ListView" data-win-options="{ selectionMode: 'single'}"></div>
         </div> 
     </div>
 </body>
