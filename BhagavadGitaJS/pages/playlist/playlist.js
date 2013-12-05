@@ -20,9 +20,9 @@
 
             // Store information about the group and selection that this page will
             // display.
-
+            videoListsNodes.length = 0;
             GetPlayLists();
-            GetVideoLists(element, "PLhtmKWc6vRTAbgzzXxDaaC5nLmGsSiybE", "1");
+            GetVideoLists("PLhtmKWc6vRTAbgzzXxDaaC5nLmGsSiybE", "1");
         },
 
         unload: function () {
@@ -91,13 +91,20 @@
 
     function itemInvokedHandler(eventObject) {
         eventObject.detail.itemPromise.done(function (invokedItem) {
-
+            videoListsNodes.length = 0;
             var playlist = invokedItem.data.playtitle.split("=");
-            WinJS.Navigation.navigate("/pages/video/videolist.html", { playlist: playlist[1]});
+            //WinJS.Navigation.navigate("/pages/video/videolist.html", { playlist: playlist[1]});
+            GetVideoLists(playlist[1], "1");
         });
     }
+    function itemVideoInvokedHandler(eventObject) {
+        eventObject.detail.itemPromise.done(function (invokedItem) {
 
-    function GetVideoLists(element, objValue, startIndex) {
+            var videoId = invokedItem.data.videoId;
+            WinJS.Navigation.navigate("/pages/video/video.html", { videoId: videoId });
+        });
+    }
+    function GetVideoLists(objValue, startIndex) {
 
         try {
 
@@ -121,11 +128,11 @@
                 }
 
                 if (parseInt(videoCount) == videoListsNodes.length) {
-                    DisplayVideoList(element, objValue);
+                    DisplayVideoList(objValue);
                 }
                 else {
                     var sindex = videoListsNodes.length + 1;
-                    GetVideoLists(element, playlistURL, sindex);
+                    GetVideoLists(playlistURL, sindex);
                 }
 
             },
@@ -155,14 +162,15 @@
         }
     }
 
-    function DisplayVideoList(element, objValue) {
+    function DisplayVideoList(objValue) {
 
         if (videoListsNodes.length != 0) {
             var dataList = new WinJS.Binding.List(videoListsNodes);
-            var listView = element.querySelector(".videolist").winControl;
+            var listView = document.querySelector(".videolist").winControl;           
             listView.itemDataSource = dataList.dataSource;
-            listView.groupHeaderTemplate = element.querySelector(".headerTemplate");            
-            listView.itemTemplate = element.querySelector(".videoitemtemplate");
+            listView.groupHeaderTemplate = document.querySelector(".headerTemplate");
+            listView.addEventListener("iteminvoked", itemVideoInvokedHandler, false);
+            listView.itemTemplate = document.querySelector(".videoitemtemplate");
             initializeLayout(listView, appView.value);
             listView.element.focus();
         }
