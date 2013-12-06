@@ -8,7 +8,7 @@
     var ui = WinJS.UI;
     var utils = WinJS.Utilities;
     var dtm = Windows.ApplicationModel.DataTransfer.DataTransferManager;
-    var tmpplayListArray = new Array("Gita in Hindi#http://www.youtube.com/playlist?list=PLhtmKWc6vRTAbgzzXxDaaC5nLmGsSiybE", "Gita in Tamil#http://www.youtube.com/playlist?list=PLEE6703B259EF5E0F");
+    var tmpplayListArray = new Array("Gita in Hindi#http://www.youtube.com/playlist?list=PLhtmKWc6vRTAbgzzXxDaaC5nLmGsSiybE", "Gita in Tamil#http://www.youtube.com/playlist?list=PLEE6703B259EF5E0F", "Gita in English#http://www.youtube.com/playlist?list=PLm6DKuwwu5zoHFPEoHedA6t0FafJMd8gC");
     var playListNodes = [];
     var videoListsNodes = [];
     ui.Pages.define("/pages/playlist/playlist.html", {
@@ -20,6 +20,7 @@
 
             // Store information about the group and selection that this page will
             // display.
+            document.getElementById("divMessage").style.visibility = 'visible';
             videoListsNodes.length = 0;
             GetPlayLists();
             GetVideoLists("PLhtmKWc6vRTAbgzzXxDaaC5nLmGsSiybE", "1");
@@ -94,6 +95,8 @@
             videoListsNodes.length = 0;
             var playlist = invokedItem.data.playtitle.split("=");
             //WinJS.Navigation.navigate("/pages/video/videolist.html", { playlist: playlist[1]});
+            document.getElementById("divMessage").style.visibility = 'visible';
+            document.getElementById("basicListview").style.visibility = 'collapse';
             GetVideoLists(playlist[1], "1");
         });
     }
@@ -165,6 +168,8 @@
     function DisplayVideoList(objValue) {
 
         if (videoListsNodes.length != 0) {
+            document.getElementById("divMessage").style.visibility = 'collapse';
+            document.getElementById("basicListview").style.visibility = 'visible';
             var dataList = new WinJS.Binding.List(videoListsNodes);
             var listView = document.querySelector(".videolist").winControl;           
             listView.itemDataSource = dataList.dataSource;
