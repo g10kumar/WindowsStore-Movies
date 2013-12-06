@@ -43,9 +43,10 @@
         </header>
         <div class="itemlistsection" aria-label="List column">
             <div class="playlist win-selectionstylefilled" aria-label="List of groups" data-win-control="WinJS.UI.ListView" data-win-options="{ selectionMode: 'single'}"></div>
-        </div>
-        <div class="videosection" aria-label="List column">
-            <div class="videolist win-selectionstylefilled" aria-label="List of groups" data-win-control="WinJS.UI.ListView" data-win-options="{ selectionMode: 'single'}"></div>
+        </div>        
+        <div style="visibility:collapse;" id="divMessage"><progress class="win-ring win-large" style="margin-left:600px;margin-top:300px;color:black;"></progress></div>
+        <div class="videosection" aria-label="List column">            
+            <div id="basicListview" class="videolist win-selectionstylefilled" aria-label="List of groups" data-win-control="WinJS.UI.ListView" data-win-options="{ selectionMode: 'single'}"></div>
         </div>
     </div>
 </body>
