@@ -119,8 +119,19 @@
 
     function itembookInvokedHandler(eventObject) {
         eventObject.detail.itemPromise.done(function (invokedItem) {
+            var uri = new Windows.Foundation.Uri(invokedItem.data.url);
             //renderpage("https://archive.org/download/BhagavadGitaVolume13rdEdition/Bhagavad%20Gita%20Volume%201%203rd%20Edition.pdf");
-            //Launcher.LaunchFileAsync("https://archive.org/download/BhagavadGitaVolume13rdEdition/Bhagavad%20Gita%20Volume%201%203rd%20Edition.pdf");
+            //Windows.System.Launcher.LaunchFileAsync(uri);
+                        
+            // Launch the URI.
+            Windows.System.Launcher.launchUriAsync(uri).done(
+                function (success) {
+                    if (success) {
+                        
+                    } else {
+                        
+                    }
+                });
         });
     }
     
@@ -452,3 +463,8 @@
         }
     }
 })();
+
+///function check(mouseEvent) {
+//    
+//    return false;
+//}
