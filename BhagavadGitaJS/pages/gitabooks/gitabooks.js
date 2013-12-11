@@ -28,7 +28,9 @@
     };
     ui.Pages.define("/pages/gitabooks/gitabooks.html", {
 
-
+        navigateToGroup: function (key) {
+           check(key.url);
+        },
         // This function is called whenever a user navigates to this page. It
         // populates the page elements with the app's data.
         ready: function (element, options) {
@@ -40,6 +42,9 @@
             DisplayGitaBooks("Paramahamsa Nithyananda");
             //makeXhrCall(GetAuthorList);
             //DisplayGitaBooks1(element, options);
+
+            //document.getElementById("btnDownload").addEventListener("click", buttonEventHandler, false);
+
         },
 
         unload: function () {
@@ -157,10 +162,7 @@
                         {
                         var volumeLists = {
                             title: volumelist[volumeIndex].querySelector("title").textContent,
-                            url: volumelist[volumeIndex].querySelector("url").textContent,
-                            download: "Download",
-                            read: "Read"
-
+                            url: volumelist[volumeIndex].querySelector("url").textContent
                         };
                         bookListsNodes.push(volumeLists);
                         }
@@ -170,7 +172,7 @@
                 var listView = document.querySelector(".booklist").winControl;
                 var dataList = new WinJS.Binding.List(bookListsNodes);
                 listView.itemDataSource = dataList.dataSource;
-                listView.addEventListener("iteminvoked", itembookInvokedHandler, false);
+                //listView.addEventListener("iteminvoked", itembookInvokedHandler, false);
                 listView.groupHeaderTemplate = document.querySelector(".headertemplate");
                 listView.itemTemplate = document.querySelector(".bookitemtemplate");
                 initializeLayout(listView, appView.value);
@@ -464,7 +466,41 @@
     }
 })();
 
-///function check(mouseEvent) {
-//    
-//    return false;
-//}
+function PDFDownload(pdfUrl) {
+    
+    var uri = new Windows.Foundation.Uri(pdfUrl);
+    
+    var options = new Windows.System.LauncherOptions();
+    options.displayApplicationPicker = true;
+
+    // Launch the URI.
+    Windows.System.Launcher.launchUriAsync(uri, options).done(
+        function (success) {
+            if (success) {
+
+            } else {
+
+            }
+        });
+}
+
+function PDFRead(pdfUrl) {
+
+    var uri = new Windows.Foundation.Uri(pdfUrl);
+    
+    // Launch the URI.
+    Windows.System.Launcher.launchUriAsync(uri).done(
+        function (success) {
+            if (success) {
+
+            } else {
+
+            }
+        });
+}
+
+
+function buttonEventHandler(mouseEvent) {
+    //getProducts(mouseEvent.target.value);
+    //WinJS.Navigation.navigate("/pages/products/products.html", mouseEvent.target.value);
+}

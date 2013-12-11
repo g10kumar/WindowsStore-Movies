@@ -29,7 +29,7 @@
                 <h4 class="bookitem-title" data-win-bind="textContent: title"></h4>
                 <h1 class="bookitem-url" data-win-bind="textContent: url" style="visibility: hidden"></h1>                
             </div>
-            <div style="-ms-grid-row-align:center;"><button style="margin-bottom:5px;height:50px;width:100px" data-win-bind="textContent: download" type="button"></button> <button style="margin-bottom:5px;height:50px;width:100px" data-win-bind="textContent: read" type="button"></button></div>
+            <div style="-ms-grid-row-align:center;"><button style="margin-bottom:5px;height:50px;width:100px" data-win-bind="groupKey: url" onclick="PDFDownload(event.srcElement.groupKey)"  type="button">Download</button> <button style="margin-bottom:5px;height:50px;width:100px" data-win-bind="groupKey: url" onclick="PDFRead(event.srcElement.groupKey)" type="button">Read</button></div>
         </div>
     </div>
 
