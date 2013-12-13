@@ -83,6 +83,6 @@
     }
 
     function showGitaBooks() {
-        WinJS.Navigation.navigate("/pages/gitabooks/gitabooks.html");
+        WinJS.Navigation.navigate("/pages/gitabooks/displaybooks.html");
     }
 })();
