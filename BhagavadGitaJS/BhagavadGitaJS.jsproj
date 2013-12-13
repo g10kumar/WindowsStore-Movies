@@ -85,6 +85,8 @@
     <Content Include="js\data.js" />
     <Content Include="js\default.js" />
     <Content Include="js\navigator.js" />
+    <Content Include="pages\gitabooks\displaybooks.html" />
+    <Content Include="pages\gitabooks\displaybooks.js" />
     <Content Include="pages\gitabooks\gitabooks.css" />
     <Content Include="pages\gitabooks\gitabooks.html" />
     <Content Include="pages\gitabooks\gitabooks.js" />
