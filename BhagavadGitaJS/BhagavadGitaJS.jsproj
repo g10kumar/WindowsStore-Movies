@@ -57,6 +57,8 @@
     </AppxManifest>
     <Content Include="ad.html" />
     <Content Include="css\default.css" />
+    <Content Include="dlls\MuPDFWinRT.dll" />
+    <Content Include="dlls\MuPDFWinRT.winmd" />
     <Content Include="gita.sqlite" />
     <Content Include="images\bg1.jpg" />
     <Content Include="images\ch1.jpg" />
@@ -90,6 +92,9 @@
     <Content Include="pages\gitabooks\gitabooks.css" />
     <Content Include="pages\gitabooks\gitabooks.html" />
     <Content Include="pages\gitabooks\gitabooks.js" />
+    <Content Include="pages\gitabooks\readpdf.css" />
+    <Content Include="pages\gitabooks\readpdf.html" />
+    <Content Include="pages\gitabooks\readpdf.js" />
     <Content Include="pages\playlist\playlist.css" />
     <Content Include="pages\playlist\playlist.html" />
     <Content Include="pages\playlist\playlist.js" />
