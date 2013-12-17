@@ -1,0 +1,24 @@
+﻿.readpdfpage section[role=main] {
+    /*margin-left: 120px;*/
+}
+
+.readpdfpage.fragment {
+    -ms-grid-rows: 30px 1fr;
+}
+
+.readpdfpage #flipView {
+    height: 100%;
+    width: 100%;
+}
+
+@media screen and (-ms-view-state: snapped) {
+    .readpdfpage section[role=main] {
+        margin-left: 20px;
+    }
+}
+
+@media screen and (-ms-view-state: portrait) {
+    .readpdfpage section[role=main] {
+        margin-left: 100px;
+    }
+}

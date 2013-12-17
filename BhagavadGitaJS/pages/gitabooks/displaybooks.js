@@ -303,8 +303,6 @@ function DownloadOperation() {
     // Completion callback.
     function complete() {
         removeDownload(download.guid);
-
-        document.querySelector(".booklist").winControl.f
         var msg = new Windows.UI.Popups.MessageDialog('download completes.');
         msg.showAsync();
 
@@ -340,4 +338,9 @@ function displayError(/*@type(String)*/message) {
     msg.showAsync();
 }
 
+function PDFRead(pdfUrl) {
 
+    var fileName = pdfUrl.split("/")[pdfUrl.split("/").length - 1];
+
+    WinJS.Navigation.navigate("/pages/gitabooks/readpdf.html", { pdffile: fileName });
+}
