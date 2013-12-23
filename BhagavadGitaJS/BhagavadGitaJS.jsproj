@@ -57,8 +57,6 @@
     </AppxManifest>
     <Content Include="ad.html" />
     <Content Include="css\default.css" />
-    <Content Include="dlls\MuPDFWinRT.dll" />
-    <Content Include="dlls\MuPDFWinRT.winmd" />
     <Content Include="gita.sqlite" />
     <Content Include="images\bg1.jpg" />
     <Content Include="images\ch1.jpg" />
@@ -108,7 +106,9 @@
     <Content Include="xml\SlokaMeaning.xml" />
     <Content Include="xml\slokaPurport.json" />
     <Content Include="xml\slokaPurport.xml" />
-    <None Include="Package.StoreAssociation.xml" />
+    <None Include="Package.StoreAssociation.xml">
+      <SubType>Designer</SubType>
+    </None>
     <Content Include="js\SQLite3.js" />
     <Content Include="pages\about\about.html" />
     <Content Include="pages\bookmarks\bookmarks.css" />
@@ -133,6 +133,12 @@
   </ItemGroup>
   <ItemGroup>
     <SDKReference Include="Microsoft.WinJS.1.0, Version=1.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="MuPDFWinRT">
+      <HintPath>..\..\..\TestWIN8\BhagavadGita\BhagavadGitaJS\dlls\MuPDFWinRT.winmd</HintPath>
+      <IsWinMDFile>true</IsWinMDFile>
+    </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\$(WMSJSProjectDirectory)\Microsoft.VisualStudio.$(WMSJSProject).targets" />
   <!-- To modify your build process, add your task inside one of the targets below then uncomment
