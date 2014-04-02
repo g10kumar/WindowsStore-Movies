@@ -105,14 +105,14 @@ progress.withText
                     }
 
     .playlistspage .videosection {
-        -ms-grid-column: 3;
-        -ms-grid-row: 2;        
-        -ms-grid-row-span: 2;
+        -ms-grid-column: 3;        
+        -ms-grid-row: 2;   
+        -ms-grid-row-span: 3;            
         /*overflow-y: auto;
         position: relative;
         z-index: 0;*/        
         padding-left: 20px;
-        padding-right: 20px;    
+        padding-right: 20px;
         padding-bottom: 20px;
         height:100%;
     }

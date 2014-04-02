@@ -1,5 +1,5 @@
 ﻿.readpdfpage section[role=main] {
-    /*margin-left: 120px;*/
+    /*margin-left: 120px;*/    
 }
 
 .readpdfpage.fragment {
@@ -7,8 +7,9 @@
 }
 
 .readpdfpage #flipView {
-    height: 100%;
+    height: 100%;    
     width: 100%;
+    margin: -10px;
 }
 
 @media screen and (-ms-view-state: snapped) {
