@@ -23,8 +23,6 @@ var downloadOperations = [];
     var ZOOM_FACTOR = 2; // 200% Zoom
     var PDF_PORTION_RECT = { height: 400, width: 300, x: 100, y: 200 }; // Portion of a page
     
-    
-
     ui.Pages.define("/pages/gitabooks/displaybooks.html", {
 
         // This function is called whenever a user navigates to this page. It
@@ -342,5 +340,75 @@ function PDFRead(pdfUrl) {
 
     var fileName = pdfUrl.split("/")[pdfUrl.split("/").length - 1];
 
-    WinJS.Navigation.navigate("/pages/gitabooks/readpdf.html", { pdffile: fileName });
+    //var file = Windows.ApplicationModel.Package.current.installedLocation.getFileAsync(fileName)
+    //if (file != null) {
+    //    WinJS.Navigation.navigate("/pages/gitabooks/readpdf.html", { pdffile: fileName });
+    //}
+    //else {
+    //    // Create the message dialog and set its content
+    //    var msg = new Windows.UI.Popups.MessageDialog(WinJS.Resources.getString('Unable to Read the file, first you have to download the file.').value);
+
+    //    // Add commands and set their command handlers
+    //    msg.commands.append(new Windows.UI.Popups.UICommand(WinJS.Resources.getString('Close').value));
+
+    //    // Set the command that will be invoked by default
+    //    msg.defaultCommandIndex = 0;
+
+    //    // Show the message dialog
+    //    msg.showAsync().done(function (command) {
+    //        if (command.id == 1) {
+
+    //        }
+    //        else {
+
+    //        }
+    //    });
+    //}
+
+    try {
+        // Asynchronously create the file in the installedLocation folder.
+        Windows.ApplicationModel.Package.current.installedLocation.getFileAsync(fileName).done(function (newFile) {
+            WinJS.Navigation.navigate("/pages/gitabooks/readpdf.html", { pdffile: fileName });
+        },
+        function (error) {
+            // Create the message dialog and set its content
+            var msg = new Windows.UI.Popups.MessageDialog(WinJS.Resources.getString('Unable to Read the file, first you have to download the file.').value);
+
+            // Add commands and set their command handlers
+            msg.commands.append(new Windows.UI.Popups.UICommand(WinJS.Resources.getString('Close').value));
+
+            // Set the command that will be invoked by default
+            msg.defaultCommandIndex = 0;
+
+            // Show the message dialog
+            msg.showAsync().done(function (command) {
+                if (command.id == 1) {
+
+                }
+                else {
+
+                }
+            });
+        });
+    } catch (err) {
+        // Create the message dialog and set its content
+        var msg = new Windows.UI.Popups.MessageDialog(WinJS.Resources.getString('Unable to Read the file, first you have to download the file.').value);
+
+        // Add commands and set their command handlers
+        msg.commands.append(new Windows.UI.Popups.UICommand(WinJS.Resources.getString('Close').value));
+
+        // Set the command that will be invoked by default
+        msg.defaultCommandIndex = 0;
+
+        // Show the message dialog
+        msg.showAsync().done(function (command) {
+            if (command.id == 1) {
+
+            }
+            else {
+
+            }
+        });
+    }
+    
 }

@@ -17,8 +17,8 @@
                 var width = flipViewDOM.clientWidth;
                 var height = flipViewDOM.clientHeight;
 
-                flipView.itemDataSource = dataList.dataSource;
-                flipView.itemTemplate = (function (itemPromise) {
+                flipView.itemDataSource = dataList.dataSource;                
+                flipView.itemTemplate = (function (itemPromise) {                
                     return itemPromise.then(function (item) {
                         // root element for the item
                         var canvas = document.createElement("canvas");
@@ -46,7 +46,8 @@
             var size = pdfDocument.getPageSize(index);
 
             canvasContext.canvas.width = size.x;
-            canvasContext.canvas.height = size.y;
+            canvasContext.canvas.height = size.y +20;
+            //canvasContext.canvas.height = 950;
 
             var imageData = canvasContext.createImageData(size.x, size.y);
 
